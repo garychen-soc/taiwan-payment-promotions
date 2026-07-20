@@ -85,6 +85,9 @@ class SiteBuildTests(unittest.TestCase):
 
             self.assertTrue((output_dir / ".nojekyll").exists())
             self.assertTrue((output_dir / "index.html").exists())
+            built_html = (output_dir / "index.html").read_text(encoding="utf-8")
+            self.assertNotIn("__ASSET_VERSION__", built_html)
+            self.assertIn("./assets/app.js?v=", built_html)
             self.assertEqual(payload["headline"], "今天的 AI 重點")
             self.assertEqual(payload["analysis_method"], "local_rules_and_codex_review")
             self.assertEqual(len(payload["activities"]), 1)

@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import re
 import shutil
@@ -336,10 +337,17 @@ def build(report_path: Path, output_dir: Path, supplement_path: Path) -> Path:
     data_dir = output_dir / "data"
     assets_dir.mkdir(parents=True, exist_ok=True)
     data_dir.mkdir(parents=True, exist_ok=True)
-    shutil.copy2(ROOT / "web" / "index.html", output_dir / "index.html")
-    for asset in (ROOT / "web" / "assets").iterdir():
+    asset_digest = hashlib.sha256()
+    for asset in sorted((ROOT / "web" / "assets").iterdir(), key=lambda item: item.name):
         if asset.is_file():
             shutil.copy2(asset, assets_dir / asset.name)
+            asset_digest.update(asset.name.encode("utf-8"))
+            asset_digest.update(asset.read_bytes())
+    asset_version = asset_digest.hexdigest()[:12]
+    index_html = (ROOT / "web" / "index.html").read_text(encoding="utf-8")
+    (output_dir / "index.html").write_text(
+        index_html.replace("__ASSET_VERSION__", asset_version), encoding="utf-8"
+    )
     manifest = ROOT / "web" / "manifest.webmanifest"
     if manifest.exists():
         shutil.copy2(manifest, output_dir / manifest.name)

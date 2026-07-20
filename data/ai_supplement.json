@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-07-21T02:01:10+08:00",
+  "headline": "新戶首刷 100%、NET 隨機返現與 7/23 即將開始活動",
+  "highlights": [
+    {
+      "kind": "high_return",
+      "provider_id": "opay",
+      "provider_name": "歐付寶",
+      "title": "新戶首刷 100% 歐付寶紅利",
+      "summary": "2026 年新核發正卡的首筆消費回饋 100% 歐付寶紅利，上限 333 點；另有符合條件的新戶最高 13% 回饋。",
+      "url": "https://www.opay.tw/announcement/DetailAnnouncement?nID=4379"
+    },
+    {
+      "kind": "high_return",
+      "provider_id": "taiwanpay",
+      "provider_name": "台灣 Pay",
+      "title": "NET 消費隨機返現最高 100%",
+      "summary": "於 NET 指定門市使用台灣行動支付 App，單筆滿 500 元可獲隨機紅包；每一金融卡或帳戶最多 2 個。",
+      "url": "https://www.taiwanpay.com.tw/fisc-tpay/news/event/01KTBEYAY6H4DAPHAZZC1G4HYK"
+    },
+    {
+      "kind": "high_return",
+      "provider_id": "icashpay",
+      "provider_name": "icash Pay",
+      "title": "icash2.0 公共運輸回饋最高 37%",
+      "summary": "uniopen 聯名卡完成首次自動加值後，搭台北捷運享 7% OPENPOINT；同頁另列 TPASS2.0+ 登錄回饋最高 37%，各方案有回饋上限。",
+      "url": "https://www.icashpay.com.tw/advertMessage/view/id/2407"
+    },
+    {
+      "kind": "upcoming",
+      "provider_id": "taiwanpay",
+      "provider_name": "台灣 Pay",
+      "title": "7/23 起 OK 超商筆筆 10% 回饋",
+      "summary": "2026/7/23 至 9/30 於 OK 超商出示台灣 Pay 付款條碼，單筆不限金額享 10% 現金回饋；每一帳號或卡號最高 100 元。",
+      "url": "https://www.taiwanpay.com.tw/fisc-tpay/news/event/01KXFV9GFDCS1EGK6MNEPD06FN"
+    },
+    {
+      "kind": "sold_out",
+      "provider_id": "taiwanpay",
+      "provider_name": "台灣 Pay",
+      "title": "中原、元智生活圈 20% 回饋已額滿",
+      "summary": "官方活動頁已直接標示活動額滿；原優惠為指定商圈 QR Code 消費享 20% 現金回饋。",
+      "url": "https://www.taiwanpay.com.tw/fisc-tpay/news/event/01KFN18HDDRP0Z953CB1MK53S7"
+    },
+    {
+      "kind": "sold_out",
+      "provider_id": "taiwanpay",
+      "provider_name": "台灣 Pay",
+      "title": "嘟嘟房每筆 10 元回饋已額滿",
+      "summary": "官方活動頁已直接標示活動額滿；原優惠為嘟嘟房使用台灣 Pay 付款，每筆不限金額回饋 10 元。",
+      "url": "https://www.taiwanpay.com.tw/fisc-tpay/news/event/01KFN19NNF700RDTZQHJ59NW4S"
+    }
+  ],
+  "supplemental_activities": []
+}

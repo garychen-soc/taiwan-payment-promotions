@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#173f5f">
+  <meta name="description" content="每日整理台灣行動支付與電子支付的官方優惠、額滿狀態與活動重點。">
+  <title>台灣支付優惠雷達</title>
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./assets/app.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">跳至主要內容</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand-row">
+        <a class="brand" href="./" aria-label="台灣支付優惠雷達首頁">
+          <span class="brand-mark" aria-hidden="true">支</span>
+          <span>支付優惠雷達</span>
+        </a>
+        <span class="daily-label">每日更新</span>
+      </div>
+
+      <div class="hero-copy">
+        <p class="eyebrow">TAIWAN PAYMENT PROMOTIONS</p>
+        <h1>優惠重點，一眼就懂</h1>
+        <p class="hero-intro">從官方活動頁與公告整理高回饋、即將開始及即將結束的支付優惠，也同步標示額滿資訊。</p>
+      </div>
+
+      <div class="data-meta">
+        <p id="source-health" class="health-pill" role="status">
+          <span class="health-dot" aria-hidden="true"></span>
+          <span id="source-health-text">正在更新資料狀態</span>
+        </p>
+        <p id="updated-at" class="updated-at">讀取更新時間中</p>
+      </div>
+
+      <dl id="summary-list" class="summary-grid" aria-label="優惠摘要">
+        <div class="summary-item is-loading"><dt>有效活動</dt><dd>—</dd></div>
+        <div class="summary-item is-loading"><dt>高回饋</dt><dd>—</dd></div>
+        <div class="summary-item is-loading"><dt>即將開始</dt><dd>—</dd></div>
+        <div class="summary-item is-loading"><dt>額滿提醒</dt><dd>—</dd></div>
+      </dl>
+
+      <section class="daily-insight" aria-labelledby="daily-headline">
+        <p class="daily-insight-label">AI 今日整理</p>
+        <h2 id="daily-headline">正在整理今天值得留意的優惠</h2>
+      </section>
+    </div>
+  </header>
+
+  <main id="main-content" class="page-shell" tabindex="-1">
+    <section class="filter-panel" aria-labelledby="filter-title">
+      <div class="filter-heading">
+        <div>
+          <p class="section-kicker">快速找到適合你的活動</p>
+          <h2 id="filter-title">搜尋與篩選</h2>
+        </div>
+        <button id="clear-filters" class="text-button" type="button" hidden>清除篩選</button>
+      </div>
+
+      <div class="filter-fields">
+        <label class="field search-field" for="search-input">
+          <span>搜尋活動</span>
+          <span class="input-wrap">
+            <span class="search-icon" aria-hidden="true"></span>
+            <input id="search-input" type="search" inputmode="search" autocomplete="off" placeholder="活動、回饋或支付業者">
+          </span>
+        </label>
+
+        <label class="field" for="provider-select">
+          <span>支付業者</span>
+          <select id="provider-select">
+            <option value="">所有業者</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="category-wrap">
+        <span id="category-label" class="category-label">活動分類</span>
+        <div id="category-tabs" class="category-tabs" role="group" aria-labelledby="category-label">
+          <button type="button" data-category="featured" aria-pressed="true">重點</button>
+          <button type="button" data-category="high-return" aria-pressed="false">高回饋</button>
+          <button type="button" data-category="upcoming" aria-pressed="false">即將開始</button>
+          <button type="button" data-category="ending" aria-pressed="false">即將結束</button>
+          <button type="button" data-category="sold-out" aria-pressed="false">額滿</button>
+          <button type="button" data-category="all" aria-pressed="false">全部</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="results-section" aria-labelledby="results-title">
+      <div class="results-heading">
+        <div>
+          <p id="results-context" class="section-kicker">今日精選</p>
+          <h2 id="results-title">優惠活動</h2>
+        </div>
+        <p id="results-count" class="results-count" aria-live="polite">載入中</p>
+      </div>
+
+      <div id="activity-list" class="activity-grid" aria-busy="true">
+        <div class="skeleton-card" aria-hidden="true"></div>
+        <div class="skeleton-card" aria-hidden="true"></div>
+        <div class="skeleton-card" aria-hidden="true"></div>
+      </div>
+
+      <div id="empty-state" class="empty-state" hidden>
+        <span class="empty-icon" aria-hidden="true">⌕</span>
+        <h3>找不到符合條件的活動</h3>
+        <p>試著更換分類、業者或搜尋關鍵字。</p>
+        <button id="empty-clear" class="secondary-button" type="button">查看所有活動</button>
+      </div>
+
+      <div id="error-state" class="error-state" role="alert" hidden>
+        <h3>目前無法載入優惠資料</h3>
+        <p id="error-message">請稍後再試。</p>
+        <button id="retry-button" class="secondary-button" type="button">重新載入</button>
+      </div>
+    </section>
+
+    <aside class="notice-card" aria-labelledby="notice-title">
+      <h2 id="notice-title">使用前請留意</h2>
+      <p>優惠名額、適用通路與付款條件可能隨時調整。實際內容請以各業者官方活動頁或 App 顯示為準。</p>
+    </aside>
+  </main>
+
+  <footer class="site-footer">
+    <p>資料來自支付業者官方網站與公開公告，本站不代表任何支付業者。</p>
+  </footer>
+
+  <template id="activity-card-template">
+    <article class="activity-card">
+      <div class="card-topline">
+        <p class="provider-name"></p>
+        <div class="status-badges" aria-label="活動狀態"></div>
+      </div>
+      <h3 class="activity-title"></h3>
+      <p class="activity-period"></p>
+      <ul class="insight-chips" aria-label="活動重點"></ul>
+      <p class="condition-preview"></p>
+      <details class="activity-details">
+        <summary>查看活動重點與條件</summary>
+        <div class="details-body">
+          <section class="detail-section insight-detail" aria-label="優惠重點">
+            <h4>優惠重點</h4>
+            <ul class="insight-list"></ul>
+          </section>
+          <section class="detail-section condition-detail" aria-label="主要條件">
+            <h4>主要條件</h4>
+            <div class="condition-text"></div>
+          </section>
+          <a class="official-link" target="_blank" rel="noopener noreferrer">查看官方活動頁<span aria-hidden="true">↗</span></a>
+        </div>
+      </details>
+    </article>
+  </template>
+
+  <noscript>
+    <div class="noscript-note">此網站需要 JavaScript 才能顯示與篩選優惠活動。</div>
+  </noscript>
+
+  <script src="./assets/app.js" defer></script>
+</body>
+</html>

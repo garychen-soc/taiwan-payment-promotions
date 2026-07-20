@@ -1,0 +1,268 @@
+{
+  "schema_version": 1,
+  "timezone": "Asia/Taipei",
+  "request_delay_seconds": 0.15,
+  "max_total_pages": 180,
+  "providers": [
+    {
+      "id": "fullpay",
+      "name": "全支付／PX Pay Plus",
+      "official_domains": ["pxpayplus.com", "marketing.pxpayplus.com", "service.pxpayplus.com"],
+      "public_status_coverage": "活動頁可公開擷取；部分額滿狀態僅在全支付 App 最新消息，會標示為無法公開確認",
+      "sources": [],
+      "seeds": [
+        {
+          "name": "全支付官方活動 API：延三夜市",
+          "url": "https://marketing.pxpayplus.com/pxplus_marketing_page/activity_content_page?EventId=89",
+          "fetch_url": "https://service.pxpayplus.com/px-advertise/web/activity/detail/89"
+        }
+      ]
+    },
+    {
+      "id": "easywallet",
+      "name": "悠遊付",
+      "official_domains": ["easycard.com.tw", "easywallet.easycard.com.tw", "yax.easycard.com.tw"],
+      "public_status_coverage": "活動頁與官網最新消息；若頁面指定 App 公告則維持 App-only 未知",
+      "sources": [
+        {
+          "name": "悠遊付優惠列表",
+          "role": "activity_listing",
+          "url": "https://www.easycard.com.tw/offer",
+          "link_patterns": ["(?:www\\.|yax\\.)?easycard\\.com\\.tw/offer\\?", "/benefit/"],
+          "max_links": 18
+        },
+        {
+          "name": "悠遊卡公司最新消息",
+          "role": "announcement_listing",
+          "url": "https://www.easycard.com.tw/news?cls=1&page=1",
+          "link_patterns": ["easycard\\.com\\.tw/news\\?.*id=", "easycard\\.com\\.tw/news/[0-9A-Za-z_-]+"],
+          "max_links": 15
+        }
+      ],
+      "seeds": [
+        {
+          "name": "悠遊付官方活動樣本",
+          "url": "https://www.easycard.com.tw/offer?cls=1506473503,1506473490,&id=1781689964"
+        },
+        {
+          "name": "悠遊付部分額滿樣本",
+          "url": "https://yax.easycard.com.tw/offer?cls=1506473519,1506473490,1506473503,&id=1781071557"
+        }
+      ]
+    },
+    {
+      "id": "taiwanpay",
+      "name": "台灣 Pay",
+      "official_domains": ["taiwanpay.com.tw"],
+      "public_status_coverage": "活動頁；依各活動規則加查主辦銀行及合作通路官方公告",
+      "sources": [
+        {
+          "name": "台灣 Pay 官方活動 API",
+          "role": "taiwanpay_api_listing",
+          "url": "https://www.taiwanpay.com.tw/tpay/v1.0.0/950/taiwanpayfapi/TF02/TF020109",
+          "adapter": "taiwanpay_listing",
+          "max_links": 45
+        }
+      ],
+      "seeds": [
+        {
+          "name": "台灣 Pay 官方活動樣本",
+          "url": "https://www.taiwanpay.com.tw/fisc-tpay/news/event/01KXFV9GFDCS1EGK6MNEPD06FN",
+          "fetch_url": "https://www.taiwanpay.com.tw/tpay/v1.0.0/950/taiwanpayfapi/TF02/TF020110",
+          "adapter": "taiwanpay_detail",
+          "external_id": "01KXFV9GFDCS1EGK6MNEPD06FN",
+          "title": "台灣Pay揪OK 筆筆10%回饋"
+        }
+      ]
+    },
+    {
+      "id": "ipassmoney",
+      "name": "一卡通 MONEY",
+      "official_domains": ["i-pass.com.tw", "web.i-pass.com.tw"],
+      "public_status_coverage": "優惠列表與活動詳情；列表標題中的額滿註記也會隨詳情擷取",
+      "sources": [
+        {
+          "name": "一卡通優惠活動",
+          "role": "mixed_listing",
+          "url": "https://web.i-pass.com.tw/Preferential?type=0",
+          "link_patterns": ["/Preferential/(?:Detail/)?[0-9A-Za-z_-]+", "/Preferential/[^?#]+\\?"],
+          "max_links": 20
+        },
+        {
+          "name": "一卡通官方公告",
+          "role": "announcement_listing",
+          "url": "https://www.i-pass.com.tw/News/Notice",
+          "link_patterns": ["/News/Detail/", "/News/Notice/", "[?&](?:id|newsId)="],
+          "max_links": 15
+        }
+      ],
+      "seeds": []
+    },
+    {
+      "id": "icashpay",
+      "name": "icash Pay",
+      "official_domains": ["icashpay.com.tw"],
+      "public_status_coverage": "活動專頁與官方公告訊息",
+      "sources": [
+        {
+          "name": "icash Pay 活動列表",
+          "role": "activity_listing",
+          "url": "https://www.icashpay.com.tw/advertMessage/index",
+          "link_patterns": ["/event/", "/advertMessage/view/id/"],
+          "max_links": 16
+        },
+        {
+          "name": "icash Pay 最新消息",
+          "role": "announcement_listing",
+          "url": "https://www.icashpay.com.tw/news",
+          "link_patterns": ["/news/", "/advertMessage/view/id/"],
+          "max_links": 15
+        }
+      ],
+      "seeds": [
+        {
+          "name": "icash Pay 會員優惠入口",
+          "url": "https://www.icashpay.com.tw/event/memberbenefits/"
+        }
+      ]
+    },
+    {
+      "id": "pluspay",
+      "name": "全盈+PAY",
+      "official_domains": ["pluspay.com.tw", "event2023.pluspay.com.tw"],
+      "public_status_coverage": "官網活動頁；若活動另指定 App 或合作通路公告，會標示覆蓋缺口",
+      "sources": [
+        {
+          "name": "全盈+PAY 活動列表",
+          "role": "activity_listing",
+          "url": "https://event2023.pluspay.com.tw/",
+          "link_patterns": ["event2023\\.pluspay\\.com\\.tw/[^#?]+", "/Content/Event/"],
+          "max_links": 16
+        },
+        {
+          "name": "全盈+PAY 最新消息",
+          "role": "announcement_listing",
+          "url": "https://www.pluspay.com.tw/News/",
+          "link_patterns": ["/News/[^#?]+", "/Content/Event/"],
+          "max_links": 15
+        }
+      ],
+      "seeds": [
+        {
+          "name": "全盈+PAY 活動頁樣本",
+          "url": "https://www.pluspay.com.tw/Content/Event/PayPay.html"
+        }
+      ]
+    },
+    {
+      "id": "gamapay",
+      "name": "橘子支付",
+      "official_domains": ["gamapay.com.tw"],
+      "public_status_coverage": "官網最新消息同時含活動與額滿公告，採混合掃描",
+      "sources": [
+        {
+          "name": "橘子支付最新消息",
+          "role": "mixed_listing",
+          "url": "https://www.gamapay.com.tw/news_list.html",
+          "link_patterns": ["news\\.html\\?id=\\d+"],
+          "max_links": 20
+        }
+      ],
+      "seeds": [
+        {
+          "name": "橘子支付額滿公告樣本",
+          "url": "https://www.gamapay.com.tw/news.html?id=2646",
+          "title": "橘子支付官方額滿公告"
+        }
+      ]
+    },
+    {
+      "id": "jkopay",
+      "name": "街口支付",
+      "official_domains": ["jkopay.com", "mkt.jkopay.com"],
+      "public_status_coverage": "官方行銷活動頁；公開列表結構若變更會列為來源失敗",
+      "sources": [
+        {
+          "name": "街口支付活動入口",
+          "role": "activity_listing",
+          "url": "https://mkt.jkopay.com/",
+          "link_patterns": ["mkt\\.jkopay\\.com/(?:zh-TW/)?campaign/", "/campaign/"],
+          "max_links": 14
+        },
+        {
+          "name": "街口支付官方公告",
+          "role": "announcement_listing",
+          "url": "https://www.jkopay.com/application/announce",
+          "link_patterns": ["/application/announce/", "[?&](?:id|announceId)="],
+          "max_links": 15
+        }
+      ],
+      "seeds": [
+        {
+          "name": "街口支付活動頁樣本",
+          "url": "https://mkt.jkopay.com/zh-TW/campaign/jkopayebill"
+        }
+      ]
+    },
+    {
+      "id": "opay",
+      "name": "歐付寶",
+      "official_domains": ["opay.tw"],
+      "public_status_coverage": "官方公告頁；活動與額滿通知採混合掃描",
+      "sources": [
+        {
+          "name": "歐付寶活動入口",
+          "role": "mixed_listing",
+          "url": "https://www.opay.tw/Banner/Event",
+          "link_patterns": ["/Banner/Event/", "/announcement/DetailAnnouncement\\?nID=\\d+"],
+          "max_links": 20
+        },
+        {
+          "name": "歐付寶完整公告",
+          "role": "announcement_listing",
+          "url": "https://www.opay.tw/announcement/moreannouncement",
+          "link_patterns": ["/announcement/DetailAnnouncement\\?nID=\\d+"],
+          "max_links": 20
+        }
+      ],
+      "seeds": [
+        {
+          "name": "歐付寶公告樣本",
+          "url": "https://www.opay.tw/announcement/DetailAnnouncement?nID=4379"
+        }
+      ]
+    },
+    {
+      "id": "ezpay",
+      "name": "簡單行動支付 ezPay",
+      "official_domains": ["ezpay.com.tw"],
+      "public_status_coverage": "官網服務與公告入口；無活動日期時送 AI／人工複核",
+      "sources": [
+        {
+          "name": "ezPay 最新消息",
+          "role": "mixed_listing",
+          "url": "https://www.ezpay.com.tw/info/Announcement/lastest_news/person",
+          "link_patterns": ["/info/Announcement/[^?#]+(?:detail|content)", "[?&](?:id|nID)=\\d+", "/event/"],
+          "max_links": 14
+        }
+      ],
+      "seeds": []
+    },
+    {
+      "id": "linepaymoney",
+      "name": "LINE Pay Money",
+      "official_domains": ["pay.line.me"],
+      "public_status_coverage": "官方入口可能為動態頁面；無法公開解析時列入覆蓋缺口",
+      "sources": [
+        {
+          "name": "LINE Pay Money 官方入口",
+          "role": "activity_listing",
+          "url": "https://pay.line.me/portal/tw/about/promotions?progressType=ONGOING",
+          "link_patterns": ["/promotions/", "/campaign/", "/event/"],
+          "max_links": 14
+        }
+      ],
+      "seeds": []
+    }
+  ]
+}

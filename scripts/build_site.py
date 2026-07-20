@@ -7,10 +7,10 @@ import json
 import re
 import shutil
 import sys
-from datetime import date, datetime
+from datetime import date, datetime, timedelta
 from pathlib import Path
 from typing import Any
-from urllib.parse import urlsplit
+from urllib.parse import urlencode, urlsplit
 from zoneinfo import ZoneInfo
 
 
@@ -47,6 +47,7 @@ CONDITION_SECTION_RE = re.compile(
     r"(?:^|\s)(title|description|location|content|reminder|restrictions):\s*",
     re.IGNORECASE,
 )
+GOOGLE_CALENDAR_URL = "https://calendar.google.com/calendar/render"
 
 
 def _load_json(path: Path, default: Any = None) -> Any:
@@ -71,6 +72,46 @@ def _date_value(value: Any) -> date | None:
         return date.fromisoformat(value)
     except ValueError:
         return None
+
+
+def _google_calendar_url(activity: dict[str, Any]) -> str:
+    start = _date_value(activity.get("start_date"))
+    end = _date_value(activity.get("end_date"))
+    title = str(activity.get("title", "")).strip()
+    if not start or not end or end < start or not title:
+        return ""
+
+    provider = str(activity.get("provider_name", "")).strip()
+    insights = activity.get("insights", {})
+    insight_summary = insights.get("human_summary", "") if isinstance(insights, dict) else ""
+    summary = str(
+        activity.get("editorial_summary")
+        or insight_summary
+        or activity.get("conditions_summary")
+        or ""
+    )
+    summary = re.sub(r"\s+", " ", summary).strip()[:700]
+
+    details: list[str] = []
+    if provider:
+        details.append(f"支付業者：{provider}")
+    if summary:
+        details.append(summary)
+
+    official_url = str(activity.get("url", "")).strip()
+    parsed_official_url = urlsplit(official_url)
+    if parsed_official_url.scheme == "https" and parsed_official_url.hostname:
+        details.append(f"官方活動頁：{official_url}")
+    details.append("優惠名額與條件可能調整，實際內容以官方公告為準。")
+
+    params = {
+        "action": "TEMPLATE",
+        "text": title,
+        "dates": f"{start:%Y%m%d}/{end + timedelta(days=1):%Y%m%d}",
+        "details": "\n\n".join(details),
+        "ctz": "Asia/Taipei",
+    }
+    return f"{GOOGLE_CALENDAR_URL}?{urlencode(params)}"
 
 
 def _conditions_display(title: str, value: Any) -> list[str]:
@@ -299,11 +340,13 @@ def build(report_path: Path, output_dir: Path, supplement_path: Path) -> Path:
     }
     for activity in activities:
         highlight = highlights_by_url.get(str(activity.get("url", "")))
-        if not highlight:
-            continue
-        activity["is_featured"] = True
-        activity["highlight_kind"] = str(highlight.get("kind", "ai_pick"))
-        activity["editorial_summary"] = str(highlight.get("summary", ""))[:300]
+        if highlight:
+            activity["is_featured"] = True
+            activity["highlight_kind"] = str(highlight.get("kind", "ai_pick"))
+            activity["editorial_summary"] = str(highlight.get("summary", ""))[:300]
+        calendar_url = _google_calendar_url(activity)
+        if calendar_url:
+            activity["google_calendar_url"] = calendar_url
     coverage = report.get("run", {}).get("coverage", {})
     failures = report.get("source_failures", [])
     gaps = report.get("coverage_gaps", [])

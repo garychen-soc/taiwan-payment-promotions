@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "generated_at": "2026-07-21T01:58:27.889516+08:00",
-  "build_at": "2026-07-21T02:50:41.187610+08:00",
+  "build_at": "2026-07-21T03:11:28.402780+08:00",
   "timezone": "Asia/Taipei",
   "headline": "新戶首刷 100%、NET 隨機返現與 7/23 即將開始活動",
   "summary": {
@@ -223,7 +223,8 @@
       },
       "is_featured": true,
       "highlight_kind": "sold_out",
-      "editorial_summary": "官方活動頁已直接標示活動額滿；原優惠為指定商圈 QR Code 消費享 20% 現金回饋。"
+      "editorial_summary": "官方活動頁已直接標示活動額滿；原優惠為指定商圈 QR Code 消費享 20% 現金回饋。",
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%28%E6%B4%BB%E5%8B%95%E9%A1%8D%E6%BB%BF%29%E4%B8%AD%E5%8E%9Fx%E5%85%83%E6%99%BA%E5%A4%A7%E5%AD%B8%E7%94%9F%E6%B4%BB%E5%9C%88+Pay%E4%BD%A0%E9%81%8A%E5%A3%A2%E4%BA%AB20%25%E5%9B%9E%E9%A5%8B&dates=20260301%2F20261001&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%8F%B0%E7%81%A3+Pay%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%E5%B7%B2%E7%9B%B4%E6%8E%A5%E6%A8%99%E7%A4%BA%E6%B4%BB%E5%8B%95%E9%A1%8D%E6%BB%BF%EF%BC%9B%E5%8E%9F%E5%84%AA%E6%83%A0%E7%82%BA%E6%8C%87%E5%AE%9A%E5%95%86%E5%9C%88+QR+Code+%E6%B6%88%E8%B2%BB%E4%BA%AB+20%25+%E7%8F%BE%E9%87%91%E5%9B%9E%E9%A5%8B%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fwww.taiwanpay.com.tw%2Ffisc-tpay%2Fnews%2Fevent%2F01KFN18HDDRP0Z953CB1MK53S7%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     },
     {
       "provider_id": "taiwanpay",
@@ -272,7 +273,8 @@
       },
       "is_featured": true,
       "highlight_kind": "sold_out",
-      "editorial_summary": "官方活動頁已直接標示活動額滿；原優惠為嘟嘟房使用台灣 Pay 付款，每筆不限金額回饋 10 元。"
+      "editorial_summary": "官方活動頁已直接標示活動額滿；原優惠為嘟嘟房使用台灣 Pay 付款，每筆不限金額回饋 10 元。",
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%28%E6%B4%BB%E5%8B%95%E9%A1%8D%E6%BB%BF%29%E5%98%9F%E5%98%9F%E6%88%BF%E5%81%9C%E8%BB%8A%E5%B0%B1%E7%94%A8%E5%8F%B0%E7%81%A3Pay%EF%BC%8C%E6%AF%8F%E7%AD%86%E4%BA%A4%E6%98%93%E4%B8%8D%E9%99%90%E9%87%91%E9%A1%8D%E4%BA%AB10%E5%85%83%E5%9B%9E%E9%A5%8B&dates=20260315%2F20261001&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%8F%B0%E7%81%A3+Pay%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%E5%B7%B2%E7%9B%B4%E6%8E%A5%E6%A8%99%E7%A4%BA%E6%B4%BB%E5%8B%95%E9%A1%8D%E6%BB%BF%EF%BC%9B%E5%8E%9F%E5%84%AA%E6%83%A0%E7%82%BA%E5%98%9F%E5%98%9F%E6%88%BF%E4%BD%BF%E7%94%A8%E5%8F%B0%E7%81%A3+Pay+%E4%BB%98%E6%AC%BE%EF%BC%8C%E6%AF%8F%E7%AD%86%E4%B8%8D%E9%99%90%E9%87%91%E9%A1%8D%E5%9B%9E%E9%A5%8B+10+%E5%85%83%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fwww.taiwanpay.com.tw%2Ffisc-tpay%2Fnews%2Fevent%2F01KFN19NNF700RDTZQHJ59NW4S%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     },
     {
       "provider_id": "taiwanpay",
@@ -320,7 +322,8 @@
           "已額滿"
         ],
         "human_summary": "最高 20% 回饋，屬高回饋活動；官方資訊顯示活動已額滿。"
-      }
+      },
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%EF%BC%88%E6%B4%BB%E5%8B%95%E9%A1%8D%E6%BB%BF%EF%BC%89%E5%85%89%E5%BE%A9%E5%B8%82%E5%A0%B4%E8%B2%B7%E5%A5%BD%E6%96%99%EF%BC%81%E5%8F%B0%E7%81%A3Pay%E4%BA%AB20%25%E5%9B%9E%E9%A5%8B&dates=20260501%2F20261001&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%8F%B0%E7%81%A3+Pay%0A%0A%E6%9C%80%E9%AB%98+20%25+%E5%9B%9E%E9%A5%8B%EF%BC%8C%E5%B1%AC%E9%AB%98%E5%9B%9E%E9%A5%8B%E6%B4%BB%E5%8B%95%EF%BC%9B%E5%AE%98%E6%96%B9%E8%B3%87%E8%A8%8A%E9%A1%AF%E7%A4%BA%E6%B4%BB%E5%8B%95%E5%B7%B2%E9%A1%8D%E6%BB%BF%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fwww.taiwanpay.com.tw%2Ffisc-tpay%2Fnews%2Fevent%2F01KFN0QXVGRZ2TJ1YH7GT22FKC%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     },
     {
       "provider_id": "taiwanpay",
@@ -366,7 +369,8 @@
           "已額滿"
         ],
         "human_summary": "最高 1.5% 回饋；官方資訊顯示活動已額滿。"
-      }
+      },
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%EF%BC%88%E6%B4%BB%E5%8B%95%E9%A1%8D%E6%BB%BF%EF%BC%89%E6%97%85%E9%80%94%E5%B0%B1%E8%A6%81Pay%E8%91%97%E8%B5%B0%EF%BC%8C120%E5%85%83%E5%8F%B0%E9%90%B5%E4%BE%BF%E7%95%B68%E6%8A%98%E7%BE%8E%E5%91%B3%E5%88%B0%E6%89%8B%EF%BC%81&dates=20260518%2F20260818&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%8F%B0%E7%81%A3+Pay%0A%0A%E6%9C%80%E9%AB%98+1.5%25+%E5%9B%9E%E9%A5%8B%EF%BC%9B%E5%AE%98%E6%96%B9%E8%B3%87%E8%A8%8A%E9%A1%AF%E7%A4%BA%E6%B4%BB%E5%8B%95%E5%B7%B2%E9%A1%8D%E6%BB%BF%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fwww.taiwanpay.com.tw%2Ffisc-tpay%2Fnews%2Fevent%2F01KFN0THH8GDH9NR1BH563328X%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     },
     {
       "provider_id": "taiwanpay",
@@ -425,7 +429,8 @@
           "部分額滿"
         ],
         "human_summary": "最高 10% 回饋，屬高回饋活動；部分期別或子活動已額滿。"
-      }
+      },
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=TWQR%E8%8A%B1%E7%81%AB%E7%8B%82%E6%AD%A1Pay%E4%BA%AB10%25%E5%9B%9E%E9%A5%8B%E3%80%90%E6%AF%8F%E6%9C%88%E9%A1%8D%E6%BB%BF%E8%A9%B3%E6%B4%BB%E5%8B%95%E6%8F%90%E9%86%92%E3%80%91&dates=20260601%2F20260901&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%8F%B0%E7%81%A3+Pay%0A%0A%E6%9C%80%E9%AB%98+10%25+%E5%9B%9E%E9%A5%8B%EF%BC%8C%E5%B1%AC%E9%AB%98%E5%9B%9E%E9%A5%8B%E6%B4%BB%E5%8B%95%EF%BC%9B%E9%83%A8%E5%88%86%E6%9C%9F%E5%88%A5%E6%88%96%E5%AD%90%E6%B4%BB%E5%8B%95%E5%B7%B2%E9%A1%8D%E6%BB%BF%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fwww.taiwanpay.com.tw%2Ffisc-tpay%2Fnews%2Fevent%2F01KFMZ6Q4RH65GH90WT4GJ1HZM%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     },
     {
       "provider_id": "taiwanpay",
@@ -473,7 +478,8 @@
           "已額滿"
         ],
         "human_summary": "最高 20% 回饋，屬高回饋活動；官方資訊顯示活動已額滿。"
-      }
+      },
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%EF%BC%88%E6%B4%BB%E5%8B%95%E9%A1%8D%E6%BB%BF%EF%BC%89%E5%AF%B6%E5%B3%B6%E7%9C%BC%E9%8F%A1+x+%E5%8F%B0%E7%81%A3PAY+%E5%AF%B5EYE%E4%BA%AB%E5%9B%9E%E9%A5%8B&dates=20260601%2F20260901&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%8F%B0%E7%81%A3+Pay%0A%0A%E6%9C%80%E9%AB%98+20%25+%E5%9B%9E%E9%A5%8B%EF%BC%8C%E5%B1%AC%E9%AB%98%E5%9B%9E%E9%A5%8B%E6%B4%BB%E5%8B%95%EF%BC%9B%E5%AE%98%E6%96%B9%E8%B3%87%E8%A8%8A%E9%A1%AF%E7%A4%BA%E6%B4%BB%E5%8B%95%E5%B7%B2%E9%A1%8D%E6%BB%BF%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fwww.taiwanpay.com.tw%2Ffisc-tpay%2Fnews%2Fevent%2F01KFMZ58WNF9BPT0HZBEHRFQ6D%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     },
     {
       "provider_id": "taiwanpay",
@@ -520,7 +526,8 @@
           "已額滿"
         ],
         "human_summary": "最高 20% 回饋，屬高回饋活動；官方資訊顯示活動已額滿。"
-      }
+      },
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%EF%BC%88%E6%B4%BB%E5%8B%95%E9%A1%8D%E6%BB%BF%EF%BC%89%E5%A5%BD%E7%94%9F%E6%B4%BB%E9%80%99%E6%A8%A3Pay+%E8%AA%A0%E5%93%81%E7%94%9F%E6%B4%BB%E5%8F%B0%E7%81%A3Pay%E4%BA%AB20%25&dates=20260604%2F20260901&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%8F%B0%E7%81%A3+Pay%0A%0A%E6%9C%80%E9%AB%98+20%25+%E5%9B%9E%E9%A5%8B%EF%BC%8C%E5%B1%AC%E9%AB%98%E5%9B%9E%E9%A5%8B%E6%B4%BB%E5%8B%95%EF%BC%9B%E5%AE%98%E6%96%B9%E8%B3%87%E8%A8%8A%E9%A1%AF%E7%A4%BA%E6%B4%BB%E5%8B%95%E5%B7%B2%E9%A1%8D%E6%BB%BF%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fwww.taiwanpay.com.tw%2Ffisc-tpay%2Fnews%2Fevent%2F01KFN0KT8V36PGVDW4ZY0PBYNR%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     },
     {
       "provider_id": "icashpay",
@@ -571,7 +578,8 @@
           "部分額滿"
         ],
         "human_summary": "最高 11% 回饋，屬高回饋活動；部分期別或子活動已額滿。"
-      }
+      },
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=icash+Pay%E8%B6%85%E5%BC%B7%E6%94%AF%E4%BB%98+%E7%B6%81uniopen%E8%81%AF%E5%90%8D%E5%8D%A1%E6%BB%BF%E9%A1%8D%E6%9C%80%E9%AB%98%E5%9B%9E%E9%A5%8B11%25&dates=20260701%2F20260901&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9Aicash+Pay%0A%0A%E6%9C%80%E9%AB%98+11%25+%E5%9B%9E%E9%A5%8B%EF%BC%8C%E5%B1%AC%E9%AB%98%E5%9B%9E%E9%A5%8B%E6%B4%BB%E5%8B%95%EF%BC%9B%E9%83%A8%E5%88%86%E6%9C%9F%E5%88%A5%E6%88%96%E5%AD%90%E6%B4%BB%E5%8B%95%E5%B7%B2%E9%A1%8D%E6%BB%BF%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fwww.icashpay.com.tw%2FadvertMessage%2Fview%2Fid%2F2371%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     },
     {
       "provider_id": "icashpay",
@@ -616,7 +624,8 @@
           "已額滿"
         ],
         "human_summary": "最高 52% 回饋，屬高回饋活動；官方資訊顯示活動已額滿。"
-      }
+      },
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E6%9A%91%E5%81%87%E9%81%8A%E9%9F%93%E6%9C%80%E9%80%9FPAY+TWQR%E6%9C%80%E9%AB%98%E5%9B%9E%E9%A5%8B52%25&dates=20260701%2F20260901&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9Aicash+Pay%0A%0A%E6%9C%80%E9%AB%98+52%25+%E5%9B%9E%E9%A5%8B%EF%BC%8C%E5%B1%AC%E9%AB%98%E5%9B%9E%E9%A5%8B%E6%B4%BB%E5%8B%95%EF%BC%9B%E5%AE%98%E6%96%B9%E8%B3%87%E8%A8%8A%E9%A1%AF%E7%A4%BA%E6%B4%BB%E5%8B%95%E5%B7%B2%E9%A1%8D%E6%BB%BF%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fwww.icashpay.com.tw%2FadvertMessage%2Fview%2Fid%2F2372%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     },
     {
       "provider_id": "ipassmoney",
@@ -668,7 +677,8 @@
           "部分額滿"
         ],
         "human_summary": "最高 10% 回饋，屬高回饋活動；固定回饋最高 600 元，屬高額回饋；部分期別或子活動已額滿。"
-      }
+      },
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E3%80%90iPASS+MONEY%E3%80%91%E9%80%A3%E7%B5%90%E9%8A%80%E8%A1%8C%E5%B8%B3%E6%88%B6%EF%BC%8F%E4%BF%A1%E7%94%A8%E5%8D%A1%E4%BA%AB%E5%84%AA%E6%83%A0%EF%BC%81&dates=20260701%2F20270101&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E4%B8%80%E5%8D%A1%E9%80%9A+MONEY%0A%0A%E6%9C%80%E9%AB%98+10%25+%E5%9B%9E%E9%A5%8B%EF%BC%8C%E5%B1%AC%E9%AB%98%E5%9B%9E%E9%A5%8B%E6%B4%BB%E5%8B%95%EF%BC%9B%E5%9B%BA%E5%AE%9A%E5%9B%9E%E9%A5%8B%E6%9C%80%E9%AB%98+600+%E5%85%83%EF%BC%8C%E5%B1%AC%E9%AB%98%E9%A1%8D%E5%9B%9E%E9%A5%8B%EF%BC%9B%E9%83%A8%E5%88%86%E6%9C%9F%E5%88%A5%E6%88%96%E5%AD%90%E6%B4%BB%E5%8B%95%E5%B7%B2%E9%A1%8D%E6%BB%BF%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fweb.i-pass.com.tw%2FPreferential%2FDetail%2FGI2TSNQHW7ZKA64RZbVj%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     },
     {
       "provider_id": "taiwanpay",
@@ -714,7 +724,8 @@
           "已額滿"
         ],
         "human_summary": "最高 10% 回饋，屬高回饋活動；官方資訊顯示活動已額滿。"
-      }
+      },
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%28%E6%B4%BB%E5%8B%95%E9%A1%8D%E6%BB%BF%29TWQR%E9%87%91%E9%96%80%E9%A2%A8%E8%8F%AFPay%E4%BA%AB10%25%E5%9B%9E%E9%A5%8B&dates=20260701%2F20261201&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%8F%B0%E7%81%A3+Pay%0A%0A%E6%9C%80%E9%AB%98+10%25+%E5%9B%9E%E9%A5%8B%EF%BC%8C%E5%B1%AC%E9%AB%98%E5%9B%9E%E9%A5%8B%E6%B4%BB%E5%8B%95%EF%BC%9B%E5%AE%98%E6%96%B9%E8%B3%87%E8%A8%8A%E9%A1%AF%E7%A4%BA%E6%B4%BB%E5%8B%95%E5%B7%B2%E9%A1%8D%E6%BB%BF%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fwww.taiwanpay.com.tw%2Ffisc-tpay%2Fnews%2Fevent%2F01KTBE1FX96S45KZXBXBKPBWF2%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     },
     {
       "provider_id": "taiwanpay",
@@ -766,7 +777,8 @@
           "部分額滿"
         ],
         "human_summary": "最高 20% 回饋，屬高回饋活動；部分期別或子活動已額滿。"
-      }
+      },
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E6%9A%91%E5%81%87%E9%81%8A%E9%9F%93%E6%9C%80%E9%80%9FPay+TWQR%E7%8D%A8%E4%BA%AB20%25%E5%9B%9E%E9%A5%8B&dates=20260701%2F20260901&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%8F%B0%E7%81%A3+Pay%0A%0A%E6%9C%80%E9%AB%98+20%25+%E5%9B%9E%E9%A5%8B%EF%BC%8C%E5%B1%AC%E9%AB%98%E5%9B%9E%E9%A5%8B%E6%B4%BB%E5%8B%95%EF%BC%9B%E9%83%A8%E5%88%86%E6%9C%9F%E5%88%A5%E6%88%96%E5%AD%90%E6%B4%BB%E5%8B%95%E5%B7%B2%E9%A1%8D%E6%BB%BF%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fwww.taiwanpay.com.tw%2Ffisc-tpay%2Fnews%2Fevent%2F01KFN0N8JJXBPDSVJJ6Q1XH7AJ%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     },
     {
       "provider_id": "easywallet",
@@ -818,7 +830,8 @@
           "部分額滿"
         ],
         "human_summary": "最高 35% 回饋，屬高回饋活動；部分期別或子活動已額滿。"
-      }
+      },
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=2026%E6%82%A0%E9%81%8A%E4%BB%98%E8%BF%BA%E5%A4%9C%E5%B8%82%E6%AF%8F%E9%80%B1%E4%BA%94%E5%85%AD%E6%97%A5%E6%9C%80%E9%AB%98%E5%9B%9E%E9%A5%8B35%25-%E6%82%A0%E9%81%8A%E5%8D%A1%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8&dates=20260701%2F20260901&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E6%82%A0%E9%81%8A%E4%BB%98%0A%0A%E6%9C%80%E9%AB%98+35%25+%E5%9B%9E%E9%A5%8B%EF%BC%8C%E5%B1%AC%E9%AB%98%E5%9B%9E%E9%A5%8B%E6%B4%BB%E5%8B%95%EF%BC%9B%E9%83%A8%E5%88%86%E6%9C%9F%E5%88%A5%E6%88%96%E5%AD%90%E6%B4%BB%E5%8B%95%E5%B7%B2%E9%A1%8D%E6%BB%BF%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fwww.easycard.com.tw%2Foffer%3Fcls%3D1506473503%2C1506473490%2C%26id%3D1781689964%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     },
     {
       "provider_id": "easywallet",
@@ -871,7 +884,8 @@
           "部分額滿"
         ],
         "human_summary": "最高 25% 回饋，屬高回饋活動；固定回饋最高 100 元，屬高額回饋；部分期別或子活動已額滿。"
-      }
+      },
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=91APP%E5%90%88%E4%BD%9C%E5%93%81%E7%89%8C%E5%AE%98%E7%B6%B2%E8%B3%BC%E7%89%A9&dates=20260701%2F20261001&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E6%82%A0%E9%81%8A%E4%BB%98%0A%0A%E6%9C%80%E9%AB%98+25%25+%E5%9B%9E%E9%A5%8B%EF%BC%8C%E5%B1%AC%E9%AB%98%E5%9B%9E%E9%A5%8B%E6%B4%BB%E5%8B%95%EF%BC%9B%E5%9B%BA%E5%AE%9A%E5%9B%9E%E9%A5%8B%E6%9C%80%E9%AB%98+100+%E5%85%83%EF%BC%8C%E5%B1%AC%E9%AB%98%E9%A1%8D%E5%9B%9E%E9%A5%8B%EF%BC%9B%E9%83%A8%E5%88%86%E6%9C%9F%E5%88%A5%E6%88%96%E5%AD%90%E6%B4%BB%E5%8B%95%E5%B7%B2%E9%A1%8D%E6%BB%BF%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fyax.easycard.com.tw%2Foffer%3Fcls%3D1506473519%2C1506473490%2C1506473503%2C%26id%3D1781071557%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     },
     {
       "provider_id": "taiwanpay",
@@ -913,7 +927,8 @@
       },
       "is_featured": true,
       "highlight_kind": "upcoming",
-      "editorial_summary": "2026/7/23 至 9/30 於 OK 超商出示台灣 Pay 付款條碼，單筆不限金額享 10% 現金回饋；每一帳號或卡號最高 100 元。"
+      "editorial_summary": "2026/7/23 至 9/30 於 OK 超商出示台灣 Pay 付款條碼，單筆不限金額享 10% 現金回饋；每一帳號或卡號最高 100 元。",
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E5%8F%B0%E7%81%A3Pay%E6%8F%AAOK+%E7%AD%86%E7%AD%8610%25%E5%9B%9E%E9%A5%8B&dates=20260723%2F20261001&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%8F%B0%E7%81%A3+Pay%0A%0A2026%2F7%2F23+%E8%87%B3+9%2F30+%E6%96%BC+OK+%E8%B6%85%E5%95%86%E5%87%BA%E7%A4%BA%E5%8F%B0%E7%81%A3+Pay+%E4%BB%98%E6%AC%BE%E6%A2%9D%E7%A2%BC%EF%BC%8C%E5%96%AE%E7%AD%86%E4%B8%8D%E9%99%90%E9%87%91%E9%A1%8D%E4%BA%AB+10%25+%E7%8F%BE%E9%87%91%E5%9B%9E%E9%A5%8B%EF%BC%9B%E6%AF%8F%E4%B8%80%E5%B8%B3%E8%99%9F%E6%88%96%E5%8D%A1%E8%99%9F%E6%9C%80%E9%AB%98+100+%E5%85%83%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fwww.taiwanpay.com.tw%2Ffisc-tpay%2Fnews%2Fevent%2F01KXFV9GFDCS1EGK6MNEPD06FN%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     },
     {
       "provider_id": "taiwanpay",
@@ -960,7 +975,8 @@
           "需至 App 確認"
         ],
         "human_summary": "最高 10% 回饋，屬高回饋活動；額滿狀態需至 App 確認。"
-      }
+      },
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E5%8D%81%E5%A4%A7%E5%95%86%E5%9C%88%E6%8E%83%E5%85%A8%E6%94%AF%E4%BB%98TWQR%E5%96%AE%E7%AD%86%E4%B8%8D%E9%99%90%E9%87%91%E9%A1%8D%E4%BA%AB10%25%E5%9B%9E%E9%A5%8B%EF%BC%81&dates=20260415%2F20270101&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%8F%B0%E7%81%A3+Pay%0A%0A%E6%9C%80%E9%AB%98+10%25+%E5%9B%9E%E9%A5%8B%EF%BC%8C%E5%B1%AC%E9%AB%98%E5%9B%9E%E9%A5%8B%E6%B4%BB%E5%8B%95%EF%BC%9B%E9%A1%8D%E6%BB%BF%E7%8B%80%E6%85%8B%E9%9C%80%E8%87%B3+App+%E7%A2%BA%E8%AA%8D%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fwww.taiwanpay.com.tw%2Ffisc-tpay%2Fnews%2Fevent%2F01KPAX7T490S21W51F01QRABCJ%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     },
     {
       "provider_id": "ipassmoney",
@@ -1006,7 +1022,8 @@
           "需至 App 確認"
         ],
         "human_summary": "最高 10% 回饋，屬高回饋活動；固定回饋最高 600 元，屬高額回饋；額滿狀態需至 App 確認。"
-      }
+      },
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E3%80%90%E6%91%A9%E6%96%AF%E6%BC%A2%E5%A0%A1%E3%80%91%E7%94%A8+iPASS+MONEY+%E7%B4%AF%E7%A9%8D%E6%B6%88%E8%B2%BB%E6%BB%BF+150+%E5%85%83%E9%80%81+50+%E5%85%83%E5%84%AA%E6%83%A0%E5%88%B8%EF%BC%81&dates=20260701%2F20260901&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E4%B8%80%E5%8D%A1%E9%80%9A+MONEY%0A%0A%E6%9C%80%E9%AB%98+10%25+%E5%9B%9E%E9%A5%8B%EF%BC%8C%E5%B1%AC%E9%AB%98%E5%9B%9E%E9%A5%8B%E6%B4%BB%E5%8B%95%EF%BC%9B%E5%9B%BA%E5%AE%9A%E5%9B%9E%E9%A5%8B%E6%9C%80%E9%AB%98+600+%E5%85%83%EF%BC%8C%E5%B1%AC%E9%AB%98%E9%A1%8D%E5%9B%9E%E9%A5%8B%EF%BC%9B%E9%A1%8D%E6%BB%BF%E7%8B%80%E6%85%8B%E9%9C%80%E8%87%B3+App+%E7%A2%BA%E8%AA%8D%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fweb.i-pass.com.tw%2FPreferential%2FDetail%2FGMZTMMIYIYLJ764InoUT%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     },
     {
       "provider_id": "fullpay",
@@ -1054,7 +1071,8 @@
           "需至 App 確認"
         ],
         "human_summary": "最高 30% 回饋，屬高回饋活動；額滿狀態需至 App 確認。"
-      }
+      },
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E5%BB%B6%E4%B8%89%E5%A4%9C%E5%B8%82%EF%BD%9C%E5%96%AE%E7%AD%86%E4%B8%8D%E9%99%90%E9%87%91%E9%A1%8D%E4%BA%AB30%25%E5%9B%9E%E9%A5%8B%EF%BC%8C%E6%8C%87%E5%AE%9A%E9%8A%80%E8%A1%8C%E5%8A%A0%E7%A2%BC%E6%9C%80%E9%AB%985%25%EF%BC%81&dates=20260701%2F20260901&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%85%A8%E6%94%AF%E4%BB%98%EF%BC%8FPX+Pay+Plus%0A%0A%E6%9C%80%E9%AB%98+30%25+%E5%9B%9E%E9%A5%8B%EF%BC%8C%E5%B1%AC%E9%AB%98%E5%9B%9E%E9%A5%8B%E6%B4%BB%E5%8B%95%EF%BC%9B%E9%A1%8D%E6%BB%BF%E7%8B%80%E6%85%8B%E9%9C%80%E8%87%B3+App+%E7%A2%BA%E8%AA%8D%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fmarketing.pxpayplus.com%2Fpxplus_marketing_page%2Factivity_content_page%3FEventId%3D89%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     },
     {
       "provider_id": "ipassmoney",
@@ -1099,7 +1117,8 @@
           "需至 App 確認"
         ],
         "human_summary": "最高 10% 回饋，屬高回饋活動；額滿狀態需至 App 確認。"
-      }
+      },
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E3%80%90%E8%AA%A0%E5%93%81%E7%94%9F%E6%B4%BB%E3%80%91%E7%94%A8+iPASS+MONEY+APP+%2F+%E4%B8%80%E5%8D%A1%E9%80%9A%E8%A8%98%E5%90%8D%E5%8D%A1%E4%BB%98%E6%AC%BE%E6%A8%82%E4%BA%AB+10%25+%E5%9B%9E%E9%A5%8B%EF%BC%81&dates=20260717%2F20260918&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E4%B8%80%E5%8D%A1%E9%80%9A+MONEY%0A%0A%E6%9C%80%E9%AB%98+10%25+%E5%9B%9E%E9%A5%8B%EF%BC%8C%E5%B1%AC%E9%AB%98%E5%9B%9E%E9%A5%8B%E6%B4%BB%E5%8B%95%EF%BC%9B%E9%A1%8D%E6%BB%BF%E7%8B%80%E6%85%8B%E9%9C%80%E8%87%B3+App+%E7%A2%BA%E8%AA%8D%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fweb.i-pass.com.tw%2FPreferential%2FDetail%2FGMZTQMYLKDINQ645DEa9%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     },
     {
       "provider_id": "taiwanpay",
@@ -1133,7 +1152,8 @@
         "ends_in_days": 163,
         "insight_tags": [],
         "human_summary": "尚未辨識出明確回饋幅度，請查看官方活動辦法。"
-      }
+      },
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E5%8F%B0%E7%81%A3Pay%E8%B7%A8%E8%A1%8C%E8%BD%89%E5%B8%B3%E5%85%8D%E6%89%8B%E7%BA%8C%E8%B2%BB&dates=20260101%2F20270101&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%8F%B0%E7%81%A3+Pay%0A%0A%E5%B0%9A%E6%9C%AA%E8%BE%A8%E8%AD%98%E5%87%BA%E6%98%8E%E7%A2%BA%E5%9B%9E%E9%A5%8B%E5%B9%85%E5%BA%A6%EF%BC%8C%E8%AB%8B%E6%9F%A5%E7%9C%8B%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E8%BE%A6%E6%B3%95%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fwww.taiwanpay.com.tw%2Ffisc-tpay%2Fnews%2Fevent%2F01KF2XT3YTA116DDTAMGYM683G%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     },
     {
       "provider_id": "opay",
@@ -1172,7 +1192,8 @@
       },
       "is_featured": true,
       "highlight_kind": "high_return",
-      "editorial_summary": "2026 年新核發正卡的首筆消費回饋 100% 歐付寶紅利，上限 333 點；另有符合條件的新戶最高 13% 回饋。"
+      "editorial_summary": "2026 年新核發正卡的首筆消費回饋 100% 歐付寶紅利，上限 333 點；另有符合條件的新戶最高 13% 回饋。",
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E6%9C%80%E6%96%B0%E6%B6%88%E6%81%AF-%E6%AD%90%E4%BB%98%E5%AF%B6O%27Pay%E9%9B%BB%E5%AD%90%E6%94%AF%E4%BB%98&dates=20260101%2F20270101&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E6%AD%90%E4%BB%98%E5%AF%B6%0A%0A2026+%E5%B9%B4%E6%96%B0%E6%A0%B8%E7%99%BC%E6%AD%A3%E5%8D%A1%E7%9A%84%E9%A6%96%E7%AD%86%E6%B6%88%E8%B2%BB%E5%9B%9E%E9%A5%8B+100%25+%E6%AD%90%E4%BB%98%E5%AF%B6%E7%B4%85%E5%88%A9%EF%BC%8C%E4%B8%8A%E9%99%90+333+%E9%BB%9E%EF%BC%9B%E5%8F%A6%E6%9C%89%E7%AC%A6%E5%90%88%E6%A2%9D%E4%BB%B6%E7%9A%84%E6%96%B0%E6%88%B6%E6%9C%80%E9%AB%98+13%25+%E5%9B%9E%E9%A5%8B%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fwww.opay.tw%2Fannouncement%2FDetailAnnouncement%3FnID%3D4379%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     },
     {
       "provider_id": "taiwanpay",
@@ -1204,7 +1225,8 @@
         "ends_in_days": 163,
         "insight_tags": [],
         "human_summary": "尚未辨識出明確回饋幅度，請查看官方活動辦法。"
-      }
+      },
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E5%8C%97%E6%8D%B7TWQR%E4%B9%98%E8%BB%8A%E7%A2%BC%E4%B8%8A%E7%B7%9A%21&dates=20260116%2F20270101&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%8F%B0%E7%81%A3+Pay%0A%0A%E5%B0%9A%E6%9C%AA%E8%BE%A8%E8%AD%98%E5%87%BA%E6%98%8E%E7%A2%BA%E5%9B%9E%E9%A5%8B%E5%B9%85%E5%BA%A6%EF%BC%8C%E8%AB%8B%E6%9F%A5%E7%9C%8B%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E8%BE%A6%E6%B3%95%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fwww.taiwanpay.com.tw%2Ffisc-tpay%2Fnews%2Fevent%2F01KF2ZQF8TB1NKR3D0GFRR21CG%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     },
     {
       "provider_id": "taiwanpay",
@@ -1243,7 +1265,8 @@
           "高回饋"
         ],
         "human_summary": "最高 20% 回饋，屬高回饋活動。"
-      }
+      },
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E6%BC%AB%E9%81%8A%E8%8B%97%E6%A0%97%E5%8D%97%E5%BA%84%E8%80%81%E8%A1%97%E5%8F%B0%E7%81%A3Pay%E7%B5%A6%E4%BD%A020%25%E9%A9%9A%E5%96%9C%E5%9B%9E%E9%A5%8B&dates=20260119%2F20260901&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%8F%B0%E7%81%A3+Pay%0A%0A%E6%9C%80%E9%AB%98+20%25+%E5%9B%9E%E9%A5%8B%EF%BC%8C%E5%B1%AC%E9%AB%98%E5%9B%9E%E9%A5%8B%E6%B4%BB%E5%8B%95%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fwww.taiwanpay.com.tw%2Ffisc-tpay%2Fnews%2Fevent%2F01KD780J3RYYYG0VZ9JQJPA7M5%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     },
     {
       "provider_id": "taiwanpay",
@@ -1279,7 +1302,8 @@
         "ends_in_days": 163,
         "insight_tags": [],
         "human_summary": "最高 1.5% 回饋。"
-      }
+      },
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E5%A4%A7%E5%AE%B6%E4%B8%80%E8%B5%B7%E6%8C%BA%E5%B0%8F%E8%BE%B2+%E5%8F%B0%E7%81%A3Pay%E7%B5%90%E5%B8%B3%E5%85%A8%E7%AB%9988%E6%8A%98&dates=20260120%2F20270101&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%8F%B0%E7%81%A3+Pay%0A%0A%E6%9C%80%E9%AB%98+1.5%25+%E5%9B%9E%E9%A5%8B%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fwww.taiwanpay.com.tw%2Ffisc-tpay%2Fnews%2Fevent%2F01KFZ8PJA620CP9Z0VBCSSDM4C%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     },
     {
       "provider_id": "taiwanpay",
@@ -1318,7 +1342,8 @@
           "高回饋"
         ],
         "human_summary": "最高 10% 回饋，屬高回饋活動。"
-      }
+      },
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E4%BE%86%E9%80%9B%E6%A8%82%E8%8F%AF%E5%A4%9C%E5%B8%82%E6%A8%82%E4%BA%AB10%25%E5%9B%9E%E9%A5%8B&dates=20260201%2F20260801&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%8F%B0%E7%81%A3+Pay%0A%0A%E6%9C%80%E9%AB%98+10%25+%E5%9B%9E%E9%A5%8B%EF%BC%8C%E5%B1%AC%E9%AB%98%E5%9B%9E%E9%A5%8B%E6%B4%BB%E5%8B%95%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fwww.taiwanpay.com.tw%2Ffisc-tpay%2Fnews%2Fevent%2F01KFZ9JVYJGQ9N9A1JRW69SF15%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     },
     {
       "provider_id": "taiwanpay",
@@ -1350,7 +1375,8 @@
         "ends_in_days": 71,
         "insight_tags": [],
         "human_summary": "尚未辨識出明確回饋幅度，請查看官方活動辦法。"
-      }
+      },
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E5%81%9C%E8%BB%8A%E5%B0%B1%E7%94%A8TWQR%EF%BC%81&dates=20260315%2F20261001&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%8F%B0%E7%81%A3+Pay%0A%0A%E5%B0%9A%E6%9C%AA%E8%BE%A8%E8%AD%98%E5%87%BA%E6%98%8E%E7%A2%BA%E5%9B%9E%E9%A5%8B%E5%B9%85%E5%BA%A6%EF%BC%8C%E8%AB%8B%E6%9F%A5%E7%9C%8B%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E8%BE%A6%E6%B3%95%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fwww.taiwanpay.com.tw%2Ffisc-tpay%2Fnews%2Fevent%2F01KK94W8H47NWNWRWT6TBW114A%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     },
     {
       "provider_id": "taiwanpay",
@@ -1389,7 +1415,8 @@
           "高回饋"
         ],
         "human_summary": "最高 20% 回饋，屬高回饋活動。"
-      }
+      },
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E9%95%B7%E6%98%A5%E5%95%86%E5%9C%88X%E5%8F%B0%E7%81%A3Pay%E6%B6%88%E8%B2%BB20%25%E5%9B%9E%E9%A5%8B&dates=20260316%2F20260901&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%8F%B0%E7%81%A3+Pay%0A%0A%E6%9C%80%E9%AB%98+20%25+%E5%9B%9E%E9%A5%8B%EF%BC%8C%E5%B1%AC%E9%AB%98%E5%9B%9E%E9%A5%8B%E6%B4%BB%E5%8B%95%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fwww.taiwanpay.com.tw%2Ffisc-tpay%2Fnews%2Fevent%2F01KKK5WA82PMVAF6HVZ0W14ZX6%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     },
     {
       "provider_id": "taiwanpay",
@@ -1426,7 +1453,8 @@
           "高回饋"
         ],
         "human_summary": "最高 20% 回饋，屬高回饋活動。"
-      }
+      },
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E5%A4%A7%E7%A8%BB%E5%9F%95%E8%BF%AA%E5%8C%96%E5%95%86%E5%9C%88+Pay%E4%BD%A0%E5%90%83%E5%96%9D%E7%8E%A9%E6%A8%82+%E4%BA%AB20%25%E5%9B%9E%E9%A5%8B&dates=20260420%2F20260901&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%8F%B0%E7%81%A3+Pay%0A%0A%E6%9C%80%E9%AB%98+20%25+%E5%9B%9E%E9%A5%8B%EF%BC%8C%E5%B1%AC%E9%AB%98%E5%9B%9E%E9%A5%8B%E6%B4%BB%E5%8B%95%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fwww.taiwanpay.com.tw%2Ffisc-tpay%2Fnews%2Fevent%2F01KFN1089QDKBZFN388KPDWVSW%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     },
     {
       "provider_id": "taiwanpay",
@@ -1458,7 +1486,8 @@
         "ends_in_days": 163,
         "insight_tags": [],
         "human_summary": "尚未辨識出明確回饋幅度，請查看官方活動辦法。"
-      }
+      },
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E6%97%A5%E6%9C%ACPayPay%E5%9C%A8%E5%8F%B0%E7%81%A3%E4%B9%9F%E8%83%BD%E9%80%9A%EF%BC%81&dates=20260427%2F20270101&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%8F%B0%E7%81%A3+Pay%0A%0A%E5%B0%9A%E6%9C%AA%E8%BE%A8%E8%AD%98%E5%87%BA%E6%98%8E%E7%A2%BA%E5%9B%9E%E9%A5%8B%E5%B9%85%E5%BA%A6%EF%BC%8C%E8%AB%8B%E6%9F%A5%E7%9C%8B%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E8%BE%A6%E6%B3%95%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fwww.taiwanpay.com.tw%2Ffisc-tpay%2Fnews%2Fevent%2F01KPAYG3J6FN72P4F1NJHSNJTP%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     },
     {
       "provider_id": "taiwanpay",
@@ -1494,7 +1523,8 @@
         "ends_in_days": 10,
         "insight_tags": [],
         "human_summary": "最高 1.5% 回饋。"
-      }
+      },
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E8%81%96%E5%BE%B7%E7%A7%91%E6%96%AFPay%E4%BD%A0%E4%B8%80%E5%A4%8F%E4%BA%AB688%E7%8F%BE%E6%8A%9888&dates=20260501%2F20260801&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%8F%B0%E7%81%A3+Pay%0A%0A%E6%9C%80%E9%AB%98+1.5%25+%E5%9B%9E%E9%A5%8B%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fwww.taiwanpay.com.tw%2Ffisc-tpay%2Fnews%2Fevent%2F01KFN0VSJQVMCJ3HEB47EQR8D4%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     },
     {
       "provider_id": "taiwanpay",
@@ -1529,7 +1559,8 @@
         "ends_in_days": 101,
         "insight_tags": [],
         "human_summary": "最高 1.5% 回饋。"
-      }
+      },
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E8%90%8A%E7%88%BE%E5%AF%8C%E5%8F%B0%E7%81%A3Pay%E6%B6%88%E8%B2%BB%E5%A5%BD%E5%BA%B7%E5%88%A9%E9%A6%AC%E8%90%8A&dates=20260501%2F20261031&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%8F%B0%E7%81%A3+Pay%0A%0A%E6%9C%80%E9%AB%98+1.5%25+%E5%9B%9E%E9%A5%8B%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fwww.taiwanpay.com.tw%2Ffisc-tpay%2Fnews%2Fevent%2F01KFN0Q15Y2SPXRNBR8WSAKDVS%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     },
     {
       "provider_id": "taiwanpay",
@@ -1567,7 +1598,8 @@
           "高回饋"
         ],
         "human_summary": "最高 20% 回饋，屬高回饋活動。"
-      }
+      },
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E6%88%90%E5%8A%9F%E4%B8%AD%E7%B9%BC%E5%B8%82%E5%A0%B4%E3%80%81%E5%A3%AB%E6%9D%B1%E5%B8%82%E5%A0%B4%E8%B2%B7%E8%8F%9C%E5%8E%BB+%E5%8F%B0%E7%81%A3+Pay+%E6%A8%82%E4%BA%AB+20%25%E5%9B%9E%E9%A5%8B&dates=20260515%2F20261001&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%8F%B0%E7%81%A3+Pay%0A%0A%E6%9C%80%E9%AB%98+20%25+%E5%9B%9E%E9%A5%8B%EF%BC%8C%E5%B1%AC%E9%AB%98%E5%9B%9E%E9%A5%8B%E6%B4%BB%E5%8B%95%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fwww.taiwanpay.com.tw%2Ffisc-tpay%2Fnews%2Fevent%2F01KRMM8ZADNBY5KS4CY4JENVET%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     },
     {
       "provider_id": "taiwanpay",
@@ -1603,7 +1635,8 @@
         "ends_in_days": 41,
         "insight_tags": [],
         "human_summary": "最高 1.5% 回饋。"
-      }
+      },
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E6%A3%89%E8%8A%B1%E7%94%B0%E5%8F%B0%E7%81%A3Pay%E6%9C%89%E6%A9%9F%E9%A3%9F%E5%9C%A8%E5%A5%BD%E5%AE%89%E5%BF%83&dates=20260519%2F20260901&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%8F%B0%E7%81%A3+Pay%0A%0A%E6%9C%80%E9%AB%98+1.5%25+%E5%9B%9E%E9%A5%8B%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fwww.taiwanpay.com.tw%2Ffisc-tpay%2Fnews%2Fevent%2F01KFN0FBMY4ASF7T480CBNE04S%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     },
     {
       "provider_id": "taiwanpay",
@@ -1639,7 +1672,8 @@
         "ends_in_days": 163,
         "insight_tags": [],
         "human_summary": "最高 1.5% 回饋。"
-      }
+      },
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E5%BE%AE%E9%A2%A8%E9%9B%86%E5%9C%98%E3%80%90TWQR%E9%99%90%E5%AE%9A5%25%E8%B6%85%E5%9B%9E%E9%A5%8B%E3%80%91&dates=20260601%2F20270101&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%8F%B0%E7%81%A3+Pay%0A%0A%E6%9C%80%E9%AB%98+1.5%25+%E5%9B%9E%E9%A5%8B%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fwww.taiwanpay.com.tw%2Ffisc-tpay%2Fnews%2Fevent%2F01KFMZ3BC9RGC6VX17SKYFTZMS%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     },
     {
       "provider_id": "taiwanpay",
@@ -1677,7 +1711,8 @@
           "高回饋"
         ],
         "human_summary": "最高 20% 回饋，屬高回饋活動。"
-      }
+      },
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E9%A6%AC%E5%8F%AF%E5%85%88%E7%94%9FTWQR%E4%BA%AB20%25%E5%9B%9E%E9%A5%8B&dates=20260601%2F20260901&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%8F%B0%E7%81%A3+Pay%0A%0A%E6%9C%80%E9%AB%98+20%25+%E5%9B%9E%E9%A5%8B%EF%BC%8C%E5%B1%AC%E9%AB%98%E5%9B%9E%E9%A5%8B%E6%B4%BB%E5%8B%95%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fwww.taiwanpay.com.tw%2Ffisc-tpay%2Fnews%2Fevent%2F01KFMZ7YEXDTV14JX8QTCFA95H%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     },
     {
       "provider_id": "taiwanpay",
@@ -1715,7 +1750,8 @@
           "高回饋"
         ],
         "human_summary": "最高 20% 回饋，屬高回饋活動。"
-      }
+      },
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Focus%E7%99%BE%E8%B2%A8%E6%94%BE%E9%AC%86%E8%B3%BC+%E5%8F%B0%E7%81%A3Pay%E4%BA%AB20%25%E5%9B%9E%E9%A5%8B&dates=20260605%2F20270101&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%8F%B0%E7%81%A3+Pay%0A%0A%E6%9C%80%E9%AB%98+20%25+%E5%9B%9E%E9%A5%8B%EF%BC%8C%E5%B1%AC%E9%AB%98%E5%9B%9E%E9%A5%8B%E6%B4%BB%E5%8B%95%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fwww.taiwanpay.com.tw%2Ffisc-tpay%2Fnews%2Fevent%2F01KFN0HGJG46ZS5JM9YY7ZFAS8%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     },
     {
       "provider_id": "taiwanpay",
@@ -1754,7 +1790,8 @@
           "高回饋"
         ],
         "human_summary": "最高 20% 回饋，屬高回饋活動。"
-      }
+      },
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E6%B8%85%E6%B6%BC%E4%B8%80%E5%A4%8F%EF%BC%8E%E5%8F%B0%E7%81%A3PAY%E5%96%9D%E5%B0%8F%E4%BB%81%E6%B3%89%E4%BA%AB20%25%E5%9B%9E%E9%A5%8B%EF%BC%81&dates=20260615%2F20261101&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%8F%B0%E7%81%A3+Pay%0A%0A%E6%9C%80%E9%AB%98+20%25+%E5%9B%9E%E9%A5%8B%EF%BC%8C%E5%B1%AC%E9%AB%98%E5%9B%9E%E9%A5%8B%E6%B4%BB%E5%8B%95%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fwww.taiwanpay.com.tw%2Ffisc-tpay%2Fnews%2Fevent%2F01KFMZ9EXY02V9B6K6M165D465%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     },
     {
       "provider_id": "taiwanpay",
@@ -1792,7 +1829,8 @@
           "高回饋"
         ],
         "human_summary": "最高 20% 回饋，屬高回饋活動。"
-      }
+      },
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E4%B8%89%E5%B3%BDX%E5%85%AB%E9%87%8C%E6%94%9C%E6%89%8B%E8%B6%B4%E8%B6%B4%E8%B5%B0+%E6%8F%AA%E7%94%A8%E5%8F%B0%E7%81%A3Pay%E4%BA%AB20%25%E5%A4%A7%E5%9B%9E%E9%A5%8B&dates=20260616%2F20261216&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%8F%B0%E7%81%A3+Pay%0A%0A%E6%9C%80%E9%AB%98+20%25+%E5%9B%9E%E9%A5%8B%EF%BC%8C%E5%B1%AC%E9%AB%98%E5%9B%9E%E9%A5%8B%E6%B4%BB%E5%8B%95%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fwww.taiwanpay.com.tw%2Ffisc-tpay%2Fnews%2Fevent%2F01KTNSX3QEG4WT6GX9WX4BJGFP%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     },
     {
       "provider_id": "taiwanpay",
@@ -1831,7 +1869,8 @@
           "高回饋"
         ],
         "human_summary": "最高 20% 回饋，屬高回饋活動。"
-      }
+      },
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E7%A6%8F%E5%AE%B9%E5%A4%A7%E9%A3%AF%E5%BA%97%E5%BA%A6%E5%81%87%E7%B5%95Pay+%E4%B8%8D%E9%99%90%E9%87%91%E9%A1%8D%E4%BA%AB20%25%E5%9B%9E%E9%A5%8B&dates=20260618%2F20270101&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%8F%B0%E7%81%A3+Pay%0A%0A%E6%9C%80%E9%AB%98+20%25+%E5%9B%9E%E9%A5%8B%EF%BC%8C%E5%B1%AC%E9%AB%98%E5%9B%9E%E9%A5%8B%E6%B4%BB%E5%8B%95%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fwww.taiwanpay.com.tw%2Ffisc-tpay%2Fnews%2Fevent%2F01KTBF16N8RQRJGP64P5DRE4GD%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     },
     {
       "provider_id": "taiwanpay",
@@ -1869,7 +1908,8 @@
           "高回饋"
         ],
         "human_summary": "最高 20% 回饋，屬高回饋活動。"
-      }
+      },
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E7%BE%8E%E5%8D%81%E6%A8%82%E9%80%A3%E9%8E%96%E8%97%A5%E5%B1%80-%E5%8F%B0%E7%81%A3Pay+20%25%E5%9B%9E%E9%A5%8B&dates=20260625%2F20261201&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%8F%B0%E7%81%A3+Pay%0A%0A%E6%9C%80%E9%AB%98+20%25+%E5%9B%9E%E9%A5%8B%EF%BC%8C%E5%B1%AC%E9%AB%98%E5%9B%9E%E9%A5%8B%E6%B4%BB%E5%8B%95%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fwww.taiwanpay.com.tw%2Ffisc-tpay%2Fnews%2Fevent%2F01KTBERR1F8E7RZDXMYTQHB500%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     },
     {
       "provider_id": "taiwanpay",
@@ -1908,7 +1948,8 @@
           "高回饋"
         ],
         "human_summary": "最高 20% 回饋，屬高回饋活動。"
-      }
+      },
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Autopass%E9%BA%BB%E5%90%89%E7%A5%9E%E5%8A%A9%E6%94%BB+%E7%94%A8%E5%8F%B0%E7%81%A3Pay%E5%8A%A0%E6%B2%B9%E5%81%9C%E8%BB%8A%E4%BA%AB20%25%E5%9B%9E%E9%A5%8B&dates=20260629%2F20270101&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%8F%B0%E7%81%A3+Pay%0A%0A%E6%9C%80%E9%AB%98+20%25+%E5%9B%9E%E9%A5%8B%EF%BC%8C%E5%B1%AC%E9%AB%98%E5%9B%9E%E9%A5%8B%E6%B4%BB%E5%8B%95%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fwww.taiwanpay.com.tw%2Ffisc-tpay%2Fnews%2Fevent%2F01KVZ2VVMHRVYN8583BTGMHTWB%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     },
     {
       "provider_id": "taiwanpay",
@@ -1946,7 +1987,8 @@
           "高回饋"
         ],
         "human_summary": "最高 20% 回饋，屬高回饋活動。"
-      }
+      },
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E5%BB%A3%E5%B7%9E%E8%A1%97%E5%A4%9C%E5%B8%82+%26+%E6%A2%A7%E5%B7%9E%E8%A1%97%E5%A4%9C%E5%B8%82%E8%B6%85%E7%B5%A6%E5%88%A9+%E5%8F%B0%E7%81%A3Pay%E5%96%AE%E7%AD%86%E4%BA%AB20%25%E7%8F%BE%E9%87%91%E5%9B%9E%E9%A5%8B&dates=20260630%2F20261001&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%8F%B0%E7%81%A3+Pay%0A%0A%E6%9C%80%E9%AB%98+20%25+%E5%9B%9E%E9%A5%8B%EF%BC%8C%E5%B1%AC%E9%AB%98%E5%9B%9E%E9%A5%8B%E6%B4%BB%E5%8B%95%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fwww.taiwanpay.com.tw%2Ffisc-tpay%2Fnews%2Fevent%2F01KVZ3H9VZWN3CT13M3A8VX7P4%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     },
     {
       "provider_id": "taiwanpay",
@@ -1986,7 +2028,8 @@
           "高回饋"
         ],
         "human_summary": "最高 15% 回饋，屬高回饋活動。"
-      }
+      },
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E6%AF%9B%E5%B0%8F%E5%AD%A9%E7%94%9F%E6%B4%BB%E6%8E%A1%E8%B3%BC%E5%AD%A3%EF%BC%81%E6%9D%B1%E6%A3%AE%E5%AF%B5%E7%89%A9X%E5%8F%B0%E7%81%A3Pay%E4%BA%AB15%25%E5%9B%9E%E9%A5%8B&dates=20260630%2F20261001&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%8F%B0%E7%81%A3+Pay%0A%0A%E6%9C%80%E9%AB%98+15%25+%E5%9B%9E%E9%A5%8B%EF%BC%8C%E5%B1%AC%E9%AB%98%E5%9B%9E%E9%A5%8B%E6%B4%BB%E5%8B%95%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fwww.taiwanpay.com.tw%2Ffisc-tpay%2Fnews%2Fevent%2F01KVZ356T0ACAGQJHKDVQYXXCC%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     },
     {
       "provider_id": "taiwanpay",
@@ -2024,7 +2067,8 @@
           "高回饋"
         ],
         "human_summary": "最高 20% 回饋，屬高回饋活動。"
-      }
+      },
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E8%87%A8%E6%B1%9F%E8%A1%97%E8%A7%80%E5%85%89%E5%A4%9C%E5%B8%82%E8%B6%85%E7%B5%A6%E5%88%A9+%E5%8F%B0%E7%81%A3Pay%E5%96%AE%E7%AD%86%E4%BA%AB20%25%E7%8F%BE%E9%87%91%E5%9B%9E%E9%A5%8B&dates=20260630%2F20270101&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%8F%B0%E7%81%A3+Pay%0A%0A%E6%9C%80%E9%AB%98+20%25+%E5%9B%9E%E9%A5%8B%EF%BC%8C%E5%B1%AC%E9%AB%98%E5%9B%9E%E9%A5%8B%E6%B4%BB%E5%8B%95%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fwww.taiwanpay.com.tw%2Ffisc-tpay%2Fnews%2Fevent%2F01KVZ3X49YBZMK7BVJG5DBPHE9%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     },
     {
       "provider_id": "icashpay",
@@ -2060,7 +2104,8 @@
           "高回饋"
         ],
         "human_summary": "最高 10% 回饋，屬高回饋活動。"
-      }
+      },
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=2026%E4%B8%8B%E5%8D%8A%E5%B9%B4uniopen+%E8%81%AF%E5%90%8D%E5%8D%A1x+ICP%E7%96%8A%E5%8A%A0%E6%94%BB%E7%95%A5&dates=20260701%2F20260901&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9Aicash+Pay%0A%0A%E6%9C%80%E9%AB%98+10%25+%E5%9B%9E%E9%A5%8B%EF%BC%8C%E5%B1%AC%E9%AB%98%E5%9B%9E%E9%A5%8B%E6%B4%BB%E5%8B%95%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fwww.icashpay.com.tw%2FadvertMessage%2Fview%2Fid%2F2370%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     },
     {
       "provider_id": "icashpay",
@@ -2099,7 +2144,8 @@
       },
       "is_featured": true,
       "highlight_kind": "high_return",
-      "editorial_summary": "uniopen 聯名卡完成首次自動加值後，搭台北捷運享 7% OPENPOINT；同頁另列 TPASS2.0+ 登錄回饋最高 37%，各方案有回饋上限。"
+      "editorial_summary": "uniopen 聯名卡完成首次自動加值後，搭台北捷運享 7% OPENPOINT；同頁另列 TPASS2.0+ 登錄回饋最高 37%，各方案有回饋上限。",
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=uniopen%E8%81%AF%E5%90%8D%E5%8D%A1icash2.0%E5%AE%8C%E6%88%90%E9%A6%96%E6%AC%A1%E8%87%AA%E5%8B%95%E5%8A%A0%E5%80%BC+%E6%90%AD%E5%8C%97%E6%8D%B7%E4%BA%AB7%25%E5%9B%9E%E9%A5%8B&dates=20260701%2F20270101&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9Aicash+Pay%0A%0Auniopen+%E8%81%AF%E5%90%8D%E5%8D%A1%E5%AE%8C%E6%88%90%E9%A6%96%E6%AC%A1%E8%87%AA%E5%8B%95%E5%8A%A0%E5%80%BC%E5%BE%8C%EF%BC%8C%E6%90%AD%E5%8F%B0%E5%8C%97%E6%8D%B7%E9%81%8B%E4%BA%AB+7%25+OPENPOINT%EF%BC%9B%E5%90%8C%E9%A0%81%E5%8F%A6%E5%88%97+TPASS2.0%2B+%E7%99%BB%E9%8C%84%E5%9B%9E%E9%A5%8B%E6%9C%80%E9%AB%98+37%25%EF%BC%8C%E5%90%84%E6%96%B9%E6%A1%88%E6%9C%89%E5%9B%9E%E9%A5%8B%E4%B8%8A%E9%99%90%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fwww.icashpay.com.tw%2FadvertMessage%2Fview%2Fid%2F2407%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     },
     {
       "provider_id": "icashpay",
@@ -2133,7 +2179,8 @@
         "ends_in_days": 163,
         "insight_tags": [],
         "human_summary": "最高 7% 回饋。"
-      }
+      },
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E9%80%B1%E6%97%A5%E6%9C%80%E5%A5%BDPay+%E5%85%A8%E9%80%9A%E8%B7%AF%E6%B6%88%E8%B2%BB%E6%BB%BF%E9%A1%8D%E5%9B%9E%E9%A5%8B7%25&dates=20260701%2F20270101&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9Aicash+Pay%0A%0A%E6%9C%80%E9%AB%98+7%25+%E5%9B%9E%E9%A5%8B%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fwww.icashpay.com.tw%2FadvertMessage%2Fview%2Fid%2F2284%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     },
     {
       "provider_id": "taiwanpay",
@@ -2172,7 +2219,8 @@
           "高回饋"
         ],
         "human_summary": "最高 20% 回饋，屬高回饋活動。"
-      }
+      },
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E5%AF%A7%E5%A4%8F%E5%A4%9C%E5%B8%82%E6%84%9B%E9%80%AE%E7%8E%A9+%E5%8F%B0%E7%81%A3Pay%E4%BA%AB20%25%E5%9B%9E%E9%A5%8B&dates=20260701%2F20270101&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%8F%B0%E7%81%A3+Pay%0A%0A%E6%9C%80%E9%AB%98+20%25+%E5%9B%9E%E9%A5%8B%EF%BC%8C%E5%B1%AC%E9%AB%98%E5%9B%9E%E9%A5%8B%E6%B4%BB%E5%8B%95%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fwww.taiwanpay.com.tw%2Ffisc-tpay%2Fnews%2Fevent%2F01KTBEPC9T5BE3J8C4EVX49RFD%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     },
     {
       "provider_id": "taiwanpay",
@@ -2207,7 +2255,8 @@
         "ends_in_days": 71,
         "insight_tags": [],
         "human_summary": "最高 1.5% 回饋。"
-      }
+      },
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E7%A6%8F%E6%87%8B%E5%8F%B0%E7%81%A3Pay+%E5%8A%A0%E6%B2%B9%E4%BA%AB%E5%9B%9E%E9%A5%8B&dates=20260701%2F20261001&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%8F%B0%E7%81%A3+Pay%0A%0A%E6%9C%80%E9%AB%98+1.5%25+%E5%9B%9E%E9%A5%8B%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fwww.taiwanpay.com.tw%2Ffisc-tpay%2Fnews%2Fevent%2F01KTBEVY94PD4BH8085GWKW6DB%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     },
     {
       "provider_id": "taiwanpay",
@@ -2246,7 +2295,8 @@
           "高回饋"
         ],
         "human_summary": "最高 20% 回饋，屬高回饋活動。"
-      }
+      },
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E8%80%90%E6%96%AF%E8%B3%BC%E7%89%A9Pay%E4%BD%A0%E4%BA%AB%E5%9B%9E%E9%A5%8B&dates=20260701%2F20261228&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%8F%B0%E7%81%A3+Pay%0A%0A%E6%9C%80%E9%AB%98+20%25+%E5%9B%9E%E9%A5%8B%EF%BC%8C%E5%B1%AC%E9%AB%98%E5%9B%9E%E9%A5%8B%E6%B4%BB%E5%8B%95%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fwww.taiwanpay.com.tw%2Ffisc-tpay%2Fnews%2Fevent%2F01KTBE68A6TEEZDMT9MYRXJDY4%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     },
     {
       "provider_id": "taiwanpay",
@@ -2284,7 +2334,8 @@
           "高回饋"
         ],
         "human_summary": "最高 20% 回饋，屬高回饋活動。"
-      }
+      },
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E9%87%87%E7%9B%9F%E5%85%8D%E7%A8%85%E5%BA%97%E3%80%81%E9%87%87%E7%9B%9F%2F%E8%AA%A0%E7%9B%9F%E9%A4%90%E9%A3%B2+TWQR%28%E9%99%90%E5%8F%B0%E7%81%A3Pay%29%E6%9C%80%E9%AB%98%E4%BA%AB20%25%E5%9B%9E%E9%A5%8B&dates=20260701%2F20261201&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%8F%B0%E7%81%A3+Pay%0A%0A%E6%9C%80%E9%AB%98+20%25+%E5%9B%9E%E9%A5%8B%EF%BC%8C%E5%B1%AC%E9%AB%98%E5%9B%9E%E9%A5%8B%E6%B4%BB%E5%8B%95%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fwww.taiwanpay.com.tw%2Ffisc-tpay%2Fnews%2Fevent%2F01KTBDJG3VGJMM4ARTF2SBFN3P%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     },
     {
       "provider_id": "jkopay",
@@ -2318,7 +2369,8 @@
         "ends_in_days": 163,
         "insight_tags": [],
         "human_summary": "最高 2.15% 回饋。"
-      }
+      },
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=2026%2F7%2F1-12%2F31+%E8%A1%97%E5%8F%A3%E6%94%AF%E4%BB%98%E7%B9%B3%E8%B2%BB%E4%BA%AB%E6%9C%80%E9%AB%98+2.15%25+%E5%9B%9E%E9%A5%8B&dates=20260701%2F20270101&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E8%A1%97%E5%8F%A3%E6%94%AF%E4%BB%98%0A%0A%E6%9C%80%E9%AB%98+2.15%25+%E5%9B%9E%E9%A5%8B%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fmkt.jkopay.com%2Fzh-TW%2Fcampaign%2Fjkopayebill%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     },
     {
       "provider_id": "ipassmoney",
@@ -2354,7 +2406,8 @@
           "高回饋"
         ],
         "human_summary": "最高 20% 回饋，屬高回饋活動。"
-      }
+      },
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E3%80%90%E9%87%8C%E4%BB%81%E3%80%91%E7%94%A8+iPASS+MONEY+%E5%B8%B3%E6%88%B6%E9%A4%98%E9%A1%8D%E4%BB%98%E6%AC%BE%E6%9C%80%E9%AB%98%E4%BA%AB+20%25+%E5%9B%9E%E9%A5%8B%EF%BC%81&dates=20260713%2F20260901&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E4%B8%80%E5%8D%A1%E9%80%9A+MONEY%0A%0A%E6%9C%80%E9%AB%98+20%25+%E5%9B%9E%E9%A5%8B%EF%BC%8C%E5%B1%AC%E9%AB%98%E5%9B%9E%E9%A5%8B%E6%B4%BB%E5%8B%95%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fweb.i-pass.com.tw%2FPreferential%2FDetail%2FGMZTMNA5JLRMG64YlprD%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     },
     {
       "provider_id": "taiwanpay",
@@ -2386,7 +2439,8 @@
         "ends_in_days": 10,
         "insight_tags": [],
         "human_summary": "尚未辨識出明確回饋幅度，請查看官方活動辦法。"
-      }
+      },
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E5%A4%8F%E5%AD%A3%E5%A5%BD%E5%BA%B7%E6%AD%A3%E7%86%B1%E5%84%AA%E6%83%A0%E8%B6%81%E7%86%B1%E6%94%B6&dates=20260713%2F20260801&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%8F%B0%E7%81%A3+Pay%0A%0A%E5%B0%9A%E6%9C%AA%E8%BE%A8%E8%AD%98%E5%87%BA%E6%98%8E%E7%A2%BA%E5%9B%9E%E9%A5%8B%E5%B9%85%E5%BA%A6%EF%BC%8C%E8%AB%8B%E6%9F%A5%E7%9C%8B%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E8%BE%A6%E6%B3%95%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fwww.taiwanpay.com.tw%2Ffisc-tpay%2Fnews%2Fevent%2F01KXDBZNJG46K8MZYM46B4J8AQ%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     },
     {
       "provider_id": "taiwanpay",
@@ -2424,7 +2478,8 @@
           "高回饋"
         ],
         "human_summary": "最高 10% 回饋，屬高回饋活動。"
-      }
+      },
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=TWQR%E6%9D%B1%E9%81%8A%E8%B6%A3+10%25%E5%8A%A0%E7%A2%BCPay&dates=20260715%2F20261101&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%8F%B0%E7%81%A3+Pay%0A%0A%E6%9C%80%E9%AB%98+10%25+%E5%9B%9E%E9%A5%8B%EF%BC%8C%E5%B1%AC%E9%AB%98%E5%9B%9E%E9%A5%8B%E6%B4%BB%E5%8B%95%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fwww.taiwanpay.com.tw%2Ffisc-tpay%2Fnews%2Fevent%2F01KXFTZHE3F8XZ9V9CD2MNXMJA%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     },
     {
       "provider_id": "taiwanpay",
@@ -2463,7 +2518,8 @@
           "高回饋"
         ],
         "human_summary": "最高 20% 回饋，屬高回饋活動。"
-      }
+      },
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E8%98%AD%E5%B7%9E%E5%B0%B1%E7%94%A8%E5%8F%B0%E7%81%A3Pay+%E5%B8%82%E5%A0%B420%25%E9%AB%98%E5%9B%9E%E9%A5%8B&dates=20260715%2F20261201&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%8F%B0%E7%81%A3+Pay%0A%0A%E6%9C%80%E9%AB%98+20%25+%E5%9B%9E%E9%A5%8B%EF%BC%8C%E5%B1%AC%E9%AB%98%E5%9B%9E%E9%A5%8B%E6%B4%BB%E5%8B%95%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fwww.taiwanpay.com.tw%2Ffisc-tpay%2Fnews%2Fevent%2F01KW994G7HWVT41Z06CMF0RBYR%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     },
     {
       "provider_id": "taiwanpay",
@@ -2502,7 +2558,8 @@
       },
       "is_featured": true,
       "highlight_kind": "high_return",
-      "editorial_summary": "於 NET 指定門市使用台灣行動支付 App，單筆滿 500 元可獲隨機紅包；每一金融卡或帳戶最多 2 個。"
+      "editorial_summary": "於 NET 指定門市使用台灣行動支付 App，單筆滿 500 元可獲隨機紅包；每一金融卡或帳戶最多 2 個。",
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E7%A9%BF%E5%BE%97%E3%80%8C%E9%AB%94%E9%9D%A2%E3%80%8D%EF%BC%8C%E8%BD%89%E5%87%BA%E5%A5%BD%E9%81%8B%EF%BC%81&dates=20260716%2F20260916&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%8F%B0%E7%81%A3+Pay%0A%0A%E6%96%BC+NET+%E6%8C%87%E5%AE%9A%E9%96%80%E5%B8%82%E4%BD%BF%E7%94%A8%E5%8F%B0%E7%81%A3%E8%A1%8C%E5%8B%95%E6%94%AF%E4%BB%98+App%EF%BC%8C%E5%96%AE%E7%AD%86%E6%BB%BF+500+%E5%85%83%E5%8F%AF%E7%8D%B2%E9%9A%A8%E6%A9%9F%E7%B4%85%E5%8C%85%EF%BC%9B%E6%AF%8F%E4%B8%80%E9%87%91%E8%9E%8D%E5%8D%A1%E6%88%96%E5%B8%B3%E6%88%B6%E6%9C%80%E5%A4%9A+2+%E5%80%8B%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fwww.taiwanpay.com.tw%2Ffisc-tpay%2Fnews%2Fevent%2F01KTBEYAY6H4DAPHAZZC1G4HYK%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     },
     {
       "provider_id": "ipassmoney",
@@ -2536,7 +2593,8 @@
         "ends_in_days": 163,
         "insight_tags": [],
         "human_summary": "尚未辨識出明確回饋幅度，請查看官方活動辦法。"
-      }
+      },
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E3%80%90Flexii%E3%80%91%E9%A6%96%E6%AC%A1%E9%81%B8%E6%93%87+iPASS+MONEY+%E6%8F%90%E9%A0%98%E8%96%AA%E8%B3%87%EF%BC%8C%E6%9C%80%E9%AB%98%E4%BA%AB%E4%B8%80%E5%8D%A1%E9%80%9A%E7%B6%A0%E9%BB%9E+200+%E9%BB%9E%E5%9B%9E%E9%A5%8B%EF%BC%81&dates=20260717%2F20270101&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E4%B8%80%E5%8D%A1%E9%80%9A+MONEY%0A%0A%E5%B0%9A%E6%9C%AA%E8%BE%A8%E8%AD%98%E5%87%BA%E6%98%8E%E7%A2%BA%E5%9B%9E%E9%A5%8B%E5%B9%85%E5%BA%A6%EF%BC%8C%E8%AB%8B%E6%9F%A5%E7%9C%8B%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E8%BE%A6%E6%B3%95%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fweb.i-pass.com.tw%2FPreferential%2FDetail%2FGMZTQNQN7O33S64Ef0dt%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     },
     {
       "provider_id": "taiwanpay",
@@ -2575,7 +2633,8 @@
           "高回饋"
         ],
         "human_summary": "最高 10% 回饋，屬高回饋活動。"
-      }
+      },
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=TWQR%E4%B8%8D%E5%8F%AA%E5%B9%AB%E4%BD%A0%E6%92%90%E5%82%98%EF%BC%8C%E6%9B%B4Pay%E4%BD%A0%E7%9C%81%E4%B8%8B+10%25+%E9%96%8B%E9%8A%B7&dates=20260720%2F20260817&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%8F%B0%E7%81%A3+Pay%0A%0A%E6%9C%80%E9%AB%98+10%25+%E5%9B%9E%E9%A5%8B%EF%BC%8C%E5%B1%AC%E9%AB%98%E5%9B%9E%E9%A5%8B%E6%B4%BB%E5%8B%95%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fwww.taiwanpay.com.tw%2Ffisc-tpay%2Fnews%2Fevent%2F01KXN6DAPYSGX2DP60KK6SDVSP%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     },
     {
       "provider_id": "icashpay",
@@ -2609,7 +2668,8 @@
         "ends_in_days": 163,
         "insight_tags": [],
         "human_summary": "最高 0.5% 回饋。"
-      }
+      },
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=2026+icash+Pay+%E6%9C%83%E5%93%A1%E5%B0%88%E5%B1%AC%E5%84%AA%E6%83%A0&dates=20260701%2F20270101&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9Aicash+Pay%0A%0A%E6%9C%80%E9%AB%98+0.5%25+%E5%9B%9E%E9%A5%8B%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fwww.icashpay.com.tw%2Fevent%2Fmemberbenefits%2F%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     },
     {
       "provider_id": "pluspay",
@@ -2645,7 +2705,8 @@
           "高回饋"
         ],
         "human_summary": "最高 27% 回饋，屬高回饋活動。"
-      }
+      },
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E5%9B%9E%E9%A5%8B%E6%94%BB%E7%95%A5&dates=20260701%2F20261001&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%85%A8%E7%9B%88%2BPAY%0A%0A%E6%9C%80%E9%AB%98+27%25+%E5%9B%9E%E9%A5%8B%EF%BC%8C%E5%B1%AC%E9%AB%98%E5%9B%9E%E9%A5%8B%E6%B4%BB%E5%8B%95%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fwww.pluspay.com.tw%2FContent%2FEvent%2FPayPay.html%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     },
     {
       "provider_id": "ipassmoney",

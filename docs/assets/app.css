@@ -684,27 +684,48 @@ select:focus {
   margin: 0;
 }
 
-.official-link {
+.detail-actions {
+  display: grid;
+  gap: 10px;
+  margin-top: 17px;
+}
+
+.official-link,
+.calendar-link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 7px;
   width: 100%;
   min-height: 46px;
-  margin-top: 17px;
   border-radius: var(--radius-sm);
-  background: var(--brand);
-  color: #fff;
   font-size: 0.84rem;
   font-weight: 800;
   text-decoration: none;
+}
+
+.official-link {
+  background: var(--brand);
+  color: #fff;
 }
 
 .official-link:hover {
   background: var(--brand-deep);
 }
 
-.official-link[hidden] {
+.calendar-link {
+  border: 1px solid #b9c8d3;
+  background: #fff;
+  color: var(--brand-deep);
+}
+
+.calendar-link:hover {
+  border-color: var(--brand);
+  background: #f3f8fb;
+}
+
+.official-link[hidden],
+.calendar-link[hidden] {
   display: none;
 }
 

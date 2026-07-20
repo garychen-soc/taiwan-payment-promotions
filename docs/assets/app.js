@@ -306,7 +306,7 @@
 
   function isUpcoming(activity) {
     if (isExplicitHighlight(activity, "upcoming")) return true;
-    if (normalizeKey(activity.lifecycle) === "upcoming") return true;
+    if (activity.insights && activity.insights.is_upcoming === true) return true;
     const days = daysFromToday(activity.start_date);
     return days >= 1 && days <= UPCOMING_DAYS;
   }

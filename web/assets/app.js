@@ -308,7 +308,7 @@
     if (isExplicitHighlight(activity, "upcoming")) return true;
     if (normalizeKey(activity.lifecycle) === "upcoming") return true;
     const days = daysFromToday(activity.start_date);
-    return days >= 0 && days <= UPCOMING_DAYS;
+    return days >= 1 && days <= UPCOMING_DAYS;
   }
 
   function isEnding(activity) {

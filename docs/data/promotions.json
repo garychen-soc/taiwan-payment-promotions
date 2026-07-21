@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-21T01:58:27.889516+08:00",
-  "build_at": "2026-07-21T03:11:28.402780+08:00",
+  "generated_at": "2026-07-21T08:16:50.895840+08:00",
+  "build_at": "2026-07-21T08:19:39.028928+08:00",
   "timezone": "Asia/Taipei",
-  "headline": "新戶首刷 100%、NET 隨機返現與 7/23 即將開始活動",
+  "headline": "7/23 OK 超商 10% 即將開跑，NET 隨機最高 100% 與新戶首刷 100% 仍是今日焦點",
   "summary": {
     "included_non_expired": 71,
     "expired_excluded": 0,
@@ -14,94 +14,365 @@
     "review_required": 12
   },
   "source_health": {
-    "status": "normal",
-    "label": "資料更新正常",
-    "succeeded": 128,
-    "expected": 128,
-    "failures": [],
-    "needs_ai_review": 11,
-    "review_label": "11 個官網列表由 AI 補查",
-    "coverage_gaps": [
+    "status": "partial",
+    "label": "部分官網暫時無法讀取",
+    "succeeded": 0,
+    "expected": 25,
+    "failures": [
+      {
+        "provider_id": "fullpay",
+        "provider_name": "全支付／PX Pay Plus",
+        "source_name": "全支付官方活動 API：延三夜市",
+        "role": "activity_detail",
+        "url": "https://service.pxpayplus.com/px-advertise/web/activity/detail/89",
+        "ok": false,
+        "fetched_at": "2026-07-21T08:16:50.895840+08:00",
+        "status_code": null,
+        "final_url": null,
+        "error": "RuntimeError: Failed to fetch https://service.pxpayplus.com/px-advertise/web/activity/detail/89: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
+        "discovered_count": 0,
+        "coverage_issue": null
+      },
       {
         "provider_id": "easywallet",
         "provider_name": "悠遊付",
         "source_name": "悠遊付優惠列表",
+        "role": "activity_listing",
         "url": "https://www.easycard.com.tw/offer",
-        "issue": "listing_zero_discovery",
-        "discovered_count": 0
+        "ok": false,
+        "fetched_at": "2026-07-21T08:16:50.895840+08:00",
+        "status_code": null,
+        "final_url": null,
+        "error": "RuntimeError: Failed to fetch https://www.easycard.com.tw/offer: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
+        "discovered_count": 0,
+        "coverage_issue": null
       },
       {
         "provider_id": "easywallet",
         "provider_name": "悠遊付",
         "source_name": "悠遊卡公司最新消息",
+        "role": "announcement_listing",
         "url": "https://www.easycard.com.tw/news?cls=1&page=1",
-        "issue": "listing_zero_discovery",
-        "discovered_count": 0
+        "ok": false,
+        "fetched_at": "2026-07-21T08:16:50.895840+08:00",
+        "status_code": null,
+        "final_url": null,
+        "error": "RuntimeError: Failed to fetch https://www.easycard.com.tw/news?cls=1&page=1: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
+        "discovered_count": 0,
+        "coverage_issue": null
+      },
+      {
+        "provider_id": "easywallet",
+        "provider_name": "悠遊付",
+        "source_name": "悠遊付官方活動樣本",
+        "role": "activity_detail",
+        "url": "https://www.easycard.com.tw/offer?cls=1506473503,1506473490,&id=1781689964",
+        "ok": false,
+        "fetched_at": "2026-07-21T08:16:50.895840+08:00",
+        "status_code": null,
+        "final_url": null,
+        "error": "RuntimeError: Failed to fetch https://www.easycard.com.tw/offer?cls=1506473503,1506473490,&id=1781689964: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
+        "discovered_count": 0,
+        "coverage_issue": null
+      },
+      {
+        "provider_id": "easywallet",
+        "provider_name": "悠遊付",
+        "source_name": "悠遊付部分額滿樣本",
+        "role": "activity_detail",
+        "url": "https://yax.easycard.com.tw/offer?cls=1506473519,1506473490,1506473503,&id=1781071557",
+        "ok": false,
+        "fetched_at": "2026-07-21T08:16:50.895840+08:00",
+        "status_code": null,
+        "final_url": null,
+        "error": "RuntimeError: Failed to fetch https://yax.easycard.com.tw/offer?cls=1506473519,1506473490,1506473503,&id=1781071557: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
+        "discovered_count": 0,
+        "coverage_issue": null
+      },
+      {
+        "provider_id": "taiwanpay",
+        "provider_name": "台灣 Pay",
+        "source_name": "台灣 Pay 官方活動 API",
+        "role": "taiwanpay_api_listing",
+        "url": "https://www.taiwanpay.com.tw/tpay/v1.0.0/950/taiwanpayfapi/TF02/TF020109",
+        "ok": false,
+        "fetched_at": "2026-07-21T08:16:50.895840+08:00",
+        "status_code": null,
+        "final_url": null,
+        "error": "RuntimeError: Failed to POST https://www.taiwanpay.com.tw/tpay/v1.0.0/950/taiwanpayfapi/TF02/TF020109: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
+        "discovered_count": 0,
+        "coverage_issue": null
+      },
+      {
+        "provider_id": "taiwanpay",
+        "provider_name": "台灣 Pay",
+        "source_name": "台灣 Pay 官方活動樣本",
+        "role": "activity_detail",
+        "url": "https://www.taiwanpay.com.tw/tpay/v1.0.0/950/taiwanpayfapi/TF02/TF020110",
+        "ok": false,
+        "fetched_at": "2026-07-21T08:16:50.895840+08:00",
+        "status_code": null,
+        "final_url": null,
+        "error": "RuntimeError: Failed to POST https://www.taiwanpay.com.tw/tpay/v1.0.0/950/taiwanpayfapi/TF02/TF020110: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
+        "discovered_count": 0,
+        "coverage_issue": null
+      },
+      {
+        "provider_id": "ipassmoney",
+        "provider_name": "一卡通 MONEY",
+        "source_name": "一卡通優惠活動",
+        "role": "mixed_listing",
+        "url": "https://web.i-pass.com.tw/Preferential?type=0",
+        "ok": false,
+        "fetched_at": "2026-07-21T08:16:50.895840+08:00",
+        "status_code": null,
+        "final_url": null,
+        "error": "RuntimeError: Failed to fetch https://web.i-pass.com.tw/Preferential?type=0: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
+        "discovered_count": 0,
+        "coverage_issue": null
+      },
+      {
+        "provider_id": "ipassmoney",
+        "provider_name": "一卡通 MONEY",
+        "source_name": "一卡通官方公告",
+        "role": "announcement_listing",
+        "url": "https://www.i-pass.com.tw/News/Notice",
+        "ok": false,
+        "fetched_at": "2026-07-21T08:16:50.895840+08:00",
+        "status_code": null,
+        "final_url": null,
+        "error": "RuntimeError: Failed to fetch https://www.i-pass.com.tw/News/Notice: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
+        "discovered_count": 0,
+        "coverage_issue": null
+      },
+      {
+        "provider_id": "icashpay",
+        "provider_name": "icash Pay",
+        "source_name": "icash Pay 活動列表",
+        "role": "activity_listing",
+        "url": "https://www.icashpay.com.tw/advertMessage/index",
+        "ok": false,
+        "fetched_at": "2026-07-21T08:16:50.895840+08:00",
+        "status_code": null,
+        "final_url": null,
+        "error": "RuntimeError: Failed to fetch https://www.icashpay.com.tw/advertMessage/index: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
+        "discovered_count": 0,
+        "coverage_issue": null
+      },
+      {
+        "provider_id": "icashpay",
+        "provider_name": "icash Pay",
+        "source_name": "icash Pay 最新消息",
+        "role": "announcement_listing",
+        "url": "https://www.icashpay.com.tw/news",
+        "ok": false,
+        "fetched_at": "2026-07-21T08:16:50.895840+08:00",
+        "status_code": null,
+        "final_url": null,
+        "error": "RuntimeError: Failed to fetch https://www.icashpay.com.tw/news: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
+        "discovered_count": 0,
+        "coverage_issue": null
+      },
+      {
+        "provider_id": "icashpay",
+        "provider_name": "icash Pay",
+        "source_name": "icash Pay 會員優惠入口",
+        "role": "activity_detail",
+        "url": "https://www.icashpay.com.tw/event/memberbenefits/",
+        "ok": false,
+        "fetched_at": "2026-07-21T08:16:50.895840+08:00",
+        "status_code": null,
+        "final_url": null,
+        "error": "RuntimeError: Failed to fetch https://www.icashpay.com.tw/event/memberbenefits/: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
+        "discovered_count": 0,
+        "coverage_issue": null
       },
       {
         "provider_id": "pluspay",
         "provider_name": "全盈+PAY",
         "source_name": "全盈+PAY 活動列表",
+        "role": "activity_listing",
         "url": "https://event2023.pluspay.com.tw/",
-        "issue": "listing_zero_discovery",
-        "discovered_count": 0
+        "ok": false,
+        "fetched_at": "2026-07-21T08:16:50.895840+08:00",
+        "status_code": null,
+        "final_url": null,
+        "error": "RuntimeError: Failed to fetch https://event2023.pluspay.com.tw/: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
+        "discovered_count": 0,
+        "coverage_issue": null
+      },
+      {
+        "provider_id": "pluspay",
+        "provider_name": "全盈+PAY",
+        "source_name": "全盈+PAY 最新消息",
+        "role": "announcement_listing",
+        "url": "https://www.pluspay.com.tw/News/",
+        "ok": false,
+        "fetched_at": "2026-07-21T08:16:50.895840+08:00",
+        "status_code": null,
+        "final_url": null,
+        "error": "RuntimeError: Failed to fetch https://www.pluspay.com.tw/News/: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
+        "discovered_count": 0,
+        "coverage_issue": null
+      },
+      {
+        "provider_id": "pluspay",
+        "provider_name": "全盈+PAY",
+        "source_name": "全盈+PAY 活動頁樣本",
+        "role": "activity_detail",
+        "url": "https://www.pluspay.com.tw/Content/Event/PayPay.html",
+        "ok": false,
+        "fetched_at": "2026-07-21T08:16:50.895840+08:00",
+        "status_code": null,
+        "final_url": null,
+        "error": "RuntimeError: Failed to fetch https://www.pluspay.com.tw/Content/Event/PayPay.html: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
+        "discovered_count": 0,
+        "coverage_issue": null
       },
       {
         "provider_id": "gamapay",
         "provider_name": "橘子支付",
         "source_name": "橘子支付最新消息",
+        "role": "mixed_listing",
         "url": "https://www.gamapay.com.tw/news_list.html",
-        "issue": "listing_zero_discovery",
-        "discovered_count": 0
+        "ok": false,
+        "fetched_at": "2026-07-21T08:16:50.895840+08:00",
+        "status_code": null,
+        "final_url": null,
+        "error": "RuntimeError: Failed to fetch https://www.gamapay.com.tw/news_list.html: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
+        "discovered_count": 0,
+        "coverage_issue": null
+      },
+      {
+        "provider_id": "gamapay",
+        "provider_name": "橘子支付",
+        "source_name": "橘子支付額滿公告樣本",
+        "role": "activity_detail",
+        "url": "https://www.gamapay.com.tw/news.html?id=2646",
+        "ok": false,
+        "fetched_at": "2026-07-21T08:16:50.895840+08:00",
+        "status_code": null,
+        "final_url": null,
+        "error": "RuntimeError: Failed to fetch https://www.gamapay.com.tw/news.html?id=2646: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
+        "discovered_count": 0,
+        "coverage_issue": null
       },
       {
         "provider_id": "jkopay",
         "provider_name": "街口支付",
         "source_name": "街口支付活動入口",
+        "role": "activity_listing",
         "url": "https://mkt.jkopay.com/",
-        "issue": "listing_zero_discovery",
-        "discovered_count": 0
+        "ok": false,
+        "fetched_at": "2026-07-21T08:16:50.895840+08:00",
+        "status_code": null,
+        "final_url": null,
+        "error": "RuntimeError: Failed to fetch https://mkt.jkopay.com/: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
+        "discovered_count": 0,
+        "coverage_issue": null
       },
       {
         "provider_id": "jkopay",
         "provider_name": "街口支付",
         "source_name": "街口支付官方公告",
+        "role": "announcement_listing",
         "url": "https://www.jkopay.com/application/announce",
-        "issue": "listing_zero_discovery",
-        "discovered_count": 0
+        "ok": false,
+        "fetched_at": "2026-07-21T08:16:50.895840+08:00",
+        "status_code": null,
+        "final_url": null,
+        "error": "RuntimeError: Failed to fetch https://www.jkopay.com/application/announce: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
+        "discovered_count": 0,
+        "coverage_issue": null
+      },
+      {
+        "provider_id": "jkopay",
+        "provider_name": "街口支付",
+        "source_name": "街口支付活動頁樣本",
+        "role": "activity_detail",
+        "url": "https://mkt.jkopay.com/zh-TW/campaign/jkopayebill",
+        "ok": false,
+        "fetched_at": "2026-07-21T08:16:50.895840+08:00",
+        "status_code": null,
+        "final_url": null,
+        "error": "RuntimeError: Failed to fetch https://mkt.jkopay.com/zh-TW/campaign/jkopayebill: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
+        "discovered_count": 0,
+        "coverage_issue": null
       },
       {
         "provider_id": "opay",
         "provider_name": "歐付寶",
         "source_name": "歐付寶活動入口",
+        "role": "mixed_listing",
         "url": "https://www.opay.tw/Banner/Event",
-        "issue": "listing_zero_discovery",
-        "discovered_count": 0
+        "ok": false,
+        "fetched_at": "2026-07-21T08:16:50.895840+08:00",
+        "status_code": null,
+        "final_url": null,
+        "error": "RuntimeError: Failed to fetch https://www.opay.tw/Banner/Event: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
+        "discovered_count": 0,
+        "coverage_issue": null
       },
       {
         "provider_id": "opay",
         "provider_name": "歐付寶",
         "source_name": "歐付寶完整公告",
+        "role": "announcement_listing",
         "url": "https://www.opay.tw/announcement/moreannouncement",
-        "issue": "listing_reached_max_links",
-        "discovered_count": 20
+        "ok": false,
+        "fetched_at": "2026-07-21T08:16:50.895840+08:00",
+        "status_code": null,
+        "final_url": null,
+        "error": "RuntimeError: Failed to fetch https://www.opay.tw/announcement/moreannouncement: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
+        "discovered_count": 0,
+        "coverage_issue": null
+      },
+      {
+        "provider_id": "opay",
+        "provider_name": "歐付寶",
+        "source_name": "歐付寶公告樣本",
+        "role": "activity_detail",
+        "url": "https://www.opay.tw/announcement/DetailAnnouncement?nID=4379",
+        "ok": false,
+        "fetched_at": "2026-07-21T08:16:50.895840+08:00",
+        "status_code": null,
+        "final_url": null,
+        "error": "RuntimeError: Failed to fetch https://www.opay.tw/announcement/DetailAnnouncement?nID=4379: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
+        "discovered_count": 0,
+        "coverage_issue": null
       },
       {
         "provider_id": "ezpay",
         "provider_name": "簡單行動支付 ezPay",
         "source_name": "ezPay 最新消息",
+        "role": "mixed_listing",
         "url": "https://www.ezpay.com.tw/info/Announcement/lastest_news/person",
-        "issue": "listing_zero_discovery",
-        "discovered_count": 0
+        "ok": false,
+        "fetched_at": "2026-07-21T08:16:50.895840+08:00",
+        "status_code": null,
+        "final_url": null,
+        "error": "RuntimeError: Failed to fetch https://www.ezpay.com.tw/info/Announcement/lastest_news/person: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
+        "discovered_count": 0,
+        "coverage_issue": null
       },
       {
         "provider_id": "linepaymoney",
         "provider_name": "LINE Pay Money",
         "source_name": "LINE Pay Money 官方入口",
+        "role": "activity_listing",
         "url": "https://pay.line.me/portal/tw/about/promotions?progressType=ONGOING",
-        "issue": "listing_zero_discovery",
-        "discovered_count": 0
-      },
+        "ok": false,
+        "fetched_at": "2026-07-21T08:16:50.895840+08:00",
+        "status_code": null,
+        "final_url": null,
+        "error": "RuntimeError: Failed to fetch https://pay.line.me/portal/tw/about/promotions?progressType=ONGOING: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
+        "discovered_count": 0,
+        "coverage_issue": null
+      }
+    ],
+    "needs_ai_review": 1,
+    "review_label": "1 個官網列表由 AI 補查",
+    "coverage_gaps": [
       {
         "provider_id": "fullpay",
         "provider_name": "全支付／PX Pay Plus",
@@ -142,6 +413,14 @@
     },
     {
       "kind": "high_return",
+      "provider_name": "一卡通 MONEY",
+      "title": "里仁帳戶餘額付款最高 20% 回饋",
+      "summary": "至 8/31 在里仁實體門市以 iPASS MONEY 帳戶餘額付款，消費享 10% 綠點；累積滿 2,000 元再加碼 200 點，合計最高 20%。",
+      "url": "https://web.i-pass.com.tw/Preferential/Detail/GMZTMNA5JLRMG64YlprD",
+      "ai_reviewed": true
+    },
+    {
+      "kind": "high_return",
       "provider_name": "icash Pay",
       "title": "icash2.0 公共運輸回饋最高 37%",
       "summary": "uniopen 聯名卡完成首次自動加值後，搭台北捷運享 7% OPENPOINT；同頁另列 TPASS2.0+ 登錄回饋最高 37%，各方案有回饋上限。",
@@ -157,19 +436,19 @@
       "ai_reviewed": true
     },
     {
-      "kind": "sold_out",
+      "kind": "expiring",
       "provider_name": "台灣 Pay",
-      "title": "中原、元智生活圈 20% 回饋已額滿",
-      "summary": "官方活動頁已直接標示活動額滿；原優惠為指定商圈 QR Code 消費享 20% 現金回饋。",
-      "url": "https://www.taiwanpay.com.tw/fisc-tpay/news/event/01KFN18HDDRP0Z953CB1MK53S7",
+      "title": "樂華夜市消費 10% 回饋將於 7/31 結束",
+      "summary": "官方活動快照顯示此活動至 7/31；本輪監測連線失敗，參加前請再確認官方活動頁的適用店家與回饋名額。",
+      "url": "https://www.taiwanpay.com.tw/fisc-tpay/news/event/01KFZ9JVYJGQ9N9A1JRW69SF15",
       "ai_reviewed": true
     },
     {
       "kind": "sold_out",
-      "provider_name": "台灣 Pay",
-      "title": "嘟嘟房每筆 10 元回饋已額滿",
-      "summary": "官方活動頁已直接標示活動額滿；原優惠為嘟嘟房使用台灣 Pay 付款，每筆不限金額回饋 10 元。",
-      "url": "https://www.taiwanpay.com.tw/fisc-tpay/news/event/01KFN19NNF700RDTZQHJ59NW4S",
+      "provider_name": "icash Pay",
+      "title": "綁 uniopen 聯名卡全通路滿 199 元 4% 已額滿",
+      "summary": "官方頁明確公告 2026 年 7 月全通路單筆滿 199 元享 4% 的贈點，已於 7/8 17:00 額滿；其他活動內容仍須依官網條件判斷。",
+      "url": "https://www.icashpay.com.tw/advertMessage/view/id/2371",
       "ai_reviewed": true
     }
   ],
@@ -221,10 +500,7 @@
         ],
         "human_summary": "最高 20% 回饋，屬高回饋活動；官方資訊顯示活動已額滿。"
       },
-      "is_featured": true,
-      "highlight_kind": "sold_out",
-      "editorial_summary": "官方活動頁已直接標示活動額滿；原優惠為指定商圈 QR Code 消費享 20% 現金回饋。",
-      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%28%E6%B4%BB%E5%8B%95%E9%A1%8D%E6%BB%BF%29%E4%B8%AD%E5%8E%9Fx%E5%85%83%E6%99%BA%E5%A4%A7%E5%AD%B8%E7%94%9F%E6%B4%BB%E5%9C%88+Pay%E4%BD%A0%E9%81%8A%E5%A3%A2%E4%BA%AB20%25%E5%9B%9E%E9%A5%8B&dates=20260301%2F20261001&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%8F%B0%E7%81%A3+Pay%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%E5%B7%B2%E7%9B%B4%E6%8E%A5%E6%A8%99%E7%A4%BA%E6%B4%BB%E5%8B%95%E9%A1%8D%E6%BB%BF%EF%BC%9B%E5%8E%9F%E5%84%AA%E6%83%A0%E7%82%BA%E6%8C%87%E5%AE%9A%E5%95%86%E5%9C%88+QR+Code+%E6%B6%88%E8%B2%BB%E4%BA%AB+20%25+%E7%8F%BE%E9%87%91%E5%9B%9E%E9%A5%8B%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fwww.taiwanpay.com.tw%2Ffisc-tpay%2Fnews%2Fevent%2F01KFN18HDDRP0Z953CB1MK53S7%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%28%E6%B4%BB%E5%8B%95%E9%A1%8D%E6%BB%BF%29%E4%B8%AD%E5%8E%9Fx%E5%85%83%E6%99%BA%E5%A4%A7%E5%AD%B8%E7%94%9F%E6%B4%BB%E5%9C%88+Pay%E4%BD%A0%E9%81%8A%E5%A3%A2%E4%BA%AB20%25%E5%9B%9E%E9%A5%8B&dates=20260301%2F20261001&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%8F%B0%E7%81%A3+Pay%0A%0A%E6%9C%80%E9%AB%98+20%25+%E5%9B%9E%E9%A5%8B%EF%BC%8C%E5%B1%AC%E9%AB%98%E5%9B%9E%E9%A5%8B%E6%B4%BB%E5%8B%95%EF%BC%9B%E5%AE%98%E6%96%B9%E8%B3%87%E8%A8%8A%E9%A1%AF%E7%A4%BA%E6%B4%BB%E5%8B%95%E5%B7%B2%E9%A1%8D%E6%BB%BF%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fwww.taiwanpay.com.tw%2Ffisc-tpay%2Fnews%2Fevent%2F01KFN18HDDRP0Z953CB1MK53S7%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     },
     {
       "provider_id": "taiwanpay",
@@ -271,10 +547,7 @@
         ],
         "human_summary": "最高 1.5% 回饋；固定回饋最高 10 元；官方資訊顯示活動已額滿。"
       },
-      "is_featured": true,
-      "highlight_kind": "sold_out",
-      "editorial_summary": "官方活動頁已直接標示活動額滿；原優惠為嘟嘟房使用台灣 Pay 付款，每筆不限金額回饋 10 元。",
-      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%28%E6%B4%BB%E5%8B%95%E9%A1%8D%E6%BB%BF%29%E5%98%9F%E5%98%9F%E6%88%BF%E5%81%9C%E8%BB%8A%E5%B0%B1%E7%94%A8%E5%8F%B0%E7%81%A3Pay%EF%BC%8C%E6%AF%8F%E7%AD%86%E4%BA%A4%E6%98%93%E4%B8%8D%E9%99%90%E9%87%91%E9%A1%8D%E4%BA%AB10%E5%85%83%E5%9B%9E%E9%A5%8B&dates=20260315%2F20261001&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%8F%B0%E7%81%A3+Pay%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%E5%B7%B2%E7%9B%B4%E6%8E%A5%E6%A8%99%E7%A4%BA%E6%B4%BB%E5%8B%95%E9%A1%8D%E6%BB%BF%EF%BC%9B%E5%8E%9F%E5%84%AA%E6%83%A0%E7%82%BA%E5%98%9F%E5%98%9F%E6%88%BF%E4%BD%BF%E7%94%A8%E5%8F%B0%E7%81%A3+Pay+%E4%BB%98%E6%AC%BE%EF%BC%8C%E6%AF%8F%E7%AD%86%E4%B8%8D%E9%99%90%E9%87%91%E9%A1%8D%E5%9B%9E%E9%A5%8B+10+%E5%85%83%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fwww.taiwanpay.com.tw%2Ffisc-tpay%2Fnews%2Fevent%2F01KFN19NNF700RDTZQHJ59NW4S%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%28%E6%B4%BB%E5%8B%95%E9%A1%8D%E6%BB%BF%29%E5%98%9F%E5%98%9F%E6%88%BF%E5%81%9C%E8%BB%8A%E5%B0%B1%E7%94%A8%E5%8F%B0%E7%81%A3Pay%EF%BC%8C%E6%AF%8F%E7%AD%86%E4%BA%A4%E6%98%93%E4%B8%8D%E9%99%90%E9%87%91%E9%A1%8D%E4%BA%AB10%E5%85%83%E5%9B%9E%E9%A5%8B&dates=20260315%2F20261001&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%8F%B0%E7%81%A3+Pay%0A%0A%E6%9C%80%E9%AB%98+1.5%25+%E5%9B%9E%E9%A5%8B%EF%BC%9B%E5%9B%BA%E5%AE%9A%E5%9B%9E%E9%A5%8B%E6%9C%80%E9%AB%98+10+%E5%85%83%EF%BC%9B%E5%AE%98%E6%96%B9%E8%B3%87%E8%A8%8A%E9%A1%AF%E7%A4%BA%E6%B4%BB%E5%8B%95%E5%B7%B2%E9%A1%8D%E6%BB%BF%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fwww.taiwanpay.com.tw%2Ffisc-tpay%2Fnews%2Fevent%2F01KFN19NNF700RDTZQHJ59NW4S%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     },
     {
       "provider_id": "taiwanpay",
@@ -579,7 +852,10 @@
         ],
         "human_summary": "最高 11% 回饋，屬高回饋活動；部分期別或子活動已額滿。"
       },
-      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=icash+Pay%E8%B6%85%E5%BC%B7%E6%94%AF%E4%BB%98+%E7%B6%81uniopen%E8%81%AF%E5%90%8D%E5%8D%A1%E6%BB%BF%E9%A1%8D%E6%9C%80%E9%AB%98%E5%9B%9E%E9%A5%8B11%25&dates=20260701%2F20260901&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9Aicash+Pay%0A%0A%E6%9C%80%E9%AB%98+11%25+%E5%9B%9E%E9%A5%8B%EF%BC%8C%E5%B1%AC%E9%AB%98%E5%9B%9E%E9%A5%8B%E6%B4%BB%E5%8B%95%EF%BC%9B%E9%83%A8%E5%88%86%E6%9C%9F%E5%88%A5%E6%88%96%E5%AD%90%E6%B4%BB%E5%8B%95%E5%B7%B2%E9%A1%8D%E6%BB%BF%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fwww.icashpay.com.tw%2FadvertMessage%2Fview%2Fid%2F2371%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
+      "is_featured": true,
+      "highlight_kind": "sold_out",
+      "editorial_summary": "官方頁明確公告 2026 年 7 月全通路單筆滿 199 元享 4% 的贈點，已於 7/8 17:00 額滿；其他活動內容仍須依官網條件判斷。",
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=icash+Pay%E8%B6%85%E5%BC%B7%E6%94%AF%E4%BB%98+%E7%B6%81uniopen%E8%81%AF%E5%90%8D%E5%8D%A1%E6%BB%BF%E9%A1%8D%E6%9C%80%E9%AB%98%E5%9B%9E%E9%A5%8B11%25&dates=20260701%2F20260901&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9Aicash+Pay%0A%0A%E5%AE%98%E6%96%B9%E9%A0%81%E6%98%8E%E7%A2%BA%E5%85%AC%E5%91%8A+2026+%E5%B9%B4+7+%E6%9C%88%E5%85%A8%E9%80%9A%E8%B7%AF%E5%96%AE%E7%AD%86%E6%BB%BF+199+%E5%85%83%E4%BA%AB+4%25+%E7%9A%84%E8%B4%88%E9%BB%9E%EF%BC%8C%E5%B7%B2%E6%96%BC+7%2F8+17%3A00+%E9%A1%8D%E6%BB%BF%EF%BC%9B%E5%85%B6%E4%BB%96%E6%B4%BB%E5%8B%95%E5%85%A7%E5%AE%B9%E4%BB%8D%E9%A0%88%E4%BE%9D%E5%AE%98%E7%B6%B2%E6%A2%9D%E4%BB%B6%E5%88%A4%E6%96%B7%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fwww.icashpay.com.tw%2FadvertMessage%2Fview%2Fid%2F2371%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     },
     {
       "provider_id": "icashpay",
@@ -1343,7 +1619,10 @@
         ],
         "human_summary": "最高 10% 回饋，屬高回饋活動。"
       },
-      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E4%BE%86%E9%80%9B%E6%A8%82%E8%8F%AF%E5%A4%9C%E5%B8%82%E6%A8%82%E4%BA%AB10%25%E5%9B%9E%E9%A5%8B&dates=20260201%2F20260801&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%8F%B0%E7%81%A3+Pay%0A%0A%E6%9C%80%E9%AB%98+10%25+%E5%9B%9E%E9%A5%8B%EF%BC%8C%E5%B1%AC%E9%AB%98%E5%9B%9E%E9%A5%8B%E6%B4%BB%E5%8B%95%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fwww.taiwanpay.com.tw%2Ffisc-tpay%2Fnews%2Fevent%2F01KFZ9JVYJGQ9N9A1JRW69SF15%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
+      "is_featured": true,
+      "highlight_kind": "expiring",
+      "editorial_summary": "官方活動快照顯示此活動至 7/31；本輪監測連線失敗，參加前請再確認官方活動頁的適用店家與回饋名額。",
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E4%BE%86%E9%80%9B%E6%A8%82%E8%8F%AF%E5%A4%9C%E5%B8%82%E6%A8%82%E4%BA%AB10%25%E5%9B%9E%E9%A5%8B&dates=20260201%2F20260801&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%8F%B0%E7%81%A3+Pay%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E5%BF%AB%E7%85%A7%E9%A1%AF%E7%A4%BA%E6%AD%A4%E6%B4%BB%E5%8B%95%E8%87%B3+7%2F31%EF%BC%9B%E6%9C%AC%E8%BC%AA%E7%9B%A3%E6%B8%AC%E9%80%A3%E7%B7%9A%E5%A4%B1%E6%95%97%EF%BC%8C%E5%8F%83%E5%8A%A0%E5%89%8D%E8%AB%8B%E5%86%8D%E7%A2%BA%E8%AA%8D%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%E7%9A%84%E9%81%A9%E7%94%A8%E5%BA%97%E5%AE%B6%E8%88%87%E5%9B%9E%E9%A5%8B%E5%90%8D%E9%A1%8D%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fwww.taiwanpay.com.tw%2Ffisc-tpay%2Fnews%2Fevent%2F01KFZ9JVYJGQ9N9A1JRW69SF15%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     },
     {
       "provider_id": "taiwanpay",
@@ -2407,7 +2686,10 @@
         ],
         "human_summary": "最高 20% 回饋，屬高回饋活動。"
       },
-      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E3%80%90%E9%87%8C%E4%BB%81%E3%80%91%E7%94%A8+iPASS+MONEY+%E5%B8%B3%E6%88%B6%E9%A4%98%E9%A1%8D%E4%BB%98%E6%AC%BE%E6%9C%80%E9%AB%98%E4%BA%AB+20%25+%E5%9B%9E%E9%A5%8B%EF%BC%81&dates=20260713%2F20260901&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E4%B8%80%E5%8D%A1%E9%80%9A+MONEY%0A%0A%E6%9C%80%E9%AB%98+20%25+%E5%9B%9E%E9%A5%8B%EF%BC%8C%E5%B1%AC%E9%AB%98%E5%9B%9E%E9%A5%8B%E6%B4%BB%E5%8B%95%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fweb.i-pass.com.tw%2FPreferential%2FDetail%2FGMZTMNA5JLRMG64YlprD%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
+      "is_featured": true,
+      "highlight_kind": "high_return",
+      "editorial_summary": "至 8/31 在里仁實體門市以 iPASS MONEY 帳戶餘額付款，消費享 10% 綠點；累積滿 2,000 元再加碼 200 點，合計最高 20%。",
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E3%80%90%E9%87%8C%E4%BB%81%E3%80%91%E7%94%A8+iPASS+MONEY+%E5%B8%B3%E6%88%B6%E9%A4%98%E9%A1%8D%E4%BB%98%E6%AC%BE%E6%9C%80%E9%AB%98%E4%BA%AB+20%25+%E5%9B%9E%E9%A5%8B%EF%BC%81&dates=20260713%2F20260901&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E4%B8%80%E5%8D%A1%E9%80%9A+MONEY%0A%0A%E8%87%B3+8%2F31+%E5%9C%A8%E9%87%8C%E4%BB%81%E5%AF%A6%E9%AB%94%E9%96%80%E5%B8%82%E4%BB%A5+iPASS+MONEY+%E5%B8%B3%E6%88%B6%E9%A4%98%E9%A1%8D%E4%BB%98%E6%AC%BE%EF%BC%8C%E6%B6%88%E8%B2%BB%E4%BA%AB+10%25+%E7%B6%A0%E9%BB%9E%EF%BC%9B%E7%B4%AF%E7%A9%8D%E6%BB%BF+2%2C000+%E5%85%83%E5%86%8D%E5%8A%A0%E7%A2%BC+200+%E9%BB%9E%EF%BC%8C%E5%90%88%E8%A8%88%E6%9C%80%E9%AB%98+20%25%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fweb.i-pass.com.tw%2FPreferential%2FDetail%2FGMZTMNA5JLRMG64YlprD%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     },
     {
       "provider_id": "taiwanpay",

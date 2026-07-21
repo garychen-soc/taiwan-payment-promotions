@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-21T02:01:10+08:00",
-  "headline": "新戶首刷 100%、NET 隨機返現與 7/23 即將開始活動",
+  "generated_at": "2026-07-21T08:18:31+08:00",
+  "headline": "7/23 OK 超商 10% 即將開跑，NET 隨機最高 100% 與新戶首刷 100% 仍是今日焦點",
   "highlights": [
     {
       "kind": "high_return",
@@ -21,6 +21,14 @@
     },
     {
       "kind": "high_return",
+      "provider_id": "ipassmoney",
+      "provider_name": "一卡通 MONEY",
+      "title": "里仁帳戶餘額付款最高 20% 回饋",
+      "summary": "至 8/31 在里仁實體門市以 iPASS MONEY 帳戶餘額付款，消費享 10% 綠點；累積滿 2,000 元再加碼 200 點，合計最高 20%。",
+      "url": "https://web.i-pass.com.tw/Preferential/Detail/GMZTMNA5JLRMG64YlprD"
+    },
+    {
+      "kind": "high_return",
       "provider_id": "icashpay",
       "provider_name": "icash Pay",
       "title": "icash2.0 公共運輸回饋最高 37%",
@@ -36,20 +44,20 @@
       "url": "https://www.taiwanpay.com.tw/fisc-tpay/news/event/01KXFV9GFDCS1EGK6MNEPD06FN"
     },
     {
-      "kind": "sold_out",
+      "kind": "expiring",
       "provider_id": "taiwanpay",
       "provider_name": "台灣 Pay",
-      "title": "中原、元智生活圈 20% 回饋已額滿",
-      "summary": "官方活動頁已直接標示活動額滿；原優惠為指定商圈 QR Code 消費享 20% 現金回饋。",
-      "url": "https://www.taiwanpay.com.tw/fisc-tpay/news/event/01KFN18HDDRP0Z953CB1MK53S7"
+      "title": "樂華夜市消費 10% 回饋將於 7/31 結束",
+      "summary": "官方活動快照顯示此活動至 7/31；本輪監測連線失敗，參加前請再確認官方活動頁的適用店家與回饋名額。",
+      "url": "https://www.taiwanpay.com.tw/fisc-tpay/news/event/01KFZ9JVYJGQ9N9A1JRW69SF15"
     },
     {
       "kind": "sold_out",
-      "provider_id": "taiwanpay",
-      "provider_name": "台灣 Pay",
-      "title": "嘟嘟房每筆 10 元回饋已額滿",
-      "summary": "官方活動頁已直接標示活動額滿；原優惠為嘟嘟房使用台灣 Pay 付款，每筆不限金額回饋 10 元。",
-      "url": "https://www.taiwanpay.com.tw/fisc-tpay/news/event/01KFN19NNF700RDTZQHJ59NW4S"
+      "provider_id": "icashpay",
+      "provider_name": "icash Pay",
+      "title": "綁 uniopen 聯名卡全通路滿 199 元 4% 已額滿",
+      "summary": "官方頁明確公告 2026 年 7 月全通路單筆滿 199 元享 4% 的贈點，已於 7/8 17:00 額滿；其他活動內容仍須依官網條件判斷。",
+      "url": "https://www.icashpay.com.tw/advertMessage/view/id/2371"
     }
   ],
   "supplemental_activities": []

@@ -4,6 +4,15 @@ from dataclasses import asdict, dataclass, field
 from typing import Any
 
 
+_DNS_ERROR_MARKERS = (
+    "nodename nor servname provided",
+    "name or service not known",
+    "temporary failure in name resolution",
+    "could not resolve host",
+    "no address associated with hostname",
+)
+
+
 @dataclass(slots=True)
 class Evidence:
     source_url: str
@@ -70,19 +79,31 @@ class RunResult:
     finished_at: str
     activities: list[Activity]
     attempts: list[SourceAttempt]
+    crawl_limit_pending: list[dict[str, Any]] = field(default_factory=list)
 
     @property
     def coverage(self) -> dict[str, Any]:
         expected = len(self.attempts)
         succeeded = sum(1 for item in self.attempts if item.ok)
         failed = expected - succeeded
-        discovery_issues = sum(1 for item in self.attempts if item.coverage_issue)
+        discovery_issues = sum(1 for item in self.attempts if item.coverage_issue) + len(self.crawl_limit_pending)
+        unavailable = expected > 0 and succeeded == 0
+        failed_errors = [(item.error or "").lower() for item in self.attempts if not item.ok]
+        systemic_dns_failure = unavailable and bool(failed_errors) and all(
+            any(marker in error for marker in _DNS_ERROR_MARKERS) for error in failed_errors
+        )
+        transport_status = "unavailable" if unavailable else ("complete" if failed == 0 else "partial")
         return {
             "expected": expected,
             "succeeded": succeeded,
             "failed": failed,
             "rate": round(succeeded / expected, 4) if expected else 1.0,
-            "transport_status": "complete" if failed == 0 else "partial",
+            "transport_status": transport_status,
+            "systemic_dns_failure": systemic_dns_failure,
             "discovery_issues": discovery_issues,
-            "status": "complete" if failed == 0 and discovery_issues == 0 else "partial",
+            "status": (
+                "unavailable"
+                if unavailable
+                else ("complete" if failed == 0 and discovery_issues == 0 else "partial")
+            ),
         }

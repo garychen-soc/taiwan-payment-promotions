@@ -2,19 +2,48 @@
   "schema_version": 1,
   "timezone": "Asia/Taipei",
   "request_delay_seconds": 0.15,
-  "max_total_pages": 180,
+  "max_total_pages": 240,
   "providers": [
     {
       "id": "fullpay",
       "name": "全支付／PX Pay Plus",
       "official_domains": ["pxpayplus.com", "marketing.pxpayplus.com", "service.pxpayplus.com"],
-      "public_status_coverage": "活動頁可公開擷取；部分額滿狀態僅在全支付 App 最新消息，會標示為無法公開確認",
-      "sources": [],
+      "public_status_coverage": "官網活動總覽、活動頁公開狀態 API 與官網最新消息可擷取；App 小鈴鐺活動通知無公開列表，無公開額滿證據時維持 App-only 未知",
+      "sources": [
+        {
+          "name": "全支付百大品牌活動總覽",
+          "role": "activity_listing",
+          "url": "https://prod-s3.pxpayplus.com/MKT_Event/100Big2026.json",
+          "display_url": "https://marketing.pxpayplus.com/pxplus_marketing_page/100big_2026",
+          "adapter": "fullpay_hub_listing",
+          "coverage_scope": "partial",
+          "max_links": 40
+        },
+        {
+          "name": "全支付夏日乾杯飲料季總覽",
+          "role": "activity_listing",
+          "url": "https://prod-s3.pxpayplus.com/MKT_Event/2026Drink.json",
+          "display_url": "https://marketing.pxpayplus.com/pxplus_marketing_page/2026Drink",
+          "adapter": "fullpay_hub_listing",
+          "coverage_scope": "partial",
+          "max_links": 10
+        },
+        {
+          "name": "全支付官網最新消息",
+          "role": "announcement_listing",
+          "url": "https://prod-s3.pxpayplus.com/qaandtutor/pxplus_news.json",
+          "display_url": "https://www.pxpayplus.com/news/%E5%85%A8%E9%83%A8/1",
+          "adapter": "fullpay_news_listing",
+          "max_links": 120
+        }
+      ],
       "seeds": [
         {
           "name": "全支付官方活動 API：延三夜市",
           "url": "https://marketing.pxpayplus.com/pxplus_marketing_page/activity_content_page?EventId=89",
-          "fetch_url": "https://service.pxpayplus.com/px-advertise/web/activity/detail/89"
+          "fetch_url": "https://service.pxpayplus.com/px-advertise/web/activity/detail/89",
+          "adapter": "fullpay_detail",
+          "external_id": "89"
         }
       ]
     },

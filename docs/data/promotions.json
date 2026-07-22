@@ -1,385 +1,114 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-22T08:40:32.717248+08:00",
-  "build_at": "2026-07-22T08:42:25.653856+08:00",
+  "generated_at": "2026-07-22T13:14:22.505424+08:00",
+  "build_at": "2026-07-22T13:16:06.896241+08:00",
   "timezone": "Asia/Taipei",
   "headline": "7/23 OK 超商 10% 即將開跑，NET 隨機最高 100% 與新戶首刷 100% 仍是今日焦點",
   "summary": {
-    "included_non_expired": 71,
-    "expired_excluded": 0,
-    "active_public": 40,
-    "sold_out_or_partial": 14,
+    "included_non_expired": 93,
+    "expired_excluded": 3,
+    "active_public": 53,
+    "sold_out_or_partial": 15,
     "upcoming": 1,
-    "app_only_unknown": 4,
+    "app_only_unknown": 12,
     "review_required": 12
   },
   "source_health": {
-    "status": "partial",
-    "label": "部分官網暫時無法讀取",
-    "succeeded": 0,
-    "expected": 25,
-    "failures": [
-      {
-        "provider_id": "fullpay",
-        "provider_name": "全支付／PX Pay Plus",
-        "source_name": "全支付官方活動 API：延三夜市",
-        "role": "activity_detail",
-        "url": "https://service.pxpayplus.com/px-advertise/web/activity/detail/89",
-        "ok": false,
-        "fetched_at": "2026-07-22T08:40:32.717248+08:00",
-        "status_code": null,
-        "final_url": null,
-        "error": "RuntimeError: Failed to fetch https://service.pxpayplus.com/px-advertise/web/activity/detail/89: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
-        "discovered_count": 0,
-        "coverage_issue": null
-      },
+    "status": "normal",
+    "label": "資料更新正常",
+    "succeeded": 181,
+    "expected": 181,
+    "failures": [],
+    "needs_ai_review": 11,
+    "review_label": "11 個官網列表由 AI 補查",
+    "coverage_gaps": [
       {
         "provider_id": "easywallet",
         "provider_name": "悠遊付",
         "source_name": "悠遊付優惠列表",
-        "role": "activity_listing",
         "url": "https://www.easycard.com.tw/offer",
-        "ok": false,
-        "fetched_at": "2026-07-22T08:40:32.717248+08:00",
-        "status_code": null,
-        "final_url": null,
-        "error": "RuntimeError: Failed to fetch https://www.easycard.com.tw/offer: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
-        "discovered_count": 0,
-        "coverage_issue": null
+        "issue": "listing_zero_discovery",
+        "discovered_count": 0
       },
       {
         "provider_id": "easywallet",
         "provider_name": "悠遊付",
         "source_name": "悠遊卡公司最新消息",
-        "role": "announcement_listing",
         "url": "https://www.easycard.com.tw/news?cls=1&page=1",
-        "ok": false,
-        "fetched_at": "2026-07-22T08:40:32.717248+08:00",
-        "status_code": null,
-        "final_url": null,
-        "error": "RuntimeError: Failed to fetch https://www.easycard.com.tw/news?cls=1&page=1: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
-        "discovered_count": 0,
-        "coverage_issue": null
-      },
-      {
-        "provider_id": "easywallet",
-        "provider_name": "悠遊付",
-        "source_name": "悠遊付官方活動樣本",
-        "role": "activity_detail",
-        "url": "https://www.easycard.com.tw/offer?cls=1506473503,1506473490,&id=1781689964",
-        "ok": false,
-        "fetched_at": "2026-07-22T08:40:32.717248+08:00",
-        "status_code": null,
-        "final_url": null,
-        "error": "RuntimeError: Failed to fetch https://www.easycard.com.tw/offer?cls=1506473503,1506473490,&id=1781689964: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
-        "discovered_count": 0,
-        "coverage_issue": null
-      },
-      {
-        "provider_id": "easywallet",
-        "provider_name": "悠遊付",
-        "source_name": "悠遊付部分額滿樣本",
-        "role": "activity_detail",
-        "url": "https://yax.easycard.com.tw/offer?cls=1506473519,1506473490,1506473503,&id=1781071557",
-        "ok": false,
-        "fetched_at": "2026-07-22T08:40:32.717248+08:00",
-        "status_code": null,
-        "final_url": null,
-        "error": "RuntimeError: Failed to fetch https://yax.easycard.com.tw/offer?cls=1506473519,1506473490,1506473503,&id=1781071557: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
-        "discovered_count": 0,
-        "coverage_issue": null
-      },
-      {
-        "provider_id": "taiwanpay",
-        "provider_name": "台灣 Pay",
-        "source_name": "台灣 Pay 官方活動 API",
-        "role": "taiwanpay_api_listing",
-        "url": "https://www.taiwanpay.com.tw/tpay/v1.0.0/950/taiwanpayfapi/TF02/TF020109",
-        "ok": false,
-        "fetched_at": "2026-07-22T08:40:32.717248+08:00",
-        "status_code": null,
-        "final_url": null,
-        "error": "RuntimeError: Failed to POST https://www.taiwanpay.com.tw/tpay/v1.0.0/950/taiwanpayfapi/TF02/TF020109: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
-        "discovered_count": 0,
-        "coverage_issue": null
-      },
-      {
-        "provider_id": "taiwanpay",
-        "provider_name": "台灣 Pay",
-        "source_name": "台灣 Pay 官方活動樣本",
-        "role": "activity_detail",
-        "url": "https://www.taiwanpay.com.tw/tpay/v1.0.0/950/taiwanpayfapi/TF02/TF020110",
-        "ok": false,
-        "fetched_at": "2026-07-22T08:40:32.717248+08:00",
-        "status_code": null,
-        "final_url": null,
-        "error": "RuntimeError: Failed to POST https://www.taiwanpay.com.tw/tpay/v1.0.0/950/taiwanpayfapi/TF02/TF020110: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
-        "discovered_count": 0,
-        "coverage_issue": null
-      },
-      {
-        "provider_id": "ipassmoney",
-        "provider_name": "一卡通 MONEY",
-        "source_name": "一卡通優惠活動",
-        "role": "mixed_listing",
-        "url": "https://web.i-pass.com.tw/Preferential?type=0",
-        "ok": false,
-        "fetched_at": "2026-07-22T08:40:32.717248+08:00",
-        "status_code": null,
-        "final_url": null,
-        "error": "RuntimeError: Failed to fetch https://web.i-pass.com.tw/Preferential?type=0: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
-        "discovered_count": 0,
-        "coverage_issue": null
-      },
-      {
-        "provider_id": "ipassmoney",
-        "provider_name": "一卡通 MONEY",
-        "source_name": "一卡通官方公告",
-        "role": "announcement_listing",
-        "url": "https://www.i-pass.com.tw/News/Notice",
-        "ok": false,
-        "fetched_at": "2026-07-22T08:40:32.717248+08:00",
-        "status_code": null,
-        "final_url": null,
-        "error": "RuntimeError: Failed to fetch https://www.i-pass.com.tw/News/Notice: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
-        "discovered_count": 0,
-        "coverage_issue": null
-      },
-      {
-        "provider_id": "icashpay",
-        "provider_name": "icash Pay",
-        "source_name": "icash Pay 活動列表",
-        "role": "activity_listing",
-        "url": "https://www.icashpay.com.tw/advertMessage/index",
-        "ok": false,
-        "fetched_at": "2026-07-22T08:40:32.717248+08:00",
-        "status_code": null,
-        "final_url": null,
-        "error": "RuntimeError: Failed to fetch https://www.icashpay.com.tw/advertMessage/index: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
-        "discovered_count": 0,
-        "coverage_issue": null
-      },
-      {
-        "provider_id": "icashpay",
-        "provider_name": "icash Pay",
-        "source_name": "icash Pay 最新消息",
-        "role": "announcement_listing",
-        "url": "https://www.icashpay.com.tw/news",
-        "ok": false,
-        "fetched_at": "2026-07-22T08:40:32.717248+08:00",
-        "status_code": null,
-        "final_url": null,
-        "error": "RuntimeError: Failed to fetch https://www.icashpay.com.tw/news: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
-        "discovered_count": 0,
-        "coverage_issue": null
-      },
-      {
-        "provider_id": "icashpay",
-        "provider_name": "icash Pay",
-        "source_name": "icash Pay 會員優惠入口",
-        "role": "activity_detail",
-        "url": "https://www.icashpay.com.tw/event/memberbenefits/",
-        "ok": false,
-        "fetched_at": "2026-07-22T08:40:32.717248+08:00",
-        "status_code": null,
-        "final_url": null,
-        "error": "RuntimeError: Failed to fetch https://www.icashpay.com.tw/event/memberbenefits/: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
-        "discovered_count": 0,
-        "coverage_issue": null
+        "issue": "listing_zero_discovery",
+        "discovered_count": 0
       },
       {
         "provider_id": "pluspay",
         "provider_name": "全盈+PAY",
         "source_name": "全盈+PAY 活動列表",
-        "role": "activity_listing",
         "url": "https://event2023.pluspay.com.tw/",
-        "ok": false,
-        "fetched_at": "2026-07-22T08:40:32.717248+08:00",
-        "status_code": null,
-        "final_url": null,
-        "error": "RuntimeError: Failed to fetch https://event2023.pluspay.com.tw/: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
-        "discovered_count": 0,
-        "coverage_issue": null
-      },
-      {
-        "provider_id": "pluspay",
-        "provider_name": "全盈+PAY",
-        "source_name": "全盈+PAY 最新消息",
-        "role": "announcement_listing",
-        "url": "https://www.pluspay.com.tw/News/",
-        "ok": false,
-        "fetched_at": "2026-07-22T08:40:32.717248+08:00",
-        "status_code": null,
-        "final_url": null,
-        "error": "RuntimeError: Failed to fetch https://www.pluspay.com.tw/News/: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
-        "discovered_count": 0,
-        "coverage_issue": null
-      },
-      {
-        "provider_id": "pluspay",
-        "provider_name": "全盈+PAY",
-        "source_name": "全盈+PAY 活動頁樣本",
-        "role": "activity_detail",
-        "url": "https://www.pluspay.com.tw/Content/Event/PayPay.html",
-        "ok": false,
-        "fetched_at": "2026-07-22T08:40:32.717248+08:00",
-        "status_code": null,
-        "final_url": null,
-        "error": "RuntimeError: Failed to fetch https://www.pluspay.com.tw/Content/Event/PayPay.html: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
-        "discovered_count": 0,
-        "coverage_issue": null
+        "issue": "listing_zero_discovery",
+        "discovered_count": 0
       },
       {
         "provider_id": "gamapay",
         "provider_name": "橘子支付",
         "source_name": "橘子支付最新消息",
-        "role": "mixed_listing",
         "url": "https://www.gamapay.com.tw/news_list.html",
-        "ok": false,
-        "fetched_at": "2026-07-22T08:40:32.717248+08:00",
-        "status_code": null,
-        "final_url": null,
-        "error": "RuntimeError: Failed to fetch https://www.gamapay.com.tw/news_list.html: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
-        "discovered_count": 0,
-        "coverage_issue": null
-      },
-      {
-        "provider_id": "gamapay",
-        "provider_name": "橘子支付",
-        "source_name": "橘子支付額滿公告樣本",
-        "role": "activity_detail",
-        "url": "https://www.gamapay.com.tw/news.html?id=2646",
-        "ok": false,
-        "fetched_at": "2026-07-22T08:40:32.717248+08:00",
-        "status_code": null,
-        "final_url": null,
-        "error": "RuntimeError: Failed to fetch https://www.gamapay.com.tw/news.html?id=2646: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
-        "discovered_count": 0,
-        "coverage_issue": null
+        "issue": "listing_zero_discovery",
+        "discovered_count": 0
       },
       {
         "provider_id": "jkopay",
         "provider_name": "街口支付",
         "source_name": "街口支付活動入口",
-        "role": "activity_listing",
         "url": "https://mkt.jkopay.com/",
-        "ok": false,
-        "fetched_at": "2026-07-22T08:40:32.717248+08:00",
-        "status_code": null,
-        "final_url": null,
-        "error": "RuntimeError: Failed to fetch https://mkt.jkopay.com/: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
-        "discovered_count": 0,
-        "coverage_issue": null
+        "issue": "listing_zero_discovery",
+        "discovered_count": 0
       },
       {
         "provider_id": "jkopay",
         "provider_name": "街口支付",
         "source_name": "街口支付官方公告",
-        "role": "announcement_listing",
         "url": "https://www.jkopay.com/application/announce",
-        "ok": false,
-        "fetched_at": "2026-07-22T08:40:32.717248+08:00",
-        "status_code": null,
-        "final_url": null,
-        "error": "RuntimeError: Failed to fetch https://www.jkopay.com/application/announce: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
-        "discovered_count": 0,
-        "coverage_issue": null
-      },
-      {
-        "provider_id": "jkopay",
-        "provider_name": "街口支付",
-        "source_name": "街口支付活動頁樣本",
-        "role": "activity_detail",
-        "url": "https://mkt.jkopay.com/zh-TW/campaign/jkopayebill",
-        "ok": false,
-        "fetched_at": "2026-07-22T08:40:32.717248+08:00",
-        "status_code": null,
-        "final_url": null,
-        "error": "RuntimeError: Failed to fetch https://mkt.jkopay.com/zh-TW/campaign/jkopayebill: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
-        "discovered_count": 0,
-        "coverage_issue": null
+        "issue": "listing_zero_discovery",
+        "discovered_count": 0
       },
       {
         "provider_id": "opay",
         "provider_name": "歐付寶",
         "source_name": "歐付寶活動入口",
-        "role": "mixed_listing",
         "url": "https://www.opay.tw/Banner/Event",
-        "ok": false,
-        "fetched_at": "2026-07-22T08:40:32.717248+08:00",
-        "status_code": null,
-        "final_url": null,
-        "error": "RuntimeError: Failed to fetch https://www.opay.tw/Banner/Event: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
-        "discovered_count": 0,
-        "coverage_issue": null
+        "issue": "listing_zero_discovery",
+        "discovered_count": 0
       },
       {
         "provider_id": "opay",
         "provider_name": "歐付寶",
         "source_name": "歐付寶完整公告",
-        "role": "announcement_listing",
         "url": "https://www.opay.tw/announcement/moreannouncement",
-        "ok": false,
-        "fetched_at": "2026-07-22T08:40:32.717248+08:00",
-        "status_code": null,
-        "final_url": null,
-        "error": "RuntimeError: Failed to fetch https://www.opay.tw/announcement/moreannouncement: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
-        "discovered_count": 0,
-        "coverage_issue": null
-      },
-      {
-        "provider_id": "opay",
-        "provider_name": "歐付寶",
-        "source_name": "歐付寶公告樣本",
-        "role": "activity_detail",
-        "url": "https://www.opay.tw/announcement/DetailAnnouncement?nID=4379",
-        "ok": false,
-        "fetched_at": "2026-07-22T08:40:32.717248+08:00",
-        "status_code": null,
-        "final_url": null,
-        "error": "RuntimeError: Failed to fetch https://www.opay.tw/announcement/DetailAnnouncement?nID=4379: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
-        "discovered_count": 0,
-        "coverage_issue": null
+        "issue": "listing_reached_max_links",
+        "discovered_count": 20
       },
       {
         "provider_id": "ezpay",
         "provider_name": "簡單行動支付 ezPay",
         "source_name": "ezPay 最新消息",
-        "role": "mixed_listing",
         "url": "https://www.ezpay.com.tw/info/Announcement/lastest_news/person",
-        "ok": false,
-        "fetched_at": "2026-07-22T08:40:32.717248+08:00",
-        "status_code": null,
-        "final_url": null,
-        "error": "RuntimeError: Failed to fetch https://www.ezpay.com.tw/info/Announcement/lastest_news/person: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
-        "discovered_count": 0,
-        "coverage_issue": null
+        "issue": "listing_zero_discovery",
+        "discovered_count": 0
       },
       {
         "provider_id": "linepaymoney",
         "provider_name": "LINE Pay Money",
         "source_name": "LINE Pay Money 官方入口",
-        "role": "activity_listing",
         "url": "https://pay.line.me/portal/tw/about/promotions?progressType=ONGOING",
-        "ok": false,
-        "fetched_at": "2026-07-22T08:40:32.717248+08:00",
-        "status_code": null,
-        "final_url": null,
-        "error": "RuntimeError: Failed to fetch https://pay.line.me/portal/tw/about/promotions?progressType=ONGOING: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
-        "discovered_count": 0,
-        "coverage_issue": null
-      }
-    ],
-    "needs_ai_review": 1,
-    "review_label": "1 個官網列表由 AI 補查",
-    "coverage_gaps": [
+        "issue": "listing_zero_discovery",
+        "discovered_count": 0
+      },
       {
         "provider_id": "fullpay",
         "provider_name": "全支付／PX Pay Plus",
-        "source_name": "業者活動發現來源",
-        "url": "https://marketing.pxpayplus.com/pxplus_marketing_page/activity_content_page?EventId=89",
-        "issue": "no_verified_activity_listing",
-        "discovered_count": 0
+        "source_name": "官方主題活動總覽與關聯圖",
+        "url": "https://marketing.pxpayplus.com/pxplus_marketing_page/100big_2026",
+        "issue": "partial_public_activity_discovery",
+        "discovered_count": 15
       }
     ]
   },
@@ -468,15 +197,15 @@
       "review_required": false,
       "date_confidence": "high",
       "conditions_summary": "title: (活動額滿)中原x元智大學生活圈 Pay你遊壢享20%回饋 description: (活動額滿)中原x元智大學生活圈 Pay你遊壢享20%回饋 location: 桃園市中原大學與元智大學周圍商圈受理「台灣Pay」之指定店家(參與本活動之店家詳臺灣銀行官網公告，惟用戶於實際交易時，仍應以各店家得受理支付之方式或狀態為準)。 content: 活動期間於活動地點消費以「台灣Pay」QR Code掃碼支付，單筆消費不限金額可享20%現金回饋(非即時回饋，小數點後四捨五入)，每一金融卡號/帳戶於活動期間最高回饋新臺幣(以下同)1,500元為限，本活動回饋總金額上限50萬元，額滿為止，並公告於臺灣銀行官網。 reminder: 參加台灣Pay每筆消費再享1.5%等值紅利點數回饋活動之使用金融機構限臺灣銀行、土地銀行、合作金庫、第一銀行、華南銀行、彰化銀行、兆豐銀行及臺灣企銀，各金融機構回饋條件限制等活動辦法詳情，悉以前述各機構官方網站公告內容為據。 restrictions: 若使用「數位券」折抵消費金額，將針對折抵後之付款金額核算回饋資格。 本活動用戶消費金額，以活動店家計算金額為準，若付款失敗、交易取消、退貨或其",
-      "fetched_at": "2026-07-21T01:58:27.889516+08:00",
-      "content_hash": "a262c077c3641e9e5fd7cf9a4cef8d59ca74f546b65a0171a8034fc0e60a033f",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
+      "content_hash": "82b66a2a3867ccb0bfa3eb66091c4a7fd193d2e029b245dc1a25689c9ac01936",
       "evidence": [
         {
           "source_url": "https://www.taiwanpay.com.tw/fisc-tpay/news/event/01KFN18HDDRP0Z953CB1MK53S7",
           "excerpt": "title: (活動額滿)中原x元智大學生活圈 Pay你遊壢享20%回饋",
-          "observed_at": "2026-07-21T01:58:27.889516+08:00",
+          "observed_at": "2026-07-22T13:14:22.505424+08:00",
           "kind": "activity_page",
-          "content_hash": "a262c077c3641e9e5fd7cf9a4cef8d59ca74f546b65a0171a8034fc0e60a033f"
+          "content_hash": "82b66a2a3867ccb0bfa3eb66091c4a7fd193d2e029b245dc1a25689c9ac01936"
         }
       ],
       "components": [],
@@ -517,15 +246,15 @@
       "review_required": false,
       "date_confidence": "high",
       "conditions_summary": "title: (活動額滿)嘟嘟房停車就用台灣Pay，每筆交易不限金額享10元回饋 description: (活動額滿)嘟嘟房停車就用台灣Pay，每筆交易不限金額享10元回饋 content: 活動期間至活動地點消費，出示「台灣Pay」付款碼（即被掃交易，金融卡/帳戶/信用卡）進行支付，每筆交易不限金額享新臺幣(以下同)10元回饋(非即時回饋)，本活動回饋總金額上限55萬元，額滿為止，並公告於臺灣銀行官網。 reminder: 參加台灣Pay每筆消費再享1.5%等值紅利點數回饋活動之使用金融機構限臺灣銀行、土地銀行、合作金庫、第一銀行、華南銀行、彰化銀行、兆豐銀行及臺灣企銀，各金融機構回饋條件限制等活動辦法詳情，悉以前述各機構官方網站公告內容為據。 restrictions: 本活動回饋總金額上限55萬元，將依用戶交易時序核算回饋資格，且整筆交易金額不得拆刷。 如經臺灣銀行確認已達本活動回饋總金額上限，即停止回饋，並公告於臺灣銀行官網，不另行通知。 本活動回饋金將於活動結束核實金額後，由各參與金融機構依其作業時程於115年12月31日前撥付至用戶據以扣款之金融卡/帳戶/信用卡，倘持卡人有停卡(含信用卡強制停用、申請停用、掛失",
-      "fetched_at": "2026-07-21T01:58:27.889516+08:00",
-      "content_hash": "16273ac5c048338fed5f910a6404e2f1bc154c27434bde756d0f15ad18d524d9",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
+      "content_hash": "3350a4eafcce2ca664276fef2f9f3a64cefec1c8f514e34bdd30d1bfbf16174b",
       "evidence": [
         {
           "source_url": "https://www.taiwanpay.com.tw/fisc-tpay/news/event/01KFN19NNF700RDTZQHJ59NW4S",
           "excerpt": "title: (活動額滿)嘟嘟房停車就用台灣Pay，每筆交易不限金額享10元回饋",
-          "observed_at": "2026-07-21T01:58:27.889516+08:00",
+          "observed_at": "2026-07-22T13:14:22.505424+08:00",
           "kind": "activity_page",
-          "content_hash": "16273ac5c048338fed5f910a6404e2f1bc154c27434bde756d0f15ad18d524d9"
+          "content_hash": "3350a4eafcce2ca664276fef2f9f3a64cefec1c8f514e34bdd30d1bfbf16174b"
         }
       ],
       "components": [],
@@ -564,15 +293,15 @@
       "review_required": false,
       "date_confidence": "high",
       "conditions_summary": "台灣Pay享20%回饋 台灣Pay享20%回饋 content: 活動期間至活動地點使用「台灣Pay」(限金融卡/帳戶)以QR Code掃碼支付成功，單筆消費不限金額享20%現金回饋(非即時回饋，小數點後無條件捨去)，單筆交易回饋金上限新臺幣(以下同)300元。 本活動回饋總金額47萬元為上限，額滿為止，並公告於兆豐銀行官網。 reminder: 參加台灣Pay每筆消費再享1.5%等值紅利點數回饋活動之使用金融機構限臺灣銀行、土地銀行、合作金庫、第一銀行、華南銀行、彰化銀行、兆豐銀行及臺灣企銀，各金融機構回饋條件限制等活動辦法詳情，悉以前述各機構官方網站公告內容為據。 restrictions: 一、 本活動將依用戶交易時序核算回饋資格，且整筆交易金額不得拆刷(用戶使用「數位券」折抵消費金額者，將依折抵後之付款金額核算回饋資格)。 本活動回饋總金額以47萬元為上限，額滿為止，並公告於兆豐銀行官網，不另行通知。 二、 本活動用戶交易結帳金額，以光復市場受理「台灣Pay」之攤商店家計算金額為準，若因付款失敗、交易取消、退貨退款等情形，該筆交易金額將不列入回饋金計算範圍。 三、 本活動回饋金將於活動期間結束並核實用戶之消費金額後，",
-      "fetched_at": "2026-07-21T01:58:27.889516+08:00",
-      "content_hash": "0c1e719be19c1f4d5c63d25c61e1c80f6a3c3a1ee6ff370073c61fc48fe32b1c",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
+      "content_hash": "736773e1596a8a01b9435ef8b1e292ad47e0d0034d45f5af5e3ebc649c4ed728",
       "evidence": [
         {
           "source_url": "https://www.taiwanpay.com.tw/fisc-tpay/news/event/01KFN0QXVGRZ2TJ1YH7GT22FKC",
           "excerpt": "title: （活動額滿）光復市場買好料！",
-          "observed_at": "2026-07-21T01:58:27.889516+08:00",
+          "observed_at": "2026-07-22T13:14:22.505424+08:00",
           "kind": "activity_page",
-          "content_hash": "0c1e719be19c1f4d5c63d25c61e1c80f6a3c3a1ee6ff370073c61fc48fe32b1c"
+          "content_hash": "736773e1596a8a01b9435ef8b1e292ad47e0d0034d45f5af5e3ebc649c4ed728"
         }
       ],
       "components": [],
@@ -613,15 +342,15 @@
       "review_required": false,
       "date_confidence": "high",
       "conditions_summary": "content: 活動期間至活動地點消費，出示「台灣Pay」付款條碼(金融卡/帳戶/信用卡)購買單價新臺幣(以下同)120元(含)以上「台鐵便當」，即享該台鐵便當8折優惠，單筆交易回饋最高以500元為限(單筆消費金額不得拆付)，本活動回饋總金額上限55萬元，額滿為止，並公告於臺灣銀行官網。 reminder: 參加台灣Pay每筆消費再享1.5%等值紅利點數回饋活動之使用金融機構限臺灣銀行、土地銀行、合作金庫、第一銀行、華南銀行、彰化銀行、兆豐銀行及臺灣企銀，各金融機構回饋條件限制等活動辦法詳情，悉以前述各機構官方網站公告內容為據。 restrictions: 若使用「數位券」折抵消費金額，將依折抵後之付款金額核算回饋資格。",
-      "fetched_at": "2026-07-21T01:58:27.889516+08:00",
-      "content_hash": "2d9d3d5b462cc5e3fde9ebd952f21e27c48df11c95d23a18dc48df9b71ec47ee",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
+      "content_hash": "cbccd9444738b521a45b350fafe78875ac8eb416b8eeeb4ac4cf68161be4d499",
       "evidence": [
         {
           "source_url": "https://www.taiwanpay.com.tw/fisc-tpay/news/event/01KFN0THH8GDH9NR1BH563328X",
           "excerpt": "title: （活動額滿）旅途就要Pay著走，120元台鐵便當8折美味到手！",
-          "observed_at": "2026-07-21T01:58:27.889516+08:00",
+          "observed_at": "2026-07-22T13:14:22.505424+08:00",
           "kind": "activity_page",
-          "content_hash": "2d9d3d5b462cc5e3fde9ebd952f21e27c48df11c95d23a18dc48df9b71ec47ee"
+          "content_hash": "cbccd9444738b521a45b350fafe78875ac8eb416b8eeeb4ac4cf68161be4d499"
         }
       ],
       "components": [],
@@ -660,15 +389,15 @@
       "review_required": false,
       "date_confidence": "high",
       "conditions_summary": "title: TWQR花火狂歡Pay享10%回饋【每月額滿詳活動提醒】 description: TWQR花火狂歡Pay享10%回饋 content: 用戶於活動地點掃碼支付，除街口支付可享單筆消費不限金額10%回饋街口幣外，其他參與機構支付採單筆消費不限金額10%回饋現金或點數(非即時回饋，小數點後四捨五入)，回饋形式與細節依各參與機構規定辦理，活動期間每月每帳戶合計最高回饋新臺幣(以下同)50元等值點數或現金。 本活動回饋總金額上限30萬元(每月活動預算見活動辦法)，額滿為止，並公告於街口支付官網。 reminder: 參加台灣Pay每筆消費再享1.5%等值紅利點數回饋活動之使用金融機構限臺灣銀行、土地銀行、合作金庫、第一銀行、華南銀行、彰化銀行、兆豐銀行及臺灣企銀，各金融機構回饋條件限制等活動辦法詳情，悉以前述各機構官方網站公告內容為據。 restrictions: 本活動用戶消費金額，以活動指定店家計算金額為準，若付款失敗、交易取消、退貨或其他原因退還交易款項時，該筆交易金額將不列入回饋計算範圍。 本活動就符合活動條件之用戶將依交易時序核算回饋資格，回饋現金/點數以「單筆消費金額*10%」計算，小數點後四捨五入。 本",
-      "fetched_at": "2026-07-21T01:58:27.889516+08:00",
-      "content_hash": "9b5b8b8c604db60940129dc95785a1659dbe157c1d379041ef9771c36c7d32b1",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
+      "content_hash": "cad57a3da88c58cd89263b7e547fed281412cdc70b9df09420aa12f01a0b5e74",
       "evidence": [
         {
           "source_url": "https://www.taiwanpay.com.tw/fisc-tpay/news/event/01KFMZ6Q4RH65GH90WT4GJ1HZM",
           "excerpt": "【 6月份額度，已於6月9日額滿。",
-          "observed_at": "2026-07-21T01:58:27.889516+08:00",
+          "observed_at": "2026-07-22T13:14:22.505424+08:00",
           "kind": "activity_page",
-          "content_hash": "9b5b8b8c604db60940129dc95785a1659dbe157c1d379041ef9771c36c7d32b1"
+          "content_hash": "cad57a3da88c58cd89263b7e547fed281412cdc70b9df09420aa12f01a0b5e74"
         }
       ],
       "components": [
@@ -720,15 +449,15 @@
       "review_required": false,
       "date_confidence": "high",
       "conditions_summary": "title: （活動額滿）寶島眼鏡 x 台灣PAY 寵EYE享回饋 description: （活動額滿）寶島眼鏡 x 台灣PAY寵EYE享回饋 target: 活動期間於活動地點消費，並出示「台灣 Pay」(透過參與金融機構「行動銀行」APP 或「台灣行動支付」APP)(金融卡/帳戶/信用卡)付款條碼進行支付之用戶(以下簡稱用戶)。 content: 用戶於活動地點消費，出示台灣Pay付款條碼(金融卡/帳戶/信用卡)進行支付，單筆交易金額滿新臺幣(以下同)1,000元以上，可享20%回饋(即時回饋，小數點後四捨五入)，每筆交易回饋上限2,000元。 本活動回饋總金額上限為110萬元(含稅)，額滿即提前終止活動，並公告於合作金庫官網。 reminder: 參加台灣Pay每筆消費再享1.5%等值紅利點數回饋活動之使用金融機構限臺灣銀行、土地銀行、合作金庫、第一銀行、華南銀行、彰化銀行、兆豐銀行及臺灣企銀，各金融機構回饋條件限制等活動辦法詳情，悉以前述各機構官方網站公告內容為據。 restrictions: (一) 本活動將依用戶交易時序核算回饋資格，且整筆交易金額不得拆刷。 如經主辦單位確認已達本活動回饋總金額上限，即停止回饋",
-      "fetched_at": "2026-07-21T01:58:27.889516+08:00",
-      "content_hash": "1763b59682d560279be08c8c76dfefc9c7ce0dc7ce61e87f6357d20ad4f99bbe",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
+      "content_hash": "684cc8d507d3c9a7998a9058e7c73308ac4fa4e0cb1ea13d563f664aca75b2d6",
       "evidence": [
         {
           "source_url": "https://www.taiwanpay.com.tw/fisc-tpay/news/event/01KFMZ58WNF9BPT0HZBEHRFQ6D",
           "excerpt": "title: （活動額滿）寶島眼鏡 x 台灣PAY 寵EYE享回饋",
-          "observed_at": "2026-07-21T01:58:27.889516+08:00",
+          "observed_at": "2026-07-22T13:14:22.505424+08:00",
           "kind": "activity_page",
-          "content_hash": "1763b59682d560279be08c8c76dfefc9c7ce0dc7ce61e87f6357d20ad4f99bbe"
+          "content_hash": "684cc8d507d3c9a7998a9058e7c73308ac4fa4e0cb1ea13d563f664aca75b2d6"
         }
       ],
       "components": [],
@@ -769,15 +498,15 @@
       "review_required": false,
       "date_confidence": "high",
       "conditions_summary": "content: 誠品會員於活動期間至活動地點消費，並出示「台灣Pay」付款碼(即被掃交易，限金融卡/帳戶/信用卡)進行支付，單筆交易結帳金額滿新臺幣(下同)500元(含)以上，即贈【誠品生活100元台灣Pay獨享電子抵用券】乙份，單筆回饋最高以10份為限。 本活動限量回饋總份數11,000份，回饋總金額110萬元為上限，額滿為止，並公告於迷誠品官網。 reminder: 參加台灣Pay每筆消費再享1.5%等值紅利點數回饋活動之使用金融機構限臺灣銀行、土地銀行、合作金庫、第一銀行、華南銀行、彰化銀行、兆豐銀行及臺灣企銀，各金融機構回饋條件限制等活動辦法詳情，悉以前述各機構官方網站公告內容為據。 restrictions: 一、本活動將依用戶交易時序核算回饋資格，且整筆交易金額不得拆刷。 如經主辦單位確認已達本活動回饋總金額上限，即停止回饋，並公告於迷誠品官網，不另行通知。 二、本活動用戶單筆交易結帳金額，以誠品生活各館內受理「台灣Pay」之櫃位計算金額為準，若因付款失敗、交易取消、退貨退款等情形，該筆交易金額將不列入回饋金計算範圍。",
-      "fetched_at": "2026-07-21T01:58:27.889516+08:00",
-      "content_hash": "55211c36d977ed36cd8a1b719d944a724ab52a8df0b3fd1addf4dca7c0d107df",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
+      "content_hash": "ef745afecfae6c7c1efd44e55ebf5f5e87a367fef0b58b3f86c973b449e8c872",
       "evidence": [
         {
           "source_url": "https://www.taiwanpay.com.tw/fisc-tpay/news/event/01KFN0KT8V36PGVDW4ZY0PBYNR",
           "excerpt": "title: （活動額滿）好生活這樣Pay 誠品生活台灣Pay享20%",
-          "observed_at": "2026-07-21T01:58:27.889516+08:00",
+          "observed_at": "2026-07-22T13:14:22.505424+08:00",
           "kind": "activity_page",
-          "content_hash": "55211c36d977ed36cd8a1b719d944a724ab52a8df0b3fd1addf4dca7c0d107df"
+          "content_hash": "ef745afecfae6c7c1efd44e55ebf5f5e87a367fef0b58b3f86c973b449e8c872"
         }
       ],
       "components": [],
@@ -803,6 +532,59 @@
       "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%EF%BC%88%E6%B4%BB%E5%8B%95%E9%A1%8D%E6%BB%BF%EF%BC%89%E5%A5%BD%E7%94%9F%E6%B4%BB%E9%80%99%E6%A8%A3Pay+%E8%AA%A0%E5%93%81%E7%94%9F%E6%B4%BB%E5%8F%B0%E7%81%A3Pay%E4%BA%AB20%25&dates=20260604%2F20260901&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%8F%B0%E7%81%A3+Pay%0A%0A%E6%9C%80%E9%AB%98+20%25+%E5%9B%9E%E9%A5%8B%EF%BC%8C%E5%B1%AC%E9%AB%98%E5%9B%9E%E9%A5%8B%E6%B4%BB%E5%8B%95%EF%BC%9B%E5%AE%98%E6%96%B9%E8%B3%87%E8%A8%8A%E9%A1%AF%E7%A4%BA%E6%B4%BB%E5%8B%95%E5%B7%B2%E9%A1%8D%E6%BB%BF%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fwww.taiwanpay.com.tw%2Ffisc-tpay%2Fnews%2Fevent%2F01KFN0KT8V36PGVDW4ZY0PBYNR%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     },
     {
+      "provider_id": "fullpay",
+      "provider_name": "全支付／PX Pay Plus",
+      "title": "首次綁定指定信用卡，最高88全點限量回饋！",
+      "url": "https://marketing.pxpayplus.com/pxplus_marketing_page/activity_content_page?EventId=98",
+      "source_url": "https://service.pxpayplus.com/px-advertise/web/activity/detail/98",
+      "external_id": "98",
+      "start_date": "2026-06-29",
+      "end_date": "2026-09-27",
+      "lifecycle": "active",
+      "quota_status": "partial_sold_out",
+      "quota_evidence_complete": true,
+      "review_required": false,
+      "date_confidence": "high",
+      "conditions_summary": "name: 202607-信用卡首綁回饋_BankBanner.png title: 首次綁定指定信用卡，最高88全點限量回饋！ 本活動限綁定指定銀行信用卡付款，詳情請參閱本活動公告。 本活動為限量回饋，回饋金額之計算，詳情參閱本活動內容公告。 活動期間，若發現交易異常行為（如：不正常退款、單筆消費拆單付款…等），以致影響活動公平及店家正常交易流程，本公司有權取消回饋資格並暫停該會員帳戶之使用，以確保使用者交易安全。 請於付款前再次確認付款方式是否為使用全支付綁定本活動「指定之合作信用卡」付款。 若選擇全支付帳戶付款、銀行帳戶付款、非指定合作信用卡付款或儲值至全支付帳戶，均不符合本活動資格。 每一全支付帳號，僅能綁定一間本活動指定合作銀行之銀行信用卡。 活動期間內，全支付會員完成信用卡綁定，並使用該信用卡消費後，不得解除綁定信用卡，否則將視爲不符合活動資格，全支付得扣除本活動已回饋之全點，全支付會員亦不得要求補發。 本活動回饋金額計算，詳情參閱個別活動內容公告。 title: 【星展銀行】優惠：首次綁定星展銀行信用卡，單筆消費滿300元，享50全點回饋，每一全支付帳號最高享50全點回饋。 【首次綁定消費回饋】： 凡於活動期間",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
+      "content_hash": "cda0f1e4a58f91dfe9346eeaa024006f65334a7cbd05c5046b6242f0bb8e77d0",
+      "evidence": [
+        {
+          "source_url": "https://marketing.pxpayplus.com/pxplus_marketing_page/activity_content_page?EventId=98",
+          "excerpt": "(首週回饋已額滿)",
+          "observed_at": "2026-07-22T13:14:22.505424+08:00",
+          "kind": "activity_page",
+          "content_hash": "cda0f1e4a58f91dfe9346eeaa024006f65334a7cbd05c5046b6242f0bb8e77d0"
+        }
+      ],
+      "components": [
+        {
+          "evidence": "(首週回饋已額滿)",
+          "period": "首週",
+          "status": "sold_out"
+        }
+      ],
+      "conditions_display": [
+        "name: 202607-信用卡首綁回饋_BankBanner.png",
+        "首次綁定指定信用卡，最高88全點限量回饋！ 本活動限綁定指定銀行信用卡付款，詳情請參閱本活動公告。 本活動為限量回饋，回饋金額之計算，詳情參閱本活動內容公告。 活動期間，若發現交易異常行為（如：不正常退款、單筆消費拆單付款…等），以致影響活動公平及店家正常交易流程，本公司有權取消回饋資格並暫停該會員帳戶之使用，以確保使用者交易安全。 請於付款前再次確認付款方式是否為使用全支付綁定本活動「指定之合作信用卡」付款。 若選擇全支付帳戶付款、銀行帳戶付款、非指定合作信用卡付款或儲值至全支付帳戶，均不符合本活動資格。 每一全支付帳號，僅能綁定一間本活動指定合作銀行之銀行信用卡。 活動期間內，全支付會員完成信用卡綁定，並使用該信用卡消費後，不得解除綁定信用卡，否則將視爲不符合活動資格，全支付得扣除本活動已回饋之全點，全支付會員亦不得要求補發。 本活動回饋金額計算，詳情參閱個別活動內容公告。",
+        "【星展銀行】優惠：首次綁定星展銀行信用卡，單筆消費滿300元，享50全點回饋，每一全支付帳號最高享50全點回饋。 【首次綁定消費回饋】： 凡於活動期間"
+      ],
+      "insights": {
+        "max_reward_percent": null,
+        "fixed_reward_amount": null,
+        "is_high_return": false,
+        "is_upcoming": false,
+        "starts_in_days": -23,
+        "is_expiring_soon": false,
+        "ends_in_days": 67,
+        "insight_tags": [
+          "部分額滿"
+        ],
+        "human_summary": "部分期別或子活動已額滿。"
+      },
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E9%A6%96%E6%AC%A1%E7%B6%81%E5%AE%9A%E6%8C%87%E5%AE%9A%E4%BF%A1%E7%94%A8%E5%8D%A1%EF%BC%8C%E6%9C%80%E9%AB%9888%E5%85%A8%E9%BB%9E%E9%99%90%E9%87%8F%E5%9B%9E%E9%A5%8B%EF%BC%81&dates=20260629%2F20260928&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%85%A8%E6%94%AF%E4%BB%98%EF%BC%8FPX+Pay+Plus%0A%0A%E9%83%A8%E5%88%86%E6%9C%9F%E5%88%A5%E6%88%96%E5%AD%90%E6%B4%BB%E5%8B%95%E5%B7%B2%E9%A1%8D%E6%BB%BF%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fmarketing.pxpayplus.com%2Fpxplus_marketing_page%2Factivity_content_page%3FEventId%3D98%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
+    },
+    {
       "provider_id": "icashpay",
       "provider_name": "icash Pay",
       "title": "icash Pay超強支付 綁uniopen聯名卡滿額最高回饋11%",
@@ -817,13 +599,13 @@
       "review_required": false,
       "date_confidence": "high",
       "conditions_summary": "icash Pay超強支付 綁uniopen聯名卡滿額最高回饋11% icash Pay超強支付 綁uniopen聯名卡滿額最高回饋11% 活動期間：自2026/7/1 起至2026/8/31 活動期間使用icash Pay綁定uniopen聯名卡，全通路單筆消費滿199元，享4% OPENPOINT回饋，每一icash Pay用戶每月回饋上限150點，活動每月回饋上限300萬點。 (回饋資格及入點時間認定依icash Pay資訊系統紀錄認定為準，系統將以符合活動資格者之消費優先順序匯入該icash Pay綁定之uniopen會員帳戶，最晚於2026/9/30前匯入) 額滿提醒：此訊息揭露僅為提醒之用，揭露作業時間會晚於活動回饋額滿時間，實際仍依交易之時間順序為準判定符合資格，活動參與者不得以未獲知本活動回饋額滿訊息為理由要求補贈點。 【uniopen聯名卡最高7%回饋】 icash Pay綁定uniopen聯名卡適用統一企業品牌商店踩點任務滿額最高回饋7%。 如活動期間內已達活動總回饋上限，將依icash Pay交易之時間順序為準判定符合資格，不另行公告或通知，活動參與者不得以未獲知本活動回饋額滿訊息為理由要求補贈點，請視",
-      "fetched_at": "2026-07-21T01:58:27.889516+08:00",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
       "content_hash": "b33ef1251f37c7c790b8d8d8cd45fb361ed8bb0a9431562f9d3d57c801c6927d",
       "evidence": [
         {
           "source_url": "https://www.icashpay.com.tw/advertMessage/view/id/2371",
           "excerpt": "2026年7月【全通路單筆滿199元享4%】活動贈點已於2026/7/8 17:00額滿",
-          "observed_at": "2026-07-21T01:58:27.889516+08:00",
+          "observed_at": "2026-07-22T13:14:22.505424+08:00",
           "kind": "activity_page",
           "content_hash": "b33ef1251f37c7c790b8d8d8cd45fb361ed8bb0a9431562f9d3d57c801c6927d"
         }
@@ -872,13 +654,13 @@
       "review_required": false,
       "date_confidence": "high",
       "conditions_summary": "暑假遊韓最速PAY TWQR最高回饋52% 暑假遊韓最速PAY 最高回饋52% 活動期間：自2026/7/1 起至2026/8/31 【暑假遊韓最速PAY TWQR獨享20%回饋】 活動期間於韓國標示TWQR店家，使用icash Pay出示條碼付款，單筆交易不限金額享20% OPENPOINT回饋(非即時回饋，小數點後四捨五入)，活動期間每月每戶最高上限2000點，每月點數上限50萬點，總點數上限100萬點。 *本活動限定以【icash Pay帳戶進行付款】、【直接連結指定銀行帳戶付款】。 【遊韓首選 icash Pay最高回饋25%】(2026/4/1~8/31) 筆筆回饋15%：活動期間於韓國標示TWQR店家，使用icash Pay出示條碼付款，享支付金額筆筆15% OPENPOINT回饋，活動期間每月每戶最高上限300點，總點數上限50萬點。 新戶加碼10%：活動期間內首次註冊icash Pay之新用戶，註冊當月於韓國標示TWQR店家，使用icash Pay出示條碼付款，不限金額加碼享10% OPENPOINT點數回饋，每戶回饋上限300點，總點數上限20萬點。 *本活動限定以【icash Pay帳戶進行付款】、【直接",
-      "fetched_at": "2026-07-21T01:58:27.889516+08:00",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
       "content_hash": "6c4d06f80c5822a2dfbf1ad0ce652e625662d7cac713e16235821f6993336bb2",
       "evidence": [
         {
           "source_url": "https://www.icashpay.com.tw/advertMessage/view/id/2372",
           "excerpt": "【遊韓首選 筆筆回饋15%】活動贈點已於2026/7/17 12:00pm額滿 (最晚於2026/9/30前匯入icash Pay所綁定之uniopen會員帳戶中)。",
-          "observed_at": "2026-07-21T01:58:27.889516+08:00",
+          "observed_at": "2026-07-22T13:14:22.505424+08:00",
           "kind": "activity_page",
           "content_hash": "6c4d06f80c5822a2dfbf1ad0ce652e625662d7cac713e16235821f6993336bb2"
         }
@@ -918,15 +700,15 @@
       "review_required": false,
       "date_confidence": "high",
       "conditions_summary": "[ 7 月份回饋上限已於 2026/7/6 11:45 額滿]綁定聯邦信用卡單筆消費滿 200 元，最高享 10% 回饋！ 指定連結開立 New New Bank 數位存款帳戶，完成指定任務最高享 150 元 指定連結開立 Richart 數位存款帳戶，完成指定任務享 250 元回饋 樂天網銀新戶，用 iPASS MONEY 付款任 3 筆享 800 點回饋！ 指定連結開立王道帳戶，並符合條件享 600 元回饋 首次連結玉山銀行數位帳戶，完成任務享 50 元回饋 綁定玉山 Unicard 消費，最高享 4.5% 回饋 綁定 LINE Bank 快點卡消費，符合條件最高享 4% 回饋",
-      "fetched_at": "2026-07-21T01:58:27.889516+08:00",
-      "content_hash": "bdbbe97dbd16ca04a0e42ca0d2d515a0bb613ca59bfd7196fc88191778fd7b37",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
+      "content_hash": "9d79c971b4fdc6e0d5716af5449d8e135d27d5d5f072829bd5412de4e95ef4cd",
       "evidence": [
         {
           "source_url": "https://web.i-pass.com.tw/Preferential/Detail/GI2TSNQHW7ZKA64RZbVj",
           "excerpt": "[ 7 月份回饋上限已於 2026/7/6 11:45 額滿]綁定聯邦信用卡單筆消費滿 200 元，最高享 10% 回饋！",
-          "observed_at": "2026-07-21T01:58:27.889516+08:00",
+          "observed_at": "2026-07-22T13:14:22.505424+08:00",
           "kind": "activity_page",
-          "content_hash": "bdbbe97dbd16ca04a0e42ca0d2d515a0bb613ca59bfd7196fc88191778fd7b37"
+          "content_hash": "9d79c971b4fdc6e0d5716af5449d8e135d27d5d5f072829bd5412de4e95ef4cd"
         }
       ],
       "components": [
@@ -971,15 +753,15 @@
       "review_required": false,
       "date_confidence": "high",
       "conditions_summary": "title: (活動額滿)TWQR金門風華Pay享10%回饋 description: (活動額滿)TWQR金門風華Pay享10%回饋 content: 用戶於活動地點消費，進行掃碼支付，單筆消費不限金額享10%之現金回饋或點數回饋(非即時回饋，小數點後四捨五入)，回饋形式與細節依各參與機構規定辦理，活動期間每帳戶合計最高回饋新臺幣(以下同)200元現金或等值點數。 本活動回饋總金額上限60萬元，額滿為止，並公告於土地銀行官網，不另行通知。 reminder: 參加台灣Pay每筆消費再享1.5%等值紅利點數回饋活動之使用金融機構限臺灣銀行、土地銀行、合作金庫、第一銀行、華南銀行、彰化銀行、兆豐銀行及臺灣企銀，各金融機構回饋條件限制等活動辦法詳情，悉以前述各機構官方網站公告內容為據。 若付款失敗、交易取消、退貨或其他原因退還交易款項、收銀設備故障、網路斷線、系統當機或其他因素致無法成功交易時，該筆交易金額將不列入回饋金額計算範圍。 本活動回饋現金/點數，將統一於116年2月28日前結算並撥付至用戶之扣款帳戶。 回饋現金/點數撥入用戶之金融卡/帳戶/電子支付機構帳戶，倘帳戶有結清銷戶、警示戶、凍結、取消綁定或其他無法匯入款項之情",
-      "fetched_at": "2026-07-21T01:58:27.889516+08:00",
-      "content_hash": "c7f70add1c66977effbb5c2b6c0e70ba2203d170a7274be2b2d287034c7eb7fc",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
+      "content_hash": "651792d657902f513ed9ac7fc2fb5e0857dc51e54ef6f663dc7c873f3bb8c7b9",
       "evidence": [
         {
           "source_url": "https://www.taiwanpay.com.tw/fisc-tpay/news/event/01KTBE1FX96S45KZXBXBKPBWF2",
           "excerpt": "title: (活動額滿)TWQR金門風華Pay享10%回饋",
-          "observed_at": "2026-07-21T01:58:27.889516+08:00",
+          "observed_at": "2026-07-22T13:14:22.505424+08:00",
           "kind": "activity_page",
-          "content_hash": "c7f70add1c66977effbb5c2b6c0e70ba2203d170a7274be2b2d287034c7eb7fc"
+          "content_hash": "651792d657902f513ed9ac7fc2fb5e0857dc51e54ef6f663dc7c873f3bb8c7b9"
         }
       ],
       "components": [],
@@ -1018,15 +800,15 @@
       "review_required": false,
       "date_confidence": "high",
       "conditions_summary": "title: 暑假遊韓最速Pay TWQR獨享20%回饋 description: 暑假遊韓最速Pay TWQR獨享20%回饋【電支機構APP額滿公告詳如活動提醒】 content: 活動一：台灣Pay消費筆筆享20%回饋 活動期間至韓國地區受理「TWQR」付款服務之店家（實際交易受理依現場狀況為準)消費，使用「台灣Pay」出示QR Code支付，單筆交易不限金額(扣除沖正、退貨交易金額)可享20%之現金回饋(非即時回饋，小數點後四捨五入)，每卡/帳戶每月最高回饋上限新臺幣(以下同)2,000元。 本活動每月回饋總金額上限100萬元整，依用戶交易時序核算回饋資格，額滿為止，並公告於台灣Pay官網。 活動二：電支機構APP消費筆筆享20%回饋 活動期間至韓國地區受理「TWQR」付款服務之店家（實際交易受理依現場狀況為準)消費，使用電支機構APP出示QR Code支付，單筆交易不限金額(扣除沖正、退貨交易金額)可享20%之現金或等值回饋(非即時回饋，小數點後四捨五入)，每電支機構帳戶每月最高回饋上限2,000元現金或等值回饋。 本活動各電支機構每月回饋總金額上限50萬元，依用戶交易時序核算回饋資格，額滿為止，並公告於各電支機構官",
-      "fetched_at": "2026-07-21T01:58:27.889516+08:00",
-      "content_hash": "7f1ae10088fbea93aec2a28ba6e334dcb21af9be0a0c4d38f0ac4d1c509df536",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
+      "content_hash": "0d630ee80a60921aa89b79a46de52593ace7b906850aaa1e2b31966eb7676774",
       "evidence": [
         {
           "source_url": "https://www.taiwanpay.com.tw/fisc-tpay/news/event/01KFN0N8JJXBPDSVJJ6Q1XH7AJ",
           "excerpt": "悠遊付7月份額度，已於7月8日21:44額滿。",
-          "observed_at": "2026-07-21T01:58:27.889516+08:00",
+          "observed_at": "2026-07-22T13:14:22.505424+08:00",
           "kind": "activity_page",
-          "content_hash": "7f1ae10088fbea93aec2a28ba6e334dcb21af9be0a0c4d38f0ac4d1c509df536"
+          "content_hash": "0d630ee80a60921aa89b79a46de52593ace7b906850aaa1e2b31966eb7676774"
         }
       ],
       "components": [
@@ -1071,15 +853,15 @@
       "review_required": false,
       "date_confidence": "high",
       "conditions_summary": "2026悠遊付迺夜市每週五六日最高回饋35%-悠遊卡股份有限公司 2026悠遊付迺夜市每週五六日最高回饋35% 活動期間：2026/7/1~2026/8/31，每週五、六、日 00:00 至 23:59 活動一｜指定夜市活動店家10%： 活動期間悠遊付會員於指定夜市活動店家消費單筆不限金額享10%回饋，每人/戶每月回饋上限新臺幣(下同)100元。 活動一每月總回饋上限10萬元，送完為止。 活動二｜臺北市指定夜市店家加碼20%： 活動期間悠遊付會員於臺北市指定夜市活動店家消費單筆不限金額享20%回饋，每人/戶每月回饋上限100元。 活動二每月總回饋上限10萬元，送完為止。 ※活動二：7月回饋活動已於2026/7/17(五) 21:56:03額滿。 每月回饋金計算週期：於活動期間之次月第一個週五重新計算每人/戶回饋上限金額。 活動一、活動二可與「月級挑戰最高回饋3%」活動疊加 >>活動詳情 指定夜市如下>>查詢夜市指定活動店家 指定夜市 臺北市指定夜市：寧夏、南機場、公館、饒河、臨江、艋舺、梧州街、廣州街、華西街、士林、延三、雙城街、大龍、遼寧、景美、石牌、西昌街夜市 活動期間於「指定夜市、臺北市指定夜市活動店家」使用悠遊付完成",
-      "fetched_at": "2026-07-21T01:58:27.889516+08:00",
-      "content_hash": "5817c58190c8e2843cad82d715ec1feae93954c4fa1305b82c01acdad776f364",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
+      "content_hash": "52b8a809dec48f8b11052b9eb3dcf37c2987b8f69cfa54202aee3ecd99f385a6",
       "evidence": [
         {
           "source_url": "https://www.easycard.com.tw/offer?cls=1506473503,1506473490,&id=1781689964",
           "excerpt": "※活動二：7月回饋活動已於2026/7/17(五) 21:56:03額滿。",
-          "observed_at": "2026-07-21T01:58:27.889516+08:00",
+          "observed_at": "2026-07-22T13:14:22.505424+08:00",
           "kind": "activity_page",
-          "content_hash": "5817c58190c8e2843cad82d715ec1feae93954c4fa1305b82c01acdad776f364"
+          "content_hash": "52b8a809dec48f8b11052b9eb3dcf37c2987b8f69cfa54202aee3ecd99f385a6"
         }
       ],
       "components": [
@@ -1124,15 +906,15 @@
       "review_required": false,
       "date_confidence": "high",
       "conditions_summary": "▌活動期間： 活動期間疊加活動一、活動二、活動三，單筆滿千最高25%回饋 (回饋率依個人資格及活動疊加情形而異)。 請使用悠遊付錢包或綁定銀行帳戶扣款支付以拿到最高回饋。 活動期間每月可於領券頁領取「100元91APP專用現金回饋券」1張。 於91APP合作品牌官網購物單筆滿1,000元以上可使用，支付後發送100元回饋金至使用者悠遊付帳戶。 本活動每悠遊付會員每月限領取1張，每月可領取張數請見領券頁說明。 ▲本活動相當於滿千最高10%回饋 指定期間使用悠遊付錢包或綁定銀行帳戶扣款支付單筆滿1,000元以上，回饋「100元91APP專用現金回饋券」1張。 指定期間及限量張數：2026/7/1~7/15期間850張、8/1~8/15期間1,000張、9/1~9/15期間1,000張，本活動單筆不累贈，每期間每悠遊付會員限贈1張，若額滿則活動提前結束。 ▲本活動相當於滿千最高10%回饋 ▌活動三：筆筆最高5%現金回饋 全通路最高3%回饋： 悠遊付新朋友享「註冊當月筆筆3%回饋」。 悠遊付老朋友享「月級挑戰最高3%回饋」。 全悠遊付會員皆享「週五會員日筆筆2%回饋」。 Plus：活動期間並適用「每月指定週五最高疊$150」活動。 ",
-      "fetched_at": "2026-07-21T01:58:27.889516+08:00",
-      "content_hash": "60edb539041aac94d56244c6e0e5d0c001340546dd8b40e985db95e3ef54e2eb",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
+      "content_hash": "a9351904169d36b450817410fc08e407fe1a92b3386f83ca4b51b5c7040956a3",
       "evidence": [
         {
           "source_url": "https://yax.easycard.com.tw/offer?cls=1506473519,1506473490,1506473503,&id=1781071557",
           "excerpt": "*活動二7月份回饋已於7/5下午21:01:01額滿，歡迎參加8月份活動。",
-          "observed_at": "2026-07-21T01:58:27.889516+08:00",
+          "observed_at": "2026-07-22T13:14:22.505424+08:00",
           "kind": "activity_page",
-          "content_hash": "60edb539041aac94d56244c6e0e5d0c001340546dd8b40e985db95e3ef54e2eb"
+          "content_hash": "a9351904169d36b450817410fc08e407fe1a92b3386f83ca4b51b5c7040956a3"
         }
       ],
       "components": [
@@ -1178,8 +960,8 @@
       "review_required": false,
       "date_confidence": "high",
       "conditions_summary": "title: 台灣Pay揪OK 筆筆10%回饋 description: 台灣Pay揪OK 筆筆10%回饋 content: 於活動期間至活動地點消費，出示「台灣Pay」付款條碼(限金融卡/帳戶/信用卡)進行支付，單筆消費不限金額可享10%現金回饋(非即時回饋，小數點後四捨五入)，活動期間內每一帳號(含金融卡/帳戶)及每一卡號(信用卡)回饋金最高以新臺幣(以下同)100元為限。 本活動回饋總金額上限40萬元，如達該總金額上限即停止回饋，並公告於第一銀行官網、OK超商官網，不另行通知。 reminder: 參加台灣Pay每筆消費再享1.5%等值紅利點數回饋活動之使用金融機構限臺灣銀行、土地銀行、合作金庫、第一銀行、華南銀行、彰化銀行、兆豐銀行及臺灣企銀，各金融機構回饋條件限制等活動辦法詳情，悉以前述各機構官方網站公告內容為據。 restrictions: (一) 本活動回饋總金額上限40萬元，如達該總金額上限即停止回饋，將提前結束本活動，並公告於第一銀行官網、OK超商官網，不另行通知。 (三) 本活動用戶結帳之實際付款金額，以OK超商實體門市計算金額為準，若因付款失敗、交易取消、退貨退款而不符合本活動回饋資格，或因收銀設備故障",
-      "fetched_at": "2026-07-21T01:58:27.889516+08:00",
-      "content_hash": "53dc970a3ce771b79eb0d2578aaee279159db2caaa963895a73b38a82051c8d6",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
+      "content_hash": "90bf699eef4c8a2b67c25fa8e8674d98f8e1a16e1daf96ccf7f42c1eeb03c613",
       "evidence": [],
       "components": [],
       "conditions_display": [
@@ -1207,6 +989,55 @@
       "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E5%8F%B0%E7%81%A3Pay%E6%8F%AAOK+%E7%AD%86%E7%AD%8610%25%E5%9B%9E%E9%A5%8B&dates=20260723%2F20261001&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%8F%B0%E7%81%A3+Pay%0A%0A2026%2F7%2F23+%E8%87%B3+9%2F30+%E6%96%BC+OK+%E8%B6%85%E5%95%86%E5%87%BA%E7%A4%BA%E5%8F%B0%E7%81%A3+Pay+%E4%BB%98%E6%AC%BE%E6%A2%9D%E7%A2%BC%EF%BC%8C%E5%96%AE%E7%AD%86%E4%B8%8D%E9%99%90%E9%87%91%E9%A1%8D%E4%BA%AB+10%25+%E7%8F%BE%E9%87%91%E5%9B%9E%E9%A5%8B%EF%BC%9B%E6%AF%8F%E4%B8%80%E5%B8%B3%E8%99%9F%E6%88%96%E5%8D%A1%E8%99%9F%E6%9C%80%E9%AB%98+100+%E5%85%83%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fwww.taiwanpay.com.tw%2Ffisc-tpay%2Fnews%2Fevent%2F01KXFV9GFDCS1EGK6MNEPD06FN%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     },
     {
+      "provider_id": "fullpay",
+      "provider_name": "全支付／PX Pay Plus",
+      "title": "十大商圈掃全支付TWQR｜單筆不限金額享10%回饋！",
+      "url": "https://marketing.pxpayplus.com/pxplus_marketing_page/activity_content_page?EventId=37",
+      "source_url": "https://service.pxpayplus.com/px-advertise/web/activity/detail/37",
+      "external_id": "37",
+      "start_date": "2026-04-15",
+      "end_date": "2026-12-31",
+      "lifecycle": "active",
+      "quota_status": "unknown_app_only",
+      "quota_evidence_complete": false,
+      "review_required": false,
+      "date_confidence": "high",
+      "conditions_summary": "title: 十大商圈掃全支付TWQR｜單筆不限金額享10%回饋！ 本活動限於得使用全支付APP或指定電子支付於十大商圈 （九份老街、基隆廟口、淡水老街、士林夜市、迪化街、西門町、永康商圈、羅東夜市、一中街夜市、逢甲夜市）之全支付TWQR合作指定店家付款，部分合作夥伴之通路或特殊品牌或特殊商品無法使用全支付付款，實際情形以全支付與合作夥伴規範為準。 本活動為限量回饋，回饋金額之計算，詳情參閱本活動內容公告。 content: 單筆不限金額享10%回饋 content: 指定付款方式最高享5%回饋 title: 主活動｜十大商圈：活動期間內，使用全支付APP或指定電子支付掃描「全支付TWQR」立牌QR Code，單筆不限金額享10%回饋！ 活動內容：活動期間內，每一全支付帳號使用全支付APP於「十大商圈」指定店家，掃描「全支付TWQR」立牌QR Code，單筆消費不限金額，筆筆享10%全點回饋，回饋之全點以四捨五入計算至個位，每一符合活動資格之全支付帳戶於活動期間之每月最高回饋50全點。 指定電子支付（台灣Pay、歐付寶、橘子支付、全盈+PAY、icashPay、一卡通iPASS MONEY、街口支付、簡單付與悠遊付）於「十大",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
+      "content_hash": "37acbc862167f75c2afb08685ffdd5bf89cb07b8faa17d5de1c7960649fb3b0a",
+      "evidence": [
+        {
+          "source_url": "https://marketing.pxpayplus.com/pxplus_marketing_page/activity_content_page?EventId=37",
+          "excerpt": "名額額滿將於全支付APP公告，惟額滿公告之系統時間並不等同活動實際額滿之時間。",
+          "observed_at": "2026-07-22T13:14:22.505424+08:00",
+          "kind": "activity_page",
+          "content_hash": "37acbc862167f75c2afb08685ffdd5bf89cb07b8faa17d5de1c7960649fb3b0a"
+        }
+      ],
+      "components": [],
+      "conditions_display": [
+        "十大商圈掃全支付TWQR｜單筆不限金額享10%回饋！ 本活動限於得使用全支付APP或指定電子支付於十大商圈 （九份老街、基隆廟口、淡水老街、士林夜市、迪化街、西門町、永康商圈、羅東夜市、一中街夜市、逢甲夜市）之全支付TWQR合作指定店家付款，部分合作夥伴之通路或特殊品牌或特殊商品無法使用全支付付款，實際情形以全支付與合作夥伴規範為準。 本活動為限量回饋，回饋金額之計算，詳情參閱本活動內容公告。",
+        "活動內容：單筆不限金額享10%回饋",
+        "活動內容：指定付款方式最高享5%回饋",
+        "主活動｜十大商圈：活動期間內，使用全支付APP或指定電子支付掃描「全支付TWQR」立牌QR Code，單筆不限金額享10%回饋！ 活動內容：活動期間內，每一全支付帳號使用全支付APP於「十大商圈」指定店家，掃描「全支付TWQR」立牌QR Code，單筆消費不限金額，筆筆享10%全點回饋，回饋之全點以四捨五入計算至個位，每一符合活動資格之全支付帳戶於活動期間之每月最高回饋50全點。 指定電子支付（台灣Pay、歐付寶、橘子支付、全盈+PAY、icashPay、一卡通iPASS MONEY、街口支付、簡單付與悠遊付）於「十大"
+      ],
+      "insights": {
+        "max_reward_percent": 10,
+        "fixed_reward_amount": null,
+        "is_high_return": true,
+        "is_upcoming": false,
+        "starts_in_days": -98,
+        "is_expiring_soon": false,
+        "ends_in_days": 162,
+        "insight_tags": [
+          "高回饋",
+          "需至 App 確認"
+        ],
+        "human_summary": "最高 10% 回饋，屬高回饋活動；額滿狀態需至 App 確認。"
+      },
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E5%8D%81%E5%A4%A7%E5%95%86%E5%9C%88%E6%8E%83%E5%85%A8%E6%94%AF%E4%BB%98TWQR%EF%BD%9C%E5%96%AE%E7%AD%86%E4%B8%8D%E9%99%90%E9%87%91%E9%A1%8D%E4%BA%AB10%25%E5%9B%9E%E9%A5%8B%EF%BC%81&dates=20260415%2F20270101&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%85%A8%E6%94%AF%E4%BB%98%EF%BC%8FPX+Pay+Plus%0A%0A%E6%9C%80%E9%AB%98+10%25+%E5%9B%9E%E9%A5%8B%EF%BC%8C%E5%B1%AC%E9%AB%98%E5%9B%9E%E9%A5%8B%E6%B4%BB%E5%8B%95%EF%BC%9B%E9%A1%8D%E6%BB%BF%E7%8B%80%E6%85%8B%E9%9C%80%E8%87%B3+App+%E7%A2%BA%E8%AA%8D%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fmarketing.pxpayplus.com%2Fpxplus_marketing_page%2Factivity_content_page%3FEventId%3D37%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
+    },
+    {
       "provider_id": "taiwanpay",
       "provider_name": "台灣 Pay",
       "title": "十大商圈掃全支付TWQR單筆不限金額享10%回饋！",
@@ -1221,15 +1052,15 @@
       "review_required": false,
       "date_confidence": "high",
       "conditions_summary": "title: 十大商圈掃全支付TWQR單筆不限金額享10%回饋！ description: 十大商圈掃全支付TWQR單筆不限金額享10%回饋！ location: 10大指定商圈(西門町、永康商圈、淡水老街、士林夜市、逢甲夜市、基隆廟口、迪化街、一中街夜市、羅東夜市、九份老街)全支付標示TWQR之指定店家(參與本活動之店家據點詳全支付官網公告； content: 用戶於活動地點掃碼支付，除全支付可享單筆消費不限金額10%全點回饋外，其他參與機構支付採單筆消費不限金額10%回饋現金或等值點數(非即時回饋，小數點後四捨五入)，回饋形式與細節依各參與機構規定辦理，活動期間每月每帳戶合計最高回饋新臺幣(以下同)50元現金或等值點數。 本活動回饋總金額上限300萬元(4月：20萬、5-12月：每月各35萬)，額滿為止，並公告於全支付APP右上角「最新消息(小鈴鐺圖示)」。 reminder: 參加台灣Pay每筆消費再享1.5%等值紅利點數回饋活動之使用金融機構限臺灣銀行、土地銀行、合作金庫、第一銀行、華南銀行、彰化銀行、兆豐銀行及臺灣企銀，各金融機構回饋條件限制等活動辦法詳情，悉以前述各機構官方網站公告內容為據。 restrictio",
-      "fetched_at": "2026-07-21T01:58:27.889516+08:00",
-      "content_hash": "306a649aa5224587d606d1f461ec4de9d762ae692bf3ef2c4fddbdb6605f553d",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
+      "content_hash": "f64306845df2c2ce0373bbf830cb9de16247957c6ebaf9bd6536a2f33f5e9731",
       "evidence": [
         {
           "source_url": "https://www.taiwanpay.com.tw/fisc-tpay/news/event/01KPAX7T490S21W51F01QRABCJ",
           "excerpt": "(三) 本活動每月總回饋金額如達上限，即停止當月回饋，並公告於全支付APP右上角「最新消息(小鈴鐺圖示)」，不另行通知(如遇本活動提前額滿，則用戶之消費金額僅計算至實際額滿時間為止)。",
-          "observed_at": "2026-07-21T01:58:27.889516+08:00",
+          "observed_at": "2026-07-22T13:14:22.505424+08:00",
           "kind": "activity_page",
-          "content_hash": "306a649aa5224587d606d1f461ec4de9d762ae692bf3ef2c4fddbdb6605f553d"
+          "content_hash": "f64306845df2c2ce0373bbf830cb9de16247957c6ebaf9bd6536a2f33f5e9731"
         }
       ],
       "components": [],
@@ -1255,6 +1086,56 @@
       "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E5%8D%81%E5%A4%A7%E5%95%86%E5%9C%88%E6%8E%83%E5%85%A8%E6%94%AF%E4%BB%98TWQR%E5%96%AE%E7%AD%86%E4%B8%8D%E9%99%90%E9%87%91%E9%A1%8D%E4%BA%AB10%25%E5%9B%9E%E9%A5%8B%EF%BC%81&dates=20260415%2F20270101&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%8F%B0%E7%81%A3+Pay%0A%0A%E6%9C%80%E9%AB%98+10%25+%E5%9B%9E%E9%A5%8B%EF%BC%8C%E5%B1%AC%E9%AB%98%E5%9B%9E%E9%A5%8B%E6%B4%BB%E5%8B%95%EF%BC%9B%E9%A1%8D%E6%BB%BF%E7%8B%80%E6%85%8B%E9%9C%80%E8%87%B3+App+%E7%A2%BA%E8%AA%8D%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fwww.taiwanpay.com.tw%2Ffisc-tpay%2Fnews%2Fevent%2F01KPAX7T490S21W51F01QRABCJ%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     },
     {
+      "provider_id": "fullpay",
+      "provider_name": "全支付／PX Pay Plus",
+      "title": "夏日乾杯飲料季｜筆筆5%全點！精選品牌再10%！將來銀行帳戶再10%",
+      "url": "https://marketing.pxpayplus.com/pxplus_marketing_page/activity_content_page?EventId=82",
+      "source_url": "https://service.pxpayplus.com/px-advertise/web/activity/detail/82",
+      "external_id": "82",
+      "start_date": "2026-06-29",
+      "end_date": "2026-08-30",
+      "lifecycle": "active",
+      "quota_status": "unknown_app_only",
+      "quota_evidence_complete": false,
+      "review_required": false,
+      "date_confidence": "high",
+      "conditions_summary": "remind: 本活動「主活動」「精選品牌加碼活動」需於消費前完成「活動登錄」始享活動行銷回饋資格。 本活動為限量回饋，回饋金額之計算，詳情參閱本活動內容公告。 title: 如何完成活動登錄才能獲得回饋？ ★請務必於消費前完成登錄，以保障您的活動回饋權益。 content: 查看步驟 ①透過全支付App或PX Pay（以下合稱全支付）進入首頁 ②點選「活動登錄」 ③於「已登錄活動」區域查看已有登錄的回饋活動。 ★本活動登錄名額不限，登錄說明與限制請參閱本活動內容公告。 content: 單筆不限金額5%回饋 content: 輸入指定優惠碼，單筆不限金額10%回饋 content: 連結將來銀行帳戶，單筆不限金額10%回饋 title: 主活動｜需登錄：單筆不限金額享5%全點回饋（每週回饋限量，贈完為止） 本活動於 2026/06/27 (六) 00:00 起開放登錄，活動期間內，每一全支付帳號於全支付首頁活動登錄頁面，完成【夏日乾杯飲料季｜主活動｜5%回饋】活動登錄後，並於合作夥伴之實體通路使用全支付完成付款，始享下列行銷回饋資格。 活動內容：活動期間內，每一全支付帳號，不限金額享5%全點回饋，回饋之全點以四捨五入計算至",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
+      "content_hash": "1f0e9b13b8273b294e5caecc38c9de1ee8fc366086fa893563358d0818be4b01",
+      "evidence": [
+        {
+          "source_url": "https://marketing.pxpayplus.com/pxplus_marketing_page/activity_content_page?EventId=82",
+          "excerpt": "content: 查詢步驟 ①透過全支付App或PX Pay（以下合稱全支付）進入首頁 ②點選右上角「最新消息（小鈴鐺圖示）」 ③查找該活動額滿公告（或可於頁面上方「通知類別」中選擇「活動通知」進行查詢）。",
+          "observed_at": "2026-07-22T13:14:22.505424+08:00",
+          "kind": "activity_page",
+          "content_hash": "1f0e9b13b8273b294e5caecc38c9de1ee8fc366086fa893563358d0818be4b01"
+        }
+      ],
+      "components": [],
+      "conditions_display": [
+        "remind: 本活動「主活動」「精選品牌加碼活動」需於消費前完成「活動登錄」始享活動行銷回饋資格。 本活動為限量回饋，回饋金額之計算，詳情參閱本活動內容公告。",
+        "如何完成活動登錄才能獲得回饋？ ★請務必於消費前完成登錄，以保障您的活動回饋權益。",
+        "活動內容：查看步驟 ①透過全支付App或PX Pay（以下合稱全支付）進入首頁 ②點選「活動登錄」 ③於「已登錄活動」區域查看已有登錄的回饋活動。 ★本活動登錄名額不限，登錄說明與限制請參閱本活動內容公告。",
+        "活動內容：單筆不限金額5%回饋",
+        "活動內容：輸入指定優惠碼，單筆不限金額10%回饋"
+      ],
+      "insights": {
+        "max_reward_percent": 10,
+        "fixed_reward_amount": null,
+        "is_high_return": true,
+        "is_upcoming": false,
+        "starts_in_days": -23,
+        "is_expiring_soon": false,
+        "ends_in_days": 39,
+        "insight_tags": [
+          "高回饋",
+          "需至 App 確認"
+        ],
+        "human_summary": "最高 10% 回饋，屬高回饋活動；額滿狀態需至 App 確認。"
+      },
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E5%A4%8F%E6%97%A5%E4%B9%BE%E6%9D%AF%E9%A3%B2%E6%96%99%E5%AD%A3%EF%BD%9C%E7%AD%86%E7%AD%865%25%E5%85%A8%E9%BB%9E%EF%BC%81%E7%B2%BE%E9%81%B8%E5%93%81%E7%89%8C%E5%86%8D10%25%EF%BC%81%E5%B0%87%E4%BE%86%E9%8A%80%E8%A1%8C%E5%B8%B3%E6%88%B6%E5%86%8D10%25&dates=20260629%2F20260831&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%85%A8%E6%94%AF%E4%BB%98%EF%BC%8FPX+Pay+Plus%0A%0A%E6%9C%80%E9%AB%98+10%25+%E5%9B%9E%E9%A5%8B%EF%BC%8C%E5%B1%AC%E9%AB%98%E5%9B%9E%E9%A5%8B%E6%B4%BB%E5%8B%95%EF%BC%9B%E9%A1%8D%E6%BB%BF%E7%8B%80%E6%85%8B%E9%9C%80%E8%87%B3+App+%E7%A2%BA%E8%AA%8D%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fmarketing.pxpayplus.com%2Fpxplus_marketing_page%2Factivity_content_page%3FEventId%3D82%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
+    },
+    {
       "provider_id": "ipassmoney",
       "provider_name": "一卡通 MONEY",
       "title": "【摩斯漢堡】用 iPASS MONEY 累積消費滿 150 元送 50 元優惠券！",
@@ -1269,15 +1150,15 @@
       "review_required": false,
       "date_confidence": "high",
       "conditions_summary": "活動期間：2026/7/1 ~ 2026/8/31 活動內容：活動期間於摩斯漢堡（實體門市、自助點餐機、MOS Order APP、網路訂餐）使用 iPASS MONEY 付款，可享以下優惠： 活動期間每人每月限得 1 張，活動總限量 8 萬張。 （不適用回饋服務及商品金額不計入） 優惠二：使用 iPASS MONEY 付款，綁定指定信用卡加碼最高享 10% 回饋 綁定聯邦信用卡消費最高享10%回饋（每人每月回饋上限 50 點，每月總回饋上限 25 萬點，消費前請至 iPASS MONEY APP 公告與聯邦官網留意當月是否已額滿） 綁定玉山unicard消費最高享4.5%回饋 綁定 LINE BANK 快點卡消費滿額最高享 4% 回饋 綁定王道簽帳金融卡新卡消費最高享 600 元回饋 必須維持 iPASS MONEY 帳戶為正常使用狀態，若暫停使用、關閉帳戶或其他異常狀態或於回饋前不符合任一條件，將不符合活動資格。 若付款失敗、交易取消、退貨或其他原因退還交易款項時，該筆交易金額將不列入回饋計算範圍。 本活動期間內於摩斯漢堡使用 iPASS MONEY 累積消費滿 150 元即贈送優惠券 50 元。 本活動優惠券每人每月限",
-      "fetched_at": "2026-07-21T01:58:27.889516+08:00",
-      "content_hash": "ae53e901b6fde2d7ae543f0121ffdf6859c9c3d9492e9853909ba3fca03c306e",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
+      "content_hash": "0d13344a871c9762bab21312aab42ab633e01468a965b519fe6cd15a9e424c49",
       "evidence": [
         {
           "source_url": "https://web.i-pass.com.tw/Preferential/Detail/GMZTMMIYIYLJ764InoUT",
           "excerpt": "綁定聯邦信用卡消費最高享10%回饋（每人每月回饋上限 50 點，每月總回饋上限 25 萬點，消費前請至 iPASS MONEY APP 公告與聯邦官網留意當月是否已額滿）",
-          "observed_at": "2026-07-21T01:58:27.889516+08:00",
+          "observed_at": "2026-07-22T13:14:22.505424+08:00",
           "kind": "activity_page",
-          "content_hash": "ae53e901b6fde2d7ae543f0121ffdf6859c9c3d9492e9853909ba3fca03c306e"
+          "content_hash": "0d13344a871c9762bab21312aab42ab633e01468a965b519fe6cd15a9e424c49"
         }
       ],
       "components": [],
@@ -1304,6 +1185,99 @@
     {
       "provider_id": "fullpay",
       "provider_name": "全支付／PX Pay Plus",
+      "title": "全支付新戶優惠｜於大全聯消費滿千享5%全點回饋！",
+      "url": "https://marketing.pxpayplus.com/pxplus_marketing_page/activity_content_page?EventId=104",
+      "source_url": "https://service.pxpayplus.com/px-advertise/web/activity/detail/104",
+      "external_id": "104",
+      "start_date": "2026-07-01",
+      "end_date": "2026-12-31",
+      "lifecycle": "active",
+      "quota_status": "unknown_app_only",
+      "quota_evidence_complete": false,
+      "review_required": false,
+      "date_confidence": "high",
+      "conditions_summary": "title: 全支付新戶優惠｜於大全聯消費滿千享5%全點回饋！ remind: 本活動限活動期間內，新註冊之全支付新會員並於註冊之當月消費使用。 參加活動前請務必先確認從未註冊為全支付會員，於本活動前曾註冊或註冊後銷戶重新註冊為全支付會員者，不符合本行銷活動回饋資格。 本活動為限量回饋，回饋金額計算，詳情參閱本活動內容公告。 活動期間，若發現交易異常行為（如：不正常退款、單筆消費拆單付款…等），以致影響活動公平及店家正常交易流程，本公司有權取消回饋資格並暫停該會員帳戶之使用，以確保使用者交易安全。 title: 主活動｜全支付新用戶滿額禮｜註冊當月於大全聯消費滿$1,000，享5%全點回饋！ - 本活動限過往從未註冊全支付會員，於活動期間內之申請註冊之當月份完成註冊後並於「註冊當月」最後一天（含）前，於大全聯實體門市使用全支付付款（不限支付工具），單筆消費滿$1,000（含）元，即可享5%全點回饋，活動期間內，每一全支付帳號於成功註冊完並於註冊之當月滿額消費可享回饋上限為100全點。 - 本活動每月回饋限量10萬全點，總回饋限量60萬全點，以符合本活動資格之消費優先順序發送，贈完為止。 content_title: 活動期間",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
+      "content_hash": "f449a0222437d737d896a316a0f0d3d1b12b73c5494e98df6dd2db6e460f1f62",
+      "evidence": [
+        {
+          "source_url": "https://marketing.pxpayplus.com/pxplus_marketing_page/activity_content_page?EventId=104",
+          "excerpt": "額滿公告之系統時間並不等同活動實際額滿之時間，查詢額滿公告，可至全支付APP首頁>點選右上角最新訊息「小鈴鐺圖示」>直接查看額滿公告或可選上方「通知類別」後選擇活動通知查看。",
+          "observed_at": "2026-07-22T13:14:22.505424+08:00",
+          "kind": "activity_page",
+          "content_hash": "f449a0222437d737d896a316a0f0d3d1b12b73c5494e98df6dd2db6e460f1f62"
+        }
+      ],
+      "components": [],
+      "conditions_display": [
+        "全支付新戶優惠｜於大全聯消費滿千享5%全點回饋！ remind: 本活動限活動期間內，新註冊之全支付新會員並於註冊之當月消費使用。 參加活動前請務必先確認從未註冊為全支付會員，於本活動前曾註冊或註冊後銷戶重新註冊為全支付會員者，不符合本行銷活動回饋資格。 本活動為限量回饋，回饋金額計算，詳情參閱本活動內容公告。 活動期間，若發現交易異常行為（如：不正常退款、單筆消費拆單付款…等），以致影響活動公平及店家正常交易流程，本公司有權取消回饋資格並暫停該會員帳戶之使用，以確保使用者交易安全。",
+        "主活動｜全支付新用戶滿額禮｜註冊當月於大全聯消費滿$1,000，享5%全點回饋！ - 本活動限過往從未註冊全支付會員，於活動期間內之申請註冊之當月份完成註冊後並於「註冊當月」最後一天（含）前，於大全聯實體門市使用全支付付款（不限支付工具），單筆消費滿$1,000（含）元，即可享5%全點回饋，活動期間內，每一全支付帳號於成功註冊完並於註冊之當月滿額消費可享回饋上限為100全點。 - 本活動每月回饋限量10萬全點，總回饋限量60萬全點，以符合本活動資格之消費優先順序發送，贈完為止。 content_title: 活動期間"
+      ],
+      "insights": {
+        "max_reward_percent": 5,
+        "fixed_reward_amount": null,
+        "is_high_return": false,
+        "is_upcoming": false,
+        "starts_in_days": -21,
+        "is_expiring_soon": false,
+        "ends_in_days": 162,
+        "insight_tags": [
+          "需至 App 確認"
+        ],
+        "human_summary": "最高 5% 回饋；額滿狀態需至 App 確認。"
+      },
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E5%85%A8%E6%94%AF%E4%BB%98%E6%96%B0%E6%88%B6%E5%84%AA%E6%83%A0%EF%BD%9C%E6%96%BC%E5%A4%A7%E5%85%A8%E8%81%AF%E6%B6%88%E8%B2%BB%E6%BB%BF%E5%8D%83%E4%BA%AB5%25%E5%85%A8%E9%BB%9E%E5%9B%9E%E9%A5%8B%EF%BC%81&dates=20260701%2F20270101&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%85%A8%E6%94%AF%E4%BB%98%EF%BC%8FPX+Pay+Plus%0A%0A%E6%9C%80%E9%AB%98+5%25+%E5%9B%9E%E9%A5%8B%EF%BC%9B%E9%A1%8D%E6%BB%BF%E7%8B%80%E6%85%8B%E9%9C%80%E8%87%B3+App+%E7%A2%BA%E8%AA%8D%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fmarketing.pxpayplus.com%2Fpxplus_marketing_page%2Factivity_content_page%3FEventId%3D104%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
+    },
+    {
+      "provider_id": "fullpay",
+      "provider_name": "全支付／PX Pay Plus",
+      "title": "全支付繳費日｜週一連結任一帳戶繳費筆筆享1%全點！再送5%樂購券！",
+      "url": "https://marketing.pxpayplus.com/pxplus_marketing_page/activity_content_page?EventId=91",
+      "source_url": "https://service.pxpayplus.com/px-advertise/web/activity/detail/91",
+      "external_id": "91",
+      "start_date": "2026-07-01",
+      "end_date": "2026-12-31",
+      "lifecycle": "active",
+      "quota_status": "unknown_app_only",
+      "quota_evidence_complete": false,
+      "review_required": false,
+      "date_confidence": "high",
+      "conditions_summary": "remind: 本活動主活動需於消費前完成「活動登錄」始享活動行銷回饋資格。 本活動全支付會員皆可參加，限以全支付帳戶或綁定指定合作銀行帳戶付款，部分帳戶加碼活動之限制，詳情請參閱各活動公告。 本活動指定繳費適用通路包含但不限於：家庭繳費（水費、電費、瓦斯費、電信費、有線電視費）、行車上路（停車費、汽燃費、交通罰緩）、教育（學雜費、公訓處自費課程）、醫療（台北市立聯合醫院、中山醫學大學附設醫院）、繳稅（地方稅、台北地方稅）、社會保險（國民年金、健保費、勞就職保保險費、勞工退休金）等，實際情形以全支付與合作夥伴規範為準。 本活動為限量回饋，回饋金額之計算，詳情參閱本活動內容公告。 活動期間，若發現交易異常行為（如：不正常退款、單筆消費拆單付款…等），以致影響活動公平及店家正常交易流程，全支付有權取消回饋資格並暫停該會員帳戶之使用，以確保使用者交易安全。 ｜ 小提醒：本活動需要登錄才符合回饋資格。 title: 如何完成活動登錄才能獲得回饋？ ★請務必於消費前完成登錄，以保障您的活動回饋權益。 content: 查看步驟 ①進入全支付入口 ②點選「活動登錄」 ③於「所有活動」中查看欲登錄的活動 ④「已登錄」區域查看已有登錄的回饋",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
+      "content_hash": "b6a8fc1ddcd812023e6384c1831a56fdefeb96dcd517db3473388ed760a6522f",
+      "evidence": [
+        {
+          "source_url": "https://marketing.pxpayplus.com/pxplus_marketing_page/activity_content_page?EventId=91",
+          "excerpt": "3. 符合本活動資格者，本活動全點回饋為即時贈點，且為限量回饋，名額額滿將於全支付APP公告，惟額滿公告之系統時間並不等同活動實際額滿之時間。",
+          "observed_at": "2026-07-22T13:14:22.505424+08:00",
+          "kind": "activity_page",
+          "content_hash": "b6a8fc1ddcd812023e6384c1831a56fdefeb96dcd517db3473388ed760a6522f"
+        }
+      ],
+      "components": [],
+      "conditions_display": [
+        "remind: 本活動主活動需於消費前完成「活動登錄」始享活動行銷回饋資格。 本活動全支付會員皆可參加，限以全支付帳戶或綁定指定合作銀行帳戶付款，部分帳戶加碼活動之限制，詳情請參閱各活動公告。 本活動指定繳費適用通路包含但不限於：家庭繳費（水費、電費、瓦斯費、電信費、有線電視費）、行車上路（停車費、汽燃費、交通罰緩）、教育（學雜費、公訓處自費課程）、醫療（台北市立聯合醫院、中山醫學大學附設醫院）、繳稅（地方稅、台北地方稅）、社會保險（國民年金、健保費、勞就職保保險費、勞工退休金）等，實際情形以全支付與合作夥伴規範為準。 本活動為限量回饋，回饋金額之計算，詳情參閱本活動內容公告。 活動期間，若發現交易異常行為（如：不正常退款、單筆消費拆單付款…等），以致影響活動公平及店家正常交易流程，全支付有權取消回饋資格並暫停該會員帳戶之使用，以確保使用者交易安全。 ｜ 小提醒：本活動需要登錄才符合回饋資格。",
+        "如何完成活動登錄才能獲得回饋？ ★請務必於消費前完成登錄，以保障您的活動回饋權益。",
+        "活動內容：查看步驟 ①進入全支付入口 ②點選「活動登錄」 ③於「所有活動」中查看欲登錄的活動 ④「已登錄」區域查看已有登錄的回饋"
+      ],
+      "insights": {
+        "max_reward_percent": 1,
+        "fixed_reward_amount": null,
+        "is_high_return": false,
+        "is_upcoming": false,
+        "starts_in_days": -21,
+        "is_expiring_soon": false,
+        "ends_in_days": 162,
+        "insight_tags": [
+          "需至 App 確認"
+        ],
+        "human_summary": "最高 1% 回饋；額滿狀態需至 App 確認。"
+      },
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E5%85%A8%E6%94%AF%E4%BB%98%E7%B9%B3%E8%B2%BB%E6%97%A5%EF%BD%9C%E9%80%B1%E4%B8%80%E9%80%A3%E7%B5%90%E4%BB%BB%E4%B8%80%E5%B8%B3%E6%88%B6%E7%B9%B3%E8%B2%BB%E7%AD%86%E7%AD%86%E4%BA%AB1%25%E5%85%A8%E9%BB%9E%EF%BC%81%E5%86%8D%E9%80%815%25%E6%A8%82%E8%B3%BC%E5%88%B8%EF%BC%81&dates=20260701%2F20270101&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%85%A8%E6%94%AF%E4%BB%98%EF%BC%8FPX+Pay+Plus%0A%0A%E6%9C%80%E9%AB%98+1%25+%E5%9B%9E%E9%A5%8B%EF%BC%9B%E9%A1%8D%E6%BB%BF%E7%8B%80%E6%85%8B%E9%9C%80%E8%87%B3+App+%E7%A2%BA%E8%AA%8D%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fmarketing.pxpayplus.com%2Fpxplus_marketing_page%2Factivity_content_page%3FEventId%3D91%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
+    },
+    {
+      "provider_id": "fullpay",
+      "provider_name": "全支付／PX Pay Plus",
       "title": "延三夜市｜單筆不限金額享30%回饋，指定銀行加碼最高5%！",
       "url": "https://marketing.pxpayplus.com/pxplus_marketing_page/activity_content_page?EventId=89",
       "source_url": "https://service.pxpayplus.com/px-advertise/web/activity/detail/89",
@@ -1316,15 +1290,15 @@
       "review_required": false,
       "date_confidence": "high",
       "conditions_summary": "title: 延三夜市｜單筆不限金額享30%回饋，指定銀行加碼最高5%！ 本活動限使用以下付款方式完成付款，始符合本活動回饋資格：使用全支付「付款碼」或「掃描條碼」功能付款者（限掃描「全支付TWQR」立牌或「全支付QR Code」、「掃碼通」立牌（需支援全支付）、「epay多元支付」立牌（需支援全支付））。 本活動限於得使用全支付APP付款之延三夜市指定合作店家，部分合作夥伴之通路或特殊品牌或特殊商品無法使用全支付付款，實際情形以全支付與合作夥伴規範為準。 本活動為限量回饋，回饋金額之計算，詳情參閱本活動內容公告。 活動期間，若發現交易異常行為（如：不正常退款、單筆消費拆單付款…等），以致影響活動公平及店家正常交易流程，本公司有權取消回饋資格並暫停該會員帳戶之使用，以確保使用者交易安全。 content: 單筆不限金額享30%回饋 content: 單筆不限金額享30%回饋 content: 指定付款方式最高享5%回饋 title: 主活動｜延三夜市：活動期間內，使用全支付「付款碼」或「掃描條碼」功能付款者（限掃描「全支付TWQR」立牌或「全支付QR Code」、「掃碼通」立牌（需支援全支付）、「epay多元支付」立牌（需支",
-      "fetched_at": "2026-07-21T01:58:27.889516+08:00",
-      "content_hash": "5d924f82635566d0abd302aab59878be09a178251ec0e58e95f2fd63fa04ba10",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
+      "content_hash": "8afbc5eeb289724dbf4c9d51e713544f8c022d6d894434ae1e135bad3b3f8937",
       "evidence": [
         {
           "source_url": "https://marketing.pxpayplus.com/pxplus_marketing_page/activity_content_page?EventId=89",
           "excerpt": "名額額滿將於全支付APP公告，惟額滿公告之系統時間並不等同活動實際額滿之時間。",
-          "observed_at": "2026-07-21T01:58:27.889516+08:00",
+          "observed_at": "2026-07-22T13:14:22.505424+08:00",
           "kind": "activity_page",
-          "content_hash": "5d924f82635566d0abd302aab59878be09a178251ec0e58e95f2fd63fa04ba10"
+          "content_hash": "8afbc5eeb289724dbf4c9d51e713544f8c022d6d894434ae1e135bad3b3f8937"
         }
       ],
       "components": [],
@@ -1351,6 +1325,198 @@
       "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E5%BB%B6%E4%B8%89%E5%A4%9C%E5%B8%82%EF%BD%9C%E5%96%AE%E7%AD%86%E4%B8%8D%E9%99%90%E9%87%91%E9%A1%8D%E4%BA%AB30%25%E5%9B%9E%E9%A5%8B%EF%BC%8C%E6%8C%87%E5%AE%9A%E9%8A%80%E8%A1%8C%E5%8A%A0%E7%A2%BC%E6%9C%80%E9%AB%985%25%EF%BC%81&dates=20260701%2F20260901&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%85%A8%E6%94%AF%E4%BB%98%EF%BC%8FPX+Pay+Plus%0A%0A%E6%9C%80%E9%AB%98+30%25+%E5%9B%9E%E9%A5%8B%EF%BC%8C%E5%B1%AC%E9%AB%98%E5%9B%9E%E9%A5%8B%E6%B4%BB%E5%8B%95%EF%BC%9B%E9%A1%8D%E6%BB%BF%E7%8B%80%E6%85%8B%E9%9C%80%E8%87%B3+App+%E7%A2%BA%E8%AA%8D%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fmarketing.pxpayplus.com%2Fpxplus_marketing_page%2Factivity_content_page%3FEventId%3D89%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     },
     {
+      "provider_id": "fullpay",
+      "provider_name": "全支付／PX Pay Plus",
+      "title": "打牙祭臺北夜市｜最高享35%全點，再送foodpanda 5%回饋券",
+      "url": "https://marketing.pxpayplus.com/pxplus_marketing_page/activity_content_page?EventId=88",
+      "source_url": "https://service.pxpayplus.com/px-advertise/web/activity/detail/88",
+      "external_id": "88",
+      "start_date": "2026-07-01",
+      "end_date": "2026-08-31",
+      "lifecycle": "active",
+      "quota_status": "unknown_app_only",
+      "quota_evidence_complete": false,
+      "review_required": false,
+      "date_confidence": "high",
+      "conditions_summary": "title: 打牙祭臺北夜市｜最高享35%全點，再送foodpanda 5%回饋券 本活動限於得使用全支付APP於臺北17大夜市（石牌夜市、士林夜市、大龍街夜市、雙城街夜市、寧夏夜市、延三夜市、遼寧街夜市、饒河街夜市、臨江街夜市、公館夜市、景美夜市、廣州街夜市、梧州街夜市、華西街夜市、艋舺夜市、西昌街夜市、南機場夜市）之合作指定店家之實體通路付款，部分合作夥伴之通路或特殊品牌或特殊商品無法使用全支付付款，實際情形以全支付與合作夥伴規範為準。 本活動為限量回饋，回饋金額之計算，詳情參閱本活動內容公告。 活動期間，若發現交易異常行為（如：不正常退款、單筆消費拆單付款…等），以致影響活動公平及店家正常交易流程，本公司有權取消回饋資格並暫停該會員帳戶之使用，以確保使用者交易安全。 content: 單筆不限金額享30%回饋 content: foodpanda 5% 回饋券 content: 指定付款方式最高享5%回饋 title: 主活動｜臺北17大夜市打牙祭：活動期間內，使用全支付「付款碼」或「掃描條碼」功能付款者（限掃描「全支付TWQR」立牌或「全支付QR Code」、「掃碼通」立牌（需支援全支付）、「epay多元支付」立牌（",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
+      "content_hash": "23194dea2b9627e0b2ee7edca67fd3ceeaa32f3c4370a6c5b53e447728e89909",
+      "evidence": [
+        {
+          "source_url": "https://marketing.pxpayplus.com/pxplus_marketing_page/activity_content_page?EventId=88",
+          "excerpt": "名額額滿將於全支付APP公告，惟額滿公告之系統時間並不等同活動實際額滿之時間。",
+          "observed_at": "2026-07-22T13:14:22.505424+08:00",
+          "kind": "activity_page",
+          "content_hash": "23194dea2b9627e0b2ee7edca67fd3ceeaa32f3c4370a6c5b53e447728e89909"
+        }
+      ],
+      "components": [],
+      "conditions_display": [
+        "打牙祭臺北夜市｜最高享35%全點，再送foodpanda 5%回饋券 本活動限於得使用全支付APP於臺北17大夜市（石牌夜市、士林夜市、大龍街夜市、雙城街夜市、寧夏夜市、延三夜市、遼寧街夜市、饒河街夜市、臨江街夜市、公館夜市、景美夜市、廣州街夜市、梧州街夜市、華西街夜市、艋舺夜市、西昌街夜市、南機場夜市）之合作指定店家之實體通路付款，部分合作夥伴之通路或特殊品牌或特殊商品無法使用全支付付款，實際情形以全支付與合作夥伴規範為準。 本活動為限量回饋，回饋金額之計算，詳情參閱本活動內容公告。 活動期間，若發現交易異常行為（如：不正常退款、單筆消費拆單付款…等），以致影響活動公平及店家正常交易流程，本公司有權取消回饋資格並暫停該會員帳戶之使用，以確保使用者交易安全。",
+        "活動內容：單筆不限金額享30%回饋",
+        "活動內容：foodpanda 5% 回饋券",
+        "活動內容：指定付款方式最高享5%回饋",
+        "主活動｜臺北17大夜市打牙祭：活動期間內，使用全支付「付款碼」或「掃描條碼」功能付款者（限掃描「全支付TWQR」立牌或「全支付QR Code」、「掃碼通」立牌（需支援全支付）、「epay多元支付」立牌（"
+      ],
+      "insights": {
+        "max_reward_percent": 35,
+        "fixed_reward_amount": null,
+        "is_high_return": true,
+        "is_upcoming": false,
+        "starts_in_days": -21,
+        "is_expiring_soon": false,
+        "ends_in_days": 40,
+        "insight_tags": [
+          "高回饋",
+          "需至 App 確認"
+        ],
+        "human_summary": "最高 35% 回饋，屬高回饋活動；額滿狀態需至 App 確認。"
+      },
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E6%89%93%E7%89%99%E7%A5%AD%E8%87%BA%E5%8C%97%E5%A4%9C%E5%B8%82%EF%BD%9C%E6%9C%80%E9%AB%98%E4%BA%AB35%25%E5%85%A8%E9%BB%9E%EF%BC%8C%E5%86%8D%E9%80%81foodpanda+5%25%E5%9B%9E%E9%A5%8B%E5%88%B8&dates=20260701%2F20260901&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%85%A8%E6%94%AF%E4%BB%98%EF%BC%8FPX+Pay+Plus%0A%0A%E6%9C%80%E9%AB%98+35%25+%E5%9B%9E%E9%A5%8B%EF%BC%8C%E5%B1%AC%E9%AB%98%E5%9B%9E%E9%A5%8B%E6%B4%BB%E5%8B%95%EF%BC%9B%E9%A1%8D%E6%BB%BF%E7%8B%80%E6%85%8B%E9%9C%80%E8%87%B3+App+%E7%A2%BA%E8%AA%8D%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fmarketing.pxpayplus.com%2Fpxplus_marketing_page%2Factivity_content_page%3FEventId%3D88%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
+    },
+    {
+      "provider_id": "fullpay",
+      "provider_name": "全支付／PX Pay Plus",
+      "title": "日常繳費用全支付！繳費完成付款即可獲得全通路5%生活樂購券",
+      "url": "https://marketing.pxpayplus.com/pxplus_marketing_page/activity_content_page?EventId=105",
+      "source_url": "https://service.pxpayplus.com/px-advertise/web/activity/detail/105",
+      "external_id": "105",
+      "start_date": "2026-07-01",
+      "end_date": "2026-12-31",
+      "lifecycle": "active",
+      "quota_status": "unknown_app_only",
+      "quota_evidence_complete": false,
+      "review_required": false,
+      "date_confidence": "high",
+      "conditions_summary": "本活動指定繳費適用通路包含但不限於：家庭繳費（水費、電費、瓦斯費、電信費、有線電視費）、行車上路（停車費、汽燃費、交通罰緩）、教育（學雜費、公訓處自費課程）、醫療（台北市立聯合醫院、中山醫學大學附設醫院）、繳稅（地方稅、台北地方稅）、社會保險（國民年金、健保費）等，實際情形以全支付與合作夥伴規範為準。 本活動為限量回饋，回饋金額之計算，詳情參閱本活動內容公告。 活動期間，若發現交易異常行為（如：不正常退款、單筆消費拆單付款…等），以致影響活動公平及店家正常交易流程，本公司有權取消回饋資格並暫停該會員帳戶之使用，以確保使用者交易安全。 請於付款前再次確認連結合作銀行之每日轉帳額度及全支付付款額度是否足夠，查詢合作銀行額度請洽綁定之合作銀行，查詢全支付額度可至全支付APP>「我的」>「本月額度」確認，若因前開額度不足導致無法完成付款，恕無法要求補發或本公司得扣除本活動已回饋之全點。 使用全支付繳費成功扣款後，即可收到推播，至全支付合作品牌消費自動帶入生活樂購券獲得全點回饋。 使用全點全部折抵該筆欲繳納之總繳費金額者，不符合本活動回饋資格。 ｜ 小提醒：本活動需要登錄才符合回饋資格。 content: 每週一繳費不限金額每月最高5",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
+      "content_hash": "22f5354c73bf29379c5390b290c8fcb24df16bd92758a983b111815bba3a3c69",
+      "evidence": [
+        {
+          "source_url": "https://marketing.pxpayplus.com/pxplus_marketing_page/activity_content_page?EventId=105",
+          "excerpt": "符合本活動資格者，本活動全點回饋為即時贈點，且為限量回饋，名額額滿將於全支付APP公告，惟額滿公告之系統時間並不等同活動實際額滿之時間。",
+          "observed_at": "2026-07-22T13:14:22.505424+08:00",
+          "kind": "activity_page",
+          "content_hash": "22f5354c73bf29379c5390b290c8fcb24df16bd92758a983b111815bba3a3c69"
+        }
+      ],
+      "components": [],
+      "conditions_display": [
+        "本活動指定繳費適用通路包含但不限於：家庭繳費（水費、電費、瓦斯費、電信費、有線電視費）、行車上路（停車費、汽燃費、交通罰緩）、教育（學雜費、公訓處自費課程）、醫療（台北市立聯合醫院、中山醫學大學附設醫院）、繳稅（地方稅、台北地方稅）、社會保險（國民年金、健保費）等，實際情形以全支付與合作夥伴規範為準。 本活動為限量回饋，回饋金額之計算，詳情參閱本活動內容公告。 活動期間，若發現交易異常行為（如：不正常退款、單筆消費拆單付款…等），以致影響活動公平及店家正常交易流程，本公司有權取消回饋資格並暫停該會員帳戶之使用，以確保使用者交易安全。 請於付款前再次確認連結合作銀行之每日轉帳額度及全支付付款額度是否足夠，查詢合作銀行額度請洽綁定之合作銀行，查詢全支付額度可至全支付APP>「我的」>「本月額度」確認，若因前開額度不足導致無法完成付款，恕無法要求補發或本公司得扣除本活動已回饋之全點。 使用全支付繳費成功扣款後，即可收到推播，至全支付合作品牌消費自動帶入生活樂購券獲得全點回饋。 使用全點全部折抵該筆欲繳納之總繳費金額者，不符合本活動回饋資格。 ｜ 小提醒：本活動需要登錄才符合回饋資格。",
+        "活動內容：每週一繳費不限金額每月最高5"
+      ],
+      "insights": {
+        "max_reward_percent": null,
+        "fixed_reward_amount": null,
+        "is_high_return": false,
+        "is_upcoming": false,
+        "starts_in_days": -21,
+        "is_expiring_soon": false,
+        "ends_in_days": 162,
+        "insight_tags": [
+          "需至 App 確認"
+        ],
+        "human_summary": "額滿狀態需至 App 確認。"
+      },
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E6%97%A5%E5%B8%B8%E7%B9%B3%E8%B2%BB%E7%94%A8%E5%85%A8%E6%94%AF%E4%BB%98%EF%BC%81%E7%B9%B3%E8%B2%BB%E5%AE%8C%E6%88%90%E4%BB%98%E6%AC%BE%E5%8D%B3%E5%8F%AF%E7%8D%B2%E5%BE%97%E5%85%A8%E9%80%9A%E8%B7%AF5%25%E7%94%9F%E6%B4%BB%E6%A8%82%E8%B3%BC%E5%88%B8&dates=20260701%2F20270101&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%85%A8%E6%94%AF%E4%BB%98%EF%BC%8FPX+Pay+Plus%0A%0A%E9%A1%8D%E6%BB%BF%E7%8B%80%E6%85%8B%E9%9C%80%E8%87%B3+App+%E7%A2%BA%E8%AA%8D%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fmarketing.pxpayplus.com%2Fpxplus_marketing_page%2Factivity_content_page%3FEventId%3D105%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
+    },
+    {
+      "provider_id": "fullpay",
+      "provider_name": "全支付／PX Pay Plus",
+      "title": "樂購券三重送｜完成繳費/搭車/日韓消費送全通路5%樂購券！",
+      "url": "https://marketing.pxpayplus.com/pxplus_marketing_page/activity_content_page?EventId=106",
+      "source_url": "https://service.pxpayplus.com/px-advertise/web/activity/detail/106",
+      "external_id": "106",
+      "start_date": "2026-07-01",
+      "end_date": "2026-12-31",
+      "lifecycle": "active",
+      "quota_status": "unknown_app_only",
+      "quota_evidence_complete": false,
+      "review_required": false,
+      "date_confidence": "high",
+      "conditions_summary": "使用全點折抵全部乘車票價者或使用全點全部折抵該筆欲繳納之總繳費金額者，則不符合本活動回饋資格。 因交通場域網路環境因素，若發生驗票機掃描後未即時扣款，系統將於運輸業者事後結班時進行補扣款，扣款時間可能與實際搭車時間不同，若成功扣款者則不影響活動回饋資格。 指定繳費適用通路包含但不限於：家庭繳費（水費、電費、瓦斯費、電信費、有線電視費）、行車上路（停車費、汽燃費、交通罰緩）、教育（學雜費、公訓處自費課程）、醫療（台北市立聯合醫院、中山醫學大學附設醫院）、繳稅（地方稅、台北地方稅）、社會保險（國民年金、健保費）等，實際情形以全支付與合作夥伴規範為準。 活動期間，若發現交易異常行為（如：未依規定完成進出站刷卡程序、非正常搭乘行為…等），全支付有權取消回饋資格並暫停該會員帳戶之使用。 content: 使用乘車碼搭乘，送全通路5%回饋 content: 日韓消費不限金額，送全通路5%回饋 content: 使用全支付APP繳費，送全通路5%回饋 title: 通勤樂購券｜使用全支付乘車碼搭乘，下車/出站成功扣款將收到全通路5%券推播，至指定場域消費，最高享5%全點回饋！ title: 生活樂購券｜使用全支付於日本/韓國實體合作通路消",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
+      "content_hash": "0c2a778cdc7daa062e5817b03cba635c591c10dc094382e0820aa6cc6890c823",
+      "evidence": [
+        {
+          "source_url": "https://marketing.pxpayplus.com/pxplus_marketing_page/activity_content_page?EventId=106",
+          "excerpt": "名額額滿將於全支付APP公告，惟額滿公告之系統時間並不等同活動實際額滿之時間。",
+          "observed_at": "2026-07-22T13:14:22.505424+08:00",
+          "kind": "activity_page",
+          "content_hash": "0c2a778cdc7daa062e5817b03cba635c591c10dc094382e0820aa6cc6890c823"
+        }
+      ],
+      "components": [],
+      "conditions_display": [
+        "使用全點折抵全部乘車票價者或使用全點全部折抵該筆欲繳納之總繳費金額者，則不符合本活動回饋資格。 因交通場域網路環境因素，若發生驗票機掃描後未即時扣款，系統將於運輸業者事後結班時進行補扣款，扣款時間可能與實際搭車時間不同，若成功扣款者則不影響活動回饋資格。 指定繳費適用通路包含但不限於：家庭繳費（水費、電費、瓦斯費、電信費、有線電視費）、行車上路（停車費、汽燃費、交通罰緩）、教育（學雜費、公訓處自費課程）、醫療（台北市立聯合醫院、中山醫學大學附設醫院）、繳稅（地方稅、台北地方稅）、社會保險（國民年金、健保費）等，實際情形以全支付與合作夥伴規範為準。 活動期間，若發現交易異常行為（如：未依規定完成進出站刷卡程序、非正常搭乘行為…等），全支付有權取消回饋資格並暫停該會員帳戶之使用。",
+        "活動內容：使用乘車碼搭乘，送全通路5%回饋",
+        "活動內容：日韓消費不限金額，送全通路5%回饋",
+        "活動內容：使用全支付APP繳費，送全通路5%回饋",
+        "通勤樂購券｜使用全支付乘車碼搭乘，下車/出站成功扣款將收到全通路5%券推播，至指定場域消費，最高享5%全點回饋！"
+      ],
+      "insights": {
+        "max_reward_percent": 5,
+        "fixed_reward_amount": null,
+        "is_high_return": false,
+        "is_upcoming": false,
+        "starts_in_days": -21,
+        "is_expiring_soon": false,
+        "ends_in_days": 162,
+        "insight_tags": [
+          "需至 App 確認"
+        ],
+        "human_summary": "最高 5% 回饋；額滿狀態需至 App 確認。"
+      },
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E6%A8%82%E8%B3%BC%E5%88%B8%E4%B8%89%E9%87%8D%E9%80%81%EF%BD%9C%E5%AE%8C%E6%88%90%E7%B9%B3%E8%B2%BB%2F%E6%90%AD%E8%BB%8A%2F%E6%97%A5%E9%9F%93%E6%B6%88%E8%B2%BB%E9%80%81%E5%85%A8%E9%80%9A%E8%B7%AF5%25%E6%A8%82%E8%B3%BC%E5%88%B8%EF%BC%81&dates=20260701%2F20270101&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%85%A8%E6%94%AF%E4%BB%98%EF%BC%8FPX+Pay+Plus%0A%0A%E6%9C%80%E9%AB%98+5%25+%E5%9B%9E%E9%A5%8B%EF%BC%9B%E9%A1%8D%E6%BB%BF%E7%8B%80%E6%85%8B%E9%9C%80%E8%87%B3+App+%E7%A2%BA%E8%AA%8D%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fmarketing.pxpayplus.com%2Fpxplus_marketing_page%2Factivity_content_page%3FEventId%3D106%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
+    },
+    {
+      "provider_id": "fullpay",
+      "provider_name": "全支付／PX Pay Plus",
+      "title": "通勤樂購券｜使用全支付乘車碼搭乘大眾運輸加碼5%全點回饋!",
+      "url": "https://marketing.pxpayplus.com/pxplus_marketing_page/activity_content_page?EventId=102",
+      "source_url": "https://service.pxpayplus.com/px-advertise/web/activity/detail/102",
+      "external_id": "102",
+      "start_date": "2026-07-01",
+      "end_date": "2027-01-02",
+      "lifecycle": "active",
+      "quota_status": "unknown_app_only",
+      "quota_evidence_complete": false,
+      "review_required": false,
+      "date_confidence": "high",
+      "conditions_summary": "title: 通勤樂購券｜使用全支付乘車碼搭乘大眾運輸加碼5%全點回饋! 本活動限使用全支付乘車碼乘車，並於下車/出站並成功扣款後，即可收到推播，至全支付合作品牌消費自動帶入通勤樂購券獲得全點回饋。 使用全點折抵全部乘車票價者，則不符合本活動回饋資格。 因交通場域網路環境因素，若發生驗票機掃描後未即時扣款，系統將於運輸業者事後結班時進行補扣款，扣款時間可能與實際搭車時間不同，若成功扣款者則不影響活動回饋資格。 本活動為限量回饋，回饋金額之計算，詳情參閱本活動內容公告。 活動期間，若發現交易異常行為（如：未依規定完成進出站刷卡程序、非正常搭乘行為…等），全支付有權取消回饋資格並暫停該會員帳戶之使用。 content: 使用乘車碼搭乘，加贈全通路5%回饋優惠券 title: 主活動: 大眾運輸工具贈全通路5%回饋活動：活動期間內，使用全支付乘車碼搭乘，出站並成功扣款將收到全通路5%券推播，至指定場域消費，最高享5%全點回饋! - 活動期間內，每一全支付帳號，使用全支付乘車碼搭乘大眾運輸（不含輕軌），單筆不限金額，於下車/出站並成功扣款後收到乘車碼推播可獲得通勤樂購券，全支付會員持通勤樂購券至可使用通勤樂購券之合作店家或通路消費，",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
+      "content_hash": "7a890dfd0506111b525cb417b214489d41207ae089891b4bb7d34c949e268772",
+      "evidence": [
+        {
+          "source_url": "https://marketing.pxpayplus.com/pxplus_marketing_page/activity_content_page?EventId=102",
+          "excerpt": "名額額滿將於全支付APP公告，惟額滿公告之系統時間並不等同活動實際額滿之時間。",
+          "observed_at": "2026-07-22T13:14:22.505424+08:00",
+          "kind": "activity_page",
+          "content_hash": "7a890dfd0506111b525cb417b214489d41207ae089891b4bb7d34c949e268772"
+        }
+      ],
+      "components": [],
+      "conditions_display": [
+        "通勤樂購券｜使用全支付乘車碼搭乘大眾運輸加碼5%全點回饋! 本活動限使用全支付乘車碼乘車，並於下車/出站並成功扣款後，即可收到推播，至全支付合作品牌消費自動帶入通勤樂購券獲得全點回饋。 使用全點折抵全部乘車票價者，則不符合本活動回饋資格。 因交通場域網路環境因素，若發生驗票機掃描後未即時扣款，系統將於運輸業者事後結班時進行補扣款，扣款時間可能與實際搭車時間不同，若成功扣款者則不影響活動回饋資格。 本活動為限量回饋，回饋金額之計算，詳情參閱本活動內容公告。 活動期間，若發現交易異常行為（如：未依規定完成進出站刷卡程序、非正常搭乘行為…等），全支付有權取消回饋資格並暫停該會員帳戶之使用。",
+        "活動內容：使用乘車碼搭乘，加贈全通路5%回饋優惠券",
+        "主活動: 大眾運輸工具贈全通路5%回饋活動：活動期間內，使用全支付乘車碼搭乘，出站並成功扣款將收到全通路5%券推播，至指定場域消費，最高享5%全點回饋! - 活動期間內，每一全支付帳號，使用全支付乘車碼搭乘大眾運輸（不含輕軌），單筆不限金額，於下車/出站並成功扣款後收到乘車碼推播可獲得通勤樂購券，全支付會員持通勤樂購券至可使用通勤樂購券之合作店家或通路消費，"
+      ],
+      "insights": {
+        "max_reward_percent": 5,
+        "fixed_reward_amount": null,
+        "is_high_return": false,
+        "is_upcoming": false,
+        "starts_in_days": -21,
+        "is_expiring_soon": false,
+        "ends_in_days": 164,
+        "insight_tags": [
+          "需至 App 確認"
+        ],
+        "human_summary": "最高 5% 回饋；額滿狀態需至 App 確認。"
+      },
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E9%80%9A%E5%8B%A4%E6%A8%82%E8%B3%BC%E5%88%B8%EF%BD%9C%E4%BD%BF%E7%94%A8%E5%85%A8%E6%94%AF%E4%BB%98%E4%B9%98%E8%BB%8A%E7%A2%BC%E6%90%AD%E4%B9%98%E5%A4%A7%E7%9C%BE%E9%81%8B%E8%BC%B8%E5%8A%A0%E7%A2%BC5%25%E5%85%A8%E9%BB%9E%E5%9B%9E%E9%A5%8B%21&dates=20260701%2F20270103&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%85%A8%E6%94%AF%E4%BB%98%EF%BC%8FPX+Pay+Plus%0A%0A%E6%9C%80%E9%AB%98+5%25+%E5%9B%9E%E9%A5%8B%EF%BC%9B%E9%A1%8D%E6%BB%BF%E7%8B%80%E6%85%8B%E9%9C%80%E8%87%B3+App+%E7%A2%BA%E8%AA%8D%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fmarketing.pxpayplus.com%2Fpxplus_marketing_page%2Factivity_content_page%3FEventId%3D102%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
+    },
+    {
       "provider_id": "ipassmoney",
       "provider_name": "一卡通 MONEY",
       "title": "【誠品生活】用 iPASS MONEY APP / 一卡通記名卡付款樂享 10% 回饋！",
@@ -1365,15 +1531,15 @@
       "review_required": false,
       "date_confidence": "high",
       "conditions_summary": "【誠品生活】用 iPASS MONEY APP / 一卡通記名卡付款樂享 10% 回饋！ 【誠品生活】用 iPASS MONEY APP / 一卡通記名卡付款樂享 10% 回饋！ 下載一卡通 iPASS MONEY APP 加入一卡通綠點回饋(請用手機操作) 活動期間：2026/7/17 ~ 2026/9/17 活動內容：活動期間於誠品生活/誠品書店實體門市消費，結帳時使用 iPASS MONEY APP（含帳戶餘額或綁定信用卡付款）／一卡通聯名卡／一卡通記名卡付款，可享以下優惠： 優惠一：當月付款總額享一卡通綠點 10% 回饋 活動期間每 iPASS MONEY 帳戶每月最高可獲 100 點，本活動總回饋上限 50 萬點，贈完即止，額滿將公告於此活動頁。 本活動回饋項目為「一卡通綠點」，請至遲須於付款當月底前加入一卡通綠點。 至一卡通 iPASS MONEY APP 首頁右上角一卡通綠點專區登入 iPASS MONEY 帳戶＞同意加入一卡通綠點回饋，須先同意加入一卡通綠點回饋後，方可開始累積及獲得一卡通綠點。 本活動回饋之一卡通綠點將於符合回饋資格之次月底前發放至 iPASS MONEY 帳戶，敬請耐心等候。 優惠二：使用",
-      "fetched_at": "2026-07-21T01:58:27.889516+08:00",
-      "content_hash": "8f9205aea2c0cca437839440628b4ac9d617064942c76309f188e575c03c9ddb",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
+      "content_hash": "29829aabaf8abce507ab7fa7b1cfff947dd8dd073b31bb16735c814462da301f",
       "evidence": [
         {
           "source_url": "https://web.i-pass.com.tw/Preferential/Detail/GMZTQMYLKDINQ645DEa9",
           "excerpt": "綁定聯邦信用卡消費最高享10%回饋（每人每月回饋上限 50 點，每月總回饋上限 25 萬點，消費前請至 iPASS MONEY APP 公告與聯邦官網留意當月是否已額滿）",
-          "observed_at": "2026-07-21T01:58:27.889516+08:00",
+          "observed_at": "2026-07-22T13:14:22.505424+08:00",
           "kind": "activity_page",
-          "content_hash": "8f9205aea2c0cca437839440628b4ac9d617064942c76309f188e575c03c9ddb"
+          "content_hash": "29829aabaf8abce507ab7fa7b1cfff947dd8dd073b31bb16735c814462da301f"
         }
       ],
       "components": [],
@@ -1411,8 +1577,8 @@
       "review_required": false,
       "date_confidence": "high",
       "conditions_summary": "content: 活動期間透過參與金融機構「行動銀行」APP或「台灣行動支付」APP以「台灣Pay」QR Code掃碼進行轉帳，享免手續費。",
-      "fetched_at": "2026-07-21T01:58:27.889516+08:00",
-      "content_hash": "eeb184ec9cc5d45f36731069a9e6eefd08c499abc7cccfbec24bdc834d94e98e",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
+      "content_hash": "f9e63f1fe888d50862d7013a185b768dc06a78305ba99f5d79b9cde672d3622a",
       "evidence": [],
       "components": [],
       "conditions_display": [
@@ -1446,8 +1612,8 @@
       "review_required": false,
       "date_confidence": "high",
       "conditions_summary": "2026年全新回饋報你知！ 新戶首刷100%回饋，刷卡最高回饋13% 活動一：你刷卡我回饋，首筆消費回饋 100% 歐付寶紅利 活動期間：2026/01/01~2026/12/31 首次申辦本聯名卡，核卡後第一筆消費交易，將100%回饋歐付寶紅利點數 (上限333點)。 ※ 回饋卡友條件： 僅適用自2026/01/01至2026/12/31(含) 核卡之正卡卡友，且第一筆消費需於2026/12/31 前完成，最後回饋日為2027/02/20。 ※ 每位正卡持卡人限回饋乙次，歐付寶紅利回饋上限為333點。 活動二：新戶最高享 13% 回饋，每月最高 550 點 活動期間：2026/01/01~2026/06/30 延長至2026/12/31 新戶且申請使用電子帳單，核卡後12個月再加碼 10% 回饋，每月回饋上限100點。 申辦電子帳單，且最近一期帳單本卡新增一般消費滿2千元，筆筆享有 2% 回饋，每月回饋上限250點。 最近一期帳單自兆豐銀行存款帳戶自動扣款成功，且該期帳單本卡新增一般消費滿2千元，再加碼 1% 回饋，每月回饋上限200點。 非網購之海外消費，筆筆回饋 1.5% 回饋，回饋無上限。 非前述之一般消費交易，筆筆",
-      "fetched_at": "2026-07-21T01:58:27.889516+08:00",
-      "content_hash": "f62e607c4e679ad200d79613c3a3467f36c112cda17497a7726b6930f90f9572",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
+      "content_hash": "70e6bbdfb1e7475404caf21433bad644ceee176d73f164776b3d9d0e844a3c00",
       "evidence": [],
       "components": [],
       "conditions_display": [
@@ -1486,8 +1652,8 @@
       "review_required": false,
       "date_confidence": "high",
       "conditions_summary": "",
-      "fetched_at": "2026-07-21T01:58:27.889516+08:00",
-      "content_hash": "9d5f94155470e6b0c15e3724170d24060edf4422f93a2c5d88c940fa6db9cae0",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
+      "content_hash": "2a224dedef89141eb595988b443c507b5a8b3c76a9d8e240a1a36971ab8fd837",
       "evidence": [],
       "components": [],
       "conditions_display": [],
@@ -1519,8 +1685,8 @@
       "review_required": false,
       "date_confidence": "high",
       "conditions_summary": "title: 漫遊苗栗南庄老街台灣Pay給你20%驚喜回饋 description: 漫遊苗栗南庄老街台灣Pay給你20%驚喜回饋 location: 苗栗南庄商圈內受理「台灣Pay」交易之指定攤商店家，攤商店家資訊詳如活動辦法附表，如有異動以合作金庫官網公告為準。 content: 活動期間至活動地點使用「台灣 Pay」(限金融卡/帳戶)，以 QR Code 掃碼進行支付，單筆消費不限金額可享20%回饋(非即時回饋，小數點後四捨五入)，單筆交易回饋金上限新臺幣(以下同) 1,000元，活動期間每一金融卡號/帳戶最高回饋金以2,000元為限。 本活動總回饋金額以47萬元為上限，額滿為止，並公告於合作金庫官網。 reminder: 參加台灣Pay每筆消費再享1.5%等值紅利點數回饋活動之使用金融機構限臺灣銀行、土地銀行、合作金庫、第一銀行、華南銀行、彰化銀行、兆豐銀行及臺灣企銀，各金融機構回饋條件限制等活動辦法詳情，悉以前述各機構官方網站公告內容為據。 restrictions: (一) 本活動總回饋金額以47萬元為上限，優惠回饋金額使用完畢即截止，將依用戶交易時序核算回饋資格，且整筆交易金額不得拆刷。 如經主辦單位確認已達本",
-      "fetched_at": "2026-07-21T01:58:27.889516+08:00",
-      "content_hash": "47c4ba3d38738ee66c38c535efd42ba43ce1f9d7e153e4b52765e36347afc193",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
+      "content_hash": "fa283d8abb534b13ca1aa3043021331a8951755bcd81720c261deb5d09c88507",
       "evidence": [],
       "components": [],
       "conditions_display": [
@@ -1559,8 +1725,8 @@
       "review_required": false,
       "date_confidence": "high",
       "conditions_summary": "content: 活動一、全品項農產品優惠：活動期間內用戶於活動地點，使用「台灣Pay」(限金融卡/帳戶) 進行支付，單筆消費不限金額，立即享88折結帳金額優惠(即時折抵，採四捨五入方式計算，單筆消費金額不得拆付)。 活動一回饋總金額新臺幣(以下同)40萬元，如達本項活動總金額上限，活動即停止，並公告於南農電舖官網。 活動二、會員全加碼：「南農電舖會員」以「台灣Pay」(限金融卡/帳戶)進行支付者，每筆成功交易不限金額即加碼贈送88元金幣，金幣之使用方法及限制以南農電舖官網公告為準。 活動二回饋總金額40萬元，如達本項活動總金額上限，活動即停止，並公告於南農電舖官網。 reminder: 參加台灣Pay每筆消費再享1.5%等值紅利點數回饋活動之使用金融機構限臺灣銀行、土地銀行、合作金庫、第一銀行、華南銀行、彰化銀行、兆豐銀行及臺灣企銀，各金融機構回饋條件限制等活動辦法詳情，悉以前述各機構官方網站公告內容為據。 restrictions: 就同時符合活動一、活動二條件之用戶，除已達各項活動回饋總金額上限外，可一併獲得所有活動之折抵優惠。 本活動用戶結帳金額，以南農電舖計算金額為準，若因付款失敗、交易取消、退貨或退款等情形，該筆",
-      "fetched_at": "2026-07-21T01:58:27.889516+08:00",
-      "content_hash": "65bf441f29771e7e9b97e879a8ae48ed5864e54929c16fc522e0fd4352d366af",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
+      "content_hash": "5259a25e845b3850313d7e9bfc8dc03e623af7ae832856270ae3e0778d07a26c",
       "evidence": [],
       "components": [],
       "conditions_display": [
@@ -1596,8 +1762,8 @@
       "review_required": false,
       "date_confidence": "high",
       "conditions_summary": "title: 來逛樂華夜市樂享10%回饋 description: 來逛樂華夜市樂享10%回饋 location: 新北市「樂華夜市商圈」受理「台灣Pay」交易之指定店家，指定店家詳上海商銀活動官網，如有異動以上海商銀官網頁面公告為準，不另行通知。 content: 用戶於活動期間於活動地點消費，以「台灣Pay」QR Code掃碼支付(限金融卡/帳戶)，單筆消費不限金額可享10%現金回饋(非即時回饋，小數點後四捨五入)，單筆消費回饋上限新台幣(以下同)300元(單筆交易金額不得拆付)，本活動回饋總金額上限30萬元，如達回饋金額上限，即停止回饋，並公告於上海商銀官網。 reminder: 參加台灣Pay每筆消費再享1.5%等值紅利點數回饋活動之使用金融機構限臺灣銀行、土地銀行、合作金庫、第一銀行、華南銀行、彰化銀行、兆豐銀行及臺灣企銀，各金融機構回饋條件限制等活動辦法詳情，悉以前述各機構官方網站公告內容為據。 restrictions: (一) 本活動回饋總金額以30萬元為上限，將依用戶交易完成時序核算回饋資格，如達本活動總金額上限，即停止回饋，並公告於上海商銀官網。 (二) 本活動用戶交易金額，以參與本活動之指定店家計算金額",
-      "fetched_at": "2026-07-21T01:58:27.889516+08:00",
-      "content_hash": "53c54e0847d269a9952eb086620d87f3d00e5efea3cfb82261a678bae671b995",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
+      "content_hash": "8a889e11e055367c55635d1d2cf76f89279fcf9b50a1ddfec206df1db8525e49",
       "evidence": [],
       "components": [],
       "conditions_display": [
@@ -1639,8 +1805,8 @@
       "review_required": false,
       "date_confidence": "high",
       "conditions_summary": "",
-      "fetched_at": "2026-07-21T01:58:27.889516+08:00",
-      "content_hash": "1b3947a63d1783fc445dbc5d66aec895c0a70a248b9e6310698fd62ef3058205",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
+      "content_hash": "d2583770d1120ba79d841e3649b26a8c5e0225c4d700add88057ea542555912d",
       "evidence": [],
       "components": [],
       "conditions_display": [],
@@ -1672,8 +1838,8 @@
       "review_required": false,
       "date_confidence": "high",
       "conditions_summary": "title: 長春商圈X台灣Pay消費20%回饋 description: 長春商圈X台灣Pay消費20%回饋 location: 台北市長春市場及鄰近路、街、道受理「台灣Pay」交易支付之指定店家(以華南銀行官網公告為準，實際情況仍應以該活動攤商得受理支付之方式或狀態)。 content: 用戶於活動期間至活動地點消費，以「台灣 Pay」QR Code 掃碼支付 (限金融卡/帳戶)，單筆不限消費金額可享20%現金回饋(非即時回饋，小數點後四捨五入) ，於活動期間每一金融卡號/帳戶最高回饋上限新臺幣(以下同)1,000元，本活動回饋總金額上限47萬元，如達回饋總金額上限，即停止回饋，並公告於華南銀行官網。 reminder: 參加台灣Pay每筆消費再享1.5%等值紅利點數回饋活動之使用金融機構限臺灣銀行、土地銀行、合作金庫、第一銀行、華南銀行、彰化銀行、兆豐銀行及臺灣企銀，各金融機構回饋條件限制等活動辦法詳情，悉以前述各機構官方網站公告內容為據。 restrictions: 一、本活動用戶單筆交易結帳金額，以參與本活動之店家計算金額為準，若因交易失敗、交易取消、退貨退款等情形時，則該筆交易將不列入回饋金額計算範圍。 二、本活",
-      "fetched_at": "2026-07-21T01:58:27.889516+08:00",
-      "content_hash": "2c19d611dca263d07bfacd4e019ef95765449eefa9b117803d1d81cceac62f50",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
+      "content_hash": "30b81c1750caec77a9c166c66af70064494b2e5ab204e85e005b47ce89ef18fa",
       "evidence": [],
       "components": [],
       "conditions_display": [
@@ -1712,8 +1878,8 @@
       "review_required": false,
       "date_confidence": "high",
       "conditions_summary": "title: 大稻埕迪化商圈 Pay你吃喝玩樂 享20%回饋 description: 大稻埕迪化商圈 Pay你吃喝玩樂 享20%回饋 content: 用戶於活動期間至活動地點消費，以「台灣Pay」掃碼支付，單筆結帳不限金額，可享20%回饋，每金融卡/帳戶/信用卡於活動期間回饋最高以新臺幣(以下同)1,000元為限。 本活動非即時回饋，小數點後四捨五入，消費金額不得拆付，回饋總金額上限60萬元，如達回饋總金額上限，即停止回饋，並公告於第一銀行及台灣Pay官網。 reminder: 參加台灣Pay每筆消費再享1.5%等值紅利點數回饋活動之使用金融機構限臺灣銀行、土地銀行、合作金庫、第一銀行、華南銀行、彰化銀行、兆豐銀行及臺灣企銀，各金融機構回饋條件限制等活動辦法詳情，悉以前述各機構官方網站公告內容為據。 (二) 本活動回饋金將於活動期間結束並核實用戶之消費金額後，由各參與金融機構依其作業時程於115年11月30日前撥付至用戶據以扣款之金融卡/帳戶/信用卡。 (三) 回饋金撥入用戶之金融卡/帳戶/信用卡，倘持卡人有停卡（含信用卡強制停用、申請停用、掛失不補發）、無效卡、延滯繳款、到期不續卡、取消交易、帳戶已結清銷戶、警示戶、違",
-      "fetched_at": "2026-07-21T01:58:27.889516+08:00",
-      "content_hash": "371699d96d4ebc77e830bfb63ee3f38a8028fca365e699d7f89dd508398a2f99",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
+      "content_hash": "52e9e0aabb82558e250be449abd0e88e4b523d8c34a98b46dc677fdbd2e8c840",
       "evidence": [],
       "components": [],
       "conditions_display": [
@@ -1750,8 +1916,8 @@
       "review_required": false,
       "date_confidence": "high",
       "conditions_summary": "",
-      "fetched_at": "2026-07-21T01:58:27.889516+08:00",
-      "content_hash": "5ac2f8d5589786bad43990ada5ca8af0d13a46c5454afc1d061b1f8b0a8c098c",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
+      "content_hash": "c333bab5890e1610eb7e7c179dbdef5f99b290f4d95c15296a76295036e918d7",
       "evidence": [],
       "components": [],
       "conditions_display": [],
@@ -1783,8 +1949,8 @@
       "review_required": false,
       "date_confidence": "high",
       "conditions_summary": "location: 聖德科斯受理「台灣Pay」之指定實體門市(參與本活動之門市資訊詳聖德科斯官網https://www.santacruz.com.tw/contact/store公告，惟用戶於實際交易時，仍應以各店家得受理支付之方式或狀態為準)。 content: 活動期間至活動地點消費，出示「台灣Pay」付款條碼(金融卡/帳戶/信用卡)進行支付，單筆消費金額滿新臺幣（以下同）688元(含)以上，即享現折88元優惠(單筆不得拆單、不累折)，每日每一金融卡/帳戶/信用卡限回饋乙次。 本活動回饋總金額上限110萬元，如達該回饋總額上限即終止回饋，並公告於臺灣銀行官網。 reminder: 參加台灣Pay每筆消費再享1.5%等值紅利點數回饋活動之使用金融機構限臺灣銀行、土地銀行、合作金庫、第一銀行、華南銀行、彰化銀行、兆豐銀行及臺灣企銀，各金融機構回饋條件限制等活動辦法詳情，悉以前述各機構官方網站公告內容為據。 本活動用戶消費金額，以活動地點門市計算金額為準，若因付款失敗、交易取消、退貨、收銀設備故障、網路斷線、系統當機等因素導致無法即時提供折扣時，恕不再回饋及賠償任何損失。 本活動將依符合活動資格用戶交易時序核算回饋資格，且消",
-      "fetched_at": "2026-07-21T01:58:27.889516+08:00",
-      "content_hash": "a4dead0b0f89a2d91753d44cf162426d2593c2426d5642f7a927da1880ee32e5",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
+      "content_hash": "25812f4b3fc2262c3baaa8f498b426be4807c7380fa0afc88ab93ba291d88d75",
       "evidence": [],
       "components": [],
       "conditions_display": [
@@ -1820,8 +1986,8 @@
       "review_required": false,
       "date_confidence": "high",
       "conditions_summary": "content: 用戶於活動期間至活動地點消費，並出示「台灣Pay」付款條碼(金融卡/帳戶)進行支付，單筆結帳金額滿新臺幣(以下同)150元(含)以上者，即可現折20元(單筆不累折)，本活動回饋總金額上限110萬元整，如達回饋總金額上限，即停止回饋，並公告於彰化銀行官網。 reminder: 參加台灣Pay每筆消費再享1.5%等值紅利點數回饋活動之使用金融機構限臺灣銀行、土地銀行、合作金庫、第一銀行、華南銀行、彰化銀行、兆豐銀行及臺灣企銀，各金融機構回饋條件限制等活動辦法詳情，悉以前述各機構官方網站公告內容為據。 本活動回饋總金額上限110萬元整，如達回饋總金額上限，將提前結束本活動，並公告於彰化銀行官網 本活動結帳金額以「萊爾富」實體門市計算金額為準，若因付款失敗、交易取消、退貨、收銀設備故障、網路斷線、系統當機等因素導致無法即時提供現折時，恕不再回饋及賠償任何損失。",
-      "fetched_at": "2026-07-21T01:58:27.889516+08:00",
-      "content_hash": "9bbc563bb36713d17a9ed4b93c675270f344d16422766c12b29b868bec3878ac",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
+      "content_hash": "cb2be22998a325605a7012610e267fb6bda4ff4e9cf11fb79df0f19b6b2deac3",
       "evidence": [],
       "components": [],
       "conditions_display": [
@@ -1856,8 +2022,8 @@
       "review_required": false,
       "date_confidence": "high",
       "conditions_summary": "title: 成功中繼市場、士東市場買菜去 台灣 Pay 樂享 20%回饋 description: 成功中繼市場、士東市場買菜去 台灣 Pay 樂享 20%回饋 location: 臺北市公有成功中繼市場(以下簡稱成功市場)、臺北市公有士東市場(以下簡稱士東市場)受理「台灣 Pay」交易之指定攤商(參與本活動之攤商詳土地銀行官網公告，本活動僅適用於透過土地銀行收單之交易，不適用透過其他行動支付或其他金融機構之 TWQR 及台灣 Pay 收單之交易，惟用戶於實際交易時，仍應以各攤商得受理支付之方式或狀態為準)。 content: 用戶於活動期間至活動地點消費，並使用「台灣Pay」QR Code 掃碼支付(限金融卡/帳戶)成功者，單筆消費不限金額可享 20%之現金回饋(小數點後四捨五入，非即時回饋)，每一金融卡/帳戶於活動期間回饋以新臺幣(以下同)1,000 元為上限，本活動回饋總金額上限 47 萬元，如達回饋總金額上限，活動即終止且停止回饋，並公告於土地銀行官網，不另行通知。 reminder: 參加台灣Pay每筆消費再享1.5%等值紅利點數回饋活動之使用金融機構限臺灣銀行、土地銀行、合作金庫、第一銀行、華南銀行、彰化銀行、",
-      "fetched_at": "2026-07-21T01:58:27.889516+08:00",
-      "content_hash": "66515c859773342cde7ef28a30beb5ecce1a9d94816d2f222aa547da1feb5d32",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
+      "content_hash": "d023d788c3ca2fd9050ceab2417a56f62760d382a2282258e519d28adf2940f2",
       "evidence": [],
       "components": [],
       "conditions_display": [
@@ -1895,8 +2061,8 @@
       "review_required": false,
       "date_confidence": "high",
       "conditions_summary": "content: 活動期間至活動地點單筆消費金額滿新臺幣(以下同)888元(含)以上，該筆消費金額即享現折100元優惠(單筆不累折)。 本活動回饋總金額上限115萬元，如達本活動回饋總金額上限，即停止回饋，並公告於土地銀行官網。 reminder: 參加台灣Pay每筆消費再享1.5%等值紅利點數回饋活動之使用金融機構限臺灣銀行、土地銀行、合作金庫、第一銀行、華南銀行、彰化銀行、兆豐銀行及臺灣企銀，各金融機構回饋條件限制等活動辦法詳情，悉以前述各機構官方網站公告內容為據。 restrictions: 本活動用戶消費金額，以棉花田門市計算金額為準，如因付款失敗、交易取消、退貨退款、收銀設備故障、網路斷線、系統當機或其他因素導致無法即時提供回饋時，該筆交易金額將不列入回饋計算範圍。 本活動將依符合活動資格用戶交易時序核算回饋資格，同筆消費不得拆單計算。 主、協辦單位就用戶之資格、交易成功與否等，保有審查之權利，用戶參加本活動之同時，即視為同意接受本活動所有規範內容，經查核若有不符本活動之規定者，主、協辦單位得取消其參加或回饋資格，並得追回回饋金，如有損害並得請求損害賠償。",
-      "fetched_at": "2026-07-21T01:58:27.889516+08:00",
-      "content_hash": "e6fac9cb83b7fceac1ed517337d6ff96ab4fc3502ebe867287386eb7ac158c51",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
+      "content_hash": "2eadca39042faec28b0c19d592afff2b02f40beaf4fd0bd36f720b71cc8056dd",
       "evidence": [],
       "components": [],
       "conditions_display": [
@@ -1932,8 +2098,8 @@
       "review_required": false,
       "date_confidence": "high",
       "conditions_summary": "title: 微風集團【TWQR限定5%超回饋】 description: 微風集團【TWQR限定5%超回饋】 content: 微風會員於活動期間在活動地點消費，出示「iPASS MONEY」或「台灣Pay」付款條碼進行支付，單筆消費滿新臺幣(以下同)2,000元(含)以上即贈【100元微風電子酬賓券】乙份(可累贈)，每筆交易回饋上限5份，每日每會員限回饋乙次(不可拆付)。 reminder: 參加台灣Pay每筆消費再享1.5%等值紅利點數回饋活動之使用金融機構限臺灣銀行、土地銀行、合作金庫、第一銀行、華南銀行、彰化銀行、兆豐銀行及臺灣企銀，各金融機構回饋條件限制等活動辦法詳情，悉以前述各機構官方網站公告內容為據。 restrictions: 本活動用戶消費金額，以活動指定櫃位計算金額為準，若付款失敗、交易取消、退貨或其他原因退還交易款項時，該筆交易金額將不列入回饋計算範圍。 每位微風會員每日限獲得乙份【100元微風電子酬賓券】，每筆交易回饋上限5份。 3.必須維持 iPASS MONEY 帳戶為正常使用狀態，若暫停使用、關閉帳戶或其他異常狀態或於回饋前不符合任一條件，將不符合活動資格。",
-      "fetched_at": "2026-07-21T01:58:27.889516+08:00",
-      "content_hash": "da1a0d90a815a63a5ada8675cb7f075c2c37fa71e9faf0435c23ea65f84c83b6",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
+      "content_hash": "4fbc42346f05d3c03ae305f4be445eef3ea6d026ccdd2143aece78344164fcc6",
       "evidence": [],
       "components": [],
       "conditions_display": [
@@ -1969,8 +2135,8 @@
       "review_required": false,
       "date_confidence": "high",
       "conditions_summary": "title: 馬可先生TWQR享20%回饋 description: 馬可先生TWQR享20%回饋 content: 用戶於活動期間出示「台灣Pay」付款條碼進行支付（金融卡/帳戶/信用卡），單筆結帳滿新臺幣(以下同)300元，可享20%回饋，每金融卡/帳戶/信用卡於活動期間回饋上限1,000元。 本活動非即時回饋，小數點後四捨五入，消費金額不得拆付，回饋總金額上限120萬元，額滿為止，並公告於第一銀行官網。 reminder: 參加台灣Pay每筆消費再享1.5%等值紅利點數回饋活動之使用金融機構限臺灣銀行、土地銀行、合作金庫、第一銀行、華南銀行、彰化銀行、兆豐銀行及臺灣企銀，各金融機構回饋條件限制等活動辦法詳情，悉以前述各機構官方網站公告內容為據。 restrictions: 本活動將依用戶交易時序核算回饋資格，回饋總金額上限120萬元，額滿為止，並公告於第一銀行官網，不另行通知。 本活動用戶整筆結帳金額，以受理「台灣Pay」交易之活動指定店家計算金額為準，整筆交易金額不得拆付，若因付款失敗、交易取消、退貨、簽帳爭議及其他原因而退還消費款項時，該交易將不列入活動計算範圍。 本活動回饋金將於活動結束核實金額後，由各參與金融機",
-      "fetched_at": "2026-07-21T01:58:27.889516+08:00",
-      "content_hash": "3a0f97d4f0ac764a4c795068004f7dbe1d123a437db10a3876cb27501666f3a0",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
+      "content_hash": "78204bdedeb03bf7566b7f5215eef60567abee2d543f808c2c1534714a996eaa",
       "evidence": [],
       "components": [],
       "conditions_display": [
@@ -2008,8 +2174,8 @@
       "review_required": false,
       "date_confidence": "high",
       "conditions_summary": "title: Focus百貨放鬆購 台灣Pay享20%回饋 description: Focus百貨放鬆購 台灣Pay享20%回饋 content: 活動期間至活動地點出示「台灣Pay」付款碼(金融卡/帳戶/信用卡)進行消費，單筆消費金額滿新臺幣(以下同)500元(含)以上可享20%現金回饋(非即時回饋，小數點後無條件捨去)，單筆交易回饋金最高以400元為限。 本活動回饋總金額以55萬元為上限，額滿為止，並公告於兆豐銀行官網。 reminder: 參加台灣Pay每筆消費再享1.5%等值紅利點數回饋活動之使用金融機構限臺灣銀行、土地銀行、合作金庫、第一銀行、華南銀行、彰化銀行、兆豐銀行及臺灣企銀，各金融機構回饋條件限制等活動辦法詳情，悉以前述各機構官方網站公告內容為據。 restrictions: 一、本活動將依用戶交易時序核算回饋資格，且整筆交易金額不得拆刷。 (用戶若使用「數位券」折抵消費金額者，將依折抵後之付款金額核算回饋資格)如經主辦單位確認已達本活動回饋總金額上限，即停止回饋，並公告於兆豐銀行官網，不另行通知。 二、本活動用戶單筆交易結帳金額，以活動地點受理「台灣Pay」之櫃位計算金額為準，若因付款失敗、交易取消、退",
-      "fetched_at": "2026-07-21T01:58:27.889516+08:00",
-      "content_hash": "a6b74f6eacdc054b1bb8a7c49c2d938187564cf510edfc7465f2957865c709fc",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
+      "content_hash": "202aaef339423273c3e0c82044cc40530f7b1d6c2fe3ce54e6d45b7590bf6c5a",
       "evidence": [],
       "components": [],
       "conditions_display": [
@@ -2047,8 +2213,8 @@
       "review_required": false,
       "date_confidence": "high",
       "conditions_summary": "title: 清涼一夏．台灣PAY喝小仁泉享20%回饋！ description: 清涼一夏．台灣PAY喝小仁泉享20%回饋！ location: 小仁泉極品豆漿受理「台灣Pay」之指定店家。 target: 活動期間於活動地點消費，並出示「台灣 Pay」(透過參與金融機構「行動銀行」APP 或「台灣行動支付」APP)(金融卡/帳戶/信用卡)付款條碼進行支付之用戶(以下簡稱用戶)。 content: 用戶於活動地點消費，出示台灣Pay付款條碼(信用卡/金融卡/帳戶)進行支付，單筆消費不限金額可享20%回饋(即時回饋，小數點後四捨五入)，單筆交易回饋金上限新臺幣(以下同)1,000元。 本活動總回饋金額以107萬元為上限，如達回饋總金額上限即停止回饋，並公告於合作金庫官網。 reminder: 參加台灣Pay每筆消費再享1.5%等值紅利點數回饋活動之使用金融機構限臺灣銀行、土地銀行、合作金庫、第一銀行、華南銀行、彰化銀行、兆豐銀行及臺灣企銀，各金融機構回饋條件限制等活動辦法詳情，悉以前述各機構官方網站公告內容為據。 restrictions: 本活動將依用戶交易時序核算回饋資格，且整筆交易金額不得拆刷。 如經主辦單位確認已達本",
-      "fetched_at": "2026-07-21T01:58:27.889516+08:00",
-      "content_hash": "e5adc29ba5b10ae9df1bd9eac9bc62e53f7d045f084f1ba7023b2c03f3f5cfd5",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
+      "content_hash": "afcee1496c5587cb09e08abc4eca6dff0cce0f0790fb165bdb4d232377f609c1",
       "evidence": [],
       "components": [],
       "conditions_display": [
@@ -2087,8 +2253,8 @@
       "review_required": false,
       "date_confidence": "high",
       "conditions_summary": "title: 三峽X八里攜手趴趴走 揪用台灣Pay享20%大回饋 description: 三峽X八里攜手趴趴走 揪用台灣Pay享20%大回饋 location: 三峽老街商圈及八里渡船頭商圈指定店家。 target: 用「台灣Pay」(透過參與金融機構「行動銀行」APP或「台灣行動支付」APP)，於活動期間至活動地點消費，使用「台灣Pay」QR Code掃碼進行支付 (金融卡/帳戶)之用戶(以下簡稱用戶)。 content: 用戶於活動期間至活動地點消費，使用「台灣 Pay」QR Code掃碼支付成功者，單筆消費不限金額可享20%之現金回饋(小數點後四捨五入，非即時回饋)，活動期間每一金融卡號/帳戶最高回饋以1,000元為限，本活動回饋總金額上限50萬元，如達回饋總金額上限，即停止回饋，並公告於彰化銀行官網。 reminder: 參加台灣Pay每筆消費再享1.5%等值紅利點數回饋活動之使用金融機構限臺灣銀行、土地銀行、合作金庫、第一銀行、華南銀行、彰化銀行、兆豐銀行及臺灣企銀，各金融機構回饋條件限制等活動辦法詳情，悉以前述各機構官方網站公告內容為據。 主、協辦單位就用戶之資格、交易成功與否等，保有審查之權利，經查核若有不符",
-      "fetched_at": "2026-07-21T01:58:27.889516+08:00",
-      "content_hash": "47ea86069fc000fe2397dbc9e7decf87edb86ffcf12d5b39aaded12318140455",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
+      "content_hash": "4aa3c02681fe345b773ff0914e3eeb8160582bce630dc798877e21ce1dd96c76",
       "evidence": [],
       "components": [],
       "conditions_display": [
@@ -2126,8 +2292,8 @@
       "review_required": false,
       "date_confidence": "high",
       "conditions_summary": "title: 福容大飯店度假絕Pay 不限金額享20%回饋 description: 福容大飯店度假絕Pay 不限金額享20%回饋 location: 福容大飯店內受理「台灣 Pay」之指定據點(含住宿、指定餐飲)，指定據點詳附表。 content: 活動期間至活動地點使用「台灣 Pay」(金融卡/帳戶/信用卡) 消費，並以 QR Code 掃碼進行支付，消費不限金額享20%現金回饋(非即時回饋，回饋金計算採小數點後無條件捨去，單筆交易金額不得拆付)，於活動期間內每一信用卡/金融卡/帳戶回饋金上限新臺幣(以下同)1,500 元為限。 本活動回饋總金額上限55萬元整，額滿為止，並公告於兆豐銀行官網。 reminder: 參加台灣Pay每筆消費再享1.5%等值紅利點數回饋活動之使用金融機構限臺灣銀行、土地銀行、合作金庫、第一銀行、華南銀行、彰化銀行、兆豐銀行及臺灣企銀，各金融機構回饋條件限制等活動辦法詳情，悉以前述各機構官方網站公告內容為據。 restrictions: 一、本活動將依用戶交易時序核算回饋資格，且整筆交易金額不得拆刷。 如經主辦單位確認已達本活動回饋金上限，即停止回饋，並公告於兆豐銀行官網，不另行通知。 二、本活",
-      "fetched_at": "2026-07-21T01:58:27.889516+08:00",
-      "content_hash": "5a28fa866a5ee4715d2fef43cd4f29fd8d25da3e6c73a0b519337c51f32dd076",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
+      "content_hash": "69a7aeaae54a91ef166fa69bb154ccad3749f9a20b6f8782077e5d09ddbb3655",
       "evidence": [],
       "components": [],
       "conditions_display": [
@@ -2166,8 +2332,8 @@
       "review_required": false,
       "date_confidence": "high",
       "conditions_summary": "title: 美十樂連鎖藥局-台灣Pay 20%回饋 description: 美十樂連鎖藥局-台灣Pay 20%回饋 content: 用戶於活動期間至活動地點消費，並使用「台灣 Pay」QR Code (金融卡/帳戶/信用卡)進行支付，單筆消費不限金額可享20%之現金回饋(小數點後四捨五入，非即時回饋)，每一金融卡/帳戶/信用卡於活動期間以新臺幣(以下同)1,000元為回饋上限，本活動回饋總金額上限55萬元，如達本活動回饋總金額上限，即停止回饋，並公告於土地銀行官網，不另行通知。 reminder: 參加台灣Pay每筆消費再享1.5%等值紅利點數回饋活動之使用金融機構限臺灣銀行、土地銀行、合作金庫、第一銀行、華南銀行、彰化銀行、兆豐銀行及臺灣企銀，各金融機構回饋條件限制等活動辦法詳情，悉以前述各機構官方網站公告內容為據。 restrictions: (一) 本活動將依用戶交易時序核算回饋資格，且整筆交易金額不得拆刷。 (二) 藥品及一歲以下嬰兒奶粉等消費金額不列入本活動回饋計算； 如因付款失敗、交易取消、退貨退款、收銀設備故障、網路斷線、系統當機或其他因素致無法成功交易，則該筆交易金額將不列入回饋金額計算範圍。 (三) ",
-      "fetched_at": "2026-07-21T01:58:27.889516+08:00",
-      "content_hash": "63aa906ebd1fee7172c2b8ac45f3f04c9821967af5e38b48b68e39a9e4b1b057",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
+      "content_hash": "418e3ed132b1bbe28426727d6cec19b8f66ff77fc485507a8e073d97bf9fce52",
       "evidence": [],
       "components": [],
       "conditions_display": [
@@ -2191,6 +2357,118 @@
       "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E7%BE%8E%E5%8D%81%E6%A8%82%E9%80%A3%E9%8E%96%E8%97%A5%E5%B1%80-%E5%8F%B0%E7%81%A3Pay+20%25%E5%9B%9E%E9%A5%8B&dates=20260625%2F20261201&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%8F%B0%E7%81%A3+Pay%0A%0A%E6%9C%80%E9%AB%98+20%25+%E5%9B%9E%E9%A5%8B%EF%BC%8C%E5%B1%AC%E9%AB%98%E5%9B%9E%E9%A5%8B%E6%B4%BB%E5%8B%95%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fwww.taiwanpay.com.tw%2Ffisc-tpay%2Fnews%2Fevent%2F01KTBERR1F8E7RZDXMYTQHB500%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     },
     {
+      "provider_id": "fullpay",
+      "provider_name": "全支付／PX Pay Plus",
+      "title": "綁定指定信用卡，最高5%全點限量回饋！",
+      "url": "https://marketing.pxpayplus.com/pxplus_marketing_page/activity_content_page?EventId=97",
+      "source_url": "https://service.pxpayplus.com/px-advertise/web/activity/detail/97",
+      "external_id": "97",
+      "start_date": "2026-06-29",
+      "end_date": "2026-09-27",
+      "lifecycle": "active",
+      "quota_status": "not_marked_full",
+      "quota_evidence_complete": true,
+      "review_required": false,
+      "date_confidence": "high",
+      "conditions_summary": "name: 202607-信用卡回饋5_BankBanner.png title: 綁定指定信用卡，最高5%全點限量回饋！ 本活動限綁定指定信用卡付款，詳情請參閱本活動公告。 本活動為限量回饋，回饋金額之計算，詳情參閱本活動內容公告。 活動期間，若發現交易異常行為（如：不正常退款、單筆消費拆單付款…等），以致影響活動公平及店家正常交易流程，本公司有權取消回饋資格並暫停該會員帳戶之使用，以確保使用者交易安全。 請於付款前再次留意付款方式是否為使用全支付連結本活動指定合作銀行帳戶付款，選擇全支付帳戶付款、非使用指定合作銀行帳戶付款或儲值至全支付帳戶，皆不符合本活動全點回饋資格，若選擇錯誤，後續退款規範將依合作金融機構及全支付規定為準。 每一全支付帳號，僅能連結一個本活動指定合作銀行之銀行帳戶。 活動期間，全支付會員完成連結帳戶後至使用該帳戶消費不得解除連結帳戶，否則視爲不符合活動資格，恕無法要求補發或全支付得扣除本活動已回饋之全點。 content: 指定付款最高享5%全點回饋 title: 【國泰世華銀行】優惠：使用國泰世華信用卡，消費不限金額，筆筆消費最高享5%全點回饋，回饋之全點以四捨五入計算至個位，每一全支付帳號每週最高",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
+      "content_hash": "4cc42af57472f36314ffb10459213883aae7d689edb27f389e2cef8e770ceac3",
+      "evidence": [],
+      "components": [],
+      "conditions_display": [
+        "name: 202607-信用卡回饋5_BankBanner.png",
+        "綁定指定信用卡，最高5%全點限量回饋！ 本活動限綁定指定信用卡付款，詳情請參閱本活動公告。 本活動為限量回饋，回饋金額之計算，詳情參閱本活動內容公告。 活動期間，若發現交易異常行為（如：不正常退款、單筆消費拆單付款…等），以致影響活動公平及店家正常交易流程，本公司有權取消回饋資格並暫停該會員帳戶之使用，以確保使用者交易安全。 請於付款前再次留意付款方式是否為使用全支付連結本活動指定合作銀行帳戶付款，選擇全支付帳戶付款、非使用指定合作銀行帳戶付款或儲值至全支付帳戶，皆不符合本活動全點回饋資格，若選擇錯誤，後續退款規範將依合作金融機構及全支付規定為準。 每一全支付帳號，僅能連結一個本活動指定合作銀行之銀行帳戶。 活動期間，全支付會員完成連結帳戶後至使用該帳戶消費不得解除連結帳戶，否則視爲不符合活動資格，恕無法要求補發或全支付得扣除本活動已回饋之全點。",
+        "活動內容：指定付款最高享5%全點回饋",
+        "【國泰世華銀行】優惠：使用國泰世華信用卡，消費不限金額，筆筆消費最高享5%全點回饋，回饋之全點以四捨五入計算至個位，每一全支付帳號每週最高"
+      ],
+      "insights": {
+        "max_reward_percent": 5,
+        "fixed_reward_amount": null,
+        "is_high_return": false,
+        "is_upcoming": false,
+        "starts_in_days": -23,
+        "is_expiring_soon": false,
+        "ends_in_days": 67,
+        "insight_tags": [],
+        "human_summary": "最高 5% 回饋。"
+      },
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E7%B6%81%E5%AE%9A%E6%8C%87%E5%AE%9A%E4%BF%A1%E7%94%A8%E5%8D%A1%EF%BC%8C%E6%9C%80%E9%AB%985%25%E5%85%A8%E9%BB%9E%E9%99%90%E9%87%8F%E5%9B%9E%E9%A5%8B%EF%BC%81&dates=20260629%2F20260928&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%85%A8%E6%94%AF%E4%BB%98%EF%BC%8FPX+Pay+Plus%0A%0A%E6%9C%80%E9%AB%98+5%25+%E5%9B%9E%E9%A5%8B%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fmarketing.pxpayplus.com%2Fpxplus_marketing_page%2Factivity_content_page%3FEventId%3D97%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
+    },
+    {
+      "provider_id": "fullpay",
+      "provider_name": "全支付／PX Pay Plus",
+      "title": "綁定玉山信用卡於全支付APP「繳費」入口繳費(稅)，單筆滿額享全點回饋",
+      "url": "https://marketing.pxpayplus.com/pxplus_marketing_page/activity_content_page?EventId=99",
+      "source_url": "https://service.pxpayplus.com/px-advertise/web/activity/detail/99",
+      "external_id": "99",
+      "start_date": "2026-06-29",
+      "end_date": "2027-01-03",
+      "lifecycle": "active",
+      "quota_status": "not_marked_full",
+      "quota_evidence_complete": true,
+      "review_required": false,
+      "date_confidence": "high",
+      "conditions_summary": "title: 綁定玉山信用卡於全支付APP「繳費」入口繳費(稅)，單筆滿額享全點回饋 remind: 本活動回饋僅適用全支付APP「繳費」入口繳費(稅)，非全支付APP「繳費」入口之相關繳費(稅)皆不適用。 本活動為限量回饋，回饋金額之計算，詳情參閱本活動內容公告。 活動期間，若發現交易異常行為（如：不正常退款、單筆消費拆單付款…等），以致影響活動公平及店家正常交易流程，本公司有權取消回饋資格並暫停該會員帳戶之使用，以確保使用者交易安全。 請於付款前再次確認付款方式是否為使用全支付綁定本活動「指定之合作銀行之信用卡」付款。 若選擇全支付帳戶付款、銀行帳戶付款、非指定合作信用卡付款或儲值至全支付帳戶，均不符合本活動資格。 每一全支付帳號，僅能綁定一間本活動指定合作銀行之信用卡。 活動期間內，全支付會員完成信用卡綁定，並使用該信用卡消費後，不得解除綁定信用卡，否則將視爲不符合活動資格，全支付得扣除本活動已回饋之全點，全支付會員亦不得要求補發。 content: 滿額消費享3%全點回饋 title: 【玉山銀行優惠】：於活動期間內，使用全支付綁定玉山銀行信用卡，於於全支付APP「繳費」入口繳費(稅)，單筆金額滿500元，享3%全點",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
+      "content_hash": "8ea778510af37213ebb3a8ea26f025d2fab1ba5c74ef735e94bc27fa67445c94",
+      "evidence": [],
+      "components": [],
+      "conditions_display": [
+        "綁定玉山信用卡於全支付APP「繳費」入口繳費(稅)，單筆滿額享全點回饋 remind: 本活動回饋僅適用全支付APP「繳費」入口繳費(稅)，非全支付APP「繳費」入口之相關繳費(稅)皆不適用。 本活動為限量回饋，回饋金額之計算，詳情參閱本活動內容公告。 活動期間，若發現交易異常行為（如：不正常退款、單筆消費拆單付款…等），以致影響活動公平及店家正常交易流程，本公司有權取消回饋資格並暫停該會員帳戶之使用，以確保使用者交易安全。 請於付款前再次確認付款方式是否為使用全支付綁定本活動「指定之合作銀行之信用卡」付款。 若選擇全支付帳戶付款、銀行帳戶付款、非指定合作信用卡付款或儲值至全支付帳戶，均不符合本活動資格。 每一全支付帳號，僅能綁定一間本活動指定合作銀行之信用卡。 活動期間內，全支付會員完成信用卡綁定，並使用該信用卡消費後，不得解除綁定信用卡，否則將視爲不符合活動資格，全支付得扣除本活動已回饋之全點，全支付會員亦不得要求補發。",
+        "活動內容：滿額消費享3%全點回饋",
+        "【玉山銀行優惠】：於活動期間內，使用全支付綁定玉山銀行信用卡，於於全支付APP「繳費」入口繳費(稅)，單筆金額滿500元，享3%全點"
+      ],
+      "insights": {
+        "max_reward_percent": 3,
+        "fixed_reward_amount": null,
+        "is_high_return": false,
+        "is_upcoming": false,
+        "starts_in_days": -23,
+        "is_expiring_soon": false,
+        "ends_in_days": 165,
+        "insight_tags": [],
+        "human_summary": "最高 3% 回饋。"
+      },
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E7%B6%81%E5%AE%9A%E7%8E%89%E5%B1%B1%E4%BF%A1%E7%94%A8%E5%8D%A1%E6%96%BC%E5%85%A8%E6%94%AF%E4%BB%98APP%E3%80%8C%E7%B9%B3%E8%B2%BB%E3%80%8D%E5%85%A5%E5%8F%A3%E7%B9%B3%E8%B2%BB%28%E7%A8%85%29%EF%BC%8C%E5%96%AE%E7%AD%86%E6%BB%BF%E9%A1%8D%E4%BA%AB%E5%85%A8%E9%BB%9E%E5%9B%9E%E9%A5%8B&dates=20260629%2F20270104&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%85%A8%E6%94%AF%E4%BB%98%EF%BC%8FPX+Pay+Plus%0A%0A%E6%9C%80%E9%AB%98+3%25+%E5%9B%9E%E9%A5%8B%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fmarketing.pxpayplus.com%2Fpxplus_marketing_page%2Factivity_content_page%3FEventId%3D99%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
+    },
+    {
+      "provider_id": "fullpay",
+      "provider_name": "全支付／PX Pay Plus",
+      "title": "連結指定銀行帳戶，最高3%全點限量回饋！",
+      "url": "https://marketing.pxpayplus.com/pxplus_marketing_page/activity_content_page?EventId=92",
+      "source_url": "https://service.pxpayplus.com/px-advertise/web/activity/detail/92",
+      "external_id": "92",
+      "start_date": "2026-06-29",
+      "end_date": "2026-09-27",
+      "lifecycle": "active",
+      "quota_status": "not_marked_full",
+      "quota_evidence_complete": true,
+      "review_required": false,
+      "date_confidence": "high",
+      "conditions_summary": "title: 連結指定銀行帳戶，最高3%全點限量回饋！ 本活動限連結指定銀行帳戶付款，詳情請參閱本活動公告。 本活動為限量回饋，回饋金額之計算，詳情參閱本活動內容公告。 活動期間，若發現交易異常行為（如：不正常退款、單筆消費拆單付款…等），以致影響活動公平及店家正常交易流程，本公司有權取消回饋資格並暫停該會員帳戶之使用，以確保使用者交易安全。 請於付款前再次留意付款方式是否為使用全支付連結本活動指定合作銀行帳戶付款，選擇全支付帳戶付款、非使用指定合作銀行帳戶付款或儲值至全支付帳戶，皆不符合本活動全點回饋資格，若選擇錯誤，後續退款規範將依合作金融機構及全支付規定為準。 每一全支付帳號，僅能連結一個本活動指定合作銀行之銀行帳戶。 活動期間，全支付會員完成連結帳戶後至使用該帳戶消費不得解除連結帳戶，否則視爲不符合活動資格，恕無法要求補發或全支付得扣除本活動已回饋之全點。 content: 指定付款享3%全點回饋 title: 【國泰世華銀行】優惠：使用國泰世華銀行新臺幣活期存款帳戶（支票存款帳戶與使用信用卡驗證之第三類數位存款帳戶不適用），消費不限金額，筆筆消費最高享3%全點回饋，回饋之全點以四捨五入計算至個位，每一全支付帳號每週",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
+      "content_hash": "dcc58b0034ecb95b4cba48809ad59bdefa42ebec74eb51a25b1940fa665c8057",
+      "evidence": [],
+      "components": [],
+      "conditions_display": [
+        "連結指定銀行帳戶，最高3%全點限量回饋！ 本活動限連結指定銀行帳戶付款，詳情請參閱本活動公告。 本活動為限量回饋，回饋金額之計算，詳情參閱本活動內容公告。 活動期間，若發現交易異常行為（如：不正常退款、單筆消費拆單付款…等），以致影響活動公平及店家正常交易流程，本公司有權取消回饋資格並暫停該會員帳戶之使用，以確保使用者交易安全。 請於付款前再次留意付款方式是否為使用全支付連結本活動指定合作銀行帳戶付款，選擇全支付帳戶付款、非使用指定合作銀行帳戶付款或儲值至全支付帳戶，皆不符合本活動全點回饋資格，若選擇錯誤，後續退款規範將依合作金融機構及全支付規定為準。 每一全支付帳號，僅能連結一個本活動指定合作銀行之銀行帳戶。 活動期間，全支付會員完成連結帳戶後至使用該帳戶消費不得解除連結帳戶，否則視爲不符合活動資格，恕無法要求補發或全支付得扣除本活動已回饋之全點。",
+        "活動內容：指定付款享3%全點回饋",
+        "【國泰世華銀行】優惠：使用國泰世華銀行新臺幣活期存款帳戶（支票存款帳戶與使用信用卡驗證之第三類數位存款帳戶不適用），消費不限金額，筆筆消費最高享3%全點回饋，回饋之全點以四捨五入計算至個位，每一全支付帳號每週"
+      ],
+      "insights": {
+        "max_reward_percent": 3,
+        "fixed_reward_amount": null,
+        "is_high_return": false,
+        "is_upcoming": false,
+        "starts_in_days": -23,
+        "is_expiring_soon": false,
+        "ends_in_days": 67,
+        "insight_tags": [],
+        "human_summary": "最高 3% 回饋。"
+      },
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E9%80%A3%E7%B5%90%E6%8C%87%E5%AE%9A%E9%8A%80%E8%A1%8C%E5%B8%B3%E6%88%B6%EF%BC%8C%E6%9C%80%E9%AB%983%25%E5%85%A8%E9%BB%9E%E9%99%90%E9%87%8F%E5%9B%9E%E9%A5%8B%EF%BC%81&dates=20260629%2F20260928&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%85%A8%E6%94%AF%E4%BB%98%EF%BC%8FPX+Pay+Plus%0A%0A%E6%9C%80%E9%AB%98+3%25+%E5%9B%9E%E9%A5%8B%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fmarketing.pxpayplus.com%2Fpxplus_marketing_page%2Factivity_content_page%3FEventId%3D92%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
+    },
+    {
       "provider_id": "taiwanpay",
       "provider_name": "台灣 Pay",
       "title": "Autopass麻吉神助攻 用台灣Pay加油停車享20%回饋",
@@ -2205,8 +2483,8 @@
       "review_required": false,
       "date_confidence": "high",
       "conditions_summary": "title: Autopass麻吉神助攻 用台灣Pay加油停車享20%回饋 description: Autopass麻吉神助攻 用台灣Pay加油停車享20%回饋 location: 指定Autopass合作之加油站與停車場，參與本活動之據點請以Autopass及臺灣企銀官網活動網頁公告為準。 content: 用戶於活動期間至活動地點消費，以「台灣Pay」QR Code掃碼支付(限金融卡/帳戶)進行支付，單筆消費不限金額享20%回饋，單筆交易回饋金上限800元(非即時回饋，小數點後四捨五入) ，本活動回饋總金額上限110萬元，額滿為止，並公告於臺灣企銀官網。 reminder: 參加台灣Pay每筆消費再享1.5%等值紅利點數回饋活動之使用金融機構限臺灣銀行、土地銀行、合作金庫、第一銀行、華南銀行、彰化銀行、兆豐銀行及臺灣企銀，各金融機構回饋條件限制等活動辦法詳情，悉以前述各機構官方網站公告內容為據。 restrictions: (一) 本活動將依用戶交易時序核算回饋資格，且整筆交易金額不得拆刷。 如經臺灣企銀確認已達本活動回饋總金額上限，即停止回饋，並公告於臺灣企銀行官網，不另行通知。 (二) 本活動回饋金將於活動結束核實",
-      "fetched_at": "2026-07-21T01:58:27.889516+08:00",
-      "content_hash": "c5fcd17713dedc500cb68f407b99d01dd9a34d090db367d27b3cc70411f57c25",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
+      "content_hash": "ac8cce542a0cf8b298b751a0549f1a65e0759f191f32a54cfd0b69156b83b152",
       "evidence": [],
       "components": [],
       "conditions_display": [
@@ -2245,8 +2523,8 @@
       "review_required": false,
       "date_confidence": "high",
       "conditions_summary": "title: 廣州街夜市 & 梧州街夜市超給利 台灣Pay單筆享20%現金回饋 description: 廣州街夜市 & 梧州街夜市超給利 台灣Pay單筆享20%現金回饋 target: 使用「台灣Pay」(透過參與金融機構「行動銀行」APP或「台灣行動支付」APP)，於活動期間至活動地點消費，以「台灣Pay」QR Code掃碼進行支付 (限金融卡/帳戶)之用戶(以下簡稱用戶) 。 content: 用戶於活動期間至活動地點使用「台灣 Pay」(限金融卡/帳戶)以QR Code掃碼支付成功，單筆消費不限金額享20%現金回饋(小數點後四捨五入，非即時回饋)，單筆交易回饋金上限新臺幣(以下同)300元，於活動期間每一金融卡號/帳戶最高回饋上限1,000元，本活動回饋總金額上限47萬元，額滿為止，並公告於臺灣企銀官網。 reminder: 參加台灣Pay每筆消費再享1.5%等值紅利點數回饋活動之使用金融機構限臺灣銀行、土地銀行、合作金庫、第一銀行、華南銀行、彰化銀行、兆豐銀行及臺灣企銀，各金融機構回饋條件限制等活動辦法詳情，悉以前述各機構官方網站公告內容為據。 臺灣銀行、土地銀行、合作金庫、第一銀行、華南銀行、彰化銀行、兆豐銀行、",
-      "fetched_at": "2026-07-21T01:58:27.889516+08:00",
-      "content_hash": "2551371cc6c24e81e983b0ca79888d2e6c72ccd82d90e28dafefe67e367b15c1",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
+      "content_hash": "8aad7098ad38d6ac5a0f58001a7fe634396028144a4e3dfba512556798bb27a5",
       "evidence": [],
       "components": [],
       "conditions_display": [
@@ -2284,8 +2562,8 @@
       "review_required": false,
       "date_confidence": "high",
       "conditions_summary": "東森寵物X台灣Pay享15%回饋 東森寵物X台灣Pay享15%回饋 location: 東森寵物受理「台灣Pay」之指定實體門市(門市據點詳東森寵物官網公告)。 content: 用戶於活動期間至活動地點消費，出示「台灣Pay」付款條碼(金融卡/帳戶/信用卡)進行支付，單筆消費每滿新臺幣（以下同）1,000元，即享現折150元優惠(單筆可累贈，單筆金額不得拆付)，單筆現折最高以600元為限，本活動回饋總金額上限110萬元，額滿為止，並公告於臺灣企銀官網。 reminder: 參加台灣Pay每筆消費再享1.5%等值紅利點數回饋活動之使用金融機構限臺灣銀行、土地銀行、合作金庫、第一銀行、華南銀行、彰化銀行、兆豐銀行及臺灣企銀，各金融機構回饋條件限制等活動辦法詳情，悉以前述各機構官方網站公告內容為據。 restrictions: (一) 本活動用戶結帳金額，以東森寵物活動門市計算金額為準，若付款失敗、交易取消、退貨退款，收銀設備故障、網路斷線、系統當機等因素導致無法即時提供折扣時，恕不再回饋或賠償任何損失。 (二) 本活動將依用戶交易時序核算回饋資格，回饋總金額上限110萬元，額滿為止，並公告於臺灣企銀官網。 notes: (一)",
-      "fetched_at": "2026-07-21T01:58:27.889516+08:00",
-      "content_hash": "f2be581a4ae07087a16bccdb877db407cdb22d33748d9660eff1dc85c034e2b0",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
+      "content_hash": "43a29c09eb65088b7cf5219837858c2bc273f34893ae146933772aa1949278ff",
       "evidence": [],
       "components": [],
       "conditions_display": [
@@ -2325,8 +2603,8 @@
       "review_required": false,
       "date_confidence": "high",
       "conditions_summary": "title: 臨江街觀光夜市超給利 台灣Pay單筆享20%現金回饋 description: 臨江街觀光夜市超給利 台灣Pay單筆享20%現金回饋 target: 使用「台灣Pay」(透過參與金融機構「行動銀行」APP或「台灣行動支付」APP)，於活動期間至活動地點消費，以「台灣Pay」QR Code掃碼進行支付 (限金融卡/帳戶)之用戶(以下簡稱用戶) 。 content: 用戶於活動期間至活動地點使用「台灣 Pay」(限金融卡/帳戶)以QR Code掃碼支付成功，單筆消費不限金額享20%現金回饋(小數點後四捨五入，非即時回饋)，單筆交易回饋金上限新臺幣(以下同)300元，於活動期間每一金融卡號/帳戶最高回饋上限1,000元，本活動回饋總金額上限47萬元，額滿為止，並公告於臺灣企銀官網。 reminder: 參加台灣Pay每筆消費再享1.5%等值紅利點數回饋活動之使用金融機構限臺灣銀行、土地銀行、合作金庫、第一銀行、華南銀行、彰化銀行、兆豐銀行及臺灣企銀，各金融機構回饋條件限制等活動辦法詳情，悉以前述各機構官方網站公告內容為據。 臺灣銀行、土地銀行、合作金庫、第一銀行、華南銀行、彰化銀行、兆豐銀行、臺灣企銀、陽信銀行、三信",
-      "fetched_at": "2026-07-21T01:58:27.889516+08:00",
-      "content_hash": "c49d85a912c7e4fab1abac7a3f1c630c25142286fb8985dccdb06d57d9ac6754",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
+      "content_hash": "e4aa322a0a799afd3ce5a31bbda08e55c364707d90b3099e60dc279a55387954",
       "evidence": [],
       "components": [],
       "conditions_display": [
@@ -2364,7 +2642,7 @@
       "review_required": false,
       "date_confidence": "high",
       "conditions_summary": "icash Pay綁定uniopen聯名卡 疊加回饋全攻略 活動期間:自2026/7/1 起至2026/8/31 icash Pay綁定uniopen聯名卡，一次解鎖踩點任務滿額最高7%回饋＋icash Pay活動疊加，輕鬆疊回饋！ 聯名卡選擇愛金卡版，記得登錄還能享自動加值10%超值回饋！ uniopen聯名卡踩點任務滿額最高回饋7%(適用綁定icash Pay) 全通路單筆滿199元回饋4% 享自動加值10%回饋 想知道怎麼領到更多回饋? 最高回饋 回饋 回饋4% 最高回饋 每月11,22日 單筆消費滿3000加贈100點 OPENPOINT(每戶最高400點) 台北時代、DREAM PLAZA指定櫃位使用icash uniopen會員汽油加滿指定公升數，最高每公升降2.4元或贈2.4點OPENPOINT。 OPENPOINT回饋。 spo、fit門市單筆支付私人教練課程滿12堂，享888點回饋。 (約4%回饋) 滿額最高回饋 回饋 回饋4% 基本回饋 雲雀指定餐飲 • 各活動詳情、回饋上限及額滿時間請見該活動網頁說明。 • 信用卡回饋活動、循環信用利率及各項費用詳情請參閱銀行官網。",
-      "fetched_at": "2026-07-21T01:58:27.889516+08:00",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
       "content_hash": "4912999487fd9c57e4b90c43820a6f739f26f768a3d772280bd4f006b8b55650",
       "evidence": [],
       "components": [],
@@ -2401,7 +2679,7 @@
       "review_required": false,
       "date_confidence": "high",
       "conditions_summary": "uniopen聯名卡icash2.0完成首次自動加值 搭北捷享7%回饋 uniopen聯名卡icash2.0完成首次自動加值 搭北捷享7%回饋 活動期間：自2026/7/1 起至2026/12/31 icash Pay會員使用uniopen聯名卡之icash2.0功能於2026/7/1(含)以後完成「首次自動加值」，持該uniopen聯名卡之icash2.0功能搭乘台北捷運，每筆搭乘金額回饋7% OPENPOINT 每季每一icash Pay用戶回饋上限60點。 第三季(7~9月)活動總回饋上限15萬點，第四季(10~12月)活動總回饋上限25萬點。 【uniopen聯名卡icash2.0自動加值回饋10%】(2026/7/1~2026/12/31) 【TPASS2.0+公共運輸常客優惠 icash2.0登錄回饋最高37%】(2026/7/1~2026/9/30) 如活動期間內已達活動總回饋上限，將依icash2.0搭乘扣款交易之時間順序為準判定符合資格，不另行公告或通知，活動參與者不得以未獲知本活動回饋額滿訊息為理由要求補贈點，請視情況評估參與。 持卡人如有多張uniopen聯名卡，計算符合資格之各卡交易後依icash P",
-      "fetched_at": "2026-07-21T01:58:27.889516+08:00",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
       "content_hash": "b9cf1614032d81289acd0493ac6a35c781e5927a5b6371560be7ab657143b539",
       "evidence": [],
       "components": [],
@@ -2441,7 +2719,7 @@
       "review_required": false,
       "date_confidence": "high",
       "conditions_summary": "週日最好Pay 全通路消費滿額回饋7% 週日最好Pay 全通路消費滿額回饋7% 活動期間：2026/7/1 ~ 2026/12/31期間內每週日 【週日全通路消費滿額回饋7%】活動期間每週日使用icash Pay於全通路消費(限icash Pay帳戶餘額、連結銀行帳戶付款)單筆滿200元(含)，享交易金額之7% OPENPOINT回饋，活動期間每月/戶回饋上限200點OPENPOINT，活動期間每月總贈點上限100萬點。 請先事先註冊icash Pay帳號並完成icash Pay註冊及連結指定銀行帳戶流程【立即下載icash Pay】 如活動期間內已達活動總回饋上限，將依icash Pay交易之時間順序為準判定符合資格，不另行公告或通知，活動參與者不得以未獲知本活動回饋額滿訊息為理由要求補贈點，請視情況評估參與。 本活動回饋點數將於消費成功後最晚於次次月底前匯入icash Pay所綁定的uniopen會員帳戶中，回饋資格及入點時間認定依icash Pay資訊系統紀錄認定為準，系統將以符合活動資格者之消費優先順序匯入該icash Pay綁定之uniopen會員帳戶。 是否符合本活動回饋通路，以icash Pay交易紀錄內顯示之",
-      "fetched_at": "2026-07-21T01:58:27.889516+08:00",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
       "content_hash": "4d085e65935a85cc4548de04e6e5593faae5ae1e8cdd63d406ef8063f7c20049",
       "evidence": [],
       "components": [],
@@ -2462,6 +2740,324 @@
       "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E9%80%B1%E6%97%A5%E6%9C%80%E5%A5%BDPay+%E5%85%A8%E9%80%9A%E8%B7%AF%E6%B6%88%E8%B2%BB%E6%BB%BF%E9%A1%8D%E5%9B%9E%E9%A5%8B7%25&dates=20260701%2F20270101&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9Aicash+Pay%0A%0A%E6%9C%80%E9%AB%98+7%25+%E5%9B%9E%E9%A5%8B%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fwww.icashpay.com.tw%2FadvertMessage%2Fview%2Fid%2F2284%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     },
     {
+      "provider_id": "fullpay",
+      "provider_name": "全支付／PX Pay Plus",
+      "title": "全聯生活圈｜單筆滿$100享5%回饋！新戶首筆滿額加碼50全點",
+      "url": "https://marketing.pxpayplus.com/pxplus_marketing_page/activity_content_page?EventId=81",
+      "source_url": "https://service.pxpayplus.com/px-advertise/web/activity/detail/81",
+      "external_id": "81",
+      "start_date": "2026-07-01",
+      "end_date": "2026-12-31",
+      "lifecycle": "active",
+      "quota_status": "not_marked_full",
+      "quota_evidence_complete": true,
+      "review_required": false,
+      "date_confidence": "high",
+      "conditions_summary": "title: 全聯生活圈｜單筆滿$100享5%回饋！ remind: • 本活動＼優惠1／需於消費前完成「活動登錄」始享活動行銷回饋資格，可透過全支付APP或PX Pay（以下合稱全支付）首頁之登錄活動享優惠：全支付入口>點選「活動登錄」>於「所有活動」中查看欲登錄的活動>點選「登錄」。 • 登錄活動將於每月百大品牌活動開跑前於以下時間開放登錄： • 登錄活動將於每月百大品牌活動開跑前兩日開放登錄，全支付APP須更新至2.1.3以上版本； • 欲查看已完成之活動登錄，可於全支付首頁入口>點選「活動登錄」>於「所有活動」中查看欲登錄的活動>「已登錄」區域查看已有登錄的回饋活動。 本活動登錄名額不限，登錄說明與限制請參閱本活動內容公告。 • 本活動限使用以下兩種付款方式完成付款，始符合本活動回饋資格：(a)使用全支付「付款碼」； • 本活動限於得使用全支付付款之指定「全聯生活圈」合作夥伴實體精選店家，詳參見適用精選店家名單（合作店家分支機構及分店詳如適用全支付合作店家清單），部分合作夥伴之通路或特殊品牌或特殊商品無法使用全支付付款，實際情形以全支付與合作夥伴規範為準。 • 本活動回饋資格認定以付款消費後顯示之合作店家名稱為準。 ",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
+      "content_hash": "d2059df3c5edef6806ba74cdd678f487d6bec8702536daca837e7f842b08875b",
+      "evidence": [],
+      "components": [],
+      "conditions_display": [
+        "全聯生活圈｜單筆滿$100享5%回饋！ remind: • 本活動＼優惠1／需於消費前完成「活動登錄」始享活動行銷回饋資格，可透過全支付APP或PX Pay（以下合稱全支付）首頁之登錄活動享優惠：全支付入口>點選「活動登錄」>於「所有活動」中查看欲登錄的活動>點選「登錄」。 • 登錄活動將於每月百大品牌活動開跑前於以下時間開放登錄： • 登錄活動將於每月百大品牌活動開跑前兩日開放登錄，全支付APP須更新至2.1.3以上版本； • 欲查看已完成之活動登錄，可於全支付首頁入口>點選「活動登錄」>於「所有活動」中查看欲登錄的活動>「已登錄」區域查看已有登錄的回饋活動。 本活動登錄名額不限，登錄說明與限制請參閱本活動內容公告。 • 本活動限使用以下兩種付款方式完成付款，始符合本活動回饋資格：(a)使用全支付「付款碼」； • 本活動限於得使用全支付付款之指定「全聯生活圈」合作夥伴實體精選店家，詳參見適用精選店家名單（合作店家分支機構及分店詳如適用全支付合作店家清單），部分合作夥伴之通路或特殊品牌或特殊商品無法使用全支付付款，實際情形以全支付與合作夥伴規範為準。 • 本活動回饋資格認定以付款消費後顯示之合作店家名稱為準。"
+      ],
+      "insights": {
+        "max_reward_percent": 5,
+        "fixed_reward_amount": null,
+        "is_high_return": false,
+        "is_upcoming": false,
+        "starts_in_days": -21,
+        "is_expiring_soon": false,
+        "ends_in_days": 162,
+        "insight_tags": [],
+        "human_summary": "最高 5% 回饋。"
+      },
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E5%85%A8%E8%81%AF%E7%94%9F%E6%B4%BB%E5%9C%88%EF%BD%9C%E5%96%AE%E7%AD%86%E6%BB%BF%24100%E4%BA%AB5%25%E5%9B%9E%E9%A5%8B%EF%BC%81%E6%96%B0%E6%88%B6%E9%A6%96%E7%AD%86%E6%BB%BF%E9%A1%8D%E5%8A%A0%E7%A2%BC50%E5%85%A8%E9%BB%9E&dates=20260701%2F20270101&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%85%A8%E6%94%AF%E4%BB%98%EF%BC%8FPX+Pay+Plus%0A%0A%E6%9C%80%E9%AB%98+5%25+%E5%9B%9E%E9%A5%8B%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fmarketing.pxpayplus.com%2Fpxplus_marketing_page%2Factivity_content_page%3FEventId%3D81%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
+    },
+    {
+      "provider_id": "fullpay",
+      "provider_name": "全支付／PX Pay Plus",
+      "title": "百大品牌品味饗樂｜單筆滿$1500享5%回饋！新戶首筆滿額加碼50全點",
+      "url": "https://marketing.pxpayplus.com/pxplus_marketing_page/activity_content_page?EventId=75",
+      "source_url": "https://service.pxpayplus.com/px-advertise/web/activity/detail/75",
+      "external_id": "75",
+      "start_date": "2026-07-01",
+      "end_date": "2026-12-31",
+      "lifecycle": "active",
+      "quota_status": "not_marked_full",
+      "quota_evidence_complete": true,
+      "review_required": false,
+      "date_confidence": "high",
+      "conditions_summary": "title: 百大品牌品味饗樂｜單筆滿$1500享5%回饋！ remind: • 本活動＼優惠1／需於消費前完成「活動登錄」始享活動行銷回饋資格，可透過全支付APP或PX Pay（以下合稱全支付）首頁之登錄活動享優惠：全支付入口>點選「活動登錄」>於「所有活動」中查看欲登錄的活動>點選「登錄」。 • 登錄活動將於每月百大品牌活動開跑前於以下時間開放登錄： • 登錄活動將於每月百大品牌活動開跑前兩日開放登錄，全支付APP須更新至2.1.3以上版本； • 欲查看已完成之活動登錄，可於全支付首頁入口>點選「活動登錄」>於「所有活動」中查看欲登錄的活動>「已登錄」區域查看已有登錄的回饋活動。 本活動登錄名額不限，登錄說明與限制請參閱本活動內容公告。 • 本活動限使用以下兩種付款方式完成付款，始符合本活動回饋資格：(a)使用全支付「付款碼」； • 本活動限於得使用全支付付款之指定「品味饗樂」品牌通路，詳參見下列活動內容。 • 本活動回饋資格認定以付款消費後顯示之合作店家名稱為準。 • 本活動為限量回饋，回饋金額之計算，詳情參閱本活動內容公告。 • 活動期間，若發現交易異常行為（如：不正常退款、單筆消費拆單付款…等），以致影響活動公平及",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
+      "content_hash": "5d72733dd2eb28664438361116461cf8010f6905cb227751abd905e5ce836ba2",
+      "evidence": [],
+      "components": [],
+      "conditions_display": [
+        "百大品牌品味饗樂｜單筆滿$1500享5%回饋！ remind: • 本活動＼優惠1／需於消費前完成「活動登錄」始享活動行銷回饋資格，可透過全支付APP或PX Pay（以下合稱全支付）首頁之登錄活動享優惠：全支付入口>點選「活動登錄」>於「所有活動」中查看欲登錄的活動>點選「登錄」。 • 登錄活動將於每月百大品牌活動開跑前於以下時間開放登錄： • 登錄活動將於每月百大品牌活動開跑前兩日開放登錄，全支付APP須更新至2.1.3以上版本； • 欲查看已完成之活動登錄，可於全支付首頁入口>點選「活動登錄」>於「所有活動」中查看欲登錄的活動>「已登錄」區域查看已有登錄的回饋活動。 本活動登錄名額不限，登錄說明與限制請參閱本活動內容公告。 • 本活動限使用以下兩種付款方式完成付款，始符合本活動回饋資格：(a)使用全支付「付款碼」； • 本活動限於得使用全支付付款之指定「品味饗樂」品牌通路，詳參見下列活動內容。 • 本活動回饋資格認定以付款消費後顯示之合作店家名稱為準。 • 本活動為限量回饋，回饋金額之計算，詳情參閱本活動內容公告。 • 活動期間，若發現交易異常行為（如：不正常退款、單筆消費拆單付款…等），以致影響活動公平及"
+      ],
+      "insights": {
+        "max_reward_percent": 5,
+        "fixed_reward_amount": null,
+        "is_high_return": false,
+        "is_upcoming": false,
+        "starts_in_days": -21,
+        "is_expiring_soon": false,
+        "ends_in_days": 162,
+        "insight_tags": [],
+        "human_summary": "最高 5% 回饋。"
+      },
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E7%99%BE%E5%A4%A7%E5%93%81%E7%89%8C%E5%93%81%E5%91%B3%E9%A5%97%E6%A8%82%EF%BD%9C%E5%96%AE%E7%AD%86%E6%BB%BF%241500%E4%BA%AB5%25%E5%9B%9E%E9%A5%8B%EF%BC%81%E6%96%B0%E6%88%B6%E9%A6%96%E7%AD%86%E6%BB%BF%E9%A1%8D%E5%8A%A0%E7%A2%BC50%E5%85%A8%E9%BB%9E&dates=20260701%2F20270101&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%85%A8%E6%94%AF%E4%BB%98%EF%BC%8FPX+Pay+Plus%0A%0A%E6%9C%80%E9%AB%98+5%25+%E5%9B%9E%E9%A5%8B%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fmarketing.pxpayplus.com%2Fpxplus_marketing_page%2Factivity_content_page%3FEventId%3D75%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
+    },
+    {
+      "provider_id": "fullpay",
+      "provider_name": "全支付／PX Pay Plus",
+      "title": "百大品牌旅遊假期｜單筆滿$3000享5%回饋！新戶首筆滿額加碼50全點",
+      "url": "https://marketing.pxpayplus.com/pxplus_marketing_page/activity_content_page?EventId=74",
+      "source_url": "https://service.pxpayplus.com/px-advertise/web/activity/detail/74",
+      "external_id": "74",
+      "start_date": "2026-07-01",
+      "end_date": "2026-12-31",
+      "lifecycle": "active",
+      "quota_status": "not_marked_full",
+      "quota_evidence_complete": true,
+      "review_required": false,
+      "date_confidence": "high",
+      "conditions_summary": "title: 百大品牌旅遊假期｜單筆滿$3000享5%回饋！ remind: • 本活動＼優惠1／需於消費前完成「活動登錄」始享活動行銷回饋資格，可透過全支付APP或PX Pay（以下合稱全支付）首頁之登錄活動享優惠：全支付入口>點選「活動登錄」>於「所有活動」中查看欲登錄的活動>點選「登錄」。 • 登錄活動將於每月百大品牌活動開跑前於以下時間開放登錄： • 登錄活動將於每月百大品牌活動開跑前兩日開放登錄，全支付APP須更新至2.1.3以上版本； • 欲查看已完成之活動登錄，可於全支付首頁入口>點選「活動登錄」>於「所有活動」中查看欲登錄的活動>「已登錄」區域查看已有登錄的回饋活動。 本活動登錄名額不限，登錄說明與限制請參閱本活動內容公告。 • 本活動限使用以下兩種付款方式完成付款，始符合本活動回饋資格：(a)使用全支付「付款碼」； • 本活動限於得使用全支付付款之指定「旅遊假期」品牌通路，詳參見下列活動內容。 • 本活動回饋資格認定以付款消費後顯示之合作店家名稱為準。 • 本活動為限量回饋，回饋金額之計算，詳情參閱本活動內容公告。 • 活動期間，若發現交易異常行為（如：不正常退款、單筆消費拆單付款…等），以致影響活動公平及",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
+      "content_hash": "2a0279b902499a597a666155a4b9a0c83c92249a7ed3eae6d27e04643d5a0df9",
+      "evidence": [],
+      "components": [],
+      "conditions_display": [
+        "百大品牌旅遊假期｜單筆滿$3000享5%回饋！ remind: • 本活動＼優惠1／需於消費前完成「活動登錄」始享活動行銷回饋資格，可透過全支付APP或PX Pay（以下合稱全支付）首頁之登錄活動享優惠：全支付入口>點選「活動登錄」>於「所有活動」中查看欲登錄的活動>點選「登錄」。 • 登錄活動將於每月百大品牌活動開跑前於以下時間開放登錄： • 登錄活動將於每月百大品牌活動開跑前兩日開放登錄，全支付APP須更新至2.1.3以上版本； • 欲查看已完成之活動登錄，可於全支付首頁入口>點選「活動登錄」>於「所有活動」中查看欲登錄的活動>「已登錄」區域查看已有登錄的回饋活動。 本活動登錄名額不限，登錄說明與限制請參閱本活動內容公告。 • 本活動限使用以下兩種付款方式完成付款，始符合本活動回饋資格：(a)使用全支付「付款碼」； • 本活動限於得使用全支付付款之指定「旅遊假期」品牌通路，詳參見下列活動內容。 • 本活動回饋資格認定以付款消費後顯示之合作店家名稱為準。 • 本活動為限量回饋，回饋金額之計算，詳情參閱本活動內容公告。 • 活動期間，若發現交易異常行為（如：不正常退款、單筆消費拆單付款…等），以致影響活動公平及"
+      ],
+      "insights": {
+        "max_reward_percent": 5,
+        "fixed_reward_amount": null,
+        "is_high_return": false,
+        "is_upcoming": false,
+        "starts_in_days": -21,
+        "is_expiring_soon": false,
+        "ends_in_days": 162,
+        "insight_tags": [],
+        "human_summary": "最高 5% 回饋。"
+      },
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E7%99%BE%E5%A4%A7%E5%93%81%E7%89%8C%E6%97%85%E9%81%8A%E5%81%87%E6%9C%9F%EF%BD%9C%E5%96%AE%E7%AD%86%E6%BB%BF%243000%E4%BA%AB5%25%E5%9B%9E%E9%A5%8B%EF%BC%81%E6%96%B0%E6%88%B6%E9%A6%96%E7%AD%86%E6%BB%BF%E9%A1%8D%E5%8A%A0%E7%A2%BC50%E5%85%A8%E9%BB%9E&dates=20260701%2F20270101&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%85%A8%E6%94%AF%E4%BB%98%EF%BC%8FPX+Pay+Plus%0A%0A%E6%9C%80%E9%AB%98+5%25+%E5%9B%9E%E9%A5%8B%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fmarketing.pxpayplus.com%2Fpxplus_marketing_page%2Factivity_content_page%3FEventId%3D74%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
+    },
+    {
+      "provider_id": "fullpay",
+      "provider_name": "全支付／PX Pay Plus",
+      "title": "百大品牌日常百選｜單筆不限金額享5%回饋！新戶首筆消費加碼50全點",
+      "url": "https://marketing.pxpayplus.com/pxplus_marketing_page/activity_content_page?EventId=78",
+      "source_url": "https://service.pxpayplus.com/px-advertise/web/activity/detail/78",
+      "external_id": "78",
+      "start_date": "2026-07-01",
+      "end_date": "2026-12-31",
+      "lifecycle": "active",
+      "quota_status": "not_marked_full",
+      "quota_evidence_complete": true,
+      "review_required": false,
+      "date_confidence": "high",
+      "conditions_summary": "title: 百大品牌日常百選｜單筆不限金額享5%回饋！ remind: • 本活動＼優惠1／需於消費前完成「活動登錄」始享活動行銷回饋資格，可透過全支付APP或PX Pay（以下合稱全支付）首頁之登錄活動享優惠：全支付入口>點選「活動登錄」>於「所有活動」中查看欲登錄的活動>點選「登錄」。 • 登錄活動將於每月百大品牌活動開跑前於以下時間開放登錄： • 登錄活動將於每月百大品牌活動開跑前兩日開放登錄，全支付APP須更新至2.1.3以上版本； • 欲查看已完成之活動登錄，可於全支付首頁入口>點選「活動登錄」>於「所有活動」中查看欲登錄的活動>「已登錄」區域查看已有登錄的回饋活動。 本活動登錄名額不限，登錄說明與限制請參閱本活動內容公告。 • 本活動限使用以下兩種付款方式完成付款，始符合本活動回饋資格：(a)使用全支付「付款碼」； • 本活動限於得使用全支付付款之指定「日常百選」品牌通路，詳參見下列活動內容。 • 本活動回饋資格認定以付款消費後顯示之合作店家名稱為準。 • 本活動為限量回饋，回饋金額之計算，詳情參閱本活動內容公告。 • 活動期間，若發現交易異常行為（如：不正常退款、單筆消費拆單付款…等），以致影響活動公平及店家",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
+      "content_hash": "a4cdf2667d881fe103408dddbc5ad900c557a749a2961aa811db7d9508590c87",
+      "evidence": [],
+      "components": [],
+      "conditions_display": [
+        "百大品牌日常百選｜單筆不限金額享5%回饋！ remind: • 本活動＼優惠1／需於消費前完成「活動登錄」始享活動行銷回饋資格，可透過全支付APP或PX Pay（以下合稱全支付）首頁之登錄活動享優惠：全支付入口>點選「活動登錄」>於「所有活動」中查看欲登錄的活動>點選「登錄」。 • 登錄活動將於每月百大品牌活動開跑前於以下時間開放登錄： • 登錄活動將於每月百大品牌活動開跑前兩日開放登錄，全支付APP須更新至2.1.3以上版本； • 欲查看已完成之活動登錄，可於全支付首頁入口>點選「活動登錄」>於「所有活動」中查看欲登錄的活動>「已登錄」區域查看已有登錄的回饋活動。 本活動登錄名額不限，登錄說明與限制請參閱本活動內容公告。 • 本活動限使用以下兩種付款方式完成付款，始符合本活動回饋資格：(a)使用全支付「付款碼」； • 本活動限於得使用全支付付款之指定「日常百選」品牌通路，詳參見下列活動內容。 • 本活動回饋資格認定以付款消費後顯示之合作店家名稱為準。 • 本活動為限量回饋，回饋金額之計算，詳情參閱本活動內容公告。 • 活動期間，若發現交易異常行為（如：不正常退款、單筆消費拆單付款…等），以致影響活動公平及店家"
+      ],
+      "insights": {
+        "max_reward_percent": 5,
+        "fixed_reward_amount": null,
+        "is_high_return": false,
+        "is_upcoming": false,
+        "starts_in_days": -21,
+        "is_expiring_soon": false,
+        "ends_in_days": 162,
+        "insight_tags": [],
+        "human_summary": "最高 5% 回饋。"
+      },
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E7%99%BE%E5%A4%A7%E5%93%81%E7%89%8C%E6%97%A5%E5%B8%B8%E7%99%BE%E9%81%B8%EF%BD%9C%E5%96%AE%E7%AD%86%E4%B8%8D%E9%99%90%E9%87%91%E9%A1%8D%E4%BA%AB5%25%E5%9B%9E%E9%A5%8B%EF%BC%81%E6%96%B0%E6%88%B6%E9%A6%96%E7%AD%86%E6%B6%88%E8%B2%BB%E5%8A%A0%E7%A2%BC50%E5%85%A8%E9%BB%9E&dates=20260701%2F20270101&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%85%A8%E6%94%AF%E4%BB%98%EF%BC%8FPX+Pay+Plus%0A%0A%E6%9C%80%E9%AB%98+5%25+%E5%9B%9E%E9%A5%8B%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fmarketing.pxpayplus.com%2Fpxplus_marketing_page%2Factivity_content_page%3FEventId%3D78%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
+    },
+    {
+      "provider_id": "fullpay",
+      "provider_name": "全支付／PX Pay Plus",
+      "title": "百大品牌生活育樂｜單筆滿$500享5%回饋！新戶首筆滿額加碼50全點",
+      "url": "https://marketing.pxpayplus.com/pxplus_marketing_page/activity_content_page?EventId=76",
+      "source_url": "https://service.pxpayplus.com/px-advertise/web/activity/detail/76",
+      "external_id": "76",
+      "start_date": "2026-07-01",
+      "end_date": "2026-12-31",
+      "lifecycle": "active",
+      "quota_status": "not_marked_full",
+      "quota_evidence_complete": true,
+      "review_required": false,
+      "date_confidence": "high",
+      "conditions_summary": "title: 百大品牌生活育樂｜單筆滿$500享5%回饋！ remind: • 本活動＼優惠1／需於消費前完成「活動登錄」始享活動行銷回饋資格，可透過全支付APP或PX Pay（以下合稱全支付）首頁之登錄活動享優惠：全支付入口>點選「活動登錄」>於「所有活動」中查看欲登錄的活動>點選「登錄」。 • 登錄活動將於每月百大品牌活動開跑前於以下時間開放登錄： • 登錄活動將於每月百大品牌活動開跑前兩日開放登錄，全支付APP須更新至2.1.3以上版本； • 欲查看已完成之活動登錄，可於全支付首頁入口>點選「活動登錄」>於「所有活動」中查看欲登錄的活動>「已登錄」區域查看已有登錄的回饋活動。 本活動登錄名額不限，登錄說明與限制請參閱本活動內容公告。 • 本活動限使用以下兩種付款方式完成付款，始符合本活動回饋資格：(a)使用全支付「付款碼」； • 本活動限於得使用全支付付款之指定「生活育樂」品牌通路，詳參見下列活動內容。 • 本活動回饋資格認定以付款消費後顯示之合作店家名稱為準。 • 本活動為限量回饋，回饋金額之計算，詳情參閱本活動內容公告。 • 活動期間，若發現交易異常行為（如：不正常退款、單筆消費拆單付款…等），以致影響活動公平及店",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
+      "content_hash": "c8c6e1d55ece4b735e7e1872db571b18f988e1d470f043308b9851b92209f697",
+      "evidence": [],
+      "components": [],
+      "conditions_display": [
+        "百大品牌生活育樂｜單筆滿$500享5%回饋！ remind: • 本活動＼優惠1／需於消費前完成「活動登錄」始享活動行銷回饋資格，可透過全支付APP或PX Pay（以下合稱全支付）首頁之登錄活動享優惠：全支付入口>點選「活動登錄」>於「所有活動」中查看欲登錄的活動>點選「登錄」。 • 登錄活動將於每月百大品牌活動開跑前於以下時間開放登錄： • 登錄活動將於每月百大品牌活動開跑前兩日開放登錄，全支付APP須更新至2.1.3以上版本； • 欲查看已完成之活動登錄，可於全支付首頁入口>點選「活動登錄」>於「所有活動」中查看欲登錄的活動>「已登錄」區域查看已有登錄的回饋活動。 本活動登錄名額不限，登錄說明與限制請參閱本活動內容公告。 • 本活動限使用以下兩種付款方式完成付款，始符合本活動回饋資格：(a)使用全支付「付款碼」； • 本活動限於得使用全支付付款之指定「生活育樂」品牌通路，詳參見下列活動內容。 • 本活動回饋資格認定以付款消費後顯示之合作店家名稱為準。 • 本活動為限量回饋，回饋金額之計算，詳情參閱本活動內容公告。 • 活動期間，若發現交易異常行為（如：不正常退款、單筆消費拆單付款…等），以致影響活動公平及店"
+      ],
+      "insights": {
+        "max_reward_percent": 5,
+        "fixed_reward_amount": null,
+        "is_high_return": false,
+        "is_upcoming": false,
+        "starts_in_days": -21,
+        "is_expiring_soon": false,
+        "ends_in_days": 162,
+        "insight_tags": [],
+        "human_summary": "最高 5% 回饋。"
+      },
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E7%99%BE%E5%A4%A7%E5%93%81%E7%89%8C%E7%94%9F%E6%B4%BB%E8%82%B2%E6%A8%82%EF%BD%9C%E5%96%AE%E7%AD%86%E6%BB%BF%24500%E4%BA%AB5%25%E5%9B%9E%E9%A5%8B%EF%BC%81%E6%96%B0%E6%88%B6%E9%A6%96%E7%AD%86%E6%BB%BF%E9%A1%8D%E5%8A%A0%E7%A2%BC50%E5%85%A8%E9%BB%9E&dates=20260701%2F20270101&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%85%A8%E6%94%AF%E4%BB%98%EF%BC%8FPX+Pay+Plus%0A%0A%E6%9C%80%E9%AB%98+5%25+%E5%9B%9E%E9%A5%8B%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fmarketing.pxpayplus.com%2Fpxplus_marketing_page%2Factivity_content_page%3FEventId%3D76%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
+    },
+    {
+      "provider_id": "fullpay",
+      "provider_name": "全支付／PX Pay Plus",
+      "title": "百大品牌精選夜市｜單筆不限金額享5%回饋！新戶首筆消費加碼50全點",
+      "url": "https://marketing.pxpayplus.com/pxplus_marketing_page/activity_content_page?EventId=80",
+      "source_url": "https://service.pxpayplus.com/px-advertise/web/activity/detail/80",
+      "external_id": "80",
+      "start_date": "2026-07-01",
+      "end_date": "2026-12-31",
+      "lifecycle": "active",
+      "quota_status": "not_marked_full",
+      "quota_evidence_complete": true,
+      "review_required": false,
+      "date_confidence": "high",
+      "conditions_summary": "title: 百大品牌精選夜市｜單筆不限金額享5%回饋！ remind: • 本活動＼優惠1／需於消費前完成「活動登錄」始享活動行銷回饋資格，可透過全支付APP或PX Pay（以下合稱全支付）首頁之登錄活動享優惠：全支付入口>點選「活動登錄」>於「所有活動」中查看欲登錄的活動>點選「登錄」。 • 登錄活動將於每月百大品牌活動開跑前於以下時間開放登錄： • 登錄活動將於每月百大品牌活動開跑前兩日開放登錄，全支付APP須更新至2.1.3以上版本； • 欲查看已完成之活動登錄，可於全支付首頁入口>點選「活動登錄」>於「所有活動」中查看欲登錄的活動>「已登錄」區域查看已有登錄的回饋活動。 本活動登錄名額不限，登錄說明與限制請參閱本活動內容公告。 • 本活動使用以下兩種付款方式完成付款，始符合本活動回饋資格：(a)使用全支付「付款碼」； • 本活動限於得使用全支付付款之指定「精選夜市」品牌通路，詳參見下列活動內容。 • 本活動回饋資格認定以付款消費後顯示之合作店家名稱為準。 • 本活動為限量回饋，回饋金額之計算，詳情參閱本活動內容公告。 • 活動期間，若發現交易異常行為（如：不正常退款、單筆消費拆單付款…等），以致影響活動公平及店家正",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
+      "content_hash": "27783f226f1300a205e3cc625322d1da5990a877ebe16ece237fd6f2908cd726",
+      "evidence": [],
+      "components": [],
+      "conditions_display": [
+        "百大品牌精選夜市｜單筆不限金額享5%回饋！ remind: • 本活動＼優惠1／需於消費前完成「活動登錄」始享活動行銷回饋資格，可透過全支付APP或PX Pay（以下合稱全支付）首頁之登錄活動享優惠：全支付入口>點選「活動登錄」>於「所有活動」中查看欲登錄的活動>點選「登錄」。 • 登錄活動將於每月百大品牌活動開跑前於以下時間開放登錄： • 登錄活動將於每月百大品牌活動開跑前兩日開放登錄，全支付APP須更新至2.1.3以上版本； • 欲查看已完成之活動登錄，可於全支付首頁入口>點選「活動登錄」>於「所有活動」中查看欲登錄的活動>「已登錄」區域查看已有登錄的回饋活動。 本活動登錄名額不限，登錄說明與限制請參閱本活動內容公告。 • 本活動使用以下兩種付款方式完成付款，始符合本活動回饋資格：(a)使用全支付「付款碼」； • 本活動限於得使用全支付付款之指定「精選夜市」品牌通路，詳參見下列活動內容。 • 本活動回饋資格認定以付款消費後顯示之合作店家名稱為準。 • 本活動為限量回饋，回饋金額之計算，詳情參閱本活動內容公告。 • 活動期間，若發現交易異常行為（如：不正常退款、單筆消費拆單付款…等），以致影響活動公平及店家正"
+      ],
+      "insights": {
+        "max_reward_percent": 5,
+        "fixed_reward_amount": null,
+        "is_high_return": false,
+        "is_upcoming": false,
+        "starts_in_days": -21,
+        "is_expiring_soon": false,
+        "ends_in_days": 162,
+        "insight_tags": [],
+        "human_summary": "最高 5% 回饋。"
+      },
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E7%99%BE%E5%A4%A7%E5%93%81%E7%89%8C%E7%B2%BE%E9%81%B8%E5%A4%9C%E5%B8%82%EF%BD%9C%E5%96%AE%E7%AD%86%E4%B8%8D%E9%99%90%E9%87%91%E9%A1%8D%E4%BA%AB5%25%E5%9B%9E%E9%A5%8B%EF%BC%81%E6%96%B0%E6%88%B6%E9%A6%96%E7%AD%86%E6%B6%88%E8%B2%BB%E5%8A%A0%E7%A2%BC50%E5%85%A8%E9%BB%9E&dates=20260701%2F20270101&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%85%A8%E6%94%AF%E4%BB%98%EF%BC%8FPX+Pay+Plus%0A%0A%E6%9C%80%E9%AB%98+5%25+%E5%9B%9E%E9%A5%8B%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fmarketing.pxpayplus.com%2Fpxplus_marketing_page%2Factivity_content_page%3FEventId%3D80%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
+    },
+    {
+      "provider_id": "fullpay",
+      "provider_name": "全支付／PX Pay Plus",
+      "title": "百大品牌精選市場｜單筆不限金額享5%回饋！ 新戶首筆消費加碼50全點",
+      "url": "https://marketing.pxpayplus.com/pxplus_marketing_page/activity_content_page?EventId=79",
+      "source_url": "https://service.pxpayplus.com/px-advertise/web/activity/detail/79",
+      "external_id": "79",
+      "start_date": "2026-07-01",
+      "end_date": "2026-12-31",
+      "lifecycle": "active",
+      "quota_status": "not_marked_full",
+      "quota_evidence_complete": true,
+      "review_required": false,
+      "date_confidence": "high",
+      "conditions_summary": "title: 百大品牌精選市場｜單筆不限金額享5%回饋！ remind: • 本活動＼優惠1／需於消費前完成「活動登錄」始享活動行銷回饋資格，可透過全支付APP或PX Pay（以下合稱全支付）首頁之登錄活動享優惠：全支付入口>點選「活動登錄」>於「所有活動」中查看欲登錄的活動>點選「登錄」。 • 登錄活動將於每月百大品牌活動開跑前於以下時間開放登錄： • 登錄活動將於每月百大品牌活動開跑前兩日開放登錄，全支付APP須更新至2.1.3以上版本； • 欲查看已完成之活動登錄，可於全支付首頁入口>點選「活動登錄」>於「所有活動」中查看欲登錄的活動>「已登錄」區域查看已有登錄的回饋活動。 本活動登錄名額不限，登錄說明與限制請參閱本活動內容公告。 • 本活動限使用以下兩種付款方式完成付款，始符合本活動回饋資格：(a)使用全支付「付款碼」； • 本活動限於得使用全支付付款之指定「精選市場」品牌通路，詳參見下列活動內容。 • 本活動回饋資格認定以付款消費後顯示之合作店家名稱為準。 • 本活動為限量回饋，回饋金額之計算，詳情參閱本活動內容公告。 • 活動期間，若發現交易異常行為（如：不正常退款、單筆消費拆單付款…等），以致影響活動公平及店家",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
+      "content_hash": "29d8529a2fa5e9f6b4ce04615f086ac55e82c4bbbde912c722abf1dfade88036",
+      "evidence": [],
+      "components": [],
+      "conditions_display": [
+        "百大品牌精選市場｜單筆不限金額享5%回饋！ remind: • 本活動＼優惠1／需於消費前完成「活動登錄」始享活動行銷回饋資格，可透過全支付APP或PX Pay（以下合稱全支付）首頁之登錄活動享優惠：全支付入口>點選「活動登錄」>於「所有活動」中查看欲登錄的活動>點選「登錄」。 • 登錄活動將於每月百大品牌活動開跑前於以下時間開放登錄： • 登錄活動將於每月百大品牌活動開跑前兩日開放登錄，全支付APP須更新至2.1.3以上版本； • 欲查看已完成之活動登錄，可於全支付首頁入口>點選「活動登錄」>於「所有活動」中查看欲登錄的活動>「已登錄」區域查看已有登錄的回饋活動。 本活動登錄名額不限，登錄說明與限制請參閱本活動內容公告。 • 本活動限使用以下兩種付款方式完成付款，始符合本活動回饋資格：(a)使用全支付「付款碼」； • 本活動限於得使用全支付付款之指定「精選市場」品牌通路，詳參見下列活動內容。 • 本活動回饋資格認定以付款消費後顯示之合作店家名稱為準。 • 本活動為限量回饋，回饋金額之計算，詳情參閱本活動內容公告。 • 活動期間，若發現交易異常行為（如：不正常退款、單筆消費拆單付款…等），以致影響活動公平及店家"
+      ],
+      "insights": {
+        "max_reward_percent": 5,
+        "fixed_reward_amount": null,
+        "is_high_return": false,
+        "is_upcoming": false,
+        "starts_in_days": -21,
+        "is_expiring_soon": false,
+        "ends_in_days": 162,
+        "insight_tags": [],
+        "human_summary": "最高 5% 回饋。"
+      },
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E7%99%BE%E5%A4%A7%E5%93%81%E7%89%8C%E7%B2%BE%E9%81%B8%E5%B8%82%E5%A0%B4%EF%BD%9C%E5%96%AE%E7%AD%86%E4%B8%8D%E9%99%90%E9%87%91%E9%A1%8D%E4%BA%AB5%25%E5%9B%9E%E9%A5%8B%EF%BC%81+%E6%96%B0%E6%88%B6%E9%A6%96%E7%AD%86%E6%B6%88%E8%B2%BB%E5%8A%A0%E7%A2%BC50%E5%85%A8%E9%BB%9E&dates=20260701%2F20270101&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%85%A8%E6%94%AF%E4%BB%98%EF%BC%8FPX+Pay+Plus%0A%0A%E6%9C%80%E9%AB%98+5%25+%E5%9B%9E%E9%A5%8B%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fmarketing.pxpayplus.com%2Fpxplus_marketing_page%2Factivity_content_page%3FEventId%3D79%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
+    },
+    {
+      "provider_id": "fullpay",
+      "provider_name": "全支付／PX Pay Plus",
+      "title": "百大品牌風味美食｜單筆滿$200享5%回饋！新戶首筆滿額加碼50全點",
+      "url": "https://marketing.pxpayplus.com/pxplus_marketing_page/activity_content_page?EventId=77",
+      "source_url": "https://service.pxpayplus.com/px-advertise/web/activity/detail/77",
+      "external_id": "77",
+      "start_date": "2026-07-01",
+      "end_date": "2026-12-31",
+      "lifecycle": "active",
+      "quota_status": "not_marked_full",
+      "quota_evidence_complete": true,
+      "review_required": false,
+      "date_confidence": "high",
+      "conditions_summary": "title: 百大品牌風味美食｜單筆滿$200享5%回饋！ remind: • 本活動＼優惠1／需於消費前完成「活動登錄」始享活動行銷回饋資格，可透過全支付APP或PX Pay（以下合稱全支付）首頁之登錄活動享優惠：全支付入口>點選「活動登錄」>於「所有活動」中查看欲登錄的活動>點選「登錄」。 • 登錄活動將於每月百大品牌活動開跑前於以下時間開放登錄： • 登錄活動將於每月百大品牌活動開跑前兩日開放登錄，全支付APP須更新至2.1.3以上版本； • 欲查看已完成之活動登錄，可於全支付首頁入口>點選「活動登錄」>於「所有活動」中查看欲登錄的活動>「已登錄」區域查看已有登錄的回饋活動。 本活動登錄名額不限，登錄說明與限制請參閱本活動內容公告。 • 本活動限使用以下兩種付款方式完成付款，始符合本活動回饋資格：(a)使用全支付「付款碼」； • 本活動限於得使用全支付付款之指定「風味美食」品牌通路，詳參見下列活動內容。 • 本活動回饋資格認定以付款消費後顯示之合作店家名稱為準。 • 本活動為限量回饋，回饋金額之計算，詳情參閱本活動內容公告。 • 活動期間，若發現交易異常行為（如：不正常退款、單筆消費拆單付款…等），以致影響活動公平及店",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
+      "content_hash": "da644c91d554e2be54f8ef439dd4584c7c2b4ef233dc7d1b6960560154be69be",
+      "evidence": [],
+      "components": [],
+      "conditions_display": [
+        "百大品牌風味美食｜單筆滿$200享5%回饋！ remind: • 本活動＼優惠1／需於消費前完成「活動登錄」始享活動行銷回饋資格，可透過全支付APP或PX Pay（以下合稱全支付）首頁之登錄活動享優惠：全支付入口>點選「活動登錄」>於「所有活動」中查看欲登錄的活動>點選「登錄」。 • 登錄活動將於每月百大品牌活動開跑前於以下時間開放登錄： • 登錄活動將於每月百大品牌活動開跑前兩日開放登錄，全支付APP須更新至2.1.3以上版本； • 欲查看已完成之活動登錄，可於全支付首頁入口>點選「活動登錄」>於「所有活動」中查看欲登錄的活動>「已登錄」區域查看已有登錄的回饋活動。 本活動登錄名額不限，登錄說明與限制請參閱本活動內容公告。 • 本活動限使用以下兩種付款方式完成付款，始符合本活動回饋資格：(a)使用全支付「付款碼」； • 本活動限於得使用全支付付款之指定「風味美食」品牌通路，詳參見下列活動內容。 • 本活動回饋資格認定以付款消費後顯示之合作店家名稱為準。 • 本活動為限量回饋，回饋金額之計算，詳情參閱本活動內容公告。 • 活動期間，若發現交易異常行為（如：不正常退款、單筆消費拆單付款…等），以致影響活動公平及店"
+      ],
+      "insights": {
+        "max_reward_percent": 5,
+        "fixed_reward_amount": null,
+        "is_high_return": false,
+        "is_upcoming": false,
+        "starts_in_days": -21,
+        "is_expiring_soon": false,
+        "ends_in_days": 162,
+        "insight_tags": [],
+        "human_summary": "最高 5% 回饋。"
+      },
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E7%99%BE%E5%A4%A7%E5%93%81%E7%89%8C%E9%A2%A8%E5%91%B3%E7%BE%8E%E9%A3%9F%EF%BD%9C%E5%96%AE%E7%AD%86%E6%BB%BF%24200%E4%BA%AB5%25%E5%9B%9E%E9%A5%8B%EF%BC%81%E6%96%B0%E6%88%B6%E9%A6%96%E7%AD%86%E6%BB%BF%E9%A1%8D%E5%8A%A0%E7%A2%BC50%E5%85%A8%E9%BB%9E&dates=20260701%2F20270101&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%85%A8%E6%94%AF%E4%BB%98%EF%BC%8FPX+Pay+Plus%0A%0A%E6%9C%80%E9%AB%98+5%25+%E5%9B%9E%E9%A5%8B%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fmarketing.pxpayplus.com%2Fpxplus_marketing_page%2Factivity_content_page%3FEventId%3D77%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
+    },
+    {
+      "provider_id": "fullpay",
+      "provider_name": "全支付／PX Pay Plus",
+      "title": "跨境日韓｜不限消費方式與金額，送全通路返台樂購券！",
+      "url": "https://marketing.pxpayplus.com/pxplus_marketing_page/activity_content_page?EventId=85",
+      "source_url": "https://service.pxpayplus.com/px-advertise/web/activity/detail/85",
+      "external_id": "85",
+      "start_date": "2026-07-01",
+      "end_date": "2026-12-31",
+      "lifecycle": "active",
+      "quota_status": "not_marked_full",
+      "quota_evidence_complete": true,
+      "review_required": false,
+      "date_confidence": "high",
+      "conditions_summary": "使用全點折抵全部支付，則不符合本活動回饋資格。 本活動為限量回饋，回饋金額之計算，詳情參閱本活動內容公告。 活動期間，若發現交易異常行為（如：不正常退款、單筆消費拆單付款…等），以致影響活動公平及店家正常交易流程，全支付有權取消回饋資格並暫停該會員帳戶之使用，以確保使用者交易安全。 content: 指定付款方式最高享5%回饋 title: 主活動：活動期間內，使用全支付跨境於日本/韓國實體合作通路消費，成功付款將收到全通路5%返台樂購券，至指定場域消費，最高享5%全點回饋！ content: 活動期間：2026/07/01～2026/12/31 活動內容：活動期間於日本/韓國跨境使用全支付消費不限金額，亦不限消費次數，成功付款後即可獲得返台樂購券，每一全支付帳號每月最多可領取3張。 返台樂購券使用說明：全支付會員持返台樂購券至可使用全支付台灣合作店家或通路消費，可享消費5%全點回饋，回饋之全點以四捨五入計算至個位，每一符合活動資格之全支付帳號單筆回饋上限15全點，樂購券有效期限，自領取樂購券當日（含）起至第14日23:59止有效，逾期未使用則自動失效。 本活動每月總回饋限量27萬點，以成功完成消費優先順序計算，數量有限贈完",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
+      "content_hash": "fd8c631b930e17789de867d7f94a8b8029173b47a3f035c7f02b95bf43a2f411",
+      "evidence": [],
+      "components": [],
+      "conditions_display": [
+        "使用全點折抵全部支付，則不符合本活動回饋資格。 本活動為限量回饋，回饋金額之計算，詳情參閱本活動內容公告。 活動期間，若發現交易異常行為（如：不正常退款、單筆消費拆單付款…等），以致影響活動公平及店家正常交易流程，全支付有權取消回饋資格並暫停該會員帳戶之使用，以確保使用者交易安全。",
+        "活動內容：指定付款方式最高享5%回饋",
+        "主活動：活動期間內，使用全支付跨境於日本/韓國實體合作通路消費，成功付款將收到全通路5%返台樂購券，至指定場域消費，最高享5%全點回饋！",
+        "活動內容：活動期間：2026/07/01～2026/12/31 活動內容：活動期間於日本/韓國跨境使用全支付消費不限金額，亦不限消費次數，成功付款後即可獲得返台樂購券，每一全支付帳號每月最多可領取3張。 返台樂購券使用說明：全支付會員持返台樂購券至可使用全支付台灣合作店家或通路消費，可享消費5%全點回饋，回饋之全點以四捨五入計算至個位，每一符合活動資格之全支付帳號單筆回饋上限15全點，樂購券有效期限，自領取樂購券當日（含）起至第14日23:59止有效，逾期未使用則自動失效。 本活動每月總回饋限量27萬點，以成功完成消費優先順序計算，數量有限贈完"
+      ],
+      "insights": {
+        "max_reward_percent": 5,
+        "fixed_reward_amount": null,
+        "is_high_return": false,
+        "is_upcoming": false,
+        "starts_in_days": -21,
+        "is_expiring_soon": false,
+        "ends_in_days": 162,
+        "insight_tags": [],
+        "human_summary": "最高 5% 回饋。"
+      },
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E8%B7%A8%E5%A2%83%E6%97%A5%E9%9F%93%EF%BD%9C%E4%B8%8D%E9%99%90%E6%B6%88%E8%B2%BB%E6%96%B9%E5%BC%8F%E8%88%87%E9%87%91%E9%A1%8D%EF%BC%8C%E9%80%81%E5%85%A8%E9%80%9A%E8%B7%AF%E8%BF%94%E5%8F%B0%E6%A8%82%E8%B3%BC%E5%88%B8%EF%BC%81&dates=20260701%2F20270101&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%85%A8%E6%94%AF%E4%BB%98%EF%BC%8FPX+Pay+Plus%0A%0A%E6%9C%80%E9%AB%98+5%25+%E5%9B%9E%E9%A5%8B%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fmarketing.pxpayplus.com%2Fpxplus_marketing_page%2Factivity_content_page%3FEventId%3D85%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
+    },
+    {
       "provider_id": "taiwanpay",
       "provider_name": "台灣 Pay",
       "title": "寧夏夜市愛逮玩 台灣Pay享20%回饋",
@@ -2476,8 +3072,8 @@
       "review_required": false,
       "date_confidence": "high",
       "conditions_summary": "title: 寧夏夜市愛逮玩 台灣Pay享20%回饋 description: 寧夏夜市愛逮玩 台灣Pay享20%回饋 location: 台北寧夏觀光夜市指定店家。 target: 使用「台灣Pay」(透過參與金融機構「行動銀行」APP或「台灣行動支付」APP)，於活動期間至活動地點消費，以「台灣Pay」QR Code掃碼進行支付 (金融卡/帳戶)之用戶(以下簡稱用戶)。 content: 用戶於活動期間至活動地點消費，使用「台灣 Pay」QR Code掃碼支付成功者，單筆消費不限金額可享20%之現金回饋(小數點後四捨五入，非即時回饋)，活動期間每一金融卡號/帳戶最高回饋500元為限，本活動回饋總金額上限30萬元，如達回饋總金額上限，即停止回饋，並公告於彰化銀行官網。 reminder: 參加台灣Pay每筆消費再享1.5%等值紅利點數回饋活動之使用金融機構限臺灣銀行、土地銀行、合作金庫、第一銀行、華南銀行、彰化銀行、兆豐銀行及臺灣企銀，各金融機構回饋條件限制等活動辦法詳情，悉以前述各機構官方網站公告內容為據。 restrictions: 活動用戶單筆交易結帳金額，以參與本活動之店家計算金額為準，若因交易失敗、交易取消、退貨",
-      "fetched_at": "2026-07-21T01:58:27.889516+08:00",
-      "content_hash": "8bafe90bcfb73ac7d636c2d29dcdca0339eae5f8ee2d0d711c002db864450188",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
+      "content_hash": "5303193977863290d704ab61d931026dd24552eb9f8f8ff6745a8ebaef5dafff",
       "evidence": [],
       "components": [],
       "conditions_display": [
@@ -2516,8 +3112,8 @@
       "review_required": false,
       "date_confidence": "high",
       "conditions_summary": "title: 福懋台灣Pay 加油享回饋 description: 福懋台灣Pay 加油享回饋 content: 用戶於活動期間內至活動地點進行人工加油服務(限加入單台車輛油箱內)，並出示「台灣Pay」付款條碼(金融卡/帳戶/信用卡)進行支付，單筆消費汽油1公升(含)以上，即享有每公升現折新臺幣(以下同) 1元優惠。 reminder: 參加台灣Pay每筆消費再享1.5%等值紅利點數回饋活動之使用金融機構限臺灣銀行、土地銀行、合作金庫、第一銀行、華南銀行、彰化銀行、兆豐銀行及臺灣企銀，各金融機構回饋條件限制等活動辦法詳情，悉以前述各機構官方網站公告內容為據。 本活動用戶結帳金額，以活動地點加油站計算金額為準，若因付款失敗、交易取消、退貨、收銀設備故障、網路斷線、系統當機等因素導致無法即時折扣時，恕不再回饋及賠償任何損失。 主辦單位就用戶之資格、交易成功與否等，保有審查之權利，經查核若有不符本活動之規定者，主辦單位得取消其參加資格，追回折扣回饋金額，若有損害，並得請求損害賠償。",
-      "fetched_at": "2026-07-21T01:58:27.889516+08:00",
-      "content_hash": "d6b56f201e5cdae5e573dc3f717ee5becd8e5d143e13b2afac27f89b7fcdd5b0",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
+      "content_hash": "13394cae07f13ac2c7b658097217d6535ce06af3eb2dc5163d5ad8f5737c3bfa",
       "evidence": [],
       "components": [],
       "conditions_display": [
@@ -2552,8 +3148,8 @@
       "review_required": false,
       "date_confidence": "high",
       "conditions_summary": "title: 耐斯購物Pay你享回饋 description: 耐斯購物Pay你享回饋 location: 耐斯廣場購物中心(嘉義市東區忠孝路600號)指定櫃位。 target: 使用「台灣Pay」（透過參與金融機構「行動銀行」APP或「台灣行動支付」APP)於活動期間至活動地點消費，並出示「台灣Pay」付款條碼進行支付（信用卡/金融卡/帳戶）之用戶(以下稱用戶)。 content: 用戶於活動期間至活動地點消費，並出示「台灣Pay」付款條碼(信用卡/金融卡/帳戶)進行支付，單筆消費不限金額可享20%之現金回饋(小數點後四捨五入，非即時回饋)，每信用卡/金融卡/帳戶於活動期間以1,000元為回饋上限，本活動回饋總金額上限110萬元，如達回饋總金額上限，即停止回饋，並公告於彰化銀行官網。 reminder: 參加台灣Pay每筆消費再享1.5%等值紅利點數回饋活動之使用金融機構限臺灣銀行、土地銀行、合作金庫、第一銀行、華南銀行、彰化銀行、兆豐銀行及臺灣企銀，各金融機構回饋條件限制等活動辦法詳情，悉以前述各機構官方網站公告內容為據。 restrictions: (一) 本活動用戶消費金額，以活動櫃位計算金額為準，若付款失敗、交易取",
-      "fetched_at": "2026-07-21T01:58:27.889516+08:00",
-      "content_hash": "a8573e84e2d9391c4319c06e6afde85249d1b8edab4561de69f43c2b2f059422",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
+      "content_hash": "4c1af02919fb09437e903ff55033c51e4635ef6ff70e1d5a92d3ff8cf1a8ae0f",
       "evidence": [],
       "components": [],
       "conditions_display": [
@@ -2592,8 +3188,8 @@
       "review_required": false,
       "date_confidence": "high",
       "conditions_summary": "title: 采盟免稅店、采盟/誠盟餐飲 TWQR(限台灣Pay)最高享20%回饋 description: 采盟免稅店、采盟/誠盟餐飲 TWQR(限台灣Pay)最高享20%回饋 content: 活動期間至活動地點消費，出示「台灣Pay」付款條碼(即被掃交易，適用金融卡/帳戶/信用卡)進行支付，單筆消費滿新臺幣(以下同)500元(含)以上，即可折抵100元，單筆消費滿1000元(含)以上，即可折抵200元，以此類推(如本活動辦法內表格)，單筆折抵上限1,000元。 *本活動回饋總金額以55萬元為上限，額滿為止，並公告於兆豐銀行官網，不另行通知。 reminder: 活動取號參加台灣Pay每筆消費再享1.5%等值紅利點數回饋活動之使用金融機構限臺灣銀行、土地銀行、合作金庫、第一銀行、華南銀行、彰化銀行、兆豐銀行及臺灣企銀，各金融機構回饋條件限制等活動辦法詳情，悉以前述各機構官方網站公告內容為據。 restrictions: 本活動將依用戶交易時序核算回饋資格(不含菸品項目)，且整筆交易金額不得拆刷。 本活動回饋總金額以55萬元為上限，額滿為止，並公告於兆豐銀行官網，不另行通知。 本活動用戶單筆交易結帳金額，以活動地點采盟免稅",
-      "fetched_at": "2026-07-21T01:58:27.889516+08:00",
-      "content_hash": "972b1efa2594114475918717f5ad5b5a807fba12dcbe864eaa89a1fece692cb7",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
+      "content_hash": "f26c4b5fac1ee01d02e98f4bc08a9a90a775d50a6cea830c71e675f30a0f02c9",
       "evidence": [],
       "components": [],
       "conditions_display": [
@@ -2631,7 +3227,7 @@
       "review_required": false,
       "date_confidence": "high",
       "conditions_summary": "2026/7/1-12/31 街口支付繳費享最高 2.15% 回饋",
-      "fetched_at": "2026-07-21T01:58:27.889516+08:00",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
       "content_hash": "5ca34f251523e82a0ae0f231c43ec9354570f055d8a502cd82e118ad9552f189",
       "evidence": [],
       "components": [],
@@ -2666,8 +3262,8 @@
       "review_required": false,
       "date_confidence": "high",
       "conditions_summary": "【里仁】用 iPASS MONEY 帳戶餘額付款最高享 20% 回饋！ 【里仁】用 iPASS MONEY 帳戶餘額付款最高享 20% 回饋！ 活動期間於里仁實體門市消費並使用 iPASS MONEY APP 開啟「付款碼」完成付款，享以下優惠： 優惠一：消費總額享一卡通綠點 10% 回饋 使用 iPASS MONEY「帳戶餘額」付款，消費總金額享一卡通綠點 10% 回饋。 活動期間每人回饋上限 200 點，活動總限量 100 萬點，贈完即止。 符合資格者回饋之一卡通綠點，將於符合回饋資格之次月底前發放至用戶之 iPASS MONEY APP 中，敬請耐心等候。 優惠二：累積消費滿 2,000 元，加碼贈一卡通綠點 200 點回饋 使用 iPASS MONEY「帳戶餘額」付款，累積消費滿 2,000 元，加碼享一卡通綠點 200 點回饋。 活動期間每人限得 1 次，活動總限量上限 50 萬點，贈完即止。 符合資格者回饋之一卡通綠點，將於符合回饋資格之次月底前發放至用戶之 iPASS MONEY APP 中，敬請耐心等候。 必須維持 iPASS MONEY 帳戶為正常使用狀態，若暫停使用、關閉帳戶或其他異常狀態或於回饋前不符合",
-      "fetched_at": "2026-07-21T01:58:27.889516+08:00",
-      "content_hash": "93c88ab89c200774266bd25109a38941c98604c4de813ffe87aa6b031a097bad",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
+      "content_hash": "475b2b3573a43731881ccc0e8d71b4a98fa9293566b0250cfee7288180f22cbb",
       "evidence": [],
       "components": [],
       "conditions_display": [
@@ -2706,8 +3302,8 @@
       "review_required": false,
       "date_confidence": "high",
       "conditions_summary": "",
-      "fetched_at": "2026-07-21T01:58:27.889516+08:00",
-      "content_hash": "aca924eedd2455ebdcdf1e74301bc44410882e8bf2684bb7861fed35be041492",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
+      "content_hash": "55293370bd16b66b2fe1283c20de985cb40fac3ced5410b099a91e49ad2da8b1",
       "evidence": [],
       "components": [],
       "conditions_display": [],
@@ -2739,8 +3335,8 @@
       "review_required": false,
       "date_confidence": "high",
       "conditions_summary": "content: 用戶於活動地點掃碼支付，單筆消費不限金額10%回饋現金或點數(非即時回饋，小數點後四捨五入)，回饋形式與細節依各參與機構規定辦理，活動期間每一金融卡/帳戶、電子支付帳戶最高回饋新台幣(以下同)500元等值點數或現金。 本活動回饋總金額上限10萬元，額滿為止，並公告於華南銀行官網。 reminder: 參加台灣Pay每筆消費再享1.5%等值紅利點數回饋活動之使用金融機構限臺灣銀行、土地銀行、合作金庫、第一銀行、華南銀行、彰化銀行、兆豐銀行及臺灣企銀，各金融機構回饋條件限制等活動辦法詳情，悉以前述各機構官方網站公告內容為據。 restrictions: 一、用戶單筆交易結帳金額，以活動地點店家計算金額為準，若付款失敗、交易取消、退貨或其他原因退還交易款項時，該筆交易金額將不列入回饋計算範圍。 二、本活動將依用戶交易時序核算回饋資格，回饋金額以「單筆消費金額×10%」計算，小數點後四捨五入。 本活動期間每卡號/帳戶、電子支付帳戶回饋上限為500元。 三、本活動就符合活動條件之用戶將依交易時序核算回饋資格，並於活動結束經主辦單位核實用戶之回饋金額後，由各參與金融機構及電子支付機構依其作業時程，於115年12月31日",
-      "fetched_at": "2026-07-21T01:58:27.889516+08:00",
-      "content_hash": "44ee6d34a50e668626d10f5d2f8e9046304780a71fc000faceffbd41e09f1d7f",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
+      "content_hash": "6fb175366a300b89240a87172f9ca3d1a13dcdccc0603d16752caed83a293edd",
       "evidence": [],
       "components": [],
       "conditions_display": [
@@ -2778,8 +3374,8 @@
       "review_required": false,
       "date_confidence": "high",
       "conditions_summary": "title: 蘭州就用台灣Pay 市場20%高回饋 description: 蘭州就用台灣Pay 市場20%高回饋 location: 「蘭州市場」受理「台灣Pay」交易之指定店家(依「第一銀行」官網為準)。 content: 活動期間至活動地點消費，並以「台灣Pay」QR Code掃碼(限金融卡/帳戶)進行支付，單筆消費不限交易金額享20%現金回饋(非即時回饋，小數點後四捨五入)，每一金融卡/帳戶於活動期間回饋金額以新臺幣(以下同)600元為上限，本活動回饋總金額以50萬元為上限，如達回饋總金額上限即停止回饋，並公告於第一銀行官網，不另行通知。 reminder: 參加台灣Pay每筆消費再享1.5%等值紅利點數回饋活動之使用金融機構限臺灣銀行、土地銀行、合作金庫、第一銀行、華南銀行、彰化銀行、兆豐銀行及臺灣企銀，各金融機構回饋條件限制等活動辦法詳情，悉以前述各機構官方網站公告內容為據。 restrictions: 本活動回饋總金額以50萬元為上限，如達該總金額上限即停止回饋，將提前結束本活動，並公告於第一銀行官網，不另行通知。 本活動用戶之交易金額，以參與本活動之指定店家計算金額為準，若因付款失敗、交易取消、退貨退款等，或",
-      "fetched_at": "2026-07-21T01:58:27.889516+08:00",
-      "content_hash": "62553c99e8ff395f197c133330085180b3115351bdb2a4b360c5818cec7f03b3",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
+      "content_hash": "5c80ded127f24587f7189f278d13894e6cce072a2d72ef51afbbd7021b482eae",
       "evidence": [],
       "components": [],
       "conditions_display": [
@@ -2818,8 +3414,8 @@
       "review_required": false,
       "date_confidence": "high",
       "conditions_summary": "content: 活動一：來 NET 穿得「體面」，隨機返現最高100%回饋 活動期間用戶於可受理台灣Pay掃碼支付之「NET服飾」門市，使用「台灣行動支付」APP出示台灣Pay付款條碼支付，單筆結帳金額滿500元(含)以上，即可獲得1個隨機紅包，活動期間內每一金融卡/帳戶最多可獲得2個隨機紅包。 用戶於活動期間內使用「台灣行動支付」APP之「手機門號」轉帳功能，每成功完成一筆新臺幣(以下同)666元(含)以上轉帳至「手機門號」之轉出交易，即可獲得1次紅包抽獎機會。 活動期間內，每一金融卡/帳戶轉入同一「手機門號」，每日最多可獲得5次紅包抽獎機會； 用戶於指定加碼日(詳活動辦法)使用「台灣行動支付」APP之「手機門號」轉帳功能，每成功完成一筆666元(含)以上轉帳至「手機門號」之轉出交易，即可額外獲得1次紅包抽獎機會，成功完成2次交易即可額外獲得2次紅包抽獎機會(非即時抽獎，用戶交易時序不影響中獎機率)，以此類推； 本活動將於抽獎日，由電腦自「指定加碼日」期間符合抽獎資格之交易紀錄中，隨機抽出中獎者，並於抽獎日中午12:00前以「台灣行動支付」APP發送推播通知給中獎者，未中獎者恕不另行通知。 活動二於確定中獎時發送中獎紅包",
-      "fetched_at": "2026-07-21T01:58:27.889516+08:00",
-      "content_hash": "81e6f5316b68af99116aef1ca2950055175421abe688f74e89ef7ca3a1c2e9f6",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
+      "content_hash": "c38204fc5ce56f2f0b33361f88075c5f63ad6230f4cde6bf24ab45c960f0b11c",
       "evidence": [],
       "components": [],
       "conditions_display": [
@@ -2858,8 +3454,8 @@
       "review_required": false,
       "date_confidence": "high",
       "conditions_summary": "【Flexii】首次選擇 iPASS MONEY 提領薪資，最高享一卡通綠點 200 點回饋！ 【Flexii】首次選擇 iPASS MONEY 提領薪資，最高享一卡通綠點 200 點回饋！ 活動期間：2026/7/17 - 2026/12/31 活動期間於 Flexii APP 內「首次選擇」iPASS MONEY 成功提領薪資任 1 次，享以下優惠： iPASS MONEY 用戶「首次」成功提領薪資，享一卡通綠點 100 點回饋。 活動期間首次成功註冊 iPASS MONEY，並成功提領薪資之用戶，享一卡通綠點 200 點回饋。 本活動回饋說明： 當月定義係為活動期間內當月，故首月計算期間為 7/17 - 7/31，次月計算期間為 8/1 - 8/31，以此類推。 本活動每人限得 1 次（如已符合新朋友回饋資格者，則無法再獲得舊朋友回饋資格），活動總回饋上限共 1,000 萬點。 符合資格者回饋之一卡通綠點，將於符合回饋資格之次月底前發放至用戶之 iPASS MONEY APP 中，敬請耐心等候。 如用戶於 2026/7/20 首次選擇 iPASS MONEY 提領薪資，回饋之一卡通綠點將於 2026/8 月底前完成回饋",
-      "fetched_at": "2026-07-21T01:58:27.889516+08:00",
-      "content_hash": "753d423d61557fc560e9c70f82590e0f8755bfeee1398eb24e48fba97d398614",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
+      "content_hash": "83c3901c1db2b40d448dc048183b8d29498c8baeb27eb3d61d352d4a8bfca8c1",
       "evidence": [],
       "components": [],
       "conditions_display": [
@@ -2893,8 +3489,8 @@
       "review_required": false,
       "date_confidence": "high",
       "conditions_summary": "（參與本活動之指定門市詳附表，如有異動以 TWQR 及台灣Pay網站活動網頁公告為準）。 content: 用戶於活動地點使用，台灣 Pay 以QR Code掃碼支付成功（限金融卡/帳戶)或電子支付機構APP以QR Code掃碼支付成功，若使用街口支付APP付款單筆消費不限金額可享 10% 回饋街口幣（即時回饋，小數點後四捨五入），其他電子支付機構或金融機構支付APP付款單筆消費不限金額亦可享10%現金回饋或等值紅利點數(非即時回饋，小數點後四捨五入)，回饋形式與細節依各機構規定辦理，每一帳戶於活動期間最高回饋等值新臺幣(以 reminder: 參加台灣Pay每筆消費再享1.5%等值紅利點數回饋活動之使用金融機構限臺灣銀行、土地銀行、合作金庫、第一銀行、華南銀行、彰化銀行、兆豐銀行及臺灣企銀，各金融機構回饋條件限制等活動辦法詳情，悉以前述各機構官方網站公告內容為據。 restrictions: (一)本活動回饋總金額上限30萬元整，將依用戶交易時序核算回饋資格，且整筆交易金額不得拆刷。 (二)本活動用戶單筆交易結帳金額，以本辦法活動地點所指定之計算金額為準。 若因付款失敗、交易取消、設備故障、網路斷線、系統當機或其他因素致無",
-      "fetched_at": "2026-07-21T01:58:27.889516+08:00",
-      "content_hash": "3d50a84ffdcaba6998fd65e9ebfb58b51515c41e929206c7d32dd92e74383fcb",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
+      "content_hash": "83ec24d2e86d184d65a6226242b43bd3643a47475ec643e2a30526e7b02de2da",
       "evidence": [],
       "components": [],
       "conditions_display": [
@@ -2921,6 +3517,44 @@
     {
       "provider_id": "icashpay",
       "provider_name": "icash Pay",
+      "title": "聖德科斯中秋早鳥加碼 icash Pay疊加銀行活動最高享21%",
+      "url": "https://www.icashpay.com.tw/advertMessage/view/id/2415",
+      "source_url": "https://www.icashpay.com.tw/advertMessage/view/id/2415",
+      "external_id": null,
+      "start_date": "2026-07-22",
+      "end_date": "2026-07-28",
+      "lifecycle": "active",
+      "quota_status": "not_marked_full",
+      "quota_evidence_complete": true,
+      "review_required": false,
+      "date_confidence": "high",
+      "conditions_summary": "活動期間：自2026/7/22 起至2026/7/28 活動期間於聖德科斯門市使用icash Pay單筆消費滿1000元(含)以上享消費金額之5% OPENPOINT回饋，活動期間每戶上限100點，活動總上限共6萬點。 【週三、六滿額5%回饋】 活動期間內每週三、週六於聖德科斯使用icash2.0、icash Pay單筆支付滿500元(含)以上，享消費金額之5% OPENPOINT回饋。 活動期間每月每戶/每卡點數回饋上限300點，活動總贈點上限160萬點。 【綁定uniopen聯名卡最高回饋11%】 【享鑽生活指定銀行加碼11%回饋】 請先事先註冊icash Pay帳號並完成icash Pay註冊及連結指定銀行帳戶流程【立即下載icash Pay】 如活動期間內已達活動總回饋上限，將依icash Pay交易之時間順序為準判定符合資格，不另行公告或通知，活動參與者不得以未獲知本活動回饋額滿訊息為理由要求補贈點，請視情況評估參與。 本活動回饋點數將於消費成功後最晚於次次月底前匯入icash Pay所綁定的uniopen會員帳戶中，回饋資格及入點時間認定依icash Pay資訊系統紀錄認定為準，系統將以符合活動資格者之消費優先順",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
+      "content_hash": "d24586175628f81a41c87d44d80750661b09f40334f85448849ec185facc5439",
+      "evidence": [],
+      "components": [],
+      "conditions_display": [
+        "活動期間：自2026/7/22 起至2026/7/28 活動期間於聖德科斯門市使用icash Pay單筆消費滿1000元(含)以上享消費金額之5% OPENPOINT回饋，活動期間每戶上限100點，活動總上限共6萬點。 【週三、六滿額5%回饋】 活動期間內每週三、週六於聖德科斯使用icash2.0、icash Pay單筆支付滿500元(含)以上，享消費金額之5% OPENPOINT回饋。 活動期間每月每戶/每卡點數回饋上限300點，活動總贈點上限160萬點。 【綁定uniopen聯名卡最高回饋11%】 【享鑽生活指定銀行加碼11%回饋】 請先事先註冊icash Pay帳號並完成icash Pay註冊及連結指定銀行帳戶流程【立即下載icash Pay】 如活動期間內已達活動總回饋上限，將依icash Pay交易之時間順序為準判定符合資格，不另行公告或通知，活動參與者不得以未獲知本活動回饋額滿訊息為理由要求補贈點，請視情況評估參與。 本活動回饋點數將於消費成功後最晚於次次月底前匯入icash Pay所綁定的uniopen會員帳戶中，回饋資格及入點時間認定依icash Pay資訊系統紀錄認定為準，系統將以符合活動資格者之消費優先順"
+      ],
+      "insights": {
+        "max_reward_percent": 21,
+        "fixed_reward_amount": null,
+        "is_high_return": true,
+        "is_upcoming": false,
+        "starts_in_days": 0,
+        "is_expiring_soon": true,
+        "ends_in_days": 6,
+        "insight_tags": [
+          "高回饋",
+          "即將結束"
+        ],
+        "human_summary": "最高 21% 回饋，屬高回饋活動；今天開始；將於 6 天後截止。"
+      },
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E8%81%96%E5%BE%B7%E7%A7%91%E6%96%AF%E4%B8%AD%E7%A7%8B%E6%97%A9%E9%B3%A5%E5%8A%A0%E7%A2%BC+icash+Pay%E7%96%8A%E5%8A%A0%E9%8A%80%E8%A1%8C%E6%B4%BB%E5%8B%95%E6%9C%80%E9%AB%98%E4%BA%AB21%25&dates=20260722%2F20260729&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9Aicash+Pay%0A%0A%E6%9C%80%E9%AB%98+21%25+%E5%9B%9E%E9%A5%8B%EF%BC%8C%E5%B1%AC%E9%AB%98%E5%9B%9E%E9%A5%8B%E6%B4%BB%E5%8B%95%EF%BC%9B%E4%BB%8A%E5%A4%A9%E9%96%8B%E5%A7%8B%EF%BC%9B%E5%B0%87%E6%96%BC+6+%E5%A4%A9%E5%BE%8C%E6%88%AA%E6%AD%A2%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fwww.icashpay.com.tw%2FadvertMessage%2Fview%2Fid%2F2415%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
+    },
+    {
+      "provider_id": "icashpay",
+      "provider_name": "icash Pay",
       "title": "2026 icash Pay 會員專屬優惠",
       "url": "https://www.icashpay.com.tw/event/memberbenefits/",
       "source_url": "https://www.icashpay.com.tw/event/memberbenefits/",
@@ -2933,7 +3567,7 @@
       "review_required": true,
       "date_confidence": "low",
       "conditions_summary": "點數回饋 使用 icash Pay 消費享 0.5% OPENPOINT 回饋 夢時代APP會員生日當月於指定店櫃消費發票金額累計滿1000元贈55點OPENPOINT 輸入指定優惠碼單筆支付滿 $199 享 95 折（最高折 $100）",
-      "fetched_at": "2026-07-21T01:58:27.889516+08:00",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
       "content_hash": "2b2953891b6f503cf307e0c218a91f38092f1f90307d22b2298d4a1c2f602081",
       "evidence": [],
       "components": [],
@@ -2968,7 +3602,7 @@
       "review_required": true,
       "date_confidence": "low",
       "conditions_summary": "回饋攻略 到日本使用全盈+PAY最高27%回饋 銀行再加碼最高13%回饋 富邦產險指定險種單筆滿額享5％全家Fa點 此頁面活動，限活動期間內於日本PayPay合作商店之實體門市結帳時，以全盈+PAY錢包或連結銀行帳戶方式，出示全盈+PAY日本版付款碼或掃描店家立牌QR Code完成付款，且無因取消訂單、辦理退貨、退款導致未達累積消費金額門檻，始得參加。 參加此頁面活動者，應於參加活動前完成全盈+PAY電支帳戶註冊及開通，並成功綁定全家會員，且於活動期間及贈獎發放前，均應持續維持綁定全家會員狀態。 如參加者於任一時間點未完成綁定或取消綁定全家會員，或申請結清全盈+PAY電支帳戶、遭強制停用、刪除全家會員帳號，或其他違反本活動注意事項之情形者，將視為自動放棄回饋資格，並不得要求折現或轉換其他商品。 參加本活動之時，即同意接受本活動之活動辦法注意事項，如有違反，全盈支付得取消其參加或回饋資格。 此等條款及細則如有更改，將會在全盈支付官網公告，如有任何如有疑義或爭議，全盈支付與合作夥伴保有最終解釋權及決定權，並保留對本活動之參加資格、回饋資格等最後審核權，且有權隨時變更／終止／取消本活動。",
-      "fetched_at": "2026-07-21T01:58:27.889516+08:00",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
       "content_hash": "5212936d469cb5347f2a63a5356afc1128bad0974b981c895e3cf68755605257",
       "evidence": [],
       "components": [],
@@ -3005,15 +3639,15 @@
       "review_required": true,
       "date_confidence": "low",
       "conditions_summary": "【PayPay】遊日本用 iPASS MONEY 最高享 15% 回饋！ 【PayPay】遊日本用 iPASS MONEY 最高享 15% 回饋！ 活動期間於日本 PayPay 合作商店實體門市消費，結帳時使用 iPASS MONEY APP 開啟「付款碼」、「掃碼支付」或「無人自助式付款」完成付款，享以下優惠： 優惠一：於日本消費總額享一卡通綠點 3.5% 回饋 消費總額享一卡通綠點 3.5% 回饋（綠點1點價值新台幣 1 元，每人每月回饋上限 150 點，活動總回饋上限 450 萬點）。 優惠二：首次於日本消費，當月加碼享一卡通綠點 10% 回饋 首次使用 iPASS MONEY APP 於日本 PayPay 合作商店完成付款，當月 PayPay 消費總額加碼享一卡通綠 10% 回饋（綠點 1 點價值新台幣 1 元，每人回饋上限 200 點，活動總回饋上限 50 萬點）。 必須維持 iPASS MONEY 帳戶為正常使用狀態，若暫停使用、關閉帳戶或其他異常狀態或於回饋前不符合任一條件，將不符合活動資格。 回饋項目為一卡通綠點，請至遲於消費當月底 點此同意 加入一卡通綠點計畫，或至一卡通 iPASS MONEY APP 首",
-      "fetched_at": "2026-07-21T01:58:27.889516+08:00",
-      "content_hash": "3cd95d2f1821195d7f88b7fb0a2ca666612c05e7984b85382d73304913d3b967",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
+      "content_hash": "3811a5c6a1dcb2965f9c9b92153ed197a44bb93b2277a8f6f88f0b0e811c3b76",
       "evidence": [
         {
           "source_url": "https://web.i-pass.com.tw/Preferential/Detail/GMZTMMQ4HWFB664P4Hun",
           "excerpt": "9 月因活動總回饋上限已額滿，故 9 月消費金額將不符合回饋資格。",
-          "observed_at": "2026-07-21T01:58:27.889516+08:00",
+          "observed_at": "2026-07-22T13:14:22.505424+08:00",
           "kind": "activity_page",
-          "content_hash": "3cd95d2f1821195d7f88b7fb0a2ca666612c05e7984b85382d73304913d3b967"
+          "content_hash": "3811a5c6a1dcb2965f9c9b92153ed197a44bb93b2277a8f6f88f0b0e811c3b76"
         }
       ],
       "components": [
@@ -3061,8 +3695,8 @@
       "review_required": true,
       "date_confidence": "low",
       "conditions_summary": "【公路養管費】使用 iPASS MONEY APP 指定路徑繳費，最高送 480 元優惠券 - iPASS一卡通 【公路養管費】使用 iPASS MONEY APP 指定路徑繳費，最高送 480 元優惠券 公路養管費（原汽燃費）指定繳費路徑： ※ 活動期間不等於各稅目繳納期間，請於繳納通知書上繳納截止日前完成繳納 ※ 活動期間內透過iPASS MONEY APP指定路徑繳納「公路養管費（原汽燃費）」，樂享以下優惠： 活動期間每人限得 1 張，總限量 20 萬張，數量有限送完為止。 活動期間每人限得 1 張，總限量 15 萬張，數量有限送完為止。 台灣中油/台糖/台亞指定加油站 面額100 X 2張為1份，活動期間每人限得 1份，總限量10萬份，數量有限送完為止。 台灣中油/台糖/台亞指定加油站 公路養管費8月回饋禮 公路養管費9月回饋禮 使用 iPASS MONEY 繳納指定生活繳費項目費用，當月繳費滿額最高送全通路優惠券 130 元（每人每月限得 1 次）。 本優惠為原【生活繳費最高送390元優惠券】活動，活動辦法、回饋條件等詳請見 活動網頁 限透過「一卡通iPASS MONEY APP」生活繳費功能並使用iPASS MO",
-      "fetched_at": "2026-07-21T01:58:27.889516+08:00",
-      "content_hash": "8e0a0c8c2bed7799dddbdd9f9e2cc0a367cbba04cb2fe50e3a4d65cb6e010966",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
+      "content_hash": "74e5ed983a50d02e6bffeca8ddfd426dcc63dca24839bb6d581f75246e694cdc",
       "evidence": [],
       "components": [],
       "conditions_display": [
@@ -3097,8 +3731,8 @@
       "review_required": true,
       "date_confidence": "low",
       "conditions_summary": "【捐款專區】透過 iPASS MONEY APP 捐款享 10% 回饋！ 【捐款專區】透過 iPASS MONEY APP 捐款享 10% 回饋！ 活動內容：活動期間於 iPASS MONEY APP 首頁「捐款專區」成功捐款，捐款金額享一卡通綠點 10% 回饋。 每人每月回饋上限 200 點，每月總限量上限 100 萬點。 （一卡通綠點 1 點價值新台幣 1 元，可於事後全額折抵捐款金額獲得儲值金回饋） 符合資格者回饋之一卡通綠點，將於符合回饋資格之次月底前發放至用戶之 iPASS MONEY APP 中，敬請耐心等候。 如用戶於 2026/7/20 於 iPASS MONEY APP「捐款專區」成功捐款，符合回饋之一卡通綠點，將於 2026/8 月底前完成回饋，以此類推。 活動期間一卡通加碼提撥每月累積捐款總額的 1%， 活動回饋每月重新計算，用戶每月皆須透過 iPASS MONEY APP「捐款專區」完成捐款，始符合當月活動資格。 必須維持 iPASS MONEY 帳戶為正常使用狀態，若暫停使用、關閉帳戶或其他異常狀態或於回饋前不符合任一條件，將不符合活動資格。 回饋項目為一卡通綠點，請至遲於捐款當月底 點此同意 加入",
-      "fetched_at": "2026-07-21T01:58:27.889516+08:00",
-      "content_hash": "e878946158d0c6e50a665c7bdffa05d762f87bf5b9785b589039f6ec2681af67",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
+      "content_hash": "db8398351e93857470a98a3d6f011086f7adf14f77cf61fa7fea72def9e8beb9",
       "evidence": [],
       "components": [],
       "conditions_display": [
@@ -3133,8 +3767,8 @@
       "review_required": true,
       "date_confidence": "low",
       "conditions_summary": "生活繳費指定項目： ※生活繳費項目中，跨境服務、分期帳單與台北市動物園，不列入本次活動回饋項目中。 ※活動期間不等於各稅目繳納期間，請於繳納通知書上繳納截止日前完成繳納。 活動期間內透過iPASS MONEY APP「生活繳費」功能，成功繳納本活動指定生活繳費項目費用，樂享以下優惠： 活動期間內使用 iPASS MONEY APP 繳納指定費用，當月繳費任 1 筆，贈送 iPASS MONEY 優惠券30元1 張 。 活動期間每人每月限得 1 張，總限量 120 萬張，數量有限送完為止。 活動期間內使用 iPASS MONEY APP 繳納指定費用，當月累積滿 1 千元，贈送 iPASS MONEY 優惠券 100元 1 份（面額 50元 X 2 張） 。 活動期間每人每月限得 1 份，總限量60萬份，數量有限送完為止。 - 生活繳費項目中，跨境服務、分期帳單與台北市動物園，不列入本次活動回饋項目中。 限透過「一卡通iPASS MONEY APP」生活繳費功能並使用iPASS MONEY帳戶餘額完成付款且符合各優惠指定條件，如有取消交易或退費退款之交易金額將不納入計算。  必須維持 iPASS MONEY 帳戶為正常使用狀",
-      "fetched_at": "2026-07-21T01:58:27.889516+08:00",
-      "content_hash": "ac90d4df74ff8fbd7d258a168458b06535550f7fc6aaba5849b7670d3462e88a",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
+      "content_hash": "0da3aae0ae567c946659753cd67f4a0cf0a53df677a55021fb3387a5378669ae",
       "evidence": [],
       "components": [],
       "conditions_display": [
@@ -3169,7 +3803,7 @@
       "review_required": true,
       "date_confidence": "none",
       "conditions_summary": "",
-      "fetched_at": "2026-07-21T01:58:27.889516+08:00",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
       "content_hash": "5f99efebb83787acfd20aada2060003cf49aabd7845a2d00c304f69d5d64fe05",
       "evidence": [],
       "components": [],
@@ -3201,7 +3835,7 @@
       "review_required": true,
       "date_confidence": "none",
       "conditions_summary": "活動期間：7/7、7/14、7/21、7/28 活動方式：7月每週二於OPENPOINT APP【行動隨時取】內即可享指定同品項商品買2送2優惠 活動期間：7/13-7/19 活動方式：於OPENPOINT APP【行動隨時取】內即可享指定同品項商品多品項優惠 活動商品：活動期間咖啡廣場/HIS CAFÉ指定商品最高享64折 活動期間：7/20-7/26 活動方式：於OPENPOINT APP【行動隨時取】內即可享指定同品項商品多品項優惠 活動商品：活動期間瑞穗調味乳指定商品最高享78折 活動期間內所有商品以OPENPOINT APP行動隨時取內實際販售資訊為準。",
-      "fetched_at": "2026-07-21T01:58:27.889516+08:00",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
       "content_hash": "e4e17a23dbf635e911138db421f639767a28a13be175108dc4bf87d42cd00c1e",
       "evidence": [],
       "components": [],
@@ -3235,7 +3869,7 @@
       "review_required": true,
       "date_confidence": "none",
       "conditions_summary": "",
-      "fetched_at": "2026-07-21T01:58:27.889516+08:00",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
       "content_hash": "c6511fefa7a076d0a2ae568c127fe23b78a9d236cf404103f79175aeb3825d3c",
       "evidence": [],
       "components": [],
@@ -3267,7 +3901,7 @@
       "review_required": true,
       "date_confidence": "none",
       "conditions_summary": "",
-      "fetched_at": "2026-07-21T01:58:27.889516+08:00",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
       "content_hash": "1f75351ee5fe7d99d5b24be2e5ded28e37271ea1876ebb2fb482d1a39a38a626",
       "evidence": [],
       "components": [],
@@ -3299,7 +3933,7 @@
       "review_required": true,
       "date_confidence": "none",
       "conditions_summary": "",
-      "fetched_at": "2026-07-21T01:58:27.889516+08:00",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
       "content_hash": "a9d72cfcbe85c8cbf56d8fbf67722b7f16b9f7368d748f7b50cc5d5cf8df5c54",
       "evidence": [],
       "components": [],
@@ -3331,7 +3965,7 @@
       "review_required": true,
       "date_confidence": "none",
       "conditions_summary": "",
-      "fetched_at": "2026-07-21T01:58:27.889516+08:00",
+      "fetched_at": "2026-07-22T13:14:22.505424+08:00",
       "content_hash": "60adec06279b417869d40e8b12537ccffbe1b9fbe28ab4ca248e08b5c479fc29",
       "evidence": [],
       "components": [],

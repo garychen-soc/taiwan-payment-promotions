@@ -26,6 +26,7 @@
     sold_out: { label: "已額滿", className: "is-sold" },
     partial_sold_out: { label: "部分額滿", className: "is-partial" },
     unknown_app_only: { label: "請至 App 確認", className: "is-app" },
+    unknown_source_failure: { label: "額滿來源暫時無法讀取", className: "is-app" },
     not_marked_full: { label: "官網未標示額滿", className: "is-open" },
     confirmed_available: { label: "尚有名額", className: "is-open" },
     unknown: { label: "名額待確認", className: "" }

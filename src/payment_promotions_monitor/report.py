@@ -37,7 +37,7 @@ def _refresh_lifecycle(activity: Activity, now: datetime) -> None:
 
 
 def _section(activity: Activity) -> str:
-    if activity.review_required or activity.lifecycle == "unknown":
+    if activity.review_required or activity.lifecycle == "unknown" or activity.quota_status == "unknown_source_failure":
         return "review_required"
     if activity.quota_status == "unknown_app_only":
         return "app_only_unknown"
@@ -81,14 +81,24 @@ def build_payload(
         for item in run.attempts
         if item.coverage_issue
     ]
+    coverage_gaps.extend(run.crawl_limit_pending)
     by_provider: dict[str, dict[str, Any]] = {}
     for provider in config["providers"]:
         attempts = [item for item in run.attempts if item.provider_id == provider["id"]]
         success = sum(1 for item in attempts if item.ok)
         provider_gaps = [item.coverage_issue for item in attempts if item.coverage_issue]
+        provider_gaps.extend(
+            item["issue"] for item in run.crawl_limit_pending if item["provider_id"] == provider["id"]
+        )
         discovery_roles = {"activity_listing", "mixed_listing", "taiwanpay_api_listing"}
-        has_discovery_source = any(
-            source.get("role") in discovery_roles for source in provider.get("sources", [])
+        if any(not item.ok and item.role in discovery_roles for item in attempts):
+            provider_gaps.append("source_fetch_failed")
+        activity_sources = [
+            source for source in provider.get("sources", []) if source.get("role") in discovery_roles
+        ]
+        has_discovery_source = bool(activity_sources)
+        has_complete_discovery_source = any(
+            source.get("coverage_scope", "complete") == "complete" for source in activity_sources
         )
         if run.mode == "full" and not has_discovery_source:
             provider_gaps.append("no_verified_activity_listing")
@@ -102,6 +112,18 @@ def build_payload(
                     "discovered_count": 0,
                 }
             )
+        elif run.mode == "full" and not has_complete_discovery_source:
+            provider_gaps.append("partial_public_activity_discovery")
+            coverage_gaps.append(
+                {
+                    "provider_id": provider["id"],
+                    "provider_name": provider["name"],
+                    "source_name": "官方主題活動總覽與關聯圖",
+                    "url": activity_sources[0].get("display_url", activity_sources[0].get("url", "")),
+                    "issue": "partial_public_activity_discovery",
+                    "discovered_count": sum(item.discovered_count for item in attempts if item.role in discovery_roles),
+                }
+            )
         by_provider[provider["id"]] = {
             "name": provider["name"],
             "expected": len(attempts),
@@ -113,7 +135,7 @@ def build_payload(
         }
     coverage = dict(run.coverage)
     coverage["discovery_issues"] = len(coverage_gaps)
-    if coverage_gaps:
+    if coverage_gaps and coverage["status"] == "complete":
         coverage["status"] = "partial"
     return {
         "schema_version": 1,
@@ -223,6 +245,8 @@ def render_markdown(payload: dict[str, Any]) -> str:
         "listing_zero_discovery": "列表可讀取但未發現任何詳情連結",
         "listing_reached_max_links": "發現數達擷取上限，可能仍有未遍歷項目",
         "no_verified_activity_listing": "尚無已驗證的公開活動列表，只能由已知活動與 AI 官方網域搜尋補充",
+        "partial_public_activity_discovery": "已接入官方主題總覽與活動關聯圖，但官方沒有公開的全站完整活動清單",
+        "crawl_reached_max_total_pages": "本輪已達全域擷取上限，仍有已發現的官方頁面尚未讀取",
     }
     if gaps:
         lines.extend(["", "### 活動發現覆蓋缺口", ""])

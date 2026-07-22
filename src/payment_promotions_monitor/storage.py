@@ -105,7 +105,11 @@ class Store:
                 continue
             previous = activity_from_dict(json.loads(row["payload_json"]))
             previous_rank = rank.get(previous.quota_status, 0)
-            if previous_rank and activity.quota_status in {"not_marked_full", "unknown_app_only"}:
+            if previous_rank and activity.quota_status in {
+                "not_marked_full",
+                "unknown_app_only",
+                "unknown_source_failure",
+            }:
                 activity.quota_status = previous.quota_status
                 activity.quota_evidence_complete = previous.quota_evidence_complete
             elif previous.quota_status == "unknown_app_only" and activity.quota_status == "not_marked_full":

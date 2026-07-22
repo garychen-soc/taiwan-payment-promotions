@@ -1,8 +1,11 @@
 <!-- automation-key: tw-payment-promotions-daily-publish-v1 -->
 在 `/Users/chenzhiming/Documents/codex/taiwan-payment-promotions-monitor` 執行每日更新：
 
-1. 執行 `python3 scripts/run_monitor.py --mode full --timeout 20`。
-2. 讀取 `reports/latest.json`、`reports/latest.md` 與 `config/sources.json`。
+1. 以已核准的外部網路權限執行精確命令 `python3 scripts/run_monitor.py --mode full --timeout 15`。
+2. 立即讀取 `reports/latest.json` 的 `run.coverage`：
+   - 若 `transport_status == "unavailable"`、`succeeded == 0` 或命令以 exit code 4 結束，不得更新 AI 補充、建置網站或發布舊快照。
+   - 若 `systemic_dns_failure == true`，這代表排程執行環境沒有 DNS，不代表所有官方網站同時故障。以外部網路權限重跑同一精確命令一次；仍失敗就停止並回報排程執行環境異常。
+   - 通過上述閘門後，才讀取 `reports/latest.md` 與 `config/sources.json` 並繼續。
 3. 針對 `coverage_gaps`、`review_required`、高回饋、即將開始與即將結束活動，用 AI 搜尋官方活動入口、官方最新消息／公告；只採 `official_domains` 內網址，或活動辦法明確指定的主辦銀行／合作通路官網。
 4. 更新 `data/ai_supplement.json`：
    - `headline`：一句今日重點。

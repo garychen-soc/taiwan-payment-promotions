@@ -6,6 +6,8 @@ from datetime import date, datetime
 from difflib import SequenceMatcher
 from urllib.parse import parse_qsl, urlsplit
 
+from .fetch import canonical_url
+
 
 SOLD_OUT_PATTERNS = (
     re.compile(r"(?:[（(]\s*活動額滿\s*[）)]|已(?:於.{0,24})?(?:全數|全部)?額滿|業已(?:全數|全部)?額滿)"),
@@ -35,6 +37,8 @@ WHOLE_EVENT_PATTERNS = (
 PARTIAL_PATTERNS = (
     re.compile(r"(?:\d{1,2}\s*月(?:份)?|活動[一二三四1234]|第[一二三四1234]重|加碼|指定通路|指定銀行).{0,40}(?:額滿|已達上限)"),
     re.compile(r"(?:額滿|已達上限).{0,40}(?:\d{1,2}\s*月(?:份)?|活動[一二三四1234]|第[一二三四1234]重|加碼)"),
+    re.compile(r"(?:首週|本週|第[一二三四五六七八九十\d]+週|週次).{0,40}(?:額滿|已達上限)"),
+    re.compile(r"(?:額滿|已達上限).{0,40}(?:首週|本週|第[一二三四五六七八九十\d]+週|週次)"),
 )
 
 
@@ -80,10 +84,13 @@ def _sold_out_date(sentence: str, event_year: int | None) -> str | None:
 
 def _component_from(sentence: str) -> dict[str, str]:
     month = re.search(r"(?<!\d)(\d{1,2})\s*月(?:份)?", sentence)
+    week = re.search(r"(首週|本週|第[一二三四五六七八九十\d]+週)", sentence)
     component = re.search(r"(活動[一二三四1234]|第[一二三四1234]重|[^，。；]{0,16}加碼)", sentence)
     result = {"status": "sold_out", "evidence": sentence[:300]}
     if month:
         result["period"] = f"{int(month.group(1)):02d}月"
+    elif week:
+        result["period"] = week.group(1)
     if component:
         result["component"] = component.group(1).strip()
     return result
@@ -190,7 +197,11 @@ def match_announcement(
         return True, "same_page", 1.0
     activity_ids = _event_identifiers(activity_url, activity_text)
     announcement_ids = _event_identifiers(announcement_url, announcement_text)
-    if activity_url and activity_url in announcement_text:
+    announcement_urls = {
+        match.rstrip(".,);]")
+        for match in re.findall(r"https?://[^\s<>'\"]+", announcement_text)
+    }
+    if activity_url and any(canonical_url(url) == canonical_url(activity_url) for url in announcement_urls):
         return True, "event_id_or_url", 1.0
     if activity_ids & announcement_ids:
         return True, "event_id_or_url", 1.0

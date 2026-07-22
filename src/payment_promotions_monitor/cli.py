@@ -95,6 +95,11 @@ def main(argv: list[str] | None = None) -> int:
             ensure_ascii=False,
         )
     )
+    # A run where every official request failed must not look successful to a
+    # scheduler, otherwise a stale database can be rebuilt and published as if
+    # it had just been refreshed.
+    if payload["run"]["coverage"]["transport_status"] == "unavailable":
+        return 4
     return 0
 
 

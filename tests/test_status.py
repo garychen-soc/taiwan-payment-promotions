@@ -52,6 +52,11 @@ class QuotaStatusTests(unittest.TestCase):
         self.assertEqual(result.status, "partial_sold_out")
         self.assertEqual(result.components[0]["period"], "09月")
 
+    def test_weekly_quota_is_partial_not_whole_campaign(self) -> None:
+        result = analyze_quota("(首週回饋已額滿)，次週活動仍將繼續。")
+        self.assertEqual(result.status, "partial_sold_out")
+        self.assertEqual(result.components[0]["period"], "首週")
+
     def test_app_only_is_unknown(self) -> None:
         result = analyze_quota("回饋額滿資訊僅公告於悠遊付App，本網站不另行公告。")
         self.assertEqual(result.status, "unknown_app_only")
@@ -83,6 +88,29 @@ class AnnouncementMatchingTests(unittest.TestCase):
         self.assertTrue(matched)
         self.assertEqual(method, "event_id_or_url")
         self.assertEqual(score, 1.0)
+
+    def test_event_id_prefix_does_not_match_longer_id(self) -> None:
+        matched, _, _ = match_announcement(
+            activity_url="https://example.com/event?EventId=8",
+            activity_title="活動八",
+            activity_text="",
+            announcement_url="https://example.com/news/1",
+            announcement_title="另一個活動公告",
+            announcement_text="official_link: https://example.com/event?EventId=82 指定活動已額滿",
+        )
+        self.assertFalse(matched)
+
+    def test_exact_link_without_event_id_matches(self) -> None:
+        matched, method, _ = match_announcement(
+            activity_url="https://example.com/events/summer?b=2&a=1",
+            activity_title="夏日活動",
+            activity_text="",
+            announcement_url="https://example.com/news/1",
+            announcement_title="公告",
+            announcement_text="official_link: https://example.com/events/summer?a=1&b=2 回饋已額滿",
+        )
+        self.assertTrue(matched)
+        self.assertEqual(method, "event_id_or_url")
 
     def test_normalized_title_with_matching_period(self) -> None:
         matched, method, _ = match_announcement(

@@ -36,6 +36,7 @@ QUOTA_STATUSES = {
     "sold_out",
     "confirmed_available",
     "unknown_app_only",
+    "unknown_source_failure",
 }
 CONDITION_LABELS = {
     "location": "適用地點",

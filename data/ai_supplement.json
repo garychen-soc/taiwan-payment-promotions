@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-22T08:42:06+08:00",
-  "headline": "7/23 OK 超商 10% 即將開跑，NET 隨機最高 100% 與新戶首刷 100% 仍是今日焦點",
+  "generated_at": "2026-07-22T14:17:19+08:00",
+  "headline": "最高 100% 回饋仍吸睛，7/23、7/24 兩檔 10% 活動接力；PX Pay 已可分辨額滿銀行與即時剩餘名額",
   "highlights": [
     {
       "kind": "high_return",
@@ -21,6 +21,14 @@
     },
     {
       "kind": "high_return",
+      "provider_id": "icashpay",
+      "provider_name": "icash Pay",
+      "title": "icash2.0 公共運輸回饋最高 37%",
+      "summary": "uniopen 聯名卡完成首次自動加值後，搭台北捷運享 7% OPENPOINT；同頁另列 TPASS2.0+ 登錄回饋最高 37%，各方案有回饋上限。",
+      "url": "https://www.icashpay.com.tw/advertMessage/view/id/2407"
+    },
+    {
+      "kind": "high_return",
       "provider_id": "ipassmoney",
       "provider_name": "一卡通 MONEY",
       "title": "里仁帳戶餘額付款最高 20% 回饋",
@@ -29,11 +37,11 @@
     },
     {
       "kind": "high_return",
-      "provider_id": "icashpay",
-      "provider_name": "icash Pay",
-      "title": "icash2.0 公共運輸回饋最高 37%",
-      "summary": "uniopen 聯名卡完成首次自動加值後，搭台北捷運享 7% OPENPOINT；同頁另列 TPASS2.0+ 登錄回饋最高 37%，各方案有回饋上限。",
-      "url": "https://www.icashpay.com.tw/advertMessage/view/id/2407"
+      "provider_id": "fullpay",
+      "provider_name": "全支付／PX Pay Plus",
+      "title": "AsiaYo 楓葉賞單筆滿額最高 14% 回饋",
+      "summary": "官方活動標示最高 14% 回饋；需先完成活動登錄，主活動單筆滿 3,000 元起享回饋，另依指定付款方式加碼，各波次與帳號皆有上限。",
+      "url": "https://marketing.pxpayplus.com/pxplus_marketing_page/activity_content_page?EventId=103"
     },
     {
       "kind": "upcoming",
@@ -44,20 +52,20 @@
       "url": "https://www.taiwanpay.com.tw/fisc-tpay/news/event/01KXFV9GFDCS1EGK6MNEPD06FN"
     },
     {
-      "kind": "expiring",
-      "provider_id": "taiwanpay",
-      "provider_name": "台灣 Pay",
-      "title": "樂華夜市消費 10% 回饋將於 7/31 結束",
-      "summary": "官方活動快照顯示此活動至 7/31；本輪監測連線失敗，參加前請再確認官方活動頁的適用店家與回饋名額。",
-      "url": "https://www.taiwanpay.com.tw/fisc-tpay/news/event/01KFZ9JVYJGQ9N9A1JRW69SF15"
+      "kind": "upcoming",
+      "provider_id": "fullpay",
+      "provider_name": "全支付／PX Pay Plus",
+      "title": "7/24 起全聯高鐵快閃店滿 150 元享 10%",
+      "summary": "2026/7/24 至 10/23，於全聯高鐵快閃店掃全支付 QR Code 完成活動登錄，消費滿 150 元享 10% 回饋；名額與細節以官方活動頁為準。",
+      "url": "https://marketing.pxpayplus.com/pxplus_marketing_page/activity_content_page?EventId=109"
     },
     {
       "kind": "sold_out",
-      "provider_id": "icashpay",
-      "provider_name": "icash Pay",
-      "title": "綁 uniopen 聯名卡全通路滿 199 元 4% 已額滿",
-      "summary": "官方頁明確公告 2026 年 7 月全通路單筆滿 199 元享 4% 的贈點，已於 7/8 17:00 額滿；其他活動內容仍須依官網條件判斷。",
-      "url": "https://www.icashpay.com.tw/advertMessage/view/id/2371"
+      "provider_id": "pxpay",
+      "provider_name": "PX Pay",
+      "title": "指定銀行週末滿額福利點：5 家已額滿、7 家仍有名額",
+      "summary": "全聯官方即時 API 顯示國泰、玉山、中信、富邦與凱基本期已額滿，另 7 家銀行仍有公開剩餘份數；各銀行狀態可能隨時變動。",
+      "url": "https://cardpoint.pxmartevent.com.tw/event/GetEventList?event_type=1&period=2026-06-26~2026-08-06&pay_type=%5B%221%22%5D"
     }
   ],
   "supplemental_activities": [

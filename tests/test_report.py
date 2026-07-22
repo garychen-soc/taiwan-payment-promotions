@@ -5,10 +5,134 @@ from datetime import datetime
 from zoneinfo import ZoneInfo
 
 from payment_promotions_monitor.models import Activity, RunResult, SourceAttempt
-from payment_promotions_monitor.report import build_payload
+from payment_promotions_monitor.report import build_payload, render_markdown
 
 
 class ReportTests(unittest.TestCase):
+    def test_registered_sources_are_separate_from_extended_checks(self) -> None:
+        now = datetime(2026, 7, 22, 10, 0, tzinfo=ZoneInfo("Asia/Taipei"))
+        attempts = [
+            SourceAttempt(
+                "fullpay",
+                "全支付",
+                "官方活動入口",
+                "activity_listing",
+                "https://example.com/events",
+                True,
+                now.isoformat(),
+            ),
+            SourceAttempt(
+                "fullpay",
+                "全支付",
+                "活動詳情",
+                "activity_detail",
+                "https://example.com/event/1",
+                True,
+                now.isoformat(),
+            ),
+            SourceAttempt(
+                "fullpay",
+                "全支付",
+                "公開額滿狀態",
+                "status_page",
+                "https://example.com/event/1/status",
+                False,
+                now.isoformat(),
+                error="timeout",
+            ),
+            SourceAttempt(
+                "fullpay",
+                "全支付",
+                "指定銀行即時名額",
+                "quota_listing_detail",
+                "https://example.com/quota",
+                True,
+                now.isoformat(),
+            ),
+            SourceAttempt(
+                "fullpay",
+                "全支付",
+                "EventId 1",
+                "activity_probe",
+                "https://example.com/event/1",
+                True,
+                now.isoformat(),
+            ),
+            SourceAttempt(
+                "fullpay",
+                "全支付",
+                "EventId 2",
+                "activity_probe",
+                "https://example.com/event/2",
+                True,
+                now.isoformat(),
+            ),
+        ]
+        run = RunResult(
+            "r",
+            "full",
+            now.isoformat(),
+            now.isoformat(),
+            [],
+            attempts,
+            discovery_scan_summary={"fullpay": {"complete": True}},
+        )
+        payload = build_payload(
+            run,
+            [],
+            now,
+            {
+                "timezone": "Asia/Taipei",
+                "providers": [
+                    {
+                        "id": "fullpay",
+                        "name": "全支付",
+                        "public_status_scope": "partial",
+                        "sources": [
+                            {
+                                "name": "官方活動入口",
+                                "role": "activity_listing",
+                                "url": "https://example.com/events",
+                            },
+                            {
+                                "name": "官方活動編號探索",
+                                "role": "activity_listing",
+                                "adapter": "fullpay_id_scan",
+                                "coverage_scope": "partial",
+                            },
+                        ],
+                    }
+                ],
+            },
+        )
+
+        coverage = payload["run"]["coverage"]
+        self.assertEqual(coverage["expected"], 6)  # legacy request-level counter
+        self.assertEqual(
+            coverage["registered_sources"],
+            {
+                "expected": 2,
+                "succeeded": 2,
+                "failed": 0,
+                "rate": 1.0,
+                "status": "complete",
+            },
+        )
+        extended = coverage["extended_checks"]
+        self.assertEqual((extended["succeeded"], extended["expected"]), (4, 5))
+        self.assertEqual(extended["breakdown"]["detail"]["expected"], 1)
+        self.assertEqual(extended["breakdown"]["status"]["failed"], 1)
+        self.assertEqual(extended["breakdown"]["status"]["expected"], 2)
+        self.assertEqual(extended["breakdown"]["numeric_probe"]["expected"], 2)
+        self.assertEqual(
+            payload["coverage_by_provider"]["fullpay"]["public_status_scope"],
+            "partial",
+        )
+        markdown = render_markdown(payload)
+        self.assertIn("官方入口成功：2/2", markdown)
+        self.assertIn("延伸檢查成功：4/5", markdown)
+        self.assertIn("活動編號探索 2/2", markdown)
+
     def test_all_failed_dns_run_is_unavailable_not_partial(self) -> None:
         now = datetime(2026, 7, 22, 10, 0, tzinfo=ZoneInfo("Asia/Taipei"))
         attempts = [

@@ -60,7 +60,14 @@ CREATE TABLE IF NOT EXISTS source_attempts (
     final_url TEXT,
     error TEXT,
     fetched_at TEXT NOT NULL,
-    discovered_count INTEGER NOT NULL
+    discovered_count INTEGER NOT NULL,
+    coverage_issue TEXT
+);
+CREATE TABLE IF NOT EXISTS discovery_state (
+    provider_id TEXT PRIMARY KEY,
+    highest_valid_event_id INTEGER NOT NULL,
+    scan_frontier_event_id INTEGER NOT NULL DEFAULT 0,
+    updated_at TEXT NOT NULL
 );
 """
 
@@ -72,6 +79,33 @@ class Store:
         self.connection = sqlite3.connect(path)
         self.connection.row_factory = sqlite3.Row
         self.connection.executescript(SCHEMA)
+        # Explicitly begin before the first ALTER so schema changes and their
+        # data backfill commit or roll back as one migration.  Relying on the
+        # connection context alone would not start a transaction until the
+        # UPDATE, leaving ALTER TABLE committed separately.
+        with self.connection:
+            self.connection.execute("BEGIN")
+            self._ensure_column("source_attempts", "coverage_issue", "TEXT")
+            self._ensure_column(
+                "discovery_state",
+                "scan_frontier_event_id",
+                "INTEGER NOT NULL DEFAULT 0",
+            )
+            self.connection.execute(
+                """
+                UPDATE discovery_state
+                SET scan_frontier_event_id = highest_valid_event_id
+                WHERE scan_frontier_event_id = 0 AND highest_valid_event_id > 0
+                """
+            )
+
+    def _ensure_column(self, table: str, column: str, definition: str) -> None:
+        columns = {
+            str(row["name"])
+            for row in self.connection.execute(f"PRAGMA table_info({table})").fetchall()
+        }
+        if column not in columns:
+            self.connection.execute(f"ALTER TABLE {table} ADD COLUMN {column} {definition}")
 
     def close(self) -> None:
         self.connection.close()
@@ -105,6 +139,12 @@ class Store:
                 continue
             previous = activity_from_dict(json.loads(row["payload_json"]))
             previous_rank = rank.get(previous.quota_status, 0)
+            corrected_pxpay_shared_page = (
+                activity.provider_id == "pxpay"
+                and activity.url.startswith(
+                    "https://www.pxmart.com.tw/campaign/pxpay-card/"
+                )
+            )
             if previous_rank and activity.quota_status in {
                 "not_marked_full",
                 "unknown_app_only",
@@ -112,22 +152,32 @@ class Store:
             }:
                 activity.quota_status = previous.quota_status
                 activity.quota_evidence_complete = previous.quota_evidence_complete
-            elif previous.quota_status == "unknown_app_only" and activity.quota_status == "not_marked_full":
+            elif (
+                previous.quota_status == "unknown_app_only"
+                and activity.quota_status == "not_marked_full"
+                and not corrected_pxpay_shared_page
+            ):
                 activity.quota_status = "unknown_app_only"
                 activity.quota_evidence_complete = False
 
-            evidence_keys = {
-                (item.source_url, item.excerpt)
-                for item in activity.evidence
-            }
-            for item in previous.evidence:
-                key = (item.source_url, item.excerpt)
-                if key not in evidence_keys:
-                    activity.evidence.insert(0, item)
-                    evidence_keys.add(key)
-            for component in previous.components:
-                if component not in activity.components:
-                    activity.components.insert(0, component)
+            preserve_previous_evidence = not (
+                corrected_pxpay_shared_page
+                and previous.quota_status == "unknown_app_only"
+                and activity.quota_status == "not_marked_full"
+            )
+            if preserve_previous_evidence:
+                evidence_keys = {
+                    (item.source_url, item.excerpt)
+                    for item in activity.evidence
+                }
+                for item in previous.evidence:
+                    key = (item.source_url, item.excerpt)
+                    if key not in evidence_keys:
+                        activity.evidence.insert(0, item)
+                        evidence_keys.add(key)
+                for component in previous.components:
+                    if component not in activity.components:
+                        activity.components.insert(0, component)
 
     def upsert_activity(self, activity: Activity) -> None:
         activity_id = self.activity_id(activity)
@@ -208,8 +258,8 @@ class Store:
                 """
                 INSERT INTO source_attempts (
                     run_id, provider_id, provider_name, source_name, role, url, ok,
-                    status_code, final_url, error, fetched_at, discovered_count
-                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                    status_code, final_url, error, fetched_at, discovered_count, coverage_issue
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                 """,
                 [
                     (
@@ -225,10 +275,46 @@ class Store:
                         item.error,
                         item.fetched_at,
                         item.discovered_count,
+                        item.coverage_issue,
                     )
                     for item in run.attempts
                 ],
             )
+            self.connection.executemany(
+                """
+                INSERT INTO discovery_state (
+                    provider_id, highest_valid_event_id, scan_frontier_event_id, updated_at
+                ) VALUES (?, ?, ?, ?)
+                ON CONFLICT(provider_id) DO UPDATE SET
+                    highest_valid_event_id=excluded.highest_valid_event_id,
+                    scan_frontier_event_id=excluded.scan_frontier_event_id,
+                    updated_at=excluded.updated_at
+                """,
+                [
+                    (
+                        provider_id,
+                        int(values["highest_valid_event_id"]),
+                        int(values["scan_frontier_event_id"]),
+                        run.finished_at,
+                    )
+                    for provider_id, values in run.discovery_state_updates.items()
+                ],
+            )
+
+    def load_discovery_state(self) -> dict[str, dict[str, int]]:
+        rows = self.connection.execute(
+            """
+            SELECT provider_id, highest_valid_event_id, scan_frontier_event_id
+            FROM discovery_state
+            """
+        ).fetchall()
+        return {
+            str(row["provider_id"]): {
+                "highest_valid_event_id": int(row["highest_valid_event_id"]),
+                "scan_frontier_event_id": int(row["scan_frontier_event_id"]),
+            }
+            for row in rows
+        }
 
     def load_current(self) -> list[Activity]:
         rows = self.connection.execute("SELECT payload_json FROM activities ORDER BY provider_name, title").fetchall()

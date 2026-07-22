@@ -17,6 +17,10 @@ DATE_LABELS = (
     "activity_start_time",
 )
 RANGE_SEP = r"(?:至|到|起至|～|~|—|–|-|－)"
+DATE_DECORATION = (
+    r"(?:\s*[（(][^）)\n]{0,12}[）)])?"
+    r"(?:\s+\d{1,2}:\d{2}(?::\d{2})?)?"
+)
 WESTERN_TOKEN = r"(?P<year>20\d{2})\s*(?:年|[./-])\s*(?P<month>\d{1,2})\s*(?:月|[./-])\s*(?P<day>\d{1,2})\s*日?"
 ROC_TOKEN = r"(?:民國\s*)?(?P<roc_year>1\d{2})\s*(?:年|[./-])\s*(?P<roc_month>\d{1,2})\s*(?:月|[./-])\s*(?P<roc_day>\d{1,2})\s*日?"
 
@@ -52,10 +56,21 @@ def _from_match(match: re.Match[str], prefix: str = "") -> date | None:
 def _candidate_windows(text: str) -> list[tuple[str, str]]:
     compact = re.sub(r"[\t\r]+", " ", text)
     windows: list[tuple[str, str]] = []
+    label_positions: list[int] = []
     for label in DATE_LABELS:
         for match in re.finditer(re.escape(label), compact):
-            window = compact[match.start() : match.start() + 260].split("\n", 1)[0]
-            windows.append(("high", window))
+            label_positions.append(match.start())
+    # Preserve document order rather than DATE_LABELS declaration order. This
+    # lets a page's primary「活動時間」win over a later generic card-benefit
+    #「活動期間」section.
+    for start in sorted(set(label_positions)):
+        # Official pages frequently render a heading such as「一、活動時間」
+        # and place the actual range in the next block. Keep a small number of
+        # following lines so the label remains associated with its date,
+        # without pulling an entire page of unrelated sub-promotions in.
+        raw_window = compact[start : start + 520]
+        window = " ".join(raw_window.split("\n")[:3])[:420]
+        windows.append(("high", window))
     windows.append(("low", compact[:20_000]))
     return windows
 
@@ -63,7 +78,7 @@ def _candidate_windows(text: str) -> list[tuple[str, str]]:
 def _western_range(window: str) -> tuple[date | None, date | None] | None:
     full = re.compile(
         rf"(?P<sy>20\d{{2}})\s*(?:年|[./-])\s*(?P<sm>\d{{1,2}})\s*(?:月|[./-])\s*(?P<sd>\d{{1,2}})\s*日?"
-        rf"\s*{RANGE_SEP}\s*"
+        rf"{DATE_DECORATION}\s*{RANGE_SEP}\s*"
         rf"(?:(?P<ey>20\d{{2}})\s*(?:年|[./-])\s*)?(?P<em>\d{{1,2}})\s*(?:月|[./-])\s*(?P<ed>\d{{1,2}})\s*日?"
     )
     match = full.search(window)
@@ -80,7 +95,7 @@ def _western_range(window: str) -> tuple[date | None, date | None] | None:
 def _roc_range(window: str) -> tuple[date | None, date | None] | None:
     pattern = re.compile(
         rf"(?:民國\s*)?(?P<sy>1\d{{2}})\s*(?:年|[./-])\s*(?P<sm>\d{{1,2}})\s*(?:月|[./-])\s*(?P<sd>\d{{1,2}})\s*日?"
-        rf"\s*{RANGE_SEP}\s*"
+        rf"{DATE_DECORATION}\s*{RANGE_SEP}\s*"
         rf"(?:民國\s*)?(?:(?P<ey>1\d{{2}})\s*(?:年|[./-])\s*)?(?P<em>\d{{1,2}})\s*(?:月|[./-])\s*(?P<ed>\d{{1,2}})\s*日?"
     )
     match = pattern.search(window)
@@ -126,10 +141,15 @@ def parse_date_range(text: str) -> DateRange:
         end = _single_date(json_end.group(1))
         if start and end:
             return DateRange(start, end, "high", f"{json_start.group(0)}; {json_end.group(0)}")
-    for confidence, window in _candidate_windows(text):
+    windows = _candidate_windows(text)
+    # Prefer an explicit range near any activity-period label over a lone
+    # deadline mentioned earlier. Official pages often put a completion date
+    # before the actual campaign range in the same paragraph.
+    for confidence, window in windows:
         parsed = _western_range(window) or _roc_range(window)
         if parsed and parsed[0] and parsed[1]:
             return DateRange(parsed[0], parsed[1], confidence, window[:260])
+    for confidence, window in windows:
         if confidence == "high":
             single = _single_date(window)
             if single:

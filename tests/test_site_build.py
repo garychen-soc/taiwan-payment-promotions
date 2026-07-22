@@ -6,7 +6,7 @@ import unittest
 from pathlib import Path
 from urllib.parse import parse_qs, urlsplit
 
-from scripts.build_site import _google_calendar_url, build
+from scripts.build_site import PUBLIC_STATUS_SCOPES, _google_calendar_url, _public_status_scope, build
 
 
 class SiteBuildTests(unittest.TestCase):
@@ -36,10 +36,35 @@ class SiteBuildTests(unittest.TestCase):
         report = {
             "generated_at": "2026-07-21T08:00:00+08:00",
             "timezone": "Asia/Taipei",
-            "run": {"coverage": {"expected": 2, "succeeded": 2}},
+            "run": {
+                "coverage": {
+                    "expected": 2,
+                    "succeeded": 2,
+                    "registered_sources": {"expected": 1, "succeeded": 1, "failed": 0},
+                    "extended_checks": {"expected": 1, "succeeded": 1, "failed": 0},
+                }
+            },
             "summary": {"included_non_expired": 1},
             "source_failures": [],
-            "coverage_gaps": [],
+            "coverage_gaps": [
+                {
+                    "provider_id": "taiwanpay",
+                    "provider_name": "台灣 Pay",
+                    "source_name": "活動列表",
+                    "url": activity_url,
+                    "issue": "listing_zero_discovery",
+                    "discovered_count": 0,
+                }
+            ],
+            "coverage_by_provider": {
+                "taiwanpay": {
+                    "discovery_status": "limited",
+                    "public_status_scope": "partial",
+                    "public_status_coverage": "文字即使改寫，也不應影響結構化狀態。",
+                    "registered_sources": {"expected": 1, "succeeded": 1, "failed": 0},
+                    "extended_checks": {"expected": 1, "succeeded": 1, "failed": 0},
+                }
+            },
             "sections": {
                 "active_public": [base_item, ended_item],
                 "sold_out": [],
@@ -89,6 +114,22 @@ class SiteBuildTests(unittest.TestCase):
             built_html = (output_dir / "index.html").read_text(encoding="utf-8")
             self.assertNotIn("__ASSET_VERSION__", built_html)
             self.assertIn("./assets/app.js?v=", built_html)
+            repository_root = Path(__file__).resolve().parents[1]
+            self.assertEqual(
+                built_html,
+                (repository_root / "docs" / "index.html").read_text(encoding="utf-8"),
+            )
+            built_assets = {
+                path.name: path.read_bytes()
+                for path in (output_dir / "assets").iterdir()
+                if path.is_file()
+            }
+            committed_assets = {
+                path.name: path.read_bytes()
+                for path in (repository_root / "docs" / "assets").iterdir()
+                if path.is_file()
+            }
+            self.assertEqual(built_assets, committed_assets)
             self.assertEqual(payload["headline"], "今天的 AI 重點")
             self.assertEqual(payload["analysis_method"], "local_rules_and_codex_review")
             self.assertEqual(len(payload["activities"]), 1)
@@ -96,11 +137,44 @@ class SiteBuildTests(unittest.TestCase):
             self.assertEqual(payload["activities"][0]["editorial_summary"], "回饋高，但仍須留意個人上限。")
             self.assertTrue(payload["activities"][0]["insights"]["is_high_return"])
             self.assertEqual(payload["activities"][0]["conditions_display"], ["指定通路付款享 20% 現金回饋。"])
+            taiwanpay_coverage = next(
+                item for item in payload["provider_coverage"] if item["provider_id"] == "taiwanpay"
+            )
+            self.assertEqual(taiwanpay_coverage["activity_count"], 1)
+            self.assertEqual(taiwanpay_coverage["public_status_coverage"], "partial")
+            self.assertEqual(taiwanpay_coverage["official_sources"]["expected"], 1)
+            self.assertEqual(taiwanpay_coverage["extended_checks"]["expected"], 1)
+            self.assertTrue(taiwanpay_coverage["coverage_note"])
+            self.assertEqual(payload["source_health"]["review_label"], "1 個官網列表待補強")
+            self.assertNotIn("AI", payload["source_health"]["review_label"])
             calendar_url = payload["activities"][0]["google_calendar_url"]
             calendar_query = parse_qs(urlsplit(calendar_url).query)
             self.assertEqual(calendar_query["dates"], ["20260701/20260901"])
             self.assertIn(activity_url, calendar_query["details"][0])
             self.assertIn("calendar-link", built_html)
+
+    def test_public_status_scope_is_structured_not_inferred_from_copy(self) -> None:
+        provider = {
+            "public_status_scope": "public",
+            "public_status_coverage": "部分文字僅是說明，不應改變 enum",
+        }
+        self.assertEqual(_public_status_scope(provider, {}), "public")
+        self.assertEqual(
+            _public_status_scope(provider, {"public_status_scope": "partial"}),
+            "partial",
+        )
+        self.assertEqual(
+            _public_status_scope({"public_status_scope": "unexpected"}, {}),
+            "unknown",
+        )
+
+    def test_source_registry_declares_public_status_scope_for_every_provider(self) -> None:
+        repository_root = Path(__file__).resolve().parents[1]
+        config = json.loads((repository_root / "config" / "sources.json").read_text(encoding="utf-8"))
+        self.assertTrue(config["providers"])
+        for provider in config["providers"]:
+            with self.subTest(provider=provider["id"]):
+                self.assertIn(provider.get("public_status_scope"), PUBLIC_STATUS_SCOPES - {"unknown"})
 
     def test_google_calendar_url_encodes_all_day_event_and_official_details(self) -> None:
         activity = {

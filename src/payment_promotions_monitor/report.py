@@ -25,6 +25,23 @@ LIFECYCLE_LABELS = {
     "cancelled": "已取消",
     "unknown": "日期待確認",
 }
+STATUS_MODE_SOURCE_ROLES = {
+    "announcement_listing",
+    "announcement_detail",
+    "mixed_listing",
+    "mixed_detail",
+    "status_page",
+    "taiwanpay_api_listing",
+}
+STATUS_MODE_SOURCE_ADAPTERS = {"famipay_listing"}
+EXTENDED_CHECK_ROLES = {
+    "activity_probe": "numeric_probe",
+    "status_page": "status",
+    "quota_listing_detail": "status",
+    "activity_detail": "detail",
+    "announcement_detail": "detail",
+    "mixed_detail": "detail",
+}
 
 
 def _refresh_lifecycle(activity: Activity, now: datetime) -> None:
@@ -46,6 +63,110 @@ def _section(activity: Activity) -> str:
     if activity.lifecycle == "upcoming":
         return "upcoming"
     return "active_public"
+
+
+def _metric(*, expected: int, succeeded: int) -> dict[str, Any]:
+    failed = max(0, expected - succeeded)
+    return {
+        "expected": expected,
+        "succeeded": succeeded,
+        "failed": failed,
+        "rate": round(succeeded / expected, 4) if expected else 1.0,
+        "status": (
+            "unavailable"
+            if expected and succeeded == 0
+            else ("complete" if failed == 0 else "partial")
+        ),
+    }
+
+
+def _request_health(
+    run: RunResult,
+    providers: list[dict[str, Any]],
+) -> dict[str, Any]:
+    """Separate logical registered sources from follow-up HTTP checks.
+
+    The legacy coverage counters intentionally remain request-based.  This
+    structured view prevents hundreds of detail/status/ID probes from being
+    presented to people as hundreds of independently registered sources.
+    """
+
+    provider_ids = {str(provider.get("id", "")) for provider in providers}
+    relevant_indexes = {
+        index
+        for index, attempt in enumerate(run.attempts)
+        if attempt.provider_id in provider_ids
+    }
+    registered_expected = 0
+    registered_succeeded = 0
+    registered_attempt_indexes: set[int] = set()
+
+    for provider in providers:
+        provider_id = str(provider.get("id", ""))
+        for source in provider.get("sources", []):
+            if not isinstance(source, dict):
+                continue
+            role = str(source.get("role", ""))
+            if (
+                run.mode == "status"
+                and role not in STATUS_MODE_SOURCE_ROLES
+                and source.get("adapter") not in STATUS_MODE_SOURCE_ADAPTERS
+            ):
+                continue
+            registered_expected += 1
+
+            if source.get("adapter") == "fullpay_id_scan":
+                scan = run.discovery_scan_summary.get(provider_id, {})
+                registered_succeeded += int(bool(scan.get("complete")))
+                continue
+
+            source_name = str(source.get("name", ""))
+            source_url = str(source.get("url", ""))
+            match_index: int | None = None
+            for index in sorted(relevant_indexes - registered_attempt_indexes):
+                attempt = run.attempts[index]
+                if attempt.provider_id != provider_id or attempt.role != role:
+                    continue
+                if source_name and attempt.source_name != source_name:
+                    continue
+                if not source_name and source_url and attempt.url != source_url:
+                    continue
+                match_index = index
+                break
+            if match_index is None:
+                continue
+            registered_attempt_indexes.add(match_index)
+            registered_succeeded += int(run.attempts[match_index].ok)
+
+    extended_attempts = [
+        run.attempts[index]
+        for index in sorted(relevant_indexes - registered_attempt_indexes)
+    ]
+    extended_succeeded = sum(attempt.ok for attempt in extended_attempts)
+    breakdown: dict[str, dict[str, Any]] = {}
+    for group in ("detail", "status", "numeric_probe", "other"):
+        values = [
+            attempt
+            for attempt in extended_attempts
+            if EXTENDED_CHECK_ROLES.get(attempt.role, "other") == group
+        ]
+        breakdown[group] = _metric(
+            expected=len(values),
+            succeeded=sum(attempt.ok for attempt in values),
+        )
+
+    extended = _metric(
+        expected=len(extended_attempts),
+        succeeded=extended_succeeded,
+    )
+    extended["breakdown"] = breakdown
+    return {
+        "registered_sources": _metric(
+            expected=registered_expected,
+            succeeded=registered_succeeded,
+        ),
+        "extended_checks": extended,
+    }
 
 
 def build_payload(
@@ -90,7 +211,12 @@ def build_payload(
         provider_gaps.extend(
             item["issue"] for item in run.crawl_limit_pending if item["provider_id"] == provider["id"]
         )
-        discovery_roles = {"activity_listing", "mixed_listing", "taiwanpay_api_listing"}
+        discovery_roles = {
+            "activity_listing",
+            "activity_probe",
+            "mixed_listing",
+            "taiwanpay_api_listing",
+        }
         if any(not item.ok and item.role in discovery_roles for item in attempts):
             provider_gaps.append("source_fetch_failed")
         activity_sources = [
@@ -124,16 +250,21 @@ def build_payload(
                     "discovered_count": sum(item.discovered_count for item in attempts if item.role in discovery_roles),
                 }
             )
+        provider_health = _request_health(run, [provider])
         by_provider[provider["id"]] = {
             "name": provider["name"],
+            # Legacy request-level counters remain for existing consumers.
             "expected": len(attempts),
             "succeeded": success,
             "failed": len(attempts) - success,
+            **provider_health,
             "discovery_status": "limited" if provider_gaps else "complete",
             "discovery_gaps": provider_gaps,
             "public_status_coverage": provider.get("public_status_coverage", "unknown"),
+            "public_status_scope": provider.get("public_status_scope", "unknown"),
         }
     coverage = dict(run.coverage)
+    coverage.update(_request_health(run, config["providers"]))
     coverage["discovery_issues"] = len(coverage_gaps)
     if coverage_gaps and coverage["status"] == "complete":
         coverage["status"] = "partial"
@@ -147,6 +278,7 @@ def build_payload(
             "started_at": run.started_at,
             "finished_at": run.finished_at,
             "coverage": coverage,
+            "discovery_scans": run.discovery_scan_summary,
         },
         "summary": {
             "included_non_expired": len(included),
@@ -193,17 +325,60 @@ def render_markdown(payload: dict[str, Any]) -> str:
     generated = payload["generated_at"]
     coverage = payload["run"]["coverage"]
     summary = payload["summary"]
+    registered = coverage.get("registered_sources")
+    extended = coverage.get("extended_checks")
     lines = [
         "# 台灣行動／電子支付優惠監測",
         "",
         f"更新時間：{generated}",
-        f"本輪網址擷取：{coverage['succeeded']}/{coverage['expected']}（{coverage['rate']:.0%}，{coverage.get('transport_status', coverage['status'])}）",
-        f"活動發現覆蓋：{coverage['status']}（{coverage.get('discovery_issues', 0)} 個待補強缺口）",
-        f"未過期活動：{summary['included_non_expired']}；已排除過期：{summary['expired_excluded']}",
-        "",
-        "> 「公開官網未見額滿公告」只代表本輪沒有找到明確額滿證據，不保證仍有名額。",
-        "",
     ]
+    if isinstance(registered, dict) and isinstance(extended, dict):
+        lines.append(
+            f"官方入口成功：{registered.get('succeeded', 0)}/{registered.get('expected', 0)}"
+        )
+        lines.append(
+            f"延伸檢查成功：{extended.get('succeeded', 0)}/{extended.get('expected', 0)}"
+        )
+        breakdown = extended.get("breakdown", {})
+        breakdown_labels = (
+            ("detail", "活動／公告詳情"),
+            ("status", "額滿狀態"),
+            ("numeric_probe", "活動編號探索"),
+            ("other", "其他延伸檢查"),
+        )
+        details = []
+        for key, label in breakdown_labels:
+            value = breakdown.get(key, {}) if isinstance(breakdown, dict) else {}
+            if value.get("expected", 0):
+                details.append(f"{label} {value.get('succeeded', 0)}/{value.get('expected', 0)}")
+        if details:
+            lines.append(f"延伸檢查明細：{'；'.join(details)}")
+    else:
+        lines.append(
+            f"本輪網址擷取：{coverage['succeeded']}/{coverage['expected']}（{coverage['rate']:.0%}，{coverage.get('transport_status', coverage['status'])}）"
+        )
+    lines.extend(
+        [
+            f"活動發現覆蓋：{coverage['status']}（{coverage.get('discovery_issues', 0)} 個待補強缺口）",
+            f"未過期活動：{summary['included_non_expired']}；已排除過期：{summary['expired_excluded']}",
+            "",
+            "> 「公開官網未見額滿公告」只代表本輪沒有找到明確額滿證據，不保證仍有名額。",
+            "",
+        ]
+    )
+    scans = payload.get("run", {}).get("discovery_scans", {})
+    if scans:
+        lines.extend(["## 官方活動編號探索", ""])
+        for provider_id, scan in scans.items():
+            state = "完整" if scan.get("complete") else "未完整，水位未推進"
+            lines.append(
+                f"- {provider_id}：EventId {scan.get('scan_start')}～{scan.get('scan_end')}，"
+                f"已探測 {scan.get('probed_count')} 筆、有效 {scan.get('valid_count')} 筆、"
+                f"空號 {scan.get('empty_count')} 筆、失敗 {scan.get('failure_count')} 筆（{state}）；"
+                f"最高有效 EventId {scan.get('highest_valid_event_id')}，"
+                f"完整探索前緣 {scan.get('scan_frontier_event_id')}"
+            )
+        lines.append("")
     lines.extend(["## 本輪狀態變化", ""])
     if not payload.get("changes"):
         lines.extend(["- 沒有偵測到既有活動的額滿狀態變化。", ""])
@@ -245,8 +420,9 @@ def render_markdown(payload: dict[str, Any]) -> str:
         "listing_zero_discovery": "列表可讀取但未發現任何詳情連結",
         "listing_reached_max_links": "發現數達擷取上限，可能仍有未遍歷項目",
         "no_verified_activity_listing": "尚無已驗證的公開活動列表，只能由已知活動與 AI 官方網域搜尋補充",
-        "partial_public_activity_discovery": "已接入官方主題總覽與活動關聯圖，但官方沒有公開的全站完整活動清單",
+        "partial_public_activity_discovery": "已接入官方主題總覽、活動關聯圖與編號探索，但官方沒有公開的全站完整活動清單",
         "crawl_reached_max_total_pages": "本輪已達全域擷取上限，仍有已發現的官方頁面尚未讀取",
+        "id_probe_incomplete": "官方活動編號探索未完整完成，探索水位不會推進",
     }
     if gaps:
         lines.extend(["", "### 活動發現覆蓋缺口", ""])
@@ -256,8 +432,12 @@ def render_markdown(payload: dict[str, Any]) -> str:
             lines.append(f"- {item['provider_name']}／{item['source_name']}：{label}{suffix}")
     lines.extend(["", "## 業者公開狀態覆蓋", ""])
     for value in payload["coverage_by_provider"].values():
+        registered = value.get("registered_sources", {})
+        extended = value.get("extended_checks", {})
         lines.append(
-            f"- {value['name']}：本輪 {value['succeeded']}/{value['expected']}；活動發現 {value['discovery_status']}；{value['public_status_coverage']}"
+            f"- {value['name']}：官方入口成功 {registered.get('succeeded', 0)}/{registered.get('expected', 0)}；"
+            f"延伸檢查成功 {extended.get('succeeded', 0)}/{extended.get('expected', 0)}；"
+            f"活動發現 {value['discovery_status']}；{value['public_status_coverage']}"
         )
     lines.append("")
     return "\n".join(lines)

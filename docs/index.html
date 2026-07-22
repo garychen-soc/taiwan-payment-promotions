@@ -3,11 +3,28 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#173f5f">
+  <meta id="theme-color" name="theme-color" content="#173f5f">
   <meta name="description" content="每日整理台灣行動支付與電子支付的官方優惠、額滿狀態與活動重點。">
   <title>台灣支付優惠雷達</title>
-  <link rel="icon" href="./assets/favicon.svg?v=9b3dfd39e0ff" type="image/svg+xml">
-  <link rel="stylesheet" href="./assets/app.css?v=9b3dfd39e0ff">
+  <link rel="icon" href="./assets/favicon.svg?v=07992f5c6895" type="image/svg+xml">
+  <script>
+    (() => {
+      const key = "twpay-theme";
+      let preference = "system";
+      try {
+        const saved = localStorage.getItem(key);
+        if (["system", "light", "dark"].includes(saved)) preference = saved;
+      } catch {}
+      const resolved = preference === "system"
+        ? (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")
+        : preference;
+      document.documentElement.dataset.theme = resolved;
+      document.documentElement.dataset.themePreference = preference;
+      document.documentElement.style.colorScheme = resolved;
+      document.querySelector("#theme-color").content = resolved === "dark" ? "#0b1b25" : "#173f5f";
+    })();
+  </script>
+  <link rel="stylesheet" href="./assets/app.css?v=07992f5c6895">
 </head>
 <body>
   <a class="skip-link" href="#main-content">跳至主要內容</a>
@@ -19,7 +36,13 @@
           <span class="brand-mark" aria-hidden="true">支</span>
           <span>支付優惠雷達</span>
         </a>
-        <span class="daily-label">每日更新</span>
+        <div class="header-actions">
+          <span class="daily-label">每日更新</span>
+          <button id="theme-toggle" class="theme-toggle" type="button" aria-label="主題：跟隨系統；點擊切換為淺色">
+            <span id="theme-icon" aria-hidden="true">◐</span>
+            <span id="theme-label">系統</span>
+          </button>
+        </div>
       </div>
 
       <div class="hero-copy">
@@ -119,6 +142,22 @@
       </div>
     </section>
 
+    <section id="coverage-section" class="coverage-section" aria-labelledby="coverage-title" hidden>
+      <details id="coverage-panel" class="coverage-panel">
+        <summary>
+          <span>
+            <span class="section-kicker">監測透明度</span>
+            <strong id="coverage-title">資料涵蓋</strong>
+          </span>
+          <span id="coverage-summary" class="coverage-summary"></span>
+        </summary>
+        <div class="coverage-body">
+          <p>顯示各支付業者目前找到的有效活動數、公開活動發現方式，以及額滿資訊的公開涵蓋程度。</p>
+          <ul id="provider-coverage-list" class="provider-coverage-list"></ul>
+        </div>
+      </details>
+    </section>
+
     <aside class="notice-card" aria-labelledby="notice-title">
       <h2 id="notice-title">使用前請留意</h2>
       <p>優惠名額、適用通路與付款條件可能隨時調整。實際內容請以各業者官方活動頁或 App 顯示為準。</p>
@@ -135,8 +174,16 @@
         <p class="provider-name"></p>
         <div class="status-badges" aria-label="活動狀態"></div>
       </div>
-      <h3 class="activity-title"></h3>
-      <p class="activity-period"></p>
+      <div class="card-mainline">
+        <div class="card-heading">
+          <h3 class="activity-title"></h3>
+          <p class="activity-period"></p>
+        </div>
+        <p class="reward-callout" hidden>
+          <span>最高</span>
+          <strong class="reward-value"></strong>
+        </p>
+      </div>
       <ul class="insight-chips" aria-label="活動重點"></ul>
       <p class="condition-preview"></p>
       <details class="activity-details">
@@ -163,6 +210,6 @@
     <div class="noscript-note">此網站需要 JavaScript 才能顯示與篩選優惠活動。</div>
   </noscript>
 
-  <script src="./assets/app.js?v=9b3dfd39e0ff" defer></script>
+  <script src="./assets/app.js?v=07992f5c6895" defer></script>
 </body>
 </html>

@@ -4,21 +4,66 @@ on:
   push:
     branches: [main]
     paths:
-      - "docs/**"
       - ".github/workflows/pages.yml"
+      - "config/**"
+      - "data/**"
+      - "docs/**"
+      - "pyproject.toml"
+      - "scripts/**"
+      - "src/**"
+      - "tests/**"
+      - "web/**"
+  pull_request:
+    paths:
+      - ".github/workflows/pages.yml"
+      - "config/**"
+      - "data/**"
+      - "docs/**"
+      - "pyproject.toml"
+      - "scripts/**"
+      - "src/**"
+      - "tests/**"
+      - "web/**"
   workflow_dispatch:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 concurrency:
-  group: pages
+  group: pages-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+
+      - name: Run deterministic test suite
+        env:
+          PYTHONPATH: src
+        run: python -m unittest discover -s tests -v
+
+      - name: Validate public artifacts
+        run: |
+          python -m json.tool config/sources.json >/dev/null
+          python -m json.tool docs/data/promotions.json >/dev/null
+          node --check web/assets/app.js
+          node --check docs/assets/app.js
+
   deploy:
+    if: github.event_name != 'pull_request'
+    needs: validate
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}

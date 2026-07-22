@@ -54,8 +54,16 @@ def main(argv: list[str] | None = None) -> int:
             if mode == "status" and not store.has_activities():
                 mode = "full"
                 fallback = True
-            targets = store.load_recheck_targets() if mode == "status" else []
-            crawler = Crawler(config, now, timeout=args.timeout)
+            # A full discovery run also refreshes every known non-expired
+            # activity. Numeric discovery can then advance independently
+            # without losing daily quota checks for older campaigns.
+            targets = store.load_recheck_targets()
+            crawler = Crawler(
+                config,
+                now,
+                timeout=args.timeout,
+                discovery_state=store.load_discovery_state(),
+            )
             run = crawler.collect(mode, targets)
             store.merge_persistent_status(run.activities)
             changes = []

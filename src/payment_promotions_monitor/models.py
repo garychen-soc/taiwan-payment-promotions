@@ -80,6 +80,8 @@ class RunResult:
     activities: list[Activity]
     attempts: list[SourceAttempt]
     crawl_limit_pending: list[dict[str, Any]] = field(default_factory=list)
+    discovery_state_updates: dict[str, dict[str, int]] = field(default_factory=dict)
+    discovery_scan_summary: dict[str, dict[str, Any]] = field(default_factory=dict)
 
     @property
     def coverage(self) -> dict[str, Any]:

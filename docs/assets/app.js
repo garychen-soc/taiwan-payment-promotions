@@ -5,6 +5,14 @@
   const UPCOMING_DAYS = 14;
   const ENDING_DAYS = 7;
   const DAY_MS = 24 * 60 * 60 * 1000;
+  const THEME_KEY = "twpay-theme";
+  const THEME_ORDER = ["system", "light", "dark"];
+
+  const themeLabels = {
+    system: { short: "系統", icon: "◐", description: "跟隨系統" },
+    light: { short: "淺色", icon: "☀", description: "淺色" },
+    dark: { short: "深色", icon: "☾", description: "深色" }
+  };
 
   const categoryLabels = {
     featured: "今日精選",
@@ -52,6 +60,7 @@
   const state = {
     activities: [],
     highlights: null,
+    providerCoverage: [],
     category: "featured",
     query: "",
     provider: ""
@@ -62,6 +71,10 @@
     sourceHealthText: document.querySelector("#source-health-text"),
     updatedAt: document.querySelector("#updated-at"),
     dailyHeadline: document.querySelector("#daily-headline"),
+    themeToggle: document.querySelector("#theme-toggle"),
+    themeIcon: document.querySelector("#theme-icon"),
+    themeLabel: document.querySelector("#theme-label"),
+    themeColor: document.querySelector("#theme-color"),
     summaryList: document.querySelector("#summary-list"),
     searchInput: document.querySelector("#search-input"),
     providerSelect: document.querySelector("#provider-select"),
@@ -75,6 +88,9 @@
     errorState: document.querySelector("#error-state"),
     errorMessage: document.querySelector("#error-message"),
     retryButton: document.querySelector("#retry-button"),
+    coverageSection: document.querySelector("#coverage-section"),
+    coverageSummary: document.querySelector("#coverage-summary"),
+    providerCoverageList: document.querySelector("#provider-coverage-list"),
     cardTemplate: document.querySelector("#activity-card-template")
   };
 
@@ -96,6 +112,44 @@
   });
 
   const collator = new Intl.Collator("zh-Hant", { numeric: true, sensitivity: "base" });
+  const systemThemeQuery = window.matchMedia("(prefers-color-scheme: dark)");
+
+  function currentThemePreference() {
+    const preference = document.documentElement.dataset.themePreference;
+    return THEME_ORDER.includes(preference) ? preference : "system";
+  }
+
+  function resolvedTheme(preference) {
+    return preference === "system" ? (systemThemeQuery.matches ? "dark" : "light") : preference;
+  }
+
+  function applyTheme(preference, persist = false) {
+    const safePreference = THEME_ORDER.includes(preference) ? preference : "system";
+    const resolved = resolvedTheme(safePreference);
+    const nextPreference = THEME_ORDER[(THEME_ORDER.indexOf(safePreference) + 1) % THEME_ORDER.length];
+    document.documentElement.dataset.theme = resolved;
+    document.documentElement.dataset.themePreference = safePreference;
+    document.documentElement.style.colorScheme = resolved;
+    elements.themeColor.content = resolved === "dark" ? "#0b1b25" : "#173f5f";
+    elements.themeIcon.textContent = themeLabels[safePreference].icon;
+    elements.themeLabel.textContent = themeLabels[safePreference].short;
+    elements.themeToggle.setAttribute(
+      "aria-label",
+      `主題：${themeLabels[safePreference].description}；點擊切換為${themeLabels[nextPreference].description}`
+    );
+    elements.themeToggle.title = elements.themeToggle.getAttribute("aria-label");
+    if (persist) {
+      try {
+        localStorage.setItem(THEME_KEY, safePreference);
+      } catch {}
+    }
+  }
+
+  function cycleTheme() {
+    const preference = currentThemePreference();
+    const nextPreference = THEME_ORDER[(THEME_ORDER.indexOf(preference) + 1) % THEME_ORDER.length];
+    applyTheme(nextPreference, true);
+  }
 
   function normalizeKey(value) {
     return String(value ?? "").trim().toLowerCase();
@@ -319,6 +373,23 @@
     return days >= 0 && days <= ENDING_DAYS;
   }
 
+  function temporalBadgeConfig(activity) {
+    const lifecycle = normalizeKey(activity.lifecycle);
+    if (lifecycle === "upcoming") {
+      const days = daysFromToday(activity.start_date);
+      if (days === 0) return { label: "今日開始", className: "is-upcoming" };
+      if (days === 1) return { label: "明日開始", className: "is-upcoming" };
+      if (Number.isFinite(days) && days > 1) return { label: `${days} 天後開始`, className: "is-upcoming" };
+    }
+    if (isEnding(activity)) {
+      const days = daysFromToday(activity.end_date);
+      if (days === 0) return { label: "今日截止", className: "is-ending" };
+      if (days === 1) return { label: "明日截止", className: "is-ending" };
+      return { label: `剩 ${days} 天`, className: "is-ending" };
+    }
+    return lifecycleLabels[lifecycle] || lifecycleLabels.unknown;
+  }
+
   function isSoldOut(activity) {
     const status = normalizeKey(activity.quota_status);
     return isExplicitHighlight(activity, "sold-out") || ["sold_out", "partial_sold_out"].includes(status);
@@ -383,10 +454,28 @@
 
   function createBadge(status, map) {
     const config = map[normalizeKey(status)] || map.unknown;
+    return createConfiguredBadge(config);
+  }
+
+  function createConfiguredBadge(config) {
     const badge = document.createElement("span");
     badge.className = `badge ${config.className}`.trim();
     badge.textContent = config.label;
     return badge;
+  }
+
+  function rewardCallout(activity) {
+    const insights = activity.insights;
+    if (!insights || typeof insights !== "object" || Array.isArray(insights)) return null;
+    const percent = Number(insights.max_reward_percent);
+    if (Number.isFinite(percent) && percent > 0) {
+      return `${percent.toLocaleString("zh-TW", { maximumFractionDigits: 2 })}%`;
+    }
+    const amount = Number(insights.fixed_reward_amount);
+    if (Number.isFinite(amount) && amount > 0) {
+      return `$${amount.toLocaleString("zh-TW", { maximumFractionDigits: 2 })}`;
+    }
+    return null;
   }
 
   function appendTextParagraphs(container, values) {
@@ -426,6 +515,8 @@
     const badges = fragment.querySelector(".status-badges");
     const title = fragment.querySelector(".activity-title");
     const period = fragment.querySelector(".activity-period");
+    const reward = fragment.querySelector(".reward-callout");
+    const rewardValue = fragment.querySelector(".reward-value");
     const insightChips = fragment.querySelector(".insight-chips");
     const conditionPreview = fragment.querySelector(".condition-preview");
     const insightDetail = fragment.querySelector(".insight-detail");
@@ -442,8 +533,15 @@
     provider.textContent = stringValue(activity.provider_name) || "支付業者待確認";
     title.textContent = stringValue(activity.title) || "未命名活動";
     period.textContent = formatPeriod(activity);
-    badges.append(createBadge(activity.lifecycle, lifecycleLabels));
+    badges.append(createConfiguredBadge(temporalBadgeConfig(activity)));
     badges.append(createBadge(activity.quota_status, quotaLabels));
+
+    const rewardText = rewardCallout(activity);
+    if (rewardText) {
+      reward.hidden = false;
+      rewardValue.textContent = rewardText;
+      reward.setAttribute("aria-label", `最高回饋 ${rewardText}`);
+    }
 
     insightTags.slice(0, 3).forEach((value) => {
       const item = document.createElement("li");
@@ -487,6 +585,8 @@
 
     const status = normalizeKey(activity.quota_status);
     if (status === "sold_out") card.classList.add("is-sold-out");
+    if (isEnding(activity)) card.classList.add("is-ending");
+    if (isUpcoming(activity)) card.classList.add("is-upcoming");
     return fragment;
   }
 
@@ -522,7 +622,10 @@
   }
 
   function populateProviders() {
-    const providers = uniqueStrings(state.activities.map((activity) => stringValue(activity.provider_name)))
+    const providers = uniqueStrings([
+      ...state.activities.map((activity) => stringValue(activity.provider_name)),
+      ...state.providerCoverage.map((provider) => stringValue(provider.provider_name))
+    ])
       .sort(collator.compare);
     const defaultOption = elements.providerSelect.querySelector("option[value='']");
     elements.providerSelect.replaceChildren(defaultOption);
@@ -534,6 +637,127 @@
       options.append(option);
     });
     elements.providerSelect.append(options);
+  }
+
+  const discoveryCoverageLabels = {
+    complete: "活動公開發現完整",
+    full: "活動公開發現完整",
+    official_api: "官方 API",
+    official_listing: "官方活動列表",
+    partial: "活動公開發現部分涵蓋",
+    limited: "活動公開發現部分涵蓋",
+    ai_review: "活動列表由 AI 補查",
+    unavailable: "活動來源暫時無法讀取",
+    unknown: "活動發現狀態待確認"
+  };
+
+  const publicStatusCoverageLabels = {
+    complete: "額滿狀態公開涵蓋",
+    full: "額滿狀態公開涵蓋",
+    public: "額滿狀態可公開查證",
+    partial: "額滿狀態部分公開",
+    app_only: "額滿狀態需至 App 確認",
+    unavailable: "額滿來源暫時無法讀取",
+    unknown: "額滿狀態待確認"
+  };
+
+  function coverageLabel(value, labels, fallback) {
+    const text = stringValue(value);
+    if (!text) return fallback;
+    const normalized = normalizeKey(text);
+    if (labels[normalized]) return labels[normalized];
+    if (/[㐀-鿿]/u.test(text)) return text;
+    return text.replaceAll("_", " ");
+  }
+
+  function coverageTone(value) {
+    const normalized = normalizeKey(value);
+    if (["fail", "failed", "error", "unavailable"].includes(normalized)) return "is-error";
+    if (/partial|unknown|app|review|limited|部分|未知|缺口|無公開|無法公開/i.test(normalized)) {
+      return "is-warning";
+    }
+    return "is-complete";
+  }
+
+  function renderProviderCoverage() {
+    elements.providerCoverageList.replaceChildren();
+    if (!state.providerCoverage.length) {
+      elements.coverageSection.hidden = true;
+      return;
+    }
+
+    const fragment = document.createDocumentFragment();
+    let activityCount = 0;
+    state.providerCoverage.forEach((provider) => {
+      const name = stringValue(provider.provider_name) || "支付業者待確認";
+      const countValue = Number(provider.activity_count);
+      const count = Number.isFinite(countValue) && countValue >= 0 ? Math.trunc(countValue) : 0;
+      activityCount += count;
+
+      const item = document.createElement("li");
+      item.className = "coverage-item";
+      const heading = document.createElement("div");
+      heading.className = "coverage-provider";
+      const providerName = document.createElement("strong");
+      providerName.textContent = name;
+      const providerCount = document.createElement("span");
+      providerCount.textContent = `${count} 項有效活動`;
+      heading.append(providerName, providerCount);
+
+      const statuses = document.createElement("div");
+      statuses.className = "coverage-statuses";
+      const discoveryStatus = document.createElement("span");
+      discoveryStatus.className = `coverage-badge ${coverageTone(provider.discovery_status)}`;
+      discoveryStatus.textContent = coverageLabel(
+        provider.discovery_status,
+        discoveryCoverageLabels,
+        "活動發現狀態待確認"
+      );
+      const publicStatus = document.createElement("span");
+      const rawPublicStatus = stringValue(provider.public_status_coverage);
+      const explicitCoverageNote = stringValue(provider.coverage_note);
+      const normalizedPublicStatus = normalizeKey(rawPublicStatus);
+      const hasStructuredPublicStatus = normalizedPublicStatus in publicStatusCoverageLabels;
+      const fallbackCoverageNote = !explicitCoverageNote && !hasStructuredPublicStatus
+        ? rawPublicStatus
+        : "";
+      const coverageNote = explicitCoverageNote || fallbackCoverageNote;
+      const publicStatusValue = hasStructuredPublicStatus ? normalizedPublicStatus : "unknown";
+      publicStatus.className = `coverage-badge ${coverageTone(publicStatusValue)}`;
+      publicStatus.textContent = coverageLabel(
+        publicStatusValue,
+        publicStatusCoverageLabels,
+        "額滿狀態待確認"
+      );
+      statuses.append(discoveryStatus, publicStatus);
+      const officialMetric = requestMetric(provider.official_sources);
+      const extendedMetric = requestMetric(provider.extended_checks);
+      if (officialMetric || extendedMetric) {
+        const health = document.createElement("p");
+        health.className = "coverage-health";
+        const values = [];
+        if (officialMetric) {
+          values.push(`官方入口成功 ${officialMetric.succeeded}/${officialMetric.expected}`);
+        }
+        if (extendedMetric) {
+          values.push(`延伸檢查成功 ${extendedMetric.succeeded}/${extendedMetric.expected}`);
+        }
+        health.textContent = values.join("；");
+        statuses.append(health);
+      }
+      if (coverageNote) {
+        const note = document.createElement("p");
+        note.className = `coverage-note ${coverageTone(publicStatusValue)}`;
+        note.textContent = coverageNote;
+        statuses.append(note);
+      }
+      item.append(heading, statuses);
+      fragment.append(item);
+    });
+
+    elements.providerCoverageList.append(fragment);
+    elements.coverageSummary.textContent = `${state.providerCoverage.length} 家業者 · ${activityCount} 項活動`;
+    elements.coverageSection.hidden = false;
   }
 
   function renderSummary() {
@@ -565,18 +789,51 @@
       : "每日更新一次";
   }
 
+  function requestMetric(value) {
+    if (!value || typeof value !== "object") return null;
+    if (!("expected" in value) && !("succeeded" in value)) return null;
+    const expected = Number(value.expected);
+    const succeeded = Number(value.succeeded);
+    if (!Number.isFinite(expected) || !Number.isFinite(succeeded)) return null;
+    return {
+      expected: Math.max(0, Math.trunc(expected)),
+      succeeded: Math.max(0, Math.trunc(succeeded))
+    };
+  }
+
   function summarizeSourceHealth(sourceHealth) {
     const appOnlyCount = state.activities.filter((activity) => normalizeKey(activity.quota_status) === "unknown_app_only").length;
     let status = "ok";
     let failureCount = 0;
+    let hasGroupedSummary = false;
 
     if (typeof sourceHealth === "string") {
       status = normalizeKey(sourceHealth);
     } else if (sourceHealth && typeof sourceHealth === "object") {
       status = normalizeKey(sourceHealth.status || sourceHealth.state || "ok");
-      if (Array.isArray(sourceHealth.failures)) failureCount = sourceHealth.failures.length;
+      const officialMetric = requestMetric(sourceHealth.official_sources);
+      const extendedMetric = requestMetric(sourceHealth.extended_checks);
+      if (officialMetric || extendedMetric) {
+        hasGroupedSummary = true;
+        const values = [];
+        if (officialMetric) {
+          values.push(`官方入口成功 ${officialMetric.succeeded}/${officialMetric.expected}`);
+          failureCount += Math.max(0, officialMetric.expected - officialMetric.succeeded);
+        }
+        if (extendedMetric) {
+          values.push(`延伸檢查成功 ${extendedMetric.succeeded}/${extendedMetric.expected}`);
+          failureCount += Math.max(0, extendedMetric.expected - extendedMetric.succeeded);
+        }
+        elements.sourceHealthText.textContent = values.join("・");
+      }
+      if (Array.isArray(sourceHealth.failures)) {
+        failureCount = Math.max(failureCount, sourceHealth.failures.length);
+      }
       if (Array.isArray(sourceHealth.failed_sources)) failureCount = Math.max(failureCount, sourceHealth.failed_sources.length);
-      failureCount = Number(sourceHealth.failed_count ?? sourceHealth.failure_count ?? failureCount) || 0;
+      failureCount = Math.max(
+        failureCount,
+        Number(sourceHealth.failed_count ?? sourceHealth.failure_count ?? 0) || 0
+      );
       const total = Number(sourceHealth.total ?? sourceHealth.total_sources);
       const success = Number(sourceHealth.success ?? sourceHealth.success_count);
       if (Number.isFinite(total) && Number.isFinite(success)) failureCount = Math.max(failureCount, total - success);
@@ -585,15 +842,23 @@
     elements.sourceHealth.classList.remove("is-warning", "is-error");
     if (["failed", "error", "unavailable"].includes(status)) {
       elements.sourceHealth.classList.add("is-error");
-      elements.sourceHealthText.textContent = "資料更新異常";
+      if (!hasGroupedSummary) {
+        elements.sourceHealthText.textContent = "資料更新異常";
+      }
     } else if (failureCount > 0 || ["partial", "warning", "degraded"].includes(status)) {
       elements.sourceHealth.classList.add("is-warning");
-      elements.sourceHealthText.textContent = "部分官網需補查";
+      if (!hasGroupedSummary) {
+        elements.sourceHealthText.textContent = "部分官網需補查";
+      }
     } else if (appOnlyCount > 0) {
       elements.sourceHealth.classList.add("is-warning");
-      elements.sourceHealthText.textContent = `資料更新正常・${appOnlyCount} 項需至 App 確認`;
+      if (!hasGroupedSummary) {
+        elements.sourceHealthText.textContent = `資料更新正常・${appOnlyCount} 項需至 App 確認`;
+      }
     } else {
-      elements.sourceHealthText.textContent = "資料更新正常";
+      if (!hasGroupedSummary) {
+        elements.sourceHealthText.textContent = "資料更新正常";
+      }
     }
   }
 
@@ -612,16 +877,20 @@
     elements.resultsCount.textContent = "載入中";
 
     try {
-      const response = await fetch(DATA_URL, { cache: "no-store" });
+      const response = await fetch(DATA_URL, { cache: "no-cache" });
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
       const payload = validatePayload(await response.json());
       state.activities = payload.activities.filter((activity) => activity && typeof activity === "object");
       state.highlights = payload.highlights;
+      state.providerCoverage = Array.isArray(payload.provider_coverage)
+        ? payload.provider_coverage.filter((provider) => provider && typeof provider === "object")
+        : [];
       elements.dailyHeadline.textContent = stringValue(payload.headline) || "今天值得留意的支付優惠";
       renderGeneratedAt(payload.generated_at);
       summarizeSourceHealth(payload.source_health);
       populateProviders();
       renderSummary(payload.summary);
+      renderProviderCoverage();
       renderActivities();
     } catch (error) {
       elements.activityList.replaceChildren();
@@ -654,6 +923,17 @@
   elements.clearFilters.addEventListener("click", () => resetFilters(false));
   elements.emptyClear.addEventListener("click", () => resetFilters(true));
   elements.retryButton.addEventListener("click", loadData);
+  elements.themeToggle.addEventListener("click", cycleTheme);
 
+  const handleSystemThemeChange = () => {
+    if (currentThemePreference() === "system") applyTheme("system");
+  };
+  if (typeof systemThemeQuery.addEventListener === "function") {
+    systemThemeQuery.addEventListener("change", handleSystemThemeChange);
+  } else if (typeof systemThemeQuery.addListener === "function") {
+    systemThemeQuery.addListener(handleSystemThemeChange);
+  }
+
+  applyTheme(currentThemePreference());
   loadData();
 })();

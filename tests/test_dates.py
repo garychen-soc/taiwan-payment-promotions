@@ -26,6 +26,32 @@ class DateParsingTests(unittest.TestCase):
     def test_cross_month_shorthand(self) -> None:
         self.assert_range("活動期間：2026/07/23～08/05", "2026-07-23", "2026-08-05", "upcoming")
 
+    def test_weekday_between_dates_does_not_break_range(self) -> None:
+        self.assert_range(
+            "活動期間：2025/12/01 (一) – 2025/12/14 (日)",
+            "2025-12-01",
+            "2025-12-14",
+            "ended",
+        )
+
+    def test_explicit_range_beats_earlier_single_deadline(self) -> None:
+        self.assert_range(
+            "活動期間內完成申貸並於2027/1/31前成功撥款。"
+            "本專案活動期間自2026/06/30 18:00~2026/12/31 23:59止。",
+            "2026-06-30",
+            "2026-12-31",
+            "active",
+        )
+
+    def test_activity_heading_can_put_range_on_next_line(self) -> None:
+        self.assert_range(
+            "一、活動時間\n2026/4/1～2026/5/31\n"
+            "信用卡通用權益\n活動期間：2026/3/1～2026/8/31",
+            "2026-04-01",
+            "2026-05-31",
+            "ended",
+        )
+
     def test_single_date_does_not_infer_end_date(self) -> None:
         self.assert_range("活動期間：2026年7月16日起，回饋每月重新計算", "2026-07-16", None, "active")
 

@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import hashlib
+import html
 import re
 import time
 import uuid
@@ -9,7 +10,7 @@ from dataclasses import dataclass
 from datetime import date, datetime
 from difflib import SequenceMatcher
 from typing import Any
-from urllib.parse import parse_qs, quote, urlsplit
+from urllib.parse import parse_qs, quote, urlencode, urlsplit
 
 from .adapters import Document, external_id_from_url, parse_document, summarize_conditions
 from .dates import DateRange, lifecycle_for, parse_date_range
@@ -27,6 +28,7 @@ class Task:
     fetch_url: str
     display_url: str
     title_hint: str = ""
+    summary_hint: str = ""
     patterns: list[str] | None = None
     max_links: int = 12
     adapter: str = ""
@@ -43,14 +45,23 @@ class CollectedDocument:
 
 
 class Crawler:
-    def __init__(self, config: dict[str, Any], now: datetime, *, timeout: float = 20.0) -> None:
+    def __init__(
+        self,
+        config: dict[str, Any],
+        now: datetime,
+        *,
+        timeout: float = 20.0,
+        discovery_state: dict[str, Any] | None = None,
+    ) -> None:
         self.config = config
         self.now = now
         self.timeout = timeout
+        self.discovery_state = discovery_state or {}
         self.attempts: list[SourceAttempt] = []
         self.activity_documents: list[CollectedDocument] = []
         self.announcement_documents: list[CollectedDocument] = []
         self._seen_fetches: set[tuple[str, str]] = set()
+        self._fullpay_scan_plans: dict[str, dict[str, Any]] = {}
 
     @staticmethod
     def _task_identity(task: Task) -> tuple[str, str]:
@@ -61,6 +72,7 @@ class Crawler:
 
     def _initial_tasks(self, mode: str, recheck_targets: list[dict[str, str]]) -> list[Task]:
         tasks: list[Task] = []
+        probe_tasks: list[Task] = []
         providers = {item["id"]: item for item in self.config["providers"]}
         for provider in self.config["providers"]:
             for source in provider.get("sources", []):
@@ -72,7 +84,10 @@ class Crawler:
                     "mixed_detail",
                     "status_page",
                     "taiwanpay_api_listing",
-                }:
+                } and source.get("adapter") not in {"famipay_listing"}:
+                    continue
+                if mode == "full" and source.get("adapter") == "fullpay_id_scan":
+                    probe_tasks.extend(self._fullpay_probe_tasks(provider, source))
                     continue
                 tasks.append(
                     Task(
@@ -102,28 +117,39 @@ class Crawler:
                             end_date=seed.get("end_date", ""),
                         )
                     )
-        if mode == "status":
+        if mode in {"full", "status"}:
             for target in recheck_targets:
                 provider = providers.get(target["provider_id"])
                 if not provider:
+                    continue
+                source_url = target.get("source_url") or target["url"]
+                if target["provider_id"] == "famipay" or (
+                    target["provider_id"] == "pxpay" and "GetEventList" in source_url
+                ):
+                    # These records are synthesized from their registered
+                    # official listing/API adapters. Re-fetching the raw source
+                    # as a generic detail would create a misleading duplicate;
+                    # the registered adapters are the authoritative refresh
+                    # path, while prior confirmed state remains in storage.
                     continue
                 if target["provider_id"] == "taiwanpay":
                     adapter = "taiwanpay_detail"
                 elif target["provider_id"] == "fullpay":
                     adapter = "fullpay_detail"
+                elif (
+                    target["provider_id"] == "pxpay"
+                    and "/campaign/pxpay-card/" in source_url
+                ):
+                    adapter = "pxmart_campaign_detail"
                 else:
                     adapter = ""
-                external_id = (
-                    target.get("external_id") or ""
-                    if target["provider_id"] in {"taiwanpay", "fullpay"}
-                    else ""
-                )
+                external_id = target.get("external_id") or ""
                 tasks.append(
                     Task(
                         provider=provider,
                         source_name="既有活動複查",
                         role="activity_detail",
-                        fetch_url=target.get("source_url") or target["url"],
+                        fetch_url=source_url,
                         display_url=target["url"],
                         start_date=target.get("start_date") or "",
                         end_date=target.get("end_date") or "",
@@ -131,10 +157,135 @@ class Crawler:
                         external_id=external_id,
                     )
                 )
-        return tasks
+        # Numeric probes run only after every registered source and seed has
+        # had a chance. This keeps one provider's ID space from starving the
+        # rest of the registry when a global crawl cap is configured.
+        return tasks + probe_tasks
 
-    def _fetch_fullpay_detail(self, task: Task, fetched_at: str | None = None) -> FetchResult:
-        result = fetch_url(
+    def _fullpay_probe_tasks(
+        self,
+        provider: dict[str, Any],
+        source: dict[str, Any],
+    ) -> list[Task]:
+        provider_id = str(provider["id"])
+        raw_state = self.discovery_state.get(provider_id, {})
+        if isinstance(raw_state, dict):
+            previous_highest = max(0, int(raw_state.get("highest_valid_event_id", 0)))
+            previous_frontier = max(0, int(raw_state.get("scan_frontier_event_id", 0)))
+        else:  # backward-compatible with the original single-watermark state
+            previous_highest = max(0, int(raw_state or 0))
+            previous_frontier = previous_highest
+        minimum = max(1, int(source.get("minimum_event_id", 1)))
+        bootstrap_end = max(minimum, int(source.get("bootstrap_end_id", 160)))
+        rescan_window = max(1, int(source.get("rescan_window", 128)))
+        frontier_buffer = max(1, int(source.get("frontier_buffer", 32)))
+        maximum_probe_ids = max(1, int(source.get("maximum_probe_ids", 220)))
+        if previous_frontier:
+            start = max(minimum, previous_frontier - rescan_window + 1)
+            end = previous_frontier + frontier_buffer
+        else:
+            start = minimum
+            end = bootstrap_end
+        end = min(end, start + maximum_probe_ids - 1)
+        self._fullpay_scan_plans[provider_id] = {
+            "previous_highest": previous_highest,
+            "previous_frontier": previous_frontier,
+            "start": start,
+            "end": end,
+            "outcomes": {},
+        }
+        return [
+            Task(
+                provider=provider,
+                source_name=f"{source['name']} → EventId {event_id}",
+                role="activity_probe",
+                fetch_url=(
+                    "https://service.pxpayplus.com/px-advertise/web/activity/"
+                    f"detail/{event_id}"
+                ),
+                display_url=(
+                    "https://marketing.pxpayplus.com/pxplus_marketing_page/"
+                    f"activity_content_page?EventId={event_id}"
+                ),
+                max_links=0,
+                adapter="fullpay_id_probe",
+                external_id=str(event_id),
+            )
+            for event_id in range(start, end + 1)
+        ]
+
+    def _record_fullpay_probe_outcome(self, task: Task, outcome: str) -> None:
+        plan = self._fullpay_scan_plans.get(str(task.provider["id"]))
+        if not plan or not task.external_id.isdigit():
+            return
+        event_id = int(task.external_id)
+        if int(plan["start"]) <= event_id <= int(plan["end"]):
+            plan["outcomes"][event_id] = outcome
+
+    def _fullpay_discovery_state_updates(self) -> dict[str, dict[str, int]]:
+        updates: dict[str, dict[str, int]] = {}
+        for provider_id, plan in self._fullpay_scan_plans.items():
+            expected = set(range(int(plan["start"]), int(plan["end"]) + 1))
+            outcomes: dict[int, str] = plan["outcomes"]
+            if expected - outcomes.keys() or any(value == "failure" for value in outcomes.values()):
+                continue
+            valid_ids = [event_id for event_id, value in outcomes.items() if value == "valid"]
+            highest_valid = max([int(plan["previous_highest"]), *valid_ids])
+            updates[provider_id] = {
+                "highest_valid_event_id": highest_valid,
+                "scan_frontier_event_id": max(int(plan["previous_frontier"]), int(plan["end"])),
+            }
+        return updates
+
+    def _fullpay_discovery_scan_summary(self) -> dict[str, dict[str, Any]]:
+        state_updates = self._fullpay_discovery_state_updates()
+        summary: dict[str, dict[str, Any]] = {}
+        for provider_id, plan in self._fullpay_scan_plans.items():
+            expected = set(range(int(plan["start"]), int(plan["end"]) + 1))
+            outcomes: dict[int, str] = plan["outcomes"]
+            valid_ids = [event_id for event_id, value in outcomes.items() if value == "valid"]
+            previous_highest = int(plan["previous_highest"])
+            previous_frontier = int(plan["previous_frontier"])
+            highest_valid = max([previous_highest, *valid_ids])
+            update = state_updates.get(provider_id, {})
+            summary[provider_id] = {
+                "scan_start": int(plan["start"]),
+                "scan_end": int(plan["end"]),
+                "probed_count": len(outcomes),
+                "valid_count": sum(value == "valid" for value in outcomes.values()),
+                "empty_count": sum(value == "not_found" for value in outcomes.values()),
+                "failure_count": sum(value == "failure" for value in outcomes.values())
+                + len(expected - outcomes.keys()),
+                "complete": not (expected - outcomes.keys())
+                and all(value != "failure" for value in outcomes.values()),
+                "previous_highest_valid_event_id": previous_highest,
+                "highest_valid_event_id": highest_valid,
+                "previous_scan_frontier_event_id": previous_frontier,
+                "scan_frontier_event_id": int(update.get("scan_frontier_event_id", previous_frontier)),
+                "frontier_advanced": int(update.get("scan_frontier_event_id", previous_frontier))
+                > previous_frontier,
+            }
+        return summary
+
+    def _fullpay_detail_is_expired(self, detail: dict[str, Any]) -> bool:
+        value = str(detail.get("activity_end_time", ""))
+        match = re.search(r"(\d{4})[./-](\d{1,2})[./-](\d{1,2})", value)
+        if not match:
+            return False
+        try:
+            return date(*(int(part) for part in match.groups())) < self.now.date()
+        except ValueError:
+            return False
+
+    def _fetch_fullpay_detail(
+        self,
+        task: Task,
+        fetched_at: str | None = None,
+        *,
+        initial_result: FetchResult | None = None,
+        skip_expired_quota: bool = False,
+    ) -> FetchResult:
+        result = initial_result or fetch_url(
             task.fetch_url,
             task.provider["official_domains"],
             timeout=self.timeout,
@@ -159,6 +310,24 @@ class Crawler:
         observed_at = fetched_at or self.now.isoformat()
         full_quota_time = ""
         quota_unavailable = False
+        if skip_expired_quota and self._fullpay_detail_is_expired(detail):
+            payload["public_quota_status"] = {
+                "source_url": quota_url,
+                "full_quota_time": "",
+                "notice": "",
+                "unavailable": False,
+                "skipped": "expired_activity",
+            }
+            body = json.dumps(payload, ensure_ascii=False, separators=(",", ":")).encode("utf-8")
+            return FetchResult(
+                requested_url=result.requested_url,
+                final_url=result.final_url,
+                status_code=result.status_code,
+                body=body,
+                text=body.decode("utf-8"),
+                content_type="application/json",
+                content_hash=hashlib.sha256(body).hexdigest(),
+            )
         try:
             quota_result = fetch_url(
                 quota_url,
@@ -220,6 +389,55 @@ class Crawler:
             content_hash=hashlib.sha256(body).hexdigest(),
         )
 
+    @staticmethod
+    def _embedded_next_data(result: FetchResult) -> Document:
+        match = re.search(
+            r'<script[^>]+id=["\']__NEXT_DATA__["\'][^>]*>(.*?)</script>',
+            result.text,
+            re.I | re.S,
+        )
+        if not match:
+            raise RuntimeError("PX Mart campaign page is missing __NEXT_DATA__")
+        try:
+            data = json.loads(match.group(1))
+        except (TypeError, ValueError) as exc:
+            raise RuntimeError("PX Mart campaign __NEXT_DATA__ is invalid") from exc
+        if not isinstance(data, dict):
+            raise RuntimeError("PX Mart campaign __NEXT_DATA__ has an unexpected shape")
+        return Document(
+            url=result.final_url,
+            title="PX Pay 與信用卡",
+            text="PX Pay 與信用卡官方活動列表",
+            links=[],
+            content_hash=result.content_hash,
+            raw_json=data,
+        )
+
+    @staticmethod
+    def _official_metadata_document(document: Document, task: Task) -> Document:
+        metadata = "\n".join(
+            value
+            for value in (
+                f"startDate: {task.start_date}" if task.start_date else "",
+                f"endDate: {task.end_date}" if task.end_date else "",
+                f"official_api_title: {task.title_hint}" if task.title_hint else "",
+                f"official_api_summary: {task.summary_hint}" if task.summary_hint else "",
+            )
+            if value
+        )
+        if not metadata:
+            return document
+        text = f"{metadata}\n{document.text}" if document.text else metadata
+        digest = hashlib.sha256(f"{document.content_hash}\n{metadata}".encode("utf-8")).hexdigest()
+        return Document(
+            url=document.url,
+            title=task.title_hint or document.title,
+            text=text,
+            links=document.links,
+            content_hash=digest,
+            raw_json=document.raw_json,
+        )
+
     def _attempt(self, task: Task) -> CollectedDocument | None:
         key = self._task_identity(task)
         if key in self._seen_fetches:
@@ -229,6 +447,36 @@ class Crawler:
         try:
             if task.adapter == "fullpay_detail":
                 result = self._fetch_fullpay_detail(task, fetched_at)
+            elif task.adapter == "fullpay_id_probe":
+                initial_result = fetch_url(
+                    task.fetch_url,
+                    task.provider["official_domains"],
+                    timeout=self.timeout,
+                    attempts=2,
+                )
+                initial_payload = json.loads(initial_result.text)
+                if isinstance(initial_payload, dict) and initial_payload.get("code") == "2001":
+                    self._record_fullpay_probe_outcome(task, "not_found")
+                    self.attempts.append(
+                        SourceAttempt(
+                            provider_id=task.provider["id"],
+                            provider_name=task.provider["name"],
+                            source_name=task.source_name,
+                            role=task.role,
+                            url=task.fetch_url,
+                            ok=True,
+                            fetched_at=fetched_at,
+                            status_code=initial_result.status_code,
+                            final_url=initial_result.final_url,
+                        )
+                    )
+                    return None
+                result = self._fetch_fullpay_detail(
+                    task,
+                    fetched_at,
+                    initial_result=initial_result,
+                    skip_expired_quota=True,
+                )
             elif task.adapter in {"taiwanpay_listing", "taiwanpay_detail"}:
                 tx_id = "TF020109" if task.adapter == "taiwanpay_listing" else "TF020110"
                 body = (
@@ -305,7 +553,33 @@ class Crawler:
                     timeout=self.timeout,
                     attempts=2,
                 )
-            document = parse_document(result)
+            if task.adapter == "pxmart_campaign_listing":
+                document = self._embedded_next_data(result)
+            elif task.adapter == "famipay_listing":
+                document = Document(
+                    url=result.final_url,
+                    title="全家官方活動列表",
+                    text="全家便利商店官方活動列表",
+                    links=[],
+                    content_hash=result.content_hash,
+                    raw_json={"html": result.text},
+                )
+            else:
+                document = parse_document(result)
+            if task.adapter == "pi_wordpress_listing" and not isinstance(document.raw_json, list):
+                raise RuntimeError("Pi wallet WordPress response is not a post list")
+            if task.adapter in {"pxmart_quota_periods", "pxmart_quota_detail"}:
+                quota_data = document.raw_json
+                if (
+                    not isinstance(quota_data, dict)
+                    or quota_data.get("success") is not True
+                    or not isinstance(quota_data.get("data"), list)
+                ):
+                    raise RuntimeError("PX Pay quota API validation failed")
+            if task.adapter == "pi_post_detail":
+                document = self._official_metadata_document(document, task)
+            if task.adapter in {"fullpay_detail", "fullpay_id_probe"}:
+                self._record_fullpay_probe_outcome(task, "valid")
             self.attempts.append(
                 SourceAttempt(
                     provider_id=task.provider["id"],
@@ -317,10 +591,13 @@ class Crawler:
                     fetched_at=fetched_at,
                     status_code=result.status_code,
                     final_url=result.final_url,
+                    discovered_count=1 if task.adapter == "fullpay_id_probe" else 0,
                 )
             )
             return CollectedDocument(task=task, document=document, fetched_at=fetched_at)
         except Exception as exc:  # individual sources must not abort the run
+            if task.adapter in {"fullpay_detail", "fullpay_id_probe"}:
+                self._record_fullpay_probe_outcome(task, "failure")
             self.attempts.append(
                 SourceAttempt(
                     provider_id=task.provider["id"],
@@ -331,6 +608,7 @@ class Crawler:
                     ok=False,
                     fetched_at=fetched_at,
                     error=f"{type(exc).__name__}: {exc}"[:1000],
+                    coverage_issue="id_probe_incomplete" if task.adapter == "fullpay_id_probe" else None,
                 )
             )
             return None
@@ -399,6 +677,368 @@ class Crawler:
                     attempt.coverage_issue = "listing_reached_max_links"
                 break
 
+    @staticmethod
+    def _wordpress_rendered(value: object) -> str:
+        rendered = value.get("rendered", "") if isinstance(value, dict) else value
+        if not isinstance(rendered, str):
+            return ""
+        parsed = parse_html(html.unescape(rendered), "https://web.piapp.com.tw/")
+        return html.unescape(parsed.text).strip()
+
+    def _pi_post_tasks(self, collected: CollectedDocument) -> list[Task]:
+        task = collected.task
+        records = collected.document.raw_json
+        if not isinstance(records, list):
+            self._set_discovery_result(task, 0)
+            return []
+        discovered: list[Task] = []
+        seen: set[str] = set()
+        next_role = "announcement_detail" if task.role == "announcement_listing" else "activity_detail"
+        for record in records:
+            if not isinstance(record, dict):
+                continue
+            url = str(record.get("link", "")).strip()
+            if not url or not is_allowed_url(url, task.provider["official_domains"]):
+                continue
+            normalized = canonical_url(url)
+            if normalized in seen:
+                continue
+            seen.add(normalized)
+            title = self._wordpress_rendered(record.get("title"))
+            summary = self._wordpress_rendered(record.get("excerpt"))
+            summary_dates = (
+                parse_date_range(f"活動期間：{summary}")
+                if summary
+                else DateRange(None, None, "none")
+            )
+            discovered.append(
+                Task(
+                    provider=task.provider,
+                    source_name=f"{task.source_name} → {title[:80] or '官方文章'}",
+                    role=next_role,
+                    fetch_url=url,
+                    display_url=url,
+                    title_hint=title,
+                    summary_hint=summary,
+                    adapter="pi_post_detail",
+                    external_id=str(record.get("id", "")),
+                    start_date=summary_dates.start.isoformat() if summary_dates.start and summary_dates.end else "",
+                    end_date=summary_dates.end.isoformat() if summary_dates.start and summary_dates.end else "",
+                )
+            )
+            if len(discovered) >= task.max_links:
+                break
+        self._set_discovery_result(task, len(discovered), total_count=len(records))
+        return discovered
+
+    @staticmethod
+    def _pxmart_campaigns(data: object) -> list[dict[str, Any]]:
+        if not isinstance(data, dict):
+            return []
+        props = data.get("props", {})
+        page_props = props.get("pageProps", {}) if isinstance(props, dict) else {}
+        campaigns = page_props.get("campaigns", []) if isinstance(page_props, dict) else []
+        return [item for item in campaigns if isinstance(item, dict)] if isinstance(campaigns, list) else []
+
+    def _pxmart_campaign_tasks(self, collected: CollectedDocument) -> list[Task]:
+        task = collected.task
+        labeled: list[dict[str, Any]] = []
+        for campaign in self._pxmart_campaigns(collected.document.raw_json):
+            attributes = campaign.get("attributes", {})
+            if not isinstance(attributes, dict) or str(attributes.get("label", "")).strip().casefold() != "px pay":
+                continue
+            labeled.append(campaign)
+
+        discovered: list[Task] = []
+        for campaign in labeled:
+            attributes = campaign["attributes"]
+            title = html.unescape(str(attributes.get("title", "")).strip())
+            start_date = str(attributes.get("openDate", "")).strip()
+            end_date = str(attributes.get("closeDate", "")).strip()
+            try:
+                if end_date and date.fromisoformat(end_date) < self.now.date():
+                    continue
+            except ValueError:
+                pass
+            slug = str(attributes.get("slug", "")).strip() or title
+            if not title or not slug:
+                continue
+            display_url = f"https://www.pxmart.com.tw/campaign/pxpay-card/{quote(slug, safe='')}"
+            discovered.append(
+                Task(
+                    provider=task.provider,
+                    source_name=f"{task.source_name} → {title[:80]}",
+                    role="activity_detail",
+                    fetch_url=display_url,
+                    display_url=display_url,
+                    title_hint=title,
+                    adapter="pxmart_campaign_detail",
+                    external_id=f"pxmart-campaign-{campaign.get('id', hashlib.sha256(title.encode()).hexdigest()[:12])}",
+                    start_date=start_date,
+                    end_date=end_date,
+                )
+            )
+            if len(discovered) >= task.max_links:
+                break
+        self._set_discovery_result(task, len(discovered), total_count=len(labeled))
+        return discovered
+
+    @staticmethod
+    def _period_dates(value: str) -> tuple[str, str] | None:
+        match = re.fullmatch(r"\s*(20\d{2}-\d{2}-\d{2})\s*~\s*(20\d{2}-\d{2}-\d{2})\s*", value)
+        if not match:
+            return None
+        try:
+            date.fromisoformat(match.group(1))
+            date.fromisoformat(match.group(2))
+        except ValueError:
+            return None
+        return match.group(1), match.group(2)
+
+    def _pxmart_quota_tasks(self, collected: CollectedDocument) -> list[Task]:
+        task = collected.task
+        data = collected.document.raw_json
+        records = data.get("data", []) if isinstance(data, dict) and data.get("success") is True else []
+        if not isinstance(records, list):
+            records = []
+        eligible: list[tuple[str, str, str]] = []
+        for record in records:
+            if not isinstance(record, dict):
+                continue
+            period = str(record.get("period", ""))
+            parsed = self._period_dates(period)
+            if not parsed or date.fromisoformat(parsed[1]) < self.now.date():
+                continue
+            eligible.append((period, parsed[0], parsed[1]))
+
+        discovered: list[Task] = []
+        for period, start_date, end_date in eligible[: task.max_links]:
+            query = urlencode(
+                {
+                    "event_type": "1",
+                    "period": period,
+                    "pay_type": json.dumps(["1"], separators=(",", ":")),
+                }
+            )
+            discovered.append(
+                Task(
+                    provider=task.provider,
+                    source_name=f"{task.source_name} → {period}",
+                    role="quota_listing_detail",
+                    fetch_url=f"https://cardpoint.pxmartevent.com.tw/event/GetEventList?{query}",
+                    display_url="https://cardpoint.pxmartevent.com.tw/",
+                    title_hint="PX Pay 指定銀行週末滿額福利點活動",
+                    adapter="pxmart_quota_detail",
+                    external_id=f"pxpay-quota-{period}",
+                    start_date=start_date,
+                    end_date=end_date,
+                )
+            )
+        self._set_discovery_result(task, len(discovered), total_count=len(eligible))
+        return discovered
+
+    @staticmethod
+    def _pxpay_eligible_record(record: dict[str, Any]) -> bool:
+        raw = record.get("pay_type")
+        try:
+            values = json.loads(raw) if isinstance(raw, str) else raw
+        except (TypeError, ValueError):
+            return False
+        return isinstance(values, list) and any(str(value) == "1" for value in values)
+
+    def _collect_pxmart_quota(self, collected: CollectedDocument) -> None:
+        task = collected.task
+        data = collected.document.raw_json
+        records = data.get("data", []) if isinstance(data, dict) and data.get("success") is True else []
+        if not isinstance(records, list):
+            records = []
+        records = [
+            record
+            for record in records
+            if isinstance(record, dict) and self._pxpay_eligible_record(record)
+        ]
+        if not records:
+            self._set_discovery_result(task, 0)
+            return
+
+        sold_out: list[dict[str, Any]] = []
+        available: list[dict[str, Any]] = []
+        unknown: list[dict[str, Any]] = []
+        for record in records:
+            disbursed_time = str(record.get("disbursed_time") or "").strip()
+            left_count = record.get("left_count")
+            if disbursed_time or (isinstance(left_count, (int, float)) and left_count <= 0):
+                sold_out.append(record)
+            elif isinstance(left_count, (int, float)) and left_count > 0:
+                available.append(record)
+            else:
+                unknown.append(record)
+
+        start_date = task.start_date
+        end_date = task.end_date
+        lines = [
+            f"title: {task.title_hint}",
+            f"活動期間：{start_date} 至 {end_date}",
+        ]
+        for record in sold_out:
+            bank = str(record.get("bank_name", "指定銀行")).strip()
+            disbursed = str(record.get("disbursed_time") or "").strip()
+            timing = f"，官方額滿時間 {disbursed}" if disbursed else ""
+            lines.append(f"指定銀行 {bank} 本期名額已額滿{timing}。")
+        for record in available:
+            bank = str(record.get("bank_name", "指定銀行")).strip()
+            left_count = int(record["left_count"])
+            lines.append(f"指定銀行 {bank} 官方即時狀態尚有 {left_count:,} 份名額。")
+        for record in unknown:
+            bank = str(record.get("bank_name", "指定銀行")).strip()
+            lines.append(f"指定銀行 {bank} 未提供可判讀的剩餘名額。")
+        type_texts = list(
+            dict.fromkeys(str(record.get("type_text", "")).strip() for record in records if record.get("type_text"))
+        )
+        lines.extend(f"回饋條件：{value}" for value in type_texts)
+        if sold_out and not available and not unknown:
+            lines.append("所有指定銀行名額皆已額滿。")
+
+        serialized = json.dumps(data, ensure_ascii=False, sort_keys=True).encode("utf-8")
+        first_notice = lines[2] if sold_out else ""
+        available_notice = next((line for line in lines if "官方即時狀態尚有" in line), "")
+        public_quota_status = {
+            "source_url": task.fetch_url,
+            "notice": first_notice,
+            "available_notice": available_notice,
+            "sold_out_count": len(sold_out),
+            "available_count": len(available),
+            "unknown_count": len(unknown),
+            "unavailable": False,
+        }
+        document = Document(
+            url=task.fetch_url,
+            title=task.title_hint,
+            text="\n".join(lines),
+            links=[],
+            content_hash=hashlib.sha256(serialized).hexdigest(),
+            raw_json={"records": records, "public_quota_status": public_quota_status},
+        )
+        activity_task = Task(
+            provider=task.provider,
+            source_name=task.source_name,
+            role="activity_detail",
+            fetch_url=task.fetch_url,
+            # The period-bearing official API URL is both stable and unique.
+            # A shared quota homepage would collide when two periods overlap.
+            display_url=task.fetch_url,
+            title_hint=task.title_hint,
+            adapter="pxmart_quota_activity",
+            external_id=task.external_id,
+            start_date=start_date,
+            end_date=end_date,
+        )
+        self.activity_documents.append(CollectedDocument(activity_task, document, collected.fetched_at))
+        self._set_discovery_result(task, 1)
+
+    def _collect_famipay_listing(self, collected: CollectedDocument) -> None:
+        task = collected.task
+        data = collected.document.raw_json
+        source = data.get("html", "") if isinstance(data, dict) else ""
+        if not isinstance(source, str) or not source:
+            self._set_discovery_result(task, 0)
+            return
+        chunks = re.split(r'<div\s+class=["\']card card--event["\']\s*>', source, flags=re.I)[1:]
+        records: list[dict[str, str]] = []
+        seen: set[tuple[str, str]] = set()
+        for chunk in chunks:
+            title_match = re.search(r'class=["\']card__title["\'][^>]*>(.*?)</h\d>', chunk, re.I | re.S)
+            if not title_match:
+                continue
+            title = html.unescape(re.sub(r"<[^>]+>", " ", title_match.group(1)))
+            title = re.sub(r"\s+", " ", title).strip()
+            if "famipay" not in title.casefold():
+                continue
+            date_match = re.search(r'class=["\']card__date["\'][^>]*>(.*?)</p>', chunk, re.I | re.S)
+            summary_match = re.search(r'class=["\']card__text[^"\']*["\'][^>]*>(.*?)</p>', chunk, re.I | re.S)
+            href_match = re.search(r'class=["\']card__cover-link["\'][^>]*href=["\']([^"\']+)', chunk, re.I)
+            date_text = html.unescape(re.sub(r"<[^>]+>", " ", date_match.group(1))) if date_match else ""
+            date_text = re.sub(r"\s+", " ", date_text).strip()
+            summary = html.unescape(re.sub(r"<[^>]+>", " ", summary_match.group(1))) if summary_match else ""
+            summary = re.sub(r"\s+", " ", summary).strip()
+            key = (title, date_text)
+            if key in seen:
+                continue
+            seen.add(key)
+            records.append(
+                {
+                    "title": title,
+                    "date": date_text,
+                    "summary": summary,
+                    # Kept only for auditability. It is intentionally not fetched
+                    # or cited because many official cards point to a bank site.
+                    "external_detail": html.unescape(href_match.group(1)) if href_match else "",
+                }
+            )
+
+        included = 0
+        for record in records[: task.max_links]:
+            dates = re.search(
+                r"(20\d{2})[/-](\d{1,2})[/-](\d{1,2})\s*-\s*(20\d{2})[/-](\d{1,2})[/-](\d{1,2})",
+                record["date"],
+            )
+            start_date = ""
+            end_date = ""
+            if dates:
+                candidate_start = f"{int(dates.group(1)):04d}-{int(dates.group(2)):02d}-{int(dates.group(3)):02d}"
+                candidate_end = f"{int(dates.group(4)):04d}-{int(dates.group(5)):02d}-{int(dates.group(6)):02d}"
+                try:
+                    date.fromisoformat(candidate_start)
+                    parsed_end = date.fromisoformat(candidate_end)
+                except ValueError:
+                    parsed_end = None
+                if parsed_end and parsed_end < self.now.date():
+                    continue
+                if parsed_end:
+                    start_date = candidate_start
+                    end_date = candidate_end
+            title = record["title"]
+            identifier = hashlib.sha256(f"{title}\n{record['date']}".encode("utf-8")).hexdigest()[:16]
+            raw = json.dumps(record, ensure_ascii=False, sort_keys=True).encode("utf-8")
+            document = Document(
+                url=task.fetch_url,
+                title=title,
+                text="\n".join(
+                    value
+                    for value in (
+                        f"title: {title}",
+                        f"活動期間：{record['date']}" if record["date"] else "",
+                        f"活動摘要：{record['summary']}" if record["summary"] else "",
+                    )
+                    if value
+                ),
+                links=[],
+                content_hash=hashlib.sha256(raw).hexdigest(),
+                raw_json=record,
+            )
+            activity_task = Task(
+                provider=task.provider,
+                source_name=f"{task.source_name} → {title[:80]}",
+                role="activity_detail",
+                fetch_url=task.fetch_url,
+                # Keep synthesized cards unique after canonical_url removes
+                # fragments. The monitor_card query is stable, remains on the
+                # official listing, and does not turn the external bank href
+                # into evidence.
+                display_url=(
+                    f"{task.display_url}{'&' if '?' in task.display_url else '?'}"
+                    f"monitor_card={identifier}#04"
+                ),
+                title_hint=title,
+                adapter="famipay_official_card",
+                external_id=f"famipay-card-{identifier}",
+                start_date=start_date,
+                end_date=end_date,
+            )
+            self.activity_documents.append(CollectedDocument(activity_task, document, collected.fetched_at))
+            included += 1
+        self._set_discovery_result(task, included, total_count=len(records))
+
     def _collect_fullpay_news(self, collected: CollectedDocument) -> None:
         task = collected.task
         data = collected.document.raw_json
@@ -457,6 +1097,18 @@ class Crawler:
 
     def _discovered_tasks(self, collected: CollectedDocument) -> list[Task]:
         task = collected.task
+        if task.adapter == "pi_wordpress_listing":
+            return self._pi_post_tasks(collected)
+        if task.adapter == "pxmart_campaign_listing":
+            return self._pxmart_campaign_tasks(collected)
+        if task.adapter == "pxmart_quota_periods":
+            return self._pxmart_quota_tasks(collected)
+        if task.adapter == "pxmart_quota_detail":
+            self._collect_pxmart_quota(collected)
+            return []
+        if task.adapter == "famipay_listing":
+            self._collect_famipay_listing(collected)
+            return []
         if task.adapter == "fullpay_news_listing":
             self._collect_fullpay_news(collected)
             return []
@@ -570,7 +1222,7 @@ class Crawler:
             collected = self._attempt(task)
             if not collected:
                 continue
-            if task.role in {"activity_detail", "status_page", "mixed_detail"}:
+            if task.role in {"activity_detail", "activity_probe", "status_page", "mixed_detail"}:
                 self.activity_documents.append(collected)
             if task.role in {"announcement_detail", "mixed_detail"}:
                 self.announcement_documents.append(collected)
@@ -616,6 +1268,8 @@ class Crawler:
             activities=activities,
             attempts=self.attempts,
             crawl_limit_pending=list(pending_by_provider.values()),
+            discovery_state_updates=self._fullpay_discovery_state_updates(),
+            discovery_scan_summary=self._fullpay_discovery_scan_summary(),
         )
 
     def _activity_from_document(self, collected: CollectedDocument) -> Activity:
@@ -639,12 +1293,39 @@ class Crawler:
         )
         quota_status = quota.status
         quota_evidence_complete = quota.evidence_complete
+        quota_evidence_excerpt = quota.evidence_excerpt
+        quota_components = quota.components
+        pxmart_quota_has_unknown = (
+            task.adapter == "pxmart_quota_activity"
+            and isinstance(public_quota_status, dict)
+            and int(public_quota_status.get("unknown_count", 0)) > 0
+        )
+        if task.adapter == "pxmart_campaign_detail" and quota_status == "unknown_app_only":
+            # The shared PX Pay/Fullpay campaign page contains a Fullpay-only
+            # sentence that points to the Fullpay App. It must not override the
+            # PX Pay status supplied by the separate official cardpoint API.
+            quota_status = "not_marked_full"
+            quota_evidence_complete = True
+            quota_evidence_excerpt = ""
+            quota_components = []
         if (
             quota_status == "not_marked_full"
             and isinstance(public_quota_status, dict)
             and public_quota_status.get("unavailable") is True
         ):
             quota_status = "unknown_source_failure"
+            quota_evidence_complete = False
+        elif (
+            quota_status == "not_marked_full"
+            and task.adapter == "pxmart_quota_activity"
+            and isinstance(public_quota_status, dict)
+            and int(public_quota_status.get("available_count", 0)) > 0
+            and int(public_quota_status.get("sold_out_count", 0)) == 0
+            and int(public_quota_status.get("unknown_count", 0)) == 0
+        ):
+            quota_status = "confirmed_available"
+            quota_evidence_complete = True
+        if pxmart_quota_has_unknown:
             quota_evidence_complete = False
         title = document.title
         hint = re.sub(r"\s+", " ", task.title_hint).strip()
@@ -682,13 +1363,13 @@ class Crawler:
             if content_title:
                 title = content_title
         evidence: list[Evidence] = []
-        if quota.evidence_excerpt:
+        if quota_evidence_excerpt:
             quota_api_notice = (
                 str(public_quota_status.get("notice", ""))
                 if isinstance(public_quota_status, dict)
                 else ""
             )
-            from_quota_api = bool(quota_api_notice and quota_api_notice in quota.evidence_excerpt)
+            from_quota_api = bool(quota_api_notice and quota_api_notice in quota_evidence_excerpt)
             evidence.append(
                 Evidence(
                     source_url=(
@@ -696,9 +1377,24 @@ class Crawler:
                         if from_quota_api
                         else task.display_url
                     ),
-                    excerpt=quota.evidence_excerpt,
+                    excerpt=quota_evidence_excerpt,
                     observed_at=collected.fetched_at,
                     kind="activity_status_api" if from_quota_api else "activity_page",
+                    content_hash=document.content_hash,
+                )
+            )
+        available_notice = (
+            str(public_quota_status.get("available_notice", ""))
+            if isinstance(public_quota_status, dict)
+            else ""
+        )
+        if available_notice:
+            evidence.append(
+                Evidence(
+                    source_url=str(public_quota_status.get("source_url", task.display_url)),
+                    excerpt=available_notice[:500],
+                    observed_at=collected.fetched_at,
+                    kind="activity_status_api",
                     content_hash=document.content_hash,
                 )
             )
@@ -707,6 +1403,7 @@ class Crawler:
             or lifecycle == "unknown"
             or "monitor_review_required: true" in document.text
             or quota_status == "unknown_source_failure"
+            or pxmart_quota_has_unknown
         )
         return Activity(
             provider_id=task.provider["id"],
@@ -726,7 +1423,7 @@ class Crawler:
             fetched_at=collected.fetched_at,
             content_hash=document.content_hash,
             evidence=evidence,
-            components=quota.components,
+            components=quota_components,
         )
 
     @staticmethod

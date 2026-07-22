@@ -38,6 +38,13 @@ QUOTA_STATUSES = {
     "unknown_app_only",
     "unknown_source_failure",
 }
+PUBLIC_STATUS_SCOPES = {
+    "public",
+    "partial",
+    "app_only",
+    "unavailable",
+    "unknown",
+}
 CONDITION_LABELS = {
     "location": "適用地點",
     "content": "活動內容",
@@ -73,6 +80,18 @@ def _date_value(value: Any) -> date | None:
         return date.fromisoformat(value)
     except ValueError:
         return None
+
+
+def _public_status_scope(
+    provider: dict[str, Any],
+    coverage_item: dict[str, Any],
+) -> str:
+    value = str(
+        coverage_item.get("public_status_scope")
+        or provider.get("public_status_scope")
+        or "unknown"
+    )
+    return value if value in PUBLIC_STATUS_SCOPES else "unknown"
 
 
 def _google_calendar_url(activity: dict[str, Any]) -> str:
@@ -331,7 +350,8 @@ def build(report_path: Path, output_dir: Path, supplement_path: Path) -> Path:
     generated_at = datetime.fromisoformat(str(report["generated_at"])).astimezone(timezone)
     today = generated_at.date()
     activities = _flatten_report(report, today)
-    activities.extend(_supplemental_activities(supplement, config, activities, today))
+    supplemental_activities = _supplemental_activities(supplement, config, activities, today)
+    activities.extend(supplemental_activities)
     ai_highlights = _ai_highlights(supplement, config, activities)
     highlights = ai_highlights or _automatic_highlights(activities)
     highlights_by_url = {
@@ -351,17 +371,92 @@ def build(report_path: Path, output_dir: Path, supplement_path: Path) -> Path:
     coverage = report.get("run", {}).get("coverage", {})
     failures = report.get("source_failures", [])
     gaps = report.get("coverage_gaps", [])
+    registered_sources = coverage.get("registered_sources")
+    extended_checks = coverage.get("extended_checks")
+    has_grouped_health = isinstance(registered_sources, dict) and isinstance(extended_checks, dict)
+    if has_grouped_health:
+        official_failed = int(registered_sources.get("failed", 0) or 0)
+        extended_failed = int(extended_checks.get("failed", 0) or 0)
+        official_expected = int(registered_sources.get("expected", 0) or 0)
+        official_succeeded = int(registered_sources.get("succeeded", 0) or 0)
+        health_status = (
+            "unavailable"
+            if official_expected > 0 and official_succeeded == 0
+            else ("normal" if official_failed == 0 and extended_failed == 0 else "partial")
+        )
+    else:
+        registered_sources = {}
+        extended_checks = {}
+        legacy_transport_status = str(coverage.get("transport_status", ""))
+        health_status = (
+            "unavailable"
+            if legacy_transport_status == "unavailable"
+            else ("normal" if not failures else "partial")
+        )
+    review_label = "官網列表皆可直接解析"
+    if gaps and supplemental_activities:
+        review_label = (
+            f"{len(gaps)} 個官網列表待補強；AI 已補入 "
+            f"{len(supplemental_activities)} 筆官方網域活動"
+        )
+    elif gaps:
+        review_label = f"{len(gaps)} 個官網列表待補強"
     source_health = {
-        "status": "normal" if not failures else "partial",
-        "label": "資料更新正常" if not failures else "部分官網暫時無法讀取",
+        "status": health_status,
+        "label": {
+            "normal": "資料更新正常",
+            "partial": "部分官網檢查未完成",
+            "unavailable": "官方入口暫時無法讀取",
+        }[health_status],
+        # Legacy request-level counters remain available to old clients.
         "succeeded": coverage.get("succeeded", 0),
         "expected": coverage.get("expected", 0),
+        "official_sources": registered_sources,
+        "extended_checks": extended_checks,
         "failures": failures,
         "needs_ai_review": len(gaps),
-        "review_label": f"{len(gaps)} 個官網列表由 AI 補查" if gaps else "官網列表皆可直接解析",
+        "review_label": review_label,
         "coverage_gaps": gaps,
     }
-    providers = sorted({str(item.get("provider_name", "")) for item in activities if item.get("provider_name")})
+    activity_counts: dict[str, int] = {}
+    for item in activities:
+        provider_id = str(item.get("provider_id", ""))
+        if provider_id:
+            activity_counts[provider_id] = activity_counts.get(provider_id, 0) + 1
+    report_coverage = report.get("coverage_by_provider", {})
+    provider_coverage: list[dict[str, Any]] = []
+    for provider in config.get("providers", []):
+        if not isinstance(provider, dict) or not provider.get("id"):
+            continue
+        provider_id = str(provider["id"])
+        coverage_item = report_coverage.get(provider_id, {})
+        discovery_status = str(coverage_item.get("discovery_status", "limited"))
+        coverage_note = str(
+            coverage_item.get("public_status_coverage")
+            or provider.get("public_status_coverage", "未提供公開狀態說明")
+        )
+        public_status_state = _public_status_scope(provider, coverage_item)
+        official_sources = coverage_item.get("registered_sources", {})
+        extended_checks = coverage_item.get("extended_checks", {})
+        provider_coverage.append(
+            {
+                "provider_id": provider_id,
+                "provider_name": str(provider.get("name", provider_id)),
+                "activity_count": activity_counts.get(provider_id, 0),
+                "discovery_status": discovery_status,
+                "discovery_label": "完整" if discovery_status == "complete" else "部分涵蓋",
+                "succeeded": int(coverage_item.get("succeeded", 0) or 0),
+                "expected": int(coverage_item.get("expected", 0) or 0),
+                "official_sources": official_sources if isinstance(official_sources, dict) else {},
+                "extended_checks": extended_checks if isinstance(extended_checks, dict) else {},
+                "public_status_coverage": public_status_state,
+                "coverage_note": coverage_note,
+            }
+        )
+    providers = sorted(
+        (item["provider_name"] for item in provider_coverage),
+        key=str.casefold,
+    )
     payload = {
         "schema_version": 1,
         "generated_at": report["generated_at"],
@@ -371,6 +466,7 @@ def build(report_path: Path, output_dir: Path, supplement_path: Path) -> Path:
         "summary": report.get("summary", {}),
         "source_health": source_health,
         "providers": providers,
+        "provider_coverage": provider_coverage,
         "highlights": highlights,
         "activities": activities,
         "analysis_method": "local_rules_and_codex_review" if ai_highlights else "local_rules",

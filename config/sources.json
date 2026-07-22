@@ -2,13 +2,14 @@
   "schema_version": 1,
   "timezone": "Asia/Taipei",
   "request_delay_seconds": 0.15,
-  "max_total_pages": 240,
+  "max_total_pages": 650,
   "providers": [
     {
       "id": "fullpay",
       "name": "全支付／PX Pay Plus",
       "official_domains": ["pxpayplus.com", "marketing.pxpayplus.com", "service.pxpayplus.com"],
-      "public_status_coverage": "官網活動總覽、活動頁公開狀態 API 與官網最新消息可擷取；App 小鈴鐺活動通知無公開列表，無公開額滿證據時維持 App-only 未知",
+      "public_status_scope": "partial",
+      "public_status_coverage": "官網主題總覽、官方活動編號探索、活動頁公開狀態 API 與官網最新消息可擷取；編號探索仍非官方完整清單，App 小鈴鐺活動通知無公開列表，無公開額滿證據時維持 App-only 未知",
       "sources": [
         {
           "name": "全支付百大品牌活動總覽",
@@ -27,6 +28,19 @@
           "adapter": "fullpay_hub_listing",
           "coverage_scope": "partial",
           "max_links": 10
+        },
+        {
+          "name": "全支付官方活動 API 編號探索",
+          "role": "activity_listing",
+          "url": "https://service.pxpayplus.com/px-advertise/web/activity/detail/",
+          "display_url": "https://marketing.pxpayplus.com/pxplus_marketing_page/activity_content_page",
+          "adapter": "fullpay_id_scan",
+          "coverage_scope": "partial",
+          "minimum_event_id": 1,
+          "bootstrap_end_id": 160,
+          "rescan_window": 160,
+          "frontier_buffer": 32,
+          "maximum_probe_ids": 220
         },
         {
           "name": "全支付官網最新消息",
@@ -48,9 +62,107 @@
       ]
     },
     {
+      "id": "piwallet",
+      "name": "Pi 拍錢包",
+      "official_domains": ["piapp.com.tw"],
+      "public_status_scope": "partial",
+      "public_status_coverage": "Pi 拍錢包官方活動與公告文章；WordPress 官方 API 僅代表公開文章，非 App 內完整活動清單，維持部分覆蓋",
+      "sources": [
+        {
+          "name": "Pi 拍錢包官方活動文章 API",
+          "role": "activity_listing",
+          "url": "https://web.piapp.com.tw/wp-json/wp/v2/posts?categories=3&per_page=50&_fields=id,date,modified,link,title,excerpt",
+          "display_url": "https://web.piapp.com.tw/events/",
+          "adapter": "pi_wordpress_listing",
+          "coverage_scope": "partial",
+          "max_links": 40
+        },
+        {
+          "name": "Pi 拍錢包官方公告 API",
+          "role": "announcement_listing",
+          "url": "https://web.piapp.com.tw/wp-json/wp/v2/posts?categories=55&per_page=40&_fields=id,date,modified,link,title,excerpt",
+          "display_url": "https://web.piapp.com.tw/",
+          "adapter": "pi_wordpress_listing",
+          "coverage_scope": "partial",
+          "max_links": 30
+        }
+      ],
+      "seeds": []
+    },
+    {
+      "id": "pxpay",
+      "name": "PX Pay",
+      "official_domains": ["pxmart.com.tw", "pxmartevent.com.tw"],
+      "public_status_scope": "partial",
+      "public_status_coverage": "全聯官網僅納入明確標示「PX Pay」的活動卡，並查詢全聯官方福利點即時名額 API；其他信用卡、悠遊卡或全支付標籤不歸入 PX Pay，維持部分覆蓋",
+      "sources": [
+        {
+          "name": "全聯 PX Pay 官方活動卡",
+          "role": "activity_listing",
+          "url": "https://www.pxmart.com.tw/campaign/pxpay-card",
+          "adapter": "pxmart_campaign_listing",
+          "coverage_scope": "partial",
+          "max_links": 12
+        },
+        {
+          "name": "PX Pay 指定銀行福利點即時名額",
+          "role": "mixed_listing",
+          "url": "https://cardpoint.pxmartevent.com.tw/event/GetPeriodList?event_type=1",
+          "display_url": "https://cardpoint.pxmartevent.com.tw/",
+          "adapter": "pxmart_quota_periods",
+          "coverage_scope": "partial",
+          "max_links": 4
+        }
+      ],
+      "seeds": []
+    },
+    {
+      "id": "famipay",
+      "name": "My FamiPay",
+      "official_domains": ["family.com.tw"],
+      "public_status_scope": "partial",
+      "public_status_coverage": "只採全家便利商店官網活動列表中標題明確含 FamiPay 的卡片；列表連往銀行或其他合作方的外部詳情不當成全家官方證據，維持部分覆蓋",
+      "sources": [
+        {
+          "name": "全家官方 FamiPay 活動卡",
+          "role": "activity_listing",
+          "url": "https://www.family.com.tw/Marketing/zh/Event",
+          "adapter": "famipay_listing",
+          "coverage_scope": "partial",
+          "max_links": 12
+        }
+      ],
+      "seeds": []
+    },
+    {
+      "id": "openwallet",
+      "name": "OPEN錢包",
+      "official_domains": ["7-11.com.tw"],
+      "public_status_scope": "partial",
+      "public_status_coverage": "7-ELEVEN 官方支付入口與 OPEN錢包固定活動頁；尚無已驗證的完整公開活動 API，維持部分覆蓋",
+      "sources": [
+        {
+          "name": "7-ELEVEN 官方支付服務入口",
+          "role": "activity_listing",
+          "url": "https://www.7-11.com.tw/service/Pay.aspx/1000",
+          "link_patterns": ["7-11\\.com\\.tw/openpoint_event1/", "OPEN(?:POINT)?錢包"],
+          "coverage_scope": "partial",
+          "max_links": 8
+        }
+      ],
+      "seeds": [
+        {
+          "name": "OPEN錢包官方指定銀行活動",
+          "url": "https://www.7-11.com.tw/openpoint_event1/19event/card.aspx",
+          "title": "OPEN錢包指定銀行回饋活動"
+        }
+      ]
+    },
+    {
       "id": "easywallet",
       "name": "悠遊付",
       "official_domains": ["easycard.com.tw", "easywallet.easycard.com.tw", "yax.easycard.com.tw"],
+      "public_status_scope": "partial",
       "public_status_coverage": "活動頁與官網最新消息；若頁面指定 App 公告則維持 App-only 未知",
       "sources": [
         {
@@ -83,6 +195,7 @@
       "id": "taiwanpay",
       "name": "台灣 Pay",
       "official_domains": ["taiwanpay.com.tw"],
+      "public_status_scope": "partial",
       "public_status_coverage": "活動頁；依各活動規則加查主辦銀行及合作通路官方公告",
       "sources": [
         {
@@ -108,6 +221,7 @@
       "id": "ipassmoney",
       "name": "一卡通 MONEY",
       "official_domains": ["i-pass.com.tw", "web.i-pass.com.tw"],
+      "public_status_scope": "public",
       "public_status_coverage": "優惠列表與活動詳情；列表標題中的額滿註記也會隨詳情擷取",
       "sources": [
         {
@@ -131,6 +245,7 @@
       "id": "icashpay",
       "name": "icash Pay",
       "official_domains": ["icashpay.com.tw"],
+      "public_status_scope": "public",
       "public_status_coverage": "活動專頁與官方公告訊息",
       "sources": [
         {
@@ -159,6 +274,7 @@
       "id": "pluspay",
       "name": "全盈+PAY",
       "official_domains": ["pluspay.com.tw", "event2023.pluspay.com.tw"],
+      "public_status_scope": "partial",
       "public_status_coverage": "官網活動頁；若活動另指定 App 或合作通路公告，會標示覆蓋缺口",
       "sources": [
         {
@@ -187,6 +303,7 @@
       "id": "gamapay",
       "name": "橘子支付",
       "official_domains": ["gamapay.com.tw"],
+      "public_status_scope": "public",
       "public_status_coverage": "官網最新消息同時含活動與額滿公告，採混合掃描",
       "sources": [
         {
@@ -209,6 +326,7 @@
       "id": "jkopay",
       "name": "街口支付",
       "official_domains": ["jkopay.com", "mkt.jkopay.com"],
+      "public_status_scope": "public",
       "public_status_coverage": "官方行銷活動頁；公開列表結構若變更會列為來源失敗",
       "sources": [
         {
@@ -237,6 +355,7 @@
       "id": "opay",
       "name": "歐付寶",
       "official_domains": ["opay.tw"],
+      "public_status_scope": "public",
       "public_status_coverage": "官方公告頁；活動與額滿通知採混合掃描",
       "sources": [
         {
@@ -265,6 +384,7 @@
       "id": "ezpay",
       "name": "簡單行動支付 ezPay",
       "official_domains": ["ezpay.com.tw"],
+      "public_status_scope": "public",
       "public_status_coverage": "官網服務與公告入口；無活動日期時送 AI／人工複核",
       "sources": [
         {
@@ -281,6 +401,7 @@
       "id": "linepaymoney",
       "name": "LINE Pay Money",
       "official_domains": ["pay.line.me"],
+      "public_status_scope": "partial",
       "public_status_coverage": "官方入口可能為動態頁面；無法公開解析時列入覆蓋缺口",
       "sources": [
         {

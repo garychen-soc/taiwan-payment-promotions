@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-21T08:16:50.895840+08:00",
-  "build_at": "2026-07-21T08:19:39.028928+08:00",
+  "generated_at": "2026-07-22T08:40:32.717248+08:00",
+  "build_at": "2026-07-22T08:42:25.653856+08:00",
   "timezone": "Asia/Taipei",
   "headline": "7/23 OK 超商 10% 即將開跑，NET 隨機最高 100% 與新戶首刷 100% 仍是今日焦點",
   "summary": {
@@ -26,7 +26,7 @@
         "role": "activity_detail",
         "url": "https://service.pxpayplus.com/px-advertise/web/activity/detail/89",
         "ok": false,
-        "fetched_at": "2026-07-21T08:16:50.895840+08:00",
+        "fetched_at": "2026-07-22T08:40:32.717248+08:00",
         "status_code": null,
         "final_url": null,
         "error": "RuntimeError: Failed to fetch https://service.pxpayplus.com/px-advertise/web/activity/detail/89: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
@@ -40,7 +40,7 @@
         "role": "activity_listing",
         "url": "https://www.easycard.com.tw/offer",
         "ok": false,
-        "fetched_at": "2026-07-21T08:16:50.895840+08:00",
+        "fetched_at": "2026-07-22T08:40:32.717248+08:00",
         "status_code": null,
         "final_url": null,
         "error": "RuntimeError: Failed to fetch https://www.easycard.com.tw/offer: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
@@ -54,7 +54,7 @@
         "role": "announcement_listing",
         "url": "https://www.easycard.com.tw/news?cls=1&page=1",
         "ok": false,
-        "fetched_at": "2026-07-21T08:16:50.895840+08:00",
+        "fetched_at": "2026-07-22T08:40:32.717248+08:00",
         "status_code": null,
         "final_url": null,
         "error": "RuntimeError: Failed to fetch https://www.easycard.com.tw/news?cls=1&page=1: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
@@ -68,7 +68,7 @@
         "role": "activity_detail",
         "url": "https://www.easycard.com.tw/offer?cls=1506473503,1506473490,&id=1781689964",
         "ok": false,
-        "fetched_at": "2026-07-21T08:16:50.895840+08:00",
+        "fetched_at": "2026-07-22T08:40:32.717248+08:00",
         "status_code": null,
         "final_url": null,
         "error": "RuntimeError: Failed to fetch https://www.easycard.com.tw/offer?cls=1506473503,1506473490,&id=1781689964: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
@@ -82,7 +82,7 @@
         "role": "activity_detail",
         "url": "https://yax.easycard.com.tw/offer?cls=1506473519,1506473490,1506473503,&id=1781071557",
         "ok": false,
-        "fetched_at": "2026-07-21T08:16:50.895840+08:00",
+        "fetched_at": "2026-07-22T08:40:32.717248+08:00",
         "status_code": null,
         "final_url": null,
         "error": "RuntimeError: Failed to fetch https://yax.easycard.com.tw/offer?cls=1506473519,1506473490,1506473503,&id=1781071557: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
@@ -96,7 +96,7 @@
         "role": "taiwanpay_api_listing",
         "url": "https://www.taiwanpay.com.tw/tpay/v1.0.0/950/taiwanpayfapi/TF02/TF020109",
         "ok": false,
-        "fetched_at": "2026-07-21T08:16:50.895840+08:00",
+        "fetched_at": "2026-07-22T08:40:32.717248+08:00",
         "status_code": null,
         "final_url": null,
         "error": "RuntimeError: Failed to POST https://www.taiwanpay.com.tw/tpay/v1.0.0/950/taiwanpayfapi/TF02/TF020109: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
@@ -110,7 +110,7 @@
         "role": "activity_detail",
         "url": "https://www.taiwanpay.com.tw/tpay/v1.0.0/950/taiwanpayfapi/TF02/TF020110",
         "ok": false,
-        "fetched_at": "2026-07-21T08:16:50.895840+08:00",
+        "fetched_at": "2026-07-22T08:40:32.717248+08:00",
         "status_code": null,
         "final_url": null,
         "error": "RuntimeError: Failed to POST https://www.taiwanpay.com.tw/tpay/v1.0.0/950/taiwanpayfapi/TF02/TF020110: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
@@ -124,7 +124,7 @@
         "role": "mixed_listing",
         "url": "https://web.i-pass.com.tw/Preferential?type=0",
         "ok": false,
-        "fetched_at": "2026-07-21T08:16:50.895840+08:00",
+        "fetched_at": "2026-07-22T08:40:32.717248+08:00",
         "status_code": null,
         "final_url": null,
         "error": "RuntimeError: Failed to fetch https://web.i-pass.com.tw/Preferential?type=0: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
@@ -138,7 +138,7 @@
         "role": "announcement_listing",
         "url": "https://www.i-pass.com.tw/News/Notice",
         "ok": false,
-        "fetched_at": "2026-07-21T08:16:50.895840+08:00",
+        "fetched_at": "2026-07-22T08:40:32.717248+08:00",
         "status_code": null,
         "final_url": null,
         "error": "RuntimeError: Failed to fetch https://www.i-pass.com.tw/News/Notice: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
@@ -152,7 +152,7 @@
         "role": "activity_listing",
         "url": "https://www.icashpay.com.tw/advertMessage/index",
         "ok": false,
-        "fetched_at": "2026-07-21T08:16:50.895840+08:00",
+        "fetched_at": "2026-07-22T08:40:32.717248+08:00",
         "status_code": null,
         "final_url": null,
         "error": "RuntimeError: Failed to fetch https://www.icashpay.com.tw/advertMessage/index: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
@@ -166,7 +166,7 @@
         "role": "announcement_listing",
         "url": "https://www.icashpay.com.tw/news",
         "ok": false,
-        "fetched_at": "2026-07-21T08:16:50.895840+08:00",
+        "fetched_at": "2026-07-22T08:40:32.717248+08:00",
         "status_code": null,
         "final_url": null,
         "error": "RuntimeError: Failed to fetch https://www.icashpay.com.tw/news: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
@@ -180,7 +180,7 @@
         "role": "activity_detail",
         "url": "https://www.icashpay.com.tw/event/memberbenefits/",
         "ok": false,
-        "fetched_at": "2026-07-21T08:16:50.895840+08:00",
+        "fetched_at": "2026-07-22T08:40:32.717248+08:00",
         "status_code": null,
         "final_url": null,
         "error": "RuntimeError: Failed to fetch https://www.icashpay.com.tw/event/memberbenefits/: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
@@ -194,7 +194,7 @@
         "role": "activity_listing",
         "url": "https://event2023.pluspay.com.tw/",
         "ok": false,
-        "fetched_at": "2026-07-21T08:16:50.895840+08:00",
+        "fetched_at": "2026-07-22T08:40:32.717248+08:00",
         "status_code": null,
         "final_url": null,
         "error": "RuntimeError: Failed to fetch https://event2023.pluspay.com.tw/: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
@@ -208,7 +208,7 @@
         "role": "announcement_listing",
         "url": "https://www.pluspay.com.tw/News/",
         "ok": false,
-        "fetched_at": "2026-07-21T08:16:50.895840+08:00",
+        "fetched_at": "2026-07-22T08:40:32.717248+08:00",
         "status_code": null,
         "final_url": null,
         "error": "RuntimeError: Failed to fetch https://www.pluspay.com.tw/News/: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
@@ -222,7 +222,7 @@
         "role": "activity_detail",
         "url": "https://www.pluspay.com.tw/Content/Event/PayPay.html",
         "ok": false,
-        "fetched_at": "2026-07-21T08:16:50.895840+08:00",
+        "fetched_at": "2026-07-22T08:40:32.717248+08:00",
         "status_code": null,
         "final_url": null,
         "error": "RuntimeError: Failed to fetch https://www.pluspay.com.tw/Content/Event/PayPay.html: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
@@ -236,7 +236,7 @@
         "role": "mixed_listing",
         "url": "https://www.gamapay.com.tw/news_list.html",
         "ok": false,
-        "fetched_at": "2026-07-21T08:16:50.895840+08:00",
+        "fetched_at": "2026-07-22T08:40:32.717248+08:00",
         "status_code": null,
         "final_url": null,
         "error": "RuntimeError: Failed to fetch https://www.gamapay.com.tw/news_list.html: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
@@ -250,7 +250,7 @@
         "role": "activity_detail",
         "url": "https://www.gamapay.com.tw/news.html?id=2646",
         "ok": false,
-        "fetched_at": "2026-07-21T08:16:50.895840+08:00",
+        "fetched_at": "2026-07-22T08:40:32.717248+08:00",
         "status_code": null,
         "final_url": null,
         "error": "RuntimeError: Failed to fetch https://www.gamapay.com.tw/news.html?id=2646: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
@@ -264,7 +264,7 @@
         "role": "activity_listing",
         "url": "https://mkt.jkopay.com/",
         "ok": false,
-        "fetched_at": "2026-07-21T08:16:50.895840+08:00",
+        "fetched_at": "2026-07-22T08:40:32.717248+08:00",
         "status_code": null,
         "final_url": null,
         "error": "RuntimeError: Failed to fetch https://mkt.jkopay.com/: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
@@ -278,7 +278,7 @@
         "role": "announcement_listing",
         "url": "https://www.jkopay.com/application/announce",
         "ok": false,
-        "fetched_at": "2026-07-21T08:16:50.895840+08:00",
+        "fetched_at": "2026-07-22T08:40:32.717248+08:00",
         "status_code": null,
         "final_url": null,
         "error": "RuntimeError: Failed to fetch https://www.jkopay.com/application/announce: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
@@ -292,7 +292,7 @@
         "role": "activity_detail",
         "url": "https://mkt.jkopay.com/zh-TW/campaign/jkopayebill",
         "ok": false,
-        "fetched_at": "2026-07-21T08:16:50.895840+08:00",
+        "fetched_at": "2026-07-22T08:40:32.717248+08:00",
         "status_code": null,
         "final_url": null,
         "error": "RuntimeError: Failed to fetch https://mkt.jkopay.com/zh-TW/campaign/jkopayebill: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
@@ -306,7 +306,7 @@
         "role": "mixed_listing",
         "url": "https://www.opay.tw/Banner/Event",
         "ok": false,
-        "fetched_at": "2026-07-21T08:16:50.895840+08:00",
+        "fetched_at": "2026-07-22T08:40:32.717248+08:00",
         "status_code": null,
         "final_url": null,
         "error": "RuntimeError: Failed to fetch https://www.opay.tw/Banner/Event: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
@@ -320,7 +320,7 @@
         "role": "announcement_listing",
         "url": "https://www.opay.tw/announcement/moreannouncement",
         "ok": false,
-        "fetched_at": "2026-07-21T08:16:50.895840+08:00",
+        "fetched_at": "2026-07-22T08:40:32.717248+08:00",
         "status_code": null,
         "final_url": null,
         "error": "RuntimeError: Failed to fetch https://www.opay.tw/announcement/moreannouncement: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
@@ -334,7 +334,7 @@
         "role": "activity_detail",
         "url": "https://www.opay.tw/announcement/DetailAnnouncement?nID=4379",
         "ok": false,
-        "fetched_at": "2026-07-21T08:16:50.895840+08:00",
+        "fetched_at": "2026-07-22T08:40:32.717248+08:00",
         "status_code": null,
         "final_url": null,
         "error": "RuntimeError: Failed to fetch https://www.opay.tw/announcement/DetailAnnouncement?nID=4379: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
@@ -348,7 +348,7 @@
         "role": "mixed_listing",
         "url": "https://www.ezpay.com.tw/info/Announcement/lastest_news/person",
         "ok": false,
-        "fetched_at": "2026-07-21T08:16:50.895840+08:00",
+        "fetched_at": "2026-07-22T08:40:32.717248+08:00",
         "status_code": null,
         "final_url": null,
         "error": "RuntimeError: Failed to fetch https://www.ezpay.com.tw/info/Announcement/lastest_news/person: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
@@ -362,7 +362,7 @@
         "role": "activity_listing",
         "url": "https://pay.line.me/portal/tw/about/promotions?progressType=ONGOING",
         "ok": false,
-        "fetched_at": "2026-07-21T08:16:50.895840+08:00",
+        "fetched_at": "2026-07-22T08:40:32.717248+08:00",
         "status_code": null,
         "final_url": null,
         "error": "RuntimeError: Failed to fetch https://pay.line.me/portal/tw/about/promotions?progressType=ONGOING: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
@@ -491,9 +491,9 @@
         "fixed_reward_amount": null,
         "is_high_return": true,
         "is_upcoming": false,
-        "starts_in_days": -142,
+        "starts_in_days": -143,
         "is_expiring_soon": false,
-        "ends_in_days": 71,
+        "ends_in_days": 70,
         "insight_tags": [
           "高回饋",
           "已額滿"
@@ -539,9 +539,9 @@
         "fixed_reward_amount": 10,
         "is_high_return": false,
         "is_upcoming": false,
-        "starts_in_days": -128,
+        "starts_in_days": -129,
         "is_expiring_soon": false,
-        "ends_in_days": 71,
+        "ends_in_days": 70,
         "insight_tags": [
           "已額滿"
         ],
@@ -587,9 +587,9 @@
         "fixed_reward_amount": null,
         "is_high_return": true,
         "is_upcoming": false,
-        "starts_in_days": -81,
+        "starts_in_days": -82,
         "is_expiring_soon": false,
-        "ends_in_days": 71,
+        "ends_in_days": 70,
         "insight_tags": [
           "高回饋",
           "已額滿"
@@ -635,9 +635,9 @@
         "fixed_reward_amount": null,
         "is_high_return": false,
         "is_upcoming": false,
-        "starts_in_days": -64,
+        "starts_in_days": -65,
         "is_expiring_soon": false,
-        "ends_in_days": 27,
+        "ends_in_days": 26,
         "insight_tags": [
           "已額滿"
         ],
@@ -694,9 +694,9 @@
         "fixed_reward_amount": null,
         "is_high_return": true,
         "is_upcoming": false,
-        "starts_in_days": -50,
+        "starts_in_days": -51,
         "is_expiring_soon": false,
-        "ends_in_days": 41,
+        "ends_in_days": 40,
         "insight_tags": [
           "高回饋",
           "部分額滿"
@@ -743,9 +743,9 @@
         "fixed_reward_amount": null,
         "is_high_return": true,
         "is_upcoming": false,
-        "starts_in_days": -50,
+        "starts_in_days": -51,
         "is_expiring_soon": false,
-        "ends_in_days": 41,
+        "ends_in_days": 40,
         "insight_tags": [
           "高回饋",
           "已額滿"
@@ -791,9 +791,9 @@
         "fixed_reward_amount": null,
         "is_high_return": true,
         "is_upcoming": false,
-        "starts_in_days": -47,
+        "starts_in_days": -48,
         "is_expiring_soon": false,
-        "ends_in_days": 41,
+        "ends_in_days": 40,
         "insight_tags": [
           "高回饋",
           "已額滿"
@@ -843,9 +843,9 @@
         "fixed_reward_amount": null,
         "is_high_return": true,
         "is_upcoming": false,
-        "starts_in_days": -20,
+        "starts_in_days": -21,
         "is_expiring_soon": false,
-        "ends_in_days": 41,
+        "ends_in_days": 40,
         "insight_tags": [
           "高回饋",
           "部分額滿"
@@ -892,9 +892,9 @@
         "fixed_reward_amount": null,
         "is_high_return": true,
         "is_upcoming": false,
-        "starts_in_days": -20,
+        "starts_in_days": -21,
         "is_expiring_soon": false,
-        "ends_in_days": 41,
+        "ends_in_days": 40,
         "insight_tags": [
           "高回饋",
           "已額滿"
@@ -944,9 +944,9 @@
         "fixed_reward_amount": 600,
         "is_high_return": true,
         "is_upcoming": false,
-        "starts_in_days": -20,
+        "starts_in_days": -21,
         "is_expiring_soon": false,
-        "ends_in_days": 163,
+        "ends_in_days": 162,
         "insight_tags": [
           "高回饋",
           "高額回饋",
@@ -992,9 +992,9 @@
         "fixed_reward_amount": null,
         "is_high_return": true,
         "is_upcoming": false,
-        "starts_in_days": -20,
+        "starts_in_days": -21,
         "is_expiring_soon": false,
-        "ends_in_days": 132,
+        "ends_in_days": 131,
         "insight_tags": [
           "高回饋",
           "已額滿"
@@ -1045,9 +1045,9 @@
         "fixed_reward_amount": null,
         "is_high_return": true,
         "is_upcoming": false,
-        "starts_in_days": -20,
+        "starts_in_days": -21,
         "is_expiring_soon": false,
-        "ends_in_days": 41,
+        "ends_in_days": 40,
         "insight_tags": [
           "高回饋",
           "部分額滿"
@@ -1098,9 +1098,9 @@
         "fixed_reward_amount": null,
         "is_high_return": true,
         "is_upcoming": false,
-        "starts_in_days": -20,
+        "starts_in_days": -21,
         "is_expiring_soon": false,
-        "ends_in_days": 41,
+        "ends_in_days": 40,
         "insight_tags": [
           "高回饋",
           "部分額滿"
@@ -1151,9 +1151,9 @@
         "fixed_reward_amount": 100,
         "is_high_return": true,
         "is_upcoming": false,
-        "starts_in_days": -20,
+        "starts_in_days": -21,
         "is_expiring_soon": false,
-        "ends_in_days": 71,
+        "ends_in_days": 70,
         "insight_tags": [
           "高回饋",
           "高額回饋",
@@ -1192,14 +1192,14 @@
         "fixed_reward_amount": null,
         "is_high_return": true,
         "is_upcoming": true,
-        "starts_in_days": 2,
+        "starts_in_days": 1,
         "is_expiring_soon": false,
-        "ends_in_days": 71,
+        "ends_in_days": 70,
         "insight_tags": [
           "高回饋",
           "即將開始"
         ],
-        "human_summary": "最高 10% 回饋，屬高回饋活動；將於 2 天後開始。"
+        "human_summary": "最高 10% 回饋，屬高回饋活動；將於 1 天後開始。"
       },
       "is_featured": true,
       "highlight_kind": "upcoming",
@@ -1243,9 +1243,9 @@
         "fixed_reward_amount": null,
         "is_high_return": true,
         "is_upcoming": false,
-        "starts_in_days": -97,
+        "starts_in_days": -98,
         "is_expiring_soon": false,
-        "ends_in_days": 163,
+        "ends_in_days": 162,
         "insight_tags": [
           "高回饋",
           "需至 App 確認"
@@ -1289,9 +1289,9 @@
         "fixed_reward_amount": 600,
         "is_high_return": true,
         "is_upcoming": false,
-        "starts_in_days": -20,
+        "starts_in_days": -21,
         "is_expiring_soon": false,
-        "ends_in_days": 41,
+        "ends_in_days": 40,
         "insight_tags": [
           "高回饋",
           "高額回饋",
@@ -1339,9 +1339,9 @@
         "fixed_reward_amount": null,
         "is_high_return": true,
         "is_upcoming": false,
-        "starts_in_days": -20,
+        "starts_in_days": -21,
         "is_expiring_soon": false,
-        "ends_in_days": 41,
+        "ends_in_days": 40,
         "insight_tags": [
           "高回饋",
           "需至 App 確認"
@@ -1385,9 +1385,9 @@
         "fixed_reward_amount": null,
         "is_high_return": true,
         "is_upcoming": false,
-        "starts_in_days": -4,
+        "starts_in_days": -5,
         "is_expiring_soon": false,
-        "ends_in_days": 58,
+        "ends_in_days": 57,
         "insight_tags": [
           "高回饋",
           "需至 App 確認"
@@ -1423,9 +1423,9 @@
         "fixed_reward_amount": null,
         "is_high_return": false,
         "is_upcoming": false,
-        "starts_in_days": -201,
+        "starts_in_days": -202,
         "is_expiring_soon": false,
-        "ends_in_days": 163,
+        "ends_in_days": 162,
         "insight_tags": [],
         "human_summary": "尚未辨識出明確回饋幅度，請查看官方活動辦法。"
       },
@@ -1458,9 +1458,9 @@
         "fixed_reward_amount": null,
         "is_high_return": true,
         "is_upcoming": false,
-        "starts_in_days": -201,
+        "starts_in_days": -202,
         "is_expiring_soon": false,
-        "ends_in_days": 163,
+        "ends_in_days": 162,
         "insight_tags": [
           "高回饋"
         ],
@@ -1496,9 +1496,9 @@
         "fixed_reward_amount": null,
         "is_high_return": false,
         "is_upcoming": false,
-        "starts_in_days": -186,
+        "starts_in_days": -187,
         "is_expiring_soon": false,
-        "ends_in_days": 163,
+        "ends_in_days": 162,
         "insight_tags": [],
         "human_summary": "尚未辨識出明確回饋幅度，請查看官方活動辦法。"
       },
@@ -1534,9 +1534,9 @@
         "fixed_reward_amount": null,
         "is_high_return": true,
         "is_upcoming": false,
-        "starts_in_days": -183,
+        "starts_in_days": -184,
         "is_expiring_soon": false,
-        "ends_in_days": 41,
+        "ends_in_days": 40,
         "insight_tags": [
           "高回饋"
         ],
@@ -1573,9 +1573,9 @@
         "fixed_reward_amount": null,
         "is_high_return": false,
         "is_upcoming": false,
-        "starts_in_days": -182,
+        "starts_in_days": -183,
         "is_expiring_soon": false,
-        "ends_in_days": 163,
+        "ends_in_days": 162,
         "insight_tags": [],
         "human_summary": "最高 1.5% 回饋。"
       },
@@ -1611,9 +1611,9 @@
         "fixed_reward_amount": null,
         "is_high_return": true,
         "is_upcoming": false,
-        "starts_in_days": -170,
+        "starts_in_days": -171,
         "is_expiring_soon": false,
-        "ends_in_days": 10,
+        "ends_in_days": 9,
         "insight_tags": [
           "高回饋"
         ],
@@ -1649,9 +1649,9 @@
         "fixed_reward_amount": null,
         "is_high_return": false,
         "is_upcoming": false,
-        "starts_in_days": -128,
+        "starts_in_days": -129,
         "is_expiring_soon": false,
-        "ends_in_days": 71,
+        "ends_in_days": 70,
         "insight_tags": [],
         "human_summary": "尚未辨識出明確回饋幅度，請查看官方活動辦法。"
       },
@@ -1687,9 +1687,9 @@
         "fixed_reward_amount": null,
         "is_high_return": true,
         "is_upcoming": false,
-        "starts_in_days": -127,
+        "starts_in_days": -128,
         "is_expiring_soon": false,
-        "ends_in_days": 41,
+        "ends_in_days": 40,
         "insight_tags": [
           "高回饋"
         ],
@@ -1725,9 +1725,9 @@
         "fixed_reward_amount": null,
         "is_high_return": true,
         "is_upcoming": false,
-        "starts_in_days": -92,
+        "starts_in_days": -93,
         "is_expiring_soon": false,
-        "ends_in_days": 41,
+        "ends_in_days": 40,
         "insight_tags": [
           "高回饋"
         ],
@@ -1760,9 +1760,9 @@
         "fixed_reward_amount": null,
         "is_high_return": false,
         "is_upcoming": false,
-        "starts_in_days": -85,
+        "starts_in_days": -86,
         "is_expiring_soon": false,
-        "ends_in_days": 163,
+        "ends_in_days": 162,
         "insight_tags": [],
         "human_summary": "尚未辨識出明確回饋幅度，請查看官方活動辦法。"
       },
@@ -1797,9 +1797,9 @@
         "fixed_reward_amount": null,
         "is_high_return": false,
         "is_upcoming": false,
-        "starts_in_days": -81,
+        "starts_in_days": -82,
         "is_expiring_soon": false,
-        "ends_in_days": 10,
+        "ends_in_days": 9,
         "insight_tags": [],
         "human_summary": "最高 1.5% 回饋。"
       },
@@ -1833,9 +1833,9 @@
         "fixed_reward_amount": null,
         "is_high_return": false,
         "is_upcoming": false,
-        "starts_in_days": -81,
+        "starts_in_days": -82,
         "is_expiring_soon": false,
-        "ends_in_days": 101,
+        "ends_in_days": 100,
         "insight_tags": [],
         "human_summary": "最高 1.5% 回饋。"
       },
@@ -1870,9 +1870,9 @@
         "fixed_reward_amount": null,
         "is_high_return": true,
         "is_upcoming": false,
-        "starts_in_days": -67,
+        "starts_in_days": -68,
         "is_expiring_soon": false,
-        "ends_in_days": 71,
+        "ends_in_days": 70,
         "insight_tags": [
           "高回饋"
         ],
@@ -1909,9 +1909,9 @@
         "fixed_reward_amount": null,
         "is_high_return": false,
         "is_upcoming": false,
-        "starts_in_days": -63,
+        "starts_in_days": -64,
         "is_expiring_soon": false,
-        "ends_in_days": 41,
+        "ends_in_days": 40,
         "insight_tags": [],
         "human_summary": "最高 1.5% 回饋。"
       },
@@ -1946,9 +1946,9 @@
         "fixed_reward_amount": null,
         "is_high_return": false,
         "is_upcoming": false,
-        "starts_in_days": -50,
+        "starts_in_days": -51,
         "is_expiring_soon": false,
-        "ends_in_days": 163,
+        "ends_in_days": 162,
         "insight_tags": [],
         "human_summary": "最高 1.5% 回饋。"
       },
@@ -1983,9 +1983,9 @@
         "fixed_reward_amount": null,
         "is_high_return": true,
         "is_upcoming": false,
-        "starts_in_days": -50,
+        "starts_in_days": -51,
         "is_expiring_soon": false,
-        "ends_in_days": 41,
+        "ends_in_days": 40,
         "insight_tags": [
           "高回饋"
         ],
@@ -2022,9 +2022,9 @@
         "fixed_reward_amount": null,
         "is_high_return": true,
         "is_upcoming": false,
-        "starts_in_days": -46,
+        "starts_in_days": -47,
         "is_expiring_soon": false,
-        "ends_in_days": 163,
+        "ends_in_days": 162,
         "insight_tags": [
           "高回饋"
         ],
@@ -2062,9 +2062,9 @@
         "fixed_reward_amount": null,
         "is_high_return": true,
         "is_upcoming": false,
-        "starts_in_days": -36,
+        "starts_in_days": -37,
         "is_expiring_soon": false,
-        "ends_in_days": 102,
+        "ends_in_days": 101,
         "insight_tags": [
           "高回饋"
         ],
@@ -2101,9 +2101,9 @@
         "fixed_reward_amount": null,
         "is_high_return": true,
         "is_upcoming": false,
-        "starts_in_days": -35,
+        "starts_in_days": -36,
         "is_expiring_soon": false,
-        "ends_in_days": 147,
+        "ends_in_days": 146,
         "insight_tags": [
           "高回饋"
         ],
@@ -2141,9 +2141,9 @@
         "fixed_reward_amount": null,
         "is_high_return": true,
         "is_upcoming": false,
-        "starts_in_days": -33,
+        "starts_in_days": -34,
         "is_expiring_soon": false,
-        "ends_in_days": 163,
+        "ends_in_days": 162,
         "insight_tags": [
           "高回饋"
         ],
@@ -2180,9 +2180,9 @@
         "fixed_reward_amount": null,
         "is_high_return": true,
         "is_upcoming": false,
-        "starts_in_days": -26,
+        "starts_in_days": -27,
         "is_expiring_soon": false,
-        "ends_in_days": 132,
+        "ends_in_days": 131,
         "insight_tags": [
           "高回饋"
         ],
@@ -2220,9 +2220,9 @@
         "fixed_reward_amount": null,
         "is_high_return": true,
         "is_upcoming": false,
-        "starts_in_days": -22,
+        "starts_in_days": -23,
         "is_expiring_soon": false,
-        "ends_in_days": 163,
+        "ends_in_days": 162,
         "insight_tags": [
           "高回饋"
         ],
@@ -2259,9 +2259,9 @@
         "fixed_reward_amount": null,
         "is_high_return": true,
         "is_upcoming": false,
-        "starts_in_days": -21,
+        "starts_in_days": -22,
         "is_expiring_soon": false,
-        "ends_in_days": 71,
+        "ends_in_days": 70,
         "insight_tags": [
           "高回饋"
         ],
@@ -2300,9 +2300,9 @@
         "fixed_reward_amount": null,
         "is_high_return": true,
         "is_upcoming": false,
-        "starts_in_days": -21,
+        "starts_in_days": -22,
         "is_expiring_soon": false,
-        "ends_in_days": 71,
+        "ends_in_days": 70,
         "insight_tags": [
           "高回饋"
         ],
@@ -2339,9 +2339,9 @@
         "fixed_reward_amount": null,
         "is_high_return": true,
         "is_upcoming": false,
-        "starts_in_days": -21,
+        "starts_in_days": -22,
         "is_expiring_soon": false,
-        "ends_in_days": 163,
+        "ends_in_days": 162,
         "insight_tags": [
           "高回饋"
         ],
@@ -2376,9 +2376,9 @@
         "fixed_reward_amount": null,
         "is_high_return": true,
         "is_upcoming": false,
-        "starts_in_days": -20,
+        "starts_in_days": -21,
         "is_expiring_soon": false,
-        "ends_in_days": 41,
+        "ends_in_days": 40,
         "insight_tags": [
           "高回饋"
         ],
@@ -2413,9 +2413,9 @@
         "fixed_reward_amount": null,
         "is_high_return": true,
         "is_upcoming": false,
-        "starts_in_days": -20,
+        "starts_in_days": -21,
         "is_expiring_soon": false,
-        "ends_in_days": 163,
+        "ends_in_days": 162,
         "insight_tags": [
           "高回饋"
         ],
@@ -2453,9 +2453,9 @@
         "fixed_reward_amount": null,
         "is_high_return": false,
         "is_upcoming": false,
-        "starts_in_days": -20,
+        "starts_in_days": -21,
         "is_expiring_soon": false,
-        "ends_in_days": 163,
+        "ends_in_days": 162,
         "insight_tags": [],
         "human_summary": "最高 7% 回饋。"
       },
@@ -2491,9 +2491,9 @@
         "fixed_reward_amount": null,
         "is_high_return": true,
         "is_upcoming": false,
-        "starts_in_days": -20,
+        "starts_in_days": -21,
         "is_expiring_soon": false,
-        "ends_in_days": 163,
+        "ends_in_days": 162,
         "insight_tags": [
           "高回饋"
         ],
@@ -2529,9 +2529,9 @@
         "fixed_reward_amount": null,
         "is_high_return": false,
         "is_upcoming": false,
-        "starts_in_days": -20,
+        "starts_in_days": -21,
         "is_expiring_soon": false,
-        "ends_in_days": 71,
+        "ends_in_days": 70,
         "insight_tags": [],
         "human_summary": "最高 1.5% 回饋。"
       },
@@ -2567,9 +2567,9 @@
         "fixed_reward_amount": null,
         "is_high_return": true,
         "is_upcoming": false,
-        "starts_in_days": -20,
+        "starts_in_days": -21,
         "is_expiring_soon": false,
-        "ends_in_days": 159,
+        "ends_in_days": 158,
         "insight_tags": [
           "高回饋"
         ],
@@ -2606,9 +2606,9 @@
         "fixed_reward_amount": null,
         "is_high_return": true,
         "is_upcoming": false,
-        "starts_in_days": -20,
+        "starts_in_days": -21,
         "is_expiring_soon": false,
-        "ends_in_days": 132,
+        "ends_in_days": 131,
         "insight_tags": [
           "高回饋"
         ],
@@ -2643,9 +2643,9 @@
         "fixed_reward_amount": null,
         "is_high_return": false,
         "is_upcoming": false,
-        "starts_in_days": -20,
+        "starts_in_days": -21,
         "is_expiring_soon": false,
-        "ends_in_days": 163,
+        "ends_in_days": 162,
         "insight_tags": [],
         "human_summary": "最高 2.15% 回饋。"
       },
@@ -2678,9 +2678,9 @@
         "fixed_reward_amount": null,
         "is_high_return": true,
         "is_upcoming": false,
-        "starts_in_days": -8,
+        "starts_in_days": -9,
         "is_expiring_soon": false,
-        "ends_in_days": 41,
+        "ends_in_days": 40,
         "insight_tags": [
           "高回饋"
         ],
@@ -2716,9 +2716,9 @@
         "fixed_reward_amount": null,
         "is_high_return": false,
         "is_upcoming": false,
-        "starts_in_days": -8,
+        "starts_in_days": -9,
         "is_expiring_soon": false,
-        "ends_in_days": 10,
+        "ends_in_days": 9,
         "insight_tags": [],
         "human_summary": "尚未辨識出明確回饋幅度，請查看官方活動辦法。"
       },
@@ -2753,9 +2753,9 @@
         "fixed_reward_amount": null,
         "is_high_return": true,
         "is_upcoming": false,
-        "starts_in_days": -6,
+        "starts_in_days": -7,
         "is_expiring_soon": false,
-        "ends_in_days": 102,
+        "ends_in_days": 101,
         "insight_tags": [
           "高回饋"
         ],
@@ -2793,9 +2793,9 @@
         "fixed_reward_amount": null,
         "is_high_return": true,
         "is_upcoming": false,
-        "starts_in_days": -6,
+        "starts_in_days": -7,
         "is_expiring_soon": false,
-        "ends_in_days": 132,
+        "ends_in_days": 131,
         "insight_tags": [
           "高回饋"
         ],
@@ -2830,9 +2830,9 @@
         "fixed_reward_amount": null,
         "is_high_return": true,
         "is_upcoming": false,
-        "starts_in_days": -5,
+        "starts_in_days": -6,
         "is_expiring_soon": false,
-        "ends_in_days": 56,
+        "ends_in_days": 55,
         "insight_tags": [
           "高回饋"
         ],
@@ -2870,9 +2870,9 @@
         "fixed_reward_amount": null,
         "is_high_return": false,
         "is_upcoming": false,
-        "starts_in_days": -4,
+        "starts_in_days": -5,
         "is_expiring_soon": false,
-        "ends_in_days": 163,
+        "ends_in_days": 162,
         "insight_tags": [],
         "human_summary": "尚未辨識出明確回饋幅度，請查看官方活動辦法。"
       },
@@ -2908,9 +2908,9 @@
         "fixed_reward_amount": null,
         "is_high_return": true,
         "is_upcoming": false,
-        "starts_in_days": -1,
+        "starts_in_days": -2,
         "is_expiring_soon": false,
-        "ends_in_days": 26,
+        "ends_in_days": 25,
         "insight_tags": [
           "高回饋"
         ],
@@ -2945,9 +2945,9 @@
         "fixed_reward_amount": null,
         "is_high_return": false,
         "is_upcoming": false,
-        "starts_in_days": -20,
+        "starts_in_days": -21,
         "is_expiring_soon": false,
-        "ends_in_days": 163,
+        "ends_in_days": 162,
         "insight_tags": [],
         "human_summary": "最高 0.5% 回饋。"
       },
@@ -2980,9 +2980,9 @@
         "fixed_reward_amount": null,
         "is_high_return": true,
         "is_upcoming": false,
-        "starts_in_days": -20,
+        "starts_in_days": -21,
         "is_expiring_soon": false,
-        "ends_in_days": 71,
+        "ends_in_days": 70,
         "insight_tags": [
           "高回饋"
         ],
@@ -3036,7 +3036,7 @@
         "fixed_reward_amount": null,
         "is_high_return": true,
         "is_upcoming": false,
-        "starts_in_days": -16,
+        "starts_in_days": -17,
         "is_expiring_soon": false,
         "ends_in_days": null,
         "insight_tags": [
@@ -3073,7 +3073,7 @@
         "fixed_reward_amount": 480,
         "is_high_return": true,
         "is_upcoming": false,
-        "starts_in_days": -5,
+        "starts_in_days": -6,
         "is_expiring_soon": false,
         "ends_in_days": null,
         "insight_tags": [
@@ -3109,7 +3109,7 @@
         "fixed_reward_amount": null,
         "is_high_return": true,
         "is_upcoming": false,
-        "starts_in_days": -4,
+        "starts_in_days": -5,
         "is_expiring_soon": false,
         "ends_in_days": null,
         "insight_tags": [
@@ -3145,7 +3145,7 @@
         "fixed_reward_amount": 390,
         "is_high_return": true,
         "is_upcoming": false,
-        "starts_in_days": 20,
+        "starts_in_days": 19,
         "is_expiring_soon": false,
         "ends_in_days": null,
         "insight_tags": [
@@ -3347,6 +3347,51 @@
         "insight_tags": [],
         "human_summary": "尚未辨識出明確回饋幅度，請查看官方活動辦法。"
       }
+    },
+    {
+      "provider_id": "icashpay",
+      "provider_name": "icash Pay",
+      "title": "星巴克指定日最高回饋16%",
+      "url": "https://www.icashpay.com.tw/advertMessage/view/id/2340",
+      "source_url": "https://www.icashpay.com.tw/advertMessage/view/id/2340",
+      "external_id": null,
+      "start_date": "2026-07-01",
+      "end_date": "2026-12-31",
+      "lifecycle": "active",
+      "quota_status": "partial_sold_out",
+      "quota_evidence_complete": true,
+      "review_required": false,
+      "date_confidence": "ai_official_source",
+      "conditions_summary": "每週一、週四使用 icash Pay 於星巴克指定通路消費或儲值隨行卡，可依官方活動辦法享回饋；官方已明確公告 2026 年 7 月筆筆 5% 回饋已於 7/2 17:22 額滿，其他方案與後續月份請依活動頁確認。",
+      "fetched_at": "2026-07-22T08:42:06+08:00",
+      "content_hash": "",
+      "evidence": [
+        {
+          "source": "官方活動頁",
+          "url": "https://www.icashpay.com.tw/advertMessage/view/id/2340",
+          "note": "活動期間為 2026/7/1 至 12/31；頁面明確公告 2026 年 7 月筆筆 5% 回饋已於 7/2 17:22 額滿。"
+        }
+      ],
+      "components": [],
+      "ai_supplemental": true,
+      "conditions_display": [
+        "每週一、週四使用 icash Pay 於星巴克指定通路消費或儲值隨行卡，可依官方活動辦法享回饋；官方已明確公告 2026 年 7 月筆筆 5% 回饋已於 7/2 17:22 額滿，其他方案與後續月份請依活動頁確認。"
+      ],
+      "insights": {
+        "max_reward_percent": 16,
+        "fixed_reward_amount": null,
+        "is_high_return": true,
+        "is_upcoming": false,
+        "starts_in_days": -21,
+        "is_expiring_soon": false,
+        "ends_in_days": 162,
+        "insight_tags": [
+          "高回饋",
+          "部分額滿"
+        ],
+        "human_summary": "最高 16% 回饋，屬高回饋活動；部分期別或子活動已額滿。"
+      },
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E6%98%9F%E5%B7%B4%E5%85%8B%E6%8C%87%E5%AE%9A%E6%97%A5%E6%9C%80%E9%AB%98%E5%9B%9E%E9%A5%8B16%25&dates=20260701%2F20270101&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9Aicash+Pay%0A%0A%E6%9C%80%E9%AB%98+16%25+%E5%9B%9E%E9%A5%8B%EF%BC%8C%E5%B1%AC%E9%AB%98%E5%9B%9E%E9%A5%8B%E6%B4%BB%E5%8B%95%EF%BC%9B%E9%83%A8%E5%88%86%E6%9C%9F%E5%88%A5%E6%88%96%E5%AD%90%E6%B4%BB%E5%8B%95%E5%B7%B2%E9%A1%8D%E6%BB%BF%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fwww.icashpay.com.tw%2FadvertMessage%2Fview%2Fid%2F2340%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     }
   ],
   "analysis_method": "local_rules_and_codex_review"

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-21T08:18:31+08:00",
+  "generated_at": "2026-07-22T08:42:06+08:00",
   "headline": "7/23 OK 超商 10% 即將開跑，NET 隨機最高 100% 與新戶首刷 100% 仍是今日焦點",
   "highlights": [
     {
@@ -60,5 +60,22 @@
       "url": "https://www.icashpay.com.tw/advertMessage/view/id/2371"
     }
   ],
-  "supplemental_activities": []
+  "supplemental_activities": [
+    {
+      "provider_id": "icashpay",
+      "title": "星巴克指定日最高回饋16%",
+      "url": "https://www.icashpay.com.tw/advertMessage/view/id/2340",
+      "start_date": "2026-07-01",
+      "end_date": "2026-12-31",
+      "quota_status": "partial_sold_out",
+      "conditions_summary": "每週一、週四使用 icash Pay 於星巴克指定通路消費或儲值隨行卡，可依官方活動辦法享回饋；官方已明確公告 2026 年 7 月筆筆 5% 回饋已於 7/2 17:22 額滿，其他方案與後續月份請依活動頁確認。",
+      "evidence": [
+        {
+          "source": "官方活動頁",
+          "url": "https://www.icashpay.com.tw/advertMessage/view/id/2340",
+          "note": "活動期間為 2026/7/1 至 12/31；頁面明確公告 2026 年 7 月筆筆 5% 回饋已於 7/2 17:22 額滿。"
+        }
+      ]
+    }
+  ]
 }

@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-22T14:17:19+08:00",
-  "headline": "最高 100% 回饋仍吸睛，7/23、7/24 兩檔 10% 活動接力；PX Pay 已可分辨額滿銀行與即時剩餘名額",
+  "generated_at": "2026-07-24T08:16:49+08:00",
+  "headline": "全支付高鐵快閃店今日開跑；100% 隨機回饋與多檔夜市高回饋持續，但限量活動的即時名額仍須以 App 為準",
   "highlights": [
     {
       "kind": "high_return",
       "provider_id": "opay",
       "provider_name": "歐付寶",
       "title": "新戶首刷 100% 歐付寶紅利",
-      "summary": "2026 年新核發正卡的首筆消費回饋 100% 歐付寶紅利，上限 333 點；另有符合條件的新戶最高 13% 回饋。",
+      "summary": "2026 年新核發正卡的首筆消費回饋 100% 歐付寶紅利，上限 333 點；符合條件的新戶另有最高 13% 回饋。",
       "url": "https://www.opay.tw/announcement/DetailAnnouncement?nID=4379"
     },
     {
@@ -16,74 +16,57 @@
       "provider_id": "taiwanpay",
       "provider_name": "台灣 Pay",
       "title": "NET 消費隨機返現最高 100%",
-      "summary": "於 NET 指定門市使用台灣行動支付 App，單筆滿 500 元可獲隨機紅包；每一金融卡或帳戶最多 2 個。",
+      "summary": "至 9/15 於 NET 指定門市以台灣行動支付 App 的台灣 Pay 付款碼支付，單筆滿 500 元可獲隨機紅包；每卡或帳戶最多 2 個。",
       "url": "https://www.taiwanpay.com.tw/fisc-tpay/news/event/01KTBEYAY6H4DAPHAZZC1G4HYK"
+    },
+    {
+      "kind": "high_return",
+      "provider_id": "fullpay",
+      "provider_name": "全支付／PX Pay Plus",
+      "title": "台北 17 大夜市全支付最高 35%",
+      "summary": "至 8/31 在指定夜市以全支付付款碼或掃碼付款，主活動 30%、指定付款方式最高再加碼 5%，另有 foodpanda 5% 券；官方公開頁無法確認即時名額。",
+      "url": "https://marketing.pxpayplus.com/pxplus_marketing_page/activity_content_page?EventId=88"
+    },
+    {
+      "kind": "high_return",
+      "provider_id": "pluspay",
+      "provider_name": "全盈+PAY",
+      "title": "日本 PayPay 通路最高 27% 回饋",
+      "summary": "至 9/30 於日本 PayPay 合作實體店，以全盈+PAY 日本版付款碼或掃碼付款最高 27%；須完成帳戶開通並綁定全家會員，銀行加碼條件另計。",
+      "url": "https://www.pluspay.com.tw/Content/Event/PayPay.html"
     },
     {
       "kind": "high_return",
       "provider_id": "icashpay",
       "provider_name": "icash Pay",
-      "title": "icash2.0 公共運輸回饋最高 37%",
-      "summary": "uniopen 聯名卡完成首次自動加值後，搭台北捷運享 7% OPENPOINT；同頁另列 TPASS2.0+ 登錄回饋最高 37%，各方案有回饋上限。",
-      "url": "https://www.icashpay.com.tw/advertMessage/view/id/2407"
+      "title": "聖德科斯中秋早鳥最高 21% 回饋",
+      "summary": "僅至 7/28；單筆滿 1,000 元有 5% OPENPOINT，加上週三、六與指定卡片方案最高 21%。官方未公告已額滿，仍以交易資格與點數上限為準。",
+      "url": "https://www.icashpay.com.tw/advertMessage/view/id/2415"
     },
     {
-      "kind": "high_return",
-      "provider_id": "ipassmoney",
-      "provider_name": "一卡通 MONEY",
-      "title": "里仁帳戶餘額付款最高 20% 回饋",
-      "summary": "至 8/31 在里仁實體門市以 iPASS MONEY 帳戶餘額付款，消費享 10% 綠點；累積滿 2,000 元再加碼 200 點，合計最高 20%。",
-      "url": "https://web.i-pass.com.tw/Preferential/Detail/GMZTMNA5JLRMG64YlprD"
-    },
-    {
-      "kind": "high_return",
+      "kind": "starting_today",
       "provider_id": "fullpay",
       "provider_name": "全支付／PX Pay Plus",
-      "title": "AsiaYo 楓葉賞單筆滿額最高 14% 回饋",
-      "summary": "官方活動標示最高 14% 回饋；需先完成活動登錄，主活動單筆滿 3,000 元起享回饋，另依指定付款方式加碼，各波次與帳號皆有上限。",
-      "url": "https://marketing.pxpayplus.com/pxplus_marketing_page/activity_content_page?EventId=103"
-    },
-    {
-      "kind": "upcoming",
-      "provider_id": "taiwanpay",
-      "provider_name": "台灣 Pay",
-      "title": "7/23 起 OK 超商筆筆 10% 回饋",
-      "summary": "2026/7/23 至 9/30 於 OK 超商出示台灣 Pay 付款條碼，單筆不限金額享 10% 現金回饋；每一帳號或卡號最高 100 元。",
-      "url": "https://www.taiwanpay.com.tw/fisc-tpay/news/event/01KXFV9GFDCS1EGK6MNEPD06FN"
-    },
-    {
-      "kind": "upcoming",
-      "provider_id": "fullpay",
-      "provider_name": "全支付／PX Pay Plus",
-      "title": "7/24 起全聯高鐵快閃店滿 150 元享 10%",
-      "summary": "2026/7/24 至 10/23，於全聯高鐵快閃店掃全支付 QR Code 完成活動登錄，消費滿 150 元享 10% 回饋；名額與細節以官方活動頁為準。",
+      "title": "全聯高鐵快閃店今日起滿 150 元享 10%",
+      "summary": "7/24 至 10/23 在桃園、台中、嘉義、台南、左營快閃店，消費前掃現場 QR Code 登錄，購買聯名商品單筆滿 150 元享 10% 全點；公開頁無法確認即時名額。",
       "url": "https://marketing.pxpayplus.com/pxplus_marketing_page/activity_content_page?EventId=109"
     },
     {
+      "kind": "upcoming",
+      "provider_id": "fullpay",
+      "provider_name": "全支付／PX Pay Plus",
+      "title": "水源市場 8/1 起單筆不限金額 30%",
+      "summary": "8/1 至 9/30 於水源市場指定店家以全支付付款碼或掃碼付款，單筆不限金額享 30% 全點，指定銀行最高再加碼 5%；限量名額無公開即時狀態。",
+      "url": "https://marketing.pxpayplus.com/pxplus_marketing_page/activity_content_page?EventId=110"
+    },
+    {
       "kind": "sold_out",
-      "provider_id": "pxpay",
-      "provider_name": "PX Pay",
-      "title": "指定銀行週末滿額福利點：5 家已額滿、7 家仍有名額",
-      "summary": "全聯官方即時 API 顯示國泰、玉山、中信、富邦與凱基本期已額滿，另 7 家銀行仍有公開剩餘份數；各銀行狀態可能隨時變動。",
-      "url": "https://cardpoint.pxmartevent.com.tw/event/GetEventList?event_type=1&period=2026-06-26~2026-08-06&pay_type=%5B%221%22%5D"
+      "provider_id": "taiwanpay",
+      "provider_name": "台灣 Pay",
+      "title": "萊爾富台灣 Pay 消費優惠已額滿",
+      "summary": "官方活動頁已明確標示額滿；原單筆滿 150 元現折 20 元的回饋已停止，雖活動原定至 10/30，請勿再以此檔優惠安排消費。",
+      "url": "https://www.taiwanpay.com.tw/fisc-tpay/news/event/01KFN0Q15Y2SPXRNBR8WSAKDVS"
     }
   ],
-  "supplemental_activities": [
-    {
-      "provider_id": "icashpay",
-      "title": "星巴克指定日最高回饋16%",
-      "url": "https://www.icashpay.com.tw/advertMessage/view/id/2340",
-      "start_date": "2026-07-01",
-      "end_date": "2026-12-31",
-      "quota_status": "partial_sold_out",
-      "conditions_summary": "每週一、週四使用 icash Pay 於星巴克指定通路消費或儲值隨行卡，可依官方活動辦法享回饋；官方已明確公告 2026 年 7 月筆筆 5% 回饋已於 7/2 17:22 額滿，其他方案與後續月份請依活動頁確認。",
-      "evidence": [
-        {
-          "source": "官方活動頁",
-          "url": "https://www.icashpay.com.tw/advertMessage/view/id/2340",
-          "note": "活動期間為 2026/7/1 至 12/31；頁面明確公告 2026 年 7 月筆筆 5% 回饋已於 7/2 17:22 額滿。"
-        }
-      ]
-    }
-  ]
+  "supplemental_activities": []
 }

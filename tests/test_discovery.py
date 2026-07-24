@@ -635,6 +635,215 @@ class OfficialProviderAdapterTests(unittest.TestCase):
         )
         self.assertEqual(announcement_tasks[0].role, "announcement_detail")
 
+    def test_easywallet_listing_discovers_all_live_cards_with_official_dates(self) -> None:
+        provider = {
+            "id": "easywallet",
+            "name": "悠遊付",
+            "official_domains": ["easycard.com.tw"],
+        }
+        crawler = Crawler({"providers": [provider]}, self.now)
+        task = Task(
+            provider=provider,
+            source_name="悠遊付優惠列表",
+            role="activity_listing",
+            fetch_url="https://easywallet.easycard.com.tw/benefit",
+            display_url="https://easywallet.easycard.com.tw/benefit",
+            adapter="easywallet_listing",
+            max_links=120,
+        )
+        crawler.attempts.append(self._attempt(provider, task, self.now))
+        source = """
+        <a href="/benefit/content.php?id=1781689964" class="slider-card">
+          <div><p class="title">悠遊付夜市最高35%</p>
+          <p class="date">2026-07-01 － 2026-08-31</p></div>
+        </a>
+        <a href="/benefit/content.php?id=1700000000" class="slider-card">
+          <div><p class="title">已結束活動</p>
+          <p class="date">2025-01-01 － 2025-01-31</p></div>
+        </a>
+        """
+        document = Document(
+            task.fetch_url,
+            "好康特區",
+            "",
+            [],
+            "easywallet",
+            raw_json={"html": source},
+        )
+        tasks = crawler._discovered_tasks(CollectedDocument(task, document, self.now.isoformat()))
+        self.assertEqual(len(tasks), 1)
+        self.assertEqual(tasks[0].external_id, "1781689964")
+        self.assertEqual(tasks[0].adapter, "easywallet_detail")
+        self.assertEqual(tasks[0].start_date, "2026-07-01")
+        self.assertEqual(tasks[0].end_date, "2026-08-31")
+        self.assertIsNone(crawler.attempts[0].coverage_issue)
+
+    def test_ipass_listing_follows_pages_and_preserves_redirect_card_metadata(self) -> None:
+        provider = {
+            "id": "ipassmoney",
+            "name": "一卡通 MONEY",
+            "official_domains": ["i-pass.com.tw"],
+        }
+        crawler = Crawler({"providers": [provider]}, self.now)
+        task = Task(
+            provider=provider,
+            source_name="一卡通優惠活動",
+            role="mixed_listing",
+            fetch_url="https://www.i-pass.com.tw/Preferential?type=0",
+            display_url="https://www.i-pass.com.tw/Preferential?type=0",
+            adapter="ipass_listing",
+            max_links=80,
+        )
+        crawler.attempts.append(self._attempt(provider, task, self.now))
+        source = """
+        <div class="portfolio-title">
+          <h3><a href="/Preferential/Detail/GMZTIMYKIEY7I64rUuoF">
+            用 iPASS MONEY 消費，最高享 10% 回饋！
+          </a></h3>
+          <span class="labeldate">2026/6/1 (一)</span> ~
+          <span class="labeldate">2026/12/31 (四)</span>
+        </div>
+        <a href="/Preferential?type=0&amp;page=2">2</a>
+        """
+        document = Document(
+            task.fetch_url,
+            "優惠活動",
+            "",
+            [],
+            "ipass",
+            raw_json={"html": source},
+        )
+        tasks = crawler._discovered_tasks(CollectedDocument(task, document, self.now.isoformat()))
+        page_tasks = [item for item in tasks if item.adapter == "ipass_listing"]
+        detail_tasks = [item for item in tasks if item.adapter == "ipass_detail"]
+        self.assertEqual(len(page_tasks), 1)
+        self.assertIn("page=2", page_tasks[0].fetch_url)
+        self.assertEqual(len(detail_tasks), 1)
+        detail_task = detail_tasks[0]
+        self.assertEqual(detail_task.title_hint, "用 iPASS MONEY 消費，最高享 10% 回饋！")
+        self.assertEqual(detail_task.end_date, "2026-12-31")
+
+        redirect = Document(
+            detail_task.fetch_url,
+            "Redirecting...",
+            "",
+            [],
+            "redirect",
+        )
+        enriched = crawler._official_metadata_document(redirect, detail_task)
+        activity = crawler._activity_from_document(
+            CollectedDocument(detail_task, enriched, self.now.isoformat())
+        )
+        self.assertEqual(activity.title, detail_task.title_hint)
+        self.assertEqual(activity.start_date, "2026-06-01")
+        self.assertEqual(activity.end_date, "2026-12-31")
+
+    def test_jkopay_listing_reads_react_flight_links_and_detail_content(self) -> None:
+        provider = {
+            "id": "jkopay",
+            "name": "街口支付",
+            "official_domains": ["jkopay.com"],
+        }
+        crawler = Crawler({"providers": [provider]}, self.now)
+        task = Task(
+            provider=provider,
+            source_name="街口支付活動入口",
+            role="activity_listing",
+            fetch_url="https://mkt.jkopay.com/zh-TW/campaign/newevent",
+            display_url="https://mkt.jkopay.com/zh-TW/campaign/newevent",
+            adapter="jkopay_listing",
+            max_links=80,
+        )
+        crawler.attempts.append(self._attempt(provider, task, self.now))
+        source = """
+        "value":"https://mkt.jkopay.com/campaign/appleservice"
+        "value":"https://mkt.jkopay.com/zh-TW/campaign/appleservice"
+        "value":"https://mkt.jkopay.com/zh-TW/event/jkodrinkfestival2026"
+        "value":"https://mkt.jkopay.com/campaign/newevent"
+        """
+        listing = Document(
+            task.fetch_url,
+            "街口活動",
+            "",
+            [],
+            "jko-list",
+            raw_json={"html": source},
+        )
+        tasks = crawler._discovered_tasks(CollectedDocument(task, listing, self.now.isoformat()))
+        self.assertEqual(len(tasks), 2)
+        self.assertEqual(len({item.external_id for item in tasks}), 2)
+
+        flight = json.dumps(
+            '<p>活動期間：2026/7/1 - 2026/8/31</p><p>最高 10% 回饋</p>',
+            ensure_ascii=False,
+        )
+        body = (
+            '<html><head><title>街口飲料節</title>'
+            '<meta name="description" content="街口支付最高 10% 回饋"></head>'
+            f'<body><script>self.__next_f.push([1,{flight}])</script></body></html>'
+        ).encode()
+        result = FetchResult(
+            tasks[1].fetch_url,
+            tasks[1].fetch_url,
+            200,
+            body,
+            body.decode(),
+            "text/html",
+            "jko-detail",
+        )
+        detail = crawler._jkopay_document(result)
+        activity = crawler._activity_from_document(
+            CollectedDocument(tasks[1], detail, self.now.isoformat())
+        )
+        self.assertEqual(activity.title, "街口飲料節")
+        self.assertEqual(activity.start_date, "2026-07-01")
+        self.assertEqual(activity.end_date, "2026-08-31")
+
+    def test_jkopay_preserves_date_range_title(self) -> None:
+        body = (
+            '<html><head><title>2026/7/1 - 9/30 週五美妍日，最高享17.5%回饋！</title>'
+            '<meta property="og:title" content="2026/7/1 - 9/30 週五美妍日，最高享17.5%回饋！">'
+            '<meta name="description" content="指定付款最高享3.5%"></head>'
+            "<body>活動期間 2026/7/1 - 2026/9/30</body></html>"
+        ).encode()
+        result = FetchResult(
+            "https://mkt.jkopay.com/zh-TW/campaign/beauty",
+            "https://mkt.jkopay.com/zh-TW/campaign/beauty",
+            200,
+            body,
+            body.decode(),
+            "text/html",
+            "jko-title",
+        )
+
+        document = Crawler._jkopay_document(result)
+        provider = {
+            "id": "jkopay",
+            "name": "街口支付",
+            "official_domains": ["jkopay.com"],
+        }
+        crawler = Crawler({"providers": [provider]}, self.now)
+        task = Task(
+            provider=provider,
+            source_name="街口活動",
+            role="activity_detail",
+            fetch_url=result.final_url,
+            display_url=result.final_url,
+            adapter="jkopay_detail",
+            external_id="beauty",
+        )
+        document.text += "\n優惠券最晚使用期限 2026/12/31"
+        activity = crawler._activity_from_document(
+            CollectedDocument(task, document, self.now.isoformat())
+        )
+
+        self.assertEqual(
+            document.title,
+            "2026/7/1 - 9/30 週五美妍日，最高享17.5%回饋！",
+        )
+        self.assertEqual(activity.start_date, "2026-07-01")
+        self.assertEqual(activity.end_date, "2026-09-30")
+
     def test_pxmart_campaign_listing_requires_exact_px_pay_label(self) -> None:
         provider = {
             "id": "pxpay",
@@ -740,6 +949,38 @@ class OfficialProviderAdapterTests(unittest.TestCase):
         )
         self.assertEqual(len(tasks), 1)
         self.assertEqual(tasks[0].adapter, "pxmart_campaign_detail")
+
+    def test_full_mode_uses_authoritative_dynamic_listing_instead_of_recheck(self) -> None:
+        provider = {
+            "id": "easywallet",
+            "name": "悠遊付",
+            "official_domains": ["easywallet.easycard.com.tw"],
+            "sources": [
+                {
+                    "name": "悠遊付優惠列表",
+                    "role": "activity_listing",
+                    "url": "https://easywallet.easycard.com.tw/benefit",
+                    "adapter": "easywallet_listing",
+                }
+            ],
+            "seeds": [],
+        }
+        crawler = Crawler({"providers": [provider]}, self.now)
+        tasks = crawler._initial_tasks(
+            "full",
+            [
+                {
+                    "provider_id": "easywallet",
+                    "title": "舊活動",
+                    "url": "https://easywallet.easycard.com.tw/benefit/content?id=1",
+                    "source_url": "https://easywallet.easycard.com.tw/benefit/content?id=1",
+                    "external_id": "1",
+                }
+            ],
+        )
+
+        self.assertEqual(len(tasks), 1)
+        self.assertEqual(tasks[0].adapter, "easywallet_listing")
 
     def test_status_mode_refreshes_famipay_registered_card_source(self) -> None:
         provider = {

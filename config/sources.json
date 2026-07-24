@@ -168,9 +168,9 @@
         {
           "name": "悠遊付優惠列表",
           "role": "activity_listing",
-          "url": "https://www.easycard.com.tw/offer",
-          "link_patterns": ["(?:www\\.|yax\\.)?easycard\\.com\\.tw/offer\\?", "/benefit/"],
-          "max_links": 18
+          "url": "https://easywallet.easycard.com.tw/benefit",
+          "adapter": "easywallet_listing",
+          "max_links": 120
         },
         {
           "name": "悠遊卡公司最新消息",
@@ -227,9 +227,9 @@
         {
           "name": "一卡通優惠活動",
           "role": "mixed_listing",
-          "url": "https://web.i-pass.com.tw/Preferential?type=0",
-          "link_patterns": ["/Preferential/(?:Detail/)?[0-9A-Za-z_-]+", "/Preferential/[^?#]+\\?"],
-          "max_links": 20
+          "url": "https://www.i-pass.com.tw/Preferential?type=0",
+          "adapter": "ipass_listing",
+          "max_links": 80
         },
         {
           "name": "一卡通官方公告",
@@ -332,9 +332,9 @@
         {
           "name": "街口支付活動入口",
           "role": "activity_listing",
-          "url": "https://mkt.jkopay.com/",
-          "link_patterns": ["mkt\\.jkopay\\.com/(?:zh-TW/)?campaign/", "/campaign/"],
-          "max_links": 14
+          "url": "https://mkt.jkopay.com/zh-TW/campaign/newevent",
+          "adapter": "jkopay_listing",
+          "max_links": 80
         },
         {
           "name": "街口支付官方公告",

@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import re
 import sqlite3
 from pathlib import Path
 from typing import Any
@@ -19,7 +20,7 @@ CREATE TABLE IF NOT EXISTS activities (
     provider_name TEXT NOT NULL,
     external_id TEXT,
     title TEXT NOT NULL,
-    url TEXT NOT NULL UNIQUE,
+    url TEXT NOT NULL,
     source_url TEXT NOT NULL,
     start_date TEXT,
     end_date TEXT,
@@ -85,6 +86,8 @@ class Store:
         # UPDATE, leaving ALTER TABLE committed separately.
         with self.connection:
             self.connection.execute("BEGIN")
+            self._remove_legacy_unique_url_constraint()
+            self._normalize_jkopay_legacy_external_ids()
             self._ensure_column("source_attempts", "coverage_issue", "TEXT")
             self._ensure_column(
                 "discovery_state",
@@ -99,6 +102,61 @@ class Store:
                 """
             )
 
+    def _remove_legacy_unique_url_constraint(self) -> None:
+        row = self.connection.execute(
+            "SELECT sql FROM sqlite_master WHERE type = 'table' AND name = 'activities'"
+        ).fetchone()
+        schema = str(row["sql"] or "") if row else ""
+        if not re.search(r"\burl\s+TEXT\s+NOT\s+NULL\s+UNIQUE\b", schema, re.I):
+            return
+        self.connection.execute(
+            """
+            CREATE TABLE activities_without_unique_url (
+                activity_id TEXT PRIMARY KEY,
+                provider_id TEXT NOT NULL,
+                provider_name TEXT NOT NULL,
+                external_id TEXT,
+                title TEXT NOT NULL,
+                url TEXT NOT NULL,
+                source_url TEXT NOT NULL,
+                start_date TEXT,
+                end_date TEXT,
+                lifecycle TEXT NOT NULL,
+                quota_status TEXT NOT NULL,
+                quota_evidence_complete INTEGER NOT NULL,
+                review_required INTEGER NOT NULL,
+                date_confidence TEXT NOT NULL,
+                conditions_summary TEXT NOT NULL,
+                fetched_at TEXT NOT NULL,
+                content_hash TEXT NOT NULL,
+                payload_json TEXT NOT NULL,
+                first_seen_at TEXT NOT NULL,
+                last_seen_at TEXT NOT NULL
+            )
+            """
+        )
+        self.connection.execute(
+            """
+            INSERT INTO activities_without_unique_url
+            SELECT
+                activity_id, provider_id, provider_name, external_id, title, url, source_url,
+                start_date, end_date, lifecycle, quota_status, quota_evidence_complete,
+                review_required, date_confidence, conditions_summary, fetched_at, content_hash,
+                payload_json, first_seen_at, last_seen_at
+            FROM activities
+            """
+        )
+        self.connection.execute("DROP TABLE activities")
+        self.connection.execute(
+            "ALTER TABLE activities_without_unique_url RENAME TO activities"
+        )
+        self.connection.execute(
+            "CREATE INDEX IF NOT EXISTS idx_activities_lifecycle ON activities(lifecycle)"
+        )
+        self.connection.execute(
+            "CREATE INDEX IF NOT EXISTS idx_activities_provider ON activities(provider_id)"
+        )
+
     def _ensure_column(self, table: str, column: str, definition: str) -> None:
         columns = {
             str(row["name"])
@@ -106,6 +164,63 @@ class Store:
         }
         if column not in columns:
             self.connection.execute(f"ALTER TABLE {table} ADD COLUMN {column} {definition}")
+
+    def _normalize_jkopay_legacy_external_ids(self) -> None:
+        """Merge IDs from the former route-prefixed JkoPay adapter.
+
+        The official site exposes the same activity under campaign/event route
+        aliases. Older runs stored IDs such as ``campaign-jkodrink`` while the
+        stable official identity is the route slug. Leaving both IDs in the
+        durable store makes every later report count the activity twice.
+        """
+        rows = self.connection.execute(
+            """
+            SELECT activity_id, external_id, payload_json
+            FROM activities
+            WHERE provider_id = 'jkopay'
+              AND (external_id LIKE 'campaign-%' OR external_id LIKE 'event-%')
+            """
+        ).fetchall()
+        for row in rows:
+            external_id = str(row["external_id"] or "")
+            normalized = re.sub(r"^(?:campaign|event)-", "", external_id, flags=re.I)
+            if not normalized or normalized == external_id:
+                continue
+            target_id = self.activity_id(
+                Activity(
+                    provider_id="jkopay",
+                    provider_name="街口支付",
+                    title="migration",
+                    url="https://mkt.jkopay.com/",
+                    source_url="https://mkt.jkopay.com/",
+                    external_id=normalized,
+                )
+            )
+            collision = self.connection.execute(
+                "SELECT 1 FROM activities WHERE activity_id = ?",
+                (target_id,),
+            ).fetchone()
+            if collision:
+                self.connection.execute(
+                    "DELETE FROM activities WHERE activity_id = ?",
+                    (row["activity_id"],),
+                )
+                continue
+            payload = json.loads(str(row["payload_json"]))
+            payload["external_id"] = normalized
+            self.connection.execute(
+                """
+                UPDATE activities
+                SET activity_id = ?, external_id = ?, payload_json = ?
+                WHERE activity_id = ?
+                """,
+                (
+                    target_id,
+                    normalized,
+                    json.dumps(payload, ensure_ascii=False, sort_keys=True),
+                    row["activity_id"],
+                ),
+            )
 
     def close(self) -> None:
         self.connection.close()
@@ -323,7 +438,7 @@ class Store:
     def load_recheck_targets(self) -> list[dict[str, str]]:
         rows = self.connection.execute(
             """
-            SELECT provider_id, provider_name, external_id, url, source_url, start_date, end_date
+            SELECT provider_id, provider_name, external_id, title, url, source_url, start_date, end_date
             FROM activities
             WHERE lifecycle IN ('active', 'upcoming', 'unknown')
             ORDER BY provider_id, url

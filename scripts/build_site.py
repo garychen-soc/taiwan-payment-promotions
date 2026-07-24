@@ -82,6 +82,14 @@ def _date_value(value: Any) -> date | None:
         return None
 
 
+def _activity_identity(item: dict[str, Any]) -> tuple[str, str]:
+    provider_id = str(item.get("provider_id", ""))
+    external_id = str(item.get("external_id") or "").strip()
+    if external_id:
+        return provider_id, f"id:{external_id}"
+    return provider_id, f"url:{str(item.get('url', ''))}"
+
+
 def _public_status_scope(
     provider: dict[str, Any],
     coverage_item: dict[str, Any],
@@ -180,7 +188,7 @@ def _flatten_report(report: dict[str, Any], today: date) -> list[dict[str, Any]]
             item = dict(raw)
             if item.get("lifecycle") in {"ended", "cancelled"}:
                 continue
-            key = (str(item.get("provider_id", "")), str(item.get("url", "")))
+            key = _activity_identity(item)
             if key in seen:
                 continue
             seen.add(key)
@@ -199,7 +207,7 @@ def _supplemental_activities(
     today: date,
 ) -> list[dict[str, Any]]:
     providers = {item["id"]: item for item in config.get("providers", []) if isinstance(item, dict) and item.get("id")}
-    seen = {(str(item.get("provider_id", "")), str(item.get("url", ""))) for item in existing}
+    seen = {_activity_identity(item) for item in existing}
     accepted: list[dict[str, Any]] = []
     for raw in supplement.get("supplemental_activities", []):
         if not isinstance(raw, dict):
@@ -210,7 +218,13 @@ def _supplemental_activities(
         url = str(raw.get("url", ""))
         if not _allowed_url(url, [str(value).lower() for value in provider.get("official_domains", [])]):
             continue
-        key = (provider["id"], url)
+        key = _activity_identity(
+            {
+                "provider_id": provider["id"],
+                "external_id": raw.get("external_id"),
+                "url": url,
+            }
+        )
         if key in seen or not str(raw.get("title", "")).strip():
             continue
         start = _date_value(raw.get("start_date"))
@@ -382,7 +396,11 @@ def build(report_path: Path, output_dir: Path, supplement_path: Path) -> Path:
         health_status = (
             "unavailable"
             if official_expected > 0 and official_succeeded == 0
-            else ("normal" if official_failed == 0 and extended_failed == 0 else "partial")
+            else (
+                "normal"
+                if official_failed == 0 and extended_failed == 0 and not gaps
+                else "partial"
+            )
         )
     else:
         registered_sources = {}

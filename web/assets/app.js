@@ -824,6 +824,11 @@
           values.push(`延伸檢查成功 ${extendedMetric.succeeded}/${extendedMetric.expected}`);
           failureCount += Math.max(0, extendedMetric.expected - extendedMetric.succeeded);
         }
+        const discoveryIssues = Number(sourceHealth.needs_ai_review ?? 0);
+        if (Number.isFinite(discoveryIssues) && discoveryIssues > 0) {
+          values.push(`探索缺口 ${Math.trunc(discoveryIssues)}`);
+          failureCount = Math.max(failureCount, Math.trunc(discoveryIssues));
+        }
         elements.sourceHealthText.textContent = values.join("・");
       }
       if (Array.isArray(sourceHealth.failures)) {

@@ -122,6 +122,17 @@ class Crawler:
                 provider = providers.get(target["provider_id"])
                 if not provider:
                     continue
+                if mode == "full" and target["provider_id"] in {
+                    "easywallet",
+                    "ipassmoney",
+                    "jkopay",
+                }:
+                    # Their registered listing adapters enumerate the complete
+                    # public catalogue and attach authoritative list metadata.
+                    # Generic historical rechecks are queued before discovered
+                    # details and would otherwise win de-duplication, dropping
+                    # titles/dates that exist only on the listing.
+                    continue
                 source_url = target.get("source_url") or target["url"]
                 if target["provider_id"] == "famipay" or (
                     target["provider_id"] == "pxpay" and "GetEventList" in source_url
@@ -136,6 +147,12 @@ class Crawler:
                     adapter = "taiwanpay_detail"
                 elif target["provider_id"] == "fullpay":
                     adapter = "fullpay_detail"
+                elif target["provider_id"] == "easywallet":
+                    adapter = "easywallet_detail"
+                elif target["provider_id"] == "ipassmoney":
+                    adapter = "ipass_detail"
+                elif target["provider_id"] == "jkopay":
+                    adapter = "jkopay_detail"
                 elif (
                     target["provider_id"] == "pxpay"
                     and "/campaign/pxpay-card/" in source_url
@@ -151,6 +168,7 @@ class Crawler:
                         role="activity_detail",
                         fetch_url=source_url,
                         display_url=target["url"],
+                        title_hint=target.get("title") or "",
                         start_date=target.get("start_date") or "",
                         end_date=target.get("end_date") or "",
                         adapter=adapter,
@@ -414,6 +432,64 @@ class Crawler:
         )
 
     @staticmethod
+    def _html_listing_document(result: FetchResult, title: str) -> Document:
+        document = parse_document(result)
+        return Document(
+            url=document.url,
+            title=document.title or title,
+            text=document.text,
+            links=document.links,
+            content_hash=document.content_hash,
+            raw_json={"html": result.text},
+        )
+
+    @staticmethod
+    def _jkopay_document(result: FetchResult) -> Document:
+        document = parse_document(result)
+        source_html = parse_html(result.text, result.final_url)
+        decoded_chunks: list[str] = []
+        for match in re.finditer(
+            r'self\.__next_f\.push\(\[1,("(?:\\.|[^"\\])*")\]\)',
+            result.text,
+        ):
+            try:
+                decoded = json.loads(match.group(1))
+            except (TypeError, ValueError):
+                continue
+            if isinstance(decoded, str):
+                decoded_chunks.append(decoded)
+        decoded_html = "\n".join(decoded_chunks)
+        parsed = parse_html(decoded_html, result.final_url) if decoded_html else None
+        description_match = re.search(
+            r'<meta\s+name=["\']description["\']\s+content=["\']([^"\']*)["\']',
+            result.text,
+            re.I,
+        )
+        description = html.unescape(description_match.group(1)).strip() if description_match else ""
+        text = "\n".join(
+            value
+            for value in (
+                description,
+                parsed.text if parsed else "",
+                document.text,
+            )
+            if value
+        )
+        links = list(document.links)
+        if parsed:
+            links.extend(parsed.links)
+        return Document(
+            url=result.final_url,
+            # JkoPay commonly starts promotion titles with a date range such as
+            # "2026/7/1 - 9/30 ...". The generic title cleanup treats " - "
+            # as a site-name separator, so preserve the official metadata.
+            title=source_html.title or document.title,
+            text=text,
+            links=links,
+            content_hash=result.content_hash,
+        )
+
+    @staticmethod
     def _official_metadata_document(document: Document, task: Task) -> Document:
         metadata = "\n".join(
             value
@@ -564,6 +640,10 @@ class Crawler:
                     content_hash=result.content_hash,
                     raw_json={"html": result.text},
                 )
+            elif task.adapter in {"easywallet_listing", "ipass_listing", "jkopay_listing"}:
+                document = self._html_listing_document(result, task.source_name)
+            elif task.adapter == "jkopay_detail":
+                document = self._jkopay_document(result)
             else:
                 document = parse_document(result)
             if task.adapter == "pi_wordpress_listing" and not isinstance(document.raw_json, list):
@@ -576,7 +656,7 @@ class Crawler:
                     or not isinstance(quota_data.get("data"), list)
                 ):
                     raise RuntimeError("PX Pay quota API validation failed")
-            if task.adapter == "pi_post_detail":
+            if task.adapter in {"pi_post_detail", "easywallet_detail", "ipass_detail"}:
                 document = self._official_metadata_document(document, task)
             if task.adapter in {"fullpay_detail", "fullpay_id_probe"}:
                 self._record_fullpay_probe_outcome(task, "valid")
@@ -730,6 +810,190 @@ class Crawler:
                 break
         self._set_discovery_result(task, len(discovered), total_count=len(records))
         return discovered
+
+    @staticmethod
+    def _listing_html(document: Document) -> str:
+        if not isinstance(document.raw_json, dict):
+            return ""
+        value = document.raw_json.get("html", "")
+        return value if isinstance(value, str) else ""
+
+    @staticmethod
+    def _clean_html_fragment(value: str, base_url: str) -> str:
+        return parse_html(html.unescape(value), base_url).text.strip()
+
+    def _easywallet_tasks(self, collected: CollectedDocument) -> list[Task]:
+        task = collected.task
+        source = self._listing_html(collected.document)
+        records: list[Task] = []
+        seen_ids: set[str] = set()
+        card_pattern = re.compile(
+            r'<a[^>]+href=["\']'
+            r'(?P<href>/benefit/content(?:\.php)?\?id=(?P<id>\d+))'
+            r'["\'][^>]*>(?P<body>.*?)</a>',
+            re.I | re.S,
+        )
+        for match in card_pattern.finditer(source):
+            external_id = match.group("id")
+            if external_id in seen_ids:
+                continue
+            body = match.group("body")
+            title_match = re.search(
+                r'<p[^>]+class=["\'][^"\']*\btitle\b[^"\']*["\'][^>]*>(.*?)</p>',
+                body,
+                re.I | re.S,
+            )
+            date_match = re.search(
+                r'<p[^>]+class=["\'][^"\']*\bdate\b[^"\']*["\'][^>]*>(.*?)</p>',
+                body,
+                re.I | re.S,
+            )
+            if not title_match:
+                continue
+            title = self._clean_html_fragment(title_match.group(1), collected.document.url)
+            date_text = (
+                self._clean_html_fragment(date_match.group(1), collected.document.url)
+                if date_match
+                else ""
+            )
+            date_range = parse_date_range(f"活動期間：{date_text}") if date_text else DateRange(None, None, "none")
+            if date_range.end and date_range.end < self.now.date():
+                continue
+            seen_ids.add(external_id)
+            detail_url = f"https://easywallet.easycard.com.tw/benefit/content?id={external_id}"
+            records.append(
+                Task(
+                    provider=task.provider,
+                    source_name=f"{task.source_name} → {title[:80]}",
+                    role="activity_detail",
+                    fetch_url=detail_url,
+                    display_url=detail_url,
+                    title_hint=title,
+                    adapter="easywallet_detail",
+                    external_id=external_id,
+                    start_date=date_range.start.isoformat() if date_range.start else "",
+                    end_date=date_range.end.isoformat() if date_range.end else "",
+                )
+            )
+        selected = records[: task.max_links]
+        self._set_discovery_result(task, len(selected), total_count=len(records))
+        return selected
+
+    def _ipass_tasks(self, collected: CollectedDocument) -> list[Task]:
+        task = collected.task
+        source = self._listing_html(collected.document)
+        detail_tasks: list[Task] = []
+        seen_ids: set[str] = set()
+        card_pattern = re.compile(
+            r'<div[^>]+class=["\'][^"\']*\bportfolio-title\b[^"\']*["\'][^>]*>'
+            r'.*?<h3[^>]*>.*?<a[^>]+href=["\']'
+            r'(?P<href>/Preferential/Detail/(?P<id>[A-Za-z0-9_-]+))'
+            r'["\'][^>]*>(?P<title>.*?)</a>.*?</h3>'
+            r'(?P<meta>.*?)</div>',
+            re.I | re.S,
+        )
+        for match in card_pattern.finditer(source):
+            external_id = match.group("id")
+            if external_id in seen_ids:
+                continue
+            title = self._clean_html_fragment(match.group("title"), collected.document.url)
+            dates = re.findall(
+                r'<span[^>]+class=["\'][^"\']*\blabeldate\b[^"\']*["\'][^>]*>(.*?)</span>',
+                match.group("meta"),
+                re.I | re.S,
+            )
+            date_range = DateRange(None, None, "none")
+            if len(dates) >= 2:
+                start_text = self._clean_html_fragment(dates[0], collected.document.url)
+                end_text = self._clean_html_fragment(dates[1], collected.document.url)
+                date_range = parse_date_range(f"活動期間：{start_text} ~ {end_text}")
+            if date_range.end and date_range.end < self.now.date():
+                continue
+            seen_ids.add(external_id)
+            detail_url = f"https://www.i-pass.com.tw/Preferential/Detail/{external_id}"
+            detail_tasks.append(
+                Task(
+                    provider=task.provider,
+                    source_name=f"{task.source_name} → {title[:80]}",
+                    role="activity_detail",
+                    fetch_url=detail_url,
+                    display_url=detail_url,
+                    title_hint=title,
+                    adapter="ipass_detail",
+                    external_id=external_id,
+                    start_date=date_range.start.isoformat() if date_range.start else "",
+                    end_date=date_range.end.isoformat() if date_range.end else "",
+                )
+            )
+
+        page_tasks: list[Task] = []
+        seen_pages: set[str] = set()
+        for value in re.findall(
+            r'href=["\'](/Preferential\?[^"\']*\bpage=\d+[^"\']*)["\']',
+            source,
+            re.I,
+        ):
+            path = html.unescape(value)
+            page_url = f"https://www.i-pass.com.tw{path}"
+            normalized = canonical_url(page_url)
+            if normalized == canonical_url(task.fetch_url) or normalized in seen_pages:
+                continue
+            seen_pages.add(normalized)
+            page_tasks.append(
+                Task(
+                    provider=task.provider,
+                    source_name=f"{task.source_name} → 分頁",
+                    role=task.role,
+                    fetch_url=page_url,
+                    display_url=page_url,
+                    max_links=task.max_links,
+                    adapter="ipass_listing",
+                )
+            )
+        selected_details = detail_tasks[: task.max_links]
+        self._set_discovery_result(task, len(selected_details), total_count=len(detail_tasks))
+        return page_tasks + selected_details
+
+    def _jkopay_tasks(self, collected: CollectedDocument) -> list[Task]:
+        task = collected.task
+        source = self._listing_html(collected.document)
+        candidates = re.findall(
+            r'https://mkt\.jkopay\.com/(?:zh-TW/)?(?:campaign|event)/[A-Za-z0-9_-]+',
+            source,
+            re.I,
+        )
+        discovered: list[Task] = []
+        seen_slugs: set[str] = set()
+        for candidate in candidates:
+            parsed = urlsplit(candidate)
+            path = re.sub(r"^/zh-TW", "", parsed.path, flags=re.I)
+            parts = path.strip("/").split("/")
+            if len(parts) != 2 or parts[0] not in {"campaign", "event"}:
+                continue
+            kind, slug = parts
+            if slug.lower().startswith("newevent"):
+                continue
+            identity = slug.lower()
+            if identity in seen_slugs:
+                continue
+            seen_slugs.add(identity)
+            detail_url = f"https://mkt.jkopay.com/zh-TW/{kind}/{slug}"
+            discovered.append(
+                Task(
+                    provider=task.provider,
+                    source_name=f"{task.source_name} → {slug}",
+                    role="activity_detail",
+                    fetch_url=detail_url,
+                    display_url=detail_url,
+                    adapter="jkopay_detail",
+                    # Campaign and event routes are aliases on the official
+                    # site. Slug identity also merges the matching seed.
+                    external_id=slug,
+                )
+            )
+        selected = discovered[: task.max_links]
+        self._set_discovery_result(task, len(selected), total_count=len(discovered))
+        return selected
 
     @staticmethod
     def _pxmart_campaigns(data: object) -> list[dict[str, Any]]:
@@ -1097,6 +1361,12 @@ class Crawler:
 
     def _discovered_tasks(self, collected: CollectedDocument) -> list[Task]:
         task = collected.task
+        if task.adapter == "easywallet_listing":
+            return self._easywallet_tasks(collected)
+        if task.adapter == "ipass_listing":
+            return self._ipass_tasks(collected)
+        if task.adapter == "jkopay_listing":
+            return self._jkopay_tasks(collected)
         if task.adapter == "pi_wordpress_listing":
             return self._pi_post_tasks(collected)
         if task.adapter == "pxmart_campaign_listing":
@@ -1277,7 +1547,21 @@ class Crawler:
         document = collected.document
         date_range = parse_date_range(document.text)
         title_date_range = parse_date_range(f"活動期間：{task.title_hint or document.title}")
-        if date_range.confidence in {"none", "low"} and title_date_range.start and title_date_range.end:
+        if (
+            task.adapter == "jkopay_detail"
+            and title_date_range.start
+            and title_date_range.end
+        ):
+            # JkoPay detail bodies contain coupon redemption deadlines and
+            # general terms that can extend beyond the advertised campaign.
+            # The official page title states the campaign's own date range.
+            date_range = DateRange(
+                title_date_range.start,
+                title_date_range.end,
+                "high",
+                title_date_range.excerpt,
+            )
+        elif date_range.confidence in {"none", "low"} and title_date_range.start and title_date_range.end:
             date_range = DateRange(title_date_range.start, title_date_range.end, "high", title_date_range.excerpt)
         if (not date_range.start or not date_range.end) and task.start_date and task.end_date:
             try:
@@ -1336,6 +1620,7 @@ class Crawler:
             "台灣pay",
             "橘子支付",
             "line pay money",
+            "redirecting...",
         }
         title_is_generic = (
             title == "未辨識活動名稱"

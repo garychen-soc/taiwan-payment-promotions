@@ -10,6 +10,70 @@ from payment_promotions_monitor.storage import Store
 
 
 class StorageHistoryTests(unittest.TestCase):
+    def test_jkopay_legacy_route_ids_are_migrated_and_merged(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "monitor.sqlite3"
+            url = "https://mkt.jkopay.com/zh-TW/campaign/jkodrink"
+            legacy = Activity(
+                provider_id="jkopay",
+                provider_name="街口支付",
+                title="週一飲料日",
+                url=url,
+                source_url=url,
+                external_id="campaign-jkodrink",
+            )
+            current = Activity(
+                provider_id="jkopay",
+                provider_name="街口支付",
+                title="週一飲料日",
+                url=url,
+                source_url=url,
+                external_id="jkodrink",
+            )
+            with Store(path) as store:
+                store.upsert_activity(legacy)
+                store.upsert_activity(current)
+                store.connection.commit()
+
+            with Store(path) as store:
+                rows = store.connection.execute(
+                    "SELECT external_id FROM activities WHERE provider_id = 'jkopay'"
+                ).fetchall()
+
+            self.assertEqual([row["external_id"] for row in rows], ["jkodrink"])
+
+    def test_distinct_external_ids_can_share_one_official_landing_page(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "monitor.sqlite3"
+            shared_url = "https://mkt.jkopay.com/zh-TW/campaign/newevent"
+            activities = [
+                Activity(
+                    provider_id="jkopay",
+                    provider_name="街口支付",
+                    title=f"活動 {external_id}",
+                    url=shared_url,
+                    source_url=shared_url,
+                    external_id=external_id,
+                    fetched_at="2026-07-24T00:00:00+08:00",
+                )
+                for external_id in ("one", "two")
+            ]
+            with Store(path) as store:
+                store.save_run(
+                    RunResult(
+                        "shared-url",
+                        "full",
+                        activities[0].fetched_at,
+                        activities[0].fetched_at,
+                        activities,
+                        [],
+                    )
+                )
+                stored = store.connection.execute(
+                    "SELECT external_id FROM activities ORDER BY external_id"
+                ).fetchall()
+            self.assertEqual([row["external_id"] for row in stored], ["one", "two"])
+
     def test_legacy_schema_migration_is_committed_and_preserves_rows(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / "monitor.sqlite3"

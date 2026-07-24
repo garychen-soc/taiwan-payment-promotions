@@ -3,13 +3,43 @@ from __future__ import annotations
 import json
 import tempfile
 import unittest
+from datetime import date
 from pathlib import Path
 from urllib.parse import parse_qs, urlsplit
 
-from scripts.build_site import PUBLIC_STATUS_SCOPES, _google_calendar_url, _public_status_scope, build
+from scripts.build_site import (
+    PUBLIC_STATUS_SCOPES,
+    _flatten_report,
+    _google_calendar_url,
+    _public_status_scope,
+    build,
+)
 
 
 class SiteBuildTests(unittest.TestCase):
+    def test_flatten_keeps_distinct_external_ids_that_share_an_official_landing_page(self) -> None:
+        shared_url = "https://mkt.jkopay.com/zh-TW/campaign/newevent"
+        base = {
+            "provider_id": "jkopay",
+            "provider_name": "街口支付",
+            "title": "活動一",
+            "url": shared_url,
+            "external_id": "campaign-one",
+            "lifecycle": "active",
+            "quota_status": "not_marked_full",
+            "conditions_summary": "",
+        }
+        report = {
+            "sections": {
+                "active_public": [
+                    base,
+                    dict(base, title="活動二", external_id="campaign-two"),
+                ]
+            }
+        }
+        activities = _flatten_report(report, date(2026, 7, 24))
+        self.assertEqual(len(activities), 2)
+
     def test_build_excludes_ended_and_applies_valid_official_highlight(self) -> None:
         activity_url = "https://www.taiwanpay.com.tw/fisc-tpay/news/event/example"
         base_item = {

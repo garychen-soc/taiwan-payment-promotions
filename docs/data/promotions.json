@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
   "generated_at": "2026-07-24T13:37:16.131620+08:00",
-  "build_at": "2026-07-24T13:42:39.766054+08:00",
+  "build_at": "2026-07-25T08:45:59.656542+08:00",
   "timezone": "Asia/Taipei",
-  "headline": "全支付高鐵快閃店今日開跑；100% 隨機回饋與多檔夜市高回饋持續，但限量活動的即時名額仍須以 App 為準",
+  "headline": "聖德科斯 icash Pay 最高 21% 僅至 7/28；全支付台北夜市、全盈+PAY 日本與街口週三午餐高回饋持續，限量名額仍須依 App 為準",
   "summary": {
     "included_non_expired": 256,
     "expired_excluded": 99,
@@ -1035,14 +1035,6 @@
   "highlights": [
     {
       "kind": "high_return",
-      "provider_name": "歐付寶",
-      "title": "新戶首刷 100% 歐付寶紅利",
-      "summary": "2026 年新核發正卡的首筆消費回饋 100% 歐付寶紅利，上限 333 點；符合條件的新戶另有最高 13% 回饋。",
-      "url": "https://www.opay.tw/announcement/DetailAnnouncement?nID=4379",
-      "ai_reviewed": true
-    },
-    {
-      "kind": "high_return",
       "provider_name": "台灣 Pay",
       "title": "NET 消費隨機返現最高 100%",
       "summary": "至 9/15 於 NET 指定門市以台灣行動支付 App 的台灣 Pay 付款碼支付，單筆滿 500 元可獲隨機紅包；每卡或帳戶最多 2 個。",
@@ -1053,7 +1045,7 @@
       "kind": "high_return",
       "provider_name": "全支付／PX Pay Plus",
       "title": "台北 17 大夜市全支付最高 35%",
-      "summary": "至 8/31 在指定夜市以全支付付款碼或掃碼付款，主活動 30%、指定付款方式最高再加碼 5%，另有 foodpanda 5% 券；官方公開頁無法確認即時名額。",
+      "summary": "至 8/31 在指定夜市以全支付付款碼或掃碼付款，主活動 30%、指定付款方式最高再加碼 5%，另有 foodpanda 5% 券；即時額滿狀態僅於 App 公告，公開頁無法確認。",
       "url": "https://marketing.pxpayplus.com/pxplus_marketing_page/activity_content_page?EventId=88",
       "ai_reviewed": true
     },
@@ -1066,27 +1058,27 @@
       "ai_reviewed": true
     },
     {
-      "kind": "high_return",
+      "kind": "ending_soon",
       "provider_name": "icash Pay",
-      "title": "聖德科斯中秋早鳥最高 21% 回饋",
-      "summary": "僅至 7/28；單筆滿 1,000 元有 5% OPENPOINT，加上週三、六與指定卡片方案最高 21%。官方未公告已額滿，仍以交易資格與點數上限為準。",
+      "title": "聖德科斯中秋早鳥最高 21% 僅至 7/28",
+      "summary": "單筆滿 1,000 元享 5% OPENPOINT，可疊加週三、六與指定卡片方案至最高 21%；官方未見已額滿公告，但總回饋 6 萬點依交易時間判定。",
       "url": "https://www.icashpay.com.tw/advertMessage/view/id/2415",
       "ai_reviewed": true
     },
     {
-      "kind": "starting_today",
-      "provider_name": "全支付／PX Pay Plus",
-      "title": "全聯高鐵快閃店今日起滿 150 元享 10%",
-      "summary": "7/24 至 10/23 在桃園、台中、嘉義、台南、左營快閃店，消費前掃現場 QR Code 登錄，購買聯名商品單筆滿 150 元享 10% 全點；公開頁無法確認即時名額。",
-      "url": "https://marketing.pxpayplus.com/pxplus_marketing_page/activity_content_page?EventId=109",
+      "kind": "high_return",
+      "provider_name": "街口支付",
+      "title": "週三午餐主題日最高享 23.5%",
+      "summary": "至 9/30 的每週三，先在 App 領 8 折午餐券，結合尊爵券與指定付款最高 23.5%；街口券仍以 App 券夾可用狀態為準。",
+      "url": "https://mkt.jkopay.com/zh-TW/campaign/jkolunch",
       "ai_reviewed": true
     },
     {
       "kind": "upcoming",
       "provider_name": "全支付／PX Pay Plus",
-      "title": "水源市場 8/1 起單筆不限金額 30%",
-      "summary": "8/1 至 9/30 於水源市場指定店家以全支付付款碼或掃碼付款，單筆不限金額享 30% 全點，指定銀行最高再加碼 5%；限量名額無公開即時狀態。",
-      "url": "https://marketing.pxpayplus.com/pxplus_marketing_page/activity_content_page?EventId=110",
+      "title": "易遊網週三限定 8/1 起最高回饋 5%",
+      "summary": "8/1 至 10/29 的每週三，消費前在全支付或 PX Pay App 登錄；單筆滿 6,000 元回饋 180 全點、滿 10,000 元回饋 300 全點，指定付款方式最高 5%。",
+      "url": "https://marketing.pxpayplus.com/pxplus_marketing_page/activity_content_page?EventId=108",
       "ai_reviewed": true
     },
     {
@@ -3037,7 +3029,10 @@
         ],
         "human_summary": "最高 5% 回饋；將於 8 天後開始。"
       },
-      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E6%98%93%E9%81%8A%E7%B6%B2%E9%80%B1%E4%B8%89%E9%99%90%E5%AE%9A%EF%BD%9C%E5%96%AE%E7%AD%86%E6%B6%88%E8%B2%BB%E6%BB%BF%E9%A1%8D%E4%BA%AB3%25%E5%9B%9E%E9%A5%8B%EF%BC%81%E8%B2%B7%E6%A9%9F%E7%A5%A8%E6%9C%80%E9%AB%98%E7%9C%81%24600&dates=20260801%2F20261030&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%85%A8%E6%94%AF%E4%BB%98%EF%BC%8FPX+Pay+Plus%0A%0A%E6%9C%80%E9%AB%98+5%25+%E5%9B%9E%E9%A5%8B%EF%BC%9B%E5%B0%87%E6%96%BC+8+%E5%A4%A9%E5%BE%8C%E9%96%8B%E5%A7%8B%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fmarketing.pxpayplus.com%2Fpxplus_marketing_page%2Factivity_content_page%3FEventId%3D108%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
+      "is_featured": true,
+      "highlight_kind": "upcoming",
+      "editorial_summary": "8/1 至 10/29 的每週三，消費前在全支付或 PX Pay App 登錄；單筆滿 6,000 元回饋 180 全點、滿 10,000 元回饋 300 全點，指定付款方式最高 5%。",
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E6%98%93%E9%81%8A%E7%B6%B2%E9%80%B1%E4%B8%89%E9%99%90%E5%AE%9A%EF%BD%9C%E5%96%AE%E7%AD%86%E6%B6%88%E8%B2%BB%E6%BB%BF%E9%A1%8D%E4%BA%AB3%25%E5%9B%9E%E9%A5%8B%EF%BC%81%E8%B2%B7%E6%A9%9F%E7%A5%A8%E6%9C%80%E9%AB%98%E7%9C%81%24600&dates=20260801%2F20261030&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%85%A8%E6%94%AF%E4%BB%98%EF%BC%8FPX+Pay+Plus%0A%0A8%2F1+%E8%87%B3+10%2F29+%E7%9A%84%E6%AF%8F%E9%80%B1%E4%B8%89%EF%BC%8C%E6%B6%88%E8%B2%BB%E5%89%8D%E5%9C%A8%E5%85%A8%E6%94%AF%E4%BB%98%E6%88%96+PX+Pay+App+%E7%99%BB%E9%8C%84%EF%BC%9B%E5%96%AE%E7%AD%86%E6%BB%BF+6%2C000+%E5%85%83%E5%9B%9E%E9%A5%8B+180+%E5%85%A8%E9%BB%9E%E3%80%81%E6%BB%BF+10%2C000+%E5%85%83%E5%9B%9E%E9%A5%8B+300+%E5%85%A8%E9%BB%9E%EF%BC%8C%E6%8C%87%E5%AE%9A%E4%BB%98%E6%AC%BE%E6%96%B9%E5%BC%8F%E6%9C%80%E9%AB%98+5%25%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fmarketing.pxpayplus.com%2Fpxplus_marketing_page%2Factivity_content_page%3FEventId%3D108%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     },
     {
       "provider_id": "taiwanpay",
@@ -4364,8 +4359,8 @@
       },
       "is_featured": true,
       "highlight_kind": "high_return",
-      "editorial_summary": "至 8/31 在指定夜市以全支付付款碼或掃碼付款，主活動 30%、指定付款方式最高再加碼 5%，另有 foodpanda 5% 券；官方公開頁無法確認即時名額。",
-      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E6%89%93%E7%89%99%E7%A5%AD%E8%87%BA%E5%8C%97%E5%A4%9C%E5%B8%82%EF%BD%9C%E6%9C%80%E9%AB%98%E4%BA%AB35%25%E5%85%A8%E9%BB%9E%EF%BC%8C%E5%86%8D%E9%80%81foodpanda+5%25%E5%9B%9E%E9%A5%8B%E5%88%B8&dates=20260701%2F20260901&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%85%A8%E6%94%AF%E4%BB%98%EF%BC%8FPX+Pay+Plus%0A%0A%E8%87%B3+8%2F31+%E5%9C%A8%E6%8C%87%E5%AE%9A%E5%A4%9C%E5%B8%82%E4%BB%A5%E5%85%A8%E6%94%AF%E4%BB%98%E4%BB%98%E6%AC%BE%E7%A2%BC%E6%88%96%E6%8E%83%E7%A2%BC%E4%BB%98%E6%AC%BE%EF%BC%8C%E4%B8%BB%E6%B4%BB%E5%8B%95+30%25%E3%80%81%E6%8C%87%E5%AE%9A%E4%BB%98%E6%AC%BE%E6%96%B9%E5%BC%8F%E6%9C%80%E9%AB%98%E5%86%8D%E5%8A%A0%E7%A2%BC+5%25%EF%BC%8C%E5%8F%A6%E6%9C%89+foodpanda+5%25+%E5%88%B8%EF%BC%9B%E5%AE%98%E6%96%B9%E5%85%AC%E9%96%8B%E9%A0%81%E7%84%A1%E6%B3%95%E7%A2%BA%E8%AA%8D%E5%8D%B3%E6%99%82%E5%90%8D%E9%A1%8D%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fmarketing.pxpayplus.com%2Fpxplus_marketing_page%2Factivity_content_page%3FEventId%3D88%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
+      "editorial_summary": "至 8/31 在指定夜市以全支付付款碼或掃碼付款，主活動 30%、指定付款方式最高再加碼 5%，另有 foodpanda 5% 券；即時額滿狀態僅於 App 公告，公開頁無法確認。",
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E6%89%93%E7%89%99%E7%A5%AD%E8%87%BA%E5%8C%97%E5%A4%9C%E5%B8%82%EF%BD%9C%E6%9C%80%E9%AB%98%E4%BA%AB35%25%E5%85%A8%E9%BB%9E%EF%BC%8C%E5%86%8D%E9%80%81foodpanda+5%25%E5%9B%9E%E9%A5%8B%E5%88%B8&dates=20260701%2F20260901&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%85%A8%E6%94%AF%E4%BB%98%EF%BC%8FPX+Pay+Plus%0A%0A%E8%87%B3+8%2F31+%E5%9C%A8%E6%8C%87%E5%AE%9A%E5%A4%9C%E5%B8%82%E4%BB%A5%E5%85%A8%E6%94%AF%E4%BB%98%E4%BB%98%E6%AC%BE%E7%A2%BC%E6%88%96%E6%8E%83%E7%A2%BC%E4%BB%98%E6%AC%BE%EF%BC%8C%E4%B8%BB%E6%B4%BB%E5%8B%95+30%25%E3%80%81%E6%8C%87%E5%AE%9A%E4%BB%98%E6%AC%BE%E6%96%B9%E5%BC%8F%E6%9C%80%E9%AB%98%E5%86%8D%E5%8A%A0%E7%A2%BC+5%25%EF%BC%8C%E5%8F%A6%E6%9C%89+foodpanda+5%25+%E5%88%B8%EF%BC%9B%E5%8D%B3%E6%99%82%E9%A1%8D%E6%BB%BF%E7%8B%80%E6%85%8B%E5%83%85%E6%96%BC+App+%E5%85%AC%E5%91%8A%EF%BC%8C%E5%85%AC%E9%96%8B%E9%A0%81%E7%84%A1%E6%B3%95%E7%A2%BA%E8%AA%8D%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fmarketing.pxpayplus.com%2Fpxplus_marketing_page%2Factivity_content_page%3FEventId%3D88%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     },
     {
       "provider_id": "fullpay",
@@ -5710,10 +5705,7 @@
         ],
         "human_summary": "最高 10% 回饋，屬高回饋活動；今天開始；額滿狀態需至 App 確認。"
       },
-      "is_featured": true,
-      "highlight_kind": "starting_today",
-      "editorial_summary": "7/24 至 10/23 在桃園、台中、嘉義、台南、左營快閃店，消費前掃現場 QR Code 登錄，購買聯名商品單筆滿 150 元享 10% 全點；公開頁無法確認即時名額。",
-      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E5%85%A8%E8%81%AF%E9%AB%98%E9%90%B5%E5%BF%AB%E9%96%83%E5%BA%97%EF%BD%9C%E6%8E%83%E5%85%A8%E6%94%AF%E4%BB%98QR+Code%E7%99%BB%E9%8C%84%E6%B4%BB%E5%8B%95%EF%BC%8C%E6%B6%88%E8%B2%BB%E6%BB%BF%24150%E4%BA%AB10%25&dates=20260724%2F20261024&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%85%A8%E6%94%AF%E4%BB%98%EF%BC%8FPX+Pay+Plus%0A%0A7%2F24+%E8%87%B3+10%2F23+%E5%9C%A8%E6%A1%83%E5%9C%92%E3%80%81%E5%8F%B0%E4%B8%AD%E3%80%81%E5%98%89%E7%BE%A9%E3%80%81%E5%8F%B0%E5%8D%97%E3%80%81%E5%B7%A6%E7%87%9F%E5%BF%AB%E9%96%83%E5%BA%97%EF%BC%8C%E6%B6%88%E8%B2%BB%E5%89%8D%E6%8E%83%E7%8F%BE%E5%A0%B4+QR+Code+%E7%99%BB%E9%8C%84%EF%BC%8C%E8%B3%BC%E8%B2%B7%E8%81%AF%E5%90%8D%E5%95%86%E5%93%81%E5%96%AE%E7%AD%86%E6%BB%BF+150+%E5%85%83%E4%BA%AB+10%25+%E5%85%A8%E9%BB%9E%EF%BC%9B%E5%85%AC%E9%96%8B%E9%A0%81%E7%84%A1%E6%B3%95%E7%A2%BA%E8%AA%8D%E5%8D%B3%E6%99%82%E5%90%8D%E9%A1%8D%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fmarketing.pxpayplus.com%2Fpxplus_marketing_page%2Factivity_content_page%3FEventId%3D109%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E5%85%A8%E8%81%AF%E9%AB%98%E9%90%B5%E5%BF%AB%E9%96%83%E5%BA%97%EF%BD%9C%E6%8E%83%E5%85%A8%E6%94%AF%E4%BB%98QR+Code%E7%99%BB%E9%8C%84%E6%B4%BB%E5%8B%95%EF%BC%8C%E6%B6%88%E8%B2%BB%E6%BB%BF%24150%E4%BA%AB10%25&dates=20260724%2F20261024&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%85%A8%E6%94%AF%E4%BB%98%EF%BC%8FPX+Pay+Plus%0A%0A%E6%9C%80%E9%AB%98+10%25+%E5%9B%9E%E9%A5%8B%EF%BC%8C%E5%B1%AC%E9%AB%98%E5%9B%9E%E9%A5%8B%E6%B4%BB%E5%8B%95%EF%BC%9B%E4%BB%8A%E5%A4%A9%E9%96%8B%E5%A7%8B%EF%BC%9B%E9%A1%8D%E6%BB%BF%E7%8B%80%E6%85%8B%E9%9C%80%E8%87%B3+App+%E7%A2%BA%E8%AA%8D%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fmarketing.pxpayplus.com%2Fpxplus_marketing_page%2Factivity_content_page%3FEventId%3D109%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     },
     {
       "provider_id": "easywallet",
@@ -5904,10 +5896,7 @@
         ],
         "human_summary": "最高 30% 回饋，屬高回饋活動；將於 8 天後開始；額滿狀態需至 App 確認。"
       },
-      "is_featured": true,
-      "highlight_kind": "upcoming",
-      "editorial_summary": "8/1 至 9/30 於水源市場指定店家以全支付付款碼或掃碼付款，單筆不限金額享 30% 全點，指定銀行最高再加碼 5%；限量名額無公開即時狀態。",
-      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E6%B0%B4%E6%BA%90%E5%B8%82%E5%A0%B4%EF%BD%9C%E5%96%AE%E7%AD%86%E4%B8%8D%E9%99%90%E9%87%91%E9%A1%8D%E4%BA%AB30%25%E5%85%A8%E9%BB%9E%E5%9B%9E%E9%A5%8B%EF%BC%8C%E6%8C%87%E5%AE%9A%E9%8A%80%E8%A1%8C%E5%8A%A0%E7%A2%BC%E6%9C%80%E9%AB%985%25%E5%85%A8%E9%BB%9E%E5%9B%9E%E9%A5%8B%EF%BC%81&dates=20260801%2F20261001&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%85%A8%E6%94%AF%E4%BB%98%EF%BC%8FPX+Pay+Plus%0A%0A8%2F1+%E8%87%B3+9%2F30+%E6%96%BC%E6%B0%B4%E6%BA%90%E5%B8%82%E5%A0%B4%E6%8C%87%E5%AE%9A%E5%BA%97%E5%AE%B6%E4%BB%A5%E5%85%A8%E6%94%AF%E4%BB%98%E4%BB%98%E6%AC%BE%E7%A2%BC%E6%88%96%E6%8E%83%E7%A2%BC%E4%BB%98%E6%AC%BE%EF%BC%8C%E5%96%AE%E7%AD%86%E4%B8%8D%E9%99%90%E9%87%91%E9%A1%8D%E4%BA%AB+30%25+%E5%85%A8%E9%BB%9E%EF%BC%8C%E6%8C%87%E5%AE%9A%E9%8A%80%E8%A1%8C%E6%9C%80%E9%AB%98%E5%86%8D%E5%8A%A0%E7%A2%BC+5%25%EF%BC%9B%E9%99%90%E9%87%8F%E5%90%8D%E9%A1%8D%E7%84%A1%E5%85%AC%E9%96%8B%E5%8D%B3%E6%99%82%E7%8B%80%E6%85%8B%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fmarketing.pxpayplus.com%2Fpxplus_marketing_page%2Factivity_content_page%3FEventId%3D110%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E6%B0%B4%E6%BA%90%E5%B8%82%E5%A0%B4%EF%BD%9C%E5%96%AE%E7%AD%86%E4%B8%8D%E9%99%90%E9%87%91%E9%A1%8D%E4%BA%AB30%25%E5%85%A8%E9%BB%9E%E5%9B%9E%E9%A5%8B%EF%BC%8C%E6%8C%87%E5%AE%9A%E9%8A%80%E8%A1%8C%E5%8A%A0%E7%A2%BC%E6%9C%80%E9%AB%985%25%E5%85%A8%E9%BB%9E%E5%9B%9E%E9%A5%8B%EF%BC%81&dates=20260801%2F20261001&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E5%85%A8%E6%94%AF%E4%BB%98%EF%BC%8FPX+Pay+Plus%0A%0A%E6%9C%80%E9%AB%98+30%25+%E5%9B%9E%E9%A5%8B%EF%BC%8C%E5%B1%AC%E9%AB%98%E5%9B%9E%E9%A5%8B%E6%B4%BB%E5%8B%95%EF%BC%9B%E5%B0%87%E6%96%BC+8+%E5%A4%A9%E5%BE%8C%E9%96%8B%E5%A7%8B%EF%BC%9B%E9%A1%8D%E6%BB%BF%E7%8B%80%E6%85%8B%E9%9C%80%E8%87%B3+App+%E7%A2%BA%E8%AA%8D%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fmarketing.pxpayplus.com%2Fpxplus_marketing_page%2Factivity_content_page%3FEventId%3D110%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     },
     {
       "provider_id": "ipassmoney",
@@ -6369,10 +6358,7 @@
         ],
         "human_summary": "最高 100% 回饋，屬高回饋活動。"
       },
-      "is_featured": true,
-      "highlight_kind": "high_return",
-      "editorial_summary": "2026 年新核發正卡的首筆消費回饋 100% 歐付寶紅利，上限 333 點；符合條件的新戶另有最高 13% 回饋。",
-      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E6%9C%80%E6%96%B0%E6%B6%88%E6%81%AF-%E6%AD%90%E4%BB%98%E5%AF%B6O%27Pay%E9%9B%BB%E5%AD%90%E6%94%AF%E4%BB%98&dates=20260101%2F20270101&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E6%AD%90%E4%BB%98%E5%AF%B6%0A%0A2026+%E5%B9%B4%E6%96%B0%E6%A0%B8%E7%99%BC%E6%AD%A3%E5%8D%A1%E7%9A%84%E9%A6%96%E7%AD%86%E6%B6%88%E8%B2%BB%E5%9B%9E%E9%A5%8B+100%25+%E6%AD%90%E4%BB%98%E5%AF%B6%E7%B4%85%E5%88%A9%EF%BC%8C%E4%B8%8A%E9%99%90+333+%E9%BB%9E%EF%BC%9B%E7%AC%A6%E5%90%88%E6%A2%9D%E4%BB%B6%E7%9A%84%E6%96%B0%E6%88%B6%E5%8F%A6%E6%9C%89%E6%9C%80%E9%AB%98+13%25+%E5%9B%9E%E9%A5%8B%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fwww.opay.tw%2Fannouncement%2FDetailAnnouncement%3FnID%3D4379%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E6%9C%80%E6%96%B0%E6%B6%88%E6%81%AF-%E6%AD%90%E4%BB%98%E5%AF%B6O%27Pay%E9%9B%BB%E5%AD%90%E6%94%AF%E4%BB%98&dates=20260101%2F20270101&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E6%AD%90%E4%BB%98%E5%AF%B6%0A%0A%E6%9C%80%E9%AB%98+100%25+%E5%9B%9E%E9%A5%8B%EF%BC%8C%E5%B1%AC%E9%AB%98%E5%9B%9E%E9%A5%8B%E6%B4%BB%E5%8B%95%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fwww.opay.tw%2Fannouncement%2FDetailAnnouncement%3FnID%3D4379%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     },
     {
       "provider_id": "easywallet",
@@ -10635,7 +10621,10 @@
         ],
         "human_summary": "最高 23.5% 回饋，屬高回饋活動。"
       },
-      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=2026%2F7%2F1-9%2F30+%E9%80%B1%E4%B8%89%E5%8D%88%E9%A4%90%E4%B8%BB%E9%A1%8C%E6%97%A5%EF%BC%8C%E5%90%83%E5%8D%88%E9%A4%90%E6%9C%80%E9%AB%98%E4%BA%AB+23.5%25&dates=20260701%2F20261001&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E8%A1%97%E5%8F%A3%E6%94%AF%E4%BB%98%0A%0A%E6%9C%80%E9%AB%98+23.5%25+%E5%9B%9E%E9%A5%8B%EF%BC%8C%E5%B1%AC%E9%AB%98%E5%9B%9E%E9%A5%8B%E6%B4%BB%E5%8B%95%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fmkt.jkopay.com%2Fzh-TW%2Fcampaign%2Fjkolunch%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
+      "is_featured": true,
+      "highlight_kind": "high_return",
+      "editorial_summary": "至 9/30 的每週三，先在 App 領 8 折午餐券，結合尊爵券與指定付款最高 23.5%；街口券仍以 App 券夾可用狀態為準。",
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=2026%2F7%2F1-9%2F30+%E9%80%B1%E4%B8%89%E5%8D%88%E9%A4%90%E4%B8%BB%E9%A1%8C%E6%97%A5%EF%BC%8C%E5%90%83%E5%8D%88%E9%A4%90%E6%9C%80%E9%AB%98%E4%BA%AB+23.5%25&dates=20260701%2F20261001&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9A%E8%A1%97%E5%8F%A3%E6%94%AF%E4%BB%98%0A%0A%E8%87%B3+9%2F30+%E7%9A%84%E6%AF%8F%E9%80%B1%E4%B8%89%EF%BC%8C%E5%85%88%E5%9C%A8+App+%E9%A0%98+8+%E6%8A%98%E5%8D%88%E9%A4%90%E5%88%B8%EF%BC%8C%E7%B5%90%E5%90%88%E5%B0%8A%E7%88%B5%E5%88%B8%E8%88%87%E6%8C%87%E5%AE%9A%E4%BB%98%E6%AC%BE%E6%9C%80%E9%AB%98+23.5%25%EF%BC%9B%E8%A1%97%E5%8F%A3%E5%88%B8%E4%BB%8D%E4%BB%A5+App+%E5%88%B8%E5%A4%BE%E5%8F%AF%E7%94%A8%E7%8B%80%E6%85%8B%E7%82%BA%E6%BA%96%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fmkt.jkopay.com%2Fzh-TW%2Fcampaign%2Fjkolunch%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     },
     {
       "provider_id": "jkopay",
@@ -11301,9 +11290,9 @@
         "human_summary": "最高 21% 回饋，屬高回饋活動；將於 4 天後截止。"
       },
       "is_featured": true,
-      "highlight_kind": "high_return",
-      "editorial_summary": "僅至 7/28；單筆滿 1,000 元有 5% OPENPOINT，加上週三、六與指定卡片方案最高 21%。官方未公告已額滿，仍以交易資格與點數上限為準。",
-      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E8%81%96%E5%BE%B7%E7%A7%91%E6%96%AF%E4%B8%AD%E7%A7%8B%E6%97%A9%E9%B3%A5%E5%8A%A0%E7%A2%BC+icash+Pay%E7%96%8A%E5%8A%A0%E9%8A%80%E8%A1%8C%E6%B4%BB%E5%8B%95%E6%9C%80%E9%AB%98%E4%BA%AB21%25&dates=20260722%2F20260729&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9Aicash+Pay%0A%0A%E5%83%85%E8%87%B3+7%2F28%EF%BC%9B%E5%96%AE%E7%AD%86%E6%BB%BF+1%2C000+%E5%85%83%E6%9C%89+5%25+OPENPOINT%EF%BC%8C%E5%8A%A0%E4%B8%8A%E9%80%B1%E4%B8%89%E3%80%81%E5%85%AD%E8%88%87%E6%8C%87%E5%AE%9A%E5%8D%A1%E7%89%87%E6%96%B9%E6%A1%88%E6%9C%80%E9%AB%98+21%25%E3%80%82%E5%AE%98%E6%96%B9%E6%9C%AA%E5%85%AC%E5%91%8A%E5%B7%B2%E9%A1%8D%E6%BB%BF%EF%BC%8C%E4%BB%8D%E4%BB%A5%E4%BA%A4%E6%98%93%E8%B3%87%E6%A0%BC%E8%88%87%E9%BB%9E%E6%95%B8%E4%B8%8A%E9%99%90%E7%82%BA%E6%BA%96%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fwww.icashpay.com.tw%2FadvertMessage%2Fview%2Fid%2F2415%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
+      "highlight_kind": "ending_soon",
+      "editorial_summary": "單筆滿 1,000 元享 5% OPENPOINT，可疊加週三、六與指定卡片方案至最高 21%；官方未見已額滿公告，但總回饋 6 萬點依交易時間判定。",
+      "google_calendar_url": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E8%81%96%E5%BE%B7%E7%A7%91%E6%96%AF%E4%B8%AD%E7%A7%8B%E6%97%A9%E9%B3%A5%E5%8A%A0%E7%A2%BC+icash+Pay%E7%96%8A%E5%8A%A0%E9%8A%80%E8%A1%8C%E6%B4%BB%E5%8B%95%E6%9C%80%E9%AB%98%E4%BA%AB21%25&dates=20260722%2F20260729&details=%E6%94%AF%E4%BB%98%E6%A5%AD%E8%80%85%EF%BC%9Aicash+Pay%0A%0A%E5%96%AE%E7%AD%86%E6%BB%BF+1%2C000+%E5%85%83%E4%BA%AB+5%25+OPENPOINT%EF%BC%8C%E5%8F%AF%E7%96%8A%E5%8A%A0%E9%80%B1%E4%B8%89%E3%80%81%E5%85%AD%E8%88%87%E6%8C%87%E5%AE%9A%E5%8D%A1%E7%89%87%E6%96%B9%E6%A1%88%E8%87%B3%E6%9C%80%E9%AB%98+21%25%EF%BC%9B%E5%AE%98%E6%96%B9%E6%9C%AA%E8%A6%8B%E5%B7%B2%E9%A1%8D%E6%BB%BF%E5%85%AC%E5%91%8A%EF%BC%8C%E4%BD%86%E7%B8%BD%E5%9B%9E%E9%A5%8B+6+%E8%90%AC%E9%BB%9E%E4%BE%9D%E4%BA%A4%E6%98%93%E6%99%82%E9%96%93%E5%88%A4%E5%AE%9A%E3%80%82%0A%0A%E5%AE%98%E6%96%B9%E6%B4%BB%E5%8B%95%E9%A0%81%EF%BC%9Ahttps%3A%2F%2Fwww.icashpay.com.tw%2FadvertMessage%2Fview%2Fid%2F2415%0A%0A%E5%84%AA%E6%83%A0%E5%90%8D%E9%A1%8D%E8%88%87%E6%A2%9D%E4%BB%B6%E5%8F%AF%E8%83%BD%E8%AA%BF%E6%95%B4%EF%BC%8C%E5%AF%A6%E9%9A%9B%E5%85%A7%E5%AE%B9%E4%BB%A5%E5%AE%98%E6%96%B9%E5%85%AC%E5%91%8A%E7%82%BA%E6%BA%96%E3%80%82&ctz=Asia%2FTaipei"
     },
     {
       "provider_id": "taiwanpay",

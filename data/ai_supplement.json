@@ -1,16 +1,8 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-24T08:16:49+08:00",
-  "headline": "全支付高鐵快閃店今日開跑；100% 隨機回饋與多檔夜市高回饋持續，但限量活動的即時名額仍須以 App 為準",
+  "generated_at": "2026-07-25T08:44:16+08:00",
+  "headline": "聖德科斯 icash Pay 最高 21% 僅至 7/28；全支付台北夜市、全盈+PAY 日本與街口週三午餐高回饋持續，限量名額仍須依 App 為準",
   "highlights": [
-    {
-      "kind": "high_return",
-      "provider_id": "opay",
-      "provider_name": "歐付寶",
-      "title": "新戶首刷 100% 歐付寶紅利",
-      "summary": "2026 年新核發正卡的首筆消費回饋 100% 歐付寶紅利，上限 333 點；符合條件的新戶另有最高 13% 回饋。",
-      "url": "https://www.opay.tw/announcement/DetailAnnouncement?nID=4379"
-    },
     {
       "kind": "high_return",
       "provider_id": "taiwanpay",
@@ -24,7 +16,7 @@
       "provider_id": "fullpay",
       "provider_name": "全支付／PX Pay Plus",
       "title": "台北 17 大夜市全支付最高 35%",
-      "summary": "至 8/31 在指定夜市以全支付付款碼或掃碼付款，主活動 30%、指定付款方式最高再加碼 5%，另有 foodpanda 5% 券；官方公開頁無法確認即時名額。",
+      "summary": "至 8/31 在指定夜市以全支付付款碼或掃碼付款，主活動 30%、指定付款方式最高再加碼 5%，另有 foodpanda 5% 券；即時額滿狀態僅於 App 公告，公開頁無法確認。",
       "url": "https://marketing.pxpayplus.com/pxplus_marketing_page/activity_content_page?EventId=88"
     },
     {
@@ -36,28 +28,28 @@
       "url": "https://www.pluspay.com.tw/Content/Event/PayPay.html"
     },
     {
-      "kind": "high_return",
+      "kind": "ending_soon",
       "provider_id": "icashpay",
       "provider_name": "icash Pay",
-      "title": "聖德科斯中秋早鳥最高 21% 回饋",
-      "summary": "僅至 7/28；單筆滿 1,000 元有 5% OPENPOINT，加上週三、六與指定卡片方案最高 21%。官方未公告已額滿，仍以交易資格與點數上限為準。",
+      "title": "聖德科斯中秋早鳥最高 21% 僅至 7/28",
+      "summary": "單筆滿 1,000 元享 5% OPENPOINT，可疊加週三、六與指定卡片方案至最高 21%；官方未見已額滿公告，但總回饋 6 萬點依交易時間判定。",
       "url": "https://www.icashpay.com.tw/advertMessage/view/id/2415"
     },
     {
-      "kind": "starting_today",
-      "provider_id": "fullpay",
-      "provider_name": "全支付／PX Pay Plus",
-      "title": "全聯高鐵快閃店今日起滿 150 元享 10%",
-      "summary": "7/24 至 10/23 在桃園、台中、嘉義、台南、左營快閃店，消費前掃現場 QR Code 登錄，購買聯名商品單筆滿 150 元享 10% 全點；公開頁無法確認即時名額。",
-      "url": "https://marketing.pxpayplus.com/pxplus_marketing_page/activity_content_page?EventId=109"
+      "kind": "high_return",
+      "provider_id": "jkopay",
+      "provider_name": "街口支付",
+      "title": "週三午餐主題日最高享 23.5%",
+      "summary": "至 9/30 的每週三，先在 App 領 8 折午餐券，結合尊爵券與指定付款最高 23.5%；街口券仍以 App 券夾可用狀態為準。",
+      "url": "https://mkt.jkopay.com/zh-TW/campaign/jkolunch"
     },
     {
       "kind": "upcoming",
       "provider_id": "fullpay",
       "provider_name": "全支付／PX Pay Plus",
-      "title": "水源市場 8/1 起單筆不限金額 30%",
-      "summary": "8/1 至 9/30 於水源市場指定店家以全支付付款碼或掃碼付款，單筆不限金額享 30% 全點，指定銀行最高再加碼 5%；限量名額無公開即時狀態。",
-      "url": "https://marketing.pxpayplus.com/pxplus_marketing_page/activity_content_page?EventId=110"
+      "title": "易遊網週三限定 8/1 起最高回饋 5%",
+      "summary": "8/1 至 10/29 的每週三，消費前在全支付或 PX Pay App 登錄；單筆滿 6,000 元回饋 180 全點、滿 10,000 元回饋 300 全點，指定付款方式最高 5%。",
+      "url": "https://marketing.pxpayplus.com/pxplus_marketing_page/activity_content_page?EventId=108"
     },
     {
       "kind": "sold_out",

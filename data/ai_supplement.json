@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-25T08:44:16+08:00",
-  "headline": "聖德科斯 icash Pay 最高 21% 僅至 7/28；全支付台北夜市、全盈+PAY 日本與街口週三午餐高回饋持續，限量名額仍須依 App 為準",
+  "generated_at": "2026-07-27T08:50:00+08:00",
+  "headline": "福利驚奇網台灣 Pay 9 折今日開跑；聖德科斯 icash Pay 最高 21% 僅至 7/28，限量活動仍應以官方 App 公告為準",
   "highlights": [
     {
       "kind": "high_return",
@@ -42,6 +42,14 @@
       "title": "週三午餐主題日最高享 23.5%",
       "summary": "至 9/30 的每週三，先在 App 領 8 折午餐券，結合尊爵券與指定付款最高 23.5%；街口券仍以 App 券夾可用狀態為準。",
       "url": "https://mkt.jkopay.com/zh-TW/campaign/jkolunch"
+    },
+    {
+      "kind": "upcoming",
+      "provider_id": "taiwanpay",
+      "provider_name": "台灣 Pay",
+      "title": "福利驚奇網手機下單現折 10% 今日開跑",
+      "summary": "至 9/30 限以手機開啟福利驚奇網並用台灣 Pay 金融卡或帳戶付款；不限金額現折 10%，單筆最高 1,000 元，每會員限一次。官方尚未公告額滿。",
+      "url": "https://www.taiwanpay.com.tw/fisc-tpay/news/event/01KXFVWACX4FDYW5F7HMCTHJX1"
     },
     {
       "kind": "upcoming",

@@ -1,71 +1,71 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-28T08:01:17+08:00",
-  "headline": "icash Pay 聖德科斯最高 21%與博客來滿額贈皆於今日結束；悠遊付博客來 7 月回饋已額滿，8 月將重新計算",
+  "generated_at": "2026-07-29T09:15:36+08:00",
+  "headline": "icash Pay 萬家福等通路最高 21% 今日開跑；悠遊付台中捷運 50% 僅至 7/31，全支付易遊網活動 8/1 起須先在 App 登錄。",
   "highlights": [
     {
       "kind": "high_return",
       "provider_id": "taiwanpay",
       "provider_name": "台灣 Pay",
       "title": "NET 消費隨機返現最高 100%",
-      "summary": "至 9/15 於 NET 指定門市以台灣行動支付 App 的台灣 Pay 付款碼支付，單筆滿 500 元可獲隨機紅包；每卡或帳戶最多 2 個，最高返現 100%。",
+      "summary": "至 9/15，於 NET 指定門市以台灣行動支付 App 的台灣 Pay 付款碼單筆滿 500 元，可獲隨機紅包；每金融卡或帳戶最多 2 個，最高返現 100%。官方未見已額滿公告。",
       "url": "https://www.taiwanpay.com.tw/fisc-tpay/news/event/01KTBEYAY6H4DAPHAZZC1G4HYK"
     },
     {
-      "kind": "high_return",
-      "provider_id": "fullpay",
-      "provider_name": "全支付／PX Pay Plus",
-      "title": "台北 17 大夜市全支付最高 35%",
-      "summary": "至 8/31 在指定夜市以全支付付款碼或掃碼付款，主活動 30%、指定付款方式最高再加碼 5%，另有 foodpanda 5% 券；即時額滿狀態僅於 App 公告，公開頁無法確認。",
-      "url": "https://marketing.pxpayplus.com/pxplus_marketing_page/activity_content_page?EventId=88"
+      "kind": "new",
+      "provider_id": "icashpay",
+      "provider_name": "icash Pay",
+      "title": "萬家福、樂家康、Mia C‘bon 天天最高回饋 21%",
+      "summary": "今日 7/29 起至 9/1；於指定通路以 icash Pay 消費享 5%，綁 uniopen 聯名卡與滿額等條件可疊加至最高 21%。各加碼均有個人與總贈點上限，官方未見已額滿公告。",
+      "url": "https://www.icashpay.com.tw/advertMessage/view/id/2429"
+    },
+    {
+      "kind": "ending_soon",
+      "provider_id": "easywallet",
+      "provider_name": "悠遊付",
+      "title": "台中捷運乘車碼筆筆回饋 50% 僅至 7/31",
+      "summary": "在台中捷運無障礙閘門使用悠遊付乘車碼，每筆扣款回饋 50%，每週期每戶上限 50 元；活動總額 10 萬元，額滿進度僅於 App 公告，公開頁無法確認。",
+      "url": "https://easywallet.easycard.com.tw/benefit/content?id=1776840470"
     },
     {
       "kind": "high_return",
       "provider_id": "pluspay",
       "provider_name": "全盈+PAY",
-      "title": "日本 PayPay 通路最高 27% 回饋",
-      "summary": "至 9/30 於日本 PayPay 合作實體店，以全盈+PAY 日本版付款碼或掃碼付款最高 27%；須完成帳戶開通並綁定全家會員，銀行加碼條件另計。",
+      "title": "日本 PayPay 合作通路最高回饋 27%",
+      "summary": "至 9/30，在日本 PayPay 合作實體店以全盈+PAY 日本版付款碼或掃碼付款，結合銀行加碼最高 27%；須先開通帳戶並綁定全家會員。",
       "url": "https://www.pluspay.com.tw/Content/Event/PayPay.html"
     },
     {
-      "kind": "ending_soon",
-      "provider_id": "icashpay",
-      "provider_name": "icash Pay",
-      "title": "聖德科斯中秋早鳥最高 21% 僅至 7/28",
-      "summary": "今日 7/28 截止；單筆滿 1,000 元享 5% OPENPOINT，可疊加週三、六與指定卡片方案至最高 21%。官方未見已額滿公告，但總回饋 6 萬點依交易時間判定。",
-      "url": "https://www.icashpay.com.tw/advertMessage/view/id/2415"
+      "kind": "high_return",
+      "provider_id": "ipassmoney",
+      "provider_name": "一卡通 MONEY",
+      "title": "高雄六合、瑞豐夜市 TWQR 最高 25%",
+      "summary": "至 12/31，於指定 TWQR 店家付款，主活動 10% 並依指定支付工具與條件加碼，最高 25%；每月限額與適用方式依活動辦法，公開官網未見已額滿公告。",
+      "url": "https://www.i-pass.com.tw/Preferential/Detail/GMZDSNALO3OM764nIIXY"
     },
     {
       "kind": "high_return",
-      "provider_id": "jkopay",
-      "provider_name": "街口支付",
-      "title": "週三午餐主題日最高享 23.5%",
-      "summary": "至 9/30 的每週三，先在 App 領 8 折午餐券，結合尊爵券與指定付款最高 23.5%；街口券仍以 App 券夾可用狀態為準。",
-      "url": "https://mkt.jkopay.com/zh-TW/campaign/jkolunch"
+      "provider_id": "piwallet",
+      "provider_name": "Pi 拍錢包",
+      "title": "eSIM 網卡最高 11% P 幣回饋",
+      "summary": "至 8/31，在指定賣場輸入優惠碼 Piapp 購買 eSIM 享 9 折，再用 Pi 拍錢包付款回饋 10% P 幣；綁玉山 Pi 拍錢包信用卡可再加 1%。",
+      "url": "https://web.piapp.com.tw/events-esim_202607/"
     },
     {
-      "kind": "high_return",
-      "provider_id": "taiwanpay",
-      "provider_name": "台灣 Pay",
-      "title": "福利驚奇網手機下單現折 10%",
-      "summary": "至 9/30 限以手機開啟福利驚奇網並用台灣 Pay 金融卡或帳戶付款；不限金額現折 10%，單筆最高 1,000 元，每會員限一次。公開官網未見額滿公告。",
-      "url": "https://www.taiwanpay.com.tw/fisc-tpay/news/event/01KXFVWACX4FDYW5F7HMCTHJX1"
+      "kind": "sold_out",
+      "provider_id": "easywallet",
+      "provider_name": "悠遊付",
+      "title": "指定電商滿千回饋：7/24 已額滿，7/31 尚有活動日",
+      "summary": "官方明示 7/24 的 50 元指定電商券已於 17:39 額滿；活動仍涵蓋 7 至 9 月最後兩個週五，下一個活動日為 7/31，額滿狀態以活動頁公告為準。",
+      "url": "https://easywallet.easycard.com.tw/benefit/content?id=1780988572"
     },
     {
       "kind": "upcoming",
       "provider_id": "fullpay",
       "provider_name": "全支付／PX Pay Plus",
-      "title": "易遊網週三限定 8/1 起最高回饋 5%",
-      "summary": "8/1 至 10/29 的指定週三，消費前在全支付或 PX Pay App 登錄；單筆滿 6,000 元回饋 180 全點、滿 10,000 元回饋 300 全點，指定付款方式最高 5%。",
+      "title": "易遊網週三限定回饋 8/1 起開跑",
+      "summary": "至 10/28 的指定週三，消費前須在全支付或 PX Pay App 登錄；單筆滿 6,000 元回饋 180 全點、滿 10,000 元回饋 300 全點，指定付款方式最高 5%。",
       "url": "https://marketing.pxpayplus.com/pxplus_marketing_page/activity_content_page?EventId=108"
-    },
-    {
-      "kind": "ending_soon",
-      "provider_id": "icashpay",
-      "provider_name": "icash Pay",
-      "title": "博客來單筆滿 3,000 元贈 OPENPOINT 100 點僅至今日",
-      "summary": "今日 7/28 截止；以 icash Pay 在博客來單筆滿 3,000 元贈 100 點，每戶活動期間上限 300 點。活動總額 10 萬點依交易時間判定，公開官網未見額滿公告。",
-      "url": "https://www.icashpay.com.tw/advertMessage/view/id/2432"
     }
   ],
   "supplemental_activities": []

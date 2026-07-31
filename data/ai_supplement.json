@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-30T08:24:37+08:00",
-  "headline": "街口週四電商日最高 13% 今日適用；悠遊付台中捷運乘車碼 50% 僅至明日，全支付易遊網活動 8/1 起須先在 App 登錄。",
+  "generated_at": "2026-07-31T09:03:15+08:00",
+  "headline": "7/31 重點：悠遊付台中捷運乘車碼 50% 今日截止，台灣 Pay 棉花田活動已額滿；全支付易遊網活動 8/1 起開跑且須先在 App 登錄。",
   "highlights": [
     {
       "kind": "high_return",
@@ -12,19 +12,11 @@
       "url": "https://www.taiwanpay.com.tw/fisc-tpay/news/event/01KTBEYAY6H4DAPHAZZC1G4HYK"
     },
     {
-      "kind": "high_return",
-      "provider_id": "jkopay",
-      "provider_name": "街口支付",
-      "title": "週四電商日，指定電商最高享 13%",
-      "summary": "活動至 9/30 的每週四適用；指定電商可享品牌加碼與街口支付回饋，最高 13%。券與加碼限額以付款時系統結果為準，公開官網未見已額滿公告。",
-      "url": "https://mkt.jkopay.com/zh-TW/campaign/jkoecommerce"
-    },
-    {
-      "kind": "ending_soon",
+      "kind": "ending_today",
       "provider_id": "easywallet",
       "provider_name": "悠遊付",
-      "title": "台中捷運乘車碼筆筆回饋 50% 僅至明日 7/31",
-      "summary": "在台中捷運無障礙閘門使用悠遊付乘車碼，每筆扣款回饋 50%，7 月每戶上限 50 元；活動總額 10 萬元。官網未列 7 月額滿時間，額滿進度僅於 App 公告，公開頁無法確認。",
+      "title": "台中捷運乘車碼筆筆回饋 50% 今日截止",
+      "summary": "僅至 7/31；在台中捷運無障礙閘門使用悠遊付乘車碼，每筆扣款回饋 50%，每戶最高 50 元，活動總額 10 萬元。額滿進度僅於 App 公告，公開頁無法確認。",
       "url": "https://easywallet.easycard.com.tw/benefit/content?id=1776840470"
     },
     {
@@ -34,6 +26,14 @@
       "title": "萬家福、樂家康、Mia C‘bon 天天最高回饋 21%",
       "summary": "至 9/1；於指定通路以 icash Pay 消費享 5%，綁 uniopen 聯名卡與滿額等條件可疊加至最高 21%。各加碼均有個人與總贈點上限，官方未見已額滿公告。",
       "url": "https://www.icashpay.com.tw/advertMessage/view/id/2429"
+    },
+    {
+      "kind": "high_return",
+      "provider_id": "jkopay",
+      "provider_name": "街口支付",
+      "title": "週四電商日，指定電商最高享 13%",
+      "summary": "至 9/30 的每週四適用；指定電商可享品牌加碼與街口支付回饋，最高 13%。券與加碼限額以付款時系統結果為準，公開官網未見已額滿公告。",
+      "url": "https://mkt.jkopay.com/zh-TW/campaign/jkoecommerce"
     },
     {
       "kind": "high_return",

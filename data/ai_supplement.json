@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-31T09:03:15+08:00",
-  "headline": "7/31 重點：悠遊付台中捷運乘車碼 50% 今日截止，台灣 Pay 棉花田活動已額滿；全支付易遊網活動 8/1 起開跑且須先在 App 登錄。",
+  "generated_at": "2026-08-01T08:01:37+08:00",
+  "headline": "8/1 重點：icash Pay 公告 8 月新戶與通路優惠，悠遊付雙北乘車碼 10% 今日開跑；即時限額仍應以各支付 App 或官方頁面公告為準。",
   "highlights": [
     {
       "kind": "high_return",
@@ -12,12 +12,12 @@
       "url": "https://www.taiwanpay.com.tw/fisc-tpay/news/event/01KTBEYAY6H4DAPHAZZC1G4HYK"
     },
     {
-      "kind": "ending_today",
+      "kind": "new",
       "provider_id": "easywallet",
       "provider_name": "悠遊付",
-      "title": "台中捷運乘車碼筆筆回饋 50% 今日截止",
-      "summary": "僅至 7/31；在台中捷運無障礙閘門使用悠遊付乘車碼，每筆扣款回饋 50%，每戶最高 50 元，活動總額 10 萬元。額滿進度僅於 App 公告，公開頁無法確認。",
-      "url": "https://easywallet.easycard.com.tw/benefit/content?id=1776840470"
+      "title": "雙北捷運、公車乘車碼筆筆回饋 10%",
+      "summary": "8/1 至 9/30，以悠遊付乘車碼搭雙北捷運或公車，票價筆筆回饋 10%，全期每人最高 60 元；嗶乘車定期票每月限量 5,000 份，實際額滿狀態僅於 App 公告，公開頁無法確認。",
+      "url": "https://easywallet.easycard.com.tw/benefit/content?id=1784682808"
     },
     {
       "kind": "high_return",
@@ -60,12 +60,12 @@
       "url": "https://web.piapp.com.tw/events-esim_202607/"
     },
     {
-      "kind": "upcoming",
-      "provider_id": "fullpay",
-      "provider_name": "全支付／PX Pay Plus",
-      "title": "易遊網週三限定回饋 8/1 起開跑",
-      "summary": "至 10/28 的指定週三，消費前須在全支付或 PX Pay App 登錄；單筆滿 6,000 元回饋 180 全點、滿 10,000 元回饋 300 全點，指定付款方式最高 5%。",
-      "url": "https://marketing.pxpayplus.com/pxplus_marketing_page/activity_content_page?EventId=108"
+      "kind": "new",
+      "provider_id": "icashpay",
+      "provider_name": "icash Pay",
+      "title": "icash Pay 8 月最新優惠：新戶登錄贈酷聖石兌換券",
+      "summary": "官方 8/1 公告：新戶首次註冊並在 icash Pay App 完成登錄，可獲酷聖石雙球冰淇淋電子兌換券，每戶限一張；頁面同時彙整多項 8 月通路優惠。",
+      "url": "https://www.icashpay.com.tw/advertMessage/view/id/2436"
     }
   ],
   "supplemental_activities": []

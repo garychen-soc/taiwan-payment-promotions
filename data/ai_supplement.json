@@ -1,22 +1,30 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-01T08:01:37+08:00",
-  "headline": "8/1 重點：icash Pay 公告 8 月新戶與通路優惠，悠遊付雙北乘車碼 10% 今日開跑；即時限額仍應以各支付 App 或官方頁面公告為準。",
+  "generated_at": "2026-08-02T11:20:13+08:00",
+  "headline": "8/2 重點：8 月優惠已陸續開跑，悠遊付夜市最高 35% 與台灣 Pay 永康商圈 20% 可留意；即時限額僅以官方明確公告或 App 顯示為準。",
   "highlights": [
     {
       "kind": "high_return",
+      "provider_id": "easywallet",
+      "provider_name": "悠遊付",
+      "title": "2026 悠遊付迺夜市每週五六日最高回饋 35%",
+      "summary": "至 8/31 的每週五、六、日，指定夜市店家消費可享活動回饋並疊加月級挑戰，最高 35%。官方明確公告活動二的 7 月回饋已額滿；8 月即時名額須以 App 活動頁為準。",
+      "url": "https://easywallet.easycard.com.tw/benefit/content?id=1781689964"
+    },
+    {
+      "kind": "new",
       "provider_id": "taiwanpay",
       "provider_name": "台灣 Pay",
-      "title": "NET 消費隨機返現最高 100%",
-      "summary": "至 9/15，於 NET 指定門市以台灣行動支付 App 的台灣 Pay 付款碼單筆滿 500 元，可獲隨機紅包；每金融卡或帳戶最多 2 個，最高返現 100%。官方未見已額滿公告。",
-      "url": "https://www.taiwanpay.com.tw/fisc-tpay/news/event/01KTBEYAY6H4DAPHAZZC1G4HYK"
+      "title": "永康國際商圈消費享 20% 回饋",
+      "summary": "8/1 至 11/30，台南永康國際商圈指定店家以台灣 Pay 消費享 20% 回饋；活動適用店家與回饋條件依官方辦法為準，公開頁未見已額滿公告。",
+      "url": "https://www.taiwanpay.com.tw/fisc-tpay/news/event/01KY4P3N7N48E7PS9TRQD6P1AY"
     },
     {
       "kind": "new",
       "provider_id": "easywallet",
       "provider_name": "悠遊付",
       "title": "雙北捷運、公車乘車碼筆筆回饋 10%",
-      "summary": "8/1 至 9/30，以悠遊付乘車碼搭雙北捷運或公車，票價筆筆回饋 10%，全期每人最高 60 元；嗶乘車定期票每月限量 5,000 份，實際額滿狀態僅於 App 公告，公開頁無法確認。",
+      "summary": "8/1 至 9/30，以悠遊付乘車碼搭雙北捷運或公車，票價筆筆回饋 10%，全期每人最高 60 元。嗶乘車定期票每月限量 5,000 份，實際額滿狀態僅於 App 公告，公開頁無法確認。",
       "url": "https://easywallet.easycard.com.tw/benefit/content?id=1784682808"
     },
     {
@@ -24,16 +32,8 @@
       "provider_id": "icashpay",
       "provider_name": "icash Pay",
       "title": "萬家福、樂家康、Mia C‘bon 天天最高回饋 21%",
-      "summary": "至 9/1；於指定通路以 icash Pay 消費享 5%，綁 uniopen 聯名卡與滿額等條件可疊加至最高 21%。各加碼均有個人與總贈點上限，官方未見已額滿公告。",
+      "summary": "至 9/1，指定通路以 icash Pay 消費享 5%，綁 uniopen 聯名卡與滿額等條件可疊加至最高 21%；各加碼均有個人與總贈點上限。",
       "url": "https://www.icashpay.com.tw/advertMessage/view/id/2429"
-    },
-    {
-      "kind": "high_return",
-      "provider_id": "jkopay",
-      "provider_name": "街口支付",
-      "title": "週四電商日，指定電商最高享 13%",
-      "summary": "至 9/30 的每週四適用；指定電商可享品牌加碼與街口支付回饋，最高 13%。券與加碼限額以付款時系統結果為準，公開官網未見已額滿公告。",
-      "url": "https://mkt.jkopay.com/zh-TW/campaign/jkoecommerce"
     },
     {
       "kind": "high_return",
@@ -45,11 +45,11 @@
     },
     {
       "kind": "high_return",
-      "provider_id": "ipassmoney",
-      "provider_name": "一卡通 MONEY",
-      "title": "高雄六合、瑞豐夜市 TWQR 最高 25%",
-      "summary": "至 12/31，於指定 TWQR 店家付款，主活動 10% 並依指定支付工具與條件加碼，最高 25%；每月限額與適用方式依活動辦法，公開官網未見已額滿公告。",
-      "url": "https://www.i-pass.com.tw/Preferential/Detail/GMZDSNALO3OM764nIIXY"
+      "provider_id": "jkopay",
+      "provider_name": "街口支付",
+      "title": "週四電商日，指定電商最高享 13%",
+      "summary": "至 9/30 的每週四適用；指定電商可享品牌加碼與街口支付回饋，最高 13%。券與加碼限額以付款時系統結果為準，公開官網未見已額滿公告。",
+      "url": "https://mkt.jkopay.com/zh-TW/campaign/jkoecommerce"
     },
     {
       "kind": "high_return",

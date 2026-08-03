@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-02T11:20:13+08:00",
-  "headline": "8/2 重點：8 月優惠已陸續開跑，悠遊付夜市最高 35% 與台灣 Pay 永康商圈 20% 可留意；即時限額僅以官方明確公告或 App 顯示為準。",
+  "generated_at": "2026-08-03T09:17:25+08:00",
+  "headline": "8/3 重點：台灣 Pay 福容大飯店 20% 已明確額滿；Pi 拍錢包 7-ELEVEN 滿額折 100 元將於 8/19 開跑，悠遊付夜市 8 月名額仍須以 App 顯示為準。",
   "highlights": [
     {
       "kind": "high_return",
       "provider_id": "easywallet",
       "provider_name": "悠遊付",
       "title": "2026 悠遊付迺夜市每週五六日最高回饋 35%",
-      "summary": "至 8/31 的每週五、六、日，指定夜市店家消費可享活動回饋並疊加月級挑戰，最高 35%。官方明確公告活動二的 7 月回饋已額滿；8 月即時名額須以 App 活動頁為準。",
+      "summary": "至 8/31 的每週五、六、日，指定夜市店家消費可享活動回饋並疊加月級挑戰，最高 35%。官方明確公告活動二的 7 月回饋已額滿；8 月即時名額僅能以 App 活動頁確認。",
       "url": "https://easywallet.easycard.com.tw/benefit/content?id=1781689964"
     },
     {
@@ -44,20 +44,12 @@
       "url": "https://www.pluspay.com.tw/Content/Event/PayPay.html"
     },
     {
-      "kind": "high_return",
-      "provider_id": "jkopay",
-      "provider_name": "街口支付",
-      "title": "週四電商日，指定電商最高享 13%",
-      "summary": "至 9/30 的每週四適用；指定電商可享品牌加碼與街口支付回饋，最高 13%。券與加碼限額以付款時系統結果為準，公開官網未見已額滿公告。",
-      "url": "https://mkt.jkopay.com/zh-TW/campaign/jkoecommerce"
-    },
-    {
-      "kind": "high_return",
       "provider_id": "piwallet",
       "provider_name": "Pi 拍錢包",
-      "title": "eSIM 網卡最高 11% P 幣回饋",
-      "summary": "至 8/31，在指定賣場輸入優惠碼 Piapp 購買 eSIM 享 9 折，再用 Pi 拍錢包付款回饋 10% P 幣；綁玉山 Pi 拍錢包信用卡可再加 1%。",
-      "url": "https://web.piapp.com.tw/events-esim_202607/"
+      "kind": "upcoming",
+      "title": "7-ELEVEN 中元活動：滿 1,111 元立折 100 元",
+      "summary": "8/19 至 8/23，Pi 拍錢包綁定指定銀行信用卡於 7-ELEVEN 單筆實付滿 1,111 元可立折 100 元，限前 10,000 筆；額滿進度以 7-ELEVEN 系統公告為準。",
+      "url": "https://web.piapp.com.tw/events-7-eleven-202608/"
     },
     {
       "kind": "new",
@@ -66,6 +58,14 @@
       "title": "icash Pay 8 月最新優惠：新戶登錄贈酷聖石兌換券",
       "summary": "官方 8/1 公告：新戶首次註冊並在 icash Pay App 完成登錄，可獲酷聖石雙球冰淇淋電子兌換券，每戶限一張；頁面同時彙整多項 8 月通路優惠。",
       "url": "https://www.icashpay.com.tw/advertMessage/view/id/2436"
+    },
+    {
+      "kind": "sold_out",
+      "provider_id": "taiwanpay",
+      "provider_name": "台灣 Pay",
+      "title": "福容大飯店度假絕 Pay 不限金額享 20% 回饋",
+      "summary": "官方活動資料於 8/3 已明確標示「活動額滿」；即使原定活動期間尚未結束，回饋已停止，請勿再以此活動規劃付款。",
+      "url": "https://www.taiwanpay.com.tw/fisc-tpay/news/event/01KTBF16N8RQRJGP64P5DRE4GD"
     }
   ],
   "supplemental_activities": []

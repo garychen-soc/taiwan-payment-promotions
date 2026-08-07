@@ -1,62 +1,62 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-06T09:48:59+08:00",
-  "headline": "8/6 重點：街口指定通路解鎖最高 30% 與悠遊付微風信義最高 13% 今日可用；一卡通 MONEY 聯邦卡 8 月 10% 回饋已明確額滿。",
+  "generated_at": "2026-08-07T08:01:53+08:00",
+  "headline": "8/7 重點：悠遊付喜美超市優惠今日開跑、全支付台北夜市最高 35% 進入倒數；一卡通 MONEY 聯邦卡 8 月 10% 已明確額滿。",
   "highlights": [
-    {
-      "kind": "new",
-      "provider_id": "jkopay",
-      "provider_name": "街口支付",
-      "title": "8 月指定通路解鎖 30% 回饋",
-      "summary": "至 8/31，指定通路消費滿額可領 30% 街口券；須依活動頁的通路、滿額與領券條件辦理。官方公開頁未見已額滿文字，實際券況以街口支付系統為準。",
-      "url": "https://mkt.jkopay.com/zh-TW/campaign/jko30bonus"
-    },
     {
       "kind": "new",
       "provider_id": "easywallet",
       "provider_name": "悠遊付",
-      "title": "微風信義之夜滿額最高回饋 13%",
-      "summary": "8/6 至 8/23，於微風信義以悠遊付消費滿額可獲酬賓券；活動與指定百貨／影城及會員回饋疊加時最高 13%。總回饋上限 900 份，若達上限會依官方公告提前結束。",
-      "url": "https://easywallet.easycard.com.tw/benefit/content?id=1779865957"
+      "title": "喜美超市消費滿額最高回饋 13%",
+      "summary": "8/7 至 10/4，使用悠遊付於喜美超市單筆滿 500 元贈 40 元回饋券，每戶最多 3 份；與月級挑戰、週五會員日疊加最高 13%。總限量 2,000 份，官方僅說達上限會於 App 公告，未見已額滿文字。",
+      "url": "https://easywallet.easycard.com.tw/benefit/content?id=1784797318"
+    },
+    {
+      "kind": "high_return",
+      "provider_id": "fullpay",
+      "provider_name": "全支付／PX Pay Plus",
+      "title": "打牙祭台北 17 大夜市最高 35% 全點",
+      "summary": "至 8/31，在指定台北夜市以全支付付款碼或掃碼消費，主活動單筆不限金額享 30%，搭配指定付款方式最高 35%，另有 foodpanda 5% 券。名額是否額滿僅於全支付 App 公告，公開頁無法確認。",
+      "url": "https://marketing.pxpayplus.com/pxplus_marketing_page/activity_content_page?EventId=88"
+    },
+    {
+      "kind": "high_return",
+      "provider_id": "jkopay",
+      "provider_name": "街口支付",
+      "title": "8 月指定通路解鎖 30% 回饋",
+      "summary": "至 8/31，於指定通路消費滿額可領 30% 街口券；須依活動頁所列通路、滿額與領券規則參加。官方公開頁未見已額滿文字，實際券況以街口支付系統為準。",
+      "url": "https://mkt.jkopay.com/zh-TW/campaign/jko30bonus"
     },
     {
       "kind": "high_return",
       "provider_id": "easywallet",
       "provider_name": "悠遊付",
-      "title": "2026 悠遊付迺夜市每週五六日最高回饋 35%",
-      "summary": "至 8/31 的每週五、六、日，指定夜市店家消費可享活動回饋並疊加月級挑戰，最高 35%。官方明確公告活動二的 7 月回饋已額滿；8 月即時名額僅能以 App 活動頁確認。",
-      "url": "https://easywallet.easycard.com.tw/benefit/content?id=1781689964"
-    },
-    {
-      "kind": "new",
-      "provider_id": "taiwanpay",
-      "provider_name": "台灣 Pay",
-      "title": "永康國際商圈消費享 20% 回饋",
-      "summary": "8/1 至 11/30，台北市大安區永康街及鄰近指定店家以台灣 Pay 消費享 20% 回饋，每帳戶最高 1,000 元。官方公開頁未見已額滿公告，參與店家以華南銀行公告為準。",
-      "url": "https://www.taiwanpay.com.tw/fisc-tpay/news/event/01KY4P3N7N48E7PS9TRQD6P1AY"
+      "title": "7-ELEVEN 錢包／帳戶最高回饋 14%",
+      "summary": "至 9/30，以悠遊付錢包或綁定銀行帳戶在 7-ELEVEN 消費，筆筆 4%，搭配月級挑戰與週五會員日最高 14%。各月限額與額滿公告依悠遊付 App 為準。",
+      "url": "https://easywallet.easycard.com.tw/benefit/content?id=1782092327"
     },
     {
       "kind": "high_return",
       "provider_id": "icashpay",
       "provider_name": "icash Pay",
-      "title": "萬家福、樂家康、Mia C‘bon 天天最高回饋 21%",
-      "summary": "至 9/1，指定通路以 icash Pay 消費享 5%，綁 uniopen 聯名卡與滿額等條件可疊加至最高 21%；各加碼均有個人與總贈點上限。",
+      "title": "萬家福、樂家康、Mia C‘bon 最高回饋 21%",
+      "summary": "至 9/1，指定通路使用 icash Pay 可享 5%，綁 uniopen 聯名卡與符合滿額等條件最高 21%；各加碼都有個人與總贈點上限。",
       "url": "https://www.icashpay.com.tw/advertMessage/view/id/2429"
     },
     {
-      "kind": "high_return",
-      "provider_id": "pluspay",
-      "provider_name": "全盈+PAY",
-      "title": "日本 PayPay 合作通路最高回饋 27%",
-      "summary": "至 9/30，在日本 PayPay 合作實體店以全盈+PAY 日本版付款碼或掃碼付款，結合銀行加碼最高 27%；須先開通帳戶並綁定全家會員。",
-      "url": "https://www.pluspay.com.tw/Content/Event/PayPay.html"
+      "kind": "active",
+      "provider_id": "taiwanpay",
+      "provider_name": "台灣 Pay",
+      "title": "永康國際商圈消費享 20% 回饋",
+      "summary": "至 11/30，台北市大安區永康街及鄰近指定店家以台灣 Pay 消費享 20% 回饋，每帳戶最高 1,000 元。官方公開頁未見已額滿公告，參與店家以華南銀行公告為準。",
+      "url": "https://www.taiwanpay.com.tw/fisc-tpay/news/event/01KY4P3N7N48E7PS9TRQD6P1AY"
     },
     {
       "kind": "upcoming",
       "provider_id": "piwallet",
       "provider_name": "Pi 拍錢包",
       "title": "7-ELEVEN 中元活動：滿 1,111 元立折 100 元",
-      "summary": "8/19 至 8/23，Pi 拍錢包綁定指定銀行信用卡於 7-ELEVEN 單筆實付滿 1,111 元可立折 100 元，限前 10,000 筆；額滿進度以 7-ELEVEN 系統公告為準。",
+      "summary": "8/19 至 8/23，Pi 拍錢包綁定指定銀行信用卡於 7-ELEVEN 單筆實付滿 1,111 元可立折 100 元，限前 10,000 筆；額滿與回饋順序依 7-ELEVEN 系統公告為準。",
       "url": "https://web.piapp.com.tw/events-7-eleven-202608/"
     },
     {

@@ -1,39 +1,39 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-10T09:36:28+08:00",
-  "headline": "8/10 重點：全支付台北夜市最高 35% 與街口指定通路 30% 皆至 8/31；PX Pay 指定銀行週末優惠已出現國泰世華子項目額滿，其餘名額須以官方即時狀態為準。",
+  "generated_at": "2026-08-11T08:20:49+08:00",
+  "headline": "8/11 重點：一卡通 MONEY 王道銀行綁卡 8 月回饋已額滿；全支付最高 35% 夜市活動持續至 8/31，台灣 Pay 延三夜市 20% 將於 8/13 開跑。",
   "highlights": [
     {
       "kind": "partial_sold_out",
-      "provider_id": "pxpay",
-      "provider_name": "PX Pay",
-      "title": "指定銀行週末滿額最高 5% 回饋",
-      "summary": "8/7 至 9/3 的週六日，PX Pay／全支付綁指定銀行信用卡消費滿額最高 5%。官方即時狀態顯示國泰世華子項目已於 8/8 額滿；其他銀行名額與資格仍須以活動頁或 App 當下狀態為準。",
-      "url": "https://www.pxmart.com.tw/campaign/pxpay-card/Q3%20%E4%B8%AD%E5%85%83%E7%AF%80%E5%8A%A0%E7%A2%BC%20PX%20Pay.%E5%85%A8%E6%94%AF%E4%BB%98%20%E9%80%B1%E5%85%AD%E6%97%A5%E6%B6%88%E8%B2%BB%E6%9C%80%E9%AB%985%25%E6%B4%BB%E5%8B%95"
+      "provider_id": "ipassmoney",
+      "provider_name": "一卡通 MONEY",
+      "title": "王道銀行綁王道卡最高 5% 回饋",
+      "summary": "官方活動頁明確標示 8 月份回饋上限已於 8/10 額滿；此為月度子項目額滿，其他月份及活動條件仍以官方頁為準。",
+      "url": "https://www.i-pass.com.tw/Preferential/Detail/GMZTSMIHZAX2I64Cw4rE"
     },
     {
       "kind": "high_return",
       "provider_id": "fullpay",
       "provider_name": "全支付／PX Pay Plus",
-      "title": "打牙祭台北 17 大夜市最高 35% 全點",
+      "title": "打牙祭臺北 17 大夜市最高 35% 全點",
       "summary": "至 8/31，在指定台北夜市以全支付付款碼或掃碼消費，主活動單筆不限金額享 30%，搭配指定付款方式最高 35%，另有 foodpanda 5% 券。名額是否額滿僅於全支付 App 公告，公開頁無法確認。",
       "url": "https://marketing.pxpayplus.com/pxplus_marketing_page/activity_content_page?EventId=88"
     },
     {
       "kind": "high_return",
-      "provider_id": "jkopay",
-      "provider_name": "街口支付",
-      "title": "8 月指定通路解鎖 30% 回饋",
-      "summary": "至 8/31，於指定通路消費滿額可領 30% 街口券；須依活動頁所列通路、滿額與領券規則參加。官方公開頁未見已額滿文字，實際券況以街口支付系統為準。",
-      "url": "https://mkt.jkopay.com/zh-TW/campaign/jko30bonus"
+      "provider_id": "fullpay",
+      "provider_name": "全支付／PX Pay Plus",
+      "title": "水源市場單筆不限金額最高 35% 全點",
+      "summary": "至 9/30，在水源市場指定店家用全支付付款碼或掃碼，主活動 30%，指定付款方式最高再加碼 5%。名額只會在全支付 App 公告，公開頁無法確認。",
+      "url": "https://marketing.pxpayplus.com/pxplus_marketing_page/activity_content_page?EventId=110"
     },
     {
       "kind": "high_return",
       "provider_id": "easywallet",
       "provider_name": "悠遊付",
-      "title": "7-ELEVEN 錢包／帳戶最高回饋 14%",
-      "summary": "至 9/30，以悠遊付錢包或綁定銀行帳戶在 7-ELEVEN 消費，筆筆 4%，搭配月級挑戰與週五會員日最高 14%。各月限額與額滿公告依悠遊付 App 為準。",
-      "url": "https://easywallet.easycard.com.tw/benefit/content?id=1782092327"
+      "title": "悠遊 FUN 暑假指定通路最高 20% 回饋",
+      "summary": "至 8/31，指定店家使用悠遊付消費可享 10%，大稻埕碼頭貨櫃市集 7/25–8/15 再加碼 7%，疊加月級挑戰最高 20%。即時名額僅能由 App 確認。",
+      "url": "https://easywallet.easycard.com.tw/benefit/content?id=1780885674"
     },
     {
       "kind": "high_return",
@@ -44,12 +44,20 @@
       "url": "https://www.icashpay.com.tw/advertMessage/view/id/2429"
     },
     {
-      "kind": "active",
+      "kind": "high_return",
+      "provider_id": "jkopay",
+      "provider_name": "街口支付",
+      "title": "8 月指定通路解鎖 30% 回饋",
+      "summary": "至 8/31，於指定通路消費滿額可領 30% 街口券；須依活動頁所列通路、滿額與領券規則參加。官方公開頁未見已額滿文字，實際券況以街口支付系統為準。",
+      "url": "https://mkt.jkopay.com/zh-TW/campaign/jko30bonus"
+    },
+    {
+      "kind": "upcoming",
       "provider_id": "taiwanpay",
       "provider_name": "台灣 Pay",
-      "title": "永康國際商圈消費享 20% 回饋",
-      "summary": "至 11/30，台北市大安區永康街及鄰近指定店家以台灣 Pay 消費享 20% 回饋，每帳戶最高 1,000 元。官方公開頁未見已額滿公告，參與店家以華南銀行公告為準。",
-      "url": "https://www.taiwanpay.com.tw/fisc-tpay/news/event/01KY4P3N7N48E7PS9TRQD6P1AY"
+      "title": "延三夜市 TWQR 台灣 Pay 20% 回饋",
+      "summary": "8/13 起至 2027/1/31，在延三夜市指定店家以台灣 Pay QR Code（金融卡／帳戶）消費享 20%，每帳戶最高 500 元。官方公開頁未見額滿公告。",
+      "url": "https://www.taiwanpay.com.tw/fisc-tpay/news/event/01KY4P02S3DCNG40XPWX4E80H0"
     },
     {
       "kind": "upcoming",
@@ -58,14 +66,6 @@
       "title": "7-ELEVEN 中元活動：滿 1,111 元立折 100 元",
       "summary": "8/19 至 8/23，Pi 拍錢包綁定指定銀行信用卡於 7-ELEVEN 單筆實付滿 1,111 元可立折 100 元，限前 10,000 筆；額滿與回饋順序依 7-ELEVEN 系統公告為準。",
       "url": "https://web.piapp.com.tw/events-7-eleven-202608/"
-    },
-    {
-      "kind": "sold_out",
-      "provider_id": "ipassmoney",
-      "provider_name": "一卡通 MONEY",
-      "title": "連結聯邦信用卡單筆滿 200 元最高 10% 回饋",
-      "summary": "官方活動頁明確公告 8 月份回饋上限已於 8/3 16:30 額滿；本月不應再以此項 10% 回饋規劃付款，其他連結帳戶／卡別優惠仍須分別依官方規則判斷。",
-      "url": "https://www.i-pass.com.tw/Preferential/Detail/GI2TSNQHW7ZKA64RZbVj"
     }
   ],
   "supplemental_activities": []

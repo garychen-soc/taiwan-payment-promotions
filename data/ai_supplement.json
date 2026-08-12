@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-11T08:20:49+08:00",
-  "headline": "8/11 重點：一卡通 MONEY 王道銀行綁卡 8 月回饋已額滿；全支付最高 35% 夜市活動持續至 8/31，台灣 Pay 延三夜市 20% 將於 8/13 開跑。",
+  "generated_at": "2026-08-12T09:15:00+08:00",
+  "headline": "8/12 重點：一卡通 MONEY 王道銀行綁卡 8 月回饋已額滿；台灣 Pay 延三夜市 20% 明日開跑，icash Pay 指定通路最高 21% 持續至 9/1。",
   "highlights": [
     {
       "kind": "partial_sold_out",
@@ -15,25 +15,25 @@
       "kind": "high_return",
       "provider_id": "fullpay",
       "provider_name": "全支付／PX Pay Plus",
-      "title": "打牙祭臺北 17 大夜市最高 35% 全點",
-      "summary": "至 8/31，在指定台北夜市以全支付付款碼或掃碼消費，主活動單筆不限金額享 30%，搭配指定付款方式最高 35%，另有 foodpanda 5% 券。名額是否額滿僅於全支付 App 公告，公開頁無法確認。",
-      "url": "https://marketing.pxpayplus.com/pxplus_marketing_page/activity_content_page?EventId=88"
-    },
-    {
-      "kind": "high_return",
-      "provider_id": "fullpay",
-      "provider_name": "全支付／PX Pay Plus",
-      "title": "水源市場單筆不限金額最高 35% 全點",
-      "summary": "至 9/30，在水源市場指定店家用全支付付款碼或掃碼，主活動 30%，指定付款方式最高再加碼 5%。名額只會在全支付 App 公告，公開頁無法確認。",
-      "url": "https://marketing.pxpayplus.com/pxplus_marketing_page/activity_content_page?EventId=110"
+      "title": "全支付精選夜市單筆不限金額享 5% 回饋",
+      "summary": "至 12/31，指定精選夜市以全支付付款碼消費，單筆不限金額享 5% 全點，新戶首筆再加碼 50 點；需先在 App 登錄，公開頁僅載明限量，未見已額滿公告。",
+      "url": "https://marketing.pxpayplus.com/pxplus_marketing_page/activity_content_page?EventId=80"
     },
     {
       "kind": "high_return",
       "provider_id": "easywallet",
       "provider_name": "悠遊付",
-      "title": "悠遊 FUN 暑假指定通路最高 20% 回饋",
-      "summary": "至 8/31，指定店家使用悠遊付消費可享 10%，大稻埕碼頭貨櫃市集 7/25–8/15 再加碼 7%，疊加月級挑戰最高 20%。即時名額僅能由 App 確認。",
-      "url": "https://easywallet.easycard.com.tw/benefit/content?id=1780885674"
+      "title": "MyCard 暑假玩遊戲最高 8% 回饋",
+      "summary": "至 9/30，MyCard 購點滿 500 元送 3%，滿 1,000 元最高 8%，每月指定週五另可疊加指定電商券；名額與即時券況以悠遊付 App 公告為準。",
+      "url": "https://easywallet.easycard.com.tw/benefit/content?id=1781145532"
+    },
+    {
+      "kind": "high_return",
+      "provider_id": "easywallet",
+      "provider_name": "悠遊付",
+      "title": "悠遊付韓國 TWQR 最高 50% 回饋",
+      "summary": "至 8/31，韓國貼有 TWQR 標誌店家使用悠遊付可疊加活動回饋最高 50%；部分月度子活動已有額滿公告，其他項目即時名額僅能由 App 確認。",
+      "url": "https://easywallet.easycard.com.tw/benefit/content?id=1779331719"
     },
     {
       "kind": "high_return",

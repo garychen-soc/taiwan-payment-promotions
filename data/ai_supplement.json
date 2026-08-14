@@ -1,70 +1,70 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-13T08:14:16+08:00",
-  "headline": "8/13 重點：台灣 Pay 延三夜市 20% 今日開跑；一卡通 MONEY 王道卡 8 月回饋額度已滿，icash Pay 指定通路最高 21% 持續至 9/1。",
+  "generated_at": "2026-08-14T09:14:25+08:00",
+  "headline": "8/14 重點：悠遊付 7-ELEVEN 8 月滿額贈券已額滿；康是美網購最高 45% 與全支付水源市場 30% 仍進行中，但即時名額須以 App 公告為準。",
   "highlights": [
     {
       "kind": "partial_sold_out",
-      "provider_id": "ipassmoney",
-      "provider_name": "一卡通 MONEY",
-      "title": "王道銀行綁王道卡最高 5% 回饋",
-      "summary": "官方活動頁明確標示 8 月份回饋上限已於 8/10 額滿；此為月度子項目額滿，其他月份及活動條件仍以官方頁為準。",
-      "url": "https://www.i-pass.com.tw/Preferential/Detail/GMZTSMIHZAX2I64Cw4rE"
+      "provider_id": "easywallet",
+      "provider_name": "悠遊付",
+      "title": "7-ELEVEN 悠遊付筆筆 4% 與滿額贈券最高 12%",
+      "summary": "至 9/30，7-ELEVEN 使用悠遊付錢包或綁定銀行帳戶筆筆 4%，累計滿 2,000 元可加贈券；官方頁明確標示 8 月滿額贈券已於 8/10 額滿，筆筆回饋與後續月份條件仍以官方頁為準。",
+      "url": "https://easywallet.easycard.com.tw/benefit/content?id=1782092327"
+    },
+    {
+      "kind": "high_return",
+      "provider_id": "easywallet",
+      "provider_name": "悠遊付",
+      "title": "康是美網購 eShop 最高 45% 回饋",
+      "summary": "至 9/30，使用悠遊付錢包或綁定銀行帳戶於康是美網購，符合滿額與疊加條件最高 45%；公開頁僅載明限量，回饋券與即時名額需由悠遊付 App 確認。",
+      "url": "https://easywallet.easycard.com.tw/benefit/content?id=1784529826"
     },
     {
       "kind": "high_return",
       "provider_id": "fullpay",
       "provider_name": "全支付／PX Pay Plus",
-      "title": "全支付精選夜市單筆不限金額享 5% 回饋",
-      "summary": "至 12/31，指定精選夜市以全支付付款碼消費，單筆不限金額享 5% 全點，新戶首筆再加碼 50 點；需先在 App 登錄，公開頁僅載明限量，未見已額滿公告。",
-      "url": "https://marketing.pxpayplus.com/pxplus_marketing_page/activity_content_page?EventId=80"
+      "title": "水源市場單筆不限金額 30% 全點回饋",
+      "summary": "至 9/30，在水源市場指定店家以全支付付款碼或掃碼付款，單筆不限金額享 30% 全點，指定付款方式另有最高 5% 加碼；官方頁指定額滿公告在 App，公開頁無法確認即時名額。",
+      "url": "https://marketing.pxpayplus.com/pxplus_marketing_page/activity_content_page?EventId=110"
     },
     {
       "kind": "high_return",
       "provider_id": "easywallet",
       "provider_name": "悠遊付",
-      "title": "MyCard 暑假玩遊戲最高 8% 回饋",
-      "summary": "至 9/30，MyCard 購點滿 500 元送 3%，滿 1,000 元最高 8%，每月指定週五另可疊加指定電商券；名額與即時券況以悠遊付 App 公告為準。",
-      "url": "https://easywallet.easycard.com.tw/benefit/content?id=1781145532"
+      "title": "暢遊金門筆筆最高 23% 回饋",
+      "summary": "至 11/30，在指定金門店家以悠遊付掃碼或付款碼消費，筆筆 20%，可與月級挑戰疊加最高 23%；公開頁未見已額滿公告，即時回饋進度須以 App 為準。",
+      "url": "https://easywallet.easycard.com.tw/benefit/content?id=1784206763"
     },
     {
       "kind": "high_return",
+      "provider_id": "taiwanpay",
+      "provider_name": "台灣 Pay",
+      "title": "苗栗南庄老街台灣 Pay 20% 回饋",
+      "summary": "至 12/31，在南庄商圈指定店家以台灣 Pay 金融卡或帳戶 QR Code 支付享 20%，每帳戶活動期間最高 2,000 元；本輪官方頁未見已額滿文字，實際回饋以主辦公告為準。",
+      "url": "https://www.taiwanpay.com.tw/fisc-tpay/news/event/01KD780J3RYYYG0VZ9JQJPA7M5"
+    },
+    {
+      "kind": "partial_sold_out",
       "provider_id": "easywallet",
       "provider_name": "悠遊付",
-      "title": "悠遊付韓國 TWQR 最高 50% 回饋",
-      "summary": "至 8/31，韓國貼有 TWQR 標誌店家使用悠遊付可疊加活動回饋最高 50%；部分月度子活動已有額滿公告，其他項目即時名額僅能由 App 確認。",
+      "title": "韓國 TWQR 最高 50% 回饋",
+      "summary": "至 8/31，韓國 TWQR 店家以悠遊付付款可疊加最高 50%；官方頁明確標示活動二 8 月回饋已於 8/9 額滿，其他活動項目與即時名額仍依官方頁及 App 為準。",
       "url": "https://easywallet.easycard.com.tw/benefit/content?id=1779331719"
-    },
-    {
-      "kind": "high_return",
-      "provider_id": "icashpay",
-      "provider_name": "icash Pay",
-      "title": "萬家福、樂家康、Mia C‘bon 最高回饋 21%",
-      "summary": "至 9/1，指定通路使用 icash Pay 可享 5%，綁 uniopen 聯名卡與符合滿額等條件最高 21%；各加碼都有個人與總贈點上限。",
-      "url": "https://www.icashpay.com.tw/advertMessage/view/id/2429"
-    },
-    {
-      "kind": "high_return",
-      "provider_id": "jkopay",
-      "provider_name": "街口支付",
-      "title": "8 月指定通路解鎖 30% 回饋",
-      "summary": "至 8/31，於指定通路消費滿額可領 30% 街口券；須依活動頁所列通路、滿額與領券規則參加。官方公開頁未見已額滿文字，實際券況以街口支付系統為準。",
-      "url": "https://mkt.jkopay.com/zh-TW/campaign/jko30bonus"
     },
     {
       "kind": "upcoming",
       "provider_id": "taiwanpay",
       "provider_name": "台灣 Pay",
-      "title": "延三夜市 TWQR 台灣 Pay 20% 回饋",
-      "summary": "今日起至 2027/1/31，在延三夜市指定店家以台灣 Pay QR Code（金融卡／帳戶）消費享 20%，每帳戶最高 500 元。官方公開頁未見已額滿文字。",
-      "url": "https://www.taiwanpay.com.tw/fisc-tpay/news/event/01KY4P02S3DCNG40XPWX4E80H0"
+      "title": "微碧愛點餐 X 台灣 Pay 餐餐美味、樂享回饋",
+      "summary": "8/17 至 9/30，於微碧愛點餐網頁或 App 指定店家以台灣 Pay 單筆滿 125 元享 25 元回饋；總額上限 15 萬元，官方公開頁未見已額滿文字。",
+      "url": "https://www.taiwanpay.com.tw/fisc-tpay/news/event/01KY4NYCMSPHMGN07Y2YXTPZJE"
     },
     {
       "kind": "upcoming",
       "provider_id": "piwallet",
       "provider_name": "Pi 拍錢包",
       "title": "7-ELEVEN 中元活動：滿 1,111 元立折 100 元",
-      "summary": "8/19 至 8/23，Pi 拍錢包綁定指定銀行信用卡於 7-ELEVEN 單筆實付滿 1,111 元可立折 100 元，限前 10,000 筆；額滿與回饋順序依 7-ELEVEN 系統公告為準。",
+      "summary": "8/19 至 8/23，以 Pi 拍錢包綁定指定銀行信用卡在 7-ELEVEN 單筆實付滿 1,111 元立折 100 元，限前 10,000 筆；回饋順序與額滿公告以 7-ELEVEN 系統公告為準。",
       "url": "https://web.piapp.com.tw/events-7-eleven-202608/"
     }
   ],

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-14T09:14:25+08:00",
-  "headline": "8/14 重點：悠遊付 7-ELEVEN 8 月滿額贈券已額滿；康是美網購最高 45% 與全支付水源市場 30% 仍進行中，但即時名額須以 App 公告為準。",
+  "generated_at": "2026-08-15T15:18:39+08:00",
+  "headline": "8/15 重點：東森寵物台灣 Pay 15% 已額滿；悠遊付 7-ELEVEN 8 月滿額贈券也已額滿，微碧愛點餐與 Pi 拍錢包 7-ELEVEN 優惠即將開始。",
   "highlights": [
     {
       "kind": "partial_sold_out",
@@ -28,12 +28,12 @@
       "url": "https://marketing.pxpayplus.com/pxplus_marketing_page/activity_content_page?EventId=110"
     },
     {
-      "kind": "high_return",
-      "provider_id": "easywallet",
-      "provider_name": "悠遊付",
-      "title": "暢遊金門筆筆最高 23% 回饋",
-      "summary": "至 11/30，在指定金門店家以悠遊付掃碼或付款碼消費，筆筆 20%，可與月級挑戰疊加最高 23%；公開頁未見已額滿公告，即時回饋進度須以 App 為準。",
-      "url": "https://easywallet.easycard.com.tw/benefit/content?id=1784206763"
+      "kind": "sold_out",
+      "provider_id": "taiwanpay",
+      "provider_name": "台灣 Pay",
+      "title": "東森寵物 X 台灣 Pay 15% 回饋已額滿",
+      "summary": "原訂至 9/30，東森寵物指定門市以台灣 Pay 單筆每滿 1,000 元現折 150 元；官方活動標題已明確標示「活動額滿」，本活動不再提供回饋。",
+      "url": "https://www.taiwanpay.com.tw/fisc-tpay/news/event/01KVZ356T0ACAGQJHKDVQYXXCC"
     },
     {
       "kind": "high_return",

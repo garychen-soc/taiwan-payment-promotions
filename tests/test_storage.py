@@ -287,6 +287,41 @@ class StorageHistoryTests(unittest.TestCase):
             self.assertEqual(current.quota_status, "not_marked_full")
             self.assertEqual(current.evidence, [])
 
+    def test_conditional_historical_evidence_does_not_persist_sold_out(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "monitor.sqlite3"
+            url = "https://example.com/event/conditional"
+            previous = Activity(
+                provider_id="p",
+                provider_name="業者",
+                title="活動",
+                url=url,
+                source_url=url,
+                quota_status="sold_out",
+                evidence=[
+                    Evidence(
+                        url,
+                        "若交易成功後未收到回饋券，即為本活動已額滿。",
+                        "2026-07-21T00:00:00+08:00",
+                    )
+                ],
+                fetched_at="2026-07-21T00:00:00+08:00",
+            )
+            current = Activity(
+                provider_id="p",
+                provider_name="業者",
+                title="活動",
+                url=url,
+                source_url=url,
+                quota_status="not_marked_full",
+                fetched_at="2026-07-22T00:00:00+08:00",
+            )
+            with Store(path) as store:
+                store.save_run(RunResult("r1", "full", previous.fetched_at, previous.fetched_at, [previous], []))
+                store.merge_persistent_status([current])
+            self.assertEqual(current.quota_status, "not_marked_full")
+            self.assertEqual(current.evidence, [])
+
     def test_sold_out_evidence_persists_and_false_end_date_is_cleared(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / "monitor.sqlite3"

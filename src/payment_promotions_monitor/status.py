@@ -16,7 +16,10 @@ SOLD_OUT_PATTERNS = (
     re.compile(r"(?:已|自.{0,20}起)(?:停止回饋|提前結束)"),
 )
 CONDITIONAL_PATTERNS = (
-    re.compile(r"(?:若|如|倘|一旦).{0,40}(?:額滿|達.{0,8}上限|停止回饋|提前結束)"),
+    # A conditional eligibility rule is not an announcement that a quota is
+    # already full.  Some providers phrase it as "若交易成功後未收到…即為
+    # 本活動已額滿", which needs a wider match than the short generic rule.
+    re.compile(r"(?:若|如|倘|一旦).{0,120}(?:額滿|達.{0,8}上限|停止回饋|提前結束)"),
     re.compile(r"(?:是否|有無).{0,12}(?:額滿|達.{0,8}上限)"),
     re.compile(r"(?:額滿|送完|用完|達.{0,8}上限)(?:為止|即止|即停止)"),
     re.compile(r"(?:額滿|達.{0,8}上限).{0,30}(?:將|會|另行|另於).{0,20}(?:公告|停止|結束)"),

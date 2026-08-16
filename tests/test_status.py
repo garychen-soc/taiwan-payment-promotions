@@ -30,6 +30,7 @@ class QuotaStatusTests(unittest.TestCase):
             "除已達各項活動回饋總金額上限外，可一併獲得所有優惠。",
             "TWQR花火狂歡Pay享10%回饋【每月額滿詳活動提醒】",
             "當活動頁面出現「已額滿」即代表已發送完畢。",
+            "若交易成功後未收到悠遊付現金回饋券，除有其他活動辦法所指事由，即為本活動已額滿。",
         ):
             with self.subTest(text=text):
                 self.assertEqual(analyze_quota(text).status, "not_marked_full")

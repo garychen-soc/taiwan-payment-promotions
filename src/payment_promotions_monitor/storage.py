@@ -9,6 +9,7 @@ from typing import Any
 
 from .fetch import canonical_url
 from .models import Activity, RunResult
+from .status import analyze_quota
 
 
 SCHEMA = """
@@ -260,11 +261,20 @@ class Store:
                     "https://www.pxmart.com.tw/campaign/pxpay-card/"
                 )
             )
+            # Do not perpetuate a historical false positive after the quota
+            # parser learns that its sole evidence was a conditional rule.
+            # A sentence such as "若交易成功後未收到…即為已額滿" describes
+            # eligibility; it is not an official announcement that the quota
+            # has actually been filled.
+            previous_has_conditional_only_evidence = bool(previous.evidence) and not any(
+                analyze_quota(item.excerpt).status in rank
+                for item in previous.evidence
+            )
             if previous_rank and activity.quota_status in {
                 "not_marked_full",
                 "unknown_app_only",
                 "unknown_source_failure",
-            }:
+            } and not previous_has_conditional_only_evidence:
                 activity.quota_status = previous.quota_status
                 activity.quota_evidence_complete = previous.quota_evidence_complete
             elif (
@@ -279,7 +289,7 @@ class Store:
                 corrected_pxpay_shared_page
                 and previous.quota_status == "unknown_app_only"
                 and activity.quota_status == "not_marked_full"
-            )
+            ) and not previous_has_conditional_only_evidence
             if preserve_previous_evidence:
                 evidence_keys = {
                     (item.source_url, item.excerpt)

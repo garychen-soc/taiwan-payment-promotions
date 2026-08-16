@@ -495,19 +495,6 @@
     }
   }
 
-  function safeCalendarUrl(value) {
-    try {
-      const url = new URL(String(value));
-      const valid = url.protocol === "https:"
-        && url.hostname === "calendar.google.com"
-        && url.pathname === "/calendar/render"
-        && url.searchParams.get("action") === "TEMPLATE";
-      return valid ? url.href : "";
-    } catch {
-      return "";
-    }
-  }
-
   function renderActivity(activity) {
     const fragment = elements.cardTemplate.content.cloneNode(true);
     const card = fragment.querySelector(".activity-card");
@@ -523,7 +510,6 @@
     const insightList = fragment.querySelector(".insight-list");
     const conditionDetail = fragment.querySelector(".condition-detail");
     const conditionText = fragment.querySelector(".condition-text");
-    const calendarLink = fragment.querySelector(".calendar-link");
     const officialLink = fragment.querySelector(".official-link");
 
     const insights = normalizeInsights(activity);
@@ -565,14 +551,6 @@
       appendTextParagraphs(conditionText, conditions);
     } else {
       conditionDetail.hidden = true;
-    }
-
-    const calendarUrl = safeCalendarUrl(activity.google_calendar_url);
-    if (calendarUrl) {
-      calendarLink.href = calendarUrl;
-      calendarLink.setAttribute("aria-label", `${title.textContent}－加入 Google 行事曆（另開新視窗）`);
-    } else {
-      calendarLink.hidden = true;
     }
 
     const officialUrl = safeExternalUrl(activity.url);

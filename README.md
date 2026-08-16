@@ -10,7 +10,7 @@
 
 以下做法刻意不採用：把 PTT 等非官方內容當成活動證據、以固定 EventId 上限取代可持續前進的探索狀態、吞掉來源錯誤、依不完整日期產生日曆事件，以及把資料硬編碼在靜態 HTML。它們可能造成漏報、錯誤歸屬或無法分辨「查無活動」與「來源故障」。
 
-GitHub Pages 提供手機優先的繁體中文儀表板，可搜尋業者與活動，並依「重點、高回饋、即將開始、即將結束、額滿」篩選。日期完整的活動可開啟預填好的 Google Calendar 全天活動草稿；首頁只顯示簡單更新狀態，來源讀取細節留在結構化資料中，不干擾一般閱讀。
+GitHub Pages 提供手機優先的繁體中文儀表板，可搜尋業者與活動，並依「重點、高回饋、即將開始、即將結束、額滿」篩選。網站另提供可訂閱的 `calendar.ics`，依日期合併開跑與截止提醒；首頁只顯示簡單更新狀態，來源讀取細節留在結構化資料中，不干擾一般閱讀。
 
 目前來源登錄涵蓋全支付、Pi 拍錢包、PX Pay、My FamiPay、OPEN錢包、悠遊付、台灣 Pay、一卡通 MONEY、icash Pay、全盈+PAY、橘子支付、街口支付、歐付寶、ezPay 與 LINE Pay Money。來源採可擴充登錄制；新增官方業者或活動頁通常只需更新 `config/sources.json`，特殊官方 API 則以具名 adapter 驗證回應結構及品牌歸屬。
 
@@ -26,7 +26,7 @@ Pi 拍錢包透過官方 WordPress API 發現活動與公告，並解碼標題�
 - `quota_status`：`not_marked_full`、`partial_sold_out`、`sold_out`、`confirmed_available`、`unknown_app_only`。
 - 報表排除已過期活動，但 SQLite 仍保留歷史紀錄。
 - 單一日期不會被推定為活動結束日；除非頁面明寫「僅限當日」，否則保留為開放結束日並送複核。
-- Google Calendar 連結只為開始日、結束日皆明確且順序正確的活動產生；連結會開啟草稿，不會自動寫入使用者行事曆。
+- 訂閱行事曆只納入開始日、結束日皆明確且順序正確、尚未結束且未整檔額滿的活動；同日活動合併為一則全天事件，避免大量活動遮住個人行程。
 - 「限量」、「送完為止」、「若額滿將公告」只是活動規則，不會被判成已額滿。
 - 明確的「已額滿／已達上限／已贈完」才是額滿證據。
 - 月份或子活動額滿會標為 `partial_sold_out`，不會把整檔活動誤標成額滿。
@@ -60,6 +60,7 @@ python3 scripts/build_site.py
 - `reports/YYYYMMDD-HHMMSS-*.{md,json}`：每輪快照。
 - `data/ai_supplement.json`：每日 AI 官方來源複核後的首頁重點與補充活動。
 - `docs/`：已建置的靜態網站，由 GitHub Pages 直接發布。
+- `docs/calendar.ics`：可由 Google、Apple、Outlook 訂閱的開跑／截止摘要日曆。
 
 本機預覽：
 
@@ -80,6 +81,20 @@ Codex 本機排程每天台北時間 08:00 執行一次：
 5. GitHub Actions 將已建置完成的 `docs/` 發布至 GitHub Pages。
 
 OpenAI API 不會在 GitHub Actions 執行，也不需要把任何 API Key 放進 GitHub。排程提示詞位於 `prompts/daily-publish.md`；GitHub Pages 工作流程位於 `.github/workflows/pages.yml`。
+
+### 外部執行通知
+
+既有 Codex 每日排程會直接把成功、部分成功或失敗摘要送到 Slack。若其他執行環境沒有 Slack connector，也可設定通用 webhook；URL 只放在環境變數，不得提交到 repository：
+
+```bash
+export PAYMENT_PROMOTIONS_WEBHOOK_URL='https://hooks.example/replace-me'
+python3 scripts/notify_webhook.py \
+  --status partial \
+  --stage '網站已建置，等待發布' \
+  --commit "$(git rev-parse --short HEAD)"
+```
+
+腳本讀取 `reports/latest.json`，以 `curl` 傳送 `{"text": "..."}`，內容包含狀態、活動與各服務筆數、重抓／沿用（報表有提供時）、額滿數、coverage gaps、commit 與網站網址。失敗時可用 `--error` 與 `--stage` 說明錯誤及已完成步驟。排程應只選 Slack connector 或 webhook 其中一條通知路徑，避免同一輪重複發送。
 
 ## 測試
 

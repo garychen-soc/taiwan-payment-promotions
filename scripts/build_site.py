@@ -7,10 +7,11 @@ import json
 import re
 import shutil
 import sys
-from datetime import date, datetime, timedelta
+from collections import defaultdict
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
-from urllib.parse import urlencode, urlsplit
+from urllib.parse import urlsplit
 from zoneinfo import ZoneInfo
 
 
@@ -55,7 +56,9 @@ CONDITION_SECTION_RE = re.compile(
     r"(?:^|\s)(title|description|location|content|reminder|restrictions):\s*",
     re.IGNORECASE,
 )
-GOOGLE_CALENDAR_URL = "https://calendar.google.com/calendar/render"
+SITE_URL = "https://garychen-soc.github.io/taiwan-payment-promotions/"
+CALENDAR_URL = f"{SITE_URL}calendar.ics"
+CALENDAR_DESCRIPTION_LIMIT = 25
 
 
 def _load_json(path: Path, default: Any = None) -> Any:
@@ -102,44 +105,132 @@ def _public_status_scope(
     return value if value in PUBLIC_STATUS_SCOPES else "unknown"
 
 
-def _google_calendar_url(activity: dict[str, Any]) -> str:
-    start = _date_value(activity.get("start_date"))
-    end = _date_value(activity.get("end_date"))
-    title = str(activity.get("title", "")).strip()
-    if not start or not end or end < start or not title:
-        return ""
-
-    provider = str(activity.get("provider_name", "")).strip()
-    insights = activity.get("insights", {})
-    insight_summary = insights.get("human_summary", "") if isinstance(insights, dict) else ""
-    summary = str(
-        activity.get("editorial_summary")
-        or insight_summary
-        or activity.get("conditions_summary")
-        or ""
+def _ical_escape(value: Any) -> str:
+    text = str(value).replace("\r\n", "\n").replace("\r", "\n")
+    return (
+        text.replace("\\", "\\\\")
+        .replace(";", "\\;")
+        .replace(",", "\\,")
+        .replace("\n", "\\n")
     )
-    summary = re.sub(r"\s+", " ", summary).strip()[:700]
 
-    details: list[str] = []
-    if provider:
-        details.append(f"支付業者：{provider}")
-    if summary:
-        details.append(summary)
 
-    official_url = str(activity.get("url", "")).strip()
-    parsed_official_url = urlsplit(official_url)
-    if parsed_official_url.scheme == "https" and parsed_official_url.hostname:
-        details.append(f"官方活動頁：{official_url}")
-    details.append("優惠名額與條件可能調整，實際內容以官方公告為準。")
+def _fold_ical_line(line: str) -> str:
+    """Fold one RFC 5545 content line without splitting UTF-8 characters."""
+    if len(line.encode("utf-8")) <= 75:
+        return line
 
-    params = {
-        "action": "TEMPLATE",
-        "text": title,
-        "dates": f"{start:%Y%m%d}/{end + timedelta(days=1):%Y%m%d}",
-        "details": "\n\n".join(details),
-        "ctz": "Asia/Taipei",
-    }
-    return f"{GOOGLE_CALENDAR_URL}?{urlencode(params)}"
+    chunks: list[str] = []
+    current: list[str] = []
+    current_octets = 0
+    limit = 75
+    for char in line:
+        char_octets = len(char.encode("utf-8"))
+        if current and current_octets + char_octets > limit:
+            chunks.append("".join(current))
+            current = []
+            current_octets = 0
+            limit = 74  # Continuation whitespace occupies one octet.
+        current.append(char)
+        current_octets += char_octets
+    if current:
+        chunks.append("".join(current))
+    return "\r\n ".join(chunks)
+
+
+def _calendar_description(kind: str, activities: list[dict[str, Any]]) -> str:
+    noun = "開跑" if kind == "start" else "截止"
+    if len(activities) > CALENDAR_DESCRIPTION_LIMIT:
+        return f"共 {len(activities)} 檔優惠今日{noun}。完整清單：{SITE_URL}"
+
+    entries = [f"今日{noun}優惠："]
+    for index, activity in enumerate(activities, start=1):
+        provider = str(activity.get("provider_name") or "支付業者待確認").strip()
+        title = str(activity.get("title") or "未命名活動").strip()
+        entries.append(f"{index}. {provider}｜{title}")
+        official_url = str(activity.get("url") or activity.get("source_url") or "").strip()
+        parsed = urlsplit(official_url)
+        if parsed.scheme == "https" and parsed.hostname:
+            entries.append(official_url)
+    entries.extend(("", f"完整資訊：{SITE_URL}", "實際優惠與名額以官方公告為準。"))
+    return "\n".join(entries)
+
+
+def _calendar_groups(
+    activities: list[dict[str, Any]],
+    today: date,
+) -> dict[tuple[str, date], list[dict[str, Any]]]:
+    groups: dict[tuple[str, date], list[dict[str, Any]]] = defaultdict(list)
+    seen: dict[tuple[str, date], set[tuple[str, str]]] = defaultdict(set)
+    for activity in activities:
+        if activity.get("lifecycle") in {"ended", "cancelled"}:
+            continue
+        if activity.get("quota_status") == "sold_out":
+            continue
+        start = _date_value(activity.get("start_date"))
+        end = _date_value(activity.get("end_date"))
+        if not start or not end or end < start:
+            continue
+        identity = _activity_identity(activity)
+        for kind, event_date in (("start", start), ("end", end)):
+            key = (kind, event_date)
+            if event_date < today or identity in seen[key]:
+                continue
+            seen[key].add(identity)
+            groups[key].append(activity)
+    for values in groups.values():
+        values.sort(
+            key=lambda item: (
+                str(item.get("provider_name", "")).casefold(),
+                str(item.get("title", "")).casefold(),
+                str(item.get("url", "")),
+            )
+        )
+    return groups
+
+
+def build_subscription_calendar(
+    activities: list[dict[str, Any]],
+    generated_at: datetime,
+) -> str:
+    """Return a deterministic, aggregated iCalendar subscription feed."""
+    generated_at = generated_at.astimezone(ZoneInfo("Asia/Taipei"))
+    timestamp = generated_at.astimezone(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+    lines = [
+        "BEGIN:VCALENDAR",
+        "VERSION:2.0",
+        "PRODID:-//garychen-soc//Taiwan Payment Promotions//ZH-HANT",
+        "CALSCALE:GREGORIAN",
+        "METHOD:PUBLISH",
+        f"NAME:{_ical_escape('台灣支付優惠雷達')}",
+        f"X-WR-CALNAME:{_ical_escape('台灣支付優惠雷達')}",
+        "REFRESH-INTERVAL;VALUE=DURATION:PT12H",
+        "X-PUBLISHED-TTL:PT12H",
+        f"SOURCE;VALUE=URI:{CALENDAR_URL}",
+    ]
+    groups = _calendar_groups(activities, generated_at.date())
+    for (kind, event_date), values in sorted(
+        groups.items(), key=lambda item: (item[0][1], item[0][0])
+    ):
+        noun = "開跑" if kind == "start" else "截止"
+        summary = f"{len(values)} 檔優惠今日{noun}"
+        lines.extend(
+            (
+                "BEGIN:VEVENT",
+                f"UID:{kind}-{event_date.isoformat()}@taiwan-payment-promotions",
+                f"DTSTAMP:{timestamp}",
+                f"LAST-MODIFIED:{timestamp}",
+                f"DTSTART;VALUE=DATE:{event_date:%Y%m%d}",
+                f"DTEND;VALUE=DATE:{event_date + timedelta(days=1):%Y%m%d}",
+                f"SUMMARY:{_ical_escape(summary)}",
+                f"DESCRIPTION:{_ical_escape(_calendar_description(kind, values))}",
+                "TRANSP:TRANSPARENT",
+                f"URL:{SITE_URL}",
+                "END:VEVENT",
+            )
+        )
+    lines.append("END:VCALENDAR")
+    return "\r\n".join(_fold_ical_line(line) for line in lines) + "\r\n"
 
 
 def _conditions_display(title: str, value: Any) -> list[str]:
@@ -379,9 +470,6 @@ def build(report_path: Path, output_dir: Path, supplement_path: Path) -> Path:
             activity["is_featured"] = True
             activity["highlight_kind"] = str(highlight.get("kind", "ai_pick"))
             activity["editorial_summary"] = str(highlight.get("summary", ""))[:300]
-        calendar_url = _google_calendar_url(activity)
-        if calendar_url:
-            activity["google_calendar_url"] = calendar_url
     coverage = report.get("run", {}).get("coverage", {})
     failures = report.get("source_failures", [])
     gaps = report.get("coverage_gaps", [])
@@ -510,6 +598,9 @@ def build(report_path: Path, output_dir: Path, supplement_path: Path) -> Path:
     if manifest.exists():
         shutil.copy2(manifest, output_dir / manifest.name)
     (output_dir / ".nojekyll").write_text("", encoding="utf-8")
+    (output_dir / "calendar.ics").write_bytes(
+        build_subscription_calendar(activities, generated_at).encode("utf-8")
+    )
     data_path = data_dir / "promotions.json"
     data_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return data_path

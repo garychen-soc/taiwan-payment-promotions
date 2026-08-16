@@ -3,16 +3,19 @@ from __future__ import annotations
 import json
 import tempfile
 import unittest
-from datetime import date
+from datetime import date, datetime
 from pathlib import Path
-from urllib.parse import parse_qs, urlsplit
+from zoneinfo import ZoneInfo
 
 from scripts.build_site import (
+    CALENDAR_DESCRIPTION_LIMIT,
     PUBLIC_STATUS_SCOPES,
     _flatten_report,
-    _google_calendar_url,
+    _fold_ical_line,
+    _ical_escape,
     _public_status_scope,
     build,
+    build_subscription_calendar,
 )
 
 
@@ -177,11 +180,12 @@ class SiteBuildTests(unittest.TestCase):
             self.assertTrue(taiwanpay_coverage["coverage_note"])
             self.assertEqual(payload["source_health"]["review_label"], "1 個官網列表待補強")
             self.assertNotIn("AI", payload["source_health"]["review_label"])
-            calendar_url = payload["activities"][0]["google_calendar_url"]
-            calendar_query = parse_qs(urlsplit(calendar_url).query)
-            self.assertEqual(calendar_query["dates"], ["20260701/20260901"])
-            self.assertIn(activity_url, calendar_query["details"][0])
-            self.assertIn("calendar-link", built_html)
+            self.assertNotIn("google_calendar_url", payload["activities"][0])
+            calendar_text = (output_dir / "calendar.ics").read_text(encoding="utf-8")
+            self.assertIn("SUMMARY:1 檔優惠今日截止", calendar_text)
+            self.assertIn("DTSTART;VALUE=DATE:20260831", calendar_text)
+            self.assertIn("DTEND;VALUE=DATE:20260901", calendar_text)
+            self.assertIn("webcal://garychen-soc.github.io", built_html)
 
     def test_public_status_scope_is_structured_not_inferred_from_copy(self) -> None:
         provider = {
@@ -206,50 +210,90 @@ class SiteBuildTests(unittest.TestCase):
             with self.subTest(provider=provider["id"]):
                 self.assertIn(provider.get("public_status_scope"), PUBLIC_STATUS_SCOPES - {"unknown"})
 
-    def test_google_calendar_url_encodes_all_day_event_and_official_details(self) -> None:
-        activity = {
+    def test_subscription_calendar_groups_dates_and_excludes_past_ended_and_sold_out(self) -> None:
+        base = {
+            "provider_id": "taiwanpay",
             "provider_name": "台灣 Pay",
-            "title": "週末回饋 & 加碼",
-            "start_date": "2026-12-31",
-            "end_date": "2027-01-01",
-            "editorial_summary": "最高 20% 回饋，留意每人上限。",
-            "url": "https://www.taiwanpay.com.tw/event/example?a=1&b=2",
+            "url": "https://www.taiwanpay.com.tw/event/example",
+            "start_date": "2026-08-16",
+            "end_date": "2026-08-31",
+            "lifecycle": "active",
+            "quota_status": "not_marked_full",
         }
+        activities = [
+            dict(base, external_id="one", title="活動一"),
+            dict(base, external_id="two", title="活動二"),
+            dict(base, external_id="past", title="過去開跑", start_date="2026-08-15"),
+            dict(base, external_id="ended", title="已結束", lifecycle="ended"),
+            dict(base, external_id="full", title="已額滿", quota_status="sold_out"),
+            dict(base, external_id="incomplete", title="日期不完整", end_date=None),
+        ]
+        generated_at = datetime(2026, 8, 16, 8, tzinfo=ZoneInfo("Asia/Taipei"))
 
-        calendar_url = _google_calendar_url(activity)
-        parsed = urlsplit(calendar_url)
-        query = parse_qs(parsed.query)
+        calendar = build_subscription_calendar(activities, generated_at)
 
-        self.assertEqual(parsed.scheme, "https")
-        self.assertEqual(parsed.netloc, "calendar.google.com")
-        self.assertEqual(parsed.path, "/calendar/render")
-        self.assertEqual(query["action"], ["TEMPLATE"])
-        self.assertEqual(query["text"], ["週末回饋 & 加碼"])
-        self.assertEqual(query["dates"], ["20261231/20270102"])
-        self.assertEqual(query["ctz"], ["Asia/Taipei"])
-        self.assertIn("支付業者：台灣 Pay", query["details"][0])
-        self.assertIn(activity["url"], query["details"][0])
+        self.assertEqual(calendar.count("SUMMARY:2 檔優惠今日開跑"), 1)
+        self.assertEqual(calendar.count("SUMMARY:3 檔優惠今日截止"), 1)
+        self.assertNotIn("UID:start-2026-08-15", calendar)
+        self.assertNotIn("已結束", calendar)
+        self.assertNotIn("已額滿", calendar)
+        self.assertIn("DTSTART;VALUE=DATE:20260816", calendar)
+        self.assertIn("DTEND;VALUE=DATE:20260817", calendar)
+        self.assertIn("TRANSP:TRANSPARENT", calendar)
+        self.assertIn("REFRESH-INTERVAL;VALUE=DURATION:PT12H", calendar)
+        self.assertIn("X-PUBLISHED-TTL:PT12H", calendar)
 
-    def test_google_calendar_url_uses_next_day_for_single_day_event(self) -> None:
-        calendar_url = _google_calendar_url(
+    def test_subscription_calendar_caps_large_same_day_description(self) -> None:
+        activities = [
             {
-                "title": "單日活動",
-                "start_date": "2026-07-31",
-                "end_date": "2026-07-31",
+                "provider_id": "provider",
+                "provider_name": "支付業者",
+                "external_id": str(index),
+                "title": f"不應逐筆列出的活動 {index}",
+                "url": f"https://example.com/{index}",
+                "start_date": "2026-08-01",
+                "end_date": "2026-12-31",
+                "lifecycle": "active",
+                "quota_status": "not_marked_full",
             }
-        )
-        self.assertEqual(parse_qs(urlsplit(calendar_url).query)["dates"], ["20260731/20260801"])
+            for index in range(CALENDAR_DESCRIPTION_LIMIT + 1)
+        ]
+        generated_at = datetime(2026, 8, 16, 8, tzinfo=ZoneInfo("Asia/Taipei"))
 
-    def test_google_calendar_url_rejects_incomplete_or_reversed_dates(self) -> None:
-        invalid_values = (
-            {"title": "缺少結束日", "start_date": "2026-07-01", "end_date": None},
-            {"title": "缺少開始日", "start_date": None, "end_date": "2026-07-02"},
-            {"title": "日期顛倒", "start_date": "2026-07-02", "end_date": "2026-07-01"},
-            {"title": "日期無效", "start_date": "2026-02-30", "end_date": "2026-03-01"},
-        )
-        for activity in invalid_values:
-            with self.subTest(activity=activity["title"]):
-                self.assertEqual(_google_calendar_url(activity), "")
+        calendar = build_subscription_calendar(activities, generated_at)
+        unfolded = calendar.replace("\r\n ", "")
+
+        self.assertIn(f"SUMMARY:{CALENDAR_DESCRIPTION_LIMIT + 1} 檔優惠今日截止", unfolded)
+        self.assertIn(f"共 {CALENDAR_DESCRIPTION_LIMIT + 1} 檔優惠今日截止", unfolded)
+        self.assertNotIn("不應逐筆列出的活動", unfolded)
+
+    def test_ical_text_escaping_and_utf8_octet_folding(self) -> None:
+        escaped = _ical_escape("反斜線\\、逗號,、分號;\n第二行")
+        self.assertEqual(escaped, "反斜線\\\\、逗號\\,、分號\\;\\n第二行")
+
+        folded = _fold_ical_line("DESCRIPTION:" + "中文活動，" * 20)
+        physical_lines = folded.split("\r\n")
+        self.assertGreater(len(physical_lines), 1)
+        self.assertTrue(all(len(line.encode("utf-8")) <= 75 for line in physical_lines))
+        self.assertTrue(all(line.startswith(" ") for line in physical_lines[1:]))
+
+    def test_subscription_calendar_is_deterministic_for_same_generated_at(self) -> None:
+        activity = {
+            "provider_id": "taiwanpay",
+            "provider_name": "台灣 Pay",
+            "external_id": "stable",
+            "title": "穩定活動",
+            "url": "https://www.taiwanpay.com.tw/event/stable",
+            "start_date": "2026-08-20",
+            "end_date": "2026-08-31",
+            "lifecycle": "upcoming",
+            "quota_status": "not_marked_full",
+        }
+        generated_at = datetime(2026, 8, 16, 8, tzinfo=ZoneInfo("Asia/Taipei"))
+        first = build_subscription_calendar([activity], generated_at)
+        second = build_subscription_calendar([dict(activity)], generated_at)
+        self.assertEqual(first, second)
+        self.assertIn("DTSTAMP:20260816T000000Z", first)
 
 
 if __name__ == "__main__":

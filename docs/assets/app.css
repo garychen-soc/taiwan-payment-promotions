@@ -835,8 +835,7 @@ select:focus {
   margin-top: 17px;
 }
 
-.official-link,
-.calendar-link {
+.official-link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -858,19 +857,7 @@ select:focus {
   background: var(--action-hover);
 }
 
-.calendar-link {
-  border: 1px solid var(--field-line);
-  background: var(--calendar-surface);
-  color: var(--brand-deep);
-}
-
-.calendar-link:hover {
-  border-color: var(--brand);
-  background: var(--calendar-hover);
-}
-
-.official-link[hidden],
-.calendar-link[hidden] {
+.official-link[hidden] {
   display: none;
 }
 
@@ -936,6 +923,108 @@ select:focus {
 
 .coverage-section {
   margin-top: 30px;
+}
+
+.calendar-subscription {
+  display: grid;
+  gap: 17px;
+  margin-top: 30px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.calendar-subscription h2 {
+  margin: 4px 0 0;
+  color: var(--brand-deep);
+  font-size: 1.1rem;
+}
+
+.calendar-subscription-copy > p:last-child {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 0.86rem;
+  line-height: 1.7;
+}
+
+.calendar-subscription-actions {
+  display: grid;
+  gap: 10px;
+}
+
+.calendar-subscribe-button,
+.calendar-feed-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 10px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 0.86rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.calendar-subscribe-button {
+  background: var(--action);
+  color: #fff;
+}
+
+.calendar-subscribe-button:hover {
+  background: var(--action-hover);
+}
+
+.calendar-feed-link {
+  border: 1px solid var(--field-line);
+  background: var(--calendar-surface);
+  color: var(--brand-deep);
+}
+
+.calendar-feed-link:hover {
+  border-color: var(--brand);
+  background: var(--calendar-hover);
+}
+
+.calendar-help {
+  border-top: 1px solid var(--line);
+  padding-top: 14px;
+}
+
+.calendar-help summary {
+  color: var(--brand);
+  font-size: 0.86rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.calendar-help-body {
+  display: grid;
+  gap: 10px;
+  padding-top: 12px;
+  color: var(--detail-ink);
+  font-size: 0.84rem;
+  line-height: 1.65;
+}
+
+.calendar-help-body p {
+  margin: 0;
+}
+
+.calendar-help-body code {
+  overflow-wrap: anywhere;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: var(--surface-soft);
+  color: var(--brand-deep);
+  font-size: 0.76rem;
+}
+
+@media (min-width: 720px) {
+  .calendar-subscription-actions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 .coverage-panel {

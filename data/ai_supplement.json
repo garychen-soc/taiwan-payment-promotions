@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-16T08:02:53+08:00",
-  "headline": "8/16 重點：街口指定通路 30% 與康是美網購悠遊付最高 45% 進行中；韓國 TWQR 悠遊付活動二 8 月額度已滿，微碧愛點餐與 Pi 拍錢包 7-ELEVEN 優惠即將開始。",
+  "generated_at": "2026-08-17T08:22:14+08:00",
+  "headline": "8/17 重點：台灣 Pay 微碧愛點餐 25 元回饋今日開始；街口指定通路 30% 與康是美網購悠遊付最高 45% 進行中，Pi 拍錢包 7-ELEVEN 優惠將於 8/19 開始。",
   "highlights": [
     {
       "kind": "high_return",
@@ -52,11 +52,11 @@
       "url": "https://www.taiwanpay.com.tw/fisc-tpay/news/event/01KVZ356T0ACAGQJHKDVQYXXCC"
     },
     {
-      "kind": "upcoming",
+      "kind": "high_return",
       "provider_id": "taiwanpay",
       "provider_name": "台灣 Pay",
       "title": "微碧愛點餐 X 台灣 Pay 餐餐美味、樂享回饋",
-      "summary": "8/17 至 9/30，於微碧愛點餐網頁或 App 指定店家以台灣 Pay 單筆滿 125 元享 25 元回饋；總額上限 15 萬元，官方公開頁未見已額滿文字。",
+      "summary": "8/17 至 9/30，於微碧愛點餐網頁或 App 指定店家以台灣 Pay 單筆滿 125 元享 25 元回饋；總額上限 15 萬元，公開活動頁未見已額滿文字。",
       "url": "https://www.taiwanpay.com.tw/fisc-tpay/news/event/01KY4NYCMSPHMGN07Y2YXTPZJE"
     },
     {

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-17T08:22:14+08:00",
-  "headline": "8/17 重點：台灣 Pay 微碧愛點餐 25 元回饋今日開始；街口指定通路 30% 與康是美網購悠遊付最高 45% 進行中，Pi 拍錢包 7-ELEVEN 優惠將於 8/19 開始。",
+  "generated_at": "2026-08-18T08:02:01+08:00",
+  "headline": "8/18 重點：icash Pay 週日最好Pay 7% 官方頁已標示額滿；街口 30% 與康是美網購悠遊付最高 45% 仍進行中，Pi 拍錢包 7-ELEVEN 優惠將於 8/19 開始。",
   "highlights": [
     {
       "kind": "high_return",
@@ -45,11 +45,11 @@
     },
     {
       "kind": "sold_out",
-      "provider_id": "taiwanpay",
-      "provider_name": "台灣 Pay",
-      "title": "東森寵物 X 台灣 Pay 15% 回饋已額滿",
-      "summary": "原訂至 9/30，東森寵物指定門市以台灣 Pay 單筆每滿 1,000 元現折 150 元；官方活動標題已明確標示「活動額滿」，本活動不再提供回饋。",
-      "url": "https://www.taiwanpay.com.tw/fisc-tpay/news/event/01KVZ356T0ACAGQJHKDVQYXXCC"
+      "provider_id": "icashpay",
+      "provider_name": "icash Pay",
+      "title": "週日最好Pay 全通路消費滿額回饋7% 已額滿",
+      "summary": "icash Pay 官方活動頁於本日監測明確標示已額滿；此活動不再提供回饋，請改以官方最新公告為準。",
+      "url": "https://www.icashpay.com.tw/advertMessage/view/id/2284"
     },
     {
       "kind": "high_return",
@@ -64,7 +64,7 @@
       "provider_id": "piwallet",
       "provider_name": "Pi 拍錢包",
       "title": "7-ELEVEN 中元活動：滿 1,111 元立折 100 元",
-      "summary": "8/19 至 8/23，以 Pi 拍錢包綁定指定銀行信用卡在 7-ELEVEN 單筆實付滿 1,111 元立折 100 元，限前 10,000 筆；額滿公告依 7-ELEVEN 系統為準，公開頁無法確認即時名額。",
+      "summary": "8/19 至 8/23，以 Pi 拍錢包在 7-ELEVEN 單筆實付滿 1,111 元立折 100 元；官方僅載明限量贈完為止，公開頁未提供即時名額，非額滿證據。",
       "url": "https://web.piapp.com.tw/events-7-eleven-202608/"
     }
   ],

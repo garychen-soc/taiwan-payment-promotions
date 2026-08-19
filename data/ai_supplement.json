@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-18T08:02:01+08:00",
-  "headline": "8/18 重點：icash Pay 週日最好Pay 7% 官方頁已標示額滿；街口 30% 與康是美網購悠遊付最高 45% 仍進行中，Pi 拍錢包 7-ELEVEN 優惠將於 8/19 開始。",
+  "generated_at": "2026-08-19T08:11:25+08:00",
+  "headline": "8/19 重點：Pi 拍錢包 7-ELEVEN 滿 1,111 元立折 100 元今日開始；街口 30% 與康是美網購悠遊付最高 45% 仍進行中，icash Pay 週日最好Pay 7% 已額滿。",
   "highlights": [
     {
       "kind": "high_return",
@@ -60,11 +60,11 @@
       "url": "https://www.taiwanpay.com.tw/fisc-tpay/news/event/01KY4NYCMSPHMGN07Y2YXTPZJE"
     },
     {
-      "kind": "upcoming",
+      "kind": "high_return",
       "provider_id": "piwallet",
       "provider_name": "Pi 拍錢包",
       "title": "7-ELEVEN 中元活動：滿 1,111 元立折 100 元",
-      "summary": "8/19 至 8/23，以 Pi 拍錢包在 7-ELEVEN 單筆實付滿 1,111 元立折 100 元；官方僅載明限量贈完為止，公開頁未提供即時名額，非額滿證據。",
+      "summary": "8/19 至 8/23，以 Pi 拍錢包在 7-ELEVEN 單筆實付滿 1,111 元立折 100 元；限量前 1 萬筆，官方僅說明額滿依 7-ELEVEN 系統公告，公開頁未見已額滿文字。",
       "url": "https://web.piapp.com.tw/events-7-eleven-202608/"
     }
   ],

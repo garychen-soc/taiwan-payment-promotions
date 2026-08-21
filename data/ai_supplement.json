@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-20T10:05:19+08:00",
-  "headline": "8/20 重點：Pi 拍錢包 7-ELEVEN 滿 1,111 元立折 100 元至 8/23；街口 30% 與全支付韓國最高 15% 仍進行中，icash Pay 週日最好Pay 7% 已額滿。",
+  "generated_at": "2026-08-21T09:37:47+08:00",
+  "headline": "8/21 重點：街口中元限定採買最高 20% 今日開始；Pi 拍錢包 7-ELEVEN 滿 1,111 元立折 100 元至 8/23，icash Pay 週日最好Pay 8 月 7% 已額滿。",
   "highlights": [
     {
       "kind": "high_return",
@@ -53,11 +53,11 @@
     },
     {
       "kind": "high_return",
-      "provider_id": "taiwanpay",
-      "provider_name": "台灣 Pay",
-      "title": "微碧愛點餐 X 台灣 Pay 餐餐美味、樂享回饋",
-      "summary": "8/17 至 9/30，於微碧愛點餐網頁或 App 指定店家以台灣 Pay 單筆滿 125 元享 25 元回饋；總額上限 15 萬元，公開活動頁未見已額滿文字。",
-      "url": "https://www.taiwanpay.com.tw/fisc-tpay/news/event/01KY4NYCMSPHMGN07Y2YXTPZJE"
+      "provider_id": "jkopay",
+      "provider_name": "街口支付",
+      "title": "中元限定採買最高 20% 優惠",
+      "summary": "8/21 至 8/27，至指定合作通路消費滿額，最高可享中元加碼與週日券雙重回饋；依官方頁與系統認列為準，本輪公開監測未見已額滿文字。",
+      "url": "https://mkt.jkopay.com/zh-TW/campaign/jkoshopping2026"
     },
     {
       "kind": "high_return",

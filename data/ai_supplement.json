@@ -1,22 +1,22 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-21T09:37:47+08:00",
-  "headline": "8/21 重點：街口中元限定採買最高 20% 今日開始；Pi 拍錢包 7-ELEVEN 滿 1,111 元立折 100 元至 8/23，icash Pay 週日最好Pay 8 月 7% 已額滿。",
+  "generated_at": "2026-08-25T13:17:44+08:00",
+  "headline": "8/25 重點：街口指定通路 30% 券至 8/31、中元限定最高 20% 至 8/27；悠遊付康是美網購可疊加最高 45%，9/7 起可嗶卡領臺北市敬老禮金。",
   "highlights": [
     {
       "kind": "high_return",
       "provider_id": "jkopay",
       "provider_name": "街口支付",
       "title": "指定通路滿額領 30% 街口券",
-      "summary": "至 8/31，官方活動頁載明指定通路消費滿額可領現折 30% 街口券；回饋以系統認列與券額度為準，公開頁未見已額滿文字。",
-      "url": "https://mkt.jkopay.com/zh-TW/campaign/jko30bonus"
+      "summary": "至 8/31，官方頁載明指定通路累積實際消費達 5,000 元可領 30% 街口券，單筆滿 100 元最高折 30 元；限量 4,000 名，但公開頁未見已額滿文字。",
+      "url": "https://mkt.jkopay.com/zh-TW/event/jko30bonus"
     },
     {
       "kind": "high_return",
       "provider_id": "easywallet",
       "provider_name": "悠遊付",
       "title": "康是美網購 eShop 最高 45% 回饋",
-      "summary": "至 9/30，使用悠遊付錢包或綁定銀行帳戶於康是美網購，符合滿額與疊加條件最高 45%；全期回饋券數量有限，額滿以悠遊付 App 與官網公告為準。",
+      "summary": "至 9/30，使用悠遊付錢包或綁定銀行帳戶於康是美網購，符合滿額與疊加條件最高 45%；活動二每月限量 1,500 張，公告僅為限量規則，未見已額滿文字。",
       "url": "https://easywallet.easycard.com.tw/benefit/content?id=1784529826"
     },
     {
@@ -24,7 +24,7 @@
       "provider_id": "taiwanpay",
       "provider_name": "台灣 Pay",
       "title": "苗栗南庄老街台灣 Pay 20% 回饋",
-      "summary": "至 12/31，在南庄商圈指定店家以台灣 Pay 金融卡或帳戶 QR Code 支付享 20%，每帳戶活動期間最高 2,000 元；官方公開頁未見已額滿文字。",
+      "summary": "至 12/31，在南庄商圈指定店家以台灣 Pay 金融卡或帳戶 QR Code 支付享 20%，每帳戶活動期間最高 2,000 元；官方頁僅載總額上限，未見已額滿公告。",
       "url": "https://www.taiwanpay.com.tw/fisc-tpay/news/event/01KD780J3RYYYG0VZ9JQJPA7M5"
     },
     {
@@ -32,7 +32,7 @@
       "provider_id": "fullpay",
       "provider_name": "全支付／PX Pay Plus",
       "title": "全支付樂遊韓國指定付款方式最高 15% 全點",
-      "summary": "至 9/30，在韓國以全支付消費筆筆 3.5% 全點，搭配指定付款方式最高 15%；回饋有每月與單筆上限，公開頁未見已額滿文字。",
+      "summary": "至 9/30，在韓國使用全支付筆筆享 3.5% 全點，搭配指定帳戶、信用卡與通路優惠最高 15%；名額以官方系統與活動規則為準，公開頁未見已額滿文字。",
       "url": "https://marketing.pxpayplus.com/pxplus_marketing_page/activity_content_page?EventId=90"
     },
     {
@@ -52,7 +52,7 @@
       "url": "https://www.icashpay.com.tw/advertMessage/view/id/2284"
     },
     {
-      "kind": "high_return",
+      "kind": "ending_soon",
       "provider_id": "jkopay",
       "provider_name": "街口支付",
       "title": "中元限定採買最高 20% 優惠",
@@ -60,12 +60,12 @@
       "url": "https://mkt.jkopay.com/zh-TW/campaign/jkoshopping2026"
     },
     {
-      "kind": "high_return",
-      "provider_id": "piwallet",
-      "provider_name": "Pi 拍錢包",
-      "title": "7-ELEVEN 中元活動：滿 1,111 元立折 100 元",
-      "summary": "8/19 至 8/23，以 Pi 拍錢包在 7-ELEVEN 單筆實付滿 1,111 元立折 100 元；限量前 1 萬筆，官方僅說明額滿依 7-ELEVEN 系統公告，公開頁未見已額滿文字。",
-      "url": "https://web.piapp.com.tw/events-7-eleven-202608/"
+      "kind": "upcoming",
+      "provider_id": "easywallet",
+      "provider_name": "悠遊付",
+      "title": "臺北市敬老／愛心悠遊卡敬老禮金與通路優惠",
+      "summary": "9/7 至 9/18，符合資格者可於指定通路或悠遊付 App 嗶卡領臺北市重陽敬老禮金；15 個合作通路另有買一送一、折扣等優惠，依各門市規則為準。",
+      "url": "https://easywallet.easycard.com.tw/benefit/content?id=1784275915"
     }
   ],
   "supplemental_activities": []

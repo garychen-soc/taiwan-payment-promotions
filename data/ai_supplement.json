@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-26T09:02:53+08:00",
-  "headline": "8/26 重點：街口指定通路 30% 券至 8/31、中元限定最高 20% 至 8/27；悠遊付康是美網購可疊加最高 45%，9/7 起可嗶卡領臺北市敬老禮金。",
+  "generated_at": "2026-08-27T09:56:23+08:00",
+  "headline": "8/27 重點：街口指定通路 30% 券僅至 8/31；悠遊付康是美網購最高 45%，全支付水源市場最高 35% 仍須以 App 額滿狀態為準。",
   "highlights": [
     {
       "kind": "high_return",
       "provider_id": "jkopay",
       "provider_name": "街口支付",
       "title": "指定通路滿額領 30% 街口券",
-      "summary": "至 8/31，官方頁載明指定通路累積實際消費達 5,000 元可領 30% 街口券，單筆滿 100 元最高折 30 元；限量 4,000 名，但公開頁未見已額滿文字。",
+      "summary": "至 8/31，官方頁載明指定通路累積實際消費達 5,000 元可領 30% 街口券，單筆滿 100 元最高折 30 元；限量 4,000 名，公開頁未見已額滿文字。",
       "url": "https://mkt.jkopay.com/zh-TW/event/jko30bonus"
     },
     {
@@ -16,31 +16,31 @@
       "provider_id": "easywallet",
       "provider_name": "悠遊付",
       "title": "康是美網購 eShop 最高 45% 回饋",
-      "summary": "至 9/30，使用悠遊付錢包或綁定銀行帳戶於康是美網購，符合滿額與疊加條件最高 45%；活動二每月限量 1,500 張，公告僅為限量規則，未見已額滿文字。",
+      "summary": "至 9/30，使用悠遊付錢包或綁定銀行帳戶於康是美網購，符合滿額與疊加條件最高 45%；活動二每月限量 1,500 張，公開頁僅載額滿即提前結束，未見已額滿文字。",
       "url": "https://easywallet.easycard.com.tw/benefit/content?id=1784529826"
     },
     {
       "kind": "high_return",
       "provider_id": "taiwanpay",
       "provider_name": "台灣 Pay",
-      "title": "苗栗南庄老街台灣 Pay 20% 回饋",
-      "summary": "至 12/31，在南庄商圈指定店家以台灣 Pay 金融卡或帳戶 QR Code 支付享 20%，每帳戶活動期間最高 2,000 元；官方頁僅載總額上限，未見已額滿公告。",
-      "url": "https://www.taiwanpay.com.tw/fisc-tpay/news/event/01KD780J3RYYYG0VZ9JQJPA7M5"
+      "title": "延三夜市 TWQR 台灣 Pay 20% 回饋",
+      "summary": "至 2027/1/31，在延三夜市指定店家以台灣 Pay 金融卡或帳戶 QR Code 支付享 20%，每金融卡／帳戶活動期間最高 500 元；公告僅載額滿後停止回饋，未見已額滿文字。",
+      "url": "https://www.taiwanpay.com.tw/fisc-tpay/news/event/01KY4P02S3DCNG40XPWX4E80H0"
     },
     {
       "kind": "high_return",
       "provider_id": "fullpay",
       "provider_name": "全支付／PX Pay Plus",
-      "title": "全支付樂遊韓國指定付款方式最高 15% 全點",
-      "summary": "至 9/30，在韓國使用全支付筆筆享 3.5% 全點，搭配指定帳戶、信用卡與通路優惠最高 15%；名額以官方系統與活動規則為準，公開頁未見已額滿文字。",
-      "url": "https://marketing.pxpayplus.com/pxplus_marketing_page/activity_content_page?EventId=90"
+      "title": "水源市場全支付最高 35% 全點",
+      "summary": "至 9/30，水源市場指定店家以全支付付款，單筆不限金額享 30% 全點，指定付款方式再加碼最高 5%；官方公告為限量回饋，額滿狀態須以全支付 App／系統為準。",
+      "url": "https://marketing.pxpayplus.com/pxplus_marketing_page/activity_content_page?EventId=110"
     },
     {
       "kind": "partial_sold_out",
       "provider_id": "easywallet",
       "provider_name": "悠遊付",
-      "title": "韓國 TWQR 最高 50% 回饋",
-      "summary": "至 8/31，韓國 TWQR 店家以悠遊付付款可疊加最高 50%；官方頁明確標示活動二 8 月回饋已於 8/9 額滿，其他活動項目與即時名額仍依官方頁及 App 為準。",
+      "title": "韓國 TWQR 最高 50% 回饋（8 月部分已額滿）",
+      "summary": "至 8/31，韓國 TWQR 店家以悠遊付付款可疊加最高 50%；官方頁明確標示活動一與活動二 8 月回饋皆已額滿，活動三及其餘資格仍依官方頁與 App 為準。",
       "url": "https://easywallet.easycard.com.tw/benefit/content?id=1779331719"
     },
     {
@@ -48,15 +48,15 @@
       "provider_id": "icashpay",
       "provider_name": "icash Pay",
       "title": "週日最好Pay 全通路消費滿額回饋7% 已額滿",
-      "summary": "icash Pay 官方活動頁於本日監測明確標示已額滿；此活動不再提供回饋，請改以官方最新公告為準。",
+      "summary": "官方頁明確標示 2026 年 8 月週日 7% 贈點已於 8/16 額滿；活動本身至 12/31 仍列示，後續期別請以官方公告為準。",
       "url": "https://www.icashpay.com.tw/advertMessage/view/id/2284"
     },
     {
       "kind": "ending_soon",
       "provider_id": "jkopay",
       "provider_name": "街口支付",
-      "title": "中元限定採買最高 20% 優惠",
-      "summary": "8/21 至 8/27，至指定合作通路消費滿額，最高可享中元加碼與週日券雙重回饋；依官方頁與系統認列為準，本輪公開監測未見已額滿文字。",
+      "title": "中元限定採買最高 20% 優惠（今日截止）",
+      "summary": "至 8/27，至指定合作通路消費滿額，最高可享中元加碼與週日券雙重回饋；依官方頁與系統認列為準，本輪公開監測未見已額滿文字。",
       "url": "https://mkt.jkopay.com/zh-TW/campaign/jkoshopping2026"
     },
     {

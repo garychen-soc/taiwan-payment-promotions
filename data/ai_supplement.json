@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-27T09:56:23+08:00",
-  "headline": "8/27 重點：街口指定通路 30% 券僅至 8/31；悠遊付康是美網購最高 45%，全支付水源市場最高 35% 仍須以 App 額滿狀態為準。",
+  "generated_at": "2026-08-28T09:07:14+08:00",
+  "headline": "8/28 重點：icash Pay 萬家福／樂家康／Mia C‘bon 前兩重回饋已額滿；街口指定通路 30% 券與多檔夜市優惠將於 8/31 截止。",
   "highlights": [
     {
-      "kind": "high_return",
+      "kind": "ending_soon",
       "provider_id": "jkopay",
       "provider_name": "街口支付",
       "title": "指定通路滿額領 30% 街口券",
@@ -47,17 +47,17 @@
       "kind": "sold_out",
       "provider_id": "icashpay",
       "provider_name": "icash Pay",
-      "title": "週日最好Pay 全通路消費滿額回饋7% 已額滿",
+      "title": "週日最好Pay 全通路消費滿額回饋 7% 已額滿",
       "summary": "官方頁明確標示 2026 年 8 月週日 7% 贈點已於 8/16 額滿；活動本身至 12/31 仍列示，後續期別請以官方公告為準。",
       "url": "https://www.icashpay.com.tw/advertMessage/view/id/2284"
     },
     {
-      "kind": "ending_soon",
-      "provider_id": "jkopay",
-      "provider_name": "街口支付",
-      "title": "中元限定採買最高 20% 優惠（今日截止）",
-      "summary": "至 8/27，至指定合作通路消費滿額，最高可享中元加碼與週日券雙重回饋；依官方頁與系統認列為準，本輪公開監測未見已額滿文字。",
-      "url": "https://mkt.jkopay.com/zh-TW/campaign/jkoshopping2026"
+      "kind": "sold_out",
+      "provider_id": "icashpay",
+      "provider_name": "icash Pay",
+      "title": "萬家福、樂家康、Mia C‘bon 天天最高 21%（前兩重已額滿）",
+      "summary": "至 9/1，官方頁明確標示第一重天天 5% 與第二重綁定 uniopen 聯名卡加碼 5% 已於 8/26 16:45 額滿；其餘活動條件依官方公告為準。",
+      "url": "https://www.icashpay.com.tw/advertMessage/view/id/2429"
     },
     {
       "kind": "upcoming",

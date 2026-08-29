@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-28T09:07:14+08:00",
-  "headline": "8/28 重點：icash Pay 萬家福／樂家康／Mia C‘bon 前兩重回饋已額滿；街口指定通路 30% 券與多檔夜市優惠將於 8/31 截止。",
+  "generated_at": "2026-08-29T09:00:00+08:00",
+  "headline": "8/29 重點：icash Pay 500碗市集今明兩日綁 uniopen 聯名卡享 8%；街口 30% 券與悠遊付韓國 TWQR 等多檔優惠將於 8/31 截止。",
   "highlights": [
     {
       "kind": "ending_soon",
@@ -44,12 +44,12 @@
       "url": "https://easywallet.easycard.com.tw/benefit/content?id=1779331719"
     },
     {
-      "kind": "sold_out",
+      "kind": "ending_soon",
       "provider_id": "icashpay",
       "provider_name": "icash Pay",
-      "title": "週日最好Pay 全通路消費滿額回饋 7% 已額滿",
-      "summary": "官方頁明確標示 2026 年 8 月週日 7% 贈點已於 8/16 額滿；活動本身至 12/31 仍列示，後續期別請以官方公告為準。",
-      "url": "https://www.icashpay.com.tw/advertMessage/view/id/2284"
+      "title": "500碗最強小吃市集綁 uniopen 享 8%",
+      "summary": "僅 8/29–8/30，高雄夢時代幸福廣場指定現場店家，以 icash Pay 綁定 uniopen 聯名卡付款享 8% OPENPOINT；每戶每場上限 80 點、每場總上限 10 萬點。官方頁未見已額滿公告。",
+      "url": "https://www.icashpay.com.tw/advertMessage/view/id/2368"
     },
     {
       "kind": "sold_out",

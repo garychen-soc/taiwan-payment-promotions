@@ -10,103 +10,72 @@ X-PUBLISHED-TTL:PT12H
 SOURCE;VALUE=URI:https://garychen-soc.github.io/taiwan-payment-promotions/c
  alendar.ics
 BEGIN:VEVENT
-UID:start-2026-08-29@taiwan-payment-promotions
-DTSTAMP:20260829T005634Z
-LAST-MODIFIED:20260829T005634Z
-DTSTART;VALUE=DATE:20260829
-DTEND;VALUE=DATE:20260830
-SUMMARY:1 檔優惠今日開跑
-DESCRIPTION:今日開跑優惠：\n1. icash Pay｜500碗2026最強小吃市
- 集Xicash Pay綁定uniopen聯名卡大回饋\nhttps://www.icashpay.com.tw/
- advertMessage/view/id/2368\n\n完整資訊：https://garychen-soc.github.i
- o/taiwan-payment-promotions/\n實際優惠與名額以官方公告為準
- 。
-TRANSP:TRANSPARENT
-URL:https://garychen-soc.github.io/taiwan-payment-promotions/
-END:VEVENT
-BEGIN:VEVENT
-UID:end-2026-08-30@taiwan-payment-promotions
-DTSTAMP:20260829T005634Z
-LAST-MODIFIED:20260829T005634Z
-DTSTART;VALUE=DATE:20260830
-DTEND;VALUE=DATE:20260831
-SUMMARY:3 檔優惠今日截止
-DESCRIPTION:今日截止優惠：\n1. icash Pay｜500碗2026最強小吃市
- 集Xicash Pay綁定uniopen聯名卡大回饋\nhttps://www.icashpay.com.tw/
- advertMessage/view/id/2368\n2. 全支付／PX Pay Plus｜夏日乾杯飲
- 料季｜筆筆5%全點！精選品牌再10%！將來銀行帳戶再10%\nh
- ttps://marketing.pxpayplus.com/pxplus_marketing_page/activity_content_page
- ?EventId=82\n3. 全支付／PX Pay Plus｜連結將來帳戶於「夏日
- 乾杯飲料季」消費筆筆享10%回饋！\nhttps://marketing.pxpayplus
- .com/pxplus_marketing_page/activity_content_page?EventId=96\n\n完整資
- 訊：https://garychen-soc.github.io/taiwan-payment-promotions/\n實際優
- 惠與名額以官方公告為準。
-TRANSP:TRANSPARENT
-URL:https://garychen-soc.github.io/taiwan-payment-promotions/
-END:VEVENT
-BEGIN:VEVENT
-UID:start-2026-08-30@taiwan-payment-promotions
-DTSTAMP:20260829T005634Z
-LAST-MODIFIED:20260829T005634Z
-DTSTART;VALUE=DATE:20260830
-DTEND;VALUE=DATE:20260831
-SUMMARY:1 檔優惠今日開跑
-DESCRIPTION:今日開跑優惠：\n1. 悠遊付｜歡慶捷運廣慈/奉天
- 宮站開通，搭乘贈$20回饋\nhttps://easywallet.easycard.com.tw/bene
- fit/content?id=1787545071\n\n完整資訊：https://garychen-soc.github.io
- /taiwan-payment-promotions/\n實際優惠與名額以官方公告為準。
-TRANSP:TRANSPARENT
-URL:https://garychen-soc.github.io/taiwan-payment-promotions/
-END:VEVENT
-BEGIN:VEVENT
-UID:end-2026-08-31@taiwan-payment-promotions
-DTSTAMP:20260829T005634Z
-LAST-MODIFIED:20260829T005634Z
-DTSTART;VALUE=DATE:20260831
-DTEND;VALUE=DATE:20260901
-SUMMARY:39 檔優惠今日截止
-DESCRIPTION:共 39 檔優惠今日截止。完整清單：https://garychen-
- soc.github.io/taiwan-payment-promotions/
-TRANSP:TRANSPARENT
-URL:https://garychen-soc.github.io/taiwan-payment-promotions/
-END:VEVENT
-BEGIN:VEVENT
-UID:start-2026-08-31@taiwan-payment-promotions
-DTSTAMP:20260829T005634Z
-LAST-MODIFIED:20260829T005634Z
-DTSTART;VALUE=DATE:20260831
-DTEND;VALUE=DATE:20260901
-SUMMARY:1 檔優惠今日開跑
-DESCRIPTION:今日開跑優惠：\n1. 悠遊付｜南機場夜市中元美
- 食祭 悠遊付6折超優惠\nhttps://easywallet.easycard.com.tw/benefit/
- content?id=1787207464\n\n完整資訊：https://garychen-soc.github.io/tai
- wan-payment-promotions/\n實際優惠與名額以官方公告為準。
-TRANSP:TRANSPARENT
-URL:https://garychen-soc.github.io/taiwan-payment-promotions/
-END:VEVENT
-BEGIN:VEVENT
 UID:start-2026-09-01@taiwan-payment-promotions
-DTSTAMP:20260829T005634Z
-LAST-MODIFIED:20260829T005634Z
+DTSTAMP:20260901T000229Z
+LAST-MODIFIED:20260901T000229Z
 DTSTART;VALUE=DATE:20260901
 DTEND;VALUE=DATE:20260902
-SUMMARY:3 檔優惠今日開跑
-DESCRIPTION:今日開跑優惠：\n1. 台灣 Pay｜CITYLINK消費購划算
- ，台灣Pay享20%回饋\nhttps://www.taiwanpay.com.tw/fisc-tpay/news/even
- t/01KY4NWSEH3CM7X0R49QN02S1T\n2. 悠遊付｜悠遊付繳學雜費最高10
- %回饋，綁定玉山信用卡滿額登錄享3期0利率\nhttps://easywal
- let.easycard.com.tw/benefit/content?id=1785477114\n3. 悠遊付｜臺北
- 市敬老/愛心悠遊卡 敬老禮金嗶卡現領$1500再享15大通路
- 最高買一送一優惠\nhttps://easywallet.easycard.com.tw/benefit/conte
- nt?id=1784275915\n\n完整資訊：https://garychen-soc.github.io/taiwan-p
- ayment-promotions/\n實際優惠與名額以官方公告為準。
+SUMMARY:25 檔優惠今日開跑
+DESCRIPTION:今日開跑優惠：\n1. icash Pay｜icash Pay 最新優惠\nh
+ ttps://www.icashpay.com.tw/advertMessage/view/id/2481\n2. icash Pay｜icas
+ h Pay超強支付 綁uniopen聯名卡滿額最高回饋11%\nhttps://www.ic
+ ashpay.com.tw/advertMessage/view/id/2461\n3. icash Pay｜「遊食購嗶
+ 出好運消費月」icash Pay APP支付週週抽999點\nhttps://www.icash
+ pay.com.tw/advertMessage/view/id/2478\n4. icash Pay｜開學季最好PAY 
+ 文具筆筆最高8%回饋\nhttps://www.icashpay.com.tw/advertMessage/view
+ /id/2475\n5. Pi 拍錢包｜Pi 拍錢包⚡️ 9-10月指定電商、手
+ 機通路📱單筆滿額最高贈1800Ｐ幣\nhttps://web.piapp.com.tw/260
+ 910bonus/\n6. 一卡通 MONEY｜【PayPay】Breezeグループ 周年祭 T
+ WQRキャンペーン\nhttps://www.i-pass.com.tw/Preferential/Detail/GM2DA
+ MYRFXVTI645aF6T\n7. 一卡通 MONEY｜【乘車碼】搭車就用 iPASS MO
+ NEY 乘車碼，週週送四大超商優惠券\nhttps://www.i-pass.com.tw/
+ Preferential/Detail/GM2DANYXHAH5464GySaa\n8. 一卡通 MONEY｜【媽咪
+ 愛】點我立即領取 200 元優惠券！\nhttps://www.i-pass.com.tw/Pr
+ eferential/Detail/GM2DANQAKYK2I642bJoN\n9. 一卡通 MONEY｜【樂天銀
+ 行】iPASS MONEY 連接樂天銀行新戶，享一卡通綠點 800 點回
+ 饋\nhttps://www.i-pass.com.tw/Preferential/Detail/GM2DAOALJHZ7V64k0dNf\n1
+ 0. 一卡通 MONEY｜【遊食購嗶出好運消費月】iPASS MONEY APP 
+ 掃 TWQR 立牌付款，超多好禮等你抽。\nhttps://www.i-pass.com.t
+ w/Preferential/Detail/GM2DAOIAESGEQ64KVdGv\n11. 台灣 Pay｜CITYLINK消
+ 費購划算，台灣Pay享20%回饋\nhttps://www.taiwanpay.com.tw/fisc-tp
+ ay/news/event/01KY4NWSEH3CM7X0R49QN02S1T\n12. 台灣 Pay｜台灣Pay在漢
+ 神洲際強棒出擊滿2000送200元電子商品券！\nhttps://www.taiwa
+ npay.com.tw/fisc-tpay/news/event/01KY4NQPPYJ1E4RWTHGQ1V1EH3\n13. 台灣 Pa
+ y｜暢遊馬祖享回饋，TWQR馬上Pay\nhttps://www.taiwanpay.com.tw/fi
+ sc-tpay/news/event/01KY4P2NSY924DGFRPK4AS6GGR\n14. 悠遊付｜momo購物
+ 網秋季3C家電賞｜滿千最高8%｜滿額解鎖最高享$2\,600！\nh
+ ttps://easywallet.easycard.com.tw/benefit/content?id=1787207263\n15. 悠
+ 遊付｜【摩斯漢堡】卡付同享消費3筆送$50現金回饋券\nht
+ tps://easywallet.easycard.com.tw/benefit/content?id=1786502890\n16. 悠遊
+ 付｜元大悠遊聯名卡首次自動加值享最高20%回饋刷卡金\n
+ https://easywallet.easycard.com.tw/benefit/content?id=1787728059\n17. 悠
+ 遊付｜台灣中油悠遊卡/悠遊付加油享回饋\nhttps://easywalle
+ t.easycard.com.tw/benefit/content?id=1787715465\n18. 悠遊付｜悠遊付
+ 繳學雜費最高10%回饋，綁定玉山信用卡滿額登錄享3期0利
+ 率\nhttps://easywallet.easycard.com.tw/benefit/content?id=1785477114\n19.
+  悠遊付｜悠遊付連結元大銀行新臺幣活期存款帳戶繳納
+ 學雜費，單筆金額滿5\,999元贈100元悠遊付回饋金\nhttps://e
+ asywallet.easycard.com.tw/benefit/content?id=1785403330\n20. 悠遊付｜
+ 臺北市敬老/愛心悠遊卡 敬老禮金嗶卡現領$1500再享15大
+ 通路最高買一送一優惠\nhttps://easywallet.easycard.com.tw/benefit
+ /content?id=1784275915\n21. 悠遊付｜遊食購 嗶出好運消費月-
+ 滿額立即抽回饋金\nhttps://easywallet.easycard.com.tw/benefit/conte
+ nt?id=1787708395\n22. 悠遊付｜韓國旅遊｜悠遊付現金回饋最
+ 高12%\nhttps://easywallet.easycard.com.tw/benefit/content?id=1786529493\n
+ 23. 街口支付｜2026/9/1 - 11/31 週六百貨日，最高享現折 20% 
+ 優惠\nhttps://mkt.jkopay.com/zh-TW/campaign/jkomall2026\n24. 街口支
+ 付｜2026/9/1 - 9/30 解鎖驚喜 7 折街口券\nhttps://mkt.jkopay.com/
+ zh-TW/campaign/jko30bonus\n25. 街口支付｜2026/9/1-9/30 經濟部Ｘ
+ 街口支付 全民敬軍，中秋團圓月\nhttps://mkt.jkopay.com/zh-TW/
+ event/2026moonfestival\n\n完整資訊：https://garychen-soc.github.io/ta
+ iwan-payment-promotions/\n實際優惠與名額以官方公告為準。
 TRANSP:TRANSPARENT
 URL:https://garychen-soc.github.io/taiwan-payment-promotions/
 END:VEVENT
 BEGIN:VEVENT
 UID:end-2026-09-02@taiwan-payment-promotions
-DTSTAMP:20260829T005634Z
-LAST-MODIFIED:20260829T005634Z
+DTSTAMP:20260901T000229Z
+LAST-MODIFIED:20260901T000229Z
 DTSTART;VALUE=DATE:20260902
 DTEND;VALUE=DATE:20260903
 SUMMARY:1 檔優惠今日截止
@@ -120,8 +89,8 @@ URL:https://garychen-soc.github.io/taiwan-payment-promotions/
 END:VEVENT
 BEGIN:VEVENT
 UID:end-2026-09-03@taiwan-payment-promotions
-DTSTAMP:20260829T005634Z
-LAST-MODIFIED:20260829T005634Z
+DTSTAMP:20260901T000229Z
+LAST-MODIFIED:20260901T000229Z
 DTSTART;VALUE=DATE:20260903
 DTEND;VALUE=DATE:20260904
 SUMMARY:3 檔優惠今日截止
@@ -142,8 +111,8 @@ URL:https://garychen-soc.github.io/taiwan-payment-promotions/
 END:VEVENT
 BEGIN:VEVENT
 UID:start-2026-09-11@taiwan-payment-promotions
-DTSTAMP:20260829T005634Z
-LAST-MODIFIED:20260829T005634Z
+DTSTAMP:20260901T000229Z
+LAST-MODIFIED:20260901T000229Z
 DTSTART;VALUE=DATE:20260911
 DTEND;VALUE=DATE:20260912
 SUMMARY:1 檔優惠今日開跑
@@ -156,8 +125,8 @@ URL:https://garychen-soc.github.io/taiwan-payment-promotions/
 END:VEVENT
 BEGIN:VEVENT
 UID:end-2026-09-15@taiwan-payment-promotions
-DTSTAMP:20260829T005634Z
-LAST-MODIFIED:20260829T005634Z
+DTSTAMP:20260901T000229Z
+LAST-MODIFIED:20260901T000229Z
 DTSTART;VALUE=DATE:20260915
 DTEND;VALUE=DATE:20260916
 SUMMARY:2 檔優惠今日截止
@@ -173,8 +142,8 @@ URL:https://garychen-soc.github.io/taiwan-payment-promotions/
 END:VEVENT
 BEGIN:VEVENT
 UID:end-2026-09-17@taiwan-payment-promotions
-DTSTAMP:20260829T005634Z
-LAST-MODIFIED:20260829T005634Z
+DTSTAMP:20260901T000229Z
+LAST-MODIFIED:20260901T000229Z
 DTSTART;VALUE=DATE:20260917
 DTEND;VALUE=DATE:20260918
 SUMMARY:1 檔優惠今日截止
@@ -188,8 +157,8 @@ URL:https://garychen-soc.github.io/taiwan-payment-promotions/
 END:VEVENT
 BEGIN:VEVENT
 UID:end-2026-09-18@taiwan-payment-promotions
-DTSTAMP:20260829T005634Z
-LAST-MODIFIED:20260829T005634Z
+DTSTAMP:20260901T000229Z
+LAST-MODIFIED:20260901T000229Z
 DTSTART;VALUE=DATE:20260918
 DTEND;VALUE=DATE:20260919
 SUMMARY:1 檔優惠今日截止
@@ -202,8 +171,8 @@ URL:https://garychen-soc.github.io/taiwan-payment-promotions/
 END:VEVENT
 BEGIN:VEVENT
 UID:end-2026-09-20@taiwan-payment-promotions
-DTSTAMP:20260829T005634Z
-LAST-MODIFIED:20260829T005634Z
+DTSTAMP:20260901T000229Z
+LAST-MODIFIED:20260901T000229Z
 DTSTART;VALUE=DATE:20260920
 DTEND;VALUE=DATE:20260921
 SUMMARY:1 檔優惠今日截止
@@ -217,8 +186,8 @@ URL:https://garychen-soc.github.io/taiwan-payment-promotions/
 END:VEVENT
 BEGIN:VEVENT
 UID:end-2026-09-25@taiwan-payment-promotions
-DTSTAMP:20260829T005634Z
-LAST-MODIFIED:20260829T005634Z
+DTSTAMP:20260901T000229Z
+LAST-MODIFIED:20260901T000229Z
 DTSTART;VALUE=DATE:20260925
 DTEND;VALUE=DATE:20260926
 SUMMARY:1 檔優惠今日截止
@@ -231,8 +200,8 @@ URL:https://garychen-soc.github.io/taiwan-payment-promotions/
 END:VEVENT
 BEGIN:VEVENT
 UID:end-2026-09-27@taiwan-payment-promotions
-DTSTAMP:20260829T005634Z
-LAST-MODIFIED:20260829T005634Z
+DTSTAMP:20260901T000229Z
+LAST-MODIFIED:20260901T000229Z
 DTSTART;VALUE=DATE:20260927
 DTEND;VALUE=DATE:20260928
 SUMMARY:7 檔優惠今日截止
@@ -261,21 +230,36 @@ TRANSP:TRANSPARENT
 URL:https://garychen-soc.github.io/taiwan-payment-promotions/
 END:VEVENT
 BEGIN:VEVENT
+UID:end-2026-09-28@taiwan-payment-promotions
+DTSTAMP:20260901T000229Z
+LAST-MODIFIED:20260901T000229Z
+DTSTART;VALUE=DATE:20260928
+DTEND;VALUE=DATE:20260929
+SUMMARY:1 檔優惠今日截止
+DESCRIPTION:今日截止優惠：\n1. icash Pay｜「遊食購嗶出好運
+ 消費月」icash Pay APP支付週週抽999點\nhttps://www.icashpay.com.t
+ w/advertMessage/view/id/2478\n\n完整資訊：https://garychen-soc.github
+ .io/taiwan-payment-promotions/\n實際優惠與名額以官方公告為準
+ 。
+TRANSP:TRANSPARENT
+URL:https://garychen-soc.github.io/taiwan-payment-promotions/
+END:VEVENT
+BEGIN:VEVENT
 UID:end-2026-09-30@taiwan-payment-promotions
-DTSTAMP:20260829T005634Z
-LAST-MODIFIED:20260829T005634Z
+DTSTAMP:20260901T000229Z
+LAST-MODIFIED:20260901T000229Z
 DTSTART;VALUE=DATE:20260930
 DTEND;VALUE=DATE:20261001
-SUMMARY:69 檔優惠今日截止
-DESCRIPTION:共 69 檔優惠今日截止。完整清單：https://garychen-
+SUMMARY:75 檔優惠今日截止
+DESCRIPTION:共 75 檔優惠今日截止。完整清單：https://garychen-
  soc.github.io/taiwan-payment-promotions/
 TRANSP:TRANSPARENT
 URL:https://garychen-soc.github.io/taiwan-payment-promotions/
 END:VEVENT
 BEGIN:VEVENT
 UID:end-2026-10-01@taiwan-payment-promotions
-DTSTAMP:20260829T005634Z
-LAST-MODIFIED:20260829T005634Z
+DTSTAMP:20260901T000229Z
+LAST-MODIFIED:20260901T000229Z
 DTSTART;VALUE=DATE:20261001
 DTEND;VALUE=DATE:20261002
 SUMMARY:1 檔優惠今日截止
@@ -289,8 +273,8 @@ URL:https://garychen-soc.github.io/taiwan-payment-promotions/
 END:VEVENT
 BEGIN:VEVENT
 UID:end-2026-10-04@taiwan-payment-promotions
-DTSTAMP:20260829T005634Z
-LAST-MODIFIED:20260829T005634Z
+DTSTAMP:20260901T000229Z
+LAST-MODIFIED:20260901T000229Z
 DTSTART;VALUE=DATE:20261004
 DTEND;VALUE=DATE:20261005
 SUMMARY:1 檔優惠今日截止
@@ -302,9 +286,23 @@ TRANSP:TRANSPARENT
 URL:https://garychen-soc.github.io/taiwan-payment-promotions/
 END:VEVENT
 BEGIN:VEVENT
+UID:end-2026-10-06@taiwan-payment-promotions
+DTSTAMP:20260901T000229Z
+LAST-MODIFIED:20260901T000229Z
+DTSTART;VALUE=DATE:20261006
+DTEND;VALUE=DATE:20261007
+SUMMARY:1 檔優惠今日截止
+DESCRIPTION:今日截止優惠：\n1. 悠遊付｜【寶雅週年慶】悠
+ 遊付滿額最高回饋11%\nhttps://easywallet.easycard.com.tw/benefit/co
+ ntent?id=1781230524\n\n完整資訊：https://garychen-soc.github.io/taiwa
+ n-payment-promotions/\n實際優惠與名額以官方公告為準。
+TRANSP:TRANSPARENT
+URL:https://garychen-soc.github.io/taiwan-payment-promotions/
+END:VEVENT
+BEGIN:VEVENT
 UID:end-2026-10-14@taiwan-payment-promotions
-DTSTAMP:20260829T005634Z
-LAST-MODIFIED:20260829T005634Z
+DTSTAMP:20260901T000229Z
+LAST-MODIFIED:20260901T000229Z
 DTSTART;VALUE=DATE:20261014
 DTEND;VALUE=DATE:20261015
 SUMMARY:1 檔優惠今日截止
@@ -318,8 +316,8 @@ URL:https://garychen-soc.github.io/taiwan-payment-promotions/
 END:VEVENT
 BEGIN:VEVENT
 UID:end-2026-10-17@taiwan-payment-promotions
-DTSTAMP:20260829T005634Z
-LAST-MODIFIED:20260829T005634Z
+DTSTAMP:20260901T000229Z
+LAST-MODIFIED:20260901T000229Z
 DTSTART;VALUE=DATE:20261017
 DTEND;VALUE=DATE:20261018
 SUMMARY:1 檔優惠今日截止
@@ -333,8 +331,8 @@ URL:https://garychen-soc.github.io/taiwan-payment-promotions/
 END:VEVENT
 BEGIN:VEVENT
 UID:end-2026-10-23@taiwan-payment-promotions
-DTSTAMP:20260829T005634Z
-LAST-MODIFIED:20260829T005634Z
+DTSTAMP:20260901T000229Z
+LAST-MODIFIED:20260901T000229Z
 DTSTART;VALUE=DATE:20261023
 DTEND;VALUE=DATE:20261024
 SUMMARY:1 檔優惠今日截止
@@ -348,8 +346,8 @@ URL:https://garychen-soc.github.io/taiwan-payment-promotions/
 END:VEVENT
 BEGIN:VEVENT
 UID:end-2026-10-28@taiwan-payment-promotions
-DTSTAMP:20260829T005634Z
-LAST-MODIFIED:20260829T005634Z
+DTSTAMP:20260901T000229Z
+LAST-MODIFIED:20260901T000229Z
 DTSTART;VALUE=DATE:20261028
 DTEND;VALUE=DATE:20261029
 SUMMARY:1 檔優惠今日截止
@@ -363,67 +361,102 @@ URL:https://garychen-soc.github.io/taiwan-payment-promotions/
 END:VEVENT
 BEGIN:VEVENT
 UID:end-2026-10-31@taiwan-payment-promotions
-DTSTAMP:20260829T005634Z
-LAST-MODIFIED:20260829T005634Z
+DTSTAMP:20260901T000229Z
+LAST-MODIFIED:20260901T000229Z
 DTSTART;VALUE=DATE:20261031
 DTEND;VALUE=DATE:20261101
-SUMMARY:9 檔優惠今日截止
+SUMMARY:15 檔優惠今日截止
 DESCRIPTION:今日截止優惠：\n1. icash Pay｜icash Pay 8月最新優
  惠\nhttps://www.icashpay.com.tw/advertMessage/view/id/2436\n2. icash Pay
  ｜icash Pay新戶登錄贈酷聖石冰淇淋兌換券\nhttps://www.icashp
- ay.com.tw/advertMessage/view/id/2435\n3. 一卡通 MONEY｜【yoxi】綁
- 定 iPASS MONEY 暢遊城市，三大優惠與你同行！\nhttps://www.i-
- pass.com.tw/Preferential/Detail/GMZTKMYQ2HOT264bF5RH\n4. 一卡通 MONEY
- ｜【東森寵物】寵愛大放送，使用 iPASS MONEY 付款單筆滿
- 千贈 100 元優惠券\nhttps://www.i-pass.com.tw/Preferential/Detail/GMZ
- DQNQ7OUMSX64IfY7L\n5. 全支付／PX Pay Plus｜山隆加油站｜登錄
- 單筆滿額享7%全點！新戶再享50全點，指定銀行再加碼！\
- nhttps://marketing.pxpayplus.com/pxplus_marketing_page/activity_content_pa
- ge?EventId=111\n6. 台灣 Pay｜TWQR東遊趣 10%加碼Pay\nhttps://www.ta
- iwanpay.com.tw/fisc-tpay/news/event/01KXFTZHE3F8XZ9V9CD2MNXMJA\n7. 台灣 
- Pay｜清涼一夏．台灣PAY喝小仁泉享20%回饋！\nhttps://www.tai
- wanpay.com.tw/fisc-tpay/news/event/01KFMZ9EXY02V9B6K6M165D465\n8. 悠遊
- 付｜悠遊付繳學雜費最高10%回饋，綁定玉山信用卡滿額
- 登錄享3期0利率\nhttps://easywallet.easycard.com.tw/benefit/content?i
- d=1785477114\n9. 悠遊付｜樂天新戶綁定悠遊付好禮NT$ 1\,000\n
- https://easywallet.easycard.com.tw/benefit/content?id=1784529379\n\n完整
- 資訊：https://garychen-soc.github.io/taiwan-payment-promotions/\n實際
- 優惠與名額以官方公告為準。
+ ay.com.tw/advertMessage/view/id/2435\n3. Pi 拍錢包｜Pi 拍錢包⚡️
+  9-10月指定電商、手機通路📱單筆滿額最高贈1800Ｐ幣\nht
+ tps://web.piapp.com.tw/260910bonus/\n4. 一卡通 MONEY｜【yoxi】綁定
+  iPASS MONEY 暢遊城市，三大優惠與你同行！\nhttps://www.i-pas
+ s.com.tw/Preferential/Detail/GMZTKMYQ2HOT264bF5RH\n5. 一卡通 MONEY｜
+ 【乘車碼】搭車就用 iPASS MONEY 乘車碼，週週送四大超商
+ 優惠券\nhttps://www.i-pass.com.tw/Preferential/Detail/GM2DANYXHAH5464Gy
+ Saa\n6. 一卡通 MONEY｜【東森寵物】寵愛大放送，使用 iPASS
+  MONEY 付款單筆滿千贈 100 元優惠券\nhttps://www.i-pass.com.tw/P
+ referential/Detail/GMZDQNQ7OUMSX64IfY7L\n7. 全支付／PX Pay Plus｜山
+ 隆加油站｜登錄單筆滿額享7%全點！新戶再享50全點，指
+ 定銀行再加碼！\nhttps://marketing.pxpayplus.com/pxplus_marketing_pa
+ ge/activity_content_page?EventId=111\n8. 台灣 Pay｜TWQR東遊趣 10%加
+ 碼Pay\nhttps://www.taiwanpay.com.tw/fisc-tpay/news/event/01KXFTZHE3F8XZ9V
+ 9CD2MNXMJA\n9. 台灣 Pay｜TWQR義起享好利 10%限時PAY\nhttps://www.
+ taiwanpay.com.tw/fisc-tpay/news/event/01KXN6WZYD7S5M99ZP7E03PWQH\n10. 台
+ 灣 Pay｜清涼一夏．台灣PAY喝小仁泉享20%回饋！\nhttps://www
+ .taiwanpay.com.tw/fisc-tpay/news/event/01KFMZ9EXY02V9B6K6M165D465\n11. 悠
+ 遊付｜【摩斯漢堡】卡付同享消費3筆送$50現金回饋券\nht
+ tps://easywallet.easycard.com.tw/benefit/content?id=1786502890\n12. 悠遊
+ 付｜台灣中油悠遊卡/悠遊付加油享回饋\nhttps://easywallet.e
+ asycard.com.tw/benefit/content?id=1787715465\n13. 悠遊付｜悠遊付繳
+ 學雜費最高10%回饋，綁定玉山信用卡滿額登錄享3期0利率
+ \nhttps://easywallet.easycard.com.tw/benefit/content?id=1785477114\n14. 
+ 悠遊付｜悠遊付連結元大銀行新臺幣活期存款帳戶繳納
+ 學雜費，單筆金額滿5\,999元贈100元悠遊付回饋金\nhttps://e
+ asywallet.easycard.com.tw/benefit/content?id=1785403330\n15. 悠遊付｜
+ 樂天新戶綁定悠遊付好禮NT$ 1\,000\nhttps://easywallet.easycard.c
+ om.tw/benefit/content?id=1784529379\n\n完整資訊：https://garychen-soc
+ .github.io/taiwan-payment-promotions/\n實際優惠與名額以官方公
+ 告為準。
+TRANSP:TRANSPARENT
+URL:https://garychen-soc.github.io/taiwan-payment-promotions/
+END:VEVENT
+BEGIN:VEVENT
+UID:end-2026-11-01@taiwan-payment-promotions
+DTSTAMP:20260901T000229Z
+LAST-MODIFIED:20260901T000229Z
+DTSTART;VALUE=DATE:20261101
+DTEND;VALUE=DATE:20261102
+SUMMARY:1 檔優惠今日截止
+DESCRIPTION:今日截止優惠：\n1. 一卡通 MONEY｜【PayPay】Breeze
+ グループ 周年祭 TWQRキャンペーン\nhttps://www.i-pass.com.tw/P
+ referential/Detail/GM2DAMYRFXVTI645aF6T\n\n完整資訊：https://garychen
+ -soc.github.io/taiwan-payment-promotions/\n實際優惠與名額以官方
+ 公告為準。
 TRANSP:TRANSPARENT
 URL:https://garychen-soc.github.io/taiwan-payment-promotions/
 END:VEVENT
 BEGIN:VEVENT
 UID:end-2026-11-30@taiwan-payment-promotions
-DTSTAMP:20260829T005634Z
-LAST-MODIFIED:20260829T005634Z
+DTSTAMP:20260901T000229Z
+LAST-MODIFIED:20260901T000229Z
 DTSTART;VALUE=DATE:20261130
 DTEND;VALUE=DATE:20261201
-SUMMARY:8 檔優惠今日截止
-DESCRIPTION:今日截止優惠：\n1. 台灣 Pay｜台灣Pay購新機 STUDI
- O A最高享10%\nhttps://www.taiwanpay.com.tw/fisc-tpay/news/event/01KY4NV
- 26ZK7TR8N866TH221QA\n2. 台灣 Pay｜墊腳石Pay你樂購一夏，台灣P
- ay\nhttps://www.taiwanpay.com.tw/fisc-tpay/news/event/01KXFVRG4GM4043AQKVV
- QVTJCF\n3. 台灣 Pay｜永康國際商圈X台灣Pay消費拿回饋20%\nht
- tps://www.taiwanpay.com.tw/fisc-tpay/news/event/01KY4P3N7N48E7PS9TRQD6P1AY
- \n4. 台灣 Pay｜漫遊高雄．墨凡站前商圈台灣Pay樂享10%回
- 饋\nhttps://www.taiwanpay.com.tw/fisc-tpay/news/event/01KYRZ4QM0NYQA204D8
- 9ZMT319\n5. 台灣 Pay｜美十樂連鎖藥局-台灣Pay 20%回饋\nhttps:
- //www.taiwanpay.com.tw/fisc-tpay/news/event/01KTBERR1F8E7RZDXMYTQHB500\n6.
-  台灣 Pay｜蘭州就用台灣Pay 市場20%高回饋\nhttps://www.taiwan
- pay.com.tw/fisc-tpay/news/event/01KW994G7HWVT41Z06CMF0RBYR\n7. 台灣 Pay
- ｜采盟免稅店、采盟/誠盟餐飲 TWQR(限台灣Pay)最高享20%回
- 饋\nhttps://www.taiwanpay.com.tw/fisc-tpay/news/event/01KTBDJG3VGJMM4ARTF
- 2SBFN3P\n8. 悠遊付｜悠遊付暢遊金門 筆筆最高回饋23%\nhttps
- ://easywallet.easycard.com.tw/benefit/content?id=1784206763\n\n完整資
- 訊：https://garychen-soc.github.io/taiwan-payment-promotions/\n實際優
- 惠與名額以官方公告為準。
+SUMMARY:11 檔優惠今日截止
+DESCRIPTION:今日截止優惠：\n1. 一卡通 MONEY｜【樂天銀行】i
+ PASS MONEY 連接樂天銀行新戶，享一卡通綠點 800 點回饋\nht
+ tps://www.i-pass.com.tw/Preferential/Detail/GM2DAOALJHZ7V64k0dNf\n2. 台
+ 灣 Pay｜台灣Pay在漢神洲際強棒出擊滿2000送200元電子商品
+ 券！\nhttps://www.taiwanpay.com.tw/fisc-tpay/news/event/01KY4NQPPYJ1E4RW
+ THGQ1V1EH3\n3. 台灣 Pay｜台灣Pay購新機 STUDIO A最高享10%\nhttps
+ ://www.taiwanpay.com.tw/fisc-tpay/news/event/01KY4NV26ZK7TR8N866TH221QA\n4
+ . 台灣 Pay｜墊腳石Pay你樂購一夏，台灣Pay\nhttps://www.taiwan
+ pay.com.tw/fisc-tpay/news/event/01KXFVRG4GM4043AQKVVQVTJCF\n5. 台灣 Pay
+ ｜永康國際商圈X台灣Pay消費拿回饋20%\nhttps://www.taiwanpay.c
+ om.tw/fisc-tpay/news/event/01KY4P3N7N48E7PS9TRQD6P1AY\n6. 台灣 Pay｜漫
+ 遊高雄．墨凡站前商圈台灣Pay樂享10%回饋\nhttps://www.taiwan
+ pay.com.tw/fisc-tpay/news/event/01KYRZ4QM0NYQA204D89ZMT319\n7. 台灣 Pay
+ ｜美十樂連鎖藥局-台灣Pay 20%回饋\nhttps://www.taiwanpay.com.tw
+ /fisc-tpay/news/event/01KTBERR1F8E7RZDXMYTQHB500\n8. 台灣 Pay｜蘭州
+ 就用台灣Pay 市場20%高回饋\nhttps://www.taiwanpay.com.tw/fisc-tpay
+ /news/event/01KW994G7HWVT41Z06CMF0RBYR\n9. 台灣 Pay｜采盟免稅店、
+ 采盟/誠盟餐飲 TWQR(限台灣Pay)最高享20%回饋\nhttps://www.taiw
+ anpay.com.tw/fisc-tpay/news/event/01KTBDJG3VGJMM4ARTF2SBFN3P\n10. 悠遊
+ 付｜悠遊付暢遊金門 筆筆最高回饋23%\nhttps://easywallet.easy
+ card.com.tw/benefit/content?id=1784206763\n11. 街口支付｜2026/9/1 - 1
+ 1/31 週六百貨日，最高享現折 20% 優惠\nhttps://mkt.jkopay.com/
+ zh-TW/campaign/jkomall2026\n\n完整資訊：https://garychen-soc.github.i
+ o/taiwan-payment-promotions/\n實際優惠與名額以官方公告為準
+ 。
 TRANSP:TRANSPARENT
 URL:https://garychen-soc.github.io/taiwan-payment-promotions/
 END:VEVENT
 BEGIN:VEVENT
 UID:end-2026-12-05@taiwan-payment-promotions
-DTSTAMP:20260829T005634Z
-LAST-MODIFIED:20260829T005634Z
+DTSTAMP:20260901T000229Z
+LAST-MODIFIED:20260901T000229Z
 DTSTART;VALUE=DATE:20261205
 DTEND;VALUE=DATE:20261206
 SUMMARY:1 檔優惠今日截止
@@ -436,8 +469,8 @@ URL:https://garychen-soc.github.io/taiwan-payment-promotions/
 END:VEVENT
 BEGIN:VEVENT
 UID:end-2026-12-15@taiwan-payment-promotions
-DTSTAMP:20260829T005634Z
-LAST-MODIFIED:20260829T005634Z
+DTSTAMP:20260901T000229Z
+LAST-MODIFIED:20260901T000229Z
 DTSTART;VALUE=DATE:20261215
 DTEND;VALUE=DATE:20261216
 SUMMARY:1 檔優惠今日截止
@@ -451,8 +484,8 @@ URL:https://garychen-soc.github.io/taiwan-payment-promotions/
 END:VEVENT
 BEGIN:VEVENT
 UID:end-2026-12-27@taiwan-payment-promotions
-DTSTAMP:20260829T005634Z
-LAST-MODIFIED:20260829T005634Z
+DTSTAMP:20260901T000229Z
+LAST-MODIFIED:20260901T000229Z
 DTSTART;VALUE=DATE:20261227
 DTEND;VALUE=DATE:20261228
 SUMMARY:1 檔優惠今日截止
@@ -465,8 +498,8 @@ URL:https://garychen-soc.github.io/taiwan-payment-promotions/
 END:VEVENT
 BEGIN:VEVENT
 UID:end-2026-12-30@taiwan-payment-promotions
-DTSTAMP:20260829T005634Z
-LAST-MODIFIED:20260829T005634Z
+DTSTAMP:20260901T000229Z
+LAST-MODIFIED:20260901T000229Z
 DTSTART;VALUE=DATE:20261230
 DTEND;VALUE=DATE:20261231
 SUMMARY:2 檔優惠今日截止
@@ -482,20 +515,20 @@ URL:https://garychen-soc.github.io/taiwan-payment-promotions/
 END:VEVENT
 BEGIN:VEVENT
 UID:end-2026-12-31@taiwan-payment-promotions
-DTSTAMP:20260829T005634Z
-LAST-MODIFIED:20260829T005634Z
+DTSTAMP:20260901T000229Z
+LAST-MODIFIED:20260901T000229Z
 DTSTART;VALUE=DATE:20261231
 DTEND;VALUE=DATE:20270101
-SUMMARY:89 檔優惠今日截止
-DESCRIPTION:共 89 檔優惠今日截止。完整清單：https://garychen-
+SUMMARY:95 檔優惠今日截止
+DESCRIPTION:共 95 檔優惠今日截止。完整清單：https://garychen-
  soc.github.io/taiwan-payment-promotions/
 TRANSP:TRANSPARENT
 URL:https://garychen-soc.github.io/taiwan-payment-promotions/
 END:VEVENT
 BEGIN:VEVENT
 UID:end-2027-01-02@taiwan-payment-promotions
-DTSTAMP:20260829T005634Z
-LAST-MODIFIED:20260829T005634Z
+DTSTAMP:20260901T000229Z
+LAST-MODIFIED:20260901T000229Z
 DTSTART;VALUE=DATE:20270102
 DTEND;VALUE=DATE:20270103
 SUMMARY:1 檔優惠今日截止
@@ -509,8 +542,8 @@ URL:https://garychen-soc.github.io/taiwan-payment-promotions/
 END:VEVENT
 BEGIN:VEVENT
 UID:end-2027-01-03@taiwan-payment-promotions
-DTSTAMP:20260829T005634Z
-LAST-MODIFIED:20260829T005634Z
+DTSTAMP:20260901T000229Z
+LAST-MODIFIED:20260901T000229Z
 DTSTART;VALUE=DATE:20270103
 DTEND;VALUE=DATE:20270104
 SUMMARY:1 檔優惠今日截止
@@ -525,8 +558,8 @@ URL:https://garychen-soc.github.io/taiwan-payment-promotions/
 END:VEVENT
 BEGIN:VEVENT
 UID:end-2027-01-31@taiwan-payment-promotions
-DTSTAMP:20260829T005634Z
-LAST-MODIFIED:20260829T005634Z
+DTSTAMP:20260901T000229Z
+LAST-MODIFIED:20260901T000229Z
 DTSTART;VALUE=DATE:20270131
 DTEND;VALUE=DATE:20270201
 SUMMARY:2 檔優惠今日截止
@@ -542,8 +575,8 @@ URL:https://garychen-soc.github.io/taiwan-payment-promotions/
 END:VEVENT
 BEGIN:VEVENT
 UID:end-2027-02-28@taiwan-payment-promotions
-DTSTAMP:20260829T005634Z
-LAST-MODIFIED:20260829T005634Z
+DTSTAMP:20260901T000229Z
+LAST-MODIFIED:20260901T000229Z
 DTSTART;VALUE=DATE:20270228
 DTEND;VALUE=DATE:20270301
 SUMMARY:1 檔優惠今日截止
@@ -557,8 +590,8 @@ URL:https://garychen-soc.github.io/taiwan-payment-promotions/
 END:VEVENT
 BEGIN:VEVENT
 UID:end-2027-03-31@taiwan-payment-promotions
-DTSTAMP:20260829T005634Z
-LAST-MODIFIED:20260829T005634Z
+DTSTAMP:20260901T000229Z
+LAST-MODIFIED:20260901T000229Z
 DTSTART;VALUE=DATE:20270331
 DTEND;VALUE=DATE:20270401
 SUMMARY:1 檔優惠今日截止
@@ -571,8 +604,8 @@ URL:https://garychen-soc.github.io/taiwan-payment-promotions/
 END:VEVENT
 BEGIN:VEVENT
 UID:end-2028-01-01@taiwan-payment-promotions
-DTSTAMP:20260829T005634Z
-LAST-MODIFIED:20260829T005634Z
+DTSTAMP:20260901T000229Z
+LAST-MODIFIED:20260901T000229Z
 DTSTART;VALUE=DATE:20280101
 DTEND;VALUE=DATE:20280102
 SUMMARY:1 檔優惠今日截止

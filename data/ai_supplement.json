@@ -1,23 +1,39 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-29T09:00:00+08:00",
-  "headline": "8/29 重點：icash Pay 500碗市集今明兩日綁 uniopen 聯名卡享 8%；街口 30% 券與悠遊付韓國 TWQR 等多檔優惠將於 8/31 截止。",
+  "generated_at": "2026-09-01T08:02:29+08:00",
+  "headline": "9/1 重點：悠遊付與街口支付多檔 9 月活動今日開跑；韓國 TWQR 最高 12%、百貨／指定通路優惠與學雜費回饋均須留意條件及名額狀態。",
   "highlights": [
     {
-      "kind": "ending_soon",
-      "provider_id": "jkopay",
-      "provider_name": "街口支付",
-      "title": "指定通路滿額領 30% 街口券",
-      "summary": "至 8/31，官方頁載明指定通路累積實際消費達 5,000 元可領 30% 街口券，單筆滿 100 元最高折 30 元；限量 4,000 名，公開頁未見已額滿文字。",
-      "url": "https://mkt.jkopay.com/zh-TW/event/jko30bonus"
+      "kind": "high_return",
+      "provider_id": "easywallet",
+      "provider_name": "悠遊付",
+      "title": "韓國旅遊 TWQR 現金回饋最高 12%",
+      "summary": "9/1 至 12/31，在韓國貼有 TWQR 標誌店家用悠遊付錢包或綁定帳戶付款，筆筆 10.5% 加免 1.5% 海外手續費最高 12%；新會員疊加條件最高可達 15%。各階段限額與額滿公告以 App 活動頁為準，公開頁未見已額滿文字。",
+      "url": "https://easywallet.easycard.com.tw/benefit/content?id=1786529493"
     },
     {
       "kind": "high_return",
       "provider_id": "easywallet",
       "provider_name": "悠遊付",
-      "title": "康是美網購 eShop 最高 45% 回饋",
-      "summary": "至 9/30，使用悠遊付錢包或綁定銀行帳戶於康是美網購，符合滿額與疊加條件最高 45%；活動二每月限量 1,500 張，公開頁僅載額滿即提前結束，未見已額滿文字。",
-      "url": "https://easywallet.easycard.com.tw/benefit/content?id=1784529826"
+      "title": "繳學雜費最高 10% 回饋",
+      "summary": "9/1 至 10/31，累計繳學雜費與指定生活繳費符合條件可獲最高 500 元回饋券；綁元大帳戶單筆滿 5,999 元另有 100 元。限量與額滿狀態以官方／App 為準，公開頁未見已額滿文字。",
+      "url": "https://easywallet.easycard.com.tw/benefit/content?id=1785477114"
+    },
+    {
+      "kind": "high_return",
+      "provider_id": "easywallet",
+      "provider_name": "悠遊付",
+      "title": "momo 購物網滿千最高 8%、滿額最高 2,600 元券",
+      "summary": "至 9/30，momo 使用悠遊付錢包或綁定帳戶單筆滿千，可依疊加資格最高 8%；達指定門檻最高可累積 2,600 元現金回饋券。券量與額滿須至 App 確認，公開頁未見已額滿文字。",
+      "url": "https://easywallet.easycard.com.tw/benefit/content?id=1787207263"
+    },
+    {
+      "kind": "high_return",
+      "provider_id": "fullpay",
+      "provider_name": "全支付／PX Pay Plus",
+      "title": "水源市場全支付最高 35% 全點",
+      "summary": "至 9/30，水源市場指定店家全支付付款享 30% 全點，指定付款方式再加碼最高 5%。屬限量活動，名額與額滿狀態須以全支付 App／系統為準。",
+      "url": "https://marketing.pxpayplus.com/pxplus_marketing_page/activity_content_page?EventId=110"
     },
     {
       "kind": "high_return",
@@ -29,43 +45,27 @@
     },
     {
       "kind": "high_return",
-      "provider_id": "fullpay",
-      "provider_name": "全支付／PX Pay Plus",
-      "title": "水源市場全支付最高 35% 全點",
-      "summary": "至 9/30，水源市場指定店家以全支付付款，單筆不限金額享 30% 全點，指定付款方式再加碼最高 5%；官方公告為限量回饋，額滿狀態須以全支付 App／系統為準。",
-      "url": "https://marketing.pxpayplus.com/pxplus_marketing_page/activity_content_page?EventId=110"
+      "provider_id": "jkopay",
+      "provider_name": "街口支付",
+      "title": "週六百貨日最高現折 20%",
+      "summary": "9/1 至 11/30 每週六，先領券後至指定百貨單筆滿 2,000 元可享 9 折、最高折 200 元；搭配指定付款方式最高現折 20%。公開頁未見已額滿文字，實際資格依活動規則。",
+      "url": "https://mkt.jkopay.com/zh-TW/campaign/jkomall2026"
     },
     {
-      "kind": "partial_sold_out",
+      "kind": "high_return",
+      "provider_id": "jkopay",
+      "provider_name": "街口支付",
+      "title": "解鎖驚喜 7 折街口券",
+      "summary": "至 9/30，指定通路累積消費達門檻可領最多 3 張 7 折街口券；單筆滿 100 元最高折 30 元。活動為數量有限、先領先贏，公開頁未見已額滿文字。",
+      "url": "https://mkt.jkopay.com/zh-TW/campaign/jko30bonus"
+    },
+    {
+      "kind": "new_activity",
       "provider_id": "easywallet",
       "provider_name": "悠遊付",
-      "title": "韓國 TWQR 最高 50% 回饋（8 月部分已額滿）",
-      "summary": "至 8/31，韓國 TWQR 店家以悠遊付付款可疊加最高 50%；官方頁明確標示活動一與活動二 8 月回饋皆已額滿，活動三及其餘資格仍依官方頁與 App 為準。",
-      "url": "https://easywallet.easycard.com.tw/benefit/content?id=1779331719"
-    },
-    {
-      "kind": "ending_soon",
-      "provider_id": "icashpay",
-      "provider_name": "icash Pay",
-      "title": "500碗最強小吃市集綁 uniopen 享 8%",
-      "summary": "僅 8/29–8/30，高雄夢時代幸福廣場指定現場店家，以 icash Pay 綁定 uniopen 聯名卡付款享 8% OPENPOINT；每戶每場上限 80 點、每場總上限 10 萬點。官方頁未見已額滿公告。",
-      "url": "https://www.icashpay.com.tw/advertMessage/view/id/2368"
-    },
-    {
-      "kind": "sold_out",
-      "provider_id": "icashpay",
-      "provider_name": "icash Pay",
-      "title": "萬家福、樂家康、Mia C‘bon 天天最高 21%（前兩重已額滿）",
-      "summary": "至 9/1，官方頁明確標示第一重天天 5% 與第二重綁定 uniopen 聯名卡加碼 5% 已於 8/26 16:45 額滿；其餘活動條件依官方公告為準。",
-      "url": "https://www.icashpay.com.tw/advertMessage/view/id/2429"
-    },
-    {
-      "kind": "upcoming",
-      "provider_id": "easywallet",
-      "provider_name": "悠遊付",
-      "title": "臺北市敬老／愛心悠遊卡敬老禮金與通路優惠",
-      "summary": "9/7 至 9/18，符合資格者可於指定通路或悠遊付 App 嗶卡領臺北市重陽敬老禮金；15 個合作通路另有買一送一、折扣等優惠，依各門市規則為準。",
-      "url": "https://easywallet.easycard.com.tw/benefit/content?id=1784275915"
+      "title": "遊食購嗶出好運：指定百貨／餐飲滿 199 元抽回饋",
+      "summary": "至 9/30，指定百貨、影城與餐飲單筆滿 199 元可獲隨機回饋金，每人上限 10 份、總限量 30 萬份。額滿公告位於 App 活動頁，公開頁未見已額滿文字。",
+      "url": "https://easywallet.easycard.com.tw/benefit/content?id=1787708395"
     }
   ],
   "supplemental_activities": []

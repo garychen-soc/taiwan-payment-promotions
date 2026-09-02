@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-01T08:02:29+08:00",
-  "headline": "9/1 重點：悠遊付與街口支付多檔 9 月活動今日開跑；韓國 TWQR 最高 12%、百貨／指定通路優惠與學雜費回饋均須留意條件及名額狀態。",
+  "generated_at": "2026-09-02T08:02:22+08:00",
+  "headline": "9/2 重點：悠遊付韓國 TWQR 與元大聯名卡自動加值最高回饋活動已開跑；一卡通 MONEY 媽咪愛領券已公告額滿，台灣 Pay STUDIO A 10% 將於 9/11 開始。",
   "highlights": [
     {
       "kind": "high_return",
@@ -29,11 +29,11 @@
     },
     {
       "kind": "high_return",
-      "provider_id": "fullpay",
-      "provider_name": "全支付／PX Pay Plus",
-      "title": "水源市場全支付最高 35% 全點",
-      "summary": "至 9/30，水源市場指定店家全支付付款享 30% 全點，指定付款方式再加碼最高 5%。屬限量活動，名額與額滿狀態須以全支付 App／系統為準。",
-      "url": "https://marketing.pxpayplus.com/pxplus_marketing_page/activity_content_page?EventId=110"
+      "provider_id": "ipassmoney",
+      "provider_name": "一卡通 MONEY",
+      "title": "媽咪愛 200 元優惠券已公告額滿",
+      "summary": "9/1 至 9/30 的媽咪愛領券活動，官方頁標題已明示領券活動上限於 9/1 18:30 額滿；不再將其視為可領取優惠。",
+      "url": "https://www.i-pass.com.tw/Preferential/Detail/GM2DANQAKYK2I642bJoN"
     },
     {
       "kind": "high_return",

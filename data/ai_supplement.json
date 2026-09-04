@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-03T08:07:58+08:00",
-  "headline": "9/3 重點：悠遊付韓國 TWQR 最高 12% 與 momo 滿千最高 8% 持續；繳學雜費 500 元券及一卡通 MONEY 媽咪愛領券均已公告額滿，台灣 Pay STUDIO A 10% 將於 9/11 開始。",
+  "generated_at": "2026-09-04T08:07:00+08:00",
+  "headline": "9/4 重點：悠遊付韓國 TWQR 最高 12% 與 momo 滿千最高 8% 持續；全家悠遊卡滿 500 元立折 60 元今起開跑，台灣 Pay STUDIO A 10% 將於 9/11 開始。",
   "highlights": [
     {
       "kind": "high_return",
@@ -28,12 +28,12 @@
       "url": "https://easywallet.easycard.com.tw/benefit/content?id=1787207263"
     },
     {
-      "kind": "high_return",
-      "provider_id": "ipassmoney",
-      "provider_name": "一卡通 MONEY",
-      "title": "媽咪愛 200 元優惠券已公告額滿",
-      "summary": "9/1 至 9/30 的媽咪愛領券活動，官方頁標題已明示領券活動上限於 9/1 18:30 額滿；不再將其視為可領取優惠。",
-      "url": "https://www.i-pass.com.tw/Preferential/Detail/GM2DANQAKYK2I642bJoN"
+      "kind": "new_activity",
+      "provider_id": "easywallet",
+      "provider_name": "悠遊付",
+      "title": "全家嗶悠遊卡滿額享最高立折 60 元",
+      "summary": "9/4 至 9/20 每週五、六、日，在全家便利商店以悠遊卡／悠遊聯名卡功能單筆消費滿 500 元立折 60 元，每卡每日限一次。優惠限量 12,000 份，公開頁僅說額滿後公告，未見已額滿文字。",
+      "url": "https://easywallet.easycard.com.tw/benefit/content?id=1787904575"
     },
     {
       "kind": "high_return",

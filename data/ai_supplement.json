@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-04T08:07:00+08:00",
-  "headline": "9/4 重點：悠遊付韓國 TWQR 最高 12% 與 momo 滿千最高 8% 持續；全家悠遊卡滿 500 元立折 60 元今起開跑，台灣 Pay STUDIO A 10% 將於 9/11 開始。",
+  "generated_at": "2026-09-06T21:54:52+08:00",
+  "headline": "9/6 重點：悠遊付 momo 滿額券第四重已額滿、前三重仍可參與；PX Pay 指定銀行週末福利點已有三家銀行額滿，台灣 Pay STUDIO A 10% 將於 9/11 開始。",
   "highlights": [
     {
       "kind": "high_return",
@@ -24,7 +24,7 @@
       "provider_id": "easywallet",
       "provider_name": "悠遊付",
       "title": "momo 購物網滿千最高 8%、滿額最高 2,600 元券",
-      "summary": "至 9/30，momo 使用悠遊付錢包或綁定帳戶單筆滿千，可依疊加資格最高 8%；達指定門檻最高可累積 2,600 元現金回饋券。券量與額滿須至 App 確認，公開頁未見已額滿文字。",
+      "summary": "至 9/30，momo 使用悠遊付錢包或綁定帳戶單筆滿千，可依疊加資格最高 8%；達指定門檻最高可累積 2,600 元現金回饋券。官方公開頁已公告第四重 900 元券於 9/4 額滿；第一至第三重仍有名額，活動一額滿狀態仍以 App 為準。",
       "url": "https://easywallet.easycard.com.tw/benefit/content?id=1787207263"
     },
     {
@@ -34,6 +34,14 @@
       "title": "全家嗶悠遊卡滿額享最高立折 60 元",
       "summary": "9/4 至 9/20 每週五、六、日，在全家便利商店以悠遊卡／悠遊聯名卡功能單筆消費滿 500 元立折 60 元，每卡每日限一次。優惠限量 12,000 份，公開頁僅說額滿後公告，未見已額滿文字。",
       "url": "https://easywallet.easycard.com.tw/benefit/content?id=1787904575"
+    },
+    {
+      "kind": "status_update",
+      "provider_id": "pxpay",
+      "provider_name": "PX Pay",
+      "title": "指定銀行週末滿額福利點活動：三家銀行本期額滿",
+      "summary": "9/4 至 10/1 週六日，指定銀行單筆滿 1,200 元贈 360 福利點。官方即時名額頁明示國泰世華、中國信託與新光銀行本期已額滿；玉山、聯邦、永豐、台北富邦、彰化、台新、第一、星展、凱基仍顯示可用名額，請以下單時即時狀態為準。",
+      "url": "https://cardpoint.pxmartevent.com.tw/event/GetEventList?event_type=1&period=2026-09-04~2026-10-01&pay_type=%5B%221%22%5D"
     },
     {
       "kind": "high_return",
@@ -50,14 +58,6 @@
       "title": "週六百貨日最高現折 20%",
       "summary": "9/1 至 11/30 每週六，先領券後至指定百貨單筆滿 2,000 元可享 9 折、最高折 200 元；搭配指定付款方式最高現折 20%。公開頁未見已額滿文字，實際資格依活動規則。",
       "url": "https://mkt.jkopay.com/zh-TW/campaign/jkomall2026"
-    },
-    {
-      "kind": "high_return",
-      "provider_id": "jkopay",
-      "provider_name": "街口支付",
-      "title": "解鎖驚喜 7 折街口券",
-      "summary": "至 9/30，指定通路累積消費達門檻可領最多 3 張 7 折街口券；單筆滿 100 元最高折 30 元。活動為數量有限、先領先贏，公開頁未見已額滿文字。",
-      "url": "https://mkt.jkopay.com/zh-TW/campaign/jko30bonus"
     },
     {
       "kind": "new_activity",

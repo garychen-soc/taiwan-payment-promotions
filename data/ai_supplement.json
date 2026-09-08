@@ -1,39 +1,39 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-07T08:07:46+08:00",
-  "headline": "9/7 重點：icash Pay 綁 uniopen 聯名卡全通路 4% 的 9 月份回饋已額滿；悠遊付開學季今天啟動，部分券量與額滿狀態須以 App 公告為準。",
+  "generated_at": "2026-09-08T08:08:00+08:00",
+  "headline": "9/8 重點：悠遊付 friDay 購物滿額最高回饋 2,000 元今天開始；台灣 Pay 采盟免稅店／餐飲 TWQR 20% 已公告額滿，STUDIO A 10% 將於 9/11 啟動。",
   "highlights": [
-    {
-      "kind": "high_return",
-      "provider_id": "easywallet",
-      "provider_name": "悠遊付",
-      "title": "韓國旅遊 TWQR 現金回饋最高 12%",
-      "summary": "9/1 至 12/31，在韓國貼有 TWQR 標誌店家用悠遊付錢包或綁定帳戶付款，筆筆 10.5% 加免 1.5% 海外手續費最高 12%；新會員疊加條件最高可達 15%。各階段限額與額滿公告以 App 活動頁為準，公開頁未見已額滿文字。",
-      "url": "https://easywallet.easycard.com.tw/benefit/content?id=1786529493"
-    },
-    {
-      "kind": "high_return",
-      "provider_id": "easywallet",
-      "provider_name": "悠遊付",
-      "title": "繳學雜費最高 10% 回饋（9 月 500 元券已額滿）",
-      "summary": "9/1 至 10/31；官方已公告累計學雜費滿 1 萬元加兩筆生活繳費的 9 月 500 元券，於 9/1 09:05 額滿。玉山卡分期登錄與元大帳戶單筆滿 5,999 元的加碼仍須依各自活動規則與名額判定。",
-      "url": "https://easywallet.easycard.com.tw/benefit/content?id=1785477114"
-    },
-    {
-      "kind": "high_return",
-      "provider_id": "easywallet",
-      "provider_name": "悠遊付",
-      "title": "momo 購物網滿千最高 8%、滿額最高 2,600 元券",
-      "summary": "至 9/30，momo 使用悠遊付錢包或綁定帳戶單筆滿千，可依疊加資格最高 8%；達指定門檻最高可累積 2,600 元現金回饋券。官方公開頁已公告第四重 900 元券於 9/4 額滿；第一至第三重仍有名額，活動一額滿狀態仍以 App 為準。",
-      "url": "https://easywallet.easycard.com.tw/benefit/content?id=1787207263"
-    },
     {
       "kind": "new_activity",
       "provider_id": "easywallet",
       "provider_name": "悠遊付",
-      "title": "全家嗶悠遊卡滿額享最高立折 60 元",
-      "summary": "9/4 至 9/20 每週五、六、日，在全家便利商店以悠遊卡／悠遊聯名卡功能單筆消費滿 500 元立折 60 元，每卡每日限一次。優惠限量 20,000 份，公開頁僅說額滿後公告，未見已額滿文字。",
-      "url": "https://easywallet.easycard.com.tw/benefit/content?id=1787904575"
+      "title": "friDay購物好秋購物季滿額最高回饋 2,000 元",
+      "summary": "9/8 至 9/30，在 friDay 購物以悠遊付錢包、綁定銀行帳戶或信用卡單筆滿 25,000 元，回饋 2 張各 1,000 元現金回饋券。官方列限量 800 份與額滿提前結束規則，但公開頁未見已額滿公告。",
+      "url": "https://easywallet.easycard.com.tw/benefit/content?id=1788164921"
+    },
+    {
+      "kind": "upcoming",
+      "provider_id": "taiwanpay",
+      "provider_name": "台灣 Pay",
+      "title": "STUDIO A／Straight A 購新機最高享 10% 回饋",
+      "summary": "9/11 至 11/30，在指定 STUDIO A、Straight A 門市用台灣 Pay 付款碼或 QR Code 掃碼，單筆不限金額享 10% 現金回饋；每卡／帳戶上限 1,000 元。總回饋上限 57.5 萬元是活動條件，尚非額滿證據。",
+      "url": "https://www.taiwanpay.com.tw/fisc-tpay/news/event/01KY4NV26ZK7TR8N866TH221QA"
+    },
+    {
+      "kind": "upcoming",
+      "provider_id": "taiwanpay",
+      "provider_name": "台灣 Pay",
+      "title": "華西街×師大商圈 20% 回饋",
+      "summary": "9/15 至 12/31，在指定華西街與師大商圈以台灣 Pay 金融卡／帳戶 QR Code 掃碼，單筆不限金額享 20% 現金回饋、單筆上限 300 元。總回饋上限 47 萬元，公開頁未見已額滿文字。",
+      "url": "https://www.taiwanpay.com.tw/fisc-tpay/news/event/01KY4NSMDTNPBDFSGRJSYJETSM"
+    },
+    {
+      "kind": "status_update",
+      "provider_id": "taiwanpay",
+      "provider_name": "台灣 Pay",
+      "title": "采盟免稅店／餐飲 TWQR 最高 20% 已額滿",
+      "summary": "官方活動頁標題已明示額滿。原活動為在采盟免稅店及采盟／誠盟餐飲以台灣 Pay 消費滿 500 元折 100 元、滿 1,000 元折 200 元，單筆最高折 1,000 元；不應再以此活動規劃消費。",
+      "url": "https://www.taiwanpay.com.tw/fisc-tpay/news/event/01KTBDJG3VGJMM4ARTF2SBFN3P"
     },
     {
       "kind": "status_update",
@@ -53,19 +53,19 @@
     },
     {
       "kind": "high_return",
+      "provider_id": "easywallet",
+      "provider_name": "悠遊付",
+      "title": "momo 購物網滿千最高 8%、滿額最高 2,600 元券",
+      "summary": "至 9/30，momo 使用悠遊付錢包或綁定帳戶單筆滿千，可依疊加資格最高 8%；達指定門檻最高可累積 2,600 元現金回饋券。官方公開頁已公告第四重 900 元券於 9/4 額滿；第一至第三重仍有名額，活動一額滿狀態仍以 App 為準。",
+      "url": "https://easywallet.easycard.com.tw/benefit/content?id=1787207263"
+    },
+    {
+      "kind": "high_return",
       "provider_id": "jkopay",
       "provider_name": "街口支付",
       "title": "週六百貨日最高現折 20%",
       "summary": "9/1 至 11/30 每週六，先領券後至指定百貨單筆滿 2,000 元可享 9 折、最高折 200 元；搭配指定付款方式最高現折 20%。公開頁未見已額滿文字，實際資格依活動規則。",
       "url": "https://mkt.jkopay.com/zh-TW/campaign/jkomall2026"
-    },
-    {
-      "kind": "new_activity",
-      "provider_id": "easywallet",
-      "provider_name": "悠遊付",
-      "title": "2026 悠遊開學季最高享 30% 回饋",
-      "summary": "9/7 至 11/1，在指定校園／商圈掃碼領券，單筆滿 100 元可用 30 元券；雙週各限量 1,100 張。另有生活用品品牌加碼 100 元券與警專專屬券；公開頁僅載額滿後於 App 公告，無法由公開頁確認即時額滿狀態。",
-      "url": "https://easywallet.easycard.com.tw/benefit/content?id=1785736053"
     }
   ],
   "supplemental_activities": []

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-08T08:08:00+08:00",
-  "headline": "9/8 重點：悠遊付 friDay 購物滿額最高回饋 2,000 元今天開始；台灣 Pay 采盟免稅店／餐飲 TWQR 20% 已公告額滿，STUDIO A 10% 將於 9/11 啟動。",
+  "generated_at": "2026-09-09T08:12:00+08:00",
+  "headline": "9/9 重點：悠遊付開學季最高 30% 已進行中、街口支付 Apple 服務 9 月優惠可用；環球 Online 99 購物節今天結束，額滿狀態仍須以 App／結帳頁為準。",
   "highlights": [
     {
       "kind": "new_activity",
@@ -60,12 +60,12 @@
       "url": "https://easywallet.easycard.com.tw/benefit/content?id=1787207263"
     },
     {
-      "kind": "high_return",
+      "kind": "new_activity",
       "provider_id": "jkopay",
       "provider_name": "街口支付",
-      "title": "週六百貨日最高現折 20%",
-      "summary": "9/1 至 11/30 每週六，先領券後至指定百貨單筆滿 2,000 元可享 9 折、最高折 200 元；搭配指定付款方式最高現折 20%。公開頁未見已額滿文字，實際資格依活動規則。",
-      "url": "https://mkt.jkopay.com/zh-TW/campaign/jkomall2026"
+      "title": "Apple 服務付款：9 月最高 10% 折抵、滿額再領街口幣",
+      "summary": "9/1 至 9/30 將街口支付設為 Apple 帳戶預設付款後，Apple 服務付款可享單筆 10% 折抵、每券最高 150 元；累積滿 1,000 元另可領 30 街口幣。名額與可領資格依 App／系統顯示，公開頁未見已額滿公告。",
+      "url": "https://mkt.jkopay.com/zh-TW/campaign/appleservice"
     }
   ],
   "supplemental_activities": []

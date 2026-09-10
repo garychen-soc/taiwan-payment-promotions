@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-09T08:11:00+08:00",
-  "headline": "9/9 重點：悠遊付開學季最高 30% 已進行中、街口支付 Apple 服務 9 月優惠可用；環球 Online 99 購物節今天結束，額滿狀態仍須以 App／結帳頁為準。",
+  "generated_at": "2026-09-10T08:07:12+08:00",
+  "headline": "9/10 重點：悠遊付中油加油活動二 9 月回饋已明確額滿；台灣 Pay STUDIO A／Straight A 10% 回饋明日開始，其他分項名額請以官方即時公告為準。",
   "highlights": [
     {
       "kind": "new_activity",
@@ -37,11 +37,11 @@
     },
     {
       "kind": "status_update",
-      "provider_id": "pxpay",
-      "provider_name": "PX Pay",
-      "title": "指定銀行週末滿額福利點活動：三家銀行本期額滿",
-      "summary": "9/4 至 10/1 週六日，指定銀行單筆滿 1,200 元贈 360 福利點。官方即時名額頁明示國泰世華、中國信託與新光銀行本期已額滿；玉山、聯邦、永豐、台北富邦、彰化、台新、第一、星展、凱基仍顯示可用名額，請以下單時即時狀態為準。",
-      "url": "https://cardpoint.pxmartevent.com.tw/event/GetEventList?event_type=1&period=2026-09-04~2026-10-01&pay_type=%5B%221%22%5D"
+      "provider_id": "easywallet",
+      "provider_name": "悠遊付",
+      "title": "中油加油回饋：活動二 9 月滿千贈 50 元券已額滿",
+      "summary": "9/1 至 10/31，中油直營及指定加盟站以悠遊付加油，活動一滿百 5%（可疊加最高 8%）與活動三記名卡滿 120 元送 10 元券仍依辦法辦理；官方頁明示活動二每月滿 1,000 元贈 50 元券已於 9/7 09:10 額滿，不應再以該分項規劃回饋。",
+      "url": "https://easywallet.easycard.com.tw/benefit/content?id=1787715465"
     },
     {
       "kind": "status_update",

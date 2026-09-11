@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-10T08:07:12+08:00",
-  "headline": "9/10 重點：悠遊付中油加油活動二 9 月回饋已明確額滿；台灣 Pay STUDIO A／Straight A 10% 回饋明日開始，其他分項名額請以官方即時公告為準。",
+  "generated_at": "2026-09-11T08:07:22+08:00",
+  "headline": "9/11 重點：台灣 Pay STUDIO A／Straight A 10% 回饋今日開始；TWQR 玩澎湖 10% 加碼已由官方標示額滿，其他活動名額請以官方即時公告為準。",
   "highlights": [
     {
       "kind": "new_activity",
@@ -12,11 +12,11 @@
       "url": "https://easywallet.easycard.com.tw/benefit/content?id=1788164921"
     },
     {
-      "kind": "upcoming",
+      "kind": "new_activity",
       "provider_id": "taiwanpay",
       "provider_name": "台灣 Pay",
       "title": "STUDIO A／Straight A 購新機最高享 10% 回饋",
-      "summary": "9/11 至 11/30，在指定 STUDIO A、Straight A 門市用台灣 Pay 付款碼或 QR Code 掃碼，單筆不限金額享 10% 現金回饋；每卡／帳戶上限 1,000 元。總回饋上限 57.5 萬元是活動條件，尚非額滿證據。",
+      "summary": "9/11 至 11/30，在指定 STUDIO A、Straight A 門市用台灣 Pay 付款碼或 QR Code 掃碼，單筆不限金額享 10% 現金回饋；每卡／帳戶上限 1,000 元。總回饋上限 57.5 萬元是活動條件，公開頁未見已額滿文字。",
       "url": "https://www.taiwanpay.com.tw/fisc-tpay/news/event/01KY4NV26ZK7TR8N866TH221QA"
     },
     {
@@ -31,9 +31,17 @@
       "kind": "status_update",
       "provider_id": "taiwanpay",
       "provider_name": "台灣 Pay",
-      "title": "采盟免稅店／餐飲 TWQR 最高 20% 已額滿",
-      "summary": "官方活動頁標題已明示額滿。原活動為在采盟免稅店及采盟／誠盟餐飲以台灣 Pay 消費滿 500 元折 100 元、滿 1,000 元折 200 元，單筆最高折 1,000 元；不應再以此活動規劃消費。",
-      "url": "https://www.taiwanpay.com.tw/fisc-tpay/news/event/01KTBDJG3VGJMM4ARTF2SBFN3P"
+      "title": "TWQR 玩澎湖 10% 加碼已額滿",
+      "summary": "台灣 Pay 官方活動頁標題已明示額滿。原活動為 9/1 至 12/31 於澎湖指定地點以參與 TWQR 的台灣 Pay 或合作電子支付掃碼，可享 10% 回饋、每帳戶最高 500 元；不應再以該 10% 加碼規劃消費。",
+      "url": "https://www.taiwanpay.com.tw/fisc-tpay/news/event/01KY4P1JMN4AEF403FYC7AZGPA"
+    },
+    {
+      "kind": "status_update",
+      "provider_id": "ipassmoney",
+      "provider_name": "一卡通 MONEY",
+      "title": "綁聯邦信用卡 10%：9 月回饋額滿",
+      "summary": "官方頁明示 9 月綁定聯邦信用卡單筆滿 200 元的 10% 一卡通綠點回饋，已於 9/3 12:00 額滿；活動期限雖至 12/31，其他銀行或後續月份資格仍應以官方公告為準。",
+      "url": "https://www.i-pass.com.tw/Preferential/Detail/GI2TSNQHW7ZKA64RZbVj"
     },
     {
       "kind": "status_update",

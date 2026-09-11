@@ -20,6 +20,7 @@ SRC = ROOT / "src"
 if str(SRC) not in sys.path:
     sys.path.insert(0, str(SRC))
 
+from payment_promotions_monitor.status import analyze_quota
 from payment_promotions_monitor.dates import lifecycle_for  # noqa: E402
 from payment_promotions_monitor.insights import analyze_activity  # noqa: E402
 
@@ -277,7 +278,8 @@ def _flatten_report(report: dict[str, Any], today: date) -> list[dict[str, Any]]
             if not isinstance(raw, dict):
                 continue
             item = dict(raw)
-            if item.get("lifecycle") in {"ended", "cancelled"}:
+            end = _date_value(item.get("end_date"))
+            if item.get("lifecycle") in {"ended", "cancelled"} or (end and end < today):
                 continue
             key = _activity_identity(item)
             if key in seen:
@@ -321,11 +323,21 @@ def _supplemental_activities(
         start = _date_value(raw.get("start_date"))
         end = _date_value(raw.get("end_date"))
         lifecycle = lifecycle_for(start, end, datetime.combine(today, datetime.min.time(), tzinfo=ZoneInfo("Asia/Taipei")))
-        if lifecycle == "ended":
+        if lifecycle in {"ended", "unknown"}:
             continue
         quota_status = str(raw.get("quota_status", "not_marked_full"))
         if quota_status not in QUOTA_STATUSES:
             quota_status = "not_marked_full"
+        raw_evidence = raw.get("evidence")
+        evidence = [e for e in (raw_evidence if isinstance(raw_evidence, list) else []) if isinstance(e, dict)
+                    and _allowed_url(str(e.get("source_url", "")), provider["official_domains"])
+                    and str(e.get("excerpt", "")).strip()]
+        if quota_status in {"sold_out", "partial_sold_out", "confirmed_available"}:
+            # Human/AI supplements cannot assert availability merely by setting a flag.
+            if quota_status == "confirmed_available" or not any(
+                analyze_quota(e["excerpt"]).status == quota_status for e in evidence
+            ):
+                continue
         item = {
             "provider_id": provider["id"],
             "provider_name": provider["name"],
@@ -337,13 +349,13 @@ def _supplemental_activities(
             "end_date": end.isoformat() if end else None,
             "lifecycle": lifecycle,
             "quota_status": quota_status,
-            "quota_evidence_complete": bool(raw.get("evidence")),
+            "quota_evidence_complete": bool(evidence),
             "review_required": not (start and end),
             "date_confidence": "ai_official_source",
             "conditions_summary": str(raw.get("conditions_summary", ""))[:1200],
             "fetched_at": supplement.get("generated_at", ""),
             "content_hash": "",
-            "evidence": raw.get("evidence", []) if isinstance(raw.get("evidence"), list) else [],
+            "evidence": evidence,
             "components": raw.get("components", []) if isinstance(raw.get("components"), list) else [],
             "ai_supplemental": True,
         }
@@ -397,7 +409,7 @@ def _automatic_highlights(activities: list[dict[str, Any]]) -> list[dict[str, An
     )
     expiring = sorted(
         [item for item in available if item.get("insights", {}).get("is_expiring_soon")],
-        key=lambda item: int(item.get("insights", {}).get("ends_in_days") or 9999),
+        key=lambda item: int(item.get("insights", {}).get("ends_in_days") if item.get("insights", {}).get("ends_in_days") is not None else 9999),
     )
     sold_out = [item for item in activities if item.get("quota_status") in {"sold_out", "partial_sold_out"}]
     add("high_return", high_return, 3)
@@ -426,6 +438,8 @@ def _ai_highlights(
         url = str(raw.get("url", ""))
         if provider_id not in provider_domains or not _allowed_url(url, provider_domains[provider_id]):
             continue
+        if not any(a.get("provider_id") == provider_id and a.get("url") == url for a in activities):
+            continue
         title = str(raw.get("title", "")).strip()
         summary = str(raw.get("summary", "")).strip()
         if not title or not summary:
@@ -447,6 +461,10 @@ def build(report_path: Path, output_dir: Path, supplement_path: Path) -> Path:
     report = _load_json(report_path)
     if not isinstance(report, dict):
         raise ValueError(f"Invalid report: {report_path}")
+    coverage = report.get("run", {}).get("coverage", {})
+    if (not coverage or coverage.get("expected", 0) <= 0 or coverage.get("succeeded", 0) <= 0
+            or coverage.get("transport_status") == "unavailable" or coverage.get("systemic_dns_failure") is True):
+        raise ValueError("Refusing to build: no successful source coverage")
     config = _load_json(ROOT / "config" / "sources.json", {})
     supplement = _load_json(supplement_path, {})
     if not isinstance(config, dict) or not isinstance(supplement, dict):

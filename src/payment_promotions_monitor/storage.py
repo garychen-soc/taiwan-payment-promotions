@@ -4,6 +4,7 @@ import hashlib
 import json
 import re
 import sqlite3
+from datetime import date
 from pathlib import Path
 from typing import Any
 
@@ -254,6 +255,16 @@ class Store:
             if not row:
                 continue
             previous = activity_from_dict(json.loads(row["payload_json"]))
+            # A reused URL/id with a verified later campaign period is a new quota.
+            try:
+                new_start, new_end = date.fromisoformat(activity.start_date), date.fromisoformat(activity.end_date)
+                old_start, old_end = date.fromisoformat(previous.start_date), date.fromisoformat(previous.end_date)
+                new_period = (activity.date_confidence == "high" and previous.date_confidence == "high"
+                              and old_start <= old_end < new_start <= new_end)
+            except (TypeError, ValueError):
+                new_period = False
+            if new_period or (activity.quota_status == "confirmed_available" and activity.quota_evidence_complete):
+                continue
             previous_rank = rank.get(previous.quota_status, 0)
             corrected_pxpay_shared_page = (
                 activity.provider_id == "pxpay"
@@ -445,7 +456,7 @@ class Store:
         rows = self.connection.execute("SELECT payload_json FROM activities ORDER BY provider_name, title").fetchall()
         return [activity_from_dict(json.loads(row["payload_json"])) for row in rows]
 
-    def load_recheck_targets(self) -> list[dict[str, str]]:
+    def load_recheck_targets(self, today: date | None = None) -> list[dict[str, str]]:
         rows = self.connection.execute(
             """
             SELECT provider_id, provider_name, external_id, title, url, source_url, start_date, end_date
@@ -454,7 +465,7 @@ class Store:
             ORDER BY provider_id, url
             """
         ).fetchall()
-        return [dict(row) for row in rows]
+        return [dict(row) for row in rows if today is None or not row["end_date"] or row["end_date"] >= today.isoformat()]
 
     def status_snapshot(self) -> dict[str, dict[str, str]]:
         rows = self.connection.execute(

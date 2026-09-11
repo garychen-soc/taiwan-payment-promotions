@@ -342,15 +342,17 @@
       .some((reference) => references.has(reference));
   }
 
+  function currentLifecycle(activity) {
+    if (["cancelled", "ended_by_official"].includes(normalizeKey(activity.lifecycle))) return "ended";
+    if (daysFromToday(activity.end_date) < 0) return "ended";
+    if (daysFromToday(activity.start_date) > 0 && Number.isFinite(daysFromToday(activity.start_date))) return "upcoming";
+    return normalizeKey(activity.lifecycle) === "ended" ? "ended" : "active";
+  }
+
   function isHighReturn(activity) {
-    if (isExplicitHighlight(activity, "high-return")) return true;
-    if (activity.is_high_return === true || nestedBoolean(activity.insights, ["high_return", "is_high_return"])) {
-      return true;
-    }
-    const text = activitySearchText(activity);
-    if (text.includes("高回饋")) return true;
-    const percentages = [...text.matchAll(/(\d+(?:\.\d+)?)\s*%/g)].map((match) => Number(match[1]));
-    return percentages.some((value) => value >= 10);
+    if (currentLifecycle(activity) === "ended") return false;
+    if (typeof activity.insights?.is_high_return === "boolean") return activity.insights.is_high_return;
+    return activity.is_high_return === true || isExplicitHighlight(activity, "high-return");
   }
 
   function daysFromToday(value) {
@@ -360,21 +362,19 @@
   }
 
   function isUpcoming(activity) {
-    if (isExplicitHighlight(activity, "upcoming")) return true;
-    if (activity.insights && activity.insights.is_upcoming === true) return true;
+    if (currentLifecycle(activity) === "ended") return false;
     const days = daysFromToday(activity.start_date);
     return days >= 1 && days <= UPCOMING_DAYS;
   }
 
   function isEnding(activity) {
-    if (isExplicitHighlight(activity, "ending")) return true;
-    if (normalizeKey(activity.lifecycle) === "ended") return false;
+    if (currentLifecycle(activity) === "ended") return false;
     const days = daysFromToday(activity.end_date);
     return days >= 0 && days <= ENDING_DAYS;
   }
 
   function temporalBadgeConfig(activity) {
-    const lifecycle = normalizeKey(activity.lifecycle);
+    const lifecycle = currentLifecycle(activity);
     if (lifecycle === "upcoming") {
       const days = daysFromToday(activity.start_date);
       if (days === 0) return { label: "今日開始", className: "is-upcoming" };
@@ -396,6 +396,7 @@
   }
 
   function isFeatured(activity) {
+    if (currentLifecycle(activity) === "ended") return false;
     const explicitHighlights = getHighlightSet("featured");
     if (explicitHighlights.size) return isExplicitHighlight(activity, "featured");
     return isHighReturn(activity) ||
@@ -739,7 +740,7 @@
   }
 
   function renderSummary() {
-    const activeActivities = state.activities.filter((activity) => normalizeKey(activity.lifecycle) !== "ended");
+    const activeActivities = state.activities.filter((activity) => currentLifecycle(activity) !== "ended");
     const values = [
       ["有效活動", activeActivities.length],
       ["高回饋", activeActivities.filter(isHighReturn).length],
@@ -917,6 +918,13 @@
     systemThemeQuery.addListener(handleSystemThemeChange);
   }
 
+  function refreshDates() {
+    if (!state.activities.length) return;
+    renderActivities();
+    renderSummary();
+  }
+  window.setInterval(refreshDates, 60000);
+  document.addEventListener("visibilitychange", () => { if (!document.hidden) refreshDates(); });
   applyTheme(currentThemePreference());
   loadData();
 })();

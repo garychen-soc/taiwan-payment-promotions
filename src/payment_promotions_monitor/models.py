@@ -89,7 +89,7 @@ class RunResult:
         succeeded = sum(1 for item in self.attempts if item.ok)
         failed = expected - succeeded
         discovery_issues = sum(1 for item in self.attempts if item.coverage_issue) + len(self.crawl_limit_pending)
-        unavailable = expected > 0 and succeeded == 0
+        unavailable = succeeded == 0
         failed_errors = [(item.error or "").lower() for item in self.attempts if not item.ok]
         systemic_dns_failure = unavailable and bool(failed_errors) and all(
             any(marker in error for marker in _DNS_ERROR_MARKERS) for error in failed_errors
@@ -99,7 +99,7 @@ class RunResult:
             "expected": expected,
             "succeeded": succeeded,
             "failed": failed,
-            "rate": round(succeeded / expected, 4) if expected else 1.0,
+            "rate": round(succeeded / expected, 4) if expected else 0.0,
             "transport_status": transport_status,
             "systemic_dns_failure": systemic_dns_failure,
             "discovery_issues": discovery_issues,

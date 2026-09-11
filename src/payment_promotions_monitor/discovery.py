@@ -1481,6 +1481,15 @@ class Crawler:
                 break
         return discovered
 
+    def _mark_parse_failure(self, collected, exc):
+        task = collected.task
+        for attempt in reversed(self.attempts):
+            if attempt.provider_id == task.provider["id"] and attempt.url == task.fetch_url:
+                attempt.ok = False
+                attempt.coverage_issue = "source_parse_failed"
+                attempt.error = type(exc).__name__
+                return
+
     def collect(self, mode: str, recheck_targets: list[dict[str, str]] | None = None) -> RunResult:
         started_at = self.now.isoformat()
         queue = self._initial_tasks(mode, recheck_targets or [])
@@ -1496,7 +1505,11 @@ class Crawler:
                 self.activity_documents.append(collected)
             if task.role in {"announcement_detail", "mixed_detail"}:
                 self.announcement_documents.append(collected)
-            discovered = self._discovered_tasks(collected)
+            try:
+                discovered = self._discovered_tasks(collected)
+            except Exception as exc:
+                self._mark_parse_failure(collected, exc)
+                discovered = []
             if discovered:
                 # Breadth-first scheduling ensures every provider's registered
                 # source gets a chance before one provider's link graph grows.
@@ -1526,7 +1539,12 @@ class Crawler:
             )
             pending["discovered_count"] += 1
 
-        activities = [self._activity_from_document(item) for item in self.activity_documents]
+        activities = []
+        for item in self.activity_documents:
+            try:
+                activities.append(self._activity_from_document(item))
+            except Exception as exc:
+                self._mark_parse_failure(item, exc)
         activities = self._deduplicate(activities)
         self._apply_announcements(activities)
         finished_at = datetime.now(self.now.tzinfo).isoformat()
@@ -1568,6 +1586,8 @@ class Crawler:
                 date_range = DateRange(date.fromisoformat(task.start_date), date.fromisoformat(task.end_date), "high", "official listing API")
             except ValueError:
                 pass
+        if date_range.start and date_range.end and date_range.start > date_range.end:
+            date_range = DateRange(date_range.start, date_range.end, "none", date_range.excerpt)
         lifecycle = lifecycle_for(date_range.start, date_range.end, self.now)
         quota = analyze_quota(document.text, event_start=date_range.start)
         public_quota_status = (

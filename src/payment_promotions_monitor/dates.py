@@ -133,14 +133,14 @@ def parse_date_range(text: str) -> DateRange:
         start = _single_date(api_start.group(1))
         end = _single_date(api_end.group(1))
         if start and end:
-            return DateRange(start, end, "high", f"{api_start.group(0)}; {api_end.group(0)}")
+            return DateRange(start, end, "high" if start <= end else "none", f"{api_start.group(0)}; {api_end.group(0)}")
     json_start = re.search(r"activity_start_time\s*:\s*([^\n]{0,60})", text, re.I)
     json_end = re.search(r"activity_end_time\s*:\s*([^\n]{0,60})", text, re.I)
     if json_start and json_end:
         start = _single_date(json_start.group(1))
         end = _single_date(json_end.group(1))
         if start and end:
-            return DateRange(start, end, "high", f"{json_start.group(0)}; {json_end.group(0)}")
+            return DateRange(start, end, "high" if start <= end else "none", f"{json_start.group(0)}; {json_end.group(0)}")
     windows = _candidate_windows(text)
     # Prefer an explicit range near any activity-period label over a lone
     # deadline mentioned earlier. Official pages often put a completion date
@@ -148,7 +148,7 @@ def parse_date_range(text: str) -> DateRange:
     for confidence, window in windows:
         parsed = _western_range(window) or _roc_range(window)
         if parsed and parsed[0] and parsed[1]:
-            return DateRange(parsed[0], parsed[1], confidence, window[:260])
+            return DateRange(parsed[0], parsed[1], confidence if parsed[0] <= parsed[1] else "none", window[:260])
     for confidence, window in windows:
         if confidence == "high":
             single = _single_date(window)
@@ -163,6 +163,8 @@ def parse_date_range(text: str) -> DateRange:
 
 
 def lifecycle_for(start: date | None, end: date | None, now: datetime) -> str:
+    if start and end and start > end:
+        return "unknown"
     today = now.date()
     if start and today < start:
         return "upcoming"

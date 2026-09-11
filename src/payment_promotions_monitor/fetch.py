@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import hashlib
+import http.client
 import json
 import ssl
 import subprocess
@@ -147,8 +148,10 @@ def fetch_url(
                     content_type=content_type,
                     content_hash=hashlib.sha256(body).hexdigest(),
                 )
-        except (urllib.error.URLError, urllib.error.HTTPError, TimeoutError, ValueError) as exc:
+        except (urllib.error.URLError, OSError, http.client.HTTPException, ValueError) as exc:
             last_error = exc
+            if isinstance(exc, ValueError) or (isinstance(exc, urllib.error.HTTPError) and exc.code not in {408, 429} and exc.code < 500):
+                break
             if attempt + 1 < attempts:
                 time.sleep(0.7 * (attempt + 1))
     if last_error and "CERTIFICATE_VERIFY_FAILED" in str(last_error):
@@ -202,7 +205,7 @@ def post_json_url(
                 content_type="application/json",
                 content_hash=hashlib.sha256(body).hexdigest(),
             )
-    except (urllib.error.URLError, urllib.error.HTTPError, TimeoutError, ValueError) as exc:
+    except (urllib.error.URLError, OSError, http.client.HTTPException, ValueError) as exc:
         raise RuntimeError(f"Failed to POST {url}: {exc}") from exc
 
 

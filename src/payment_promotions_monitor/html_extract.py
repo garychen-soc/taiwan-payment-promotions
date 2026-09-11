@@ -85,7 +85,10 @@ class VisibleHTMLParser(HTMLParser):
             self._heading_tag = tag
             self._heading_parts = []
         if tag == "a" and attr_map.get("href"):
-            self._anchor_href = urljoin(self.base_url, attr_map["href"])
+            try:
+                self._anchor_href = urljoin(self.base_url, attr_map["href"])
+            except ValueError:
+                self._anchor_href = ""
             self._anchor_parts = []
 
     def handle_endtag(self, tag: str) -> None:

@@ -29,7 +29,8 @@ def parser() -> argparse.ArgumentParser:
 def _load_config(path: Path) -> dict[str, object]:
     with path.open(encoding="utf-8") as handle:
         config = json.load(handle)
-    if config.get("schema_version") != 1 or not isinstance(config.get("providers"), list):
+    if (not isinstance(config, dict) or config.get("schema_version") != 1
+            or not isinstance(config.get("providers"), list) or not config["providers"]):
         raise ValueError("Unsupported or invalid source registry")
     return config
 
@@ -57,7 +58,7 @@ def main(argv: list[str] | None = None) -> int:
             # A full discovery run also refreshes every known non-expired
             # activity. Numeric discovery can then advance independently
             # without losing daily quota checks for older campaigns.
-            targets = store.load_recheck_targets()
+            targets = store.load_recheck_targets(now.date())
             crawler = Crawler(
                 config,
                 now,

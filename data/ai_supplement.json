@@ -1,15 +1,15 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-11T08:07:22+08:00",
-  "headline": "9/11 重點：台灣 Pay STUDIO A／Straight A 10% 回饋今日開始；TWQR 玩澎湖 10% 加碼已由官方標示額滿，其他活動名額請以官方即時公告為準。",
+  "generated_at": "2026-09-15T08:06:26+08:00",
+  "headline": "9/15 重點：Pi 拍錢包指定手機通路滿額贈 1,800 P 幣之 9 月活動二，官方已公告額滿；台灣 Pay 華西街×師大商圈 20% 回饋今日開始。",
   "highlights": [
     {
-      "kind": "new_activity",
-      "provider_id": "easywallet",
-      "provider_name": "悠遊付",
-      "title": "friDay購物好秋購物季滿額最高回饋 2,000 元",
-      "summary": "9/8 至 9/30，在 friDay 購物以悠遊付錢包、綁定銀行帳戶或信用卡單筆滿 25,000 元，回饋 2 張各 1,000 元現金回饋券。官方列限量 800 份與額滿提前結束規則，但公開頁未見已額滿公告。",
-      "url": "https://easywallet.easycard.com.tw/benefit/content?id=1788164921"
+      "kind": "status_update",
+      "provider_id": "piwallet",
+      "provider_name": "Pi 拍錢包",
+      "title": "指定手機通路滿額贈 1,800 P 幣：9 月活動二已額滿",
+      "summary": "9/1 至 10/31，綁定玉山 Pi 拍錢包信用卡在全國電子、東森購物、神腦數位單筆實付滿 36,000 元，原可獲 1,800 P 幣。官方明示 9 月活動二已於 9/14 00:30 額滿；活動一指定電商的 500 P 幣與 10 月分項仍須以官方公告為準。",
+      "url": "https://web.piapp.com.tw/260910bonus/"
     },
     {
       "kind": "new_activity",
@@ -20,11 +20,11 @@
       "url": "https://www.taiwanpay.com.tw/fisc-tpay/news/event/01KY4NV26ZK7TR8N866TH221QA"
     },
     {
-      "kind": "upcoming",
+      "kind": "new_activity",
       "provider_id": "taiwanpay",
       "provider_name": "台灣 Pay",
-      "title": "華西街×師大商圈 20% 回饋",
-      "summary": "9/15 至 12/31，在指定華西街與師大商圈以台灣 Pay 金融卡／帳戶 QR Code 掃碼，單筆不限金額享 20% 現金回饋、單筆上限 300 元。總回饋上限 47 萬元，公開頁未見已額滿文字。",
+      "title": "華西街×師大商圈 20% 回饋今日開始",
+      "summary": "9/15 至 12/31，在指定華西街與師大商圈以台灣 Pay 金融卡／帳戶 QR Code 掃碼，單筆不限金額享 20% 現金回饋、單筆上限 300 元。總回饋上限 47 萬元，監測未見官方已額滿標示。",
       "url": "https://www.taiwanpay.com.tw/fisc-tpay/news/event/01KY4NSMDTNPBDFSGRJSYJETSM"
     },
     {
@@ -66,14 +66,6 @@
       "title": "momo 購物網滿千最高 8%、滿額最高 2,600 元券",
       "summary": "至 9/30，momo 使用悠遊付錢包或綁定帳戶單筆滿千，可依疊加資格最高 8%；達指定門檻最高可累積 2,600 元現金回饋券。官方公開頁已公告第四重 900 元券於 9/4 額滿；第一至第三重仍有名額，活動一額滿狀態仍以 App 為準。",
       "url": "https://easywallet.easycard.com.tw/benefit/content?id=1787207263"
-    },
-    {
-      "kind": "new_activity",
-      "provider_id": "jkopay",
-      "provider_name": "街口支付",
-      "title": "Apple 服務付款：9 月最高 10% 折抵、滿額再領街口幣",
-      "summary": "9/1 至 9/30 將街口支付設為 Apple 帳戶預設付款後，Apple 服務付款可享單筆 10% 折抵、每券最高 150 元；累積滿 1,000 元另可領 30 街口幣。名額與可領資格依 App／系統顯示，公開頁未見已額滿公告。",
-      "url": "https://mkt.jkopay.com/zh-TW/campaign/appleservice"
     }
   ],
   "supplemental_activities": []

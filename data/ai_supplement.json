@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-15T08:06:26+08:00",
-  "headline": "9/15 重點：Pi 拍錢包指定手機通路滿額贈 1,800 P 幣之 9 月活動二，官方已公告額滿；台灣 Pay 華西街×師大商圈 20% 回饋今日開始。",
+  "generated_at": "2026-09-16T08:08:53+08:00",
+  "headline": "9/16 重點：悠遊付喜美超市單筆滿 500 元贈 40 元券活動，官方已公告於 9/10 額滿。",
   "highlights": [
     {
       "kind": "status_update",
@@ -12,12 +12,12 @@
       "url": "https://web.piapp.com.tw/260910bonus/"
     },
     {
-      "kind": "new_activity",
-      "provider_id": "taiwanpay",
-      "provider_name": "台灣 Pay",
-      "title": "STUDIO A／Straight A 購新機最高享 10% 回饋",
-      "summary": "9/11 至 11/30，在指定 STUDIO A、Straight A 門市用台灣 Pay 付款碼或 QR Code 掃碼，單筆不限金額享 10% 現金回饋；每卡／帳戶上限 1,000 元。總回饋上限 57.5 萬元是活動條件，公開頁未見已額滿文字。",
-      "url": "https://www.taiwanpay.com.tw/fisc-tpay/news/event/01KY4NV26ZK7TR8N866TH221QA"
+      "kind": "status_update",
+      "provider_id": "easywallet",
+      "provider_name": "悠遊付",
+      "title": "喜美超市滿 500 元贈 40 元券：官方已公告額滿",
+      "summary": "8/7 至 10/4，在喜美超市以悠遊付單筆消費滿 500 元原可獲 40 元現金回饋券，並可依其他資格疊加至最高 8%。官方活動頁明示本活動已於 9/10 17:53 額滿；勿再以此 40 元券規劃回饋。",
+      "url": "https://easywallet.easycard.com.tw/benefit/content?id=1784797318"
     },
     {
       "kind": "new_activity",

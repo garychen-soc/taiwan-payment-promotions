@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-16T08:08:53+08:00",
-  "headline": "9/16 重點：悠遊付喜美超市單筆滿 500 元贈 40 元券活動，官方已公告於 9/10 額滿。",
+  "generated_at": "2026-09-17T08:07:25+08:00",
+  "headline": "9/17 重點：悠遊付開學季生活用品指定品牌最高 50% 回饋活動已部分額滿。",
   "highlights": [
     {
       "kind": "status_update",
@@ -60,12 +60,12 @@
       "url": "https://www.icashpay.com.tw/advertMessage/view/id/2461"
     },
     {
-      "kind": "high_return",
+      "kind": "status_update",
       "provider_id": "easywallet",
       "provider_name": "悠遊付",
-      "title": "momo 購物網滿千最高 8%、滿額最高 2,600 元券",
-      "summary": "至 9/30，momo 使用悠遊付錢包或綁定帳戶單筆滿千，可依疊加資格最高 8%；達指定門檻最高可累積 2,600 元現金回饋券。官方公開頁已公告第四重 900 元券於 9/4 額滿；第一至第三重仍有名額，活動一額滿狀態仍以 App 為準。",
-      "url": "https://easywallet.easycard.com.tw/benefit/content?id=1787207263"
+      "title": "悠遊開學季生活用品指定品牌最高 50%：活動二已額滿",
+      "summary": "9/7 至 11/1，悠遊開學季活動二原於 IKEA、金興發、晶澈眼鏡等指定生活用品品牌，以悠遊付不限金額付款贈 100 元券，搭配指定條件最高 50% 回饋。官方活動頁明示此分項於 9/7 18:06 額滿；活動一與警專獨家分項仍須依各自資格及公告判定。",
+      "url": "https://easywallet.easycard.com.tw/benefit/content?id=1785736053"
     }
   ],
   "supplemental_activities": []

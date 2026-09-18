@@ -1,15 +1,15 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-17T08:07:25+08:00",
-  "headline": "9/17 重點：悠遊付開學季生活用品指定品牌最高 50% 回饋活動已部分額滿。",
+  "generated_at": "2026-09-18T08:07:28.540531+08:00",
+  "headline": "9/18 重點：台灣 Pay 長春商圈 20% 回饋已由官方標示額滿。",
   "highlights": [
     {
       "kind": "status_update",
-      "provider_id": "piwallet",
-      "provider_name": "Pi 拍錢包",
-      "title": "指定手機通路滿額贈 1,800 P 幣：9 月活動二已額滿",
-      "summary": "9/1 至 10/31，綁定玉山 Pi 拍錢包信用卡在全國電子、東森購物、神腦數位單筆實付滿 36,000 元，原可獲 1,800 P 幣。官方明示 9 月活動二已於 9/14 00:30 額滿；活動一指定電商的 500 P 幣與 10 月分項仍須以官方公告為準。",
-      "url": "https://web.piapp.com.tw/260910bonus/"
+      "provider_id": "taiwanpay",
+      "provider_name": "台灣 Pay",
+      "title": "長春商圈 20% 回饋：官方已標示額滿",
+      "summary": "3/16 至 12/31，於台北市長春市場及鄰近指定店家以台灣 Pay 金融卡／帳戶 QR Code 單筆不限金額付款，原可享 20% 現金回饋、每帳戶最高 1,000 元。官方活動頁現已在標題明示「活動額滿」；勿再以此 20% 回饋規劃消費。",
+      "url": "https://www.taiwanpay.com.tw/fisc-tpay/news/event/01KKK5WA82PMVAF6HVZ0W14ZX6"
     },
     {
       "kind": "status_update",

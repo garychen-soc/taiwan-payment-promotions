@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-18T08:07:28.540531+08:00",
-  "headline": "9/18 重點：台灣 Pay 長春商圈 20% 回饋已由官方標示額滿。",
+  "generated_at": "2026-09-20T11:33:36+08:00",
+  "headline": "9/20 重點：台灣 Pay Apple Rewards Store 10% 回饋將於明日開始。",
   "highlights": [
     {
       "kind": "status_update",
@@ -20,12 +20,12 @@
       "url": "https://easywallet.easycard.com.tw/benefit/content?id=1784797318"
     },
     {
-      "kind": "new_activity",
+      "kind": "upcoming",
       "provider_id": "taiwanpay",
       "provider_name": "台灣 Pay",
-      "title": "華西街×師大商圈 20% 回饋今日開始",
-      "summary": "9/15 至 12/31，在指定華西街與師大商圈以台灣 Pay 金融卡／帳戶 QR Code 掃碼，單筆不限金額享 20% 現金回饋、單筆上限 300 元。總回饋上限 47 萬元，監測未見官方已額滿標示。",
-      "url": "https://www.taiwanpay.com.tw/fisc-tpay/news/event/01KY4NSMDTNPBDFSGRJSYJETSM"
+      "title": "Apple Rewards Store Pay 10% 回饋明日開始",
+      "summary": "9/21 至 12/31，於 Apple Rewards Store 電商平台以台灣 Pay 金融卡／帳戶付款，單筆不限金額享 10% 現金回饋、每帳戶上限 500 元。總回饋上限 30 萬元，官方僅載明額滿為止，尚未公告已額滿。",
+      "url": "https://www.taiwanpay.com.tw/fisc-tpay/news/event/01KD77ZWDJ8TWJZC8F3VN9HTZ4"
     },
     {
       "kind": "status_update",

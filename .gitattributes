@@ -1,0 +1,3 @@
+# RFC 5545 iCalendar feeds require CRLF line endings and space-prefixed folds.
+# Exempt only this generated feed from Git whitespace diagnostics.
+docs/calendar.ics whitespace=-trailing-space,cr-at-eol

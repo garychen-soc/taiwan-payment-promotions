@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-20T11:33:36+08:00",
-  "headline": "9/20 重點：台灣 Pay Apple Rewards Store 10% 回饋將於明日開始。",
+  "generated_at": "2026-09-30T08:08:01+08:00",
+  "headline": "9/30 重點：台灣 Pay 艋舺夜市 20% 回饋明日開始。",
   "highlights": [
     {
       "kind": "status_update",
@@ -23,9 +23,9 @@
       "kind": "upcoming",
       "provider_id": "taiwanpay",
       "provider_name": "台灣 Pay",
-      "title": "Apple Rewards Store Pay 10% 回饋明日開始",
-      "summary": "9/21 至 12/31，於 Apple Rewards Store 電商平台以台灣 Pay 金融卡／帳戶付款，單筆不限金額享 10% 現金回饋、每帳戶上限 500 元。總回饋上限 30 萬元，官方僅載明額滿為止，尚未公告已額滿。",
-      "url": "https://www.taiwanpay.com.tw/fisc-tpay/news/event/01KD77ZWDJ8TWJZC8F3VN9HTZ4"
+      "title": "艋舺夜市刷台灣 Pay 20% 回饋明日開始",
+      "summary": "10/1 至 2027/3/31，於艋舺夜市活動地點以台灣 Pay 金融卡／帳戶 QR Code 付款，單筆不限金額享 20% 現金回饋；單筆上限 300 元、每卡／帳戶活動期間上限 1,000 元，總回饋上限 47 萬元。官方僅載明額滿為止，尚未公告已額滿。",
+      "url": "https://www.taiwanpay.com.tw/fisc-tpay/news/event/01KTBDSM6DXNFC5Q2GET6PM705"
     },
     {
       "kind": "status_update",

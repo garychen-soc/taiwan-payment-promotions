@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-30T08:08:01+08:00",
-  "headline": "9/30 重點：台灣 Pay 艋舺夜市 20% 回饋明日開始。",
+  "generated_at": "2026-10-01T08:16:25+08:00",
+  "headline": "10/1 重點：台灣 Pay「TWQR義起享好利 10%限時PAY」官方已標示額滿。",
   "highlights": [
     {
       "kind": "status_update",
@@ -23,7 +23,7 @@
       "kind": "upcoming",
       "provider_id": "taiwanpay",
       "provider_name": "台灣 Pay",
-      "title": "艋舺夜市刷台灣 Pay 20% 回饋明日開始",
+      "title": "艋舺夜市刷台灣 Pay 20% 回饋已開始",
       "summary": "10/1 至 2027/3/31，於艋舺夜市活動地點以台灣 Pay 金融卡／帳戶 QR Code 付款，單筆不限金額享 20% 現金回饋；單筆上限 300 元、每卡／帳戶活動期間上限 1,000 元，總回饋上限 47 萬元。官方僅載明額滿為止，尚未公告已額滿。",
       "url": "https://www.taiwanpay.com.tw/fisc-tpay/news/event/01KTBDSM6DXNFC5Q2GET6PM705"
     },
@@ -37,11 +37,11 @@
     },
     {
       "kind": "status_update",
-      "provider_id": "ipassmoney",
-      "provider_name": "一卡通 MONEY",
-      "title": "綁聯邦信用卡 10%：9 月回饋額滿",
-      "summary": "官方頁明示 9 月綁定聯邦信用卡單筆滿 200 元的 10% 一卡通綠點回饋，已於 9/3 12:00 額滿；活動期限雖至 12/31，其他銀行或後續月份資格仍應以官方公告為準。",
-      "url": "https://www.i-pass.com.tw/Preferential/Detail/GI2TSNQHW7ZKA64RZbVj"
+      "provider_id": "taiwanpay",
+      "provider_name": "台灣 Pay",
+      "title": "TWQR義起享好利 10%限時PAY：官方已標示額滿",
+      "summary": "台灣 Pay 官方活動頁標題已明示「(活動額滿)TWQR義起享好利 10%限時PAY」；不應再以此 10% 回饋規劃消費。活動其餘條件與可能的後續方案，仍應以官方公告為準。",
+      "url": "https://www.taiwanpay.com.tw/fisc-tpay/news/event/01KXN6WZYD7S5M99ZP7E03PWQH"
     },
     {
       "kind": "status_update",

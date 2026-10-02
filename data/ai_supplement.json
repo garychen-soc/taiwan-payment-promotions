@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-01T08:16:25+08:00",
-  "headline": "10/1 重點：台灣 Pay「TWQR義起享好利 10%限時PAY」官方已標示額滿。",
+  "generated_at": "2026-10-02T08:07:21+08:00",
+  "headline": "10/2 重點：悠遊付指定電商雙10活動可領 500 元券，名額尚未見官方額滿公告。",
   "highlights": [
     {
       "kind": "status_update",
@@ -12,12 +12,12 @@
       "url": "https://www.taiwanpay.com.tw/fisc-tpay/news/event/01KKK5WA82PMVAF6HVZ0W14ZX6"
     },
     {
-      "kind": "status_update",
+      "kind": "official_activity",
       "provider_id": "easywallet",
       "provider_name": "悠遊付",
-      "title": "喜美超市滿 500 元贈 40 元券：官方已公告額滿",
-      "summary": "8/7 至 10/4，在喜美超市以悠遊付單筆消費滿 500 元原可獲 40 元現金回饋券，並可依其他資格疊加至最高 8%。官方活動頁明示本活動已於 9/10 17:53 額滿；勿再以此 40 元券規劃回饋。",
-      "url": "https://easywallet.easycard.com.tw/benefit/content?id=1784797318"
+      "title": "指定電商雙10搶回饋：滿 5,000 元可獲 500 元",
+      "summary": "10/1 至 10/9 可於指定領券頁領取 500 元現金回饋券；限 10/9 於指定電商單筆滿 5,000 元使用，每會員限領 1 張。回饋名額 200 份、依用券交易時間先用先得；官方頁僅載額滿即止，尚未公告已額滿，付款前請再次確認券況。",
+      "url": "https://easywallet.easycard.com.tw/benefit/content?id=1789387586"
     },
     {
       "kind": "upcoming",

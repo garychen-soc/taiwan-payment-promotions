@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-02T08:07:21+08:00",
-  "headline": "10/2 重點：悠遊付指定電商雙10活動可領 500 元券，名額尚未見官方額滿公告。",
+  "generated_at": "2026-10-03T11:24:17+08:00",
+  "headline": "10/3 重點：台灣 Pay 東遊趣與仁愛鄉 TWQR 10% 活動均已見官方額滿標示。",
   "highlights": [
     {
       "kind": "status_update",
@@ -31,17 +31,17 @@
       "kind": "status_update",
       "provider_id": "taiwanpay",
       "provider_name": "台灣 Pay",
-      "title": "TWQR 玩澎湖 10% 加碼已額滿",
-      "summary": "台灣 Pay 官方活動頁標題已明示額滿。原活動為 9/1 至 12/31 於澎湖指定地點以參與 TWQR 的台灣 Pay 或合作電子支付掃碼，可享 10% 回饋、每帳戶最高 500 元；不應再以該 10% 加碼規劃消費。",
-      "url": "https://www.taiwanpay.com.tw/fisc-tpay/news/event/01KY4P1JMN4AEF403FYC7AZGPA"
+      "title": "TWQR 東遊趣 10% 加碼 Pay：官方已標示額滿",
+      "summary": "7/15 至 10/31，於臺東卑南、關山、池上及金峰指定 TWQR 店家掃碼付款，原可享 10% 回饋、每金融卡／帳戶或電子支付帳戶最高 500 元。台灣 Pay 官方活動頁現已在標題明示「活動額滿」；勿再以此回饋規劃消費。",
+      "url": "https://www.taiwanpay.com.tw/fisc-tpay/news/event/01KXFTZHE3F8XZ9V9CD2MNXMJA"
     },
     {
       "kind": "status_update",
       "provider_id": "taiwanpay",
       "provider_name": "台灣 Pay",
-      "title": "TWQR義起享好利 10%限時PAY：官方已標示額滿",
-      "summary": "台灣 Pay 官方活動頁標題已明示「(活動額滿)TWQR義起享好利 10%限時PAY」；不應再以此 10% 回饋規劃消費。活動其餘條件與可能的後續方案，仍應以官方公告為準。",
-      "url": "https://www.taiwanpay.com.tw/fisc-tpay/news/event/01KXN6WZYD7S5M99ZP7E03PWQH"
+      "title": "前進仁愛鄉 TWQR 輕鬆付 10%：官方已標示額滿",
+      "summary": "8/1 至 2027/3/31，於南投仁愛鄉指定 TWQR 店家掃碼付款，原可享 10% 回饋、單筆及每帳戶每月上限各 500 元。台灣 Pay 官方活動頁現已在標題明示「活動額滿」；勿再以此回饋規劃消費。",
+      "url": "https://www.taiwanpay.com.tw/fisc-tpay/news/event/01KXFVV3J5Z8KAJ93Q5GECGP7S"
     },
     {
       "kind": "status_update",

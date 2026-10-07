@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-06T08:08:00+08:00",
-  "headline": "10/6 監測：悠遊付指定電商 500 元回饋將於 10/9 截止；名額仍須依官方領券頁面確認。",
+  "generated_at": "2026-10-07T08:03:01+08:00",
+  "headline": "10/7 監測：一卡通 MONEY 7-ELEVEN 指定商品活動今日開始；台灣 Pay 汐止 TWQR 20% 將於 10/8 開跑，兩者均尚未見官方額滿公告。",
   "highlights": [
     {
       "kind": "status_update",
@@ -52,20 +52,20 @@
       "url": "https://easywallet.easycard.com.tw/benefit/content?id=1787715465"
     },
     {
-      "kind": "status_update",
-      "provider_id": "icashpay",
-      "provider_name": "icash Pay",
-      "title": "綁 uniopen 聯名卡最高 11%：9 月全通路 4% 已額滿",
-      "summary": "9/1 至 12/31，綁定 uniopen 聯名卡全通路單筆滿 199 元原享 4% OPENPOINT，另可依統一企業品牌任務最高疊加 7%。官方已公告 9 月全通路 4% 贈點於 9/6 11:00 額滿；其他加碼仍依各活動條件與額度判定。",
-      "url": "https://www.icashpay.com.tw/advertMessage/view/id/2461"
+      "kind": "official_activity",
+      "provider_id": "ipassmoney",
+      "provider_name": "一卡通 MONEY",
+      "title": "7-ELEVEN 指定商品付款優惠：今日開始",
+      "summary": "10/7 00:00 至 10/11 23:59，uniopen 會員於全台 7-ELEVEN 實體門市購買指定商品，以 iPASS MONEY APP 付款可依活動頁享優惠；另有單筆滿 1,111 元加贈好禮條件。優惠總上限 2 萬筆，用完即止；官方頁尚未公告額滿，指定品項以 7-ELEVEN 公告或門市為準。",
+      "url": "https://www.i-pass.com.tw/Preferential/Detail/GM2DENI3Z5RID648nu5k"
     },
     {
-      "kind": "status_update",
-      "provider_id": "easywallet",
-      "provider_name": "悠遊付",
-      "title": "悠遊開學季生活用品指定品牌最高 50%：活動二已額滿",
-      "summary": "9/7 至 11/1，悠遊開學季活動二原於 IKEA、金興發、晶澈眼鏡等指定生活用品品牌，以悠遊付不限金額付款贈 100 元券，搭配指定條件最高 50% 回饋。官方活動頁明示此分項於 9/7 18:06 額滿；活動一與警專獨家分項仍須依各自資格及公告判定。",
-      "url": "https://easywallet.easycard.com.tw/benefit/content?id=1785736053"
+      "kind": "upcoming",
+      "provider_id": "taiwanpay",
+      "provider_name": "台灣 Pay",
+      "title": "汐止買菜趣 TWQR 20% 回饋：10/8 開始",
+      "summary": "自 10/8 起，於汐止秀豐、金龍、厚德、林森市場、汐止觀光夜市及汐止區農會指定 TWQR 店家，以台灣 Pay QR Code 付款可享 20% 現金回饋；每金融卡／帳戶活動期間最高 300 元，總回饋上限 43.5 萬元。官方說明為額滿後於汐止區農會公告，現未標示已額滿。",
+      "url": "https://www.taiwanpay.com.tw/fisc-tpay/news/event/01M25DF97H38K4205DRVJ2VYKJ"
     }
   ],
   "supplemental_activities": []

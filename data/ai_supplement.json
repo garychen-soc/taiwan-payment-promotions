@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-07T08:03:01+08:00",
-  "headline": "10/7 監測：一卡通 MONEY 7-ELEVEN 指定商品活動今日開始；台灣 Pay 汐止 TWQR 20% 將於 10/8 開跑，兩者均尚未見官方額滿公告。",
+  "generated_at": "2026-10-08T08:05:08+08:00",
+  "headline": "10/8 監測：一卡通 MONEY 7-ELEVEN 指定商品優惠持續至 10/11；汐止 TWQR 20% 已進入活動期間，兩者均未見官方額滿公告。",
   "highlights": [
     {
       "kind": "status_update",
@@ -20,7 +20,7 @@
       "url": "https://easywallet.easycard.com.tw/benefit/content?id=1789387586"
     },
     {
-      "kind": "upcoming",
+      "kind": "official_activity",
       "provider_id": "taiwanpay",
       "provider_name": "台灣 Pay",
       "title": "艋舺夜市刷台灣 Pay 20% 回饋已開始",
@@ -60,11 +60,11 @@
       "url": "https://www.i-pass.com.tw/Preferential/Detail/GM2DENI3Z5RID648nu5k"
     },
     {
-      "kind": "upcoming",
+      "kind": "official_activity",
       "provider_id": "taiwanpay",
       "provider_name": "台灣 Pay",
-      "title": "汐止買菜趣 TWQR 20% 回饋：10/8 開始",
-      "summary": "自 10/8 起，於汐止秀豐、金龍、厚德、林森市場、汐止觀光夜市及汐止區農會指定 TWQR 店家，以台灣 Pay QR Code 付款可享 20% 現金回饋；每金融卡／帳戶活動期間最高 300 元，總回饋上限 43.5 萬元。官方說明為額滿後於汐止區農會公告，現未標示已額滿。",
+      "title": "汐止買菜趣 TWQR 20% 回饋：已開始",
+      "summary": "10/8 起，於汐止秀豐、金龍、厚德、林森市場、汐止觀光夜市及汐止區農會指定 TWQR 店家，以台灣 Pay QR Code 付款可享 20% 現金回饋；每金融卡／帳戶活動期間最高 300 元，總回饋上限 43.5 萬元。官方說明為額滿後於汐止區農會公告，現未標示已額滿。",
       "url": "https://www.taiwanpay.com.tw/fisc-tpay/news/event/01M25DF97H38K4205DRVJ2VYKJ"
     }
   ],

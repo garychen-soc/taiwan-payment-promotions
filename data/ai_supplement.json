@@ -1,71 +1,47 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-08T08:05:08+08:00",
-  "headline": "10/8 監測：一卡通 MONEY 7-ELEVEN 指定商品優惠持續至 10/11；汐止 TWQR 20% 已進入活動期間，兩者均未見官方額滿公告。",
+  "generated_at": "2026-10-27T07:16:15.346183+08:00",
+  "headline": "10/27部分覆蓋更新：雙11券今日開領、玉山地價稅回饋明日起登錄；汐止期限及公開無法確認的名額仍待確認。",
   "highlights": [
     {
-      "kind": "status_update",
-      "provider_id": "taiwanpay",
-      "provider_name": "台灣 Pay",
-      "title": "長春商圈 20% 回饋：官方已標示額滿",
-      "summary": "3/16 至 12/31，於台北市長春市場及鄰近指定店家以台灣 Pay 金融卡／帳戶 QR Code 單筆不限金額付款，原可享 20% 現金回饋、每帳戶最高 1,000 元。官方活動頁現已在標題明示「活動額滿」；勿再以此 20% 回饋規劃消費。",
-      "url": "https://www.taiwanpay.com.tw/fisc-tpay/news/event/01KKK5WA82PMVAF6HVZ0W14ZX6"
+      "kind": "official_activity",
+      "provider_id": "easywallet",
+      "provider_name": "悠遊付",
+      "title": "雙11搶券今日開放：分7個用券日回饋500元",
+      "summary": "10/27 00:00起可領券；用券日為11/1、11/2、11/3、11/6、11/10、11/11、11/13，每會員每日限領1張、全月最多7張。須於指定日00:00–23:59在適用電商單筆達指定門檻並用券付款；各日門檻與名額尚待領券頁確認。依交易順序先用先得，領券不保證回饋，付款前請查券況；尚未見明確已額滿公告。",
+      "url": "https://easywallet.easycard.com.tw/benefit/content?id=1791888619"
     },
     {
       "kind": "official_activity",
       "provider_id": "easywallet",
       "provider_name": "悠遊付",
-      "title": "指定電商雙10搶回饋：滿 5,000 元可獲 500 元",
-      "summary": "10/1 至 10/9 可於指定領券頁領取 500 元現金回饋券；限 10/9 於指定電商單筆滿 5,000 元使用，每會員限領 1 張。回饋名額 200 份、依用券交易時間先用先得；官方頁僅載額滿即止，尚未公告已額滿，付款前請再次確認券況。",
-      "url": "https://easywallet.easycard.com.tw/benefit/content?id=1789387586"
+      "title": "玉山信用卡繳地價稅：10/28起登錄享0.2%",
+      "summary": "10/28至11/30，以悠遊付綁玉山信用卡繳地價稅並由正卡人於玉山官網登錄，享0.2%玉山e point，每歸戶最高50點、登錄名額無上限。首次綁定且累計繳稅滿10,000元可再得50點；10/27前曾綁卡消費或繳稅費者不符首次資格。兩項共用登錄入口；簽帳金融卡、公司卡及採購卡不適用，實際繳納期間以稅單為準。",
+      "url": "https://easywallet.easycard.com.tw/benefit/content?id=1789693447"
     },
     {
       "kind": "official_activity",
-      "provider_id": "taiwanpay",
-      "provider_name": "台灣 Pay",
-      "title": "艋舺夜市刷台灣 Pay 20% 回饋已開始",
-      "summary": "10/1 至 2027/3/31，於艋舺夜市活動地點以台灣 Pay 金融卡／帳戶 QR Code 付款，單筆不限金額享 20% 現金回饋；單筆上限 300 元、每卡／帳戶活動期間上限 1,000 元，總回饋上限 47 萬元。官方僅載明額滿為止，尚未公告已額滿。",
-      "url": "https://www.taiwanpay.com.tw/fisc-tpay/news/event/01KTBDSM6DXNFC5Q2GET6PM705"
-    },
-    {
-      "kind": "status_update",
-      "provider_id": "taiwanpay",
-      "provider_name": "台灣 Pay",
-      "title": "TWQR 東遊趣 10% 加碼 Pay：官方已標示額滿",
-      "summary": "7/15 至 10/31，於臺東卑南、關山、池上及金峰指定 TWQR 店家掃碼付款，原可享 10% 回饋、每金融卡／帳戶或電子支付帳戶最高 500 元。台灣 Pay 官方活動頁現已在標題明示「活動額滿」；勿再以此回饋規劃消費。",
-      "url": "https://www.taiwanpay.com.tw/fisc-tpay/news/event/01KXFTZHE3F8XZ9V9CD2MNXMJA"
-    },
-    {
-      "kind": "status_update",
-      "provider_id": "taiwanpay",
-      "provider_name": "台灣 Pay",
-      "title": "前進仁愛鄉 TWQR 輕鬆付 10%：官方已標示額滿",
-      "summary": "8/1 至 2027/3/31，於南投仁愛鄉指定 TWQR 店家掃碼付款，原可享 10% 回饋、單筆及每帳戶每月上限各 500 元。台灣 Pay 官方活動頁現已在標題明示「活動額滿」；勿再以此回饋規劃消費。",
-      "url": "https://www.taiwanpay.com.tw/fisc-tpay/news/event/01KXFVV3J5Z8KAJ93Q5GECGP7S"
-    },
-    {
-      "kind": "status_update",
       "provider_id": "easywallet",
       "provider_name": "悠遊付",
-      "title": "中油加油回饋：活動二 9 月滿千贈 50 元券已額滿",
-      "summary": "9/1 至 10/31，中油直營及指定加盟站以悠遊付加油，活動一滿百 5%（可疊加最高 8%）與活動三記名卡滿 120 元送 10 元券仍依辦法辦理；官方頁明示活動二每月滿 1,000 元贈 50 元券已於 9/7 09:10 額滿，不應再以該分項規劃回饋。",
-      "url": "https://easywallet.easycard.com.tw/benefit/content?id=1787715465"
+      "title": "王道新戶綁悠遊付最高888元：10/31截止",
+      "summary": "7/1至10/31透過悠遊付指定連結首次開立王道帳戶，啟用後30天內以連結帳戶不限金額消費滿3筆可得500元，限前850名啟用客戶；另於10/31前綁王道簽帳卡消費累計滿3,000元再得388元，限前300名。須分別達成條件；本頁僅載限量及額滿公告方式，未見明確已額滿，銀行最新名額仍需確認。",
+      "url": "https://easywallet.easycard.com.tw/benefit/content?id=1773728616"
     },
     {
       "kind": "official_activity",
-      "provider_id": "ipassmoney",
-      "provider_name": "一卡通 MONEY",
-      "title": "7-ELEVEN 指定商品付款優惠：今日開始",
-      "summary": "10/7 00:00 至 10/11 23:59，uniopen 會員於全台 7-ELEVEN 實體門市購買指定商品，以 iPASS MONEY APP 付款可依活動頁享優惠；另有單筆滿 1,111 元加贈好禮條件。優惠總上限 2 萬筆，用完即止；官方頁尚未公告額滿，指定品項以 7-ELEVEN 公告或門市為準。",
-      "url": "https://www.i-pass.com.tw/Preferential/Detail/GM2DENI3Z5RID648nu5k"
+      "provider_id": "icashpay",
+      "provider_name": "icash Pay",
+      "title": "icash Pay乘車碼：點數折抵金額另享30%",
+      "summary": "10/1至12/31，持icash Pay乘車碼搭大眾運輸或於轉運站窗口用付款碼，使用OPENPOINT折抵時，針對折抵點數金額另回饋30%。限icash Pay帳戶餘額付款，每戶每月最高100點、總上限30萬點；回饋最晚於支付成功後次次月底入點。官方僅載達上限不另公告，不代表目前已額滿，公開剩餘名額無法確認。",
+      "url": "https://www.icashpay.com.tw/advertMessage/view/id/2544"
     },
     {
       "kind": "official_activity",
-      "provider_id": "taiwanpay",
-      "provider_name": "台灣 Pay",
-      "title": "汐止買菜趣 TWQR 20% 回饋：已開始",
-      "summary": "10/8 起，於汐止秀豐、金龍、厚德、林森市場、汐止觀光夜市及汐止區農會指定 TWQR 店家，以台灣 Pay QR Code 付款可享 20% 現金回饋；每金融卡／帳戶活動期間最高 300 元，總回饋上限 43.5 萬元。官方說明為額滿後於汐止區農會公告，現未標示已額滿。",
-      "url": "https://www.taiwanpay.com.tw/fisc-tpay/news/event/01M25DF97H38K4205DRVJ2VYKJ"
+      "provider_id": "easywallet",
+      "provider_name": "悠遊付",
+      "title": "7-ELEVEN悠遊卡：10月指定期間滿500折50",
+      "summary": "適用10/23–10/31、11/25–11/30及12/18–12/31；於7-ELEVEN實體門市以悠遊卡或悠遊聯名卡單筆全額支付，扣除不適用品項後滿500元現折50元，單筆不累折，每月限2萬份。菸品、代收、點數卡、i珍食、預購及線上服務等不適用；實際額滿依POS為準，結帳前洽門市。本頁未明示已額滿。",
+      "url": "https://easywallet.easycard.com.tw/benefit/content?id=1788682579"
     }
   ],
   "supplemental_activities": []

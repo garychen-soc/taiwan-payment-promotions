@@ -6,7 +6,7 @@ from datetime import date, datetime
 from pathlib import Path
 from typing import Any
 
-from .dates import lifecycle_for
+from .dates import is_plausible_date, lifecycle_for
 from .models import Activity, RunResult
 
 
@@ -50,6 +50,14 @@ def _refresh_lifecycle(activity: Activity, now: datetime) -> None:
         end = date.fromisoformat(activity.end_date) if activity.end_date else None
     except ValueError:
         start = end = None
+    # Activities reused from an unchanged cached page skip discovery's date
+    # checks, so an official typo such as "2926-12-31" can survive here.
+    if start and not is_plausible_date(start, now.date()):
+        start, activity.start_date = None, None
+        activity.date_confidence, activity.review_required = "none", True
+    if end and not is_plausible_date(end, now.date()):
+        end, activity.end_date = None, None
+        activity.date_confidence, activity.review_required = "none", True
     activity.lifecycle = lifecycle_for(start, end, now)
 
 

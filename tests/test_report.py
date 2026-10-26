@@ -218,6 +218,34 @@ class ReportTests(unittest.TestCase):
         self.assertEqual(payload["summary"]["included_non_expired"], 1)
         self.assertEqual(payload["sections"]["sold_out"][0]["title"], "仍在期間但額滿")
 
+    def test_reused_activity_with_implausible_end_date_goes_to_review(self) -> None:
+        now = datetime(2026, 10, 27, 8, 0, tzinfo=ZoneInfo("Asia/Taipei"))
+        cached = Activity(
+            provider_id="taiwanpay",
+            provider_name="台灣 Pay",
+            title="沿用快取的官方錯字活動",
+            url="https://example.com/event",
+            source_url="https://example.com/event",
+            start_date="2026-10-08",
+            end_date="2926-12-31",
+            lifecycle="active",
+            quota_status="not_marked_full",
+            date_confidence="high",
+        )
+        run = RunResult("r", "full", now.isoformat(), now.isoformat(), [cached], [])
+        payload = build_payload(
+            run,
+            [cached],
+            now,
+            {"timezone": "Asia/Taipei", "providers": [{"id": "taiwanpay", "name": "台灣 Pay"}]},
+        )
+        self.assertEqual(payload["sections"]["active_public"], [])
+        item = payload["sections"]["review_required"][0]
+        self.assertEqual(item["start_date"], "2026-10-08")
+        self.assertIsNone(item["end_date"])
+        self.assertEqual(item["date_confidence"], "none")
+        self.assertTrue(item["review_required"])
+
     def test_listing_truncation_is_reported_as_coverage_gap(self) -> None:
         now = datetime(2026, 7, 21, 10, 0, tzinfo=ZoneInfo("Asia/Taipei"))
         attempt = SourceAttempt(

@@ -13,7 +13,7 @@ from typing import Any
 from urllib.parse import parse_qs, quote, urlencode, urlsplit
 
 from .adapters import Document, external_id_from_url, parse_document, summarize_conditions
-from .dates import DateRange, lifecycle_for, parse_date_range
+from .dates import DateRange, drop_implausible_dates, lifecycle_for, parse_date_range
 from .fetch import FetchResult, canonical_url, fetch_url, is_allowed_url, post_json_url
 from .html_extract import parse_html
 from .models import Activity, Evidence, RunResult, SourceAttempt
@@ -1586,6 +1586,7 @@ class Crawler:
                 date_range = DateRange(date.fromisoformat(task.start_date), date.fromisoformat(task.end_date), "high", "official listing API")
             except ValueError:
                 pass
+        date_range = drop_implausible_dates(date_range, self.now.date())
         if date_range.start and date_range.end and date_range.start > date_range.end:
             date_range = DateRange(date_range.start, date_range.end, "none", date_range.excerpt)
         lifecycle = lifecycle_for(date_range.start, date_range.end, self.now)

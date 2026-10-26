@@ -23,6 +23,7 @@ DATE_DECORATION = (
 )
 WESTERN_TOKEN = r"(?P<year>20\d{2})\s*(?:年|[./-])\s*(?P<month>\d{1,2})\s*(?:月|[./-])\s*(?P<day>\d{1,2})\s*日?"
 ROC_TOKEN = r"(?:民國\s*)?(?P<roc_year>1\d{2})\s*(?:年|[./-])\s*(?P<roc_month>\d{1,2})\s*(?:月|[./-])\s*(?P<roc_day>\d{1,2})\s*日?"
+PLAUSIBLE_YEAR_WINDOW = 3
 
 
 @dataclass(frozen=True, slots=True)
@@ -160,6 +161,21 @@ def parse_date_range(text: str) -> DateRange:
                 # that the campaign ended on that date.
                 return DateRange(single, None, "low", window[:260])
     return DateRange(None, None, "none", "")
+
+
+def is_plausible_date(value: date, today: date, window: int = PLAUSIBLE_YEAR_WINDOW) -> bool:
+    return abs(value.year - today.year) <= window
+
+
+def drop_implausible_dates(date_range: DateRange, today: date) -> DateRange:
+    # Official APIs occasionally carry typos such as endDate "2926-12-31".
+    # Such a date is not evidence of anything; drop it and force review rather
+    # than publishing a campaign that never ends.
+    start = date_range.start if date_range.start and is_plausible_date(date_range.start, today) else None
+    end = date_range.end if date_range.end and is_plausible_date(date_range.end, today) else None
+    if start == date_range.start and end == date_range.end:
+        return date_range
+    return DateRange(start, end, "none", date_range.excerpt)
 
 
 def lifecycle_for(start: date | None, end: date | None, now: datetime) -> str:

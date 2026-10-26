@@ -69,6 +69,72 @@ class TaiwanPayConsistencyTests(unittest.TestCase):
         self.assertEqual(mocked_post.call_count, 2)
         self.assertTrue(crawler.attempts[-1].ok)
 
+    def _official_typo_activity(self, start_date: str, end_date: str):
+        now = datetime(2026, 10, 26, 8, 0, tzinfo=ZoneInfo("Asia/Taipei"))
+        provider = {
+            "id": "taiwanpay",
+            "name": "台灣 Pay",
+            "official_domains": ["taiwanpay.com.tw"],
+        }
+        title = "相揪汐止買菜趣 TWQR獨享20%回饋"
+        task = Task(
+            provider=provider,
+            source_name="活動詳情",
+            role="activity_detail",
+            fetch_url="https://www.taiwanpay.com.tw/api/detail",
+            display_url="https://www.taiwanpay.com.tw/fisc-tpay/news/event/01M25DF97H38K4205DRVJ2VYKJ",
+            title_hint=title,
+            adapter="taiwanpay_detail",
+            external_id="01M25DF97H38K4205DRVJ2VYKJ",
+            start_date=start_date,
+            end_date=end_date,
+        )
+        body = json.dumps(
+            {
+                "header": {"returnCode": "TF0000"},
+                "body": {
+                    "campaignDetail": {
+                        "systemSeq": "01M25DF97H38K4205DRVJ2VYKJ",
+                        "title": title,
+                        "startDate": start_date,
+                        "endDate": end_date,
+                        "content": "<p>於活動期間至活動地點以「台灣Pay」QR Code掃碼支付，可享20%現金回饋，額滿為止。</p>",
+                        "restrictions": (
+                            "<p>(三)如遇本活動提前額滿，例如本活動於115/10/31 15:00提前額滿，"
+                            "則符合回饋資格者之消費計算期間均為10/01~10/31 15:00。</p>"
+                        ),
+                    }
+                },
+            },
+            ensure_ascii=False,
+        ).encode()
+        result = FetchResult(task.fetch_url, task.fetch_url, 200, body, body.decode(), "application/json", "hash")
+        document = Crawler._official_metadata_document(parse_document(result), task)
+        crawler = Crawler({"providers": [provider]}, now)
+        return crawler._activity_from_document(CollectedDocument(task, document, now.isoformat()))
+
+    def test_official_year_typo_is_not_published_as_valid_end_date(self) -> None:
+        # The official TF020109/TF020110 APIs returned endDate "2926-12-31"
+        # for this campaign. It must not be trusted as a high-confidence date.
+        activity = self._official_typo_activity("2026-10-08", "2926-12-31")
+        self.assertEqual(activity.start_date, "2026-10-08")
+        self.assertIsNone(activity.end_date)
+        self.assertEqual(activity.date_confidence, "none")
+        self.assertTrue(activity.review_required)
+
+    def test_implausible_start_year_is_dropped_too(self) -> None:
+        activity = self._official_typo_activity("1026-10-08", "2026-12-31")
+        self.assertIsNone(activity.start_date)
+        self.assertEqual(activity.end_date, "2026-12-31")
+        self.assertTrue(activity.review_required)
+
+    def test_plausible_official_listing_dates_are_kept(self) -> None:
+        activity = self._official_typo_activity("2026-10-08", "2026-12-31")
+        self.assertEqual(activity.start_date, "2026-10-08")
+        self.assertEqual(activity.end_date, "2026-12-31")
+        self.assertEqual(activity.date_confidence, "high")
+        self.assertFalse(activity.review_required)
+
 
 class FullpayDiscoveryTests(unittest.TestCase):
     def setUp(self) -> None:

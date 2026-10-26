@@ -1,10 +1,10 @@
 from __future__ import annotations
 
 import unittest
-from datetime import datetime
+from datetime import date, datetime
 from zoneinfo import ZoneInfo
 
-from payment_promotions_monitor.dates import lifecycle_for, parse_date_range
+from payment_promotions_monitor.dates import is_plausible_date, lifecycle_for, parse_date_range
 
 
 NOW = datetime(2026, 7, 21, 10, 0, tzinfo=ZoneInfo("Asia/Taipei"))
@@ -76,6 +76,19 @@ class DateParsingTests(unittest.TestCase):
             "2026-09-30",
             "upcoming",
         )
+
+
+class PlausibleDateTests(unittest.TestCase):
+    def test_year_within_three_years_is_plausible(self) -> None:
+        today = NOW.date()
+        self.assertTrue(is_plausible_date(date(2029, 12, 31), today))
+        self.assertTrue(is_plausible_date(date(2023, 1, 1), today))
+
+    def test_year_beyond_three_years_is_implausible(self) -> None:
+        today = NOW.date()
+        self.assertFalse(is_plausible_date(date(2926, 12, 31), today))
+        self.assertFalse(is_plausible_date(date(2030, 1, 1), today))
+        self.assertFalse(is_plausible_date(date(2022, 12, 31), today))
 
 
 if __name__ == "__main__":

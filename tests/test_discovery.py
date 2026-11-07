@@ -12,6 +12,27 @@ from payment_promotions_monitor.fetch import FetchResult
 from payment_promotions_monitor.models import SourceAttempt
 
 
+class IcashQuotaScopeTests(unittest.TestCase):
+    def test_quarter_activity_keeps_monthly_exhaustion_component(self):
+        now = datetime(2026, 11, 7, 8, tzinfo=ZoneInfo("Asia/Taipei"))
+        provider = {"id": "icashpay", "name": "icash Pay", "official_domains": ["icashpay.com.tw"]}
+        for event_id, merchant in ((2534, "Mister Donut"), (2536, "COLD STONE")):
+            url = f"https://www.icashpay.com.tw/advertMessage/view/id/{event_id}"
+            task = Task(provider=provider, source_name="官方活動", role="activity_detail",
+                        fetch_url=url, display_url=url, adapter="html")
+            text = ("活動期間：2026/10/1至2026/12/31。\n"
+                    "2026年10月【icash Pay綁uniopen聯名卡筆筆10%】活動贈點已於2026/10/27 8:40額滿\n"
+                    "【uniopen聯名卡最高7%回饋】指定任務最高回饋7%。")
+            doc = Document(url, merchant + "最高享17%", text, [], "fixture")
+            activity = Crawler({"providers": [provider]}, now)._activity_from_document(
+                CollectedDocument(task, doc, now.isoformat()))
+            with self.subTest(event_id=event_id):
+                self.assertEqual(activity.quota_status, "partial_sold_out")
+                self.assertEqual(activity.end_date, "2026-12-31")
+                self.assertEqual(activity.components[0]["period"], "10月")
+                self.assertIn("10%", activity.components[0]["evidence"])
+
+
 class TaiwanPayConsistencyTests(unittest.TestCase):
     def test_rejects_unrelated_detail_title(self) -> None:
         self.assertFalse(

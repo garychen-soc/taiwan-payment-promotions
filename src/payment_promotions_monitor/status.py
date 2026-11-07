@@ -37,12 +37,23 @@ WHOLE_EVENT_PATTERNS = (
     re.compile(r"(?:本活動|活動回饋|總回饋).{0,24}(?:全數|全部)?(?:已.{0,12})?額滿"),
     re.compile(r"(?:所有|全部).{0,16}(?:名額|回饋|額度).{0,12}(?:額滿|用罄)"),
 )
-PARTIAL_PATTERNS = (
-    re.compile(r"(?:\d{1,2}\s*月(?:份)?|活動[一二三四1234]|第[一二三四1234]重|加碼|指定通路|指定銀行).{0,40}(?:額滿|已達上限)"),
-    re.compile(r"(?:額滿|已達上限).{0,40}(?:\d{1,2}\s*月(?:份)?|活動[一二三四1234]|第[一二三四1234]重|加碼)"),
-    re.compile(r"(?:首週|本週|第[一二三四五六七八九十\d]+週|週次).{0,40}(?:額滿|已達上限)"),
-    re.compile(r"(?:額滿|已達上限).{0,40}(?:首週|本週|第[一二三四五六七八九十\d]+週|週次)"),
+# Scope is carried by the announcement clause, regardless of the length of
+# the benefit name between its month/component and exhaustion statement.
+SCOPE_PATTERN = re.compile(
+    r"(?<!\d)\d{1,2}\s*月(?:份)?|活動[一二三四1234]|第[一二三四1234]重|"
+    r"加碼|指定通路|指定銀行|早鳥|滿額禮|首週|本週|第[一二三四五六七八九十\d]+週|週次"
 )
+
+
+def _scope_text(sentence: str) -> str:
+    # An exhaustion timestamp (10月27日 / 2026/10/27) is not a monthly pool.
+    return re.sub(r"(?:20\d{2}[年/.-])?\d{1,2}月\d{1,2}日|"
+                  r"(?:20\d{2}[/.-])?\d{1,2}[/.-]\d{1,2}", "", sentence)
+
+
+def _is_scoped(sentence: str) -> bool:
+    return bool(SCOPE_PATTERN.search(_scope_text(sentence)))
+
 
 
 @dataclass(frozen=True, slots=True)
@@ -86,9 +97,10 @@ def _sold_out_date(sentence: str, event_year: int | None) -> str | None:
 
 
 def _component_from(sentence: str) -> dict[str, str]:
-    month = re.search(r"(?<!\d)(\d{1,2})\s*月(?:份)?", sentence)
+    scope = _scope_text(sentence)
+    month = re.search(r"(?<!\d)(\d{1,2})\s*月(?:份)?", scope)
     week = re.search(r"(首週|本週|第[一二三四五六七八九十\d]+週)", sentence)
-    component = re.search(r"(活動[一二三四1234]|第[一二三四1234]重|[^，。；]{0,16}加碼)", sentence)
+    component = re.search(r"(活動[一二三四1234]|第[一二三四1234]重|早鳥[^，。；]{0,12}?回饋|早鳥|滿額禮|[^，。；]{0,16}加碼)", scope)
     result = {"status": "sold_out", "evidence": sentence[:300]}
     if month:
         result["period"] = f"{int(month.group(1)):02d}月"
@@ -109,10 +121,10 @@ def analyze_quota(text: str, *, event_start: date | None = None) -> QuotaAssessm
 
     if explicit:
         excerpt = explicit[0][:500]
-        partial_sentences = [sentence for sentence in explicit if any(pattern.search(sentence) for pattern in PARTIAL_PATTERNS)]
+        partial_sentences = [sentence for sentence in explicit if _is_scoped(sentence)]
         whole_event = any(
             any(pattern.search(sentence) for pattern in WHOLE_EVENT_PATTERNS)
-            and not any(pattern.search(sentence) for pattern in PARTIAL_PATTERNS)
+            and not _is_scoped(sentence)
             for sentence in explicit
         )
         if partial_sentences and not whole_event:

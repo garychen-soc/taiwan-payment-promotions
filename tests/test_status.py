@@ -58,6 +58,30 @@ class QuotaStatusTests(unittest.TestCase):
         self.assertEqual(result.status, "partial_sold_out")
         self.assertEqual(result.components[0]["period"], "首週")
 
+    def test_icash_monthly_bonus_does_not_exhaust_quarter(self) -> None:
+        for merchant, stamp in (("Mister Donut", "2026/10/27 8:40"), ("COLD STONE", "2026/10/26 16:20")):
+            text = (f"活動期間：2026/10/1至2026/12/31。\n{merchant}最高17%。\n"
+                    f"2026年10月【icash Pay綁uniopen聯名卡筆筆10%】活動贈點已於{stamp}額滿\n"
+                    "【uniopen聯名卡最高7%回饋】指定任務最高回饋7%。")
+            with self.subTest(merchant=merchant):
+                result = analyze_quota(text, event_start=date(2026, 10, 1))
+                self.assertEqual(result.status, "partial_sold_out")
+                self.assertEqual(result.components[0]["period"], "10月")
+                self.assertIn("10%", result.components[0]["evidence"])
+                self.assertEqual(result.sold_out_at, stamp[:10].replace("/", "-"))
+
+    def test_exhaustion_date_is_not_monthly_scope(self) -> None:
+        for stamp in ("2026/10/27", "2026年10月27日", "10月27日"):
+            with self.subTest(stamp=stamp):
+                self.assertEqual(analyze_quota(f"本活動回饋已於{stamp}全數額滿。透過App查看。").status, "sold_out")
+
+    def test_long_component_and_early_bird_remain_partial(self) -> None:
+        for scope in ("活動二", "早鳥回饋", "加碼"):
+            with self.subTest(scope=scope):
+                result = analyze_quota(scope + "指定用戶綁定銀行卡片消費享回饋" * 5 + "已於2026/10/28額滿。")
+                self.assertEqual(result.status, "partial_sold_out")
+                self.assertTrue(result.components)
+
     def test_app_only_is_unknown(self) -> None:
         result = analyze_quota("回饋額滿資訊僅公告於悠遊付App，本網站不另行公告。")
         self.assertEqual(result.status, "unknown_app_only")

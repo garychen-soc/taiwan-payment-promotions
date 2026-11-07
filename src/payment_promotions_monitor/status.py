@@ -41,7 +41,7 @@ WHOLE_EVENT_PATTERNS = (
 # the benefit name between its month/component and exhaustion statement.
 SCOPE_PATTERN = re.compile(
     r"(?<!\d)\d{1,2}\s*月(?:份)?|活動[一二三四1234]|第[一二三四1234]重|"
-    r"加碼|指定通路|指定銀行|早鳥|滿額禮|首週|本週|第[一二三四五六七八九十\d]+週|週次"
+    r"加碼|指定通路|指定銀行|早鳥|滿額回饋禮|滿額禮|首週|本週|第[一二三四五六七八九十\d]+週|週次"
 )
 
 
@@ -52,7 +52,7 @@ def _scope_text(sentence: str) -> str:
 
 
 def _is_scoped(sentence: str) -> bool:
-    return bool(SCOPE_PATTERN.search(_scope_text(sentence)) or
+    return bool(SCOPE_PATTERN.search(_scope_text(sentence)) or re.search(r"\d{1,2}/\d{1,2}\s*[~～至–-]\s*\d{1,2}/\d{1,2}", sentence) or
                 re.search(r"(?<!\d)\d{1,2}[月/]\d{1,2}日?\s*(?:活動|回饋|名額)", sentence))
 
 
@@ -67,8 +67,19 @@ class QuotaAssessment:
 
 
 def _sentences(text: str) -> list[str]:
-    chunks = re.split(r"(?<=[。！？!?；;])|\n+", text.replace("\xa0", " "))
-    return [re.sub(r"\s+", " ", chunk).strip() for chunk in chunks if chunk.strip()]
+    sentences = []
+    for line in text.replace("\xa0", " ").splitlines():
+        heading = re.match(r"\s*[*▌•-]?\s*(早鳥[^：:。]{0,12}|滿額[^：:。]{0,12}|高額加碼[^：:。]{0,12})[：:]", line)
+        for chunk in re.split(r"(?<=[。！？!?；;])", line):
+            chunk = re.sub(r"\s+", " ", chunk).strip()
+            if not chunk:
+                continue
+            # Inline bracket notices belong to this list item's benefit, not
+            # the entire campaign. Do not inherit context across line items.
+            if heading and re.match(r"^[【〖](?:已於|業已)", chunk):
+                chunk = heading.group(1) + "：" + chunk
+            sentences.append(chunk)
+    return sentences
 
 
 def _is_conditional(sentence: str) -> bool:
@@ -101,13 +112,16 @@ def _component_from(sentence: str) -> dict[str, str]:
     scope = _scope_text(sentence)
     month = re.search(r"(?<!\d)(\d{1,2})\s*月(?:份)?", scope)
     week = re.search(r"(首週|本週|第[一二三四五六七八九十\d]+週)", sentence)
-    component = re.search(r"(活動[一二三四1234]|第[一二三四1234]重|早鳥[^，。；]{0,12}?回饋|早鳥|滿額禮|[^，。；]{0,16}加碼)", scope)
+    component = re.search(r"(活動[一二三四1234]|第[一二三四1234]重|早鳥[^，。；]{0,12}?回饋|早鳥|滿額回饋禮|滿額禮|[^，。；]{0,16}加碼)", scope)
     result = {"status": "sold_out", "evidence": sentence[:300]}
     if month:
         result["period"] = f"{int(month.group(1)):02d}月"
     elif week:
         result["period"] = week.group(1)
     day = re.search(r"(?<!\d)(\d{1,2}[月/]\d{1,2}日?)\s*(?:活動|回饋|名額)", sentence)
+    period_range = re.search(r"\d{1,2}/\d{1,2}\s*[~～至–-]\s*\d{1,2}/\d{1,2}", sentence)
+    if period_range:
+        result["period"] = period_range.group(0)
     if day:
         result["period"] = day.group(1)
     if component:

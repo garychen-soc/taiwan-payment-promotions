@@ -87,6 +87,18 @@ class QuotaStatusTests(unittest.TestCase):
         self.assertEqual(result.status, "partial_sold_out")
         self.assertEqual([c["period"] for c in result.components], ["11/1", "11/2"])
 
+    def test_tax_inline_notices_keep_benefit_and_period(self) -> None:
+        text = ("早鳥滿額贈：繳稅滿5,000元，每戶限贈1份，限量1,000名。【已於10/28(三)00:03額滿】\n"
+                "【10/28~10/31筆筆回饋已於10/28(三)20:14:33額滿】\n"
+                "滿額回饋禮：繳稅滿12,000元，每戶限贈1份。【已於10/28(三)15:38額滿】\n"
+                "高額加碼禮：繳稅滿5萬元，限量1,500名。")
+        result = analyze_quota(text)
+        self.assertEqual(result.status, "partial_sold_out")
+        self.assertEqual(len(result.components), 3)
+        self.assertEqual(result.components[0]["component"], "早鳥")
+        self.assertEqual(result.components[1]["period"], "10/28~10/31")
+        self.assertEqual(result.components[2]["component"], "滿額回饋禮")
+
     def test_app_only_is_unknown(self) -> None:
         result = analyze_quota("回饋額滿資訊僅公告於悠遊付App，本網站不另行公告。")
         self.assertEqual(result.status, "unknown_app_only")

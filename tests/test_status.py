@@ -82,6 +82,11 @@ class QuotaStatusTests(unittest.TestCase):
                 self.assertEqual(result.status, "partial_sold_out")
                 self.assertTrue(result.components)
 
+    def test_daily_coupon_pool_is_not_entire_calendar(self) -> None:
+        result = analyze_quota("11/1活動已於11/1 00:01:19額滿。11/2活動已於11/2 00:01:01額滿。")
+        self.assertEqual(result.status, "partial_sold_out")
+        self.assertEqual([c["period"] for c in result.components], ["11/1", "11/2"])
+
     def test_app_only_is_unknown(self) -> None:
         result = analyze_quota("回饋額滿資訊僅公告於悠遊付App，本網站不另行公告。")
         self.assertEqual(result.status, "unknown_app_only")

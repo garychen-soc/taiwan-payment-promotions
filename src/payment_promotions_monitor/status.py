@@ -52,7 +52,8 @@ def _scope_text(sentence: str) -> str:
 
 
 def _is_scoped(sentence: str) -> bool:
-    return bool(SCOPE_PATTERN.search(_scope_text(sentence)))
+    return bool(SCOPE_PATTERN.search(_scope_text(sentence)) or
+                re.search(r"(?<!\d)\d{1,2}[月/]\d{1,2}日?\s*(?:活動|回饋|名額)", sentence))
 
 
 
@@ -106,6 +107,9 @@ def _component_from(sentence: str) -> dict[str, str]:
         result["period"] = f"{int(month.group(1)):02d}月"
     elif week:
         result["period"] = week.group(1)
+    day = re.search(r"(?<!\d)(\d{1,2}[月/]\d{1,2}日?)\s*(?:活動|回饋|名額)", sentence)
+    if day:
+        result["period"] = day.group(1)
     if component:
         result["component"] = component.group(1).strip()
     return result

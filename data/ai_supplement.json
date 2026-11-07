@@ -1,47 +1,47 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-27T07:16:15.346183+08:00",
-  "headline": "10/27部分覆蓋更新：雙11券今日開領、玉山地價稅回饋明日起登錄；汐止期限及公開無法確認的名額仍待確認。",
+  "generated_at": "2026-11-07T08:29:56.387125+08:00",
+  "headline": "月份與子活動額滿分類已修正；今日部分覆蓋更新，其他月份及App名額仍需確認。",
   "highlights": [
+    {
+      "kind": "official_activity",
+      "provider_id": "icashpay",
+      "provider_name": "icash Pay",
+      "title": "Mister Donut：僅10月10%加碼額滿",
+      "summary": "10/1–12/31活動；官方公告10月10%加碼於10/27 08:40額滿。每戶每月加碼上限100點，月份額度分開計算；11、12月剩餘額度公開未確認，另列uniopen聯名卡最高7%須達指定任務，不可由10月公告判定額滿。",
+      "url": "https://www.icashpay.com.tw/advertMessage/view/id/2534"
+    },
+    {
+      "kind": "official_activity",
+      "provider_id": "icashpay",
+      "provider_name": "icash Pay",
+      "title": "COLD STONE：僅10月10%加碼額滿",
+      "summary": "10/1–12/31活動；官方公告10月10%加碼於10/26 16:20額滿。每戶每月加碼上限100點，月份額度分開計算；11、12月剩餘額度公開未確認，另列uniopen聯名卡最高7%須達指定任務，不可由10月公告判定額滿。",
+      "url": "https://www.icashpay.com.tw/advertMessage/view/id/2536"
+    },
     {
       "kind": "official_activity",
       "provider_id": "easywallet",
       "provider_name": "悠遊付",
-      "title": "雙11搶券今日開放：分7個用券日回饋500元",
-      "summary": "10/27 00:00起可領券；用券日為11/1、11/2、11/3、11/6、11/10、11/11、11/13，每會員每日限領1張、全月最多7張。須於指定日00:00–23:59在適用電商單筆達指定門檻並用券付款；各日門檻與名額尚待領券頁確認。依交易順序先用先得，領券不保證回饋，付款前請查券況；尚未見明確已額滿公告。",
+      "title": "中油：活動二11月滿千贈50元券額滿",
+      "summary": "11/1–12/31；滿1,000元贈50元券的活動二，11月已於11/4 21:29:15額滿。每戶每月限1張、每月1,500張。活動一滿百5%與活動三悠遊卡滿120元贈10元為不同子項，剩餘額度需至App確認，不能一併判定額滿。",
+      "url": "https://easywallet.easycard.com.tw/benefit/content?id=1792653371"
+    },
+    {
+      "kind": "official_activity",
+      "provider_id": "easywallet",
+      "provider_name": "悠遊付",
+      "title": "雙11券：11/1、2、3用券日額滿，非整檔額滿",
+      "summary": "活動至11/13，7個用券日各自限額；官方明示11/1、11/2、11/3額滿。其餘用券日最新額度未確認，須達各日指定消費門檻並用券付款才回饋500元，領券不保證回饋，付款前查領券頁與App券況。",
       "url": "https://easywallet.easycard.com.tw/benefit/content?id=1791888619"
     },
     {
       "kind": "official_activity",
       "provider_id": "easywallet",
       "provider_name": "悠遊付",
-      "title": "玉山信用卡繳地價稅：10/28起登錄享0.2%",
-      "summary": "10/28至11/30，以悠遊付綁玉山信用卡繳地價稅並由正卡人於玉山官網登錄，享0.2%玉山e point，每歸戶最高50點、登錄名額無上限。首次綁定且累計繳稅滿10,000元可再得50點；10/27前曾綁卡消費或繳稅費者不符首次資格。兩項共用登錄入口；簽帳金融卡、公司卡及採購卡不適用，實際繳納期間以稅單為準。",
-      "url": "https://easywallet.easycard.com.tw/benefit/content?id=1789693447"
-    },
-    {
-      "kind": "official_activity",
-      "provider_id": "easywallet",
-      "provider_name": "悠遊付",
-      "title": "王道新戶綁悠遊付最高888元：10/31截止",
-      "summary": "7/1至10/31透過悠遊付指定連結首次開立王道帳戶，啟用後30天內以連結帳戶不限金額消費滿3筆可得500元，限前850名啟用客戶；另於10/31前綁王道簽帳卡消費累計滿3,000元再得388元，限前300名。須分別達成條件；本頁僅載限量及額滿公告方式，未見明確已額滿，銀行最新名額仍需確認。",
-      "url": "https://easywallet.easycard.com.tw/benefit/content?id=1773728616"
-    },
-    {
-      "kind": "official_activity",
-      "provider_id": "icashpay",
-      "provider_name": "icash Pay",
-      "title": "icash Pay乘車碼：點數折抵金額另享30%",
-      "summary": "10/1至12/31，持icash Pay乘車碼搭大眾運輸或於轉運站窗口用付款碼，使用OPENPOINT折抵時，針對折抵點數金額另回饋30%。限icash Pay帳戶餘額付款，每戶每月最高100點、總上限30萬點；回饋最晚於支付成功後次次月底入點。官方僅載達上限不另公告，不代表目前已額滿，公開剩餘名額無法確認。",
-      "url": "https://www.icashpay.com.tw/advertMessage/view/id/2544"
-    },
-    {
-      "kind": "official_activity",
-      "provider_id": "easywallet",
-      "provider_name": "悠遊付",
-      "title": "7-ELEVEN悠遊卡：10月指定期間滿500折50",
-      "summary": "適用10/23–10/31、11/25–11/30及12/18–12/31；於7-ELEVEN實體門市以悠遊卡或悠遊聯名卡單筆全額支付，扣除不適用品項後滿500元現折50元，單筆不累折，每月限2萬份。菸品、代收、點數卡、i珍食、預購及線上服務等不適用；實際額滿依POS為準，結帳前洽門市。本頁未明示已額滿。",
-      "url": "https://easywallet.easycard.com.tw/benefit/content?id=1788682579"
+      "title": "地價稅：早鳥、10月筆筆回饋及滿額禮各自額滿",
+      "summary": "活動10/28–11/30。早鳥滿5,000元及2筆消費贈100元券於10/28 00:03額滿；10/28–10/31筆筆3%額度於10/28 20:14:33額滿；滿12,000元及5筆消費贈600元券於10/28 15:38額滿。11月筆筆3%與高額加碼禮為不同額度，公開無法確認剩餘名額，需查App。",
+      "url": "https://easywallet.easycard.com.tw/benefit/content?id=1784184075"
     }
   ],
   "supplemental_activities": []
